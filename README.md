@@ -12,7 +12,7 @@ Snapshots are saved to `datamine/<host>/`.
 
 ## Setup
 
-Add a Discord webhook URL as the `DISCORD_WEBHOOK_URL` repo secret, and give Actions read and write permissions.
+Add the bot token as the `DISCORD_BOT_TOKEN` repo secret and the channel id as the `DISCORD_CHANNEL_ID` repo variable. The bot needs Send Messages and Embed Links in that channel.
 
 ## Usage
 

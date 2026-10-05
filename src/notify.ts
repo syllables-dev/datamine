@@ -1,9 +1,14 @@
 import { config } from "@/config";
+import { warn } from "@/lib/expect";
 import { counts, isEmpty, sectionNames } from "@/report";
 
 import type { Report, Section, SectionName } from "@/types";
 
-const { COMMIT_URL: commitUrl, DISCORD_WEBHOOK_URL: webhook } = Bun.env;
+const {
+  COMMIT_URL: commitUrl,
+  DISCORD_BOT_TOKEN: token,
+  DISCORD_CHANNEL_ID: channel,
+} = Bun.env;
 const { icon, username } = config.discord;
 const fence = "```";
 const externalSuffix = /-external$/u;
@@ -40,34 +45,58 @@ const embedSize = (embed: Embed) =>
     0
   );
 
-const send = async (embeds: Embed[]) => {
-  const body = JSON.stringify({
-    allowed_mentions: { parse: [] },
-    avatar_url: icon,
-    embeds,
-    username,
-  });
-  if (!webhook) {
-    console.log(JSON.stringify(embeds, null, 2));
-    return;
-  }
+const discord = async (path: string, body?: unknown, maxWait = 60) => {
   for (;;) {
-    const response = await fetch(`${webhook}?wait=true`, {
-      body,
-      headers: { "content-type": "application/json" },
+    const response = await fetch(`https://discord.com/api/v10${path}`, {
+      body: body === undefined ? undefined : JSON.stringify(body),
+      headers: {
+        authorization: `Bot ${token}`,
+        "content-type": "application/json",
+      },
       method: "POST",
     });
     if (response.status === 429) {
       const { retry_after: retryAfter } = (await response.json()) as {
         retry_after: number;
       };
+      if (retryAfter > maxWait) {
+        throw new Error(`Discord rate limited ${path} for ${retryAfter}s`);
+      }
       await Bun.sleep(retryAfter * 1000 + 250);
       continue;
     }
     if (!response.ok) {
-      throw new Error(`Discord ${response.status}: ${await response.text()}`);
+      throw new Error(
+        `Discord ${response.status} ${path}: ${await response.text()}`
+      );
     }
+    return (await response.json()) as { id: string };
+  }
+};
+
+const send = async (embeds: Embed[]) => {
+  if (!token || !channel) {
+    console.log(JSON.stringify(embeds, null, 2));
     return;
+  }
+  const message = await discord(`/channels/${channel}/messages`, {
+    allowed_mentions: { parse: [] },
+    embeds,
+  });
+  return message.id;
+};
+
+const publish = async (id: string | undefined) => {
+  if (!id) {
+    return;
+  }
+  try {
+    await discord(`/channels/${channel}/messages/${id}/crosspost`);
+  } catch (error) {
+    warn(
+      "Discord publish",
+      error instanceof Error ? error.message : String(error)
+    );
   }
 };
 
@@ -243,7 +272,11 @@ const reports = (await Bun.file(
   `${config.paths.reports}/reports.json`
 ).json()) as Report[];
 for (const report of reports.filter((item) => !item.initial)) {
-  for (const message of batches(targetEmbeds(report))) {
+  const [summary, ...rest] = batches(targetEmbeds(report));
+  if (summary) {
+    await publish(await send(summary));
+  }
+  for (const message of rest) {
     await send(message);
   }
 }
