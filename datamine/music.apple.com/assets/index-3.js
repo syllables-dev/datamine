@@ -180,7 +180,7 @@ function _(a) {
       return r[0];
     }
     return a.target;
-  } catch (e) {
+  } catch {
     return a.target;
   }
 }
@@ -1208,7 +1208,7 @@ function _n(a, r) {
       ].forEach(function (i) {
         try {
           delete e[i];
-        } catch (o) {}
+        } catch {}
       }));
   }
   function X(n) {
@@ -1683,14 +1683,14 @@ function _n(a, r) {
       if (i.cssRules) {
         try {
           i.cssRules;
-        } catch (o) {
+        } catch {
           continue;
         }
         n = i;
         break;
       }
     }
-    return n != null ? n : on();
+    return n ?? on();
   }
   function on() {
     var n = document.createElement("style");
@@ -1931,7 +1931,7 @@ function _n(a, r) {
       e.altInput !== void 0 && (e.altInput.type = "hidden"));
     try {
       e.input.parentNode && e.input.parentNode.insertBefore(e.mobileInput, e.input.nextSibling);
-    } catch (t) {}
+    } catch {}
     D(e.mobileInput, "change", function (t) {
       (e.setDate(_(t).value, !1, e.mobileFormatStr), M("onChange"), M("onClose"));
     });

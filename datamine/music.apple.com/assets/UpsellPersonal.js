@@ -2,50 +2,50 @@ import {
   S as se,
   i as ae,
   n as ie,
-  bn as ne,
+  bw as ne,
   I as j,
   e as E,
-  c as x,
-  s as S,
+  c as Z,
+  s as y,
   a as C,
   b as N,
   f as $,
   g as p,
-  d as y,
+  d as S,
   h as r,
-  bo as re,
+  bx as re,
   k as I,
   l as h,
   m as ee,
   r as M,
   u as oe,
-  v as O,
+  v as R,
   w as ce,
   x as te,
   K as ue,
   z as fe,
-  E as R,
-  F as B,
-  G,
-  bp as de,
+  E as q,
+  F as z,
+  G as B,
+  by as de,
   H as he,
   o as le,
-  bq as _e,
+  bz as _e,
 } from "./main.js";
-function J(s, e, t) {
+function x(s, e, t) {
   const l = s.slice();
   return ((l[8] = e[t]), l);
 }
-function L(s) {
+function J(s) {
   let e, t;
   return {
     c() {
-      ((e = E("h1")), (t = R(s[0])), this.h());
+      ((e = E("h1")), (t = q(s[0])), this.h());
     },
     l(l) {
       e = C(l, "H1", { class: !0, "data-testid": !0 });
       var i = N(e);
-      ((t = B(i, s[0])), i.forEach(p), this.h());
+      ((t = z(i, s[0])), i.forEach(p), this.h());
     },
     h() {
       (r(e, "class", "heading svelte-1o61rav"), r(e, "data-testid", "upsell-personal-heading"));
@@ -54,14 +54,14 @@ function L(s) {
       (I(l, e, i), h(e, t));
     },
     p(l, i) {
-      i & 1 && G(t, l[0]);
+      i & 1 && B(t, l[0]);
     },
     d(l) {
       l && p(e);
     },
   };
 }
-function Q(s) {
+function L(s) {
   let e, t;
   return {
     c() {
@@ -84,16 +84,16 @@ function Q(s) {
     },
   };
 }
-function X(s) {
+function Q(s) {
   let e, t;
   return {
     c() {
-      ((e = E("p")), (t = R(s[1])), this.h());
+      ((e = E("p")), (t = q(s[1])), this.h());
     },
     l(l) {
       e = C(l, "P", { class: !0, "data-testid": !0 });
       var i = N(e);
-      ((t = B(i, s[1])), i.forEach(p), this.h());
+      ((t = z(i, s[1])), i.forEach(p), this.h());
     },
     h() {
       (r(e, "class", "message svelte-1o61rav"), r(e, "data-testid", "upsell-personal-message"));
@@ -102,23 +102,23 @@ function X(s) {
       (I(l, e, i), h(e, t));
     },
     p(l, i) {
-      i & 2 && G(t, l[1]);
+      i & 2 && B(t, l[1]);
     },
     d(l) {
       l && p(e);
     },
   };
 }
-function Y(s) {
+function X(s) {
   let e, t, l, i;
   return {
     c() {
-      ((e = E("button")), (t = R(s[2])), this.h());
+      ((e = E("button")), (t = q(s[2])), this.h());
     },
     l(o) {
       e = C(o, "BUTTON", { class: !0, "data-testid": !0 });
       var f = N(e);
-      ((t = B(f, s[2])), f.forEach(p), this.h());
+      ((t = z(f, s[2])), f.forEach(p), this.h());
     },
     h() {
       (r(e, "class", "cta-btn svelte-1o61rav"), r(e, "data-testid", "upsell-personal-cta"));
@@ -127,27 +127,27 @@ function Y(s) {
       (I(o, e, f), h(e, t), l || ((i = le(e, "click", s[5])), (l = !0)));
     },
     p(o, f) {
-      f & 4 && G(t, o[2]);
+      f & 4 && B(t, o[2]);
     },
     d(o) {
       (o && p(e), (l = !1), i());
     },
   };
 }
-function Z(s) {
-  let e, t, l, i, o, f, k, w;
+function Y(s) {
+  let e, t, l, i, o, f, k, T;
   return (
     (o = new _e({})),
     {
       c() {
-        ((e = E("button")), (t = E("span")), (l = R(s[3])), (i = S()), x(o.$$.fragment), this.h());
+        ((e = E("button")), (t = E("span")), (l = q(s[3])), (i = y()), Z(o.$$.fragment), this.h());
       },
       l(c) {
         e = C(c, "BUTTON", { class: !0, "data-testid": !0 });
         var b = N(e);
         t = C(b, "SPAN", { class: !0 });
         var u = N(t);
-        ((l = B(u, s[3])), (i = y(u)), $(o.$$.fragment, u), u.forEach(p), b.forEach(p), this.h());
+        ((l = z(u, s[3])), (i = S(u)), $(o.$$.fragment, u), u.forEach(p), b.forEach(p), this.h());
       },
       h() {
         (r(t, "class", "link-with-chevron svelte-1o61rav"),
@@ -155,89 +155,89 @@ function Z(s) {
           r(e, "data-testid", "upsell-personal-secondary-action"));
       },
       m(c, b) {
-        (I(c, e, b), h(e, t), h(t, l), h(t, i), ee(o, t, null), (f = !0), k || ((w = le(e, "click", s[6])), (k = !0)));
+        (I(c, e, b), h(e, t), h(t, l), h(t, i), ee(o, t, null), (f = !0), k || ((T = le(e, "click", s[6])), (k = !0)));
       },
       p(c, b) {
-        (!f || b & 8) && G(l, c[3]);
+        (!f || b & 8) && B(l, c[3]);
       },
       i(c) {
         f || (M(o.$$.fragment, c), (f = !0));
       },
       o(c) {
-        (O(o.$$.fragment, c), (f = !1));
+        (R(o.$$.fragment, c), (f = !1));
       },
       d(c) {
-        (c && p(e), te(o), (k = !1), w());
+        (c && p(e), te(o), (k = !1), T());
       },
     }
   );
 }
 function pe(s) {
-  let e, t, l, i, o, f, k, w, c, b, u, z, H, U, P, V;
+  let e, t, l, i, o, f, k, T, c, b, u, K, G, U, P, V;
   i = new ne({});
-  let m = s[0] && L(s),
+  let m = s[0] && J(s),
     A = j(s[4]),
     _ = [];
-  for (let a = 0; a < A.length; a += 1) _[a] = Q(J(s, A, a));
-  let v = s[1] && X(s),
-    g = s[2] && Y(s),
-    d = s[3] && Z(s);
+  for (let a = 0; a < A.length; a += 1) _[a] = L(x(s, A, a));
+  let v = s[1] && Q(s),
+    g = s[2] && X(s),
+    d = s[3] && Y(s);
   return {
     c() {
       ((e = E("div")),
         (t = E("div")),
         (l = E("div")),
-        x(i.$$.fragment),
-        (o = S()),
+        Z(i.$$.fragment),
+        (o = y()),
         m && m.c(),
-        (f = S()),
+        (f = y()),
         (k = E("div")),
-        (w = E("div")),
+        (T = E("div")),
         (c = E("picture")));
       for (let a = 0; a < _.length; a += 1) _[a].c();
-      ((b = S()), (u = E("img")), (H = S()), v && v.c(), (U = S()), g && g.c(), (P = S()), d && d.c(), this.h());
+      ((b = y()), (u = E("img")), (G = y()), v && v.c(), (U = y()), g && g.c(), (P = y()), d && d.c(), this.h());
     },
     l(a) {
       e = C(a, "DIV", { class: !0, "data-testid": !0 });
-      var T = N(e);
-      t = C(T, "DIV", { class: !0 });
+      var w = N(e);
+      t = C(w, "DIV", { class: !0 });
       var n = N(t);
       l = C(n, "DIV", { class: !0, "data-testid": !0 });
       var D = N(l);
       ($(i.$$.fragment, D),
         D.forEach(p),
-        (o = y(n)),
+        (o = S(n)),
         m && m.l(n),
-        (f = y(n)),
+        (f = S(n)),
         (k = C(n, "DIV", { class: !0, "aria-hidden": !0, "data-testid": !0 })));
       var F = N(k);
-      w = C(F, "DIV", { class: !0 });
-      var W = N(w);
+      T = C(F, "DIV", { class: !0 });
+      var W = N(T);
       c = C(W, "PICTURE", {});
-      var q = N(c);
-      for (let K = 0; K < _.length; K += 1) _[K].l(q);
-      ((b = y(q)),
-        (u = C(q, "IMG", { src: !0, class: !0, alt: !0 })),
-        q.forEach(p),
+      var O = N(c);
+      for (let H = 0; H < _.length; H += 1) _[H].l(O);
+      ((b = S(O)),
+        (u = C(O, "IMG", { src: !0, class: !0, alt: !0 })),
+        O.forEach(p),
         W.forEach(p),
         F.forEach(p),
-        (H = y(n)),
+        (G = S(n)),
         v && v.l(n),
-        (U = y(n)),
+        (U = S(n)),
         g && g.l(n),
-        (P = y(n)),
+        (P = S(n)),
         d && d.l(n),
         n.forEach(p),
-        T.forEach(p),
+        w.forEach(p),
         this.h());
     },
     h() {
       (r(l, "class", "logo svelte-1o61rav"),
         r(l, "data-testid", "upsell-personal-logo"),
-        re(u.src, (z = "/assets/app-icons/music-note/Apple-Music-Note_250.png")) || r(u, "src", z),
+        re(u.src, (K = "/assets/app-icons/music-note/Apple-Music-Note_250.png")) || r(u, "src", K),
         r(u, "class", "artwork__image svelte-1o61rav"),
         r(u, "alt", ""),
-        r(w, "class", "artwork__inner svelte-1o61rav"),
+        r(T, "class", "artwork__inner svelte-1o61rav"),
         r(k, "class", "artwork svelte-1o61rav"),
         r(k, "aria-hidden", "true"),
         r(k, "data-testid", "upsell-personal-artwork"),
@@ -245,31 +245,31 @@ function pe(s) {
         r(e, "class", "upsell-container svelte-1o61rav"),
         r(e, "data-testid", "upsell-personal-container"));
     },
-    m(a, T) {
-      (I(a, e, T), h(e, t), h(t, l), ee(i, l, null), h(t, o), m && m.m(t, null), h(t, f), h(t, k), h(k, w), h(w, c));
+    m(a, w) {
+      (I(a, e, w), h(e, t), h(t, l), ee(i, l, null), h(t, o), m && m.m(t, null), h(t, f), h(t, k), h(k, T), h(T, c));
       for (let n = 0; n < _.length; n += 1) _[n] && _[n].m(c, null);
-      (h(c, b), h(c, u), h(t, H), v && v.m(t, null), h(t, U), g && g.m(t, null), h(t, P), d && d.m(t, null), (V = !0));
+      (h(c, b), h(c, u), h(t, G), v && v.m(t, null), h(t, U), g && g.m(t, null), h(t, P), d && d.m(t, null), (V = !0));
     },
-    p(a, [T]) {
-      if ((a[0] ? (m ? m.p(a, T) : ((m = L(a)), m.c(), m.m(t, f))) : m && (m.d(1), (m = null)), T & 16)) {
+    p(a, [w]) {
+      if ((a[0] ? (m ? m.p(a, w) : ((m = J(a)), m.c(), m.m(t, f))) : m && (m.d(1), (m = null)), w & 16)) {
         A = j(a[4]);
         let n;
         for (n = 0; n < A.length; n += 1) {
-          const D = J(a, A, n);
-          _[n] ? _[n].p(D, T) : ((_[n] = Q(D)), _[n].c(), _[n].m(c, b));
+          const D = x(a, A, n);
+          _[n] ? _[n].p(D, w) : ((_[n] = L(D)), _[n].c(), _[n].m(c, b));
         }
         for (; n < _.length; n += 1) _[n].d(1);
         _.length = A.length;
       }
-      (a[1] ? (v ? v.p(a, T) : ((v = X(a)), v.c(), v.m(t, U))) : v && (v.d(1), (v = null)),
-        a[2] ? (g ? g.p(a, T) : ((g = Y(a)), g.c(), g.m(t, P))) : g && (g.d(1), (g = null)),
+      (a[1] ? (v ? v.p(a, w) : ((v = Q(a)), v.c(), v.m(t, U))) : v && (v.d(1), (v = null)),
+        a[2] ? (g ? g.p(a, w) : ((g = X(a)), g.c(), g.m(t, P))) : g && (g.d(1), (g = null)),
         a[3]
           ? d
-            ? (d.p(a, T), T & 8 && M(d, 1))
-            : ((d = Z(a)), d.c(), M(d, 1), d.m(t, null))
+            ? (d.p(a, w), w & 8 && M(d, 1))
+            : ((d = Y(a)), d.c(), M(d, 1), d.m(t, null))
           : d &&
             (oe(),
-            O(d, 1, 1, () => {
+            R(d, 1, 1, () => {
               d = null;
             }),
             ce()));
@@ -278,7 +278,7 @@ function pe(s) {
       V || (M(i.$$.fragment, a), M(d), (V = !0));
     },
     o(a) {
-      (O(i.$$.fragment, a), O(d), (V = !1));
+      (R(i.$$.fragment, a), R(d), (V = !1));
     },
     d(a) {
       (a && p(e), te(i), m && m.d(), ue(_, a), v && v.d(), g && g.d(), d && d.d());
@@ -294,7 +294,7 @@ function ve(s, e, t) {
     { ctaText: o = null } = e,
     { secondaryCtaText: f = null } = e;
   const k = fe(),
-    w = [
+    T = [
       { media: "(max-width: 499px)", fileName: "Apple-Music-Note_250", fileExtension: "webp" },
       { media: "(max-width: 499px)", fileName: "Apple-Music-Note_250", fileExtension: "png" },
       { media: "(min-width: 500px)", fileName: "Apple-Music-Note_500", fileExtension: "webp" },
@@ -313,7 +313,7 @@ function ve(s, e, t) {
         "ctaText" in u && t(2, (o = u.ctaText)),
         "secondaryCtaText" in u && t(3, (f = u.secondaryCtaText)));
     }),
-    [l, i, o, f, w, c, b]
+    [l, i, o, f, T, c, b]
   );
 }
 class ke extends se {

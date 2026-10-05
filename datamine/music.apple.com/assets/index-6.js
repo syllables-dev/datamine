@@ -255,7 +255,7 @@ var Re = console.log,
     },
   d = B("[SentryKit Privacy rules]");
 function F(e, n, t) {
-  const a = t != null && t.path ? t.path + "." : "",
+  const a = t?.path ? t.path + "." : "",
     o = (r) => {
       const i = a + r,
         c = e[r],
@@ -570,7 +570,7 @@ function Ye(e) {
 ve();
 (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && ge();
 function Ce(e) {
-  (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && e != null && e.debug && Te();
+  (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && e?.debug && Te();
   const n = Ge(e || {});
   if (!n.project) throw new Error("[SentryKit Configuration Error]: The required `project` field is not set.");
   const t = n.tracesSampleRate || n.tracesSampler,

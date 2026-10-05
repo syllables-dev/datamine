@@ -1,79 +1,94 @@
-import { a8 as f, ao as h, a9 as w, ac as C, af as S, ag as v, ak as p } from "./main.js";
-import { f as m, e as A, b as y } from "./CanvasCollectionSectionBuilder.js";
-function g(n, t, e) {
+import { a8 as a, ao as A, a9 as E, aA as v, ac as C, af as h, ag as f, ak as w } from "./main.js";
+import { f as _, e as M, b as T } from "./CanvasCollectionSectionBuilder.js";
+const m = {
+  TOP_SONGS: "FUSE.Artist.Section.TopSongs",
+  ALBUMS: "FUSE.Artist.Section.Albums",
+  ESSENTIALS: "FUSE.Artist.Section.Essentials",
+  MUSIC_VIDEOS: "FUSE.Artist.Section.MusicVideos",
+  ARTIST_PLAYLISTS: "FUSE.Artist.Section.Playlists",
+  MORE_TO_HEAR: "FUSE.Artist.Section.MoreToHear",
+  MORE_TO_SEE: "FUSE.Artist.Section.MoreToSee",
+};
+function p(o, t, e) {
   var i;
-  const r = n.body,
-    l = r == null ? void 0 : r.resources,
-    s = (i = r == null ? void 0 : r.data) === null || i === void 0 ? void 0 : i[0];
-  if (f(l)) throw new Error("No resource map in canvas shelf collection see-all response.");
-  if (!m(s)) throw new Error("No canvas shelf collection resource identifier.");
-  const c = new C(l, e),
-    a = c.resource(s);
-  if (!A(a, e)) throw new Error("No canvas shelf collection resource.");
-  const o = new y(
-    a,
-    { resourceManager: c, collectionsPreferSeeAllDisplayAttributes: !0, dropCollectionSectionHeaders: !0 },
+  const n = o.body,
+    s = n?.resources,
+    l = (i = n?.data) === null || i === void 0 ? void 0 : i[0];
+  if (a(s)) throw new Error("No resource map in canvas shelf collection see-all response.");
+  if (!_(l)) throw new Error("No canvas shelf collection resource identifier.");
+  const u = new C(s, e),
+    c = u.resource(l);
+  if (!M(c, e)) throw new Error("No canvas shelf collection resource.");
+  const r = new T(
+    c,
+    { resourceManager: u, collectionsPreferSeeAllDisplayAttributes: !0, dropCollectionSectionHeaders: !0 },
     e,
     0,
   ).build();
-  if (f(o))
+  if (a(r))
     throw (
-      h.error(e, "Failed to build canvas shelf collection section for see-all."),
+      A.error(e, "Failed to build canvas shelf collection section for see-all."),
       new Error("Failed to build canvas shelf collection section.")
     );
   return {
-    pageMetrics: w(e, n, "see_all", "SeeAll", c),
-    header: a.attributes.title ? { title: a.attributes.title } : null,
-    sections: [o],
+    pageMetrics: E(e, o, "see_all", "SeeAll", u),
+    header: y(c.attributes.title, c.attributes.kind, t.artistName, e),
+    sections: [r],
   };
 }
-function M(n, t) {
-  const e = new S(n.href, t);
+function y(o, t, e, i) {
+  if (a(o)) return null;
+  if (a(e) || a(t)) return { title: o };
+  const n = m[t];
+  return a(n) ? { title: o } : { title: v.string(n, i, { artistName: e }) };
+}
+function F(o, t) {
+  const e = new h(o.href, t);
   return (
-    e.queryString.artworkURL.add(v.OmitFileExtension).add(v.OmitCropCode),
+    e.queryString.artworkURL.add(f.OmitFileExtension).add(f.OmitCropCode),
     e.queryString.extend.add("plainEditorialNotes").add("seeAllDisplay"),
     e.queryString.addParameters({ include: "contents", "limit[contents]": "100", "omit[resource]": "autos" }),
-    p(e, t)
+    w(e, t)
   );
 }
-var R =
+var I =
   (globalThis && globalThis.__awaiter) ||
-  function (n, t, e, i) {
-    function r(l) {
-      return l instanceof e
-        ? l
-        : new e(function (s) {
-            s(l);
+  function (o, t, e, i) {
+    function n(s) {
+      return s instanceof e
+        ? s
+        : new e(function (l) {
+            l(s);
           });
     }
-    return new (e || (e = Promise))(function (l, s) {
-      function c(o) {
+    return new (e || (e = Promise))(function (s, l) {
+      function u(r) {
         try {
-          u(i.next(o));
-        } catch (d) {
-          s(d);
+          d(i.next(r));
+        } catch (S) {
+          l(S);
         }
       }
-      function a(o) {
+      function c(r) {
         try {
-          u(i.throw(o));
-        } catch (d) {
-          s(d);
+          d(i.throw(r));
+        } catch (S) {
+          l(S);
         }
       }
-      function u(o) {
-        o.done ? l(o.value) : r(o.value).then(c, a);
+      function d(r) {
+        r.done ? s(r.value) : n(r.value).then(u, c);
       }
-      u((i = i.apply(n, t || [])).next());
+      d((i = i.apply(o, t || [])).next());
     });
   };
-const E = {
+const L = {
   $intentKind: "CanvasShelfCollectionSeeAllIntent",
-  perform(n, t) {
-    return R(this, void 0, void 0, function* () {
-      const e = yield M(n, t);
-      return g(e, n, t);
+  perform(o, t) {
+    return I(this, void 0, void 0, function* () {
+      const e = yield F(o, t);
+      return p(e, o, t);
     });
   },
 };
-export { E as CanvasShelfCollectionSeeAllIntentController };
+export { L as CanvasShelfCollectionSeeAllIntentController };

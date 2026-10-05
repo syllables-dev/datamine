@@ -1,242 +1,210 @@
 import {
-  as as L,
-  at as B,
-  aJ as O,
-  a2 as g,
-  ac as K,
-  b3 as _,
-  b4 as M,
-  aE as Y,
-  b5 as $,
-  aY as V,
-  b6 as H,
-  b7 as J,
-  b8 as z,
-  b9 as Q,
-  ba as R,
-  bb as W,
-  bc as X,
-  bd as Z,
-  af as h,
-  be as G,
-  bf as m,
-  bg as E,
-  bh as j,
-  bi as tt,
+  as as f,
+  at as C,
+  aJ as S,
+  a2 as c,
+  ac as M,
+  b3 as I,
+  b4 as m,
+  aE as T,
+  b5 as N,
+  aY as v,
+  b6 as x,
+  b7 as U,
+  b8 as _,
+  b9 as K,
+  ba as b,
+  bb as h,
+  bc as B,
+  bd as O,
+  af as k,
+  be as Y,
+  bf as y,
+  bg as L,
+  bh as $,
+  bi as V,
 } from "./main.js";
-function nt(t, n, i) {
+function H(t, r, n) {
   switch (t.kind) {
-    case g.Song:
-    case g.MusicVideo:
-      return n ? _(n, "pin", M(t), i) : null;
-    case g.Artist:
-      const r = M(t);
-      return Y(
-        { kind: V.LibraryPage, intent: H({ id: r, language: null, storefront: null }) },
-        $({ fields: { actionDetails: { kind: t.kind }, actionType: "navigate", targetId: r, targetType: "pin" } }),
+    case c.Song:
+    case c.MusicVideo:
+      return r ? I(r, "pin", m(t), n) : null;
+    case c.Artist:
+      const i = m(t);
+      return T(
+        { kind: v.LibraryPage, intent: x({ id: i, language: null, storefront: null }) },
+        N({ fields: { actionDetails: { kind: t.kind }, actionType: "navigate", targetId: i, targetType: "pin" } }),
       );
     default:
-      return _(t, "pin", M(t), i);
+      return I(t, "pin", m(t), n);
   }
 }
-async function it(t, n) {
-  var a, o, l, d, c, y, f, P;
-  const i = await J((a = t.identifiers) == null ? void 0 : a.cloudUniversalLibraryID, n),
-    r = (o = i.body) == null ? void 0 : o.resources,
-    s = new K(r, n),
-    e = s.resource((d = (l = i.body) == null ? void 0 : l.data) == null ? void 0 : d[0]);
-  return (P =
-    (f = s.resources(
-      (y = (c = e == null ? void 0 : e.relationships) == null ? void 0 : c.albums) == null ? void 0 : y.data,
-    )) == null
-      ? void 0
-      : f.map((u) => L(u, n))) != null
-    ? P
-    : [];
+async function J(t, r) {
+  const n = await U(t.identifiers?.cloudUniversalLibraryID, r),
+    i = n.body?.resources,
+    s = new M(i, r),
+    e = s.resource(n.body?.data?.[0]);
+  return s.resources(e?.relationships?.albums?.data)?.map((a) => f(a, r)) ?? [];
 }
-function A(t, n, i, r, s) {
+function l(t, r, n, i, s) {
   const e = s ? "button" : "pin",
-    a = R,
-    o = s ? { actionContext: "contextualAction" } : {};
+    a = b,
+    u = s ? { actionContext: "contextualAction" } : {};
   switch (t) {
     case "shuffle":
-      return X(n, r, null, i, null, e, a, o);
+      return B(r, i, null, n, null, e, a, u);
     case "playLast":
-      return W(
-        n.map((l) => ({ contentDescriptor: l })),
+      return h(
+        r.map((d) => ({ contentDescriptor: d })),
         null,
-        R,
+        b,
         { actionType: t },
       );
     case "playNext":
-      return Q(
-        n.map((l) => ({ contentDescriptor: l })),
+      return K(
+        r.map((d) => ({ contentDescriptor: d })),
         null,
-        R,
+        b,
         { actionType: t },
       );
     case "play":
     default:
-      return z(n, r, null, i, null, e, a, o);
+      return _(r, i, null, n, null, e, a, u);
   }
 }
-function rt(t, n, i) {
-  var a, o, l, d, c, y, f, P, u;
-  const r = Z(t.type, i);
-  if (!r) return null;
-  const s =
-      (u =
-        (P =
-          (f =
-            (c =
-              (l = (a = t.relationships) == null ? void 0 : a.albums) != null
-                ? l
-                : (o = t.relationships) == null
-                  ? void 0
-                  : o.playlists) != null
-              ? c
-              : (d = t.relationships) == null
-                ? void 0
-                : d.artists) != null
-            ? f
-            : (y = t.relationships) == null
-              ? void 0
-              : y.catalog) == null
-          ? void 0
-          : P.data) == null
-        ? void 0
-        : u[0],
-    e = n.resource(s);
+function z(t, r, n) {
+  const i = O(t.type, n);
+  if (!i) return null;
+  const s = (
+      t.relationships?.albums ??
+      t.relationships?.playlists ??
+      t.relationships?.artists ??
+      t.relationships?.catalog
+    )?.data?.[0],
+    e = r.resource(s);
   if (!e) return null;
-  switch (r) {
-    case g.Artist:
-      return L(t, i);
-    case g.Song:
-      return L(e, i);
+  switch (i) {
+    case c.Artist:
+      return f(t, n);
+    case c.Song:
+      return f(e, n);
     default:
       return null;
   }
 }
-async function st(t, n, i) {
-  var F, p, D, C, S, T, N, v, x, U;
-  const r = L(t, i),
-    s = rt(t, n, i),
-    e = n.resource(
-      (D = (p = (F = t.relationships) == null ? void 0 : F.catalog) == null ? void 0 : p.data) == null ? void 0 : D[0],
-    ),
-    a = {
-      ...((C = t.attributes) == null ? void 0 : C.artwork),
-      ...((S = e == null ? void 0 : e.attributes) == null ? void 0 : S.artwork),
-    },
-    o = a != null && a.url ? B(a) : null,
-    l = (T = t.attributes) == null ? void 0 : T.name,
-    d = (N = t.meta.libraryPin) == null ? void 0 : N.positionUUID,
-    c = (v = t.meta.libraryPin) == null ? void 0 : v.action,
-    y = (x = t.attributes) == null ? void 0 : x.canEdit,
-    f = O(t.attributes),
-    P = (U = t.attributes) == null ? void 0 : U.hasCatalog;
-  let u = [r];
-  r.kind === g.Artist && (u = await it(r, i));
-  const k = A("play", u, s, i),
-    q = A("shuffle", u, s, i);
+async function Q(t, r, n) {
+  const i = f(t, n),
+    s = z(t, r, n),
+    e = r.resource(t.relationships?.catalog?.data?.[0]),
+    a = { ...t.attributes?.artwork, ...e?.attributes?.artwork },
+    u = a?.url ? C(a) : null,
+    d = t.attributes?.name,
+    E = t.meta.libraryPin?.positionUUID,
+    w = t.meta.libraryPin?.action,
+    q = t.attributes?.canEdit,
+    F = S(t.attributes),
+    D = t.attributes?.hasCatalog;
+  let o = [i];
+  i.kind === c.Artist && (o = await J(i, n));
+  const p = l("play", o, s, n),
+    R = l("shuffle", o, s, n);
   return {
     id: t.id,
     href: t.href,
-    kind: r.kind,
-    artwork: o,
-    canEdit: y,
-    action: c === "shuffle" ? q : k,
-    defaultAction: c,
-    hasCatalog: P,
-    positionID: d,
-    segue: nt(r, s, i),
-    showExplicitBadge: f,
-    title: l,
-    playAction: k,
-    shuffleAction: q,
+    kind: i.kind,
+    artwork: u,
+    canEdit: q,
+    action: w === "shuffle" ? R : p,
+    defaultAction: w,
+    hasCatalog: D,
+    positionID: E,
+    segue: H(i, s, n),
+    showExplicitBadge: F,
+    title: d,
+    playAction: p,
+    shuffleAction: R,
     contextualMenuActions: {
-      playAction: A("play", u, s, i, !0),
-      playNextAction: A("playNext", u, s, i, !0),
-      playLastAction: A("playLast", u, s, i, !0),
-      shuffleAction: A("shuffle", u, s, i, !0),
+      playAction: l("play", o, s, n, !0),
+      playNextAction: l("playNext", o, s, n, !0),
+      playLastAction: l("playLast", o, s, n, !0),
+      shuffleAction: l("shuffle", o, s, n, !0),
     },
   };
 }
-async function at(t, n) {
-  var s;
-  const i = (s = t.body) == null ? void 0 : s.resources,
-    r = new K(i, n);
+async function W(t, r) {
+  const n = t.body?.resources,
+    i = new M(n, r);
   return Promise.all(
-    t.body.data.map((e) => {
-      const a = r.resource(e);
-      return st(a, r, n);
+    t.body.data.map((s) => {
+      const e = i.resource(s);
+      return Q(e, i, r);
     }),
   );
 }
-function w(t, n) {
-  return new h(`/v1/me/library/pins/${t}`, n);
+function A(t, r) {
+  return new k(`/v1/me/library/pins/${t}`, r);
 }
-function b(t, n) {
-  return new Promise((i, r) => {
-    const s = n.required(E);
+function P(t, r) {
+  return new Promise((n, i) => {
+    const s = r.required(L);
     (async function e() {
       try {
-        const a = await et(n);
+        const a = await X(r);
         if (a.body.data) {
-          const o = await at(a, n);
-          if (t != null && t.call(null, o)) return i(a);
+          const u = await W(a, r);
+          if (t?.call(null, u)) return n(a);
         }
-      } catch (a) {
-        return (s.error("Failed getting library pins"), r("Failed getting library pins"));
+      } catch {
+        return (s.error("Failed getting library pins"), i("Failed getting library pins"));
       }
-      setTimeout(e, tt);
+      setTimeout(e, V);
     })();
   });
 }
-function I(t, n, i) {
-  const r = i.required(E);
-  return (t == null ? void 0 : t.statusCode) > 299
-    ? (r.error(`Non 200 status code from ${n} response. Status code: ${t.statusCode}`), !0)
+function g(t, r, n) {
+  const i = n.required(L);
+  return t?.statusCode > 299
+    ? (i.error(`Non 200 status code from ${r} response. Status code: ${t.statusCode}`), !0)
     : !1;
 }
-async function et(t) {
-  const n = new h("/v1/me/library/pins", t);
-  n.queryString.addParameters({
+async function X(t) {
+  const r = new k("/v1/me/library/pins", t);
+  r.queryString.addParameters({
     meta: "libraryPin",
-    limit: G.toString(),
+    limit: Y.toString(),
     "include[library-songs]": "albums,playlists,artists",
     "include[library-music-videos]": "albums,playlists,artists",
     "include[library-artists]": "catalog",
     "fields[artists]": "artwork",
   });
-  const i = await m({ url: n.string }, t),
-    r = t.required(E);
-  if (j(i, r, "Get Library Pin")) throw new Error("Request to Music API failed: Get Library Pin");
-  return i;
+  const n = await y({ url: r.string }, t),
+    i = t.required(L);
+  if ($(n, i, "Get Library Pin")) throw new Error("Request to Music API failed: Get Library Pin");
+  return n;
 }
-async function ut(t, n) {
-  const i = await m({ url: w(t, n).string, body: "", method: "POST" }, n);
-  if (I(i, "Add Library Pin", n)) throw new Error("Request to Music API failed: Add Library Pin");
-  return b((r) => r.some((s) => s.id === t), n);
+async function G(t, r) {
+  const n = await y({ url: A(t, r).string, body: "", method: "POST" }, r);
+  if (g(n, "Add Library Pin", r)) throw new Error("Request to Music API failed: Add Library Pin");
+  return P((i) => i.some((s) => s.id === t), r);
 }
-async function lt(t, n, i) {
-  const r = w(t, i);
-  r.queryString.addParameters({ action: n });
-  const s = await m({ url: r.string, method: "PATCH" }, i);
-  if (I(s, "Move Library Pin", i)) throw new Error("Request to Music API failed: Add Library Pin");
-  return b((e) => e.some((a) => a.id === t && a.defaultAction === n), i);
+async function j(t, r, n) {
+  const i = A(t, n);
+  i.queryString.addParameters({ action: r });
+  const s = await y({ url: i.string, method: "PATCH" }, n);
+  if (g(s, "Move Library Pin", n)) throw new Error("Request to Music API failed: Add Library Pin");
+  return P((e) => e.some((a) => a.id === t && a.defaultAction === r), n);
 }
-async function ct(t, n, i) {
-  const r = w(t, i);
-  r.queryString.addParameters({ after: n != null ? n : "top" });
-  const s = await m({ url: r.string, method: "POST" }, i);
-  if (I(s, "Move Library Pin", i)) throw new Error("Request to Music API failed: Add Library Pin");
-  return b((e) => !0, i);
+async function tt(t, r, n) {
+  const i = A(t, n);
+  i.queryString.addParameters({ after: r ?? "top" });
+  const s = await y({ url: i.string, method: "POST" }, n);
+  if (g(s, "Move Library Pin", n)) throw new Error("Request to Music API failed: Add Library Pin");
+  return P((e) => !0, n);
 }
-async function dt(t, n) {
-  const i = w(t, n),
-    r = await m({ url: i.string, method: "DELETE" }, n);
-  if (I(r, "Delete Library Pin", n)) throw new Error("Request to Music API failed: Delete Library Pin");
-  return b((s) => !s.some((e) => e.id === t), n);
+async function nt(t, r) {
+  const n = A(t, r),
+    i = await y({ url: n.string, method: "DELETE" }, r);
+  if (g(i, "Delete Library Pin", r)) throw new Error("Request to Music API failed: Delete Library Pin");
+  return P((s) => !s.some((e) => e.id === t), r);
 }
-export { ut as a, dt as b, ct as c, lt as d, at as m, et as r };
+export { G as a, nt as b, tt as c, j as d, W as m, X as r };

@@ -2,48 +2,48 @@ import {
   S as be,
   i as ke,
   n as ve,
-  bs as J,
-  I as K,
-  e as z,
+  bB as Y,
+  I as j,
+  e as E,
   s as ee,
-  a as D,
-  b as q,
-  g as R,
+  a as V,
+  b as U,
+  g as C,
   d as te,
-  h as M,
-  j as S,
-  k as F,
-  l as G,
+  h as P,
+  j as R,
+  k as z,
+  l as O,
   p as ie,
   o as X,
-  bt as Ne,
-  bu as we,
+  bC as Ne,
+  bD as we,
   u as le,
-  bv as ye,
-  bw as Re,
+  bE as ye,
+  bF as Ce,
   w as oe,
   r as I,
   v as H,
-  y as We,
-  z as Ye,
-  bx as Ce,
-  by as re,
-  W as Se,
-  Y as je,
-  H as p,
-  bz as Ie,
-  bA as He,
-  bB as Le,
-  bC as Pe,
-  J as O,
-  bD as Ee,
-  c as Me,
+  y as Je,
+  z as Ke,
+  bG as Re,
+  bH as re,
+  W as Ie,
+  Y as We,
+  H as g,
+  bI as Se,
+  bJ as He,
+  bK as Le,
+  bL as Pe,
+  J as G,
+  bM as Me,
+  c as Ee,
   f as Ve,
   m as ze,
   x as De,
-  bE as Je,
-  bF as ae,
-  bG as Ke,
+  bN as Ye,
+  bO as ae,
+  bP as je,
   a7 as Ze,
 } from "./main.js";
 import { s as ce } from "./splitIntoChunks.js";
@@ -62,12 +62,12 @@ const Qe = (o) => ({ item: o[0] & 128 }),
   Xe = (o) => ({ item: o[0] & 1 }),
   _e = (o) => ({ item: o[45] });
 function xe(o) {
-  return { c: p, l: p, m: p, p, i: p, o: p, d: p };
+  return { c: g, l: g, m: g, p: g, i: g, o: g, d: g };
 }
 function $e(o) {
   let t;
   const l = o[29].itemComponent,
-    e = Ie(l, o, o[28], _e);
+    e = Se(l, o, o[28], _e);
   return {
     c() {
       e && e.c();
@@ -93,7 +93,7 @@ function $e(o) {
   };
 }
 function et(o) {
-  return { c: p, l: p, m: p, p, i: p, o: p, d: p };
+  return { c: g, l: g, m: g, p: g, i: g, o: g, d: g };
 }
 function tt(o) {
   let t,
@@ -101,19 +101,19 @@ function tt(o) {
       '<div data-testid="placeholder-artwork" class="placeholder-artwork svelte-42hu87"></div> <div class="placeholder-details svelte-42hu87"></div>';
   return {
     c() {
-      ((t = z("div")), (t.innerHTML = l));
+      ((t = E("div")), (t.innerHTML = l));
     },
     l(e) {
-      ((t = D(e, "DIV", { ["data-svelte-h"]: !0 })), Ee(t) !== "svelte-1alm0pv" && (t.innerHTML = l));
+      ((t = V(e, "DIV", { ["data-svelte-h"]: !0 })), Me(t) !== "svelte-1alm0pv" && (t.innerHTML = l));
     },
     m(e, n) {
-      F(e, t, n);
+      z(e, t, n);
     },
-    p,
-    i: p,
-    o: p,
+    p: g,
+    i: g,
+    o: g,
     d(e) {
-      e && R(t);
+      e && C(t);
     },
   };
 }
@@ -123,13 +123,13 @@ function lt(o) {
     e = o[45] && me(o);
   return {
     c() {
-      (e && e.c(), (t = O()));
+      (e && e.c(), (t = G()));
     },
     l(n) {
-      (e && e.l(n), (t = O()));
+      (e && e.l(n), (t = G()));
     },
     m(n, s) {
-      (e && e.m(n, s), F(n, t, s), (l = !0));
+      (e && e.m(n, s), z(n, t, s), (l = !0));
     },
     p(n, s) {
       n[45]
@@ -150,14 +150,14 @@ function lt(o) {
       (H(e), (l = !1));
     },
     d(n) {
-      (n && R(t), e && e.d(n));
+      (n && C(t), e && e.d(n));
     },
   };
 }
 function me(o) {
   let t;
   const l = o[29].itemComponent,
-    e = Ie(l, o, o[28], fe);
+    e = Se(l, o, o[28], fe);
   return {
     c() {
       e && e.c();
@@ -188,19 +188,19 @@ function ot(o) {
       '<div data-testid="placeholder-artwork" class="placeholder-artwork svelte-42hu87"></div> <div class="placeholder-details svelte-42hu87"></div>';
   return {
     c() {
-      ((t = z("div")), (t.innerHTML = l));
+      ((t = E("div")), (t.innerHTML = l));
     },
     l(e) {
-      ((t = D(e, "DIV", { ["data-svelte-h"]: !0 })), Ee(t) !== "svelte-1alm0pv" && (t.innerHTML = l));
+      ((t = V(e, "DIV", { ["data-svelte-h"]: !0 })), Me(t) !== "svelte-1alm0pv" && (t.innerHTML = l));
     },
     m(e, n) {
-      F(e, t, n);
+      z(e, t, n);
     },
-    p,
-    i: p,
-    o: p,
+    p: g,
+    i: g,
+    o: g,
     d(e) {
-      e && R(t);
+      e && C(t);
     },
   };
 }
@@ -221,42 +221,42 @@ function de(o, t) {
       blocks: [, , ,],
     };
   return (
-    J((n = t[42]), a),
+    Y((n = t[42]), a),
     {
       key: o,
       first: null,
       c() {
-        ((l = O()), (e = O()), a.block.c(), this.h());
+        ((l = G()), (e = G()), a.block.c(), this.h());
       },
-      l(h) {
-        ((l = O()), (e = O()), a.block.l(h), this.h());
+      l(f) {
+        ((l = G()), (e = G()), a.block.l(f), this.h());
       },
       h() {
         this.first = l;
       },
-      m(h, i) {
-        (F(h, l, i),
-          F(h, e, i),
-          a.block.m(h, (a.anchor = i)),
+      m(f, i) {
+        (z(f, l, i),
+          z(f, e, i),
+          a.block.m(f, (a.anchor = i)),
           (a.mount = () => e.parentNode),
           (a.anchor = e),
           (s = !0));
       },
-      p(h, i) {
-        ((t = h), (a.ctx = t), (i[0] & 128 && n !== (n = t[42]) && J(n, a)) || we(a, t, i));
+      p(f, i) {
+        ((t = f), (a.ctx = t), (i[0] & 128 && n !== (n = t[42]) && Y(n, a)) || we(a, t, i));
       },
-      i(h) {
+      i(f) {
         s || (I(a.block), (s = !0));
       },
-      o(h) {
+      o(f) {
         for (let i = 0; i < 3; i += 1) {
-          const v = a.blocks[i];
-          H(v);
+          const k = a.blocks[i];
+          H(k);
         }
         s = !1;
       },
-      d(h) {
-        (h && (R(l), R(e)), a.block.d(h), (a.token = null), (a = null));
+      d(f) {
+        (f && (C(l), C(e)), a.block.d(f), (a.token = null), (a = null));
       },
     }
   );
@@ -267,81 +267,80 @@ function ge(o, t) {
     n = new Map(),
     s,
     a = `${t[39]}px`,
-    h = `${t[2]}px`,
+    f = `${t[2]}px`,
     i,
-    v = K(t[38].rowItems);
-  const y = (f) => f[42];
-  for (let f = 0; f < v.length; f += 1) {
-    let c = he(t, v, f),
-      g = y(c);
-    n.set(g, (e[f] = de(g, c)));
+    k = j(t[38].rowItems);
+  const y = (h) => h[42];
+  for (let h = 0; h < k.length; h += 1) {
+    let c = he(t, k, h),
+      d = y(c);
+    n.set(d, (e[h] = de(d, c)));
   }
   return {
     key: o,
     first: null,
     c() {
-      l = z("div");
-      for (let f = 0; f < e.length; f += 1) e[f].c();
+      l = E("div");
+      for (let h = 0; h < e.length; h += 1) e[h].c();
       ((s = ee()), this.h());
     },
-    l(f) {
-      l = D(f, "DIV", { class: !0, "data-testid": !0 });
-      var c = q(l);
-      for (let g = 0; g < e.length; g += 1) e[g].l(c);
-      ((s = te(c)), c.forEach(R), this.h());
+    l(h) {
+      l = V(h, "DIV", { class: !0, "data-testid": !0 });
+      var c = U(l);
+      for (let d = 0; d < e.length; d += 1) e[d].l(c);
+      ((s = te(c)), c.forEach(C), this.h());
     },
     h() {
-      (M(l, "class", "virtual-row svelte-42hu87"),
-        M(l, "data-testid", "lockup-virtual-scrolling-row"),
-        S(l, "contain", "strict"),
-        S(l, "top", a),
-        S(l, "height", h),
+      (P(l, "class", "virtual-row svelte-42hu87"),
+        P(l, "data-testid", "lockup-virtual-scrolling-row"),
+        R(l, "contain", "strict"),
+        R(l, "top", a),
+        R(l, "height", f),
         (this.first = l));
     },
-    m(f, c) {
-      F(f, l, c);
-      for (let g = 0; g < e.length; g += 1) e[g] && e[g].m(l, null);
-      (G(l, s), (i = !0));
+    m(h, c) {
+      z(h, l, c);
+      for (let d = 0; d < e.length; d += 1) e[d] && e[d].m(l, null);
+      (O(l, s), (i = !0));
     },
-    p(f, c) {
-      ((t = f),
-        c[0] & 268435584 && ((v = K(t[38].rowItems)), le(), (e = ye(e, c, y, 1, t, v, n, l, Re, de, s, he)), oe()),
-        c[0] & 154 && a !== (a = `${t[39]}px`) && S(l, "top", a),
-        c[0] & 4 && h !== (h = `${t[2]}px`) && S(l, "height", h));
+    p(h, c) {
+      ((t = h),
+        c[0] & 268435584 && ((k = j(t[38].rowItems)), le(), (e = ye(e, c, y, 1, t, k, n, l, Ce, de, s, he)), oe()),
+        c[0] & 154 && a !== (a = `${t[39]}px`) && R(l, "top", a),
+        c[0] & 4 && f !== (f = `${t[2]}px`) && R(l, "height", f));
     },
-    i(f) {
+    i(h) {
       if (!i) {
-        for (let c = 0; c < v.length; c += 1) I(e[c]);
+        for (let c = 0; c < k.length; c += 1) I(e[c]);
         i = !0;
       }
     },
-    o(f) {
+    o(h) {
       for (let c = 0; c < e.length; c += 1) H(e[c]);
       i = !1;
     },
-    d(f) {
-      f && R(l);
+    d(h) {
+      h && C(l);
       for (let c = 0; c < e.length; c += 1) e[c].d();
     },
   };
 }
 function nt(o) {
-  var T;
   let t,
     l,
     e,
     n,
     s,
     a,
-    h,
+    f,
     i = [],
-    v = new Map(),
+    k = new Map(),
     y = `${o[5]}px`,
-    f = `${o[1]}px`,
+    h = `${o[1]}px`,
     c,
-    g,
-    N,
-    b = {
+    d,
+    q,
+    p = {
       ctx: o,
       current: null,
       token: null,
@@ -352,113 +351,111 @@ function nt(o) {
       value: 45,
       blocks: [, , ,],
     };
-  J((a = (T = o[0][0]) != null ? T : o[8](0)), b);
-  let w = K(o[7]);
+  Y((a = o[0][0] ?? o[8](0)), p);
+  let w = j(o[7]);
   const L = (m) => m[38].id;
   for (let m = 0; m < w.length; m += 1) {
     let u = ue(o, w, m),
-      d = L(u);
-    v.set(d, (i[m] = ge(d, u)));
+      b = L(u);
+    k.set(b, (i[m] = ge(b, u)));
   }
   return {
     c() {
-      ((t = z("div")), (l = z("div")), (e = z("div")), (n = ee()), (s = z("div")), b.block.c(), (h = ee()));
+      ((t = E("div")), (l = E("div")), (e = E("div")), (n = ee()), (s = E("div")), p.block.c(), (f = ee()));
       for (let m = 0; m < i.length; m += 1) i[m].c();
       this.h();
     },
     l(m) {
-      t = D(m, "DIV", { "data-testid": !0, class: !0, id: !0 });
-      var u = q(t);
-      l = D(u, "DIV", { "data-testid": !0, class: !0 });
-      var d = q(l);
-      ((e = D(d, "DIV", { class: !0 })), q(e).forEach(R), (n = te(d)), (s = D(d, "DIV", { class: !0 })));
-      var P = q(s);
-      (b.block.l(P), P.forEach(R), (h = te(d)));
-      for (let V = 0; V < i.length; V += 1) i[V].l(d);
-      (d.forEach(R), u.forEach(R), this.h());
+      t = V(m, "DIV", { "data-testid": !0, class: !0, id: !0 });
+      var u = U(t);
+      l = V(u, "DIV", { "data-testid": !0, class: !0 });
+      var b = U(l);
+      ((e = V(b, "DIV", { class: !0 })), U(e).forEach(C), (n = te(b)), (s = V(b, "DIV", { class: !0 })));
+      var D = U(s);
+      (p.block.l(D), D.forEach(C), (f = te(b)));
+      for (let M = 0; M < i.length; M += 1) i[M].l(b);
+      (b.forEach(C), u.forEach(C), this.h());
     },
     h() {
-      (M(e, "class", "spacer svelte-42hu87"),
-        M(s, "class", "virtual-row svelte-42hu87"),
-        S(s, "visibility", "hidden"),
-        S(s, "contain", "content"),
-        M(l, "data-testid", "virtual-rows"),
-        M(l, "class", "virtual-rows svelte-42hu87"),
-        S(l, "min-height", y),
-        M(t, "data-testid", "lockup-virtual-scrolling-component"),
-        M(t, "class", "scrollable-container svelte-42hu87"),
-        M(t, "id", "scrollable-page-override"),
-        S(t, "--topSpacerHeight", f));
+      (P(e, "class", "spacer svelte-42hu87"),
+        P(s, "class", "virtual-row svelte-42hu87"),
+        R(s, "visibility", "hidden"),
+        R(s, "contain", "content"),
+        P(l, "data-testid", "virtual-rows"),
+        P(l, "class", "virtual-rows svelte-42hu87"),
+        R(l, "min-height", y),
+        P(t, "data-testid", "lockup-virtual-scrolling-component"),
+        P(t, "class", "scrollable-container svelte-42hu87"),
+        P(t, "id", "scrollable-page-override"),
+        R(t, "--topSpacerHeight", h));
     },
     m(m, u) {
-      (F(m, t, u),
-        G(t, l),
-        G(l, e),
-        G(l, n),
-        G(l, s),
-        b.block.m(s, (b.anchor = null)),
-        (b.mount = () => s),
-        (b.anchor = null),
-        G(l, h));
-      for (let d = 0; d < i.length; d += 1) i[d] && i[d].m(l, null);
+      (z(m, t, u),
+        O(t, l),
+        O(l, e),
+        O(l, n),
+        O(l, s),
+        p.block.m(s, (p.anchor = null)),
+        (p.mount = () => s),
+        (p.anchor = null),
+        O(l, f));
+      for (let b = 0; b < i.length; b += 1) i[b] && i[b].m(l, null);
       (o[30](t),
         (c = !0),
-        g ||
-          ((N = [
+        d ||
+          ((q = [
             ie(o[9].call(null, s)),
             X(s, "virtualScrollResize", o[12]),
             X(t, "scroll", Ne(o[10], 10)),
             ie(o[9].call(null, t)),
             X(t, "virtualScrollResize", o[11]),
           ]),
-          (g = !0)));
+          (d = !0)));
     },
     p(m, u) {
-      var d;
       ((o = m),
-        (b.ctx = o),
-        (u[0] & 1 && a !== (a = (d = o[0][0]) != null ? d : o[8](0)) && J(a, b)) || we(b, o, u),
-        u[0] & 268435614 && ((w = K(o[7])), le(), (i = ye(i, u, L, 1, o, w, v, l, Re, ge, null, ue)), oe()),
-        u[0] & 32 && y !== (y = `${o[5]}px`) && S(l, "min-height", y),
-        u[0] & 2 && f !== (f = `${o[1]}px`) && S(t, "--topSpacerHeight", f));
+        (p.ctx = o),
+        (u[0] & 1 && a !== (a = o[0][0] ?? o[8](0)) && Y(a, p)) || we(p, o, u),
+        u[0] & 268435614 && ((w = j(o[7])), le(), (i = ye(i, u, L, 1, o, w, k, l, Ce, ge, null, ue)), oe()),
+        u[0] & 32 && y !== (y = `${o[5]}px`) && R(l, "min-height", y),
+        u[0] & 2 && h !== (h = `${o[1]}px`) && R(t, "--topSpacerHeight", h));
     },
     i(m) {
       if (!c) {
-        I(b.block);
+        I(p.block);
         for (let u = 0; u < w.length; u += 1) I(i[u]);
         c = !0;
       }
     },
     o(m) {
       for (let u = 0; u < 3; u += 1) {
-        const d = b.blocks[u];
-        H(d);
+        const b = p.blocks[u];
+        H(b);
       }
       for (let u = 0; u < i.length; u += 1) H(i[u]);
       c = !1;
     },
     d(m) {
-      (m && R(t), b.block.d(), (b.token = null), (b = null));
+      (m && C(t), p.block.d(), (p.token = null), (p = null));
       for (let u = 0; u < i.length; u += 1) i[u].d();
-      (o[30](null), (g = !1), We(N));
+      (o[30](null), (d = !1), Je(q));
     },
   };
 }
 const x =
     typeof window < "u" && window.ResizeObserver
       ? new window.ResizeObserver((o) => {
-          var t;
-          for (const l of o) {
-            const e = (t = l == null ? void 0 : l.borderBoxSize[0].blockSize) != null ? t : l.contentRect.height,
-              n = window.getComputedStyle(l.target),
-              s = parseInt(n.getPropertyValue("--virtualRowColumns")),
-              a = parseInt(n.getPropertyValue("--virtualRowGridGap")),
-              h = new CustomEvent("virtualScrollResize", { detail: { height: e, columns: s, gap: a } });
-            l.target.dispatchEvent(h);
+          for (const t of o) {
+            const l = t?.borderBoxSize[0].blockSize ?? t.contentRect.height,
+              e = window.getComputedStyle(t.target),
+              n = parseInt(e.getPropertyValue("--virtualRowColumns")),
+              s = parseInt(e.getPropertyValue("--virtualRowGridGap")),
+              a = new CustomEvent("virtualScrollResize", { detail: { height: l, columns: n, gap: s } });
+            t.target.dispatchEvent(a);
           }
         })
       : null,
-  A = 100,
+  T = 100,
   pe = 500,
   $ = 2e3;
 function st(o, t, l) {
@@ -466,74 +463,67 @@ function st(o, t, l) {
     n,
     s,
     a,
-    h,
-    i,
-    v,
-    y,
     f,
+    i,
+    k,
+    y,
+    h,
     c,
-    g,
-    { $$slots: N = {}, $$scope: b } = t,
+    d,
+    { $$slots: q = {}, $$scope: p } = t,
     { items: w = [] } = t,
     { total: L = 0 } = t,
-    { getPage: T } = t,
-    { log: m } = t;
-  const u = Ye();
-  let { topSpacerHeight: d = 32 } = t,
-    P,
-    V = 0,
-    W = 0,
+    { getPage: m } = t,
+    { log: u } = t;
+  const b = Ke();
+  let { topSpacerHeight: D = 32 } = t,
+    M,
+    N = 0,
+    J = 0,
     Z = 0,
     Q = 0,
-    Y = 0,
+    K = 0,
     ne = [],
-    B;
+    A;
   const se = (r) => {
       r.forEach((_) => {
-        _.forEach((k) => {
-          w[k] || U(k);
+        _.forEach((v) => {
+          w[v] || B(v);
         });
       });
     },
-    j = (r, _, k) => (r === "top" ? Math.floor : Math.ceil)(_ / k),
+    W = (r, _, v) => (r === "top" ? Math.floor : Math.ceil)(_ / v),
     Fe = (r, _) => {
       try {
         return ce(r, _);
-      } catch (k) {
+      } catch {
         return [[]];
       }
     },
-    Te = (r) =>
-      r.map((_, k) => ({
-        rowItems: _.map((C) => {
-          var E;
-          return (E = w[C]) != null ? E : U(C);
-        }),
-        id: `row-${v + k}`,
-      })),
-    U = async (r) => {
-      const _ = Math.floor(r / A),
-        k = r % A;
-      if (!B[_]) {
-        const C = _ * A;
-        B[_] = (async () => {
-          const { items: E } = await Ae(C);
-          return (u("pageUpdate", E), E);
+    Te = (r) => r.map((_, v) => ({ rowItems: _.map((S) => w[S] ?? B(S)), id: `row-${k + v}` })),
+    B = async (r) => {
+      const _ = Math.floor(r / T),
+        v = r % T;
+      if (!A[_]) {
+        const S = _ * T;
+        A[_] = (async () => {
+          const { items: F } = await Oe(S);
+          return (b("pageUpdate", F), F);
         })();
       }
       try {
-        const E = (await B[_])[k];
-        return (E && l(0, (w[r] = E), w), E);
-      } catch (C) {
-        return (delete B[_], null);
+        const F = (await A[_])[v];
+        return (F && l(0, (w[r] = F), w), F);
+      } catch {
+        return (delete A[_], null);
       }
     },
-    Ae = async (r) => {
+    Oe = async (r) => {
       try {
-        const { items: _, next: k, total: C } = (await T({ offset: r, limit: A })) || {};
-        return { items: _, next: k, total: C };
+        const { items: _, next: v, total: S } = (await m({ offset: r, limit: T })) || {};
+        return { items: _, next: v, total: S };
       } catch (_) {
-        return (m.error("Loading Library Items Failed", _), {});
+        return (u.error("Loading Library Items Failed", _), {});
       }
     },
     Ge = (r) => {
@@ -547,62 +537,62 @@ function st(o, t, l) {
           }
         );
     },
-    Oe = () => {
-      l(17, (W = P == null ? void 0 : P.scrollTop));
+    Ae = () => {
+      l(17, (J = M?.scrollTop));
     },
     Be = (r) => {
-      const { height: _, gap: k, columns: C } = r.detail;
-      (l(16, (V = _)), l(19, (Q = k)), l(18, (Z = C)));
+      const { height: _, gap: v, columns: S } = r.detail;
+      (l(16, (N = _)), l(19, (Q = v)), l(18, (Z = S)));
     },
     Ue = (r) => {
-      l(2, (Y = r.detail.height));
+      l(2, (K = r.detail.height));
     };
-  (Ce(() => {
+  (Re(() => {
     re.set(!0);
-    const r = A;
+    const r = T;
     if (!(L <= r))
       if (L <= pe) {
         const _ = Math.min(L, pe);
-        for (let k = r; k < _; k++) U(k);
-      } else U(r);
+        for (let v = r; v < _; v++) B(v);
+      } else B(r);
   }),
-    Se(() => {
+    Ie(() => {
       re.set(!1);
     }));
   function qe(r) {
-    je[r ? "unshift" : "push"](() => {
-      ((P = r), l(6, P));
+    We[r ? "unshift" : "push"](() => {
+      ((M = r), l(6, M));
     });
   }
   return (
     (o.$$set = (r) => {
       ("items" in r && l(0, (w = r.items)),
         "total" in r && l(13, (L = r.total)),
-        "getPage" in r && l(14, (T = r.getPage)),
-        "log" in r && l(15, (m = r.log)),
-        "topSpacerHeight" in r && l(1, (d = r.topSpacerHeight)),
-        "$$scope" in r && l(28, (b = r.$$scope)));
+        "getPage" in r && l(14, (m = r.getPage)),
+        "log" in r && l(15, (u = r.log)),
+        "topSpacerHeight" in r && l(1, (D = r.topSpacerHeight)),
+        "$$scope" in r && l(28, (p = r.$$scope)));
     }),
     (o.$$.update = () => {
       (o.$$.dirty[0] & 1 &&
-        (B = ce(w, A).map((r) => {
+        (A = ce(w, T).map((r) => {
           if (!r.some((_) => _ === null)) return new Promise((_) => _(r));
         })),
         o.$$.dirty[0] & 8193 && l(27, (e = [...Array(Math.max(w.length, L)).keys()])),
         o.$$.dirty[0] & 134479872 && l(22, (n = Fe(e, Z))),
-        o.$$.dirty[0] & 524292 && l(4, (s = Y > 0 ? Y + Q : null)),
-        o.$$.dirty[0] & 4194322 && l(5, (a = s * n.length + d)),
-        o.$$.dirty[0] & 131072 && l(26, (h = Math.max(0, W - $))),
-        o.$$.dirty[0] & 196640 && l(25, (i = Math.min(W + V + $, a))),
-        o.$$.dirty[0] & 67108880 && l(3, (v = j("top", h, s))),
-        o.$$.dirty[0] & 33554448 && l(21, (y = j("bottom", i, s))),
-        o.$$.dirty[0] & 6291464 && l(7, (ne = Te(n.slice(v, y)))),
-        o.$$.dirty[0] & 65536 && l(24, (f = V + 2 * $)),
-        o.$$.dirty[0] & 83886096 && l(23, (c = j("top", Math.max(0, h - f), s))),
-        o.$$.dirty[0] & 50331696 && l(20, (g = j("bottom", Math.min(i + f, a), s))),
-        o.$$.dirty[0] & 15728648 && c > 0 && g > 0 && (se(n.slice(c, v)), se(n.slice(y, g))));
+        o.$$.dirty[0] & 524292 && l(4, (s = K > 0 ? K + Q : null)),
+        o.$$.dirty[0] & 4194322 && l(5, (a = s * n.length + D)),
+        o.$$.dirty[0] & 131072 && l(26, (f = Math.max(0, J - $))),
+        o.$$.dirty[0] & 196640 && l(25, (i = Math.min(J + N + $, a))),
+        o.$$.dirty[0] & 67108880 && l(3, (k = W("top", f, s))),
+        o.$$.dirty[0] & 33554448 && l(21, (y = W("bottom", i, s))),
+        o.$$.dirty[0] & 6291464 && l(7, (ne = Te(n.slice(k, y)))),
+        o.$$.dirty[0] & 65536 && l(24, (h = N + 2 * $)),
+        o.$$.dirty[0] & 83886096 && l(23, (c = W("top", Math.max(0, f - h), s))),
+        o.$$.dirty[0] & 50331696 && l(20, (d = W("bottom", Math.min(i + h, a), s))),
+        o.$$.dirty[0] & 15728648 && c > 0 && d > 0 && (se(n.slice(c, k)), se(n.slice(y, d))));
     }),
-    [w, d, Y, v, s, a, P, ne, U, Ge, Oe, Be, Ue, L, T, m, V, W, Z, Q, g, y, n, c, f, i, h, e, b, N, qe]
+    [w, D, K, k, s, a, M, ne, B, Ge, Ae, Be, Ue, L, m, u, N, J, Z, Q, d, y, n, c, h, i, f, e, p, q, qe]
   );
 }
 class it extends be {
@@ -614,10 +604,10 @@ class it extends be {
 function rt(o) {
   let t, l;
   return (
-    (t = new Ke({ props: { item: o[5] } })),
+    (t = new je({ props: { item: o[5] } })),
     {
       c() {
-        Me(t.$$.fragment);
+        Ee(t.$$.fragment);
       },
       l(e) {
         Ve(t.$$.fragment, e);
@@ -658,7 +648,7 @@ function at(o) {
     t.$on("pageUpdate", o[4]),
     {
       c() {
-        Me(t.$$.fragment);
+        Ee(t.$$.fragment);
       },
       l(e) {
         Ve(t.$$.fragment, e);
@@ -687,17 +677,17 @@ function at(o) {
   );
 }
 function ct(o, t, l) {
-  const e = Je("<LockupVirtualScroll>");
+  const e = Ye("<LockupVirtualScroll>");
   let { items: n } = t,
     { getPage: s } = t,
     { total: a } = t;
-  (Ce(() => {
+  (Re(() => {
     ae.set(!0);
   }),
-    Se(() => {
+    Ie(() => {
       ae.set(!1);
     }));
-  function h(i) {
+  function f(i) {
     Ze.call(this, o, i);
   }
   return (
@@ -706,7 +696,7 @@ function ct(o, t, l) {
         "getPage" in i && l(1, (s = i.getPage)),
         "total" in i && l(2, (a = i.total)));
     }),
-    [n, s, a, e, h]
+    [n, s, a, e, f]
   );
 }
 class ft extends be {

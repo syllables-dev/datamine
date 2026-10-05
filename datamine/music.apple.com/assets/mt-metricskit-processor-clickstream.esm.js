@@ -932,7 +932,7 @@ V.prototype.flattenImpressions = function (t, e) {
               I = decodeURIComponent(c.data);
               try {
                 g = JSON.parse(I);
-              } catch (J) {
+              } catch {
                 this._processor.system.logger.error(
                   "mt-metricskit-processor-clickstream: non-JSON serialized data found on impression object. Cannot parse.",
                   S,

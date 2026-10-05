@@ -268,7 +268,7 @@ const B = (p, e, s) => (p || "").replace(new RegExp(e, "g"), s),
             if (this.upsellData)
               try {
                 return JSON.parse(this.upsellData);
-              } catch (i) {
+              } catch {
                 return null;
               }
             const e = () => {

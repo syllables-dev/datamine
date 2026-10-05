@@ -2,40 +2,37 @@
   "endpoints": {
     "{apiBase}/me/storefront": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [
-        "Authorization",
-        "Media-User-Token"
+        "Authorization"
       ],
       "methods": [],
       "params": {}
     },
     "{iTunesBuyBase}/account/web/info": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [
-        "Authorization",
-        "Media-User-Token"
+        "Authorization"
       ],
       "methods": [],
       "params": {}
     },
     "{iTunesBuyBase}/account/web/infoRefresh": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [
-        "Authorization",
-        "Media-User-Token"
+        "Authorization"
       ],
       "methods": [],
       "params": {}
     },
     "{iTunesBuyBase}/account/web/logout": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -43,7 +40,7 @@
     },
     "{iTunesBuyBase}/commerce/web/subscription/offers/music": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [
         "Authorization",
@@ -55,8 +52,8 @@
     },
     "{metricsUrl}/{}/{}": {
       "chunks": [
-        "mt-metricskit-delegates-web.esm.js",
-        "musickit.js"
+        "dev.js",
+        "mt-metricskit-delegates-web.esm.js"
       ],
       "headers": [],
       "methods": [],
@@ -64,7 +61,7 @@
     },
     "{playBase}/renewMusicToken": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [
         "Accept",
@@ -75,6 +72,14 @@
       "methods": [
         "POST"
       ],
+      "params": {}
+    },
+    "{playBase}/webPlayerLogout": {
+      "chunks": [
+        "dev.js"
+      ],
+      "headers": [],
+      "methods": [],
       "params": {}
     },
     "{url}/{}": {
@@ -111,7 +116,7 @@
     },
     "/v1/{}/{}": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -191,7 +196,7 @@
     },
     "/v1/catalog/{}/{}s": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -416,8 +421,8 @@
     },
     "/v1/catalog/{}/stations/{}": {
       "chunks": [
-        "main.js",
-        "musickit.js"
+        "dev.js",
+        "main.js"
       ],
       "headers": [],
       "methods": [
@@ -538,7 +543,7 @@
     },
     "/v1/hls/anonymous/streaming-key-delivery": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -546,7 +551,7 @@
     },
     "/v1/hls/streaming-key-delivery": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -640,7 +645,7 @@
     },
     "/v1/me/library/{}s/": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -650,7 +655,7 @@
     },
     "/v1/me/library/{}s/{}": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -1092,7 +1097,7 @@
     },
     "/v1/me/stations/continuous": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [
@@ -1105,7 +1110,7 @@
     },
     "/v1/me/stations/next-tracks/{}": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [
@@ -1125,7 +1130,7 @@
     },
     "/v1/play/assets": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -1137,7 +1142,7 @@
     },
     "/v1/radio/streaming-key-delivery": {
       "chunks": [
-        "musickit.js"
+        "dev.js"
       ],
       "headers": [],
       "methods": [],
@@ -1224,18 +1229,8 @@
   "requestHeaders": {
     "Accept": [
       {
-        "chunk": "musickit.js",
-        "in": "_fetchMZPlayWebAsset",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{URL}"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit._webPlayerLogout",
+        "chunk": "dev.js",
+        "in": "_webPlayerLogout",
         "methods": [
           "POST"
         ],
@@ -1244,53 +1239,109 @@
         ]
       },
       {
-        "chunk": "musickit.js",
-        "in": "StoreKit.renewUserToken",
+        "chunk": "dev.js",
+        "in": "renewUserToken",
         "methods": [
           "POST"
         ],
         "targets": [
           "{playBase}/renewMusicToken"
         ]
+      },
+      {
+        "chunk": "dev.js",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{URL}"
+        ]
       }
     ],
     "Authorization": [
+      {
+        "chunk": "dev.js",
+        "in": "_webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "in": "fetchForCache"
+      },
+      {
+        "chunk": "dev.js",
+        "in": "infoRefresh",
+        "targets": [
+          "{iTunesBuyBase}/account/web/infoRefresh"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "in": "makeRequests",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "in": "musicSubscriptionOffers",
+        "targets": [
+          "{iTunesBuyBase}/commerce/web/subscription/offers/music"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "in": "renewUserToken",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{playBase}/renewMusicToken"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "in": "requestStorefrontCountryCode",
+        "targets": [
+          "{apiBase}/me/storefront"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{URL}"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "targets": [
+          "{iTunesBuyBase}/account/web/info"
+        ]
+      },
+      {
+        "chunk": "dev.js"
+      },
       {
         "chunk": "main.js",
         "in": "headers"
       },
       {
         "chunk": "musickit.js",
-        "in": "_fetchMZPlayWebAsset",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{URL}"
-        ]
-      },
+        "in": "headers"
+      }
+    ],
+    "Content-Type": [
       {
-        "chunk": "musickit.js",
-        "in": "_fetchStorefronts"
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "MKManifestManager.fetchForCache"
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "PlayActivitySender.headers"
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "Reflector.makeRequests",
-        "methods": [
-          "POST"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit._webPlayerLogout",
+        "chunk": "dev.js",
+        "in": "_webPlayerLogout",
         "methods": [
           "POST"
         ],
@@ -1299,22 +1350,12 @@
         ]
       },
       {
-        "chunk": "musickit.js",
-        "in": "StoreKit.infoRefresh",
-        "targets": [
-          "{iTunesBuyBase}/account/web/infoRefresh"
-        ]
+        "chunk": "dev.js",
+        "in": "constructor"
       },
       {
-        "chunk": "musickit.js",
-        "in": "StoreKit.musicSubscriptionOffers",
-        "targets": [
-          "{iTunesBuyBase}/commerce/web/subscription/offers/music"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit.renewUserToken",
+        "chunk": "dev.js",
+        "in": "renewUserToken",
         "methods": [
           "POST"
         ],
@@ -1323,20 +1364,27 @@
         ]
       },
       {
-        "chunk": "musickit.js",
-        "in": "StoreKit.requestStorefrontCountryCode",
+        "chunk": "dev.js",
+        "in": "sendEventsViaFetch",
+        "methods": [
+          "POST"
+        ],
         "targets": [
-          "{apiBase}/me/storefront"
+          "{metricsUrl}"
         ]
       },
       {
-        "chunk": "musickit.js",
+        "chunk": "dev.js",
+        "methods": [
+          "POST"
+        ],
         "targets": [
-          "{iTunesBuyBase}/account/web/info"
+          "{URL}"
         ]
-      }
-    ],
-    "Content-Type": [
+      },
+      {
+        "chunk": "dev.js"
+      },
       {
         "chunk": "index-1.js",
         "in": "queryOnce"
@@ -1383,55 +1431,7 @@
       },
       {
         "chunk": "musickit.js",
-        "in": "_fetchMZPlayWebAsset",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{URL}"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "makeAjaxRequest"
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "MediaAPIRequest.constructor"
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "PlayActivitySender.headers"
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "sendEventsViaFetch",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{metricsUrl}"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit._webPlayerLogout",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{logoutURL}"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit.renewUserToken",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{playBase}/renewMusicToken"
-        ]
+        "in": "headers"
       }
     ],
     "Data-Trace-Tag": [
@@ -1441,56 +1441,26 @@
       },
       {
         "chunk": "musickit.js",
-        "in": "PlayActivitySender.headers"
+        "in": "headers"
       }
     ],
     "Media-User-Token": [
       {
-        "chunk": "musickit.js",
+        "chunk": "dev.js",
         "in": "createRequest",
         "methods": [
           "GET"
         ]
       },
       {
-        "chunk": "musickit.js",
-        "in": "MKManifestManager.fetchForCache"
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit._webPlayerLogout",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{logoutURL}"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit.infoRefresh",
-        "targets": [
-          "{iTunesBuyBase}/account/web/infoRefresh"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit.requestStorefrontCountryCode",
-        "targets": [
-          "{apiBase}/me/storefront"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "targets": [
-          "{iTunesBuyBase}/account/web/info"
-        ]
+        "chunk": "dev.js",
+        "in": "fetchForCache"
       }
     ],
     "Music-User-Token": [
       {
-        "chunk": "musickit.js",
-        "in": "StoreKit.musicSubscriptionOffers",
+        "chunk": "dev.js",
+        "in": "musicSubscriptionOffers",
         "targets": [
           "{iTunesBuyBase}/commerce/web/subscription/offers/music"
         ]
@@ -1498,8 +1468,8 @@
     ],
     "Range": [
       {
-        "chunk": "musickit.js",
-        "in": "ByteRangeSegment.load"
+        "chunk": "dev.js",
+        "in": "load"
       }
     ],
     "Retry-After": [
@@ -1515,54 +1485,41 @@
         "chunk": "index-2.js"
       }
     ],
-    "X-Apple-Media-User-Token": [
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit._webPlayerLogout",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{logoutURL}"
-        ]
-      }
-    ],
     "X-Apple-Music-User-Token": [
       {
-        "chunk": "musickit.js",
-        "in": "_fetchMZPlayWebAsset",
-        "methods": [
-          "POST"
-        ],
-        "targets": [
-          "{URL}"
-        ]
-      },
-      {
-        "chunk": "musickit.js",
-        "in": "StoreKit.renewUserToken",
+        "chunk": "dev.js",
+        "in": "renewUserToken",
         "methods": [
           "POST"
         ],
         "targets": [
           "{playBase}/renewMusicToken"
         ]
+      },
+      {
+        "chunk": "dev.js",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{URL}"
+        ]
       }
     ],
     "X-Apple-Renewal": [
       {
-        "chunk": "musickit.js",
-        "in": "BaseLicenseManager.createChallengeHeaders"
+        "chunk": "dev.js",
+        "in": "createChallengeHeaders"
       },
       {
-        "chunk": "musickit.js",
-        "in": "License.fetch"
+        "chunk": "dev.js",
+        "in": "fetch"
       }
     ],
     "X-Apple-Store-Front": [
       {
-        "chunk": "musickit.js",
-        "in": "StoreKit.musicSubscriptionOffers",
+        "chunk": "dev.js",
+        "in": "musicSubscriptionOffers",
         "targets": [
           "{iTunesBuyBase}/commerce/web/subscription/offers/music"
         ]
@@ -1588,7 +1545,7 @@
   },
   "responseHeaders": {
     "Content-Type": [
-      "musickit.js"
+      "dev.js"
     ],
     "Retry-After": [
       "index-2.js",
@@ -1607,11 +1564,11 @@
     "https://api.music.apple.com/v1",
     "https://auth.music.apple.com",
     "https://authorize.music.apple.com",
-    "https://authorize.music.apple.com/upsell?{}",
     "https://buy.music.apple.com/account/v1/affiliation/association",
     "https://cdn.apple-mapkit.com/mk/%version%/mapkit.core.js",
     "https://embed.music.apple.com",
     "https://embed.podcasts.apple.com",
+    "https://embed.tv.apple.com",
     "https://finance-app.itunes.apple.com/deeplink?{}",
     "https://finance-app.itunes.apple.com/subscribe",
     "https://gatewayws.icloud.com/identity/WebObjects/TDIdentityService.woa/wa/webregister",
@@ -1645,8 +1602,6 @@
     "https://s.mzstatic.com/skdtool_2021_certbundle.bin",
     "https://support.apple.com/118249?cid=mc-ols-AppleMusic-article_118249-musicapp-04242025",
     "https://universal-activity-service.itunes.apple.com",
-    "https://universal-activity-service.itunes.apple.com/play",
-    "https://universal-activity-service.itunes.apple.com/qa/play",
     "https://www.apple.com/apple-music",
     "https://www.apple.com/{}/apple-music",
     "https://xp-qa.apple.com",

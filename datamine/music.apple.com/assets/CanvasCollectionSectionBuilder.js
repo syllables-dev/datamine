@@ -4,15 +4,15 @@ import {
   a8 as B,
   as as v,
   at as k,
-  au as g,
+  au as f,
   aH as b,
   aI as rt,
-  ay as m,
-  aJ as w,
+  ay as y,
+  aJ as L,
   aj as q,
   aK as wt,
   aL as U,
-  aM as L,
+  aM as j,
   aN as C,
   aO as Lt,
   aP as jt,
@@ -41,25 +41,25 @@ var I;
     (a.VerticalCapped = "vertical-capped"));
 })(I || (I = {}));
 function ft(a, t) {
-  var e, i, n;
-  if ((a == null ? void 0 : a.type) !== d.CanvasShelfCollection) return !1;
-  const o = (e = a.attributes) === null || e === void 0 ? void 0 : e.display;
+  var i, e, n;
+  if (a?.type !== d.CanvasShelfCollection) return !1;
+  const o = (i = a.attributes) === null || i === void 0 ? void 0 : i.display;
   return !o || !("style" in o)
     ? ($.warn(t, `${a.type}/${a.id} missing attributes.display.style`), !1)
     : Array.isArray(
-          (n = (i = a.relationships) === null || i === void 0 ? void 0 : i.contents) === null || n === void 0
+          (n = (e = a.relationships) === null || e === void 0 ? void 0 : e.contents) === null || n === void 0
             ? void 0
             : n.data,
         )
       ? !0
       : ($.warn(t, `${a.type}/${a.id} missing relationship contents resource identifiers.`), !1);
 }
-function Rt(a, t, e) {
-  if (!e) return a.attributes.display;
-  const i = a.attributes.seeAllDisplay;
-  return B(i) ? ($.warn(t, `Missing See All display attributes in ${a.type}/${a.id}`), a.attributes.display) : i;
+function Rt(a, t, i) {
+  if (!i) return a.attributes.display;
+  const e = a.attributes.seeAllDisplay;
+  return B(e) ? ($.warn(t, `Missing See All display attributes in ${a.type}/${a.id}`), a.attributes.display) : e;
 }
-function R(a, t, e = "row") {
+function R(a, t, i = "row") {
   switch (a.layoutDirection) {
     case I.AdaptiveVerticalCapped:
       return { kind: "adaptive", preferShelfLayout: !1, shouldCapGridRows: !0, numberOfShelfRows: 3 };
@@ -68,9 +68,9 @@ function R(a, t, e = "row") {
     case I.List:
       return "list";
     case I.Vertical:
-      return { kind: "grid", flowStyle: e };
+      return { kind: "grid", flowStyle: i };
     case I.VerticalCapped:
-      return { kind: "grid", shouldCapRows: !0, flowStyle: e };
+      return { kind: "grid", shouldCapRows: !0, flowStyle: i };
     default:
       return t;
   }
@@ -91,8 +91,13 @@ var p;
     (a.SquareLockupMedium = "square-lockup-medium"),
     (a.TrackLockup = "track-lockup"));
 })(p || (p = {}));
-function fi(a) {
-  return (a == null ? void 0 : a.type) === d.CanvasShelfCollection;
+function mi(a) {
+  return a?.type === d.CanvasShelfCollection;
+}
+function Nt(a) {
+  var t;
+  const i = a?.primaryContent;
+  return i?.type !== d.Artists ? null : (t = i.attributes) === null || t === void 0 ? void 0 : t.name;
 }
 var Y;
 (function (a) {
@@ -138,177 +143,177 @@ var it;
 })(it || (it = {}));
 var st;
 (function (a) {})(st || (st = {}));
-const Nt = new Set(Object.values(Y)),
-  Tt = new Set(Object.values(W)),
-  Et = new Set(Object.values(nt)),
-  zt = new Set(Object.values(Q)),
-  qt = new Set(Object.values(X)),
-  Ot = new Set(Object.values(V)),
-  Ht = new Set(Object.values(ot)),
-  Ft = new Set(Object.values(tt)),
-  $t = new Set(Object.values(lt)),
-  Pt = new Set(Object.values(it)),
-  Kt = new Set(Object.values(st));
-function Ut(a) {
-  var t;
-  return (t = a == null ? void 0 : a[d.Albums]) === null || t === void 0 ? void 0 : t.find((e) => Nt.has(e));
-}
+const Tt = new Set(Object.values(Y)),
+  Et = new Set(Object.values(W)),
+  zt = new Set(Object.values(nt)),
+  qt = new Set(Object.values(Q)),
+  Ot = new Set(Object.values(X)),
+  Ht = new Set(Object.values(V)),
+  Ft = new Set(Object.values(ot)),
+  $t = new Set(Object.values(tt)),
+  Pt = new Set(Object.values(lt)),
+  Kt = new Set(Object.values(it)),
+  Ut = new Set(Object.values(st));
 function Yt(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.AppleCurators]) === null || t === void 0 ? void 0 : t.find((e) => Tt.has(e));
+  return (t = a?.[d.Albums]) === null || t === void 0 ? void 0 : t.find((i) => Tt.has(i));
 }
 function Wt(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.Artists]) === null || t === void 0 ? void 0 : t.find((e) => Et.has(e));
+  return (t = a?.[d.AppleCurators]) === null || t === void 0 ? void 0 : t.find((i) => Et.has(i));
 }
 function Zt(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.Concerts]) === null || t === void 0 ? void 0 : t.find((e) => zt.has(e));
+  return (t = a?.[d.Artists]) === null || t === void 0 ? void 0 : t.find((i) => zt.has(i));
 }
 function Jt(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.MusicMovies]) === null || t === void 0 ? void 0 : t.find((e) => qt.has(e));
+  return (t = a?.[d.Concerts]) === null || t === void 0 ? void 0 : t.find((i) => qt.has(i));
 }
 function Qt(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.MusicVideos]) === null || t === void 0 ? void 0 : t.find((e) => Ot.has(e));
+  return (t = a?.[d.MusicMovies]) === null || t === void 0 ? void 0 : t.find((i) => Ot.has(i));
 }
 function Xt(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.Playlists]) === null || t === void 0 ? void 0 : t.find((e) => Ht.has(e));
+  return (t = a?.[d.MusicVideos]) === null || t === void 0 ? void 0 : t.find((i) => Ht.has(i));
 }
 function ti(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.Songs]) === null || t === void 0 ? void 0 : t.find((e) => Ft.has(e));
+  return (t = a?.[d.Playlists]) === null || t === void 0 ? void 0 : t.find((i) => Ft.has(i));
 }
 function ii(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.Stations]) === null || t === void 0 ? void 0 : t.find((e) => $t.has(e));
+  return (t = a?.[d.Songs]) === null || t === void 0 ? void 0 : t.find((i) => $t.has(i));
 }
 function ei(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.UploadedVideos]) === null || t === void 0 ? void 0 : t.find((e) => Pt.has(e));
+  return (t = a?.[d.Stations]) === null || t === void 0 ? void 0 : t.find((i) => Pt.has(i));
 }
 function ai(a) {
   var t;
-  return (t = a == null ? void 0 : a[d.Venues]) === null || t === void 0 ? void 0 : t.find((e) => Kt.has(e));
+  return (t = a?.[d.UploadedVideos]) === null || t === void 0 ? void 0 : t.find((i) => Kt.has(i));
 }
-function yt(a, t, e) {
-  var i, n, o, l, s, r, u, c, h, y, f, j, _, A, x, D, M, G, T, E, O, P;
-  const S = a.context.displayVariants;
+function ni(a) {
+  var t;
+  return (t = a?.[d.Venues]) === null || t === void 0 ? void 0 : t.find((i) => Ut.has(i));
+}
+function mt(a, t, i) {
+  var e, n, o, l, s, r, u, c, h, g, m, _, S, A, x, D, M, G, T, E, O, P;
+  const w = a.context.displayVariants;
   switch (t.type) {
     case d.Albums:
-      return (n = (i = a.album) === null || i === void 0 ? void 0 : i.call(a, t, Ut(S))) !== null && n !== void 0
+      return (n = (e = a.album) === null || e === void 0 ? void 0 : e.call(a, t, Yt(w))) !== null && n !== void 0
         ? n
         : null;
     case d.AppleCurators:
-      return (l = (o = a.appleCurator) === null || o === void 0 ? void 0 : o.call(a, t, Yt(S))) !== null && l !== void 0
+      return (l = (o = a.appleCurator) === null || o === void 0 ? void 0 : o.call(a, t, Wt(w))) !== null && l !== void 0
         ? l
         : null;
     case d.Artists:
-      return (r = (s = a.artist) === null || s === void 0 ? void 0 : s.call(a, t, Wt(S))) !== null && r !== void 0
+      return (r = (s = a.artist) === null || s === void 0 ? void 0 : s.call(a, t, Zt(w))) !== null && r !== void 0
         ? r
         : null;
     case d.Concerts:
-      return (c = (u = a.concert) === null || u === void 0 ? void 0 : u.call(a, t, Zt(S))) !== null && c !== void 0
+      return (c = (u = a.concert) === null || u === void 0 ? void 0 : u.call(a, t, Jt(w))) !== null && c !== void 0
         ? c
         : null;
     case d.MusicMovies:
-      return (y = (h = a.musicMovie) === null || h === void 0 ? void 0 : h.call(a, t, Jt(S))) !== null && y !== void 0
-        ? y
+      return (g = (h = a.musicMovie) === null || h === void 0 ? void 0 : h.call(a, t, Qt(w))) !== null && g !== void 0
+        ? g
         : null;
     case d.MusicVideos:
-      return (j = (f = a.musicVideo) === null || f === void 0 ? void 0 : f.call(a, t, Qt(S))) !== null && j !== void 0
-        ? j
+      return (_ = (m = a.musicVideo) === null || m === void 0 ? void 0 : m.call(a, t, Xt(w))) !== null && _ !== void 0
+        ? _
         : null;
     case d.Playlists:
-      return (A = (_ = a.playlist) === null || _ === void 0 ? void 0 : _.call(a, t, Xt(S))) !== null && A !== void 0
+      return (A = (S = a.playlist) === null || S === void 0 ? void 0 : S.call(a, t, ti(w))) !== null && A !== void 0
         ? A
         : null;
     case d.Songs:
-      return (D = (x = a.song) === null || x === void 0 ? void 0 : x.call(a, t, ti(S))) !== null && D !== void 0
+      return (D = (x = a.song) === null || x === void 0 ? void 0 : x.call(a, t, ii(w))) !== null && D !== void 0
         ? D
         : null;
     case d.Stations:
-      return (G = (M = a.station) === null || M === void 0 ? void 0 : M.call(a, t, ii(S))) !== null && G !== void 0
+      return (G = (M = a.station) === null || M === void 0 ? void 0 : M.call(a, t, ei(w))) !== null && G !== void 0
         ? G
         : null;
     case d.UploadedVideos:
-      return (E = (T = a.uploadedVideo) === null || T === void 0 ? void 0 : T.call(a, t, ei(S))) !== null &&
+      return (E = (T = a.uploadedVideo) === null || T === void 0 ? void 0 : T.call(a, t, ai(w))) !== null &&
         E !== void 0
         ? E
         : null;
     case d.Venues:
-      return (P = (O = a.venue) === null || O === void 0 ? void 0 : O.call(a, t, ai(S))) !== null && P !== void 0
+      return (P = (O = a.venue) === null || O === void 0 ? void 0 : O.call(a, t, ni(w))) !== null && P !== void 0
         ? P
         : null;
     default:
-      return ($.warn(e, `${a.label}: Unhandled resource type '${t.type}'`), null);
+      return ($.warn(i, `${a.label}: Unhandled resource type '${t.type}'`), null);
   }
 }
-function N(a, t, e) {
-  const i = [];
+function N(a, t, i) {
+  const e = [];
   for (const n of t) {
     const o = a.context.resourceManager.resource(n);
     if (!o) continue;
-    const l = yt(a, o, e);
-    l != null && i.push(l);
+    const l = mt(a, o, i);
+    l != null && e.push(l);
   }
-  return i;
+  return e;
 }
 var bt;
 (function (a) {
-  function t(e, i) {
-    switch (i) {
+  function t(i, e) {
+    switch (e) {
       case d.Albums:
-        return e.album !== void 0;
+        return i.album !== void 0;
       case d.AppleCurators:
-        return e.appleCurator !== void 0;
+        return i.appleCurator !== void 0;
       case d.Artists:
-        return e.artist !== void 0;
+        return i.artist !== void 0;
       case d.Concerts:
-        return e.concert !== void 0;
+        return i.concert !== void 0;
       case d.MusicMovies:
-        return e.musicMovie !== void 0;
+        return i.musicMovie !== void 0;
       case d.MusicVideos:
-        return e.musicVideo !== void 0;
+        return i.musicVideo !== void 0;
       case d.Playlists:
-        return e.playlist !== void 0;
+        return i.playlist !== void 0;
       case d.Songs:
-        return e.song !== void 0;
+        return i.song !== void 0;
       case d.Stations:
-        return e.station !== void 0;
+        return i.station !== void 0;
       case d.UploadedVideos:
-        return e.uploadedVideo !== void 0;
+        return i.uploadedVideo !== void 0;
       case d.Venues:
-        return e.venue !== void 0;
+        return i.venue !== void 0;
       default:
         return !1;
     }
   }
   a.supportsResourceType = t;
 })(bt || (bt = {}));
-class ni {
-  constructor(t, e, i, n) {
+class oi {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = "CircleLockup"),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n = N(
-      new mt(
+      new yt(
         { displayVariants: this.displayAttributes.variants, resourceManager: this.context.resourceManager },
         this.objectGraph,
       ),
-      (i =
-        (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-        e === void 0
+      (e =
+        (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+        i === void 0
           ? void 0
-          : e.data) !== null && i !== void 0
-        ? i
+          : i.data) !== null && e !== void 0
+        ? e
         : [],
       this.objectGraph,
     );
@@ -321,29 +326,29 @@ class ni {
         };
   }
 }
-class mt {
-  constructor(t, e) {
-    ((this.label = "CircleLockupBuilder"), (this.context = t), (this.objectGraph = e));
+class yt {
+  constructor(t, i) {
+    ((this.label = "CircleLockupBuilder"), (this.context = t), (this.objectGraph = i));
   }
-  artist(t, e) {
-    var i, n;
+  artist(t, i) {
+    var e, n;
     const o = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
-      title: (i = t.attributes) === null || i === void 0 ? void 0 : i.name,
-      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, g.SpecificRectangle),
+      title: (e = t.attributes) === null || e === void 0 ? void 0 : e.name,
+      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, f.SpecificRectangle),
       contentDescriptor: o,
       segue: b(o, t, "ShelfItem", this.objectGraph),
     };
   }
 }
 function _t(a, t) {
-  var e, i, n, o, l;
+  var i, e, n, o, l;
   switch (t) {
     case Y.ShortEditorialNotes:
-      return (i = (e = a.attributes) === null || e === void 0 ? void 0 : e.plainEditorialNotes) === null || i === void 0
+      return (e = (i = a.attributes) === null || i === void 0 ? void 0 : i.plainEditorialNotes) === null || e === void 0
         ? void 0
-        : i.short;
+        : e.short;
     case Y.ReleaseYear:
       return (o = (n = a.attributes) === null || n === void 0 ? void 0 : n.releaseDate) === null || o === void 0
         ? void 0
@@ -352,11 +357,11 @@ function _t(a, t) {
       return (l = a.attributes) === null || l === void 0 ? void 0 : l.artistName;
   }
 }
-function oi(a, t, e) {
-  var i, n, o, l;
-  switch (e) {
+function li(a, t, i) {
+  var e, n, o, l;
+  switch (i) {
     case V.ReleaseYear:
-      return (n = (i = a.attributes) === null || i === void 0 ? void 0 : i.releaseDate) === null || n === void 0
+      return (n = (e = a.attributes) === null || e === void 0 ? void 0 : e.releaseDate) === null || n === void 0
         ? void 0
         : n.split("-")[0];
     case V.ShortDuration:
@@ -365,36 +370,36 @@ function oi(a, t, e) {
       return (l = a.attributes) === null || l === void 0 ? void 0 : l.artistName;
   }
 }
-function li(a, t, e) {
-  var i, n;
-  switch (e) {
+function si(a, t, i) {
+  var e, n;
+  switch (i) {
     case it.ShortDuration:
-      return rt((i = a.attributes) === null || i === void 0 ? void 0 : i.durationInMilliseconds, t);
+      return rt((e = a.attributes) === null || e === void 0 ? void 0 : e.durationInMilliseconds, t);
     default:
       return (n = a.attributes) === null || n === void 0 ? void 0 : n.artistName;
   }
 }
-class si {
-  constructor(t, e, i, n) {
+class ri {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = "HorizontalLockup"),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n = N(
       new ut(
         { displayVariants: this.displayAttributes.variants, resourceManager: this.context.resourceManager },
         this.objectGraph,
       ),
-      (i =
-        (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-        e === void 0
+      (e =
+        (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+        i === void 0
           ? void 0
-          : e.data) !== null && i !== void 0
-        ? i
+          : i.data) !== null && e !== void 0
+        ? e
         : [],
       this.objectGraph,
     );
@@ -408,36 +413,36 @@ class si {
   }
 }
 class ut {
-  constructor(t, e) {
-    ((this.label = "HorizontalLockupBuilder"), (this.context = t), (this.objectGraph = e));
+  constructor(t, i) {
+    ((this.label = "HorizontalLockupBuilder"), (this.context = t), (this.objectGraph = i));
   }
-  album(t, e) {
-    var i, n;
+  album(t, i) {
+    var e, n;
     const o = v(t, this.objectGraph, this.context.resourceManager),
       l = b(o, t, "ShelfItem", this.objectGraph);
     return {
       id: t.id,
-      title: (i = t.attributes) === null || i === void 0 ? void 0 : i.name,
-      subtitle: _t(t, e),
-      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, g.SpecificRectangle),
+      title: (e = t.attributes) === null || e === void 0 ? void 0 : e.name,
+      subtitle: _t(t, i),
+      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, f.SpecificRectangle),
       contentDescriptor: o,
-      playAction: m(o, this.objectGraph, null),
+      playAction: y(o, this.objectGraph, null),
       segue: l,
       numberOfSocialBadges: 0,
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
       showChevron: q.isSome(l),
       recoID: null,
     };
   }
-  artist(t, e) {
-    var i, n;
+  artist(t, i) {
+    var e, n;
     const o = v(t, this.objectGraph, this.context.resourceManager),
       l = b(o, t, "ShelfItem", this.objectGraph);
     return {
       id: t.id,
-      title: (i = t.attributes) === null || i === void 0 ? void 0 : i.name,
+      title: (e = t.attributes) === null || e === void 0 ? void 0 : e.name,
       subtitle: null,
-      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, g.SpecificRectangle),
+      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, f.SpecificRectangle),
       artworkTreatment: wt.Circle,
       contentDescriptor: o,
       segue: l,
@@ -447,32 +452,32 @@ class ut {
       recoID: null,
     };
   }
-  playlist(t, e) {
-    var i, n, o;
+  playlist(t, i) {
+    var e, n, o;
     const l = v(t, this.objectGraph, this.context.resourceManager),
       s = b(l, t, "ShelfItem", this.objectGraph);
     return {
       id: t.id,
-      title: (i = t.attributes) === null || i === void 0 ? void 0 : i.name,
+      title: (e = t.attributes) === null || e === void 0 ? void 0 : e.name,
       subtitle: (n = t.attributes) === null || n === void 0 ? void 0 : n.curatorName,
-      artwork: k((o = t.attributes) === null || o === void 0 ? void 0 : o.artwork, g.SpecificRectangle),
+      artwork: k((o = t.attributes) === null || o === void 0 ? void 0 : o.artwork, f.SpecificRectangle),
       contentDescriptor: l,
-      playAction: m(l, this.objectGraph, null),
+      playAction: y(l, this.objectGraph, null),
       segue: s,
       numberOfSocialBadges: 0,
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
       showChevron: q.isSome(s),
       recoID: null,
     };
   }
-  station(t, e) {
-    var i, n, o, l, s, r;
+  station(t, i) {
+    var e, n, o, l, s, r;
     const u = v(t, this.objectGraph, this.context.resourceManager),
       c = b(u, t, "ShelfItem", this.objectGraph);
     return {
       id: t.id,
       headline:
-        (n = (i = t.attributes) === null || i === void 0 ? void 0 : i.plainEditorialNotes) === null || n === void 0
+        (n = (e = t.attributes) === null || e === void 0 ? void 0 : e.plainEditorialNotes) === null || n === void 0
           ? void 0
           : n.standard,
       title: (o = t.attributes) === null || o === void 0 ? void 0 : o.name,
@@ -480,38 +485,38 @@ class ut {
         (s = (l = t.attributes) === null || l === void 0 ? void 0 : l.plainEditorialNotes) === null || s === void 0
           ? void 0
           : s.short,
-      artwork: k((r = t.attributes) === null || r === void 0 ? void 0 : r.artwork, g.SpecificRectangle),
+      artwork: k((r = t.attributes) === null || r === void 0 ? void 0 : r.artwork, f.SpecificRectangle),
       contentDescriptor: u,
-      playAction: m(u, this.objectGraph, null),
+      playAction: y(u, this.objectGraph, null),
       segue: c,
       numberOfSocialBadges: 0,
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
       showChevron: q.isSome(c),
       recoID: null,
     };
   }
 }
-class ri {
-  constructor(t, e, i, n) {
+class ui {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = "AdaptiveHorizontalCircleLockup"),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n = N(
-      new ui(
+      new di(
         { displayVariants: this.displayAttributes.variants, resourceManager: this.context.resourceManager },
         this.objectGraph,
       ),
-      (i =
-        (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-        e === void 0
+      (e =
+        (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+        i === void 0
           ? void 0
-          : e.data) !== null && i !== void 0
-        ? i
+          : i.data) !== null && e !== void 0
+        ? e
         : [],
       this.objectGraph,
     );
@@ -524,31 +529,31 @@ class ri {
         };
   }
 }
-class ui {
-  constructor(t, e) {
+class di {
+  constructor(t, i) {
     ((this.label = "AdaptiveHorizontalCircleLockupBuilder"),
       (this.context = t),
-      (this.horizontalLockupBuilder = new ut(t, e)),
-      (this.circleLockupBuilder = new mt(t, e)));
+      (this.horizontalLockupBuilder = new ut(t, i)),
+      (this.circleLockupBuilder = new yt(t, i)));
   }
-  artist(t, e) {
+  artist(t, i) {
     return {
       id: t.id,
-      horizontalLockup: this.horizontalLockupBuilder.artist(t, e),
-      circleLockup: this.circleLockupBuilder.artist(t, e),
+      horizontalLockup: this.horizontalLockupBuilder.artist(t, i),
+      circleLockup: this.circleLockupBuilder.artist(t, i),
     };
   }
 }
 class at {
-  constructor(t, e, i, n) {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = "SquareLockup"),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n = N(
       new St(
         {
@@ -558,12 +563,12 @@ class at {
         },
         this.objectGraph,
       ),
-      (i =
-        (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-        e === void 0
+      (e =
+        (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+        i === void 0
           ? void 0
-          : e.data) !== null && i !== void 0
-        ? i
+          : i.data) !== null && e !== void 0
+        ? e
         : [],
       this.objectGraph,
     );
@@ -588,97 +593,97 @@ class at {
   }
 }
 class St {
-  constructor(t, e) {
-    ((this.label = "SquareLockupBuilder"), (this.context = t), (this.objectGraph = e));
+  constructor(t, i) {
+    ((this.label = "SquareLockupBuilder"), (this.context = t), (this.objectGraph = i));
   }
-  album(t, e) {
-    var i, n;
+  album(t, i) {
+    var e, n;
     const o = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       displayStyle: this.context.lockupStyle,
-      titleLinks: L((i = t.attributes) === null || i === void 0 ? void 0 : i.name),
-      subtitleLinks: L(_t(t, e)),
-      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, g.SpecificRectangle),
+      titleLinks: j((e = t.attributes) === null || e === void 0 ? void 0 : e.name),
+      subtitleLinks: j(_t(t, i)),
+      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, f.SpecificRectangle),
       contentDescriptor: o,
-      playAction: m(o, this.objectGraph, null),
+      playAction: y(o, this.objectGraph, null),
       segue: b(o, t, "ShelfItem", this.objectGraph),
       numberOfSocialBadges: 0,
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
       recoID: null,
     };
   }
-  appleCurator(t, e) {
-    var i, n, o, l;
+  appleCurator(t, i) {
+    var e, n, o, l;
     const s = v(t, this.objectGraph, this.context.resourceManager),
       r =
-        e === W.StandardEditorialNotes
-          ? (n = (i = t.attributes) === null || i === void 0 ? void 0 : i.plainEditorialNotes) === null || n === void 0
+        i === W.StandardEditorialNotes
+          ? (n = (e = t.attributes) === null || e === void 0 ? void 0 : e.plainEditorialNotes) === null || n === void 0
             ? void 0
             : n.standard
           : null;
     return {
       id: t.id,
       displayStyle: this.context.lockupStyle,
-      titleLinks: L((o = t.attributes) === null || o === void 0 ? void 0 : o.name),
-      subtitleLinks: L(r),
-      artwork: k((l = t.attributes) === null || l === void 0 ? void 0 : l.artwork, g.SpecificRectangle),
+      titleLinks: j((o = t.attributes) === null || o === void 0 ? void 0 : o.name),
+      subtitleLinks: j(r),
+      artwork: k((l = t.attributes) === null || l === void 0 ? void 0 : l.artwork, f.SpecificRectangle),
       contentDescriptor: s,
-      playAction: m(s, this.objectGraph, null),
+      playAction: y(s, this.objectGraph, null),
       segue: b(s, t, "ShelfItem", this.objectGraph),
       numberOfSocialBadges: 0,
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
       recoID: null,
     };
   }
-  playlist(t, e) {
-    var i, n, o;
+  playlist(t, i) {
+    var e, n, o;
     const l = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       displayStyle: this.context.lockupStyle,
-      titleLinks: L((i = t.attributes) === null || i === void 0 ? void 0 : i.name),
-      subtitleLinks: L((n = t.attributes) === null || n === void 0 ? void 0 : n.curatorName),
-      artwork: k((o = t.attributes) === null || o === void 0 ? void 0 : o.artwork, g.SpecificRectangle),
+      titleLinks: j((e = t.attributes) === null || e === void 0 ? void 0 : e.name),
+      subtitleLinks: j((n = t.attributes) === null || n === void 0 ? void 0 : n.curatorName),
+      artwork: k((o = t.attributes) === null || o === void 0 ? void 0 : o.artwork, f.SpecificRectangle),
       contentDescriptor: l,
-      playAction: m(l, this.objectGraph, null),
+      playAction: y(l, this.objectGraph, null),
       segue: b(l, t, "ShelfItem", this.objectGraph),
       numberOfSocialBadges: 0,
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
       recoID: null,
     };
   }
-  station(t, e) {
-    var i, n, o;
+  station(t, i) {
+    var e, n, o;
     const l = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       displayStyle: this.context.lockupStyle,
-      titleLinks: L((i = t.attributes) === null || i === void 0 ? void 0 : i.name),
-      subtitleLinks: L((n = t.attributes) === null || n === void 0 ? void 0 : n.stationProviderName),
-      artwork: k((o = t.attributes) === null || o === void 0 ? void 0 : o.artwork, g.SpecificRectangle),
+      titleLinks: j((e = t.attributes) === null || e === void 0 ? void 0 : e.name),
+      subtitleLinks: j((n = t.attributes) === null || n === void 0 ? void 0 : n.stationProviderName),
+      artwork: k((o = t.attributes) === null || o === void 0 ? void 0 : o.artwork, f.SpecificRectangle),
       contentDescriptor: l,
-      playAction: m(l, this.objectGraph, null),
+      playAction: y(l, this.objectGraph, null),
       segue: b(l, t, "ShelfItem", this.objectGraph),
       numberOfSocialBadges: 0,
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
       recoID: null,
     };
   }
 }
-class di {
-  constructor(t, e, i, n) {
+class ci {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = "AdaptiveHorizontalSquareLockup"),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n = this.displayAttributes.style === p.AdaptiveHorizontalSquareLockupMedium ? U.Medium : U.Regular,
       o = N(
-        new ci(
+        new hi(
           {
             squareLockupStyle: n,
             displayVariants: this.displayAttributes.variants,
@@ -686,12 +691,12 @@ class di {
           },
           this.objectGraph,
         ),
-        (i =
-          (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-          e === void 0
+        (e =
+          (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+          i === void 0
             ? void 0
-            : e.data) !== null && i !== void 0
-          ? i
+            : i.data) !== null && e !== void 0
+          ? e
           : [],
         this.objectGraph,
       );
@@ -704,64 +709,64 @@ class di {
         };
   }
 }
-class ci {
-  constructor(t, e) {
+class hi {
+  constructor(t, i) {
     ((this.label = "AdaptiveHorizontalSquareLockup"),
       (this.context = t),
-      (this.horizontalLockupBuilder = new ut(t, e)),
+      (this.horizontalLockupBuilder = new ut(t, i)),
       (this.squareLockupBuilder = new St(
         { displayVariants: t.displayVariants, resourceManager: t.resourceManager, lockupStyle: t.squareLockupStyle },
-        e,
+        i,
       )));
   }
-  album(t, e) {
+  album(t, i) {
     return {
       id: t.id,
-      horizontalLockup: this.horizontalLockupBuilder.album(t, e),
-      squareLockup: this.squareLockupBuilder.album(t, e),
+      horizontalLockup: this.horizontalLockupBuilder.album(t, i),
+      squareLockup: this.squareLockupBuilder.album(t, i),
     };
   }
-  playlist(t, e) {
+  playlist(t, i) {
     return {
       id: t.id,
-      horizontalLockup: this.horizontalLockupBuilder.playlist(t, e),
-      squareLockup: this.squareLockupBuilder.playlist(t, e),
+      horizontalLockup: this.horizontalLockupBuilder.playlist(t, i),
+      squareLockup: this.squareLockupBuilder.playlist(t, i),
     };
   }
-  station(t, e) {
+  station(t, i) {
     return {
       id: t.id,
-      horizontalLockup: this.horizontalLockupBuilder.station(t, e),
-      squareLockup: this.squareLockupBuilder.station(t, e),
+      horizontalLockup: this.horizontalLockupBuilder.station(t, i),
+      squareLockup: this.squareLockupBuilder.station(t, i),
     };
   }
 }
 class et {
-  constructor(t, e, i, n) {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = et.sectionContentTypeName),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n =
-        (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-        e === void 0
+        (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+        i === void 0
           ? void 0
-          : e.data,
-      o = n == null ? void 0 : n[0];
+          : i.data,
+      o = n?.[0];
     if (!o) return null;
     const l = this.context.resourceManager.resource(o);
     if (!l) return null;
     const s = this.context.primaryContent;
     if (!s) return null;
-    const r = yt(
-      new hi(
+    const r = mt(
+      new pi(
         {
           artist: s,
-          heading: (i = this.collection.attributes) === null || i === void 0 ? void 0 : i.title,
+          heading: (e = this.collection.attributes) === null || e === void 0 ? void 0 : e.title,
           displayVariants: this.displayAttributes.variants,
           resourceManager: this.context.resourceManager,
         },
@@ -777,36 +782,36 @@ class et {
   }
 }
 et.sectionContentTypeName = "ArtistFeaturedContent";
-class hi {
-  constructor(t, e) {
-    ((this.label = "ArtistFeaturedContentBuilder"), (this.context = t), (this.objectGraph = e));
+class pi {
+  constructor(t, i) {
+    ((this.label = "ArtistFeaturedContentBuilder"), (this.context = t), (this.objectGraph = i));
   }
-  album(t, e) {
-    var i, n, o;
+  album(t, i) {
+    var e, n, o;
     const l = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       contentDescriptor: l,
       heading: this.context.heading,
-      artwork: k((i = t.attributes) === null || i === void 0 ? void 0 : i.artwork, g.SpecificRectangle),
+      artwork: k((e = t.attributes) === null || e === void 0 ? void 0 : e.artwork, f.SpecificRectangle),
       artworkShape: C.Square,
       detailText: {
         headline: this.albumHeadline(t),
         title: (n = t.attributes) === null || n === void 0 ? void 0 : n.name,
-        showExplicitBadge: w(t.attributes),
+        showExplicitBadge: L(t.attributes),
         subtitle: Lt((o = t.attributes) === null || o === void 0 ? void 0 : o.trackCount, this.objectGraph),
       },
-      playAction: m(l, this.objectGraph, null),
+      playAction: y(l, this.objectGraph, null),
       segue: b(l, t, "ShelfItem", this.objectGraph),
       recoID: null,
     };
   }
-  appleCurator(t, e) {
-    var i, n, o, l, s, r;
+  appleCurator(t, i) {
+    var e, n, o, l, s, r;
     const u = v(t, this.objectGraph, this.context.resourceManager),
       c =
-        e === W.StandardEditorialNotes
-          ? (n = (i = t.attributes) === null || i === void 0 ? void 0 : i.plainEditorialNotes) === null || n === void 0
+        i === W.StandardEditorialNotes
+          ? (n = (e = t.attributes) === null || e === void 0 ? void 0 : e.plainEditorialNotes) === null || n === void 0
             ? void 0
             : n.standard
           : (l = (o = t.attributes) === null || o === void 0 ? void 0 : o.plainEditorialNotes) === null || l === void 0
@@ -816,7 +821,7 @@ class hi {
       id: t.id,
       contentDescriptor: u,
       heading: this.context.heading,
-      artwork: k((s = t.attributes) === null || s === void 0 ? void 0 : s.artwork, g.SpecificRectangle),
+      artwork: k((s = t.attributes) === null || s === void 0 ? void 0 : s.artwork, f.SpecificRectangle),
       artworkShape: C.Square,
       detailText: {
         title: (r = t.attributes) === null || r === void 0 ? void 0 : r.name,
@@ -828,25 +833,25 @@ class hi {
       recoID: null,
     };
   }
-  concert(t, e) {
-    var i, n, o, l, s, r, u, c, h;
-    const y =
+  concert(t, i) {
+    var e, n, o, l, s, r, u, c, h;
+    const g =
         (o =
-          (n = (i = t.relationships) === null || i === void 0 ? void 0 : i.venues) === null || n === void 0
+          (n = (e = t.relationships) === null || e === void 0 ? void 0 : e.venues) === null || n === void 0
             ? void 0
             : n.data) === null || o === void 0
           ? void 0
           : o[0],
-      f = y ? this.context.resourceManager.resource(y) : null;
-    if (!f) return null;
-    const j = v(t, this.objectGraph, this.context.resourceManager),
-      _ = (l = t.attributes) === null || l === void 0 ? void 0 : l.startISODateTime,
-      A = q.isSome(_)
-        ? { date: _, timeZone: (s = t.attributes) === null || s === void 0 ? void 0 : s.timeZone }
+      m = g ? this.context.resourceManager.resource(g) : null;
+    if (!m) return null;
+    const _ = v(t, this.objectGraph, this.context.resourceManager),
+      S = (l = t.attributes) === null || l === void 0 ? void 0 : l.startISODateTime,
+      A = q.isSome(S)
+        ? { date: S, timeZone: (s = t.attributes) === null || s === void 0 ? void 0 : s.timeZone }
         : void 0;
     return {
       id: t.id,
-      contentDescriptor: j,
+      contentDescriptor: _,
       artwork: k((r = this.context.artist.attributes) === null || r === void 0 ? void 0 : r.artwork),
       artworkShape: C.Circle,
       accessoryCalendarArtwork: A,
@@ -854,45 +859,45 @@ class hi {
       detailText: {
         title: (u = t.attributes) === null || u === void 0 ? void 0 : u.name,
         showExplicitBadge: !1,
-        subtitle: (c = f.attributes) === null || c === void 0 ? void 0 : c.name,
-        description: q.isSome(_)
-          ? jt(_, (h = t.attributes) === null || h === void 0 ? void 0 : h.timeZone, this.objectGraph)
+        subtitle: (c = m.attributes) === null || c === void 0 ? void 0 : c.name,
+        description: q.isSome(S)
+          ? jt(S, (h = t.attributes) === null || h === void 0 ? void 0 : h.timeZone, this.objectGraph)
           : null,
       },
       playAction: null,
-      segue: b(j, t, "ShelfItem", this.objectGraph),
+      segue: b(_, t, "ShelfItem", this.objectGraph),
       recoID: null,
     };
   }
-  playlist(t, e) {
-    var i, n, o, l;
+  playlist(t, i) {
+    var e, n, o, l;
     const s = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       contentDescriptor: s,
-      artwork: k((i = t.attributes) === null || i === void 0 ? void 0 : i.artwork, g.SpecificRectangle),
+      artwork: k((e = t.attributes) === null || e === void 0 ? void 0 : e.artwork, f.SpecificRectangle),
       artworkShape: C.Square,
       heading: this.context.heading,
       detailText: {
         title: (n = t.attributes) === null || n === void 0 ? void 0 : n.name,
-        showExplicitBadge: w(t.attributes),
+        showExplicitBadge: L(t.attributes),
         subtitle:
           (l = (o = t.attributes) === null || o === void 0 ? void 0 : o.plainEditorialNotes) === null || l === void 0
             ? void 0
             : l.short,
       },
-      playAction: m(s, this.objectGraph, null),
+      playAction: y(s, this.objectGraph, null),
       segue: b(s, t, "ShelfItem", this.objectGraph),
       recoID: null,
     };
   }
-  station(t, e) {
-    var i, n, o, l, s, r;
+  station(t, i) {
+    var e, n, o, l, s, r;
     const u = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       contentDescriptor: u,
-      artwork: k((i = t.attributes) === null || i === void 0 ? void 0 : i.artwork, g.SpecificRectangle),
+      artwork: k((e = t.attributes) === null || e === void 0 ? void 0 : e.artwork, f.SpecificRectangle),
       artworkShape: C.Square,
       heading: this.context.heading,
       detailText: {
@@ -907,42 +912,42 @@ class hi {
             ? void 0
             : r.short,
       },
-      playAction: m(u, this.objectGraph, null),
+      playAction: y(u, this.objectGraph, null),
       segue: b(u, t, "ShelfItem", this.objectGraph),
       recoID: null,
     };
   }
-  uploadedVideo(t, e) {
-    var i, n, o, l;
+  uploadedVideo(t, i) {
+    var e, n, o, l;
     const s = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       contentDescriptor: s,
-      artwork: k((i = t.attributes) === null || i === void 0 ? void 0 : i.artwork, g.SpecificRectangle),
+      artwork: k((e = t.attributes) === null || e === void 0 ? void 0 : e.artwork, f.SpecificRectangle),
       artworkShape: C.Brick,
       heading: this.context.heading,
       detailText: {
         headline: (n = t.attributes) === null || n === void 0 ? void 0 : n.artistName,
         title: (o = t.attributes) === null || o === void 0 ? void 0 : o.name,
-        showExplicitBadge: w(t.attributes),
+        showExplicitBadge: L(t.attributes),
         subtitle: rt((l = t.attributes) === null || l === void 0 ? void 0 : l.durationInMilliseconds, this.objectGraph),
       },
-      playAction: m(s, this.objectGraph, null),
+      playAction: y(s, this.objectGraph, null),
       segue: b(s, t, "ShelfItem", this.objectGraph),
       recoID: null,
     };
   }
-  musicMovie(t, e) {
-    var i, n, o, l, s, r, u, c, h, y, f, j, _, A;
+  musicMovie(t, i) {
+    var e, n, o, l, s, r, u, c, h, g, m, _, S, A;
     const x = v(t, this.objectGraph, this.context.resourceManager),
       D =
-        e === X.ShortEditorialNotes
-          ? (n = (i = t.attributes) === null || i === void 0 ? void 0 : i.plainEditorialNotes) === null || n === void 0
+        i === X.ShortEditorialNotes
+          ? (n = (e = t.attributes) === null || e === void 0 ? void 0 : e.plainEditorialNotes) === null || n === void 0
             ? void 0
             : n.short
           : null,
       M =
-        (f =
+        (m =
           (c =
             (s =
               (l = (o = t.attributes) === null || o === void 0 ? void 0 : o.editorialArtwork) === null || l === void 0
@@ -953,72 +958,72 @@ class hi {
                 ? void 0
                 : u.subscriptionHero) !== null && c !== void 0
             ? c
-            : (y = (h = t.attributes) === null || h === void 0 ? void 0 : h.editorialArtwork) === null || y === void 0
+            : (g = (h = t.attributes) === null || h === void 0 ? void 0 : h.editorialArtwork) === null || g === void 0
               ? void 0
-              : y.fullscreenBackground) !== null && f !== void 0
-          ? f
-          : (j = t.attributes) === null || j === void 0
+              : g.fullscreenBackground) !== null && m !== void 0
+          ? m
+          : (_ = t.attributes) === null || _ === void 0
             ? void 0
-            : j.artwork;
+            : _.artwork;
     return {
       id: t.id,
       contentDescriptor: x,
-      artwork: k(M, g.SpecificRectangle),
+      artwork: k(M, f.SpecificRectangle),
       artworkShape: C.Brick,
       heading: this.context.heading,
       detailText: {
-        title: (_ = t.attributes) === null || _ === void 0 ? void 0 : _.name,
-        showExplicitBadge: w(t.attributes),
-        subtitle: D != null ? D : (A = t.attributes) === null || A === void 0 ? void 0 : A.artistName,
+        title: (S = t.attributes) === null || S === void 0 ? void 0 : S.name,
+        showExplicitBadge: L(t.attributes),
+        subtitle: D ?? ((A = t.attributes) === null || A === void 0 ? void 0 : A.artistName),
       },
-      playAction: m(x, this.objectGraph, null),
+      playAction: y(x, this.objectGraph, null),
       segue: b(x, t, "ShelfItem", this.objectGraph),
       recoID: null,
     };
   }
-  musicVideo(t, e) {
-    var i, n;
+  musicVideo(t, i) {
+    var e, n;
     const o = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       contentDescriptor: o,
-      artwork: k((i = t.attributes) === null || i === void 0 ? void 0 : i.artwork, g.SpecificRectangle),
+      artwork: k((e = t.attributes) === null || e === void 0 ? void 0 : e.artwork, f.SpecificRectangle),
       artworkShape: C.Brick,
       heading: this.context.heading,
       detailText: {
-        headline: this.musicVideoHeadline(t, e),
+        headline: this.musicVideoHeadline(t, i),
         title: (n = t.attributes) === null || n === void 0 ? void 0 : n.name,
-        showExplicitBadge: w(t.attributes),
-        subtitle: this.musicVideoSubtitle(t, e),
+        showExplicitBadge: L(t.attributes),
+        subtitle: this.musicVideoSubtitle(t, i),
       },
-      playAction: m(o, this.objectGraph, null),
+      playAction: y(o, this.objectGraph, null),
       segue: b(o, t, "ShelfItem", this.objectGraph),
       recoID: null,
     };
   }
   albumHeadline(t) {
-    var e, i;
-    const n = (e = t.attributes) === null || e === void 0 ? void 0 : e.releaseDate,
+    var i, e;
+    const n = (i = t.attributes) === null || i === void 0 ? void 0 : i.releaseDate,
       o = ct(n, this.objectGraph, "short");
-    return !((i = t.attributes) === null || i === void 0) && i.isPrerelease && q.isSome(o)
+    return !((e = t.attributes) === null || e === void 0) && e.isPrerelease && q.isSome(o)
       ? gt.string("Fuse.Artist.PreRelease", this.objectGraph, { releaseDate: o })
       : o;
   }
-  musicVideoSubtitle(t, e) {
-    var i;
-    switch (e) {
+  musicVideoSubtitle(t, i) {
+    var e;
+    switch (i) {
       case V.ShortDuration:
       case V.DetailedReleaseInformation:
-        return At((i = t.attributes) === null || i === void 0 ? void 0 : i.durationInMillis, this.objectGraph);
+        return At((e = t.attributes) === null || e === void 0 ? void 0 : e.durationInMillis, this.objectGraph);
       default:
         return null;
     }
   }
-  musicVideoHeadline(t, e) {
-    var i;
-    switch (e) {
+  musicVideoHeadline(t, i) {
+    var e;
+    switch (i) {
       case V.DetailedReleaseInformation:
-        return ct((i = t.attributes) === null || i === void 0 ? void 0 : i.releaseDate, this.objectGraph, "short");
+        return ct((e = t.attributes) === null || e === void 0 ? void 0 : e.releaseDate, this.objectGraph, "short");
       default:
         return null;
     }
@@ -1028,18 +1033,18 @@ function yi(a, t) {
   return ft(a, t) && a.attributes.display.style === p.ArtistFeaturedContent;
 }
 class kt {
-  constructor(t, e, i, n) {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = "BrickLockup"),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n = this.displayAttributes.style === p.BrickLockupLarge ? ht.Large : ht.Regular,
       o = N(
-        new pi(
+        new vi(
           {
             lockupStyle: n,
             displayVariants: this.displayAttributes.variants,
@@ -1047,12 +1052,12 @@ class kt {
           },
           this.objectGraph,
         ),
-        (i =
-          (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-          e === void 0
+        (e =
+          (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+          i === void 0
             ? void 0
-            : e.data) !== null && i !== void 0
-          ? i
+            : i.data) !== null && e !== void 0
+          ? e
           : [],
         this.objectGraph,
       );
@@ -1065,77 +1070,77 @@ class kt {
         };
   }
 }
-class pi {
-  constructor(t, e) {
-    ((this.label = "BrickLockupBuilder"), (this.context = t), (this.objectGraph = e));
+class vi {
+  constructor(t, i) {
+    ((this.label = "BrickLockupBuilder"), (this.context = t), (this.objectGraph = i));
   }
-  musicMovie(t, e) {
-    var i, n, o;
+  musicMovie(t, i) {
+    var e, n, o;
     const l = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       displayStyle: this.context.lockupStyle,
-      titleLinks: L((i = t.attributes) === null || i === void 0 ? void 0 : i.name),
-      subtitleLinks: L((n = t.attributes) === null || n === void 0 ? void 0 : n.artistName),
-      artwork: k((o = t.attributes) === null || o === void 0 ? void 0 : o.artwork, g.SpecificRectangle),
+      titleLinks: j((e = t.attributes) === null || e === void 0 ? void 0 : e.name),
+      subtitleLinks: j((n = t.attributes) === null || n === void 0 ? void 0 : n.artistName),
+      artwork: k((o = t.attributes) === null || o === void 0 ? void 0 : o.artwork, f.SpecificRectangle),
       contentDescriptor: l,
-      playAction: m(l, this.objectGraph, null),
+      playAction: y(l, this.objectGraph, null),
       segue: b(l, t, "ShelfItem", this.objectGraph),
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
     };
   }
-  musicVideo(t, e) {
-    var i, n;
+  musicVideo(t, i) {
+    var e, n;
     const o = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       displayStyle: this.context.lockupStyle,
-      titleLinks: L((i = t.attributes) === null || i === void 0 ? void 0 : i.name),
-      subtitleLinks: L(oi(t, this.objectGraph, e)),
-      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, g.SpecificRectangle),
+      titleLinks: j((e = t.attributes) === null || e === void 0 ? void 0 : e.name),
+      subtitleLinks: j(li(t, this.objectGraph, i)),
+      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, f.SpecificRectangle),
       contentDescriptor: o,
-      playAction: m(o, this.objectGraph, null),
+      playAction: y(o, this.objectGraph, null),
       segue: b(o, t, "ShelfItem", this.objectGraph),
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
     };
   }
-  uploadedVideo(t, e) {
-    var i, n;
+  uploadedVideo(t, i) {
+    var e, n;
     const o = v(t, this.objectGraph, this.context.resourceManager);
     return {
       id: t.id,
       displayStyle: this.context.lockupStyle,
-      titleLinks: L((i = t.attributes) === null || i === void 0 ? void 0 : i.name),
-      subtitleLinks: L(li(t, this.objectGraph, e)),
-      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, g.SpecificRectangle),
+      titleLinks: j((e = t.attributes) === null || e === void 0 ? void 0 : e.name),
+      subtitleLinks: j(si(t, this.objectGraph, i)),
+      artwork: k((n = t.attributes) === null || n === void 0 ? void 0 : n.artwork, f.SpecificRectangle),
       contentDescriptor: o,
-      playAction: m(o, this.objectGraph, null),
+      playAction: y(o, this.objectGraph, null),
       segue: b(o, t, "ShelfItem", this.objectGraph),
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
     };
   }
 }
-class vi {
-  constructor(t, e, i, n) {
+class bi {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = "CalendarEventLockup"),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n = N(
-      new bi(
+      new ki(
         { displayVariants: this.displayAttributes.variants, resourceManager: this.context.resourceManager },
         this.objectGraph,
       ),
-      (i =
-        (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-        e === void 0
+      (e =
+        (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+        i === void 0
           ? void 0
-          : e.data) !== null && i !== void 0
-        ? i
+          : i.data) !== null && e !== void 0
+        ? e
         : [],
       this.objectGraph,
     );
@@ -1151,15 +1156,15 @@ class vi {
         };
   }
 }
-class bi {
-  constructor(t, e) {
-    ((this.label = "CalendarEventLockupBuilder"), (this.context = t), (this.objectGraph = e));
+class ki {
+  constructor(t, i) {
+    ((this.label = "CalendarEventLockupBuilder"), (this.context = t), (this.objectGraph = i));
   }
-  concert(t, e) {
-    var i, n, o, l, s, r, u, c, h, y, f, j, _, A, x, D;
+  concert(t, i) {
+    var e, n, o, l, s, r, u, c, h, g, m, _, S, A, x, D;
     const M =
         (o =
-          (n = (i = t.relationships) === null || i === void 0 ? void 0 : i.venues) === null || n === void 0
+          (n = (e = t.relationships) === null || e === void 0 ? void 0 : e.venues) === null || n === void 0
             ? void 0
             : n.data) === null || o === void 0
           ? void 0
@@ -1171,45 +1176,43 @@ class bi {
     if (B(E)) return null;
     const O = (s = t.attributes) === null || s === void 0 ? void 0 : s.timezone,
       P = { date: E, timeZone: O };
-    let S, J;
-    if (e === Q.CityAndRegion) {
+    let w, J;
+    if (i === Q.CityAndRegion) {
       const K =
-        (u = (r = G == null ? void 0 : G.attributes) === null || r === void 0 ? void 0 : r.structuredAddress) ===
-          null || u === void 0
+        (u = (r = G?.attributes) === null || r === void 0 ? void 0 : r.structuredAddress) === null || u === void 0
           ? void 0
           : u.city;
       if (B(K)) return null;
-      S = K;
-      const H = (c = G == null ? void 0 : G.attributes) === null || c === void 0 ? void 0 : c.name,
+      w = K;
+      const H = (c = G?.attributes) === null || c === void 0 ? void 0 : c.name,
         dt = Gt(E, O, this.objectGraph, !0);
       F(H)
         ? (J = gt.string("AMWEB.ContentA.Middot.ContentB", this.objectGraph, { contentA: H, contentB: dt }))
         : (J = dt);
     } else {
       const K =
-          (f =
-            (y = (h = t.relationships) === null || h === void 0 ? void 0 : h.artists) === null || y === void 0
+          (m =
+            (g = (h = t.relationships) === null || h === void 0 ? void 0 : h.artists) === null || g === void 0
               ? void 0
-              : y.data) === null || f === void 0
+              : g.data) === null || m === void 0
             ? void 0
-            : f[0],
+            : m[0],
         H = K ? this.context.resourceManager.resource(K) : null;
       if (
-        ((S =
-          (_ = (j = H == null ? void 0 : H.attributes) === null || j === void 0 ? void 0 : j.name) !== null &&
-          _ !== void 0
-            ? _
+        ((w =
+          (S = (_ = H?.attributes) === null || _ === void 0 ? void 0 : _.name) !== null && S !== void 0
+            ? S
             : (A = t.attributes) === null || A === void 0
               ? void 0
               : A.name),
-        B(S))
+        B(w))
       )
         return null;
-      J = (x = G == null ? void 0 : G.attributes) === null || x === void 0 ? void 0 : x.name;
+      J = (x = G?.attributes) === null || x === void 0 ? void 0 : x.name;
     }
     return {
       id: t.id,
-      title: S,
+      title: w,
       subtitle: J,
       artwork: P,
       contentDescriptor: T,
@@ -1219,31 +1222,31 @@ class bi {
   }
 }
 class Z {
-  constructor(t, e, i, n) {
+  constructor(t, i, e, n) {
     ((this.sectionContentTypeName = Z.sectionContentTypeName),
       (this.collection = t),
-      (this.displayAttributes = e),
-      (this.context = i),
+      (this.displayAttributes = i),
+      (this.context = e),
       (this.objectGraph = n));
   }
   build() {
-    var t, e, i;
+    var t, i, e;
     const n =
         this.displayAttributes.layoutDirection === I.List
           ? { kind: "playlistTrackList", hasVideo: !1, hasBadging: !1 }
           : "shelfTrackList",
       o = N(
-        new ki(
+        new gi(
           { displayVariants: this.displayAttributes.variants, resourceManager: this.context.resourceManager },
           this.objectGraph,
           n,
         ),
-        (i =
-          (e = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
-          e === void 0
+        (e =
+          (i = (t = this.collection.relationships) === null || t === void 0 ? void 0 : t.contents) === null ||
+          i === void 0
             ? void 0
-            : e.data) !== null && i !== void 0
-          ? i
+            : i.data) !== null && e !== void 0
+          ? e
           : [],
         this.objectGraph,
       );
@@ -1257,18 +1260,18 @@ class Z {
   }
 }
 Z.sectionContentTypeName = "TrackLockup";
-class ki {
-  constructor(t, e, i = "shelfTrackList") {
-    ((this.label = "TrackLockupBuilder"), (this.context = t), (this.objectGraph = e), (this.layoutStyle = i));
+class gi {
+  constructor(t, i, e = "shelfTrackList") {
+    ((this.label = "TrackLockupBuilder"), (this.context = t), (this.objectGraph = i), (this.layoutStyle = e));
   }
-  song(t, e) {
-    var i, n, o, l, s, r, u;
+  song(t, i) {
+    var e, n, o, l, s, r, u;
     const c = v(t, this.objectGraph, this.context.resourceManager),
-      h = e === tt.AlbumAndReleaseYear;
+      h = i === tt.AlbumAndReleaseYear;
     return {
       id: t.id,
-      title: (i = t.attributes) === null || i === void 0 ? void 0 : i.name,
-      subtitleLinks: L(
+      title: (e = t.attributes) === null || e === void 0 ? void 0 : e.name,
+      subtitleLinks: j(
         h
           ? xt(
               (n = t.attributes) === null || n === void 0 ? void 0 : n.albumName,
@@ -1280,42 +1283,42 @@ class ki {
             : l.artistName,
       ),
       tertiaryLinks: h ? null : Dt(t, this.objectGraph, null),
-      artwork: k((s = t.attributes) === null || s === void 0 ? void 0 : s.artwork, g.SpecificRectangle),
+      artwork: k((s = t.attributes) === null || s === void 0 ? void 0 : s.artwork, f.SpecificRectangle),
       contentDescriptor: c,
-      playAction: m(c, this.objectGraph, null),
+      playAction: y(c, this.objectGraph, null),
       segue: b(c, t, "ShelfItem", this.objectGraph),
       layoutStyle: this.layoutStyle,
       duration:
         (u = (r = t.attributes) === null || r === void 0 ? void 0 : r.durationInMillis) !== null && u !== void 0
           ? u
           : null,
-      showExplicitBadge: w(t.attributes),
+      showExplicitBadge: L(t.attributes),
       pauseAction: null,
       resumeAction: null,
     };
   }
 }
-function mi(a, t) {
+function _i(a, t) {
   return ft(a, t) && a.attributes.display.style === p.ArtistFeaturedTrackLockup;
 }
 class z {
-  constructor(t, e, i, n) {
-    ((this.collection = t), (this.context = e), (this.objectGraph = i), (this.sectionIndex = n));
+  constructor(t, i, e, n) {
+    ((this.collection = t), (this.context = i), (this.objectGraph = e), (this.sectionIndex = n));
   }
   build() {
     var t;
-    const e = Rt(this.collection, this.objectGraph, this.context.collectionsPreferSeeAllDisplayAttributes),
-      i = e.style,
-      n = z.builders[i];
+    const i = Rt(this.collection, this.objectGraph, this.context.collectionsPreferSeeAllDisplayAttributes),
+      e = i.style,
+      n = z.builders[e];
     if (B(n))
       return (
         $.warn(
           this.objectGraph,
-          `No section content builder type with style for ${this.collection.type}/${i}/${this.collection.id}`,
+          `No section content builder type with style for ${this.collection.type}/${e}/${this.collection.id}`,
         ),
         null
       );
-    const o = new n(this.collection, e, this.context, this.objectGraph),
+    const o = new n(this.collection, i, this.context, this.objectGraph),
       l = `${o.sectionContentTypeName}Section`,
       s = Mt(`${this.collection.id}-${l}`, this.objectGraph),
       r = o.build();
@@ -1324,8 +1327,8 @@ class z {
     if (!this.context.dropCollectionSectionHeaders)
       if (F(o.header)) u = o.header();
       else {
-        const f = z.header(this.collection, this.objectGraph);
-        u = F(f) ? { kind: "default", item: f } : null;
+        const m = z.header(this.collection, this.objectGraph, this.context);
+        u = F(m) ? { kind: "default", item: m } : null;
       }
     const c = (t = this.collection.attributes.title) !== null && t !== void 0 ? t : l,
       h = {
@@ -1337,29 +1340,29 @@ class z {
         name: c,
         targetType: "ShelfItem",
       },
-      y = z.addItemImpressions(r.items, h, this.objectGraph);
+      g = z.addItemImpressions(r.items, h, this.objectGraph);
     return Object.assign(Object.assign({ id: s, header: u }, r), {
-      items: y,
+      items: g,
       impressionMetrics: vt(this.objectGraph, h),
     });
   }
-  static addItemImpressions(t, e, i) {
+  static addItemImpressions(t, i, e) {
     return t.map((n, o) => {
       const l = n,
-        s = vt(i, z.itemMetricsDataFor(l, o, e));
+        s = vt(e, z.itemMetricsDataFor(l, o, i));
       return Object.assign(
         Object.assign(Object.assign({}, l), { impressionMetrics: s }),
         z.innerLockupsWithImpressions(l, s),
       );
     });
   }
-  static itemMetricsDataFor(t, e, i) {
+  static itemMetricsDataFor(t, i, e) {
     var n, o, l, s, r;
-    const u = i.impressionId;
+    const u = e.impressionId;
     return {
       id: (n = t.id) !== null && n !== void 0 ? n : "",
       impressionId: pt(`${t.id} - ${u}`),
-      impressionsIndex: e,
+      impressionsIndex: i,
       impressionParentId: u,
       kind:
         (l = (o = t.contentDescriptor) === null || o === void 0 ? void 0 : o.kind) !== null && l !== void 0 ? l : null,
@@ -1368,55 +1371,55 @@ class z {
       targetType: "ShelfItem",
     };
   }
-  static innerLockupsWithImpressions(t, e) {
-    const i = {};
+  static innerLockupsWithImpressions(t, i) {
+    const e = {};
     return (
-      t.squareLockup && (i.squareLockup = Object.assign(Object.assign({}, t.squareLockup), { impressionMetrics: e })),
+      t.squareLockup && (e.squareLockup = Object.assign(Object.assign({}, t.squareLockup), { impressionMetrics: i })),
       t.horizontalLockup &&
-        (i.horizontalLockup = Object.assign(Object.assign({}, t.horizontalLockup), { impressionMetrics: e })),
-      t.circleLockup && (i.circleLockup = Object.assign(Object.assign({}, t.circleLockup), { impressionMetrics: e })),
-      i
+        (e.horizontalLockup = Object.assign(Object.assign({}, t.horizontalLockup), { impressionMetrics: i })),
+      t.circleLockup && (e.circleLockup = Object.assign(Object.assign({}, t.circleLockup), { impressionMetrics: i })),
+      e
     );
   }
-  static header(t, e) {
-    var i, n, o, l;
-    const s = t.attributes.title;
-    if (B(s)) return null;
-    const r = t.attributes.seeMoreUrl;
-    if (F(r)) {
-      const h = Ct(r, t.id, e);
-      return { titleLink: { title: s, segue: h, url: r } };
+  static header(t, i, e) {
+    var n, o, l, s;
+    const r = t.attributes.title;
+    if (B(r)) return null;
+    const u = t.attributes.seeMoreUrl;
+    if (F(u)) {
+      const g = Ct(u, t.id, i);
+      return { titleLink: { title: r, segue: g, url: u } };
     }
-    const u =
-        (o =
-          (n = (i = t.relationships["see-all"]) === null || i === void 0 ? void 0 : i.data) === null || n === void 0
+    const c =
+        (l =
+          (o = (n = t.relationships["see-all"]) === null || n === void 0 ? void 0 : n.data) === null || o === void 0
             ? void 0
-            : n[0]) === null || o === void 0
+            : o[0]) === null || l === void 0
           ? void 0
-          : o.href,
-      c = F((l = t.relationships.contents) === null || l === void 0 ? void 0 : l.next);
-    if (F(u) && c) {
-      const h = It(e, "seeAll", "button", "navigate", { actionUrl: u }),
-        y = { $kind: "CanvasShelfCollectionSeeAllIntent", href: u, referrerInfo: null },
-        f = Bt({ kind: Vt.CatalogPage, intent: y }, h);
-      return { titleLink: { title: s, segue: f, url: u } };
+          : l.href,
+      h = F((s = t.relationships.contents) === null || s === void 0 ? void 0 : s.next);
+    if (F(c) && h) {
+      const g = It(i, "seeAll", "button", "navigate", { actionUrl: c }),
+        m = { $kind: "CanvasShelfCollectionSeeAllIntent", href: c, artistName: Nt(e), referrerInfo: null },
+        _ = Bt({ kind: Vt.CatalogPage, intent: m }, g);
+      return { titleLink: { title: r, segue: _, url: c } };
     }
-    return { titleLink: { title: s } };
+    return { titleLink: { title: r } };
   }
 }
 z.builders = {
-  [p.AdaptiveHorizontalCircleLockup]: ri,
-  [p.AdaptiveHorizontalSquareLockupMedium]: di,
+  [p.AdaptiveHorizontalCircleLockup]: ui,
+  [p.AdaptiveHorizontalSquareLockupMedium]: ci,
   [p.ArtistFeaturedContent]: et,
   [p.BrickLockup]: kt,
   [p.BrickLockupLarge]: kt,
-  [p.CalendarEventLockup]: vi,
-  [p.CircleLockup]: ni,
-  [p.HorizontalLockup]: si,
+  [p.CalendarEventLockup]: bi,
+  [p.CircleLockup]: oi,
+  [p.HorizontalLockup]: ri,
   [p.SquareLockup]: at,
   [p.SquareLockupLarge]: at,
   [p.SquareLockupMedium]: at,
   [p.ArtistFeaturedTrackLockup]: Z,
   [p.TrackLockup]: Z,
 };
-export { hi as A, p as C, tt as S, ki as T, bt as a, z as b, mi as c, N as d, ft as e, fi as f, yi as i, yt as t };
+export { pi as A, p as C, tt as S, gi as T, bt as a, z as b, _i as c, N as d, ft as e, mi as f, yi as i, mt as t };
