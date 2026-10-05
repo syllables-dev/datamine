@@ -2,7 +2,7 @@ name: datamine
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "7-59/10 * * * *"
   workflow_dispatch:
     inputs:
       force:
