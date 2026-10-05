@@ -1,0 +1,52 @@
+name: datamine
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Re-crawl even if the build has not changed
+        type: boolean
+        default: false
+      target:
+        description: Only crawl this target (main, beta, classical)
+        type: string
+        required: false
+
+concurrency:
+  group: datamine
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  datamine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run datamine ${{ inputs.force && '--force' || '' }} ${{ inputs.target && format('--target={0}', inputs.target) || '' }}
+      - id: commit
+        run: |
+          git add --all
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --file .datamine/commit.txt
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "url=${{ github.server_url }}/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - if: steps.commit.outputs.changed == 'true'
+        run: bun run notify
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          COMMIT_URL: ${{ steps.commit.outputs.url }}
