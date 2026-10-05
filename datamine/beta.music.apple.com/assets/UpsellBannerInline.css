@@ -1,10 +1,10 @@
 @charset "UTF-8";
-.banner.svelte-1ozlay5.svelte-1ozlay5 {
+.banner.svelte-1uspg9f.svelte-1uspg9f {
   align-items: center;
   background-color: var(--keyColorBG);
   box-shadow:
-    0 1px rgba(0, 0, 0, 0.05),
-    0 1px 3px rgba(0, 0, 0, 0.07);
+    0 1px #0000000d,
+    0 1px 3px #00000012;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -12,8 +12,8 @@
   padding: 12px 30px;
   width: 100%;
 }
-.banner__close-button.svelte-1ozlay5.svelte-1ozlay5 {
-  box-sizing: content-box;
+.banner__close-button.svelte-1uspg9f.svelte-1uspg9f {
+  box-sizing: initial;
   height: 10px;
   inset-inline-end: 0;
   padding: 10px;
@@ -21,48 +21,46 @@
   top: 0;
   width: 10px;
 }
-.banner__close-button.svelte-1ozlay5 svg {
+.banner__close-button.svelte-1uspg9f svg {
   height: inherit;
   width: inherit;
   fill: #fff;
 }
-.banner--collapsed.svelte-1ozlay5 .banner__close-button.svelte-1ozlay5 {
+.banner--collapsed.svelte-1uspg9f .banner__close-button.svelte-1uspg9f {
   display: none;
 }
 @media (min-width: 484px) {
-  .banner__close-button.svelte-1ozlay5.svelte-1ozlay5 {
+  .banner__close-button.svelte-1uspg9f.svelte-1uspg9f {
     display: none;
   }
 }
-.banner__text-container.svelte-1ozlay5.svelte-1ozlay5 {
+.banner__text-container.svelte-1uspg9f.svelte-1uspg9f {
   flex: 1;
 }
 @media (max-width: 483px) {
-  .banner__text-container.svelte-1ozlay5.svelte-1ozlay5 {
+  .banner__text-container.svelte-1uspg9f.svelte-1uspg9f {
     text-align: center;
   }
-  .banner--collapsed.svelte-1ozlay5 .banner__text-container.svelte-1ozlay5 {
+  .banner--collapsed.svelte-1uspg9f .banner__text-container.svelte-1uspg9f {
     padding-bottom: 7px;
     padding-top: 7px;
   }
 }
 @media (min-width: 484px) {
-  .banner__text-container.svelte-1ozlay5.svelte-1ozlay5 {
-    -webkit-margin-end: 16px;
-    -moz-margin-end: 16px;
+  .banner__text-container.svelte-1uspg9f.svelte-1uspg9f {
     margin-inline-end: 16px;
   }
 }
-.banner__cta-button.svelte-1ozlay5.svelte-1ozlay5,
-.text__description.svelte-1ozlay5.svelte-1ozlay5,
-.text__title.svelte-1ozlay5.svelte-1ozlay5 {
+.banner__cta-button.svelte-1uspg9f.svelte-1uspg9f,
+.text__description.svelte-1uspg9f.svelte-1uspg9f,
+.text__title.svelte-1uspg9f.svelte-1uspg9f {
   font-family: unset !important;
 }
-.text__title.svelte-1ozlay5.svelte-1ozlay5 {
+.text__title.svelte-1uspg9f.svelte-1uspg9f {
   color: #fff;
 }
 @media (max-width: 999px) {
-  .text__title.svelte-1ozlay5.svelte-1ozlay5 {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f {
     font-family:
       SF Pro Text,
       SF Pro Icons,
@@ -75,7 +73,7 @@
     letter-spacing: 0;
     line-height: 1.28;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ar) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Text,
@@ -87,7 +85,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ja) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Text,
@@ -102,7 +100,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ko) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Text,
@@ -117,7 +115,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(th) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Text,
@@ -127,7 +125,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-CN) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Text,
@@ -138,7 +136,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-HK) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Text,
@@ -149,7 +147,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-MO) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -161,7 +159,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-TW) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Text,
@@ -174,7 +172,7 @@
   }
 }
 @media (min-width: 1000px) {
-  .text__title.svelte-1ozlay5.svelte-1ozlay5 {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f {
     font-family:
       SF Pro Display,
       SF Pro Icons,
@@ -187,7 +185,7 @@
     letter-spacing: 0;
     line-height: 1.23;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ar) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Display,
@@ -199,7 +197,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ja) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Display,
@@ -214,7 +212,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ko) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Display,
@@ -229,7 +227,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(th) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Display,
@@ -239,7 +237,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-CN) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Display,
@@ -250,7 +248,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-HK) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Display,
@@ -261,7 +259,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-MO) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -273,7 +271,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-TW) {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Display,
@@ -286,7 +284,7 @@
   }
 }
 @media (min-width: 484px) {
-  .text__title.svelte-1ozlay5.svelte-1ozlay5 {
+  .text__title.svelte-1uspg9f.svelte-1uspg9f {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     line-clamp: 1;
@@ -294,13 +292,13 @@
     overflow: hidden;
   }
 }
-.text__description.svelte-1ozlay5.svelte-1ozlay5 {
-  color: rgba(255, 255, 255, 0.8);
+.text__description.svelte-1uspg9f.svelte-1uspg9f {
+  color: #fffc;
   margin-top: 8px;
   white-space: pre-line;
 }
 @media (max-width: 999px) {
-  .text__description.svelte-1ozlay5.svelte-1ozlay5 {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f {
     font-family:
       SF Pro Text,
       SF Pro Icons,
@@ -313,7 +311,7 @@
     letter-spacing: 0;
     line-height: 1.23;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ar) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Text,
@@ -325,7 +323,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ja) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Text,
@@ -340,7 +338,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ko) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Text,
@@ -355,7 +353,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(th) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Text,
@@ -365,7 +363,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-CN) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Text,
@@ -376,7 +374,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-HK) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Text,
@@ -387,7 +385,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-MO) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -399,7 +397,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-TW) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Text,
@@ -412,7 +410,7 @@
   }
 }
 @media (min-width: 1000px) {
-  .text__description.svelte-1ozlay5.svelte-1ozlay5 {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f {
     font-family:
       SF Pro Text,
       SF Pro Icons,
@@ -425,7 +423,7 @@
     letter-spacing: 0;
     line-height: 1.2307742857;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ar) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Text,
@@ -437,7 +435,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ja) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Text,
@@ -452,7 +450,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ko) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Text,
@@ -467,7 +465,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(th) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Text,
@@ -477,7 +475,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-CN) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Text,
@@ -488,7 +486,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-HK) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Text,
@@ -499,7 +497,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-MO) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -511,7 +509,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-TW) {
+  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Text,
@@ -524,19 +522,22 @@
   }
 }
 @media (max-width: 483px) {
-  .banner--collapsed.svelte-1ozlay5 .text__description.svelte-1ozlay5 {
+  .banner--collapsed.svelte-1uspg9f .text__description.svelte-1uspg9f {
     display: none;
   }
 }
-.banner__cta-button.svelte-1ozlay5.svelte-1ozlay5 {
+[lang]:lang(th) .text__title.svelte-1uspg9f.svelte-1uspg9f {
+  line-height: 1.6;
+}
+.banner__cta-button.svelte-1uspg9f.svelte-1uspg9f {
   --buttonTextColor: #000;
   --buttonBackgroundColor: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 20px #0000000f;
   height: 32px;
   min-width: 125px;
 }
 @media (max-width: 483px) {
-  .banner__cta-button.svelte-1ozlay5.svelte-1ozlay5 {
+  .banner__cta-button.svelte-1uspg9f.svelte-1uspg9f {
     display: none;
   }
 }

@@ -1,4 +1,4 @@
-import { br as l, Z as s } from "./main.js";
+import { bA as l, Z as s } from "./main.js";
 function i(t, f) {
   for (var o = 0; o < f.length; o++) {
     const e = f[o];

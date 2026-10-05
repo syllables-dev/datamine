@@ -1,86 +1,65 @@
-import { a2 as d } from "./main.js";
-import { P as t } from "./group-session-proto.js";
-function O(e, r, i) {
-  var a, A, T;
-  const f = N(e),
-    n = !r || (r == null ? void 0 : r.length) === 0 ? f || { kind: d.Album } : r[0];
+import { a2 as r } from "./main.js";
+import { P as n } from "./group-session-proto.js";
+function T(e, t, i) {
+  const u = A(e),
+    o = !t || t?.length === 0 ? u || { kind: r.Album } : t[0];
   (!i || i.length === 0) && (i = Array.isArray(e) ? e : [{ contentDescriptor: e }]);
-  const s = M(n == null ? void 0 : n.kind);
-  let u = (a = n == null ? void 0 : n.identifiers) != null ? a : {};
+  const d = c(o?.kind);
+  let a = o?.identifiers ?? {};
   return (
-    s === t.Container.ContainerType.PLAYLIST &&
-      (A = n == null ? void 0 : n.identifiers) != null &&
-      A.storeAdamID &&
-      (u = { ...u, storePlaylistGlobalID: n.identifiers.storeAdamID }),
-    s === t.Container.ContainerType.ALBUM &&
-      (T = n == null ? void 0 : n.identifiers) != null &&
-      T.storeCloudAlbumID &&
-      (u = { ...u, cloudCollectionID: n.identifiers.storeCloudAlbumID }),
+    d === n.Container.ContainerType.PLAYLIST &&
+      o?.identifiers?.storeAdamID &&
+      (a = { ...a, storePlaylistGlobalID: o.identifiers.storeAdamID }),
+    d === n.Container.ContainerType.ALBUM &&
+      o?.identifiers?.storeCloudAlbumID &&
+      (a = { ...a, cloudCollectionID: o.identifiers.storeCloudAlbumID }),
     [
       {
-        containerType: s,
-        identifierSet: u,
-        items:
-          i == null
-            ? void 0
-            : i.map((o) => {
-                var C, l, S, I, y;
-                return {
-                  mediaType: g((C = o == null ? void 0 : o.contentDescriptor) == null ? void 0 : C.kind),
-                  identifierSet: {
-                    storeAdamID: parseFloat(
-                      (S = (l = o == null ? void 0 : o.contentDescriptor) == null ? void 0 : l.identifiers) == null
-                        ? void 0
-                        : S.storeAdamID,
-                    ),
-                    storeSubscriptionAdamID: parseFloat(
-                      (y = (I = o == null ? void 0 : o.contentDescriptor) == null ? void 0 : I.identifiers) == null
-                        ? void 0
-                        : y.storeAdamID,
-                    ),
-                  },
-                };
-              }),
+        containerType: d,
+        identifierSet: a,
+        items: i?.map((s) => ({
+          mediaType: m(s?.contentDescriptor?.kind),
+          identifierSet: {
+            storeAdamID: parseFloat(s?.contentDescriptor?.identifiers?.storeAdamID),
+            storeSubscriptionAdamID: parseFloat(s?.contentDescriptor?.identifiers?.storeAdamID),
+          },
+        })),
       },
     ]
   );
 }
-function F(e, r) {
-  const i = D(e, r);
-  return r.slice(i);
+function l(e, t) {
+  const i = f(e, t);
+  return t.slice(i);
 }
-function D(e, r) {
-  return r.findIndex((i) => {
-    var f;
-    return i.identifiers.storeAdamID === ((f = e.contentDescriptor) == null ? void 0 : f.identifiers.storeAdamID);
-  });
+function f(e, t) {
+  return t.findIndex((i) => i.identifiers.storeAdamID === e.contentDescriptor?.identifiers.storeAdamID);
 }
-function M(e) {
+function c(e) {
   switch (e) {
-    case d.Album:
-      return t.Container.ContainerType.ALBUM;
-    case d.Artist:
-      return t.Container.ContainerType.ARTIST;
-    case d.Playlist:
-      return t.Container.ContainerType.PLAYLIST;
-    case d.RadioStation:
-      return t.Container.ContainerType.RADIO_STATION;
+    case r.Album:
+      return n.Container.ContainerType.ALBUM;
+    case r.Artist:
+      return n.Container.ContainerType.ARTIST;
+    case r.Playlist:
+      return n.Container.ContainerType.PLAYLIST;
+    case r.RadioStation:
+      return n.Container.ContainerType.RADIO_STATION;
     default:
-      return t.Container.ContainerType.UNKNOWN;
+      return n.Container.ContainerType.UNKNOWN;
   }
 }
-function g(e) {
+function m(e) {
   switch (e) {
-    case d.Song:
-      return t.Item.MediaType.SONG;
-    case d.MusicVideo:
-      return t.Item.MediaType.MUSIC_VIDEO;
+    case r.Song:
+      return n.Item.MediaType.SONG;
+    case r.MusicVideo:
+      return n.Item.MediaType.MUSIC_VIDEO;
     default:
-      return t.Item.MediaType.UNKNOWN;
+      return n.Item.MediaType.UNKNOWN;
   }
 }
-function N(e) {
-  var r;
-  if (Array.isArray(e)) return (r = e[0]) == null ? void 0 : r.containerContentDescriptor;
+function A(e) {
+  if (Array.isArray(e)) return e[0]?.containerContentDescriptor;
 }
-export { O as convertToMRContainer, F as omitPriorSongs };
+export { T as convertToMRContainer, l as omitPriorSongs };

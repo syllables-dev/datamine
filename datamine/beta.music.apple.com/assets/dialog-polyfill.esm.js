@@ -237,14 +237,14 @@ n.isInlinePositionSetByStylesheet = function (e) {
       i = null;
     try {
       i = o.cssRules;
-    } catch (w) {}
+    } catch {}
     if (i)
       for (var a = 0; a < i.length; ++a) {
         var r = i[a],
           s = null;
         try {
           s = document.querySelectorAll(r.selectorText);
-        } catch (w) {}
+        } catch {}
         if (!(!s || !M(s, e))) {
           var u = r.style.getPropertyValue("top"),
             f = r.style.getPropertyValue("bottom");

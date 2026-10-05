@@ -1,12 +1,12 @@
-import { br as l, Z as s } from "./main.js";
+import { bA as l, Z as s } from "./main.js";
 function d(o, a) {
-  for (var r = 0; r < a.length; r++) {
-    const e = a[r];
+  for (var t = 0; t < a.length; t++) {
+    const e = a[t];
     if (typeof e != "string" && !Array.isArray(e)) {
-      for (const t in e)
-        if (t !== "default" && !(t in o)) {
-          const i = Object.getOwnPropertyDescriptor(e, t);
-          i && Object.defineProperty(o, t, i.get ? i : { enumerable: !0, get: () => e[t] });
+      for (const r in e)
+        if (r !== "default" && !(r in o)) {
+          const i = Object.getOwnPropertyDescriptor(e, r);
+          i && Object.defineProperty(o, r, i.get ? i : { enumerable: !0, get: () => e[r] });
         }
     }
   }
@@ -22,11 +22,11 @@ var n = {},
     },
   };
 (function (o, a) {
-  (function (r, e) {
+  (function (t, e) {
     e(a);
-  })(s, function (r) {
+  })(s, function (t) {
     var e = typeof window < "u" && window.flatpickr !== void 0 ? window.flatpickr : { l10ns: {} },
-      t = {
+      r = {
         weekdays: {
           shorthand: ["Nd", "Pn", "Wt", "Śr", "Cz", "Pt", "So"],
           longhand: ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"],
@@ -58,9 +58,9 @@ var n = {},
           return ".";
         },
       };
-    e.l10ns.pl = t;
+    e.l10ns.pl = r;
     var i = e.l10ns;
-    ((r.Polish = t), (r.default = i), Object.defineProperty(r, "__esModule", { value: !0 }));
+    ((t.Polish = r), (t.default = i), Object.defineProperty(t, "__esModule", { value: !0 }));
   });
 })(p, n);
 const f = l(n),

@@ -1,12 +1,12 @@
-import { br as i, Z as u } from "./main.js";
+import { bA as i, Z as u } from "./main.js";
 function l(t, s) {
-  for (var r = 0; r < s.length; r++) {
-    const e = s[r];
+  for (var a = 0; a < s.length; a++) {
+    const e = s[a];
     if (typeof e != "string" && !Array.isArray(e)) {
-      for (const a in e)
-        if (a !== "default" && !(a in t)) {
-          const n = Object.getOwnPropertyDescriptor(e, a);
-          n && Object.defineProperty(t, a, n.get ? n : { enumerable: !0, get: () => e[a] });
+      for (const r in e)
+        if (r !== "default" && !(r in t)) {
+          const n = Object.getOwnPropertyDescriptor(e, r);
+          n && Object.defineProperty(t, r, n.get ? n : { enumerable: !0, get: () => e[r] });
         }
     }
   }
@@ -22,11 +22,11 @@ var o = {},
     },
   };
 (function (t, s) {
-  (function (r, e) {
+  (function (a, e) {
     e(s);
-  })(u, function (r) {
+  })(u, function (a) {
     var e = typeof window < "u" && window.flatpickr !== void 0 ? window.flatpickr : { l10ns: {} },
-      a = {
+      r = {
         weekdays: {
           shorthand: ["Aha", "Isn", "Sel", "Rab", "Kha", "Jum", "Sab"],
           longhand: ["Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"],
@@ -54,7 +54,7 @@ var o = {},
         },
       },
       n = e.l10ns;
-    ((r.Malaysian = a), (r.default = n), Object.defineProperty(r, "__esModule", { value: !0 }));
+    ((a.Malaysian = r), (a.default = n), Object.defineProperty(a, "__esModule", { value: !0 }));
   });
 })(f, o);
 const d = i(o),

@@ -1,176 +1,172 @@
-var q = Object.defineProperty;
-var O = (r, i, e) => (i in r ? q(r, i, { enumerable: !0, configurable: !0, writable: !0, value: e }) : (r[i] = e));
-var c = (r, i, e) => (O(r, typeof i != "symbol" ? i + "" : i, e), e);
-import { b as V } from "./binary-array.js";
-import { $ as H, a0 as F, a1 as j } from "./main.js";
+var L = Object.defineProperty;
+var Q = (i, e, t) => (e in i ? L(i, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : (i[e] = t));
+var p = (i, e, t) => (Q(i, typeof e != "symbol" ? e + "" : e, t), t);
+import { b as G } from "./binary-array.js";
+import { $ as N, a0 as q, a1 as O } from "./main.js";
 import {
-  m as x,
-  U as g,
-  D as U,
-  M as p,
-  S as _,
-  C as L,
-  a as W,
-  N as J,
-  b as u,
-  c as f,
-  Q as v,
-  d as B,
-  G as $,
-  P as h,
-  e as b,
-  f as K,
-  g as z,
-  h as S,
-  i as Y,
-  j as X,
-  k as m,
-  l,
-  n as R,
-  o as M,
-  p as C,
-  q as P,
-  r as I,
-  s as k,
-  t as T,
+  m as V,
+  U as y,
+  D as w,
+  M as c,
+  S as E,
+  C as D,
+  a as H,
+  N as F,
+  b as n,
+  c as l,
+  Q as M,
+  d as j,
+  G as x,
+  P as d,
+  e as m,
+  f as W,
+  g as J,
+  h as g,
+  i as B,
+  j as $,
+  k as h,
+  l as r,
+  n as C,
+  o as b,
+  p as P,
+  q as f,
+  r as S,
+  s as v,
+  t as I,
 } from "./group-session-proto.js";
 import {
-  ae as ye,
-  X as fe,
-  Y as me,
-  z as ge,
-  aA as be,
-  I as Pe,
-  _ as Se,
-  aB as Me,
-  E as Ce,
-  aE as Ie,
-  a8 as ve,
-  a9 as Re,
-  af as ke,
-  ag as Te,
-  ac as we,
-  u as Ee,
-  ak as De,
-  W as Ae,
-  V as Ue,
-  K as _e,
-  J as Le,
-  L as Qe,
-  aD as Ge,
-  x as Ne,
-  v as qe,
-  Z as Oe,
-  y as Ve,
-  a7 as He,
-  w as Fe,
-  O as je,
-  H as xe,
-  B as We,
-  a0 as Je,
-  F as Be,
-  al as $e,
-  a1 as Ke,
-  a6 as ze,
-  aC as Ye,
-  $ as Xe,
-  at as Ze,
-  au as et,
-  R as tt,
-  aj as at,
-  a4 as st,
-  a5 as it,
-  a2 as ot,
-  a3 as nt,
-  T as rt,
-  an as ct,
-  ap as dt,
-  ar as ut,
-  as as lt,
-  ao as pt,
-  am as ht,
-  ah as yt,
-  A as ft,
-  az as mt,
-  av as gt,
-  ay as bt,
-  ax as Pt,
-  aw as St,
-  ab as Mt,
-  aa as Ct,
-  ad as It,
-  ai as vt,
-  aq as Rt,
+  ae as le,
+  X as pe,
+  Y as he,
+  z as ye,
+  aA as me,
+  I as fe,
+  _ as ge,
+  aB as be,
+  E as Pe,
+  aE as Se,
+  a8 as Me,
+  a9 as Ce,
+  af as ve,
+  ag as Ie,
+  ac as Re,
+  u as ke,
+  ak as Te,
+  W as we,
+  V as Ee,
+  K as De,
+  J as Ae,
+  L as Ue,
+  aD as _e,
+  x as Le,
+  v as Qe,
+  Z as Ge,
+  y as Ne,
+  a7 as qe,
+  w as Oe,
+  O as Ve,
+  H as He,
+  B as Fe,
+  a0 as je,
+  F as xe,
+  al as We,
+  a1 as Je,
+  a6 as Be,
+  aC as $e,
+  $ as Ke,
+  at as ze,
+  au as Ye,
+  R as Xe,
+  aj as Ze,
+  a4 as et,
+  a5 as tt,
+  a2 as at,
+  a3 as st,
+  T as it,
+  an as ot,
+  ap as nt,
+  ar as rt,
+  as as ct,
+  ao as dt,
+  am as ut,
+  ah as lt,
+  A as pt,
+  az as ht,
+  av as yt,
+  ay as mt,
+  ax as ft,
+  aw as gt,
+  ab as bt,
+  aa as Pt,
+  ad as St,
+  ai as Mt,
+  aq as Ct,
 } from "./group-session-proto.js";
-function Q(...r) {
-  const i = r.filter((t) => t !== !1 && t !== null && typeof t < "u");
-  if (i.some((t) => Array.isArray(t)))
-    return i.every((t) => Array.isArray(t)) ? Array.prototype.concat.apply([], i) : i[i.length - 1];
-  if (!Z(i)) return i[i.length - 1];
-  const e = {};
-  for (let t of i) for (let [a, s] of Object.entries(t)) e.hasOwnProperty(a) ? (e[a] = Q(e[a], s)) : (e[a] = s);
-  return e;
+function A(...i) {
+  const e = i.filter((a) => a !== !1 && a !== null && typeof a < "u");
+  if (e.some((a) => Array.isArray(a)))
+    return e.every((a) => Array.isArray(a)) ? Array.prototype.concat.apply([], e) : e[e.length - 1];
+  if (!K(e)) return e[e.length - 1];
+  const t = {};
+  for (let a of e) for (let [s, o] of Object.entries(a)) t.hasOwnProperty(s) ? (t[s] = A(t[s], o)) : (t[s] = o);
+  return t;
 }
-function Z(r) {
-  return r.every((i) => typeof i == "object");
+function K(i) {
+  return i.every((e) => typeof e == "object");
 }
-const ee = EventTarget;
-var E = ((r) => (
-  (r[(r.HEAD = 0)] = "HEAD"),
-  (r[(r.TAIL = 1)] = "TAIL"),
-  (r[(r.LAST = 2)] = "LAST"),
-  (r[(r.SPECIFIED = 3)] = "SPECIFIED"),
-  r
-))(E || {});
-const te = EventTarget;
-class D {
-  static add(i, e) {
-    const t = this.buffer;
-    ((this.buffer = new Uint8Array(t.length + i.length)),
-      this.buffer.set(t, 0),
-      this.buffer.set(i, t.length),
-      this.isProcessing || ((this.isProcessing = !0), this.process(e)));
+const z = EventTarget;
+var k = ((i) => (
+  (i[(i.HEAD = 0)] = "HEAD"),
+  (i[(i.TAIL = 1)] = "TAIL"),
+  (i[(i.LAST = 2)] = "LAST"),
+  (i[(i.SPECIFIED = 3)] = "SPECIFIED"),
+  i
+))(k || {});
+const Y = EventTarget;
+class T {
+  static add(e, t) {
+    const a = this.buffer;
+    ((this.buffer = new Uint8Array(a.length + e.length)),
+      this.buffer.set(a, 0),
+      this.buffer.set(e, a.length),
+      this.isProcessing || ((this.isProcessing = !0), this.process(t)));
   }
-  static process(i) {
+  static process(e) {
     if (this.buffer.length > 0) {
-      const e = x.Reader.create(this.buffer),
-        t = e.uint32();
-      if (t > 0) {
-        const a = t + e.pos;
-        if (a <= e.len) return (i(this.buffer.slice(0, a)), (this.buffer = this.buffer.slice(a)), this.process(i));
-      } else ((this.buffer = new Uint8Array(0)), i(this.buffer));
+      const t = V.Reader.create(this.buffer),
+        a = t.uint32();
+      if (a > 0) {
+        const s = a + t.pos;
+        if (s <= t.len) return (e(this.buffer.slice(0, s)), (this.buffer = this.buffer.slice(s)), this.process(e));
+      } else ((this.buffer = new Uint8Array(0)), e(this.buffer));
     }
     this.isProcessing = !1;
   }
 }
-(c(D, "buffer", new Uint8Array(0)), c(D, "isProcessing", !1));
-const ae = 1,
-  se = 50,
-  G = 7e3,
-  ie = 2e3;
-class ue extends ee {
-  constructor(e, t, a) {
-    super();
-    c(this, "replyMap", new Map());
-    c(this, "networkProvider");
-    c(this, "client");
-    c(this, "ready", !1);
-    c(this, "itemCache", new H(60));
-    c(this, "queue", []);
-    c(this, "playback", {
-      playbackState: 0,
-      shuffleMode: 0,
-      repeatMode: 0,
-      volume: 0,
-      autoPlay: !1,
-      capabilities: { volumeControl: !1, autoPlayControl: !1, shuffleControl: !1, repeatControl: !1 },
-    });
-    c(this, "_participantIdentity");
-    c(this, "participantItemMap", new Map());
-    c(this, "logger");
-    c(this, "_isSubscribed", !1);
-    ((this.networkProvider = e), (this.client = { bundleIdentifier: t }), (this.logger = a));
-  }
+(p(T, "buffer", new Uint8Array(0)), p(T, "isProcessing", !1));
+const X = 1,
+  Z = 50,
+  U = 7e3,
+  ee = 2e3;
+class re extends z {
+  replyMap = new Map();
+  networkProvider;
+  client;
+  ready = !1;
+  itemCache = new N(60);
+  queue = [];
+  playback = {
+    playbackState: 0,
+    shuffleMode: 0,
+    repeatMode: 0,
+    volume: 0,
+    autoPlay: !1,
+    capabilities: { volumeControl: !1, autoPlayControl: !1, shuffleControl: !1, repeatControl: !1 },
+  };
+  _participantIdentity;
+  participantItemMap = new Map();
+  logger;
+  _isSubscribed = !1;
   get mediaState() {
     return {
       ...this.playback,
@@ -181,7 +177,7 @@ class ue extends ee {
             const a = this.participantItemMap.get(t.participantIdentifier);
             ((t.participantIdentifier = a.identifier),
               (t.participantName = a.displayName),
-              (t.isResolvableParticipant = a.type === g.UserIdentityType.ResolvableIdentity));
+              (t.isResolvableParticipant = a.type === y.UserIdentityType.ResolvableIdentity));
           }
           return t;
         }
@@ -194,131 +190,122 @@ class ue extends ee {
     return this.ready;
   }
   set participantIdentity(e) {
-    this._participantIdentity = g.create(e);
+    this._participantIdentity = y.create(e);
   }
   set isSubscribed(e) {
     this._isSubscribed = e;
   }
+  constructor(e, t, a) {
+    (super(), (this.networkProvider = e), (this.client = { bundleIdentifier: t }), (this.logger = a));
+  }
   async connect(e, t) {
-    var d;
     if (this.ready && (await this.checkConnectionHealth())) {
-      ((d = this.logger) == null || d.debug("Already connected to Media Remote Host"),
-        this.dispatchEvent(new Event("ready")));
+      (this.logger?.debug("Already connected to Media Remote Host"), this.dispatchEvent(new Event("ready")));
       return;
     }
     const a = setTimeout(() => {
       this.dispatchEvent(new Event("end"));
-    }, G);
+    }, U);
     this.participantIdentity = t;
-    const s = U.create({
-      protocolVersion: ae,
+    const s = w.create({
+      protocolVersion: X,
       supportsSharedQueue: !0,
-      lastSupportedMessageType: p.MediaRemoteMessageType_LastMessageType,
-      preferredEncoding: U.PreferredEncoding.JSON,
+      lastSupportedMessageType: c.MediaRemoteMessageType_LastMessageType,
+      preferredEncoding: w.PreferredEncoding.JSON,
       ...e,
     });
-    await this.sendWithReply(p.MediaRemoteMessageType_DeviceInfo, { deviceInfoMessage: s });
-    const o = _.create({ state: L.ConnectionStateProtobuf_Connected });
-    this.send(p.MediaRemoteMessageType_SetConnectionState, { connectionState: o });
-    const n = W.create({
+    await this.sendWithReply(c.MediaRemoteMessageType_DeviceInfo, { deviceInfoMessage: s });
+    const o = E.create({ state: D.ConnectionStateProtobuf_Connected });
+    this.send(c.MediaRemoteMessageType_SetConnectionState, { connectionState: o });
+    const u = H.create({
       nowPlayingUpdates: !0,
       artworkUpdates: !0,
       volumeUpdates: !0,
-      subscribedPlayerPaths: [J.create({ client: this.client })],
+      subscribedPlayerPaths: [F.create({ client: this.client })],
     });
-    (await this.sendWithReply(p.MediaRemoteMessageType_ClientUpdatesConfiguration, { clientUpdatesConfigMessage: n }),
+    (await this.sendWithReply(c.MediaRemoteMessageType_ClientUpdatesConfiguration, { clientUpdatesConfigMessage: u }),
       await this.getVolume(),
       (this.ready = !0),
       clearTimeout(a),
       this.dispatchEvent(new Event("ready")));
   }
   play() {
-    return this.performCommand(u.CommandProtobuf_Play);
+    return this.performCommand(n.CommandProtobuf_Play);
   }
   pause() {
-    return this.performCommand(u.CommandProtobuf_Pause);
+    return this.performCommand(n.CommandProtobuf_Pause);
   }
   skipTrack(e) {
     return e === "next"
-      ? this.performCommand(u.CommandProtobuf_NextTrack)
-      : this.performCommand(u.CommandProtobuf_PreviousTrack);
+      ? this.performCommand(n.CommandProtobuf_NextTrack)
+      : this.performCommand(n.CommandProtobuf_PreviousTrack);
   }
   toggleShuffle() {
-    return this.performCommand(u.CommandProtobuf_AdvanceShuffleMode);
+    return this.performCommand(n.CommandProtobuf_AdvanceShuffleMode);
   }
   toggleRepeat() {
-    return this.performCommand(u.CommandProtobuf_AdvanceRepeatMode);
+    return this.performCommand(n.CommandProtobuf_AdvanceRepeatMode);
   }
   setPlaybackPosition(e) {
     if (e == null) {
       this.logger.error("Please input correct playback position");
       return;
     }
-    const t = f.create({ playbackPosition: e });
-    return this.performCommand(u.CommandProtobuf_SeekToPlaybackPosition, t);
+    const t = l.create({ playbackPosition: e });
+    return this.performCommand(n.CommandProtobuf_SeekToPlaybackPosition, t);
   }
   toggleAutoPlay() {
-    const e = f.create({ queueEndAction: this.playback.autoPlay ? v.None : v.AutoPlay });
-    return this.performCommand(u.CommandProtobuf_ChangeQueueEndAction, e);
+    const e = l.create({ queueEndAction: this.playback.autoPlay ? M.None : M.AutoPlay });
+    return this.performCommand(n.CommandProtobuf_ChangeQueueEndAction, e);
   }
   setVolume(e) {
-    const t = B.create({ volume: e });
-    return this.sendWithReply(p.MediaRemoteMessageType_SetVolume, { setVolumeMessage: t });
+    const t = j.create({ volume: e });
+    return this.sendWithReply(c.MediaRemoteMessageType_SetVolume, { setVolumeMessage: t });
   }
   async getVolume() {
-    var s, o, n, d;
-    const e = await this.sendWithReply(p.MediaRemoteMessageType_GetVolumeControlCapabilities, {
+    const e = await this.sendWithReply(c.MediaRemoteMessageType_GetVolumeControlCapabilities, {
         getVolumeControlCapabilitiesMessage: {},
       }),
-      t = $.create({}),
-      a = await this.sendWithReply(p.MediaRemoteMessageType_GetVolume, { getVolumeMessage: t });
+      t = x.create({}),
+      a = await this.sendWithReply(c.MediaRemoteMessageType_GetVolume, { getVolumeMessage: t });
     return (
       (this.playback.capabilities.volumeControl =
-        (n =
-          (o =
-            (s = e == null ? void 0 : e.getVolumeControlCapabilitiesResultMessage) == null ? void 0 : s.capabilities) ==
-          null
-            ? void 0
-            : o.volumeControlAvailable) != null
-          ? n
-          : !1),
-      (this.playback.volume = (d = a == null ? void 0 : a.getVolumeResultMessage) == null ? void 0 : d.volume),
+        e?.getVolumeControlCapabilitiesResultMessage?.capabilities?.volumeControlAvailable ?? !1),
+      (this.playback.volume = a?.getVolumeResultMessage?.volume),
       a.getVolumeResultMessage.volume
     );
   }
   playQueueItem(e) {
-    var a;
-    const t = f.create({ contentItemID: (a = this.queue) == null ? void 0 : a[e] });
-    return this.performCommand(u.CommandProtobuf_PlayItemInPlaybackQueue, t);
+    const t = l.create({ contentItemID: this.queue?.[e] });
+    return this.performCommand(n.CommandProtobuf_PlayItemInPlaybackQueue, t);
   }
   playNext(e, t) {
-    this.insertToPlaybackQueue(e, t, E.HEAD);
+    this.insertToPlaybackQueue(e, t, k.HEAD);
   }
   playLast(e, t) {
-    this.insertToPlaybackQueue(e, t, E.LAST);
+    this.insertToPlaybackQueue(e, t, k.LAST);
   }
   playRadioStation(e, t) {
-    const a = h.RadioCreationProperties.create({
+    const a = d.RadioCreationProperties.create({
         playActivityFeatureName: e,
         accountInfo: this.buildDelegateInfoWithAccountInfo(),
         ...t,
       }),
-      s = h.RadioCreationProperties.encode(a).finish(),
-      o = f.create({
+      s = d.RadioCreationProperties.encode(a).finish(),
+      o = l.create({
         systemAppPlaybackQueue: this.buildSystemPlaybackQueue(
-          b.SystemPlaybackCustomDataQueueProtobuf.create({
+          m.SystemPlaybackCustomDataQueueProtobuf.create({
             identifier: "com.apple.music.playbackqueue.radio",
             data: s,
           }),
           { isRequestingImmediatePlayback: !0 },
         ),
-        applicationUserIdentity: g.encode(this._participantIdentity).finish(),
+        applicationUserIdentity: y.encode(this._participantIdentity).finish(),
       });
-    return this.performCommand(u.CommandProtobuf_SetPlaybackQueue, o);
+    return this.performCommand(n.CommandProtobuf_SetPlaybackQueue, o);
   }
   async getPlaybackQueue(e, t = 0) {
-    var n, d, y;
-    const a = K.create({
+    const a = W.create({
         location: t,
         length: e,
         includeMetadata: !0,
@@ -326,61 +313,47 @@ class ue extends ee {
         contentItemIdentifiers: Array.from(this.itemCache.keys()),
         playerPath: { client: this.client },
       }),
-      s = await this.sendWithReply(p.MediaRemoteMessageType_PlaybackQueueRequest, { playbackQueueRequest: a }),
       o =
-        (y =
-          (d = (n = s == null ? void 0 : s.setStateMessage) == null ? void 0 : n.playbackQueue) == null
-            ? void 0
-            : d.contentItem) != null
-          ? y
-          : [];
+        (await this.sendWithReply(c.MediaRemoteMessageType_PlaybackQueueRequest, { playbackQueueRequest: a }))
+          ?.setStateMessage?.playbackQueue?.contentItem ?? [];
     ((this.queue = o.map(this.updateContentItemCache.bind(this))), this.logger.debug(this.itemCache));
   }
   setPlaybackQueue(e, t, a) {
     const s = this.buildPlaybackTrackListData(e, t, {
-        shuffleMode: a ? h.Tracklist.ShuffleMode.SONGS : h.Tracklist.ShuffleMode.NONE,
+        shuffleMode: a ? d.Tracklist.ShuffleMode.SONGS : d.Tracklist.ShuffleMode.NONE,
       }),
-      o = f.create({
+      o = l.create({
         systemAppPlaybackQueue: this.buildSystemPlaybackQueue(s, { isRequestingImmediatePlayback: !0 }),
-        applicationUserIdentity: g.encode(this._participantIdentity).finish(),
+        applicationUserIdentity: y.encode(this._participantIdentity).finish(),
       });
-    return this.performCommand(u.CommandProtobuf_SetPlaybackQueue, o);
+    return this.performCommand(n.CommandProtobuf_SetPlaybackQueue, o);
   }
   insertToPlaybackQueue(e, t, a, s) {
-    var d;
     const o = this.buildPlaybackTrackListData(e, t),
-      n = f.create({
+      u = l.create({
         playbackQueueInsertionPosition: a,
-        insertBeforeContentItemID: (d = this.queue) == null ? void 0 : d[s],
+        insertBeforeContentItemID: this.queue?.[s],
         systemAppPlaybackQueue: this.buildSystemPlaybackQueue(o),
-        applicationUserIdentity: g.encode(this._participantIdentity).finish(),
+        applicationUserIdentity: y.encode(this._participantIdentity).finish(),
       });
-    return this.performCommand(u.CommandProtobuf_InsertIntoPlaybackQueue, n);
+    return this.performCommand(n.CommandProtobuf_InsertIntoPlaybackQueue, u);
   }
   removeFromPlaybackQueue(e) {
-    var a;
-    const t = f.create({ contentItemID: (a = this.queue) == null ? void 0 : a[e] });
-    return this.performCommand(u.CommandProtobuf_RemoveFromPlaybackQueue, t);
+    const t = l.create({ contentItemID: this.queue?.[e] });
+    return this.performCommand(n.CommandProtobuf_RemoveFromPlaybackQueue, t);
   }
   reorderPlaybackQueue(e, t) {
-    var s, o;
-    const a = f.create({
-      contentItemID: (s = this.queue) == null ? void 0 : s[e],
-      insertBeforeContentItemID: (o = this.queue) == null ? void 0 : o[t],
-    });
-    return this.performCommand(u.CommandProtobuf_ReorderPlaybackQueue, a);
+    const a = l.create({ contentItemID: this.queue?.[e], insertBeforeContentItemID: this.queue?.[t] });
+    return this.performCommand(n.CommandProtobuf_ReorderPlaybackQueue, a);
   }
   buildPlaybackTrackListData(e, t, a) {
-    const s = h.Tracklist.create({
+    const s = d.Tracklist.create({
       container: t.map((o) =>
-        h.Container.create({
-          containerType: o == null ? void 0 : o.containerType,
-          identifierSet: h.ContainerIdentifierSet.create(o == null ? void 0 : o.identifierSet),
-          item: o.items.map((n) =>
-            h.Item.create({
-              mediaType: n == null ? void 0 : n.mediaType,
-              identifierSet: h.ItemIdentifierSet.create(n == null ? void 0 : n.identifierSet),
-            }),
+        d.Container.create({
+          containerType: o?.containerType,
+          identifierSet: d.ContainerIdentifierSet.create(o?.identifierSet),
+          item: o.items.map((u) =>
+            d.Item.create({ mediaType: u?.mediaType, identifierSet: d.ItemIdentifierSet.create(u?.identifierSet) }),
           ),
           playActivityFeatureName: e,
         }),
@@ -388,40 +361,40 @@ class ue extends ee {
       accountInfo: [this.buildDelegateInfoWithAccountInfo()],
       ...a,
     });
-    return b.SystemPlaybackCustomDataQueueProtobuf.create({
+    return m.SystemPlaybackCustomDataQueueProtobuf.create({
       identifier: "com.apple.music.playbackqueue.tracklist",
-      data: h.Tracklist.encode(s).finish(),
+      data: d.Tracklist.encode(s).finish(),
     });
   }
   buildSystemPlaybackQueue(e, t) {
-    return b.create({
-      type: b.SystemPlaybackQueueType.SystemPlaybackQueueTypeCustom,
-      replaceIntent: b.SystemPlaybackQueueReplaceIntent.SystemPlaybackQueueReplaceIntentClearUpNext,
+    return m.create({
+      type: m.SystemPlaybackQueueType.SystemPlaybackQueueTypeCustom,
+      replaceIntent: m.SystemPlaybackQueueReplaceIntent.SystemPlaybackQueueReplaceIntentClearUpNext,
       customData: e,
       ...t,
     });
   }
   buildDelegateInfoWithAccountInfo() {
-    return h.DelegateInfo.create({
+    return d.DelegateInfo.create({
       accountCapabilities: [
         this._isSubscribed
-          ? h.DelegateInfo.AccountCapabilities.CATALOG_PLAYBACK
-          : h.DelegateInfo.AccountCapabilities.NONE,
+          ? d.DelegateInfo.AccountCapabilities.CATALOG_PLAYBACK
+          : d.DelegateInfo.AccountCapabilities.NONE,
       ],
     });
   }
   disconnect() {
-    const e = _.create({ state: L.ConnectionStateProtobuf_Disconnected });
-    (this.send(p.MediaRemoteMessageType_SetConnectionState, { connectionState: e }), (this.ready = !1));
+    const e = E.create({ state: D.ConnectionStateProtobuf_Disconnected });
+    (this.send(c.MediaRemoteMessageType_SetConnectionState, { connectionState: e }), (this.ready = !1));
   }
   onMessage(e) {
-    D.add(e, this.decode.bind(this));
+    T.add(e, this.decode.bind(this));
   }
   updateContentItemCache(e) {
     let t = this.processContentItem(e.metadata);
     if (this.itemCache.has(e.identifier)) {
       const a = this.itemCache.get(e.identifier);
-      t = new z(Q(a, t));
+      t = new J(A(a, t));
     }
     return (
       e.associatedParticipantIdentifier && (t.participantIdentifier = e.associatedParticipantIdentifier),
@@ -430,158 +403,134 @@ class ue extends ee {
     );
   }
   processContentItem(e) {
-    var t;
     return (
-      (t = Object.keys(e)) == null ||
-        t.forEach((a) => {
-          e[a] instanceof Uint8Array && (e[a] = V(e[a]));
-        }),
+      Object.keys(e)?.forEach((t) => {
+        e[t] instanceof Uint8Array && (e[t] = G(e[t]));
+      }),
       e
     );
   }
   async onSetStateMessage(e) {
-    var t;
     (e.playbackState > 0 && (this.playback.playbackState = e.playbackState),
       e.supportedCommands &&
-        (this.playback =
-          (t = e.supportedCommands) == null
-            ? void 0
-            : t.supportedCommand.reduce((a, s) => {
-                var o, n, d;
-                switch (s.command) {
-                  case u.CommandProtobuf_ChangeShuffleMode:
-                    return {
-                      ...a,
-                      shuffleMode: s.shuffleMode,
-                      capabilities: { ...a.capabilities, shuffleControl: (o = s.enabled) != null ? o : !1 },
-                    };
-                  case u.CommandProtobuf_ChangeRepeatMode:
-                    return {
-                      ...a,
-                      repeatMode: s.repeatMode,
-                      capabilities: { ...a.capabilities, repeatControl: (n = s.enabled) != null ? n : !1 },
-                    };
-                  case u.CommandProtobuf_ChangeQueueEndAction:
-                    return {
-                      ...a,
-                      autoPlay: s.currentQueueEndAction === v.AutoPlay,
-                      capabilities: { ...a.capabilities, autoPlayControl: (d = s.enabled) != null ? d : !1 },
-                    };
-                  default:
-                    return a;
-                }
-              }, this.playback)),
-      e.playbackQueue && (await this.getPlaybackQueue(se)),
+        (this.playback = e.supportedCommands?.supportedCommand.reduce((t, a) => {
+          switch (a.command) {
+            case n.CommandProtobuf_ChangeShuffleMode:
+              return {
+                ...t,
+                shuffleMode: a.shuffleMode,
+                capabilities: { ...t.capabilities, shuffleControl: a.enabled ?? !1 },
+              };
+            case n.CommandProtobuf_ChangeRepeatMode:
+              return {
+                ...t,
+                repeatMode: a.repeatMode,
+                capabilities: { ...t.capabilities, repeatControl: a.enabled ?? !1 },
+              };
+            case n.CommandProtobuf_ChangeQueueEndAction:
+              return {
+                ...t,
+                autoPlay: a.currentQueueEndAction === M.AutoPlay,
+                capabilities: { ...t.capabilities, autoPlayControl: a.enabled ?? !1 },
+              };
+            default:
+              return t;
+          }
+        }, this.playback)),
+      e.playbackQueue && (await this.getPlaybackQueue(Z)),
       this.sendStateUpdates());
   }
   onUpdateContentItems(e) {
     (e.contentItems.forEach(this.updateContentItemCache.bind(this)), this.sendStateUpdates());
   }
   onVolumeChange(e) {
-    var t;
-    ((this.playback.volume = (t = e.volume) != null ? t : this.playback.volume), this.sendStateUpdates());
+    ((this.playback.volume = e.volume ?? this.playback.volume), this.sendStateUpdates());
   }
   onPlayerClientParticipantsUpdate(e) {
-    var t;
-    ((t = e.participants) == null ||
-      t.forEach((a) => {
-        this.participantItemMap.has(a.identifier) || this.participantItemMap.set(a.identifier, a.identity);
-      }),
+    (e.participants?.forEach((t) => {
+      this.participantItemMap.has(t.identifier) || this.participantItemMap.set(t.identifier, t.identity);
+    }),
       this.sendStateUpdates());
   }
   async checkConnectionHealth() {
     return new Promise(async (e) => {
       (setTimeout(() => {
         e(!1);
-      }, ie),
+      }, ee),
         await this.onSetStateMessage({ playbackQueue: {} }),
         e(!0));
     });
   }
   async sendWithReply(e, t) {
     const a = window.crypto.randomUUID(),
-      s = F();
+      s = q();
     return (this.replyMap.set(a, s), this.send(e, { replyIdentifier: a, ...t }), s.promise);
   }
   send(e, t) {
-    var n;
-    const a = S.create({ ...t, uniqueIdentifier: window.crypto.randomUUID(), type: e }),
-      s = S.verify(a);
+    const a = g.create({ ...t, uniqueIdentifier: window.crypto.randomUUID(), type: e }),
+      s = g.verify(a);
     if (s) {
-      (n = this.logger) == null || n.error("Not able to verify media remote message", s);
+      this.logger?.error("Not able to verify media remote message", s);
       return;
     }
     this.logger.debug("Msg Sent", a);
-    const o = S.encodeDelimited(a).finish();
+    const o = g.encodeDelimited(a).finish();
     return this.networkProvider.send(o, []);
   }
   sendStateUpdates() {
     this.dispatchEvent(new MessageEvent("stateUpdates", { data: this.mediaState }));
   }
   async performCommand(e, t) {
-    var o, n, d, y, A;
-    const a = Y.create({ command: e, options: t, playerPath: { client: this.client } }),
-      s = await this.sendWithReply(p.MediaRemoteMessageType_SendCommand, { sendCommandMessage: a });
+    const a = B.create({ command: e, options: t, playerPath: { client: this.client } }),
+      s = await this.sendWithReply(c.MediaRemoteMessageType_SendCommand, { sendCommandMessage: a });
     return (
-      ((y =
-        (d =
-          (n = (o = s == null ? void 0 : s.sendCommandResultMessage) == null ? void 0 : o.commandResult) == null
-            ? void 0
-            : n.statuses) == null
-          ? void 0
-          : d[0]) == null
-        ? void 0
-        : y.statusCode) !== X.CommandHandlerStatus.CommandHandlerStatus_Success &&
-        ((A = this.logger) == null || A.error("Media Remote Command Failed", s.sendCommandResultMessage)),
+      s?.sendCommandResultMessage?.commandResult?.statuses?.[0]?.statusCode !==
+        $.CommandHandlerStatus.CommandHandlerStatus_Success &&
+        this.logger?.error("Media Remote Command Failed", s.sendCommandResultMessage),
       s.sendCommandResultMessage
     );
   }
   decode(e) {
-    var a, s, o;
     let t;
     try {
-      t = S.decodeDelimited(e);
-    } catch (n) {
-      (a = this.logger) == null || a.error("Unable to parse the message", n);
+      t = g.decodeDelimited(e);
+    } catch (a) {
+      this.logger?.error("Unable to parse the message", a);
       return;
     }
     if ((this.logger.debug("Msg Received", t), this.replyMap.has(t.replyIdentifier)))
-      ((s = this.replyMap.get(t.replyIdentifier)) == null || s.resolve(t), this.replyMap.delete(t.replyIdentifier));
+      (this.replyMap.get(t.replyIdentifier)?.resolve(t), this.replyMap.delete(t.replyIdentifier));
     else
       switch (t.type) {
-        case p.MediaRemoteMessageType_SetState:
+        case c.MediaRemoteMessageType_SetState:
           this.onSetStateMessage(t.setStateMessage);
           return;
-        case p.MediaRemoteMessageType_UpdateContentItems:
+        case c.MediaRemoteMessageType_UpdateContentItems:
           this.onUpdateContentItems(t.updateContentItemMessage);
           return;
-        case p.MediaRemoteMessageType_SetDefaultSupportedCommands:
+        case c.MediaRemoteMessageType_SetDefaultSupportedCommands:
           this.onSetStateMessage(t.setDefaultSupportedCommandsMessage);
           return;
-        case p.MediaRemoteMessageType_VolumeDidChange:
+        case c.MediaRemoteMessageType_VolumeDidChange:
           this.onVolumeChange(t.volumeDidChangeMessage);
           return;
-        case p.MediaRemoteMessageType_PlayerClientParticipantsUpdate:
+        case c.MediaRemoteMessageType_PlayerClientParticipantsUpdate:
           this.onPlayerClientParticipantsUpdate(t.playerClientParticipantsUpdateMessage);
           return;
         default:
-          (o = this.logger) == null || o.debug("Message not supported", t);
+          this.logger?.debug("Message not supported", t);
           return;
       }
   }
 }
-class le extends te {
-  constructor(e) {
-    super();
-    c(this, "networkProvider");
-    c(this, "_inSession", !1);
-    c(this, "leaderParticipantID");
-    c(this, "localParticipantID");
-    c(this, "leaderParticipantHandle");
-    c(this, "participantMap", new Map());
-    c(this, "logger");
-    this.logger = e;
-  }
+class ce extends Y {
+  networkProvider;
+  _inSession = !1;
+  leaderParticipantID;
+  localParticipantID;
+  leaderParticipantHandle;
+  participantMap = new Map();
+  logger;
   get leaderParticipant() {
     return this.participantMap.get(this.leaderParticipantID) || null;
   }
@@ -599,8 +548,7 @@ class le extends te {
       this.networkProvider.addEventListener("message", this.onMessage.bind(this)),
       this.networkProvider.addEventListener("participantschange", (t) => {
         const { removed: a } = t;
-        a != null &&
-          a.includes(this.leaderParticipantHandle) &&
+        a?.includes(this.leaderParticipantHandle) &&
           ((this.leaderParticipantHandle = void 0),
           (this.inSession = !1),
           this.dispatchEvent(new Event("reconnecting")));
@@ -611,6 +559,9 @@ class le extends te {
   }
   set inSession(e) {
     this._inSession = e;
+  }
+  constructor(e) {
+    (super(), (this.logger = e));
   }
   setLeaderParticipant(e) {
     (this.addParticipant(e), (this.leaderParticipantID = e.identifier));
@@ -640,73 +591,65 @@ class le extends te {
       this.dispatchEvent(new MessageEvent("stateUpdates", { data: this.getSessionState() })));
   }
   approveParticipant(e) {
-    var t;
     if (this.participantMap.has(e) && !this.participantMap.get(e).connected) {
-      const a = m.create({ participantIdentifier: e, approved: !0 }),
-        s = m.verify(a);
-      if (s) throw ((t = this.logger) == null || t.error("Invalid Identity", s), new Error(s));
-      this.send(l.GroupSessionFastSyncMessageType.RemoteJoinResponse, m.encode(a).finish());
+      const t = h.create({ participantIdentifier: e, approved: !0 }),
+        a = h.verify(t);
+      if (a) throw (this.logger?.error("Invalid Identity", a), new Error(a));
+      this.send(r.GroupSessionFastSyncMessageType.RemoteJoinResponse, h.encode(t).finish());
     }
   }
   rejectParticipant(e) {
-    var t;
     if (this.participantMap.has(e) && !this.participantMap.get(e).connected) {
-      const a = m.create({ participantIdentifier: e, approved: !1 }),
-        s = m.verify(a);
-      if (s) throw ((t = this.logger) == null || t.error("Invalid Identity", s), new Error(s));
-      this.send(l.GroupSessionFastSyncMessageType.RemoteJoinResponse, m.encode(a).finish());
+      const t = h.create({ participantIdentifier: e, approved: !1 }),
+        a = h.verify(t);
+      if (a) throw (this.logger?.error("Invalid Identity", a), new Error(a));
+      this.send(r.GroupSessionFastSyncMessageType.RemoteJoinResponse, h.encode(t).finish());
     }
   }
   requestRemoveParticipant(e) {
-    var t;
     if (this.participantMap.has(e) && this.participantMap.get(e).guest) {
-      const a = R.create({ participantIdentifier: e }),
-        s = R.verify(a);
-      if (s) throw ((t = this.logger) == null || t.error("Invalid Identity", s), new Error(s));
-      (this.send(l.GroupSessionFastSyncMessageType.RemoteRemoveRequest, R.encode(a).finish()),
+      const t = C.create({ participantIdentifier: e }),
+        a = C.verify(t);
+      if (a) throw (this.logger?.error("Invalid Identity", a), new Error(a));
+      (this.send(r.GroupSessionFastSyncMessageType.RemoteRemoveRequest, C.encode(t).finish()),
         this.removeParticipant({ identifier: e }));
     }
   }
   send(e, t, a) {
-    var d, y;
-    const s = l.create({ messageType: e, payload: t }),
-      o = l.verify(s);
-    (o && ((d = this.logger) == null || d.error(`Invalid Group Session Message: ${o}`)),
-      this.logger.debug("Msg sent", s));
-    const n = [...(a || [])];
-    (this.leaderParticipantHandle && n.push(this.leaderParticipantHandle),
-      (y = this.networkProvider) == null || y.send(l.encode(s).finish(), { participantIds: n }));
+    const s = r.create({ messageType: e, payload: t }),
+      o = r.verify(s);
+    (o && this.logger?.error(`Invalid Group Session Message: ${o}`), this.logger.debug("Msg sent", s));
+    const u = [...(a || [])];
+    (this.leaderParticipantHandle && u.push(this.leaderParticipantHandle),
+      this.networkProvider?.send(r.encode(s).finish(), { participantIds: u }));
   }
   onMessage(e) {
-    var s, o, n;
     const t = e.data,
-      a = l.decode(t);
+      a = r.decode(t);
     switch ((this.logger.debug("Msg Received", a), a.messageType)) {
-      case l.GroupSessionFastSyncMessageType.LeaderDiscovery:
-        ((this.leaderParticipantHandle = (s = e.source) != null ? s : null),
-          this.dispatchEvent(new MessageEvent("leaderDiscovery", { data: I.decode(a.payload) })));
+      case r.GroupSessionFastSyncMessageType.LeaderDiscovery:
+        ((this.leaderParticipantHandle = e.source ?? null),
+          this.dispatchEvent(new MessageEvent("leaderDiscovery", { data: S.decode(a.payload) })));
         break;
-      case l.GroupSessionFastSyncMessageType.IdentityShare:
+      case r.GroupSessionFastSyncMessageType.IdentityShare:
         this.dispatchEvent(
-          new MessageEvent("identityShare", {
-            data: { identifier: (o = e.source) != null ? o : null, identity: P.decode(a.payload) },
-          }),
+          new MessageEvent("identityShare", { data: { identifier: e.source ?? null, identity: f.decode(a.payload) } }),
         );
         break;
-      case l.GroupSessionFastSyncMessageType.IdentityShareReply:
-        this.dispatchEvent(new MessageEvent("identityShareReply", { data: C.decode(a.payload) }));
+      case r.GroupSessionFastSyncMessageType.IdentityShareReply:
+        this.dispatchEvent(new MessageEvent("identityShareReply", { data: P.decode(a.payload) }));
         break;
-      case l.GroupSessionFastSyncMessageType.MemberSync:
-        this.dispatchEvent(new MessageEvent("memberSync", { data: M.decode(a.payload) }));
+      case r.GroupSessionFastSyncMessageType.MemberSync:
+        this.dispatchEvent(new MessageEvent("memberSync", { data: b.decode(a.payload) }));
         break;
-      case l.GroupSessionFastSyncMessageType.RemoteControl:
+      case r.GroupSessionFastSyncMessageType.RemoteControl:
         this.dispatchEvent(new MessageEvent("mediaRemote", { data: a.payload }));
         break;
-      case l.GroupSessionFastSyncMessageType.SessionEnd:
+      case r.GroupSessionFastSyncMessageType.SessionEnd:
         (this.end(), this.dispatchEvent(new Event("sessionEnd")));
         break;
       default:
-        (n = this.logger) == null || n.error("Invalid Message Type", a.messageType);
+        this.logger?.error("Invalid Message Type", a.messageType);
     }
   }
   end() {
@@ -723,7 +666,7 @@ class le extends te {
         profile: {
           identifier: t.identity.identifier,
           displayName: t.identity.displayName,
-          isResolvable: t.identity.type === P.UserIdentityType.ResolvableIdentity,
+          isResolvable: t.identity.type === f.UserIdentityType.ResolvableIdentity,
         },
         connected: t.connected,
         isHost: t.identifier === this.leaderParticipantID,
@@ -735,189 +678,183 @@ class le extends te {
     };
   }
 }
-function N(r) {
-  var i;
-  return P.create({
-    identifier: (i = r.identifier) != null ? i : window.crypto.randomUUID(),
-    displayName: r.displayName,
-    type: r.isResolvable ? P.UserIdentityType.ResolvableIdentity : P.UserIdentityType.BasicIdentity,
+function _(i) {
+  return f.create({
+    identifier: i.identifier ?? window.crypto.randomUUID(),
+    displayName: i.displayName,
+    type: i.isResolvable ? f.UserIdentityType.ResolvableIdentity : f.UserIdentityType.BasicIdentity,
   });
 }
-class w {
-  static setup(i, e, t) {
-    ((this.groupSession = i), (this.logger = t), (this.identity = N(e)));
-    let a;
+class R {
+  static setup(e, t, a) {
+    ((this.groupSession = e), (this.logger = a), (this.identity = _(t)));
+    let s;
     (this.groupSession.addEventListener(
       "leaderDiscovery",
-      j(() => {
-        ((a = setTimeout(() => {
+      O(() => {
+        ((s = setTimeout(() => {
           this.groupSession.dispatchEvent(new Event("sessionEnd"));
-        }, G)),
+        }, U)),
           this.sendIDS(this.identity));
       }, 1e3),
     ),
-      this.groupSession.addEventListener("identityShareReply", (s) => {
-        (clearTimeout(a),
-          this.groupSession.setLeaderParticipant(s.data.leaderParticipant),
-          this.groupSession.setLocalParticipant(s.data.localParticipant),
+      this.groupSession.addEventListener("identityShareReply", (o) => {
+        (clearTimeout(s),
+          this.groupSession.setLeaderParticipant(o.data.leaderParticipant),
+          this.groupSession.setLocalParticipant(o.data.localParticipant),
           this.groupSession.inSession ||
             ((this.groupSession.inSession = !0), this.groupSession.dispatchEvent(new Event("ready"))));
       }),
-      this.groupSession.addEventListener("memberSync", (s) => {
-        this.groupSession.updateSessionState(s.data);
+      this.groupSession.addEventListener("memberSync", (o) => {
+        this.groupSession.updateSessionState(o.data);
       }));
   }
   static getJoinRequest() {
-    var a;
-    const i = k.create({ identity: this.identity }),
-      e = k.verify(i);
-    if (e) throw ((a = this.logger) == null || a.error("Invalid Request", e), new Error(e));
-    return k.encode(i).finish();
+    const e = v.create({ identity: this.identity }),
+      t = v.verify(e);
+    if (t) throw (this.logger?.error("Invalid Request", t), new Error(t));
+    return v.encode(e).finish();
   }
-  static sendIDS(i) {
-    var s;
-    const e = T.create({ identity: i }),
-      t = T.verify(e);
-    if (t) throw ((s = this.logger) == null || s.error("Invalid Identity", t), new Error(t));
-    const a = T.encode(e).finish();
-    this.groupSession.send(l.GroupSessionFastSyncMessageType.IdentityShare, a);
+  static sendIDS(e) {
+    const t = I.create({ identity: e }),
+      a = I.verify(t);
+    if (a) throw (this.logger?.error("Invalid Identity", a), new Error(a));
+    const s = I.encode(t).finish();
+    this.groupSession.send(r.GroupSessionFastSyncMessageType.IdentityShare, s);
   }
 }
-(c(w, "groupSession"), c(w, "logger"), c(w, "identity"));
-class oe {
-  static start(i, e) {
-    this.groupSession = i;
-    const t = N(e);
-    (this.groupSession.setLocalParticipant(t),
-      this.groupSession.setLeaderParticipant(i.localParticipant),
+(p(R, "groupSession"), p(R, "logger"), p(R, "identity"));
+class te {
+  static start(e, t) {
+    this.groupSession = e;
+    const a = _(t);
+    (this.groupSession.setLocalParticipant(a),
+      this.groupSession.setLeaderParticipant(e.localParticipant),
       (this.groupSession.inSession = !0),
-      this.groupSession.messenger.addEventListener("participantschange", (a) => {
-        var s, o;
-        return this.sendLeaderDiscovery({
-          identifier: (o = (s = a.added) == null ? void 0 : s[0]) == null ? void 0 : o.toString(),
-        });
-      }),
-      this.groupSession.addEventListener("identityShare", (a) => {
-        (this.groupSession.addParticipant(a.data), this.sendIDSReply(a.data), this.sendMemberSync());
+      this.groupSession.messenger.addEventListener("participantschange", (s) =>
+        this.sendLeaderDiscovery({ identifier: s.added?.[0]?.toString() }),
+      ),
+      this.groupSession.addEventListener("identityShare", (s) => {
+        (this.groupSession.addParticipant(s.data), this.sendIDSReply(s.data), this.sendMemberSync());
       }));
   }
-  static sendLeaderDiscovery(i) {
-    const e = I.create({ signature: new Uint8Array() }),
-      t = I.verify(e);
-    if (t) throw new Error(t);
-    const a = I.encode(e).finish();
-    this.groupSession.send(l.GroupSessionFastSyncMessageType.LeaderDiscovery, a, [i.identifier]);
+  static sendLeaderDiscovery(e) {
+    const t = S.create({ signature: new Uint8Array() }),
+      a = S.verify(t);
+    if (a) throw new Error(a);
+    const s = S.encode(t).finish();
+    this.groupSession.send(r.GroupSessionFastSyncMessageType.LeaderDiscovery, s, [e.identifier]);
   }
-  static sendIDSReply(i) {
-    const e = C.create({ leaderParticipant: this.groupSession.leaderParticipant, localParticipant: i }),
-      t = C.verify(e);
-    if (t) throw new Error(t);
-    const a = C.encode(e).finish();
-    this.groupSession.send(l.GroupSessionFastSyncMessageType.IdentityShareReply, a, [i.identifier]);
+  static sendIDSReply(e) {
+    const t = P.create({ leaderParticipant: this.groupSession.leaderParticipant, localParticipant: e }),
+      a = P.verify(t);
+    if (a) throw new Error(a);
+    const s = P.encode(t).finish();
+    this.groupSession.send(r.GroupSessionFastSyncMessageType.IdentityShareReply, s, [e.identifier]);
   }
   static sendMemberSync() {
-    const i = M.create({
+    const e = b.create({
         participants: this.groupSession.participants,
-        members: this.groupSession.participants.map((a) => a.identity),
+        members: this.groupSession.participants.map((s) => s.identity),
       }),
-      e = M.verify(i);
-    if (e) throw new Error(e);
-    const t = M.encode(i).finish();
-    this.groupSession.send(l.GroupSessionFastSyncMessageType.MemberSync, t);
+      t = b.verify(e);
+    if (t) throw new Error(t);
+    const a = b.encode(e).finish();
+    this.groupSession.send(r.GroupSessionFastSyncMessageType.MemberSync, a);
   }
 }
-c(oe, "groupSession");
+p(te, "groupSession");
 export {
-  ye as AdjustVolumeMessageProtobuf,
-  fe as AudioFormatProtobuf,
-  me as AudioRouteProtobuf,
-  W as ClientUpdatesConfigurationProtobuf,
-  ge as ColorProtobuf,
-  be as CommandInfoProtobuf,
-  f as CommandOptionsProtobuf,
-  u as CommandProtobuf,
-  L as ConnectionStateProtobuf,
-  z as ContentItemMetadataProtobuf,
-  Pe as ContentItemProtobuf,
-  Se as DataArtworkProtobuf,
-  U as DeviceInfoMessageProtobuf,
-  Me as DisabledReasonProtobuf,
-  Ce as ErrorProtobuf,
-  Ie as GetStateMessageProtobuf,
-  ve as GetVolumeControlCapabilitiesMessageProtobuf,
-  Re as GetVolumeControlCapabilitiesResultMessageProtobuf,
-  $ as GetVolumeMessageProtobuf,
-  ke as GetVolumeMutedMessageProtobuf,
-  Te as GetVolumeMutedResultMessageProtobuf,
-  we as GetVolumeResultMessageProtobuf,
-  le as GroupSession,
-  te as GroupSessionEventTarget,
-  oe as GroupSessionHost,
-  w as GroupSessionParticipant,
-  Ee as GroupSessionRouteType,
-  De as GroupTopologyModificationRequestProtobuf,
-  Ae as LanguageOptionGroupProtobuf,
-  Ue as LanguageOptionProtobuf,
-  _e as LyricsEventProtobuf,
-  Le as LyricsItemProtobuf,
-  Qe as LyricsTokenProtobuf,
-  ue as MediaRemote,
-  ee as MediaRemoteEventTarget,
-  S as MediaRemoteMessageProtobuf,
-  p as MediaRemoteMessageType,
-  E as MediaRemotePlaybackQueueInsertionPosition,
-  Ge as NotificationMessageProtobuf,
-  Ne as NowPlayingClientProtobuf,
-  qe as NowPlayingClientVisibility,
-  Oe as NowPlayingInfoProtobuf,
-  J as NowPlayingPlayerPathProtobuf,
-  Ve as NowPlayingPlayerProtobuf,
-  He as OriginClientPropertiesMessageProtobuf,
-  Fe as OriginProtobuf,
-  je as OriginType,
-  h as PlaybackQueue,
-  xe as PlaybackQueueCapabilitiesProtobuf,
-  We as PlaybackQueueContextProtobuf,
-  Je as PlaybackQueueParticipantProtobuf,
-  Be as PlaybackQueueProtobuf,
-  K as PlaybackQueueRequestProtobuf,
-  $e as PlaybackStateProtobuf,
-  Ke as PlayerClientParticipantsUpdateMessageProtobuf,
-  ze as PlayerClientPropertiesMessageProtobuf,
-  Ye as PreloadedPlaybackSessionInfo,
-  v as QueueEndActionProtobuf,
-  Xe as RemoteArtworkProtobuf,
-  Ze as RemoveClientMessageProtobuf,
-  et as RemovePlayerMessageProtobuf,
-  tt as RepeatModeProtobuf,
-  at as RequestDetailsProtobuf,
-  Y as SendCommandMessageProtobuf,
-  st as SendCommandResultHandlerDialogActionProtobuf,
-  it as SendCommandResultHandlerDialogProtobuf,
-  X as SendCommandResultMessageProtobuf,
-  ot as SendCommandResultProtobuf,
-  nt as SendCommandResultStatusProtobuf,
-  rt as SendLyricsEventMessageProtobuf,
-  ct as SetArtworkMessageProtobuf,
-  _ as SetConnectionStateMessageProtobuf,
-  dt as SetHiliteModeMessageProtobuf,
-  ut as SetNowPlayingClientMessageProtobuf,
-  lt as SetNowPlayingPlayerMessageProtobuf,
-  pt as SetReadyStateMessageProtobuf,
-  ht as SetStateMessageProtobuf,
-  B as SetVolumeMessageProtobuf,
-  yt as SetVolumeMutedMessageProtobuf,
-  ft as ShuffleModeProtobuf,
-  mt as SupportedCommandsProtobuf,
-  b as SystemPlaybackQueueProtobuf,
-  gt as UpdateClientMessageProtobuf,
-  bt as UpdateContentItemArtworkMessageProtobuf,
-  Pt as UpdateContentItemMessageProtobuf,
-  St as UpdatePlayerMessageProtobuf,
-  g as UserIdentityProtobuf,
-  Mt as VolumeControlAvailabilityProtobuf,
-  Ct as VolumeControlCapabilitiesDidChangeMessageProtobuf,
-  It as VolumeDidChangeMessageProtobuf,
-  vt as VolumeMutedDidChangeMessageProtobuf,
-  Rt as WakeDeviceMessageProtobuf,
+  le as AdjustVolumeMessageProtobuf,
+  pe as AudioFormatProtobuf,
+  he as AudioRouteProtobuf,
+  H as ClientUpdatesConfigurationProtobuf,
+  ye as ColorProtobuf,
+  me as CommandInfoProtobuf,
+  l as CommandOptionsProtobuf,
+  n as CommandProtobuf,
+  D as ConnectionStateProtobuf,
+  J as ContentItemMetadataProtobuf,
+  fe as ContentItemProtobuf,
+  ge as DataArtworkProtobuf,
+  w as DeviceInfoMessageProtobuf,
+  be as DisabledReasonProtobuf,
+  Pe as ErrorProtobuf,
+  Se as GetStateMessageProtobuf,
+  Me as GetVolumeControlCapabilitiesMessageProtobuf,
+  Ce as GetVolumeControlCapabilitiesResultMessageProtobuf,
+  x as GetVolumeMessageProtobuf,
+  ve as GetVolumeMutedMessageProtobuf,
+  Ie as GetVolumeMutedResultMessageProtobuf,
+  Re as GetVolumeResultMessageProtobuf,
+  ce as GroupSession,
+  Y as GroupSessionEventTarget,
+  te as GroupSessionHost,
+  R as GroupSessionParticipant,
+  ke as GroupSessionRouteType,
+  Te as GroupTopologyModificationRequestProtobuf,
+  we as LanguageOptionGroupProtobuf,
+  Ee as LanguageOptionProtobuf,
+  De as LyricsEventProtobuf,
+  Ae as LyricsItemProtobuf,
+  Ue as LyricsTokenProtobuf,
+  re as MediaRemote,
+  z as MediaRemoteEventTarget,
+  g as MediaRemoteMessageProtobuf,
+  c as MediaRemoteMessageType,
+  k as MediaRemotePlaybackQueueInsertionPosition,
+  _e as NotificationMessageProtobuf,
+  Le as NowPlayingClientProtobuf,
+  Qe as NowPlayingClientVisibility,
+  Ge as NowPlayingInfoProtobuf,
+  F as NowPlayingPlayerPathProtobuf,
+  Ne as NowPlayingPlayerProtobuf,
+  qe as OriginClientPropertiesMessageProtobuf,
+  Oe as OriginProtobuf,
+  Ve as OriginType,
+  d as PlaybackQueue,
+  He as PlaybackQueueCapabilitiesProtobuf,
+  Fe as PlaybackQueueContextProtobuf,
+  je as PlaybackQueueParticipantProtobuf,
+  xe as PlaybackQueueProtobuf,
+  W as PlaybackQueueRequestProtobuf,
+  We as PlaybackStateProtobuf,
+  Je as PlayerClientParticipantsUpdateMessageProtobuf,
+  Be as PlayerClientPropertiesMessageProtobuf,
+  $e as PreloadedPlaybackSessionInfo,
+  M as QueueEndActionProtobuf,
+  Ke as RemoteArtworkProtobuf,
+  ze as RemoveClientMessageProtobuf,
+  Ye as RemovePlayerMessageProtobuf,
+  Xe as RepeatModeProtobuf,
+  Ze as RequestDetailsProtobuf,
+  B as SendCommandMessageProtobuf,
+  et as SendCommandResultHandlerDialogActionProtobuf,
+  tt as SendCommandResultHandlerDialogProtobuf,
+  $ as SendCommandResultMessageProtobuf,
+  at as SendCommandResultProtobuf,
+  st as SendCommandResultStatusProtobuf,
+  it as SendLyricsEventMessageProtobuf,
+  ot as SetArtworkMessageProtobuf,
+  E as SetConnectionStateMessageProtobuf,
+  nt as SetHiliteModeMessageProtobuf,
+  rt as SetNowPlayingClientMessageProtobuf,
+  ct as SetNowPlayingPlayerMessageProtobuf,
+  dt as SetReadyStateMessageProtobuf,
+  ut as SetStateMessageProtobuf,
+  j as SetVolumeMessageProtobuf,
+  lt as SetVolumeMutedMessageProtobuf,
+  pt as ShuffleModeProtobuf,
+  ht as SupportedCommandsProtobuf,
+  m as SystemPlaybackQueueProtobuf,
+  yt as UpdateClientMessageProtobuf,
+  mt as UpdateContentItemArtworkMessageProtobuf,
+  ft as UpdateContentItemMessageProtobuf,
+  gt as UpdatePlayerMessageProtobuf,
+  y as UserIdentityProtobuf,
+  bt as VolumeControlAvailabilityProtobuf,
+  Pt as VolumeControlCapabilitiesDidChangeMessageProtobuf,
+  St as VolumeDidChangeMessageProtobuf,
+  Mt as VolumeMutedDidChangeMessageProtobuf,
+  Ct as WakeDeviceMessageProtobuf,
 };

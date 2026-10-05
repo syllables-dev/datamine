@@ -1,300 +1,300 @@
 import {
-  S as O,
-  i as j,
+  S as j,
+  i as z,
   n as H,
-  e as g,
-  s as w,
+  e as k,
+  s as I,
   a as E,
-  b as y,
-  d as z,
+  b as C,
+  d as S,
   g as b,
-  h,
-  t as D,
-  k as C,
+  h as p,
+  t as P,
+  k as T,
   l as v,
-  o as I,
+  o as y,
   r as m,
-  u as P,
-  v as k,
-  w as V,
+  u as V,
+  v as g,
+  w as M,
   y as J,
   V as L,
   P as Q,
   C as R,
-  c as F,
-  f as G,
-  m as K,
-  x as N,
-  E as S,
-  F as B,
-  G as A,
+  c as G,
+  f as K,
+  m as N,
+  x as O,
+  E as B,
+  F as A,
+  G as D,
   a6 as Y,
-  a7 as M,
+  a7 as U,
 } from "./main.js";
-function U(s) {
-  let e, t, l, a, r, _;
+function W(a) {
+  let e, t, l, s, o, _;
   return (
     (t = new R({})),
     {
       c() {
-        ((e = g("button")), F(t.$$.fragment), this.h());
+        ((e = k("button")), G(t.$$.fragment), this.h());
       },
       l(u) {
         e = E(u, "BUTTON", { type: !0, class: !0, "data-testid": !0, "aria-label": !0 });
-        var p = y(e);
-        (G(t.$$.fragment, p), p.forEach(b), this.h());
+        var h = C(e);
+        (K(t.$$.fragment, h), h.forEach(b), this.h());
       },
       h() {
-        (h(e, "type", "button"),
-          h(e, "class", "banner__close-button svelte-1ozlay5"),
-          h(e, "data-testid", "upsell-banner-close"),
-          h(e, "aria-label", (l = s[4].t("ASE.Web.Music.Shared.AX.Close"))));
+        (p(e, "type", "button"),
+          p(e, "class", "banner__close-button svelte-1uspg9f"),
+          p(e, "data-testid", "upsell-banner-close"),
+          p(e, "aria-label", (l = a[4].t("ASE.Web.Music.Shared.AX.Close"))));
       },
-      m(u, p) {
-        (C(u, e, p), K(t, e, null), (a = !0), r || ((_ = I(e, "click", s[6])), (r = !0)));
+      m(u, h) {
+        (T(u, e, h), N(t, e, null), (s = !0), o || ((_ = y(e, "click", a[6])), (o = !0)));
       },
-      p(u, p) {
-        (!a || (p & 16 && l !== (l = u[4].t("ASE.Web.Music.Shared.AX.Close")))) && h(e, "aria-label", l);
+      p(u, h) {
+        (!s || (h & 16 && l !== (l = u[4].t("ASE.Web.Music.Shared.AX.Close")))) && p(e, "aria-label", l);
       },
       i(u) {
-        a || (m(t.$$.fragment, u), (a = !0));
+        s || (m(t.$$.fragment, u), (s = !0));
       },
       o(u) {
-        (k(t.$$.fragment, u), (a = !1));
+        (g(t.$$.fragment, u), (s = !1));
       },
       d(u) {
-        (u && b(e), N(t), (r = !1), _());
+        (u && b(e), O(t), (o = !1), _());
       },
     }
   );
 }
-function W(s) {
+function X(a) {
   let e, t;
   return {
     c() {
-      ((e = g("p")), (t = S(s[0])), this.h());
+      ((e = k("p")), (t = B(a[0])), this.h());
     },
     l(l) {
       e = E(l, "P", { class: !0, "data-testid": !0 });
-      var a = y(e);
-      ((t = B(a, s[0])), a.forEach(b), this.h());
+      var s = C(e);
+      ((t = A(s, a[0])), s.forEach(b), this.h());
     },
     h() {
-      (h(e, "class", "text__title svelte-1ozlay5"), h(e, "data-testid", "upsell-banner-title"));
+      (p(e, "class", "text__title svelte-1uspg9f"), p(e, "data-testid", "upsell-banner-title"));
     },
-    m(l, a) {
-      (C(l, e, a), v(e, t));
+    m(l, s) {
+      (T(l, e, s), v(e, t));
     },
-    p(l, a) {
-      a & 1 && A(t, l[0]);
+    p(l, s) {
+      s & 1 && D(t, l[0]);
     },
     d(l) {
       l && b(e);
     },
   };
 }
-function X(s) {
+function q(a) {
   let e, t;
   return {
     c() {
-      ((e = g("p")), (t = S(s[1])), this.h());
+      ((e = k("p")), (t = B(a[1])), this.h());
     },
     l(l) {
       e = E(l, "P", { class: !0, "data-testid": !0 });
-      var a = y(e);
-      ((t = B(a, s[1])), a.forEach(b), this.h());
+      var s = C(e);
+      ((t = A(s, a[1])), s.forEach(b), this.h());
     },
     h() {
-      (h(e, "class", "text__description svelte-1ozlay5"), h(e, "data-testid", "upsell-banner-description"));
+      (p(e, "class", "text__description svelte-1uspg9f"), p(e, "data-testid", "upsell-banner-description"));
     },
-    m(l, a) {
-      (C(l, e, a), v(e, t));
+    m(l, s) {
+      (T(l, e, s), v(e, t));
     },
-    p(l, a) {
-      a & 2 && A(t, l[1]);
+    p(l, s) {
+      s & 2 && D(t, l[1]);
     },
     d(l) {
       l && b(e);
     },
   };
 }
-function q(s) {
+function F(a) {
   let e, t, l;
   return (
-    (t = new Y({ props: { $$slots: { default: [Z] }, $$scope: { ctx: s } } })),
-    t.$on("buttonClick", s[9]),
+    (t = new Y({ props: { $$slots: { default: [Z] }, $$scope: { ctx: a } } })),
+    t.$on("buttonClick", a[9]),
     {
       c() {
-        ((e = g("div")), F(t.$$.fragment), this.h());
+        ((e = k("div")), G(t.$$.fragment), this.h());
       },
-      l(a) {
-        e = E(a, "DIV", { class: !0, "data-testid": !0 });
-        var r = y(e);
-        (G(t.$$.fragment, r), r.forEach(b), this.h());
+      l(s) {
+        e = E(s, "DIV", { class: !0, "data-testid": !0 });
+        var o = C(e);
+        (K(t.$$.fragment, o), o.forEach(b), this.h());
       },
       h() {
-        (h(e, "class", "banner__cta-button svelte-1ozlay5"), h(e, "data-testid", "upsell-banner-cta"));
+        (p(e, "class", "banner__cta-button svelte-1uspg9f"), p(e, "data-testid", "upsell-banner-cta"));
       },
-      m(a, r) {
-        (C(a, e, r), K(t, e, null), (l = !0));
+      m(s, o) {
+        (T(s, e, o), N(t, e, null), (l = !0));
       },
-      p(a, r) {
+      p(s, o) {
         const _ = {};
-        (r & 1028 && (_.$$scope = { dirty: r, ctx: a }), t.$set(_));
+        (o & 1028 && (_.$$scope = { dirty: o, ctx: s }), t.$set(_));
       },
-      i(a) {
-        l || (m(t.$$.fragment, a), (l = !0));
+      i(s) {
+        l || (m(t.$$.fragment, s), (l = !0));
       },
-      o(a) {
-        (k(t.$$.fragment, a), (l = !1));
+      o(s) {
+        (g(t.$$.fragment, s), (l = !1));
       },
-      d(a) {
-        (a && b(e), N(t));
+      d(s) {
+        (s && b(e), O(t));
       },
     }
   );
 }
-function Z(s) {
+function Z(a) {
   let e;
   return {
     c() {
-      e = S(s[2]);
+      e = B(a[2]);
     },
     l(t) {
-      e = B(t, s[2]);
+      e = A(t, a[2]);
     },
     m(t, l) {
-      C(t, e, l);
+      T(t, e, l);
     },
     p(t, l) {
-      l & 4 && A(e, t[2]);
+      l & 4 && D(e, t[2]);
     },
     d(t) {
       t && b(e);
     },
   };
 }
-function $(s) {
+function $(a) {
   let e,
     t,
     l,
-    a,
-    r,
+    s,
+    o,
     _,
     u,
-    p,
-    i = !s[3] && U(s),
-    c = s[0] && W(s),
-    f = s[1] && X(s),
-    o = s[2] && q(s);
+    h,
+    i = !a[3] && W(a),
+    c = a[0] && X(a),
+    f = a[1] && q(a),
+    r = a[2] && F(a);
   return {
     c() {
-      ((e = g("div")),
+      ((e = k("div")),
         i && i.c(),
-        (t = w()),
-        (l = g("div")),
+        (t = I()),
+        (l = k("div")),
         c && c.c(),
-        (a = w()),
+        (s = I()),
         f && f.c(),
-        (r = w()),
-        o && o.c(),
+        (o = I()),
+        r && r.c(),
         this.h());
     },
     l(n) {
       e = E(n, "DIV", { class: !0, "data-testid": !0 });
-      var d = y(e);
-      (i && i.l(d), (t = z(d)), (l = E(d, "DIV", { class: !0 })));
-      var T = y(l);
-      (c && c.l(T), (a = z(T)), f && f.l(T), T.forEach(b), (r = z(d)), o && o.l(d), d.forEach(b), this.h());
+      var d = C(e);
+      (i && i.l(d), (t = S(d)), (l = E(d, "DIV", { class: !0 })));
+      var w = C(l);
+      (c && c.l(w), (s = S(w)), f && f.l(w), w.forEach(b), (o = S(d)), r && r.l(d), d.forEach(b), this.h());
     },
     h() {
-      (h(l, "class", "banner__text-container svelte-1ozlay5"),
-        h(e, "class", "banner svelte-1ozlay5"),
-        h(e, "data-testid", "upsell-banner-inline"),
-        D(e, "banner--collapsed", s[3]));
+      (p(l, "class", "banner__text-container svelte-1uspg9f"),
+        p(e, "class", "banner svelte-1uspg9f"),
+        p(e, "data-testid", "upsell-banner-inline"),
+        P(e, "banner--collapsed", a[3]));
     },
     m(n, d) {
-      (C(n, e, d),
+      (T(n, e, d),
         i && i.m(e, null),
         v(e, t),
         v(e, l),
         c && c.m(l, null),
-        v(l, a),
+        v(l, s),
         f && f.m(l, null),
-        v(e, r),
-        o && o.m(e, null),
+        v(e, o),
+        r && r.m(e, null),
         (_ = !0),
-        u || ((p = [I(e, "click", s[8]), I(e, "keydown", s[7])]), (u = !0)));
+        u || ((h = [y(e, "click", a[8]), y(e, "keydown", a[7])]), (u = !0)));
     },
     p(n, [d]) {
       (n[3]
         ? i &&
-          (P(),
-          k(i, 1, 1, () => {
+          (V(),
+          g(i, 1, 1, () => {
             i = null;
           }),
-          V())
+          M())
         : i
           ? (i.p(n, d), d & 8 && m(i, 1))
-          : ((i = U(n)), i.c(), m(i, 1), i.m(e, t)),
-        n[0] ? (c ? c.p(n, d) : ((c = W(n)), c.c(), c.m(l, a))) : c && (c.d(1), (c = null)),
-        n[1] ? (f ? f.p(n, d) : ((f = X(n)), f.c(), f.m(l, null))) : f && (f.d(1), (f = null)),
+          : ((i = W(n)), i.c(), m(i, 1), i.m(e, t)),
+        n[0] ? (c ? c.p(n, d) : ((c = X(n)), c.c(), c.m(l, s))) : c && (c.d(1), (c = null)),
+        n[1] ? (f ? f.p(n, d) : ((f = q(n)), f.c(), f.m(l, null))) : f && (f.d(1), (f = null)),
         n[2]
-          ? o
-            ? (o.p(n, d), d & 4 && m(o, 1))
-            : ((o = q(n)), o.c(), m(o, 1), o.m(e, null))
-          : o &&
-            (P(),
-            k(o, 1, 1, () => {
-              o = null;
+          ? r
+            ? (r.p(n, d), d & 4 && m(r, 1))
+            : ((r = F(n)), r.c(), m(r, 1), r.m(e, null))
+          : r &&
+            (V(),
+            g(r, 1, 1, () => {
+              r = null;
             }),
-            V()),
-        (!_ || d & 8) && D(e, "banner--collapsed", n[3]));
+            M()),
+        (!_ || d & 8) && P(e, "banner--collapsed", n[3]));
     },
     i(n) {
-      _ || (m(i), m(o), (_ = !0));
+      _ || (m(i), m(r), (_ = !0));
     },
     o(n) {
-      (k(i), k(o), (_ = !1));
+      (g(i), g(r), (_ = !1));
     },
     d(n) {
-      (n && b(e), i && i.d(), c && c.d(), f && f.d(), o && o.d(), (u = !1), J(p));
+      (n && b(e), i && i.d(), c && c.d(), f && f.d(), r && r.d(), (u = !1), J(h));
     },
   };
 }
-function x(s, e, t) {
+function x(a, e, t) {
   let l,
-    { title: a = null } = e,
-    { description: r = null } = e,
+    { title: s = null } = e,
+    { description: o = null } = e,
     { ctaText: _ = null } = e;
   const u = L();
-  Q(s, u, (n) => t(4, (l = n)));
-  let p = !1;
+  Q(a, u, (n) => t(4, (l = n)));
+  let h = !1;
   const i = (n) => {
-      (n.stopPropagation(), t(3, (p = !0)));
+      (n.stopPropagation(), t(3, (h = !0)));
     },
     c = (n) => {
       (n.key === "Enter" || n.key === " ") &&
         (n.preventDefault(), n.currentTarget.dispatchEvent(new MouseEvent("click", { bubbles: !0 })));
     };
   function f(n) {
-    M.call(this, s, n);
+    U.call(this, a, n);
   }
-  function o(n) {
-    M.call(this, s, n);
+  function r(n) {
+    U.call(this, a, n);
   }
   return (
-    (s.$$set = (n) => {
-      ("title" in n && t(0, (a = n.title)),
-        "description" in n && t(1, (r = n.description)),
+    (a.$$set = (n) => {
+      ("title" in n && t(0, (s = n.title)),
+        "description" in n && t(1, (o = n.description)),
         "ctaText" in n && t(2, (_ = n.ctaText)));
     }),
-    [a, r, _, p, l, u, i, c, f, o]
+    [s, o, _, h, l, u, i, c, f, r]
   );
 }
-class te extends O {
+class te extends j {
   constructor(e) {
-    (super(), j(this, e, x, $, H, { title: 0, description: 1, ctaText: 2 }));
+    (super(), z(this, e, x, $, H, { title: 0, description: 1, ctaText: 2 }));
   }
 }
 export { te as default };

@@ -1,12 +1,12 @@
-import { br as l, Z as s } from "./main.js";
+import { bA as l, Z as s } from "./main.js";
 function i(o, f) {
-  for (var r = 0; r < f.length; r++) {
-    const e = f[r];
+  for (var t = 0; t < f.length; t++) {
+    const e = f[t];
     if (typeof e != "string" && !Array.isArray(e)) {
-      for (const t in e)
-        if (t !== "default" && !(t in o)) {
-          const n = Object.getOwnPropertyDescriptor(e, t);
-          n && Object.defineProperty(o, t, n.get ? n : { enumerable: !0, get: () => e[t] });
+      for (const r in e)
+        if (r !== "default" && !(r in o)) {
+          const n = Object.getOwnPropertyDescriptor(e, r);
+          n && Object.defineProperty(o, r, n.get ? n : { enumerable: !0, get: () => e[r] });
         }
     }
   }
@@ -22,11 +22,11 @@ var a = {},
     },
   };
 (function (o, f) {
-  (function (r, e) {
+  (function (t, e) {
     e(f);
-  })(s, function (r) {
+  })(s, function (t) {
     var e = typeof window < "u" && window.flatpickr !== void 0 ? window.flatpickr : { l10ns: {} },
-      t = {
+      r = {
         weekdays: {
           shorthand: ["א", "ב", "ג", "ד", "ה", "ו", "ש"],
           longhand: ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"],
@@ -51,9 +51,9 @@ var a = {},
         rangeSeparator: " אל ",
         time_24hr: !0,
       };
-    e.l10ns.he = t;
+    e.l10ns.he = r;
     var n = e.l10ns;
-    ((r.Hebrew = t), (r.default = n), Object.defineProperty(r, "__esModule", { value: !0 }));
+    ((t.Hebrew = r), (t.default = n), Object.defineProperty(t, "__esModule", { value: !0 }));
   });
 })(d, a);
 const u = l(a),

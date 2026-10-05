@@ -54,11 +54,11 @@ function B(s, o) {
       (t = (e = l.pinnedLeadingItem) === null || e === void 0 ? void 0 : e.item) === null || t === void 0
         ? void 0
         : t.artwork;
-    if (!((a = u == null ? void 0 : u.dictionary) === null || a === void 0) && a.bgColor) return u;
+    if (!((a = u?.dictionary) === null || a === void 0) && a.bgColor) return u;
     const d = (i = l.items) !== null && i !== void 0 ? i : [];
     for (const n of d) {
-      const c = n == null ? void 0 : n.artwork;
-      if (!((r = c == null ? void 0 : c.dictionary) === null || r === void 0) && r.bgColor) return c;
+      const c = n?.artwork;
+      if (!((r = c?.dictionary) === null || r === void 0) && r.bgColor) return c;
     }
   }
   return null;
@@ -174,12 +174,8 @@ var H =
     });
   };
 const K = [
-    new RegExp(
-      "(?:http|music|itms)s?:\\/\\/(?:itunes|music)\\.apple\\.com\\/.*?\\/MZStore\\.woa\\/.*?\\/viewArtist(?=.*?[?&]id=(?<id>[\\w\\.-]+))(?:.*?[?&]cc=(?<cc>\\w{2}))?",
-    ),
-    new RegExp(
-      "(?:http|music|itms)s?:\\/\\/(?:itunes|music)\\.apple\\.com\\/(?:(?<cc>\\w{2})\\/)?artist\\/(?:.*?\\/)?(?:id)?(?<id>[\\w\\.-]+)(?:\\?|$)",
-    ),
+    /(?:http|music|itms)s?:\/\/(?:itunes|music)\.apple\.com\/.*?\/MZStore\.woa\/.*?\/viewArtist(?=.*?[?&]id=(?<id>[\w\.-]+))(?:.*?[?&]cc=(?<cc>\w{2}))?/,
+    /(?:http|music|itms)s?:\/\/(?:itunes|music)\.apple\.com\/(?:(?<cc>\w{2})\/)?artist\/(?:.*?\/)?(?:id)?(?<id>[\w\.-]+)(?:\?|$)/,
   ],
   Q = {
     $intentKind: "ArtistDetailPageIntent",

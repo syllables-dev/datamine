@@ -192,7 +192,7 @@ function Ea() {
         if (a && this.readyState === 4) {
           try {
             a.status_code = this.status;
-          } catch (o) {}
+          } catch {}
           ot("xhr", { args: n, endTimestamp: Date.now(), startTimestamp: Date.now(), xhr: this });
         }
       };
@@ -236,7 +236,7 @@ function Sa() {
     if (((Ne = i), ot("history", { from: r, to: i }), t))
       try {
         return t.apply(this, n);
-      } catch (s) {}
+      } catch {}
   };
   function e(n) {
     return function (...i) {
@@ -257,7 +257,7 @@ function wa(t, e) {
   if (!t || t.type !== e.type) return !0;
   try {
     if (t.target !== e.target) return !0;
-  } catch (n) {}
+  } catch {}
   return !1;
 }
 function Ta(t) {
@@ -266,7 +266,7 @@ function Ta(t) {
     const e = t.target;
     if (!e || !e.tagName) return !0;
     if (e.tagName === "INPUT" || e.tagName === "TEXTAREA" || e.isContentEditable) return !1;
-  } catch (e) {}
+  } catch {}
   return !0;
 }
 function Ni(t, e = !1) {
@@ -305,7 +305,7 @@ function va() {
                   ((l.handler = d), r.call(this, s, d, o));
                 }
                 l.refCount++;
-              } catch (c) {}
+              } catch {}
             return r.call(this, s, a, o);
           };
         }),
@@ -320,7 +320,7 @@ function va() {
                   (l.refCount--,
                   l.refCount <= 0 && (r.call(this, s, l.handler, o), (l.handler = void 0), delete u[s]),
                   Object.keys(u).length === 0 && delete c.__sentry_instrumentation_handlers__);
-              } catch (c) {}
+              } catch {}
             return r.call(this, s, a, o);
           };
         }));
@@ -1244,7 +1244,7 @@ function ro(t, e) {
         o.filename && (o.debug_id = s[o.filename]);
       });
     });
-  } catch (a) {}
+  } catch {}
 }
 function so(t) {
   const e = {};
@@ -1255,7 +1255,7 @@ function so(t) {
           (r.abs_path ? (e[r.abs_path] = r.debug_id) : r.filename && (e[r.filename] = r.debug_id), delete r.debug_id);
       });
     });
-  } catch (i) {}
+  } catch {}
   if (Object.keys(e).length === 0) return;
   ((t.debug_meta = t.debug_meta || {}), (t.debug_meta.images = t.debug_meta.images || []));
   const n = t.debug_meta.images;
@@ -1412,7 +1412,7 @@ class Rt {
   getIntegration(e) {
     try {
       return this._integrations[e.id] || null;
-    } catch (n) {
+    } catch {
       return (
         (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) &&
           f.warn(`Cannot retrieve integration ${e.id} from the current Client`),
@@ -1769,7 +1769,7 @@ class $t {
         const n = Xn(this) || this;
         return Mi.apply(n, e);
       };
-    } catch (e) {}
+    } catch {}
   }
 }
 $t.__initStatic();
@@ -1879,7 +1879,7 @@ function Ro(t) {
     try {
       const { type: n = "", value: i = "" } = (e && e[e.length - 1]) || {};
       return [`${i}`, `${n}: ${i}`];
-    } catch (n) {
+    } catch {
       return (
         (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && f.error(`Cannot extract message for event ${St(t)}`), []
       );
@@ -1890,7 +1890,7 @@ function Ro(t) {
 function ko(t) {
   try {
     return t.exception.values[0].type === "SentryError";
-  } catch (e) {}
+  } catch {}
   return !1;
 }
 function xo(t = []) {
@@ -1905,9 +1905,9 @@ function qe(t) {
     let e;
     try {
       e = t.exception.values[0].stacktrace.frames;
-    } catch (n) {}
+    } catch {}
     return e ? xo(e) : null;
-  } catch (e) {
+  } catch {
     return (
       (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && f.error(`Cannot extract url for event ${St(t)}`), null
     );
@@ -1935,7 +1935,7 @@ function Bt(t, e = {}, n) {
     const r = t.__sentry_wrapped__;
     if (r) return r;
     if (Xn(t)) return t;
-  } catch (r) {
+  } catch {
     return t;
   }
   const i = function () {
@@ -1963,7 +1963,7 @@ function Bt(t, e = {}, n) {
   };
   try {
     for (const r in t) Object.prototype.hasOwnProperty.call(t, r) && (i[r] = t[r]);
-  } catch (r) {}
+  } catch {}
   (Qs(i, t), ta(t, "__sentry_wrapped__", i));
   try {
     Object.getOwnPropertyDescriptor(i, "name").configurable &&
@@ -1972,7 +1972,7 @@ function Bt(t, e = {}, n) {
           return t.name;
         },
       });
-  } catch (r) {}
+  } catch {}
   return i;
 }
 function Gr(t, e) {
@@ -2012,7 +2012,7 @@ function ti(t, e) {
     i = Co(e);
   try {
     return t(n, i);
-  } catch (r) {}
+  } catch {}
   return [];
 }
 const Ao = /Minified React error #\d+;/i;
@@ -2077,7 +2077,7 @@ function Mo(t) {
   try {
     const e = Object.getPrototypeOf(t);
     return e ? e.constructor.name : void 0;
-  } catch (e) {}
+  } catch {}
 }
 const Oe = 1024,
   Pr = "Breadcrumbs";
@@ -2129,7 +2129,7 @@ function Go(t) {
     try {
       const a = n.event;
       i = Ho(a) ? Ut(a.target, { keyAttrs: r, maxStringLength: s }) : Ut(a, { keyAttrs: r, maxStringLength: s });
-    } catch (a) {
+    } catch {
       i = "<unknown>";
     }
     i.length !== 0 &&
@@ -2446,7 +2446,7 @@ function bc() {
     let r = t;
     try {
       "reason" in t ? (r = t.reason) : "detail" in t && "reason" in t.detail && (r = t.detail.reason);
-    } catch (a) {}
+    } catch {}
     if (Mr() || (r && r.__sentry_own_request__)) return !0;
     const s = vr(r) ? wc(r) : ei(n, r, void 0, i, !0);
     ((s.level = "error"), Fr(e, r, s, "onunhandledrejection"));
@@ -2599,7 +2599,7 @@ function Nc(t) {
                 type: "instrument",
               },
             }));
-        } catch (o) {}
+        } catch {}
         return i.apply(this, [
           r,
           Bt(s, {
@@ -2619,7 +2619,7 @@ function Nc(t) {
         try {
           const c = o && o.__sentry_wrapped__;
           c && i.call(this, r, c, a);
-        } catch (c) {}
+        } catch {}
         return i.call(this, r, o, a);
       };
     }));
@@ -2704,7 +2704,7 @@ class Ct {
                 f.warn("Event dropped due to being a duplicate of previously captured event."),
               null
             );
-        } catch (a) {
+        } catch {
           return (s._previousEvent = r);
         }
         return (s._previousEvent = r);
@@ -2749,7 +2749,7 @@ function Wr(t, e) {
   ((n = n), (i = i));
   try {
     return n.join("") === i.join("");
-  } catch (r) {
+  } catch {
     return !1;
   }
 }
@@ -2761,7 +2761,7 @@ function zi(t) {
   if (e)
     try {
       return e.values[0].stacktrace.frames;
-    } catch (n) {
+    } catch {
       return;
     }
 }
@@ -2893,7 +2893,7 @@ function Xc(t) {
   return t.nodeType === t.ELEMENT_NODE;
 }
 function ue(t) {
-  const e = t == null ? void 0 : t.host;
+  const e = t?.host;
   return !!(e && e.shadowRoot && e.shadowRoot === t);
 }
 function qr({ maskInputOptions: t, tagName: e, type: n }) {
@@ -2969,7 +2969,7 @@ function An(t) {
   try {
     const e = t.rules || t.cssRules;
     return e ? Array.from(e).map(iu).join("") : null;
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -2978,7 +2978,7 @@ function iu(t) {
   if (ru(t))
     try {
       e = An(t.styleSheet) || e;
-    } catch (n) {}
+    } catch {}
   return Xr(e);
 }
 function Xr(t) {
@@ -3131,7 +3131,7 @@ function mu(t, e, n) {
     s;
   try {
     s = i.document.readyState;
-  } catch (o) {
+  } catch {
     return;
   }
   if (s !== "complete") {
@@ -3789,7 +3789,7 @@ function Zt(t, e, n) {
         t[e] = i;
       }
     );
-  } catch (i) {
+  } catch {
     return () => {};
   }
 }
@@ -3861,7 +3861,7 @@ function ns(t) {
   return "__sn" in t ? t.__sn.type === q.Element && t.__sn.tagName === "iframe" : !1;
 }
 function is(t) {
-  return !!(t != null && t.shadowRoot);
+  return !!t?.shadowRoot;
 }
 function qi(t) {
   return "__ln" in t;
@@ -3873,7 +3873,7 @@ class Tu {
   get(e) {
     if (e >= this.length) throw new Error("Position outside of list range");
     let n = this.head;
-    for (let i = 0; i < e; i++) n = (n == null ? void 0 : n.next) || null;
+    for (let i = 0; i < e; i++) n = n?.next || null;
     return n;
   }
   addNode(e) {
@@ -3932,14 +3932,11 @@ class vu {
             let p = h;
             for (
               ;
-              !(
-                (l = (u = p == null ? void 0 : p.getRootNode) === null || u === void 0 ? void 0 : u.call(p)) === null ||
-                l === void 0
-              ) && l.host;
+              !((l = (u = p?.getRootNode) === null || u === void 0 ? void 0 : u.call(p)) === null || l === void 0) &&
+              l.host;
             )
               p =
-                ((_ = (d = p == null ? void 0 : p.getRootNode) === null || d === void 0 ? void 0 : d.call(p)) ===
-                  null || _ === void 0
+                ((_ = (d = p?.getRootNode) === null || d === void 0 ? void 0 : d.call(p)) === null || _ === void 0
                   ? void 0
                   : _.host) || null;
             const y = !this.doc.contains(o) && (!p || !this.doc.contains(p));
@@ -4211,7 +4208,7 @@ const x =
       } catch (i) {
         try {
           i.__rrweb__ = !0;
-        } catch (r) {}
+        } catch {}
         throw i;
       }
     },
@@ -4222,7 +4219,7 @@ function Re(t) {
       const e = t.composedPath();
       if (e.length) return e[0];
     } else if ("path" in t && t.path.length) return t.path[0];
-  } catch (e) {}
+  } catch {}
   return t && t.target;
 }
 function rs(t, e) {
@@ -4231,8 +4228,7 @@ function rs(t, e) {
   (kt.push(r), r.init(t));
   let s = window.MutationObserver || window.__rrMutationObserver;
   const a =
-    (i = (n = window == null ? void 0 : window.Zone) === null || n === void 0 ? void 0 : n.__symbol__) === null ||
-    i === void 0
+    (i = (n = window?.Zone) === null || n === void 0 ? void 0 : n.__symbol__) === null || i === void 0
       ? void 0
       : i.call(n, "MutationObserver");
   a && window[a] && (s = window[a]);
@@ -4675,7 +4671,7 @@ function Bu(t, e = {}) {
     (kt.forEach((p) => p.reset()), i.disconnect(), r(), s(), a(), o(), c(), u());
     try {
       (l(), d());
-    } catch (p) {}
+    } catch {}
     (_(), h.forEach((p) => p()));
   });
 }
@@ -4783,8 +4779,8 @@ function Pu(t, e, n, i, r, s) {
                 if (c === "drawImage" && _[0] && _[0] instanceof HTMLCanvasElement) {
                   const h = _[0],
                     p = h.getContext("2d");
-                  let y = p == null ? void 0 : p.getImageData(0, 0, h.width, h.height),
-                    T = y == null ? void 0 : y.data;
+                  let y = p?.getImageData(0, 0, h.width, h.height),
+                    T = y?.data;
                   _[0] = JSON.stringify(T);
                 }
                 t(this.canvas, { type: qt["2D"], property: c, args: _ });
@@ -4794,7 +4790,7 @@ function Pu(t, e, n, i, r, s) {
         };
       });
       a.push(u);
-    } catch (u) {
+    } catch {
       const l = an(e.CanvasRenderingContext2D.prototype, c, {
         set(d) {
           t(this.canvas, { type: qt["2D"], property: c, args: [d], setter: !0 });
@@ -4815,7 +4811,7 @@ function zu(t, e, n, i) {
       };
     });
     r.push(s);
-  } catch (s) {
+  } catch {
     console.error("failed to patch HTMLCanvasElement.prototype.getContext");
   }
   return () => {
@@ -4924,7 +4920,7 @@ function Qi(t, e, n, i, r, s, a, o) {
         };
       });
       c.push(d);
-    } catch (d) {
+    } catch {
       const _ = an(t, l, {
         set(h) {
           n(this.canvas, { type: e, property: l, args: [h], setter: !0 });
@@ -5200,26 +5196,22 @@ function Lt(t = {}) {
               left:
                 window.pageXOffset !== void 0
                   ? window.pageXOffset
-                  : (document == null ? void 0 : document.documentElement.scrollLeft) ||
-                    ((ut =
-                      (rt = document == null ? void 0 : document.body) === null || rt === void 0
-                        ? void 0
-                        : rt.parentElement) === null || ut === void 0
+                  : document?.documentElement.scrollLeft ||
+                    ((ut = (rt = document?.body) === null || rt === void 0 ? void 0 : rt.parentElement) === null ||
+                    ut === void 0
                       ? void 0
                       : ut.scrollLeft) ||
-                    (document == null ? void 0 : document.body.scrollLeft) ||
+                    document?.body.scrollLeft ||
                     0,
               top:
                 window.pageYOffset !== void 0
                   ? window.pageYOffset
-                  : (document == null ? void 0 : document.documentElement.scrollTop) ||
-                    ((st =
-                      (tt = document == null ? void 0 : document.body) === null || tt === void 0
-                        ? void 0
-                        : tt.parentElement) === null || st === void 0
+                  : document?.documentElement.scrollTop ||
+                    ((st = (tt = document?.body) === null || tt === void 0 ? void 0 : tt.parentElement) === null ||
+                    st === void 0
                       ? void 0
                       : st.scrollTop) ||
-                    (document == null ? void 0 : document.body.scrollTop) ||
+                    document?.body.scrollTop ||
                     0,
             },
           },
@@ -5282,7 +5274,7 @@ function Lt(t = {}) {
           shadowDomManager: _n,
           canvasManager: Ei,
           plugins:
-            ((st = m == null ? void 0 : m.filter((G) => G.observer)) === null || st === void 0
+            ((st = m?.filter((G) => G.observer)) === null || st === void 0
               ? void 0
               : st.map((G) => ({
                   observer: G.observer,
@@ -5377,7 +5369,7 @@ function Xu() {
       if (Et)
         try {
           Et.forEach((n) => n());
-        } catch (n) {}
+        } catch {}
       return t.apply(R, e);
     };
   });
@@ -5608,7 +5600,7 @@ function sl(t) {
     i = null;
   try {
     ((i = e ? si(t.event) : cs(t.event)), (n = Ut(i, { maxStringLength: 200 }) || "<unknown>"));
-  } catch (r) {
+  } catch {
     n = "<unknown>";
   }
   return { target: i, message: n };
@@ -5696,7 +5688,7 @@ function fl(t) {
     ].forEach((i) => {
       try {
         n.observe({ type: i, buffered: !0 });
-      } catch (r) {}
+      } catch {}
     }),
     n
   );
@@ -5878,7 +5870,7 @@ class ml {
   async _ensureWorkerIsLoaded() {
     try {
       await this._compression.ensureReady();
-    } catch (e) {
+    } catch {
       (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) &&
         f.log("[Replay] Failed to load the compression worker, falling back to simple buffer");
       return;
@@ -5905,7 +5897,7 @@ function gl({ useCompression: t }) {
       (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && f.log("[Replay] Using compression worker");
       const n = new Worker(e);
       return new ml(n);
-    } catch (e) {
+    } catch {
       (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && f.log("[Replay] Failed to create compression worker");
     }
   return ((typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && f.log("[Replay] Using simple buffer"), new cn());
@@ -5920,7 +5912,7 @@ function El() {
   if (ui())
     try {
       R.sessionStorage.removeItem(ni);
-    } catch (t) {}
+    } catch {}
 }
 function Ln(t, e, n = +new Date()) {
   return t === null || e === void 0 || e < 0 ? !0 : e === 0 ? !1 : t + e <= n;
@@ -5935,7 +5927,7 @@ function li(t) {
   if (ui())
     try {
       R.sessionStorage.setItem(ni, JSON.stringify(t));
-    } catch (e) {}
+    } catch {}
 }
 function di(t) {
   const e = Date.now(),
@@ -5965,7 +5957,7 @@ function wl() {
     if (!t) return null;
     const e = JSON.parse(t);
     return di(e);
-  } catch (t) {
+  } catch {
     return null;
   }
 }
@@ -6341,7 +6333,7 @@ function Qe(t, e) {
       }
       if (t instanceof Blob) return t.size;
       if (t instanceof ArrayBuffer) return t.byteLength;
-    } catch (n) {}
+    } catch {}
 }
 function ms(t) {
   if (!t) return;
@@ -6391,7 +6383,7 @@ function Kl(t) {
     try {
       const n = e ? ps(t.slice(0, Ue)) : t;
       return { body: JSON.parse(n), warnings: e ? ["JSON_TRUNCATED"] : [] };
-    } catch (n) {
+    } catch {
       return {
         body: e ? `${t.slice(0, Ue)}…` : t,
         warnings: e ? ["INVALID_JSON", "TEXT_TRUNCATED"] : ["INVALID_JSON"],
@@ -6455,14 +6447,14 @@ async function rd(t, { networkCaptureBodies: e, textEncoder: n, networkResponseH
       c = await sd(o),
       u = c && c.length && s === void 0 ? Qe(c, n) : s;
     return t ? (e ? Tt(a, u, c) : Tt(a, u, void 0)) : Se(u);
-  } catch (o) {
+  } catch {
     return Tt(a, s, void 0);
   }
 }
 async function sd(t) {
   try {
     return await t.text();
-  } catch (e) {
+  } catch {
     return;
   }
 }
@@ -6550,13 +6542,13 @@ function dd(t) {
         networkResponseHeaders: a,
       };
     e && e.on ? e.on("beforeAddBreadcrumb", (c, u) => fd(o, c, u)) : (K("fetch", Ul(t)), K("xhr", Ll(t)));
-  } catch (n) {}
+  } catch {}
 }
 function fd(t, e, n) {
   if (e.data)
     try {
       (hd(e) && pd(n) && (cd(e, n, t), od(e, n, t)), _d(e) && md(n) && (ed(e, n, t), td(e, n, t)));
-    } catch (i) {
+    } catch {
       (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && f.warn("Error when enriching network breadcrumb");
     }
 }
@@ -6611,7 +6603,7 @@ function Sd(t) {
           return ((n = !0), c);
         }
         return s;
-      } catch (s) {}
+      } catch {}
     return r;
   });
   return _t({
@@ -6646,7 +6638,7 @@ function ir(t) {
 async function wd(t) {
   try {
     return Promise.all(un(t, [Td(R.performance.memory)]));
-  } catch (e) {
+  } catch {
     return [];
   }
 }
@@ -6877,7 +6869,7 @@ async function Md({ recordingData: t, replayId: e, segmentId: n, eventContext: i
     const w = new Error(ii);
     try {
       w.cause = N;
-    } catch (D) {}
+    } catch {}
     throw w;
   }
   if (!I) return I;
@@ -6907,7 +6899,7 @@ async function vs(t, e = { count: 0, interval: jc }) {
         const s = new Error(`${ii} - max retries exceeded`);
         try {
           s.cause = r;
-        } catch (a) {}
+        } catch {}
         throw s;
       }
       return (
@@ -7690,7 +7682,7 @@ const hi = (t, e, n) => {
         });
         return (i.observe(Object.assign({ type: t, buffered: !0 }, n || {})), i);
       }
-    } catch (i) {}
+    } catch {}
   },
   dn = (t, e) => {
     const n = (i) => {
@@ -8163,7 +8155,7 @@ function gf(t, e, n, i) {
         const u = o.getDynamicSamplingContext(),
           l = Nr(u);
         l && r.setRequestHeader(kn, l);
-      } catch (u) {}
+      } catch {}
     return c;
   }
 }
@@ -8379,13 +8371,13 @@ function vf(t) {
       try {
         const r = await kr(i, t.textEncoder);
         await wf(n(), r, t.maxQueueSize || 30);
-      } catch (r) {}
+      } catch {}
     },
     pop: async () => {
       try {
         const i = await Tf(n());
         if (i) return ha(i, t.textEncoder || new TextEncoder(), t.textDecoder || new TextDecoder());
-      } catch (i) {}
+      } catch {}
     },
   };
 }
@@ -8654,7 +8646,7 @@ function Us(t) {
   let c;
   try {
     c = new e({ sampleInterval: a, maxBufferSize: o });
-  } catch (p) {
+  } catch {
     ((typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) &&
       (f.log(
         "[Profiling] Failed to initialize the Profiling constructor, this is likely due to a missing 'Document-Policy': 'js-profiling' header.",

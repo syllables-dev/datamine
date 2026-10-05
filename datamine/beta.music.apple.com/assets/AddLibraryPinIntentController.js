@@ -1,20 +1,19 @@
-import { a$ as d, a_ as a } from "./main.js";
-import { a as m, m as i, r as u } from "./libraryPinsAPI.js";
-const p = {
-  $intentKind: d.Name,
-  async perform(e, t) {
-    var n;
-    const { itemId: o } = e;
+import { a$ as o, a_ as s } from "./main.js";
+import { a as d, m as a, r as m } from "./libraryPinsAPI.js";
+const P = {
+  $intentKind: o.Name,
+  async perform(i, r) {
+    const { itemId: e } = i;
     try {
-      const r = await m(o, t);
-      return { pins: await i(r, t), status: a.SUCCESS };
-    } catch (r) {
-      if (((n = r == null ? void 0 : r.userInfo) == null ? void 0 : n.status) == "400") {
-        const s = await u(t);
-        return { pins: await i(s, t), status: a.MAX_PINS };
+      const t = await d(e, r);
+      return { pins: await a(t, r), status: s.SUCCESS };
+    } catch (t) {
+      if (t?.userInfo?.status == "400") {
+        const n = await m(r);
+        return { pins: await a(n, r), status: s.MAX_PINS };
       }
-      throw new Error(`an error occurred at AddLibraryPinIntentController: ${r}`);
+      throw new Error(`an error occurred at AddLibraryPinIntentController: ${t}`);
     }
   },
 };
-export { p as AddLibraryPinIntentController };
+export { P as AddLibraryPinIntentController };

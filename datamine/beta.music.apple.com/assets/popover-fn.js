@@ -1,28 +1,24 @@
-var Q = Object.defineProperty;
-var _ = (e, t, o) => (t in e ? Q(e, t, { enumerable: !0, configurable: !0, writable: !0, value: o }) : (e[t] = o));
-var H = (e, t, o) => (_(e, typeof t != "symbol" ? t + "" : t, o), o);
 var M = class extends Event {
-    constructor(t, { oldState: o = "", newState: r = "", ...i } = {}) {
-      super(t, i);
-      H(this, "oldState");
-      H(this, "newState");
-      ((this.oldState = String(o || "")), (this.newState = String(r || "")));
+    oldState;
+    newState;
+    constructor(e, { oldState: t = "", newState: o = "", ...r } = {}) {
+      (super(e, r), (this.oldState = String(t || "")), (this.newState = String(o || "")));
     }
   },
-  W = new WeakMap();
-function U(e, t, o) {
-  W.set(
+  F = new WeakMap();
+function B(e, t, o) {
+  F.set(
     e,
     setTimeout(() => {
-      W.has(e) && e.dispatchEvent(new M("toggle", { cancelable: !1, oldState: t, newState: o }));
+      F.has(e) && e.dispatchEvent(new M("toggle", { cancelable: !1, oldState: t, newState: o }));
     }, 0),
   );
 }
-var F = globalThis.ShadowRoot || function () {},
-  J = globalThis.HTMLDialogElement || function () {},
+var R = globalThis.ShadowRoot || function () {},
+  G = globalThis.HTMLDialogElement || function () {},
   L = new WeakMap(),
   f = new WeakMap(),
-  c = new WeakMap(),
+  p = new WeakMap(),
   w = new WeakMap();
 function A(e) {
   return w.get(e) || "hidden";
@@ -31,13 +27,13 @@ var P = new WeakMap();
 function E(e) {
   return [...e].pop();
 }
-function X(e) {
+function K(e) {
   const t = e.popoverTargetElement;
   if (!(t instanceof HTMLElement)) return;
   const o = A(t);
   (e.popoverTargetAction === "show" && o === "showing") ||
     (e.popoverTargetAction === "hide" && o === "hidden") ||
-    (o === "showing" ? b(t, !0, !0) : d(t, !1) && (P.set(t, e), R(t)));
+    (o === "showing" ? b(t, !0, !0) : d(t, !1) && (P.set(t, e), x(t)));
 }
 function d(e, t) {
   return !(
@@ -45,29 +41,29 @@ function d(e, t) {
     !e.isConnected ||
     (t && A(e) !== "showing") ||
     (!t && A(e) !== "hidden") ||
-    (e instanceof J && e.hasAttribute("open")) ||
+    (e instanceof G && e.hasAttribute("open")) ||
     document.fullscreenElement === e
   );
 }
-function q(e) {
+function N(e) {
   if (!e) return 0;
   const t = f.get(document) || new Set(),
-    o = c.get(document) || new Set();
+    o = p.get(document) || new Set();
   return o.has(e) ? [...o].indexOf(e) + t.size + 1 : t.has(e) ? [...t].indexOf(e) + 1 : 0;
 }
-function Y(e) {
-  const t = G(e),
-    o = Z(e);
-  return q(t) > q(o) ? t : o;
+function Q(e) {
+  const t = V(e),
+    o = _(e);
+  return N(t) > N(o) ? t : o;
 }
 function m(e) {
   let t;
-  const o = c.get(e) || new Set(),
+  const o = p.get(e) || new Set(),
     r = f.get(e) || new Set(),
     i = o.size > 0 ? o : r.size > 0 ? r : null;
   return i ? ((t = E(i)), t.isConnected ? t : (i.delete(t), m(e))) : null;
 }
-function z(e) {
+function C(e) {
   for (const t of e || [])
     if (!t.isConnected) e.delete(t);
     else return t;
@@ -76,46 +72,46 @@ function z(e) {
 function y(e) {
   return typeof e.getRootNode == "function" ? e.getRootNode() : e.parentNode ? y(e.parentNode) : e;
 }
-function G(e) {
+function V(e) {
   for (; e;) {
     if (e instanceof HTMLElement && e.popover === "auto" && w.get(e) === "showing") return e;
     if (
       ((e = (e instanceof Element && e.assignedSlot) || e.parentElement || y(e)),
-      e instanceof F && (e = e.host),
+      e instanceof R && (e = e.host),
       e instanceof Document)
     )
       return;
   }
 }
-function Z(e) {
+function _(e) {
   for (; e;) {
     const t = e.popoverTargetElement;
     if (t instanceof HTMLElement) return t;
-    if (((e = e.parentElement || y(e)), e instanceof F && (e = e.host), e instanceof Document)) return;
+    if (((e = e.parentElement || y(e)), e instanceof R && (e = e.host), e instanceof Document)) return;
   }
 }
-function j(e, t) {
+function W(e, t) {
   const o = new Map();
   let r = 0;
-  for (const u of t || []) (o.set(u, r), (r += 1));
+  for (const a of t || []) (o.set(a, r), (r += 1));
   (o.set(e, r), (r += 1));
   let i = null;
-  function a(u) {
-    if (!u) return;
+  function u(a) {
+    if (!a) return;
     let l = !1,
       n = null,
       s = null;
     for (; !l;) {
-      if (((n = G(u) || null), n === null || !o.has(n))) return;
-      ((e.popover === "hint" || n.popover === "auto") && (l = !0), l || (u = n.parentElement));
+      if (((n = V(a) || null), n === null || !o.has(n))) return;
+      ((e.popover === "hint" || n.popover === "auto") && (l = !0), l || (a = n.parentElement));
     }
     ((s = o.get(n)), (i === null || o.get(i) < s) && (i = n));
   }
-  return (a(e.parentElement || y(e)), i);
+  return (u(e.parentElement || y(e)), i);
 }
-function ee(e) {
+function J(e) {
   return e.hidden ||
-    e instanceof F ||
+    e instanceof R ||
     ((e instanceof HTMLButtonElement ||
       e instanceof HTMLInputElement ||
       e instanceof HTMLSelectElement ||
@@ -129,16 +125,16 @@ function ee(e) {
     ? !1
     : typeof e.tabIndex == "number" && e.tabIndex !== -1;
 }
-function te(e) {
+function X(e) {
   if (e.shadowRoot && e.shadowRoot.delegatesFocus !== !0) return null;
   let t = e;
   t.shadowRoot && (t = t.shadowRoot);
   let o = t.querySelector("[autofocus]");
   if (o) return o;
   {
-    const a = t.querySelectorAll("slot");
-    for (const u of a) {
-      const l = u.assignedElements({ flatten: !0 });
+    const u = t.querySelectorAll("slot");
+    for (const a of u) {
+      const l = a.assignedElements({ flatten: !0 });
       for (const n of l) {
         if (n.hasAttribute("autofocus")) return n;
         if (((o = n.querySelector("[autofocus]")), o)) return o;
@@ -148,16 +144,15 @@ function te(e) {
   const r = e.ownerDocument.createTreeWalker(t, NodeFilter.SHOW_ELEMENT);
   let i = r.currentNode;
   for (; i;) {
-    if (ee(i)) return i;
+    if (J(i)) return i;
     i = r.nextNode();
   }
 }
-function oe(e) {
-  var t;
-  (t = te(e)) == null || t.focus();
+function Y(e) {
+  X(e)?.focus();
 }
 var k = new WeakMap();
-function R(e) {
+function x(e) {
   if (!d(e, !1)) return;
   const t = e.ownerDocument;
   if (!e.dispatchEvent(new M("beforetoggle", { cancelable: !0, oldState: "closed", newState: "open" })) || !d(e, !1))
@@ -165,21 +160,21 @@ function R(e) {
   let o = !1;
   const r = e.popover;
   let i = null;
-  const a = j(e, f.get(t) || new Set()),
-    u = j(e, c.get(t) || new Set());
+  const u = W(e, f.get(t) || new Set()),
+    a = W(e, p.get(t) || new Set());
   if (
-    (r === "auto" && (O(c.get(t) || new Set(), o, !0), v(a || t, o, !0), (i = "auto")),
+    (r === "auto" && (I(p.get(t) || new Set(), o, !0), v(u || t, o, !0), (i = "auto")),
     r === "hint" &&
-      (u
-        ? (v(u, o, !0), (i = "hint"))
-        : (O(c.get(t) || new Set(), o, !0), a ? (v(a, o, !0), (i = "auto")) : (i = "hint"))),
+      (a
+        ? (v(a, o, !0), (i = "hint"))
+        : (I(p.get(t) || new Set(), o, !0), u ? (v(u, o, !0), (i = "auto")) : (i = "hint"))),
     r === "auto" || r === "hint")
   ) {
     if (r !== e.popover || !d(e, !1)) return;
     (m(t) || (o = !0),
       i === "auto"
         ? (f.has(t) || f.set(t, new Set()), f.get(t).add(e))
-        : i === "hint" && (c.has(t) || c.set(t, new Set()), c.get(t).add(e)));
+        : i === "hint" && (p.has(t) || p.set(t, new Set()), p.get(t).add(e)));
   }
   k.delete(e);
   const l = t.activeElement;
@@ -187,108 +182,105 @@ function R(e) {
     w.set(e, "showing"),
     L.has(t) || L.set(t, new Set()),
     L.get(t).add(e),
-    K(P.get(e), !0),
-    oe(e),
+    $(P.get(e), !0),
+    Y(e),
     o && l && e.popover === "auto" && k.set(e, l),
-    U(e, "closed", "open"));
+    B(e, "closed", "open"));
 }
 function b(e, t = !1, o = !1) {
-  var l, n;
   if (!d(e, !0)) return;
   const r = e.ownerDocument;
   if (["auto", "hint"].includes(e.popover) && (v(e, t, o), !d(e, !0))) return;
   const i = f.get(r) || new Set(),
-    a = i.has(e) && E(i) === e;
+    u = i.has(e) && E(i) === e;
   if (
-    (K(P.get(e), !1),
+    ($(P.get(e), !1),
     P.delete(e),
     o &&
       (e.dispatchEvent(new M("beforetoggle", { oldState: "open", newState: "closed" })),
-      a && E(i) !== e && v(e, t, o),
+      u && E(i) !== e && v(e, t, o),
       !d(e, !0)))
   )
     return;
-  ((l = L.get(r)) == null || l.delete(e),
+  (L.get(r)?.delete(e),
     i.delete(e),
-    (n = c.get(r)) == null || n.delete(e),
+    p.get(r)?.delete(e),
     e.classList.remove(":popover-open"),
     w.set(e, "hidden"),
-    o && U(e, "open", "closed"));
-  const u = k.get(e);
-  u && (k.delete(e), t && u.focus());
+    o && B(e, "open", "closed"));
+  const a = k.get(e);
+  a && (k.delete(e), t && a.focus());
 }
-function ne(e, t = !1, o = !1) {
+function Z(e, t = !1, o = !1) {
   let r = m(e);
   for (; r;) (b(r, t, o), (r = m(e)));
 }
-function O(e, t = !1, o = !1) {
-  let r = z(e);
-  for (; r;) (b(r, t, o), (r = z(e)));
+function I(e, t = !1, o = !1) {
+  let r = C(e);
+  for (; r;) (b(r, t, o), (r = C(e)));
 }
-function B(e, t, o, r) {
+function q(e, t, o, r) {
   let i = !1,
-    a = !1;
-  for (; i || !a;) {
-    a = !0;
-    let u = null,
+    u = !1;
+  for (; i || !u;) {
+    u = !0;
+    let a = null,
       l = !1;
     for (const n of t)
       if (n === e) l = !0;
       else if (l) {
-        u = n;
+        a = n;
         break;
       }
-    if (!u) return;
-    for (; A(u) === "showing" && t.size;) b(E(t), o, r);
+    if (!a) return;
+    for (; A(a) === "showing" && t.size;) b(E(t), o, r);
     (t.has(e) && E(t) !== e && (i = !0), i && (r = !1));
   }
 }
 function v(e, t, o) {
-  var i, a;
   const r = e.ownerDocument || e;
-  if (e instanceof Document) return ne(r, t, o);
-  if ((i = c.get(r)) != null && i.has(e)) {
-    B(e, c.get(r), t, o);
+  if (e instanceof Document) return Z(r, t, o);
+  if (p.get(r)?.has(e)) {
+    q(e, p.get(r), t, o);
     return;
   }
-  (O(c.get(r) || new Set(), t, o), (a = f.get(r)) != null && a.has(e) && B(e, f.get(r), t, o));
+  (I(p.get(r) || new Set(), t, o), f.get(r)?.has(e) && q(e, f.get(r), t, o));
 }
-var D = new WeakMap();
-function V(e) {
+var T = new WeakMap();
+function z(e) {
   if (!e.isTrusted) return;
   const t = e.composedPath()[0];
   if (!t) return;
   const o = t.ownerDocument;
   if (!m(o)) return;
-  const i = Y(t);
-  if (i && e.type === "pointerdown") D.set(o, i);
+  const i = Q(t);
+  if (i && e.type === "pointerdown") T.set(o, i);
   else if (e.type === "pointerup") {
-    const a = D.get(o) === i;
-    (D.delete(o), a && v(i || o, !1, !0));
+    const u = T.get(o) === i;
+    (T.delete(o), u && v(i || o, !1, !0));
   }
 }
-var x = new WeakMap();
-function K(e, t = !1) {
+var H = new WeakMap();
+function $(e, t = !1) {
   if (!e) return;
-  x.has(e) || x.set(e, e.getAttribute("aria-expanded"));
+  H.has(e) || H.set(e, e.getAttribute("aria-expanded"));
   const o = e.popoverTargetElement;
   if (o instanceof HTMLElement && o.popover === "auto") e.setAttribute("aria-expanded", String(t));
   else {
-    const r = x.get(e);
+    const r = H.get(e);
     r ? e.setAttribute("aria-expanded", r) : e.removeAttribute("aria-expanded");
   }
 }
-var $ = globalThis.ShadowRoot || function () {};
-function ue() {
+var j = globalThis.ShadowRoot || function () {};
+function ne() {
   return typeof HTMLElement < "u" && typeof HTMLElement.prototype == "object" && "popover" in HTMLElement.prototype;
 }
-function le() {
+function re() {
   const e = document.createElement("div");
   return (e.setAttribute("popover", "hint"), e.popover === "hint");
 }
-function pe() {
-  var e;
-  return !!((e = document.body) != null && e.showPopover && !/native code/i.test(document.body.showPopover.toString()));
+function ie() {
+  return !!(document.body?.showPopover && !/native code/i.test(document.body.showPopover.toString()));
 }
 function h(e, t, o) {
   const r = e[t];
@@ -298,12 +290,12 @@ function h(e, t, o) {
     },
   });
 }
-var re = /(^|[^\\]):popover-open\b/g;
-function ie() {
+var ee = /(^|[^\\]):popover-open\b/g;
+function te() {
   return typeof globalThis.CSSLayerBlockRule == "function";
 }
-function se() {
-  const e = ie();
+function oe() {
+  const e = te();
   return `
 ${e ? "@layer popover-polyfill {" : ""}
   :where([popover]) {
@@ -369,12 +361,12 @@ ${e ? "}" : ""}
 `;
 }
 var g = null;
-function I(e) {
-  const t = se();
+function D(e) {
+  const t = oe();
   if (g === null)
     try {
       ((g = new CSSStyleSheet()), g.replaceSync(t));
-    } catch (o) {
+    } catch {
       g = !1;
     }
   if (g === !1) {
@@ -382,11 +374,11 @@ function I(e) {
     ((o.textContent = t), e instanceof Document ? e.head.prepend(o) : e.prepend(o));
   } else e.adoptedStyleSheets = [g, ...e.adoptedStyleSheets];
 }
-function ce() {
+function se() {
   if (typeof window > "u") return;
   window.ToggleEvent = window.ToggleEvent || M;
   function e(n) {
-    return (n != null && n.includes(":popover-open") && (n = n.replace(re, "$1.\\:popover-open")), n);
+    return (n?.includes(":popover-open") && (n = n.replace(ee, "$1.\\:popover-open")), n);
   }
   (h(Document.prototype, "querySelector", e),
     h(Document.prototype, "querySelectorAll", e),
@@ -412,7 +404,7 @@ function ce() {
         enumerable: !0,
         configurable: !0,
         value(n = {}) {
-          R(this);
+          x(this);
         },
       },
       hidePopover: {
@@ -430,7 +422,7 @@ function ce() {
             typeof n == "boolean" && (n = { force: n }),
             (w.get(this) === "showing" && n.force === void 0) || n.force === !1
               ? b(this, !0, !0)
-              : (n.force === void 0 || n.force === !0) && R(this),
+              : (n.force === void 0 || n.force === !0) && x(this),
             w.get(this) === "showing"
           );
         },
@@ -445,7 +437,7 @@ function ce() {
         writable: !0,
         value(n) {
           const s = t.call(this, n);
-          return (I(s), s);
+          return (D(s), s);
         },
       },
     });
@@ -458,7 +450,7 @@ function ce() {
         writable: !0,
         value() {
           const n = o.call(this);
-          return (n.shadowRoot && I(n.shadowRoot), n);
+          return (n.shadowRoot && D(n.shadowRoot), n);
         },
       },
     });
@@ -484,9 +476,9 @@ function ce() {
           const s = r.get(this);
           if (s && s.isConnected) return s;
           if (s && !s.isConnected) return (r.delete(this), null);
-          const p = y(this),
+          const c = y(this),
             S = this.getAttribute("popovertarget");
-          return ((p instanceof Document || p instanceof $) && S && p.getElementById(S)) || null;
+          return ((c instanceof Document || c instanceof j) && S && c.getElementById(S)) || null;
         },
       },
       popoverTargetAction: {
@@ -503,32 +495,29 @@ function ce() {
     });
   }
   (i(HTMLButtonElement), i(HTMLInputElement));
-  const a = (n) => {
+  const u = (n) => {
       const s = n.composedPath(),
-        p = s[0];
-      if (!(p instanceof Element) || (p != null && p.shadowRoot)) return;
-      const S = y(p);
-      if (!(S instanceof $ || S instanceof Document)) return;
-      const N = s.find((T) => {
-        var C;
-        return (C = T.matches) == null ? void 0 : C.call(T, "[popovertargetaction],[popovertarget]");
-      });
-      if (N) {
-        (X(N), n.preventDefault());
+        c = s[0];
+      if (!(c instanceof Element) || c?.shadowRoot) return;
+      const S = y(c);
+      if (!(S instanceof j || S instanceof Document)) return;
+      const O = s.find((U) => U.matches?.("[popovertargetaction],[popovertarget]"));
+      if (O) {
+        (K(O), n.preventDefault());
         return;
       }
     },
-    u = (n) => {
+    a = (n) => {
       const s = n.key,
-        p = n.target;
-      !n.defaultPrevented && p && (s === "Escape" || s === "Esc") && v(p.ownerDocument, !0, !0);
+        c = n.target;
+      !n.defaultPrevented && c && (s === "Escape" || s === "Esc") && v(c.ownerDocument, !0, !0);
     };
   (((n) => {
-    (n.addEventListener("click", a),
-      n.addEventListener("keydown", u),
-      n.addEventListener("pointerdown", V),
-      n.addEventListener("pointerup", V));
+    (n.addEventListener("click", u),
+      n.addEventListener("keydown", a),
+      n.addEventListener("pointerdown", z),
+      n.addEventListener("pointerup", z));
   })(document),
-    I(document));
+    D(document));
 }
-export { ce as apply, I as injectStyles, le as isHintSupported, pe as isPolyfilled, ue as isSupported };
+export { se as apply, D as injectStyles, re as isHintSupported, ie as isPolyfilled, ne as isSupported };

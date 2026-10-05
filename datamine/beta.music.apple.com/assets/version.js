@@ -51,7 +51,7 @@ function gt(e) {
 function N(e, t) {
   try {
     return e instanceof t;
-  } catch (n) {
+  } catch {
     return !1;
   }
 }
@@ -92,7 +92,7 @@ function mt(e, t = {}) {
     for (; n && i++ < r && ((u = Et(n, f)), !(u === "html" || (i > 1 && o + s.length * a + u.length >= l)));)
       (s.push(u), (o += u.length), (n = n.parentNode));
     return s.reverse().join(c);
-  } catch (n) {
+  } catch {
     return "<unknown>";
   }
 }
@@ -116,7 +116,7 @@ function Et(e, t) {
 function le() {
   try {
     return T.document.location.href;
-  } catch (e) {
+  } catch {
     return "";
   }
 }
@@ -242,7 +242,7 @@ function he(e, t) {
     const s = e[r];
     try {
       n.push(String(s));
-    } catch (i) {
+    } catch {
       n.push("[value cannot be serialized]");
     }
   }
@@ -261,7 +261,7 @@ function ge(e, t, n) {
   if (typeof s == "function")
     try {
       It(s, r);
-    } catch (i) {}
+    } catch {}
   e[t] = s;
 }
 function Q(e, t, n) {
@@ -289,7 +289,7 @@ function Z(e) {
 function H(e) {
   try {
     return _t(e) ? mt(e) : Object.prototype.toString.call(e);
-  } catch (t) {
+  } catch {
     return "<unknown>";
   }
 }
@@ -380,7 +380,7 @@ const O = "<anonymous>";
 function Lt(e) {
   try {
     return !e || typeof e != "function" ? O : e.name || O;
-  } catch (t) {
+  } catch {
     return O;
   }
 }
@@ -389,7 +389,7 @@ function Pt() {
   if (!("fetch" in L)) return !1;
   try {
     return (new Headers(), new Request("http://www.example.com"), new Response(), !0);
-  } catch (e) {
+  } catch {
     return !1;
   }
 }
@@ -469,7 +469,7 @@ function De(e) {
   if (e && e.__sentry_captured__) return !0;
   try {
     Q(e, "__sentry_captured__", !0);
-  } catch (t) {}
+  } catch {}
   return !1;
 }
 function $t(e) {
@@ -513,7 +513,7 @@ function P(e, t, n = 1 / 0, r = 1 / 0, s = vt()) {
     try {
       const g = u.toJSON();
       return P("", g, a - 1, r, s);
-    } catch (g) {}
+    } catch {}
   const f = Array.isArray(t) ? [] : {};
   let l = 0;
   const E = Z(t);
@@ -717,7 +717,7 @@ function qt() {
 function Wt() {
   try {
     return jt(module, "perf_hooks").performance;
-  } catch (e) {
+  } catch {
     return;
   }
 }
@@ -780,7 +780,7 @@ ${JSON.stringify(c)}
       let u;
       try {
         u = JSON.stringify(a);
-      } catch (f) {
+      } catch {
         u = JSON.stringify(nt(a));
       }
       i(u);
@@ -1288,7 +1288,7 @@ class ct {
     if (!n) return null;
     try {
       return n.getIntegration(t);
-    } catch (r) {
+    } catch {
       return (
         (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) &&
           _.warn(`Cannot retrieve integration ${t.id} from the current Hub`),

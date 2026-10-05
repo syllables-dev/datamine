@@ -5,17 +5,17 @@
   left: 0;
   -webkit-mask-image: radial-gradient(
     var(--blur-frame-mask-shape, ellipse 80% 60% at calc(50% + var(--web-navigation-width)/2) -13%),
-    transparent 0,
-    transparent 53%,
-    rgba(0, 0, 0, 0.1) 61%,
-    rgba(0, 0, 0, 0.92) 74%
+    #0000 0,
+    #0000 53%,
+    #0000001a 61%,
+    #000000eb 74%
   );
   mask-image: radial-gradient(
     var(--blur-frame-mask-shape, ellipse 80% 60% at calc(50% + var(--web-navigation-width)/2) -13%),
-    transparent 0,
-    transparent 53%,
-    rgba(0, 0, 0, 0.1) 61%,
-    rgba(0, 0, 0, 0.92) 74%
+    #0000 0,
+    #0000 53%,
+    #0000001a 61%,
+    #000000eb 74%
   );
   pointer-events: none;
   position: absolute;
@@ -27,7 +27,6 @@
   @media (prefers-reduced-motion: no-preference) {
     .artist-expression-header__artwork-tint.svelte-xqfvb5.svelte-xqfvb5,
     .artist-expression-header__blur-frame.svelte-xqfvb5.svelte-xqfvb5 {
-      -webkit-animation: svelte-xqfvb5-artist-expression-header-blur-scroll linear forwards;
       animation: svelte-xqfvb5-artist-expression-header-blur-scroll linear forwards;
       animation-timeline: --artist-expression-header-artwork;
       animation-range: exit;
@@ -83,14 +82,9 @@
       var(--side-blur-deg, 90deg),
       #000 0,
       #000 var(--web-navigation-width),
-      transparent 100%
+      #0000 100%
     );
-    mask-image: linear-gradient(
-      var(--side-blur-deg, 90deg),
-      #000 0,
-      #000 var(--web-navigation-width),
-      transparent 100%
-    );
+    mask-image: linear-gradient(var(--side-blur-deg, 90deg), #000 0, #000 var(--web-navigation-width), #0000 100%);
     pointer-events: none;
     position: fixed;
     top: 0;
@@ -110,7 +104,6 @@
       .artist-expression-header.svelte-xqfvb5.svelte-xqfvb5:not(
           :has(.artist-expression-header__circular-artwork-container)
         ):before {
-        -webkit-animation: svelte-xqfvb5-artist-expression-header-blur-scroll linear forwards;
         animation: svelte-xqfvb5-artist-expression-header-blur-scroll linear forwards;
         animation-timeline: --artist-expression-header-artwork;
         animation-range: exit;
@@ -127,20 +120,8 @@
   display: block;
   height: 946px;
   inset-inline-start: 0;
-  -webkit-mask-image: radial-gradient(
-    ellipse 119% 74% at 50% -24%,
-    transparent 0,
-    transparent 67%,
-    rgba(0, 0, 0, 0.1) 69%,
-    #000 75%
-  );
-  mask-image: radial-gradient(
-    ellipse 119% 74% at 50% -24%,
-    transparent 0,
-    transparent 67%,
-    rgba(0, 0, 0, 0.1) 69%,
-    #000 75%
-  );
+  -webkit-mask-image: radial-gradient(ellipse 119% 74% at 50% -24%, #0000 0, #0000 67%, #0000001a 69%, #000 75%);
+  mask-image: radial-gradient(ellipse 119% 74% at 50% -24%, #0000 0, #0000 67%, #0000001a 69%, #000 75%);
   pointer-events: none;
   position: absolute;
   transform: translateY(300px);
@@ -150,7 +131,6 @@
 @supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) {
     .artist-expression-header.svelte-xqfvb5.svelte-xqfvb5:after {
-      -webkit-animation: svelte-xqfvb5-artist-expression-header-blur-scroll linear forwards;
       animation: svelte-xqfvb5-artist-expression-header-blur-scroll linear forwards;
       animation-timeline: --artist-expression-header-artwork;
       animation-range: exit;
@@ -234,7 +214,6 @@ html[dir="rtl"]
   background-position: 50%;
   background-repeat: no-repeat;
   border-radius: 50%;
-  -webkit-filter: blur(35px);
   filter: blur(35px);
   height: auto;
   opacity: 1;
@@ -263,12 +242,11 @@ html[dir="rtl"]
 .artist-expression-header--fixed.svelte-xqfvb5 .artwork-container {
   --artwork-override-max-height: 100%;
   height: 100%;
-  -webkit-box-reflect: below 0 linear-gradient(180deg, hsla(0, 0%, 100%, 0.02) 0, hsla(0, 0%, 100%, 0.12) 94%, #fff);
+  -webkit-box-reflect: below 0 linear-gradient(180deg, #ffffff05 0, #ffffff1f 94%, #fff);
 }
 @supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) {
     .artist-expression-header--fixed.svelte-xqfvb5 .artwork-container {
-      -webkit-animation: svelte-xqfvb5-artist-expression-header-artwork-scroll linear forwards;
       animation: svelte-xqfvb5-artist-expression-header-artwork-scroll linear forwards;
       animation-timeline: --artist-expression-header-artwork;
       animation-range: exit;
@@ -287,7 +265,7 @@ html[dir="rtl"]
   }
 }
 .artist-expression-header--video.svelte-xqfvb5 .video-artwork__container {
-  -webkit-box-reflect: below 0 linear-gradient(180deg, hsla(0, 0%, 100%, 0.02) 0, hsla(0, 0%, 100%, 0.12) 94%, #fff);
+  -webkit-box-reflect: below 0 linear-gradient(180deg, #ffffff05 0, #ffffff1f 94%, #fff);
 }
 .artist-expression-header--video.svelte-xqfvb5 .artist-expression-header__artwork.svelte-xqfvb5 .artwork-container {
   min-height: 470px;
@@ -353,8 +331,6 @@ html[dir="rtl"]
   text-align: center;
   text-overflow: clip;
   -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
   user-select: text;
 }
 .artist-expression-header__name.svelte-xqfvb5.svelte-xqfvb5:lang(zh) {
@@ -643,7 +619,6 @@ html[dir="rtl"]
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   border: 0;
-  -webkit-clip-path: inset(0 0 99.9% 99.9%);
   clip-path: inset(0 0 99.9% 99.9%);
   height: 1px;
   overflow: hidden;
@@ -679,7 +654,7 @@ html[dir="rtl"]
 }
 .artist-expression-header__play-button.svelte-xqfvb5.svelte-xqfvb5 {
   --svgFill: var(--keyColor);
-  background: transparent;
+  background: #0000;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -704,16 +679,12 @@ html[dir="rtl"]
 .artist-expression-header__favorite-button.svelte-xqfvb5.svelte-xqfvb5 {
   --favoriteButtonSize: 48px;
   --favoriteIconSize: 32px;
-  --favoriteButtonBackground: transparent;
-  --favoriteButtonBackground-hover: transparent;
+  --favoriteButtonBackground: #0000;
+  --favoriteButtonBackground-hover: #0000;
   --favoriteButtonStarFill: var(--keyColor);
   --favoriteButtonStarFill-hover: var(--keyColor);
   --favoriteButtonStarOutline-hover: var(--keyColor);
-  --artistFillSecondary-tinted: color-mix(
-    in srgb,
-    #fff 30%,
-    var(--artistFillSecondary-blended-plusL, hsla(0, 0%, 100%, 0.08)) 70%
-  );
+  --artistFillSecondary-tinted: color-mix(in srgb, #fff 30%, var(--artistFillSecondary-blended-plusL, #ffffff14) 70%);
   align-items: center;
   display: flex;
   height: 48px;
@@ -722,7 +693,7 @@ html[dir="rtl"]
   width: 48px;
   fill: var(--keyColor);
   background:
-    linear-gradient(to right, hsla(0, 0%, 100%, 0.15), hsla(0, 0%, 100%, 0.15)),
+    linear-gradient(to right, #ffffff26, #ffffff26),
     linear-gradient(
       to right,
       rgb(from var(--systemQuinary-vibrantOnDark-blended-plusL, #fff) r g b/0.25),
@@ -731,8 +702,8 @@ html[dir="rtl"]
   border: 0.75px solid var(--artistFillSecondary-tinted);
   border-radius: 50%;
   box-shadow:
-    0 2px 6px -4px rgba(0, 0, 0, 0.4),
-    inset 0 0 2px rgba(255, 255, 255, 0.1);
+    0 2px 6px -4px #0006,
+    inset 0 0 2px #ffffff1a;
   cursor: pointer;
   padding: 0;
 }
@@ -763,11 +734,7 @@ html[dir="rtl"]
   }
 }
 .artist-expression-header__info-button.svelte-xqfvb5.svelte-xqfvb5 {
-  --artistFillSecondary-tinted: color-mix(
-    in srgb,
-    #fff 30%,
-    var(--artistFillSecondary-blended-plusL, hsla(0, 0%, 100%, 0.08)) 70%
-  );
+  --artistFillSecondary-tinted: color-mix(in srgb, #fff 30%, var(--artistFillSecondary-blended-plusL, #ffffff14) 70%);
   align-items: center;
   display: flex;
   height: 48px;
@@ -776,7 +743,7 @@ html[dir="rtl"]
   width: 48px;
   fill: var(--keyColor);
   background:
-    linear-gradient(to right, hsla(0, 0%, 100%, 0.15), hsla(0, 0%, 100%, 0.15)),
+    linear-gradient(to right, #ffffff26, #ffffff26),
     linear-gradient(
       to right,
       rgb(from var(--systemQuinary-vibrantOnDark-blended-plusL, #fff) r g b/0.25),
@@ -785,8 +752,8 @@ html[dir="rtl"]
   border: 0.75px solid var(--artistFillSecondary-tinted);
   border-radius: 50%;
   box-shadow:
-    0 2px 6px -4px rgba(0, 0, 0, 0.4),
-    inset 0 0 2px rgba(255, 255, 255, 0.1);
+    0 2px 6px -4px #0006,
+    inset 0 0 2px #ffffff1a;
   cursor: pointer;
   padding: 0;
 }
@@ -846,7 +813,6 @@ html[dir="rtl"]
   --artwork-override-width: calc(63vw - var(--web-navigation-width));
   --artwork-override-height: auto;
   border-radius: 50%;
-  -webkit-filter: blur(60px);
   filter: blur(60px);
   inset-inline-start: 50%;
   opacity: 0.3;
@@ -855,70 +821,26 @@ html[dir="rtl"]
   top: -23%;
   transform: translate(-25%);
 }
-@-webkit-keyframes svelte-xqfvb5-artist-expression-header-artwork-scroll {
-  0% {
-    -webkit-filter: blur(0);
-    filter: blur(0);
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  15% {
-    -webkit-filter: blur(0);
-    filter: blur(0);
-    opacity: 1;
-    transform: scale(1) translateY(6%);
-  }
-  50% {
-    -webkit-filter: blur(35px);
-    filter: blur(35px);
-    opacity: 0;
-    transform: scale(1.05) translateY(20%);
-  }
-  to {
-    -webkit-filter: blur(90px);
-    filter: blur(90px);
-    opacity: 0;
-    transform: scale(1.135) translateY(40%);
-  }
-}
 @keyframes svelte-xqfvb5-artist-expression-header-artwork-scroll {
   0% {
-    -webkit-filter: blur(0);
     filter: blur(0);
     opacity: 1;
     transform: scale(1) translateY(0);
   }
   15% {
-    -webkit-filter: blur(0);
     filter: blur(0);
     opacity: 1;
     transform: scale(1) translateY(6%);
   }
   50% {
-    -webkit-filter: blur(35px);
     filter: blur(35px);
     opacity: 0;
     transform: scale(1.05) translateY(20%);
   }
   to {
-    -webkit-filter: blur(90px);
     filter: blur(90px);
     opacity: 0;
     transform: scale(1.135) translateY(40%);
-  }
-}
-@-webkit-keyframes svelte-xqfvb5-artist-expression-header-blur-scroll {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
   }
 }
 @keyframes svelte-xqfvb5-artist-expression-header-blur-scroll {
@@ -949,22 +871,11 @@ html[dir="rtl"]
 @supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) {
     .artist-expression-header__scrim-scroll.svelte-xqfvb5.svelte-xqfvb5 {
-      -webkit-animation: svelte-xqfvb5-artist-expression-header-scrim-scroll linear forwards;
       animation: svelte-xqfvb5-artist-expression-header-scrim-scroll linear forwards;
       animation-timeline: --artist-expression-header-artwork;
       animation-range: exit;
       will-change: opacity;
     }
-  }
-}
-@-webkit-keyframes svelte-xqfvb5-artist-expression-header-scrim-scroll {
-  0%,
-  10% {
-    opacity: 0;
-  }
-  60%,
-  to {
-    opacity: 0.5;
   }
 }
 @keyframes svelte-xqfvb5-artist-expression-header-scrim-scroll {

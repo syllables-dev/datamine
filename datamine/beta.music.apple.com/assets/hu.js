@@ -1,12 +1,12 @@
-import { br as s, Z as i } from "./main.js";
+import { bA as s, Z as i } from "./main.js";
 function l(n, u) {
-  for (var r = 0; r < u.length; r++) {
-    const e = u[r];
+  for (var t = 0; t < u.length; t++) {
+    const e = u[t];
     if (typeof e != "string" && !Array.isArray(e)) {
-      for (const t in e)
-        if (t !== "default" && !(t in n)) {
-          const o = Object.getOwnPropertyDescriptor(e, t);
-          o && Object.defineProperty(n, t, o.get ? o : { enumerable: !0, get: () => e[t] });
+      for (const r in e)
+        if (r !== "default" && !(r in n)) {
+          const o = Object.getOwnPropertyDescriptor(e, r);
+          o && Object.defineProperty(n, r, o.get ? o : { enumerable: !0, get: () => e[r] });
         }
     }
   }
@@ -22,11 +22,11 @@ var a = {},
     },
   };
 (function (n, u) {
-  (function (r, e) {
+  (function (t, e) {
     e(u);
-  })(i, function (r) {
+  })(i, function (t) {
     var e = typeof window < "u" && window.flatpickr !== void 0 ? window.flatpickr : { l10ns: {} },
-      t = {
+      r = {
         firstDayOfWeek: 1,
         weekdays: {
           shorthand: ["V", "H", "K", "Sz", "Cs", "P", "Szo"],
@@ -58,9 +58,9 @@ var a = {},
         rangeSeparator: " - ",
         time_24hr: !0,
       };
-    e.l10ns.hu = t;
+    e.l10ns.hu = r;
     var o = e.l10ns;
-    ((r.Hungarian = t), (r.default = o), Object.defineProperty(r, "__esModule", { value: !0 }));
+    ((t.Hungarian = r), (t.default = o), Object.defineProperty(t, "__esModule", { value: !0 }));
   });
 })(f, a);
 const d = s(a),

@@ -1,110 +1,114 @@
-import { Z as commonjsGlobal } from "./main.js";
-var minimalExports = {},
-  minimal$1 = {
+import { Z as X } from "./main.js";
+var b = {},
+  ee = {
     get exports() {
-      return minimalExports;
+      return b;
     },
     set exports(o) {
-      minimalExports = o;
+      b = o;
     },
   },
-  indexMinimal = {},
-  minimal = {},
-  aspromise = asPromise;
-function asPromise(o, i) {
+  Vt = {},
+  yt = {},
+  ne = ie;
+function ie(o, i) {
   for (var t = new Array(arguments.length - 1), e = 0, n = 2, r = !0; n < arguments.length;) t[e++] = arguments[n++];
-  return new Promise(function (a, u) {
-    t[e] = function (f) {
+  return new Promise(function (d, y) {
+    t[e] = function (k) {
       if (r)
-        if (((r = !1), f)) u(f);
+        if (((r = !1), k)) y(k);
         else {
-          for (var p = new Array(arguments.length - 1), d = 0; d < p.length;) p[d++] = arguments[d];
-          a.apply(null, p);
+          for (var O = new Array(arguments.length - 1), A = 0; A < O.length;) O[A++] = arguments[A];
+          d.apply(null, O);
         }
     };
     try {
       o.apply(i || null, t);
-    } catch (c) {
-      r && ((r = !1), u(c));
+    } catch (s) {
+      r && ((r = !1), y(s));
     }
   });
 }
-var base64$1 = {};
+var zt = {};
 (function (o) {
   var i = o;
-  i.length = function (a) {
-    var u = a.length;
-    if (!u) return 0;
-    for (var c = 0; --u % 4 > 1 && a.charAt(u) === "=";) ++c;
-    return Math.ceil(a.length * 3) / 4 - c;
+  i.length = function (d) {
+    var y = d.length;
+    if (!y) return 0;
+    for (var s = 0; --y % 4 > 1 && d.charAt(y) === "=";) ++s;
+    return Math.ceil(d.length * 3) / 4 - s;
   };
   for (var t = new Array(64), e = new Array(123), n = 0; n < 64;)
     e[(t[n] = n < 26 ? n + 65 : n < 52 ? n + 71 : n < 62 ? n - 4 : (n - 59) | 43)] = n++;
-  i.encode = function (a, u, c) {
-    for (var f = null, p = [], d = 0, s = 0, y; u < c;) {
-      var b = a[u++];
-      switch (s) {
+  i.encode = function (d, y, s) {
+    for (var k = null, O = [], A = 0, Q = 0, R; y < s;) {
+      var $ = d[y++];
+      switch (Q) {
         case 0:
-          ((p[d++] = t[b >> 2]), (y = (b & 3) << 4), (s = 1));
+          ((O[A++] = t[$ >> 2]), (R = ($ & 3) << 4), (Q = 1));
           break;
         case 1:
-          ((p[d++] = t[y | (b >> 4)]), (y = (b & 15) << 2), (s = 2));
+          ((O[A++] = t[R | ($ >> 4)]), (R = ($ & 15) << 2), (Q = 2));
           break;
         case 2:
-          ((p[d++] = t[y | (b >> 6)]), (p[d++] = t[b & 63]), (s = 0));
+          ((O[A++] = t[R | ($ >> 6)]), (O[A++] = t[$ & 63]), (Q = 0));
           break;
       }
-      d > 8191 && ((f || (f = [])).push(String.fromCharCode.apply(String, p)), (d = 0));
+      A > 8191 && ((k || (k = [])).push(String.fromCharCode.apply(String, O)), (A = 0));
     }
     return (
-      s && ((p[d++] = t[y]), (p[d++] = 61), s === 1 && (p[d++] = 61)),
-      f
-        ? (d && f.push(String.fromCharCode.apply(String, p.slice(0, d))), f.join(""))
-        : String.fromCharCode.apply(String, p.slice(0, d))
+      Q && ((O[A++] = t[R]), (O[A++] = 61), Q === 1 && (O[A++] = 61)),
+      k
+        ? (A && k.push(String.fromCharCode.apply(String, O.slice(0, A))), k.join(""))
+        : String.fromCharCode.apply(String, O.slice(0, A))
     );
   };
   var r = "invalid encoding";
-  ((i.decode = function (a, u, c) {
-    for (var f = c, p = 0, d, s = 0; s < a.length;) {
-      var y = a.charCodeAt(s++);
-      if (y === 61 && p > 1) break;
-      if ((y = e[y]) === void 0) throw Error(r);
-      switch (p) {
+  ((i.decode = function (d, y, s) {
+    for (var k = s, O = 0, A, Q = 0; Q < d.length;) {
+      var R = d.charCodeAt(Q++);
+      if (R === 61 && O > 1) break;
+      if ((R = e[R]) === void 0) throw Error(r);
+      switch (O) {
         case 0:
-          ((d = y), (p = 1));
+          ((A = R), (O = 1));
           break;
         case 1:
-          ((u[c++] = (d << 2) | ((y & 48) >> 4)), (d = y), (p = 2));
+          ((y[s++] = (A << 2) | ((R & 48) >> 4)), (A = R), (O = 2));
           break;
         case 2:
-          ((u[c++] = ((d & 15) << 4) | ((y & 60) >> 2)), (d = y), (p = 3));
+          ((y[s++] = ((A & 15) << 4) | ((R & 60) >> 2)), (A = R), (O = 3));
           break;
         case 3:
-          ((u[c++] = ((d & 3) << 6) | y), (p = 0));
+          ((y[s++] = ((A & 3) << 6) | R), (O = 0));
           break;
       }
     }
-    if (p === 1) throw Error(r);
-    return c - f;
+    if (O === 1) throw Error(r);
+    return s - k;
   }),
-    (i.test = function (a) {
-      return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(a);
+    (i.test = function (d) {
+      return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(d);
     }));
-})(base64$1);
-var eventemitter = EventEmitter;
-function EventEmitter() {
-  this._listeners = {};
+})(zt);
+var oe = ft;
+function ft() {
+  this._listeners = Object.create(null);
 }
-EventEmitter.prototype.on = function (i, t, e) {
+ft.prototype.on = function (i, t, e) {
   return ((this._listeners[i] || (this._listeners[i] = [])).push({ fn: t, ctx: e || this }), this);
 };
-EventEmitter.prototype.off = function (i, t) {
-  if (i === void 0) this._listeners = {};
+ft.prototype.off = function (i, t) {
+  if (i === void 0) this._listeners = Object.create(null);
   else if (t === void 0) this._listeners[i] = [];
-  else for (var e = this._listeners[i], n = 0; n < e.length;) e[n].fn === t ? e.splice(n, 1) : ++n;
+  else {
+    var e = this._listeners[i];
+    if (!e) return this;
+    for (var n = 0; n < e.length;) e[n].fn === t ? e.splice(n, 1) : ++n;
+  }
   return this;
 };
-EventEmitter.prototype.emit = function (i) {
+ft.prototype.emit = function (i) {
   var t = this._listeners[i];
   if (t) {
     for (var e = [], n = 1; n < arguments.length;) e.push(arguments[n++]);
@@ -112,245 +116,239 @@ EventEmitter.prototype.emit = function (i) {
   }
   return this;
 };
-var float = factory(factory);
-function factory(o) {
+var re = Rt(Rt);
+function Rt(o) {
   return (
     typeof Float32Array < "u"
       ? (function () {
           var i = new Float32Array([-0]),
             t = new Uint8Array(i.buffer),
             e = t[3] === 128;
-          function n(u, c, f) {
-            ((i[0] = u), (c[f] = t[0]), (c[f + 1] = t[1]), (c[f + 2] = t[2]), (c[f + 3] = t[3]));
+          function n(y, s, k) {
+            ((i[0] = y), (s[k] = t[0]), (s[k + 1] = t[1]), (s[k + 2] = t[2]), (s[k + 3] = t[3]));
           }
-          function r(u, c, f) {
-            ((i[0] = u), (c[f] = t[3]), (c[f + 1] = t[2]), (c[f + 2] = t[1]), (c[f + 3] = t[0]));
+          function r(y, s, k) {
+            ((i[0] = y), (s[k] = t[3]), (s[k + 1] = t[2]), (s[k + 2] = t[1]), (s[k + 3] = t[0]));
           }
           ((o.writeFloatLE = e ? n : r), (o.writeFloatBE = e ? r : n));
-          function l(u, c) {
-            return ((t[0] = u[c]), (t[1] = u[c + 1]), (t[2] = u[c + 2]), (t[3] = u[c + 3]), i[0]);
+          function u(y, s) {
+            return ((t[0] = y[s]), (t[1] = y[s + 1]), (t[2] = y[s + 2]), (t[3] = y[s + 3]), i[0]);
           }
-          function a(u, c) {
-            return ((t[3] = u[c]), (t[2] = u[c + 1]), (t[1] = u[c + 2]), (t[0] = u[c + 3]), i[0]);
+          function d(y, s) {
+            return ((t[3] = y[s]), (t[2] = y[s + 1]), (t[1] = y[s + 2]), (t[0] = y[s + 3]), i[0]);
           }
-          ((o.readFloatLE = e ? l : a), (o.readFloatBE = e ? a : l));
+          ((o.readFloatLE = e ? u : d), (o.readFloatBE = e ? d : u));
         })()
       : (function () {
-          function i(e, n, r, l) {
-            var a = n < 0 ? 1 : 0;
-            if ((a && (n = -n), n === 0)) e(1 / n > 0 ? 0 : 2147483648, r, l);
-            else if (isNaN(n)) e(2143289344, r, l);
-            else if (n > 34028234663852886e22) e(((a << 31) | 2139095040) >>> 0, r, l);
-            else if (n < 11754943508222875e-54) e(((a << 31) | Math.round(n / 1401298464324817e-60)) >>> 0, r, l);
+          function i(e, n, r, u) {
+            var d = n < 0 ? 1 : 0;
+            if ((d && (n = -n), n === 0)) e(1 / n > 0 ? 0 : 2147483648, r, u);
+            else if (isNaN(n)) e(2143289344, r, u);
+            else if (n > 34028234663852886e22) e(((d << 31) | 2139095040) >>> 0, r, u);
+            else if (n < 11754943508222875e-54) e(((d << 31) | Math.round(n / 1401298464324817e-60)) >>> 0, r, u);
             else {
-              var u = Math.floor(Math.log(n) / Math.LN2),
-                c = Math.round(n * Math.pow(2, -u) * 8388608) & 8388607;
-              e(((a << 31) | ((u + 127) << 23) | c) >>> 0, r, l);
+              var y = Math.floor(Math.log(n) / Math.LN2),
+                s = Math.round(n * Math.pow(2, -y) * 8388608) & 8388607;
+              e(((d << 31) | ((y + 127) << 23) | s) >>> 0, r, u);
             }
           }
-          ((o.writeFloatLE = i.bind(null, writeUintLE)), (o.writeFloatBE = i.bind(null, writeUintBE)));
+          ((o.writeFloatLE = i.bind(null, Nt)), (o.writeFloatBE = i.bind(null, gt)));
           function t(e, n, r) {
-            var l = e(n, r),
-              a = (l >> 31) * 2 + 1,
-              u = (l >>> 23) & 255,
-              c = l & 8388607;
-            return u === 255
-              ? c
+            var u = e(n, r),
+              d = (u >> 31) * 2 + 1,
+              y = (u >>> 23) & 255,
+              s = u & 8388607;
+            return y === 255
+              ? s
                 ? NaN
-                : a * (1 / 0)
-              : u === 0
-                ? a * 1401298464324817e-60 * c
-                : a * Math.pow(2, u - 150) * (c + 8388608);
+                : d * (1 / 0)
+              : y === 0
+                ? d * 1401298464324817e-60 * s
+                : d * Math.pow(2, y - 150) * (s + 8388608);
           }
-          ((o.readFloatLE = t.bind(null, readUintLE)), (o.readFloatBE = t.bind(null, readUintBE)));
+          ((o.readFloatLE = t.bind(null, Lt)), (o.readFloatBE = t.bind(null, xt)));
         })(),
     typeof Float64Array < "u"
       ? (function () {
           var i = new Float64Array([-0]),
             t = new Uint8Array(i.buffer),
             e = t[7] === 128;
-          function n(u, c, f) {
-            ((i[0] = u),
-              (c[f] = t[0]),
-              (c[f + 1] = t[1]),
-              (c[f + 2] = t[2]),
-              (c[f + 3] = t[3]),
-              (c[f + 4] = t[4]),
-              (c[f + 5] = t[5]),
-              (c[f + 6] = t[6]),
-              (c[f + 7] = t[7]));
+          function n(y, s, k) {
+            ((i[0] = y),
+              (s[k] = t[0]),
+              (s[k + 1] = t[1]),
+              (s[k + 2] = t[2]),
+              (s[k + 3] = t[3]),
+              (s[k + 4] = t[4]),
+              (s[k + 5] = t[5]),
+              (s[k + 6] = t[6]),
+              (s[k + 7] = t[7]));
           }
-          function r(u, c, f) {
-            ((i[0] = u),
-              (c[f] = t[7]),
-              (c[f + 1] = t[6]),
-              (c[f + 2] = t[5]),
-              (c[f + 3] = t[4]),
-              (c[f + 4] = t[3]),
-              (c[f + 5] = t[2]),
-              (c[f + 6] = t[1]),
-              (c[f + 7] = t[0]));
+          function r(y, s, k) {
+            ((i[0] = y),
+              (s[k] = t[7]),
+              (s[k + 1] = t[6]),
+              (s[k + 2] = t[5]),
+              (s[k + 3] = t[4]),
+              (s[k + 4] = t[3]),
+              (s[k + 5] = t[2]),
+              (s[k + 6] = t[1]),
+              (s[k + 7] = t[0]));
           }
           ((o.writeDoubleLE = e ? n : r), (o.writeDoubleBE = e ? r : n));
-          function l(u, c) {
+          function u(y, s) {
             return (
-              (t[0] = u[c]),
-              (t[1] = u[c + 1]),
-              (t[2] = u[c + 2]),
-              (t[3] = u[c + 3]),
-              (t[4] = u[c + 4]),
-              (t[5] = u[c + 5]),
-              (t[6] = u[c + 6]),
-              (t[7] = u[c + 7]),
+              (t[0] = y[s]),
+              (t[1] = y[s + 1]),
+              (t[2] = y[s + 2]),
+              (t[3] = y[s + 3]),
+              (t[4] = y[s + 4]),
+              (t[5] = y[s + 5]),
+              (t[6] = y[s + 6]),
+              (t[7] = y[s + 7]),
               i[0]
             );
           }
-          function a(u, c) {
+          function d(y, s) {
             return (
-              (t[7] = u[c]),
-              (t[6] = u[c + 1]),
-              (t[5] = u[c + 2]),
-              (t[4] = u[c + 3]),
-              (t[3] = u[c + 4]),
-              (t[2] = u[c + 5]),
-              (t[1] = u[c + 6]),
-              (t[0] = u[c + 7]),
+              (t[7] = y[s]),
+              (t[6] = y[s + 1]),
+              (t[5] = y[s + 2]),
+              (t[4] = y[s + 3]),
+              (t[3] = y[s + 4]),
+              (t[2] = y[s + 5]),
+              (t[1] = y[s + 6]),
+              (t[0] = y[s + 7]),
               i[0]
             );
           }
-          ((o.readDoubleLE = e ? l : a), (o.readDoubleBE = e ? a : l));
+          ((o.readDoubleLE = e ? u : d), (o.readDoubleBE = e ? d : u));
         })()
       : (function () {
-          function i(e, n, r, l, a, u) {
-            var c = l < 0 ? 1 : 0;
-            if ((c && (l = -l), l === 0)) (e(0, a, u + n), e(1 / l > 0 ? 0 : 2147483648, a, u + r));
-            else if (isNaN(l)) (e(0, a, u + n), e(2146959360, a, u + r));
-            else if (l > 17976931348623157e292) (e(0, a, u + n), e(((c << 31) | 2146435072) >>> 0, a, u + r));
+          function i(e, n, r, u, d, y) {
+            var s = u < 0 ? 1 : 0;
+            if ((s && (u = -u), u === 0)) (e(0, d, y + n), e(1 / u > 0 ? 0 : 2147483648, d, y + r));
+            else if (isNaN(u)) (e(0, d, y + n), e(2146959360, d, y + r));
+            else if (u > 17976931348623157e292) (e(0, d, y + n), e(((s << 31) | 2146435072) >>> 0, d, y + r));
             else {
-              var f;
-              if (l < 22250738585072014e-324)
-                ((f = l / 5e-324), e(f >>> 0, a, u + n), e(((c << 31) | (f / 4294967296)) >>> 0, a, u + r));
+              var k;
+              if (u < 22250738585072014e-324)
+                ((k = u / 5e-324), e(k >>> 0, d, y + n), e(((s << 31) | (k / 4294967296)) >>> 0, d, y + r));
               else {
-                var p = Math.floor(Math.log(l) / Math.LN2);
-                (p === 1024 && (p = 1023),
-                  (f = l * Math.pow(2, -p)),
-                  e((f * 4503599627370496) >>> 0, a, u + n),
-                  e(((c << 31) | ((p + 1023) << 20) | ((f * 1048576) & 1048575)) >>> 0, a, u + r));
+                var O = Math.floor(Math.log(u) / Math.LN2);
+                (O === 1024 && (O = 1023),
+                  (k = u * Math.pow(2, -O)),
+                  e((k * 4503599627370496) >>> 0, d, y + n),
+                  e(((s << 31) | ((O + 1023) << 20) | ((k * 1048576) & 1048575)) >>> 0, d, y + r));
               }
             }
           }
-          ((o.writeDoubleLE = i.bind(null, writeUintLE, 0, 4)), (o.writeDoubleBE = i.bind(null, writeUintBE, 4, 0)));
-          function t(e, n, r, l, a) {
-            var u = e(l, a + n),
-              c = e(l, a + r),
-              f = (c >> 31) * 2 + 1,
-              p = (c >>> 20) & 2047,
-              d = 4294967296 * (c & 1048575) + u;
-            return p === 2047
-              ? d
+          ((o.writeDoubleLE = i.bind(null, Nt, 0, 4)), (o.writeDoubleBE = i.bind(null, gt, 4, 0)));
+          function t(e, n, r, u, d) {
+            var y = e(u, d + n),
+              s = e(u, d + r),
+              k = (s >> 31) * 2 + 1,
+              O = (s >>> 20) & 2047,
+              A = 4294967296 * (s & 1048575) + y;
+            return O === 2047
+              ? A
                 ? NaN
-                : f * (1 / 0)
-              : p === 0
-                ? f * 5e-324 * d
-                : f * Math.pow(2, p - 1075) * (d + 4503599627370496);
+                : k * (1 / 0)
+              : O === 0
+                ? k * 5e-324 * A
+                : k * Math.pow(2, O - 1075) * (A + 4503599627370496);
           }
-          ((o.readDoubleLE = t.bind(null, readUintLE, 0, 4)), (o.readDoubleBE = t.bind(null, readUintBE, 4, 0)));
+          ((o.readDoubleLE = t.bind(null, Lt, 0, 4)), (o.readDoubleBE = t.bind(null, xt, 4, 0)));
         })(),
     o
   );
 }
-function writeUintLE(o, i, t) {
+function Nt(o, i, t) {
   ((i[t] = o & 255), (i[t + 1] = (o >>> 8) & 255), (i[t + 2] = (o >>> 16) & 255), (i[t + 3] = o >>> 24));
 }
-function writeUintBE(o, i, t) {
+function gt(o, i, t) {
   ((i[t] = o >>> 24), (i[t + 1] = (o >>> 16) & 255), (i[t + 2] = (o >>> 8) & 255), (i[t + 3] = o & 255));
 }
-function readUintLE(o, i) {
+function Lt(o, i) {
   return (o[i] | (o[i + 1] << 8) | (o[i + 2] << 16) | (o[i + 3] << 24)) >>> 0;
 }
-function readUintBE(o, i) {
+function xt(o, i) {
   return ((o[i] << 24) | (o[i + 1] << 16) | (o[i + 2] << 8) | o[i + 3]) >>> 0;
 }
-var inquire_1 = inquire;
-function inquire(moduleName) {
-  try {
-    var mod = eval("quire".replace(/^/, "re"))(moduleName);
-    if (mod && (mod.length || Object.keys(mod).length)) return mod;
-  } catch (o) {}
-  return null;
-}
-var utf8$2 = {};
+var Jt = {};
 (function (o) {
-  var i = o;
-  ((i.length = function (e) {
-    for (var n = 0, r = 0, l = 0; l < e.length; ++l)
-      ((r = e.charCodeAt(l)),
-        r < 128
-          ? (n += 1)
-          : r < 2048
-            ? (n += 2)
-            : (r & 64512) === 55296 && (e.charCodeAt(l + 1) & 64512) === 56320
-              ? (++l, (n += 4))
-              : (n += 3));
-    return n;
+  var i = o,
+    t = 65533;
+  ((i.length = function (n) {
+    for (var r = 0, u = 0, d = 0; d < n.length; ++d)
+      ((u = n.charCodeAt(d)),
+        u < 128
+          ? (r += 1)
+          : u < 2048
+            ? (r += 2)
+            : (u & 64512) === 55296 && (n.charCodeAt(d + 1) & 64512) === 56320
+              ? (++d, (r += 4))
+              : (r += 3));
+    return r;
   }),
-    (i.read = function (e, n, r) {
-      var l = r - n;
-      if (l < 1) return "";
-      for (var a = null, u = [], c = 0, f; n < r;)
-        ((f = e[n++]),
-          f < 128
-            ? (u[c++] = f)
-            : f > 191 && f < 224
-              ? (u[c++] = ((f & 31) << 6) | (e[n++] & 63))
-              : f > 239 && f < 365
-                ? ((f = (((f & 7) << 18) | ((e[n++] & 63) << 12) | ((e[n++] & 63) << 6) | (e[n++] & 63)) - 65536),
-                  (u[c++] = 55296 + (f >> 10)),
-                  (u[c++] = 56320 + (f & 1023)))
-                : (u[c++] = ((f & 15) << 12) | ((e[n++] & 63) << 6) | (e[n++] & 63)),
-          c > 8191 && ((a || (a = [])).push(String.fromCharCode.apply(String, u)), (c = 0)));
-      return a
-        ? (c && a.push(String.fromCharCode.apply(String, u.slice(0, c))), a.join(""))
-        : String.fromCharCode.apply(String, u.slice(0, c));
+    (i.read = function (n, r, u) {
+      if (u - r < 1) return "";
+      for (var d = null, y = [], s = 0, k, O, A, Q; r < u;)
+        ((k = n[r++]),
+          k <= 127
+            ? (y[s++] = k)
+            : k >= 192 && k < 224
+              ? ((A = ((k & 31) << 6) | (n[r++] & 63)), (y[s++] = A >= 128 ? A : t))
+              : k >= 224 && k < 240
+                ? ((Q = ((k & 15) << 12) | ((n[r++] & 63) << 6) | (n[r++] & 63)), (y[s++] = Q >= 2048 ? Q : t))
+                : k >= 240 &&
+                  ((O = ((k & 7) << 18) | ((n[r++] & 63) << 12) | ((n[r++] & 63) << 6) | (n[r++] & 63)),
+                  O < 65536 || O > 1114111
+                    ? (y[s++] = t)
+                    : ((O -= 65536), (y[s++] = 55296 + (O >> 10)), (y[s++] = 56320 + (O & 1023)))),
+          s > 8191 && ((d || (d = [])).push(String.fromCharCode.apply(String, y.slice(0, s))), (s = 0)));
+      return d
+        ? (s && d.push(String.fromCharCode.apply(String, y.slice(0, s))), d.join(""))
+        : String.fromCharCode.apply(String, y.slice(0, s));
     }),
-    (i.write = function (e, n, r) {
-      for (var l = r, a, u, c = 0; c < e.length; ++c)
-        ((a = e.charCodeAt(c)),
-          a < 128
-            ? (n[r++] = a)
-            : a < 2048
-              ? ((n[r++] = (a >> 6) | 192), (n[r++] = (a & 63) | 128))
-              : (a & 64512) === 55296 && ((u = e.charCodeAt(c + 1)) & 64512) === 56320
-                ? ((a = 65536 + ((a & 1023) << 10) + (u & 1023)),
-                  ++c,
-                  (n[r++] = (a >> 18) | 240),
-                  (n[r++] = ((a >> 12) & 63) | 128),
-                  (n[r++] = ((a >> 6) & 63) | 128),
-                  (n[r++] = (a & 63) | 128))
-                : ((n[r++] = (a >> 12) | 224), (n[r++] = ((a >> 6) & 63) | 128), (n[r++] = (a & 63) | 128)));
-      return r - l;
+    (i.write = function (n, r, u) {
+      for (var d = u, y, s, k = 0; k < n.length; ++k)
+        ((y = n.charCodeAt(k)),
+          y < 128
+            ? (r[u++] = y)
+            : y < 2048
+              ? ((r[u++] = (y >> 6) | 192), (r[u++] = (y & 63) | 128))
+              : (y & 64512) === 55296 && ((s = n.charCodeAt(k + 1)) & 64512) === 56320
+                ? ((y = 65536 + ((y & 1023) << 10) + (s & 1023)),
+                  ++k,
+                  (r[u++] = (y >> 18) | 240),
+                  (r[u++] = ((y >> 12) & 63) | 128),
+                  (r[u++] = ((y >> 6) & 63) | 128),
+                  (r[u++] = (y & 63) | 128))
+                : ((r[u++] = (y >> 12) | 224), (r[u++] = ((y >> 6) & 63) | 128), (r[u++] = (y & 63) | 128)));
+      return u - d;
     }));
-})(utf8$2);
-var pool_1 = pool;
-function pool(o, i, t) {
+})(Jt);
+var le = ae;
+function ae(o, i, t) {
   var e = t || 8192,
     n = e >>> 1,
     r = null,
-    l = e;
-  return function (u) {
-    if (u < 1 || u > n) return o(u);
-    l + u > e && ((r = o(e)), (l = 0));
-    var c = i.call(r, l, (l += u));
-    return (l & 7 && (l = (l | 7) + 1), c);
+    u = e;
+  return function (y) {
+    if (y < 1 || y > n) return o(y);
+    u + y > e && ((r = o(e)), (u = 0));
+    var s = i.call(r, u, (u += y));
+    return (u & 7 && (u = (u | 7) + 1), s);
   };
 }
-var longbits, hasRequiredLongbits;
-function requireLongbits() {
-  if (hasRequiredLongbits) return longbits;
-  ((hasRequiredLongbits = 1), (longbits = i));
-  var o = requireMinimal();
-  function i(r, l) {
-    ((this.lo = r >>> 0), (this.hi = l >>> 0));
+var st, Ut;
+function ue() {
+  if (Ut) return st;
+  ((Ut = 1), (st = i));
+  var o = nt();
+  function i(r, u) {
+    ((this.lo = r >>> 0), (this.hi = u >>> 0));
   }
   var t = (i.zero = new i(0, 0));
   ((t.toNumber = function () {
@@ -364,44 +362,44 @@ function requireLongbits() {
       return 1;
     }));
   var e = (i.zeroHash = "\0\0\0\0\0\0\0\0");
-  ((i.fromNumber = function (l) {
-    if (l === 0) return t;
-    var a = l < 0;
-    a && (l = -l);
-    var u = l >>> 0,
-      c = ((l - u) / 4294967296) >>> 0;
+  ((i.fromNumber = function (u) {
+    if (u === 0) return t;
+    var d = u < 0;
+    d && (u = -u);
+    var y = u >>> 0,
+      s = ((u - y) / 4294967296) >>> 0;
     return (
-      a && ((c = ~c >>> 0), (u = ~u >>> 0), ++u > 4294967295 && ((u = 0), ++c > 4294967295 && (c = 0))), new i(u, c)
+      d && ((s = ~s >>> 0), (y = ~y >>> 0), ++y > 4294967295 && ((y = 0), ++s > 4294967295 && (s = 0))), new i(y, s)
     );
   }),
-    (i.from = function (l) {
-      if (typeof l == "number") return i.fromNumber(l);
-      if (o.isString(l))
-        if (o.Long) l = o.Long.fromString(l);
-        else return i.fromNumber(parseInt(l, 10));
-      return l.low || l.high ? new i(l.low >>> 0, l.high >>> 0) : t;
+    (i.from = function (u) {
+      if (typeof u == "number") return i.fromNumber(u);
+      if (o.isString(u))
+        if (o.Long) u = o.Long.fromString(u);
+        else return i.fromNumber(parseInt(u, 10));
+      return u.low || u.high ? new i(u.low >>> 0, u.high >>> 0) : t;
     }),
-    (i.prototype.toNumber = function (l) {
-      if (!l && this.hi >>> 31) {
-        var a = (~this.lo + 1) >>> 0,
-          u = ~this.hi >>> 0;
-        return (a || (u = (u + 1) >>> 0), -(a + u * 4294967296));
+    (i.prototype.toNumber = function (u) {
+      if (!u && this.hi >>> 31) {
+        var d = (~this.lo + 1) >>> 0,
+          y = ~this.hi >>> 0;
+        return (d || (y = (y + 1) >>> 0), -(d + y * 4294967296));
       }
       return this.lo + this.hi * 4294967296;
     }),
-    (i.prototype.toLong = function (l) {
+    (i.prototype.toLong = function (u) {
       return o.Long
-        ? new o.Long(this.lo | 0, this.hi | 0, !!l)
-        : { low: this.lo | 0, high: this.hi | 0, unsigned: !!l };
+        ? new o.Long(this.lo | 0, this.hi | 0, !!u)
+        : { low: this.lo | 0, high: this.hi | 0, unsigned: !!u };
     }));
   var n = String.prototype.charCodeAt;
   return (
-    (i.fromHash = function (l) {
-      return l === e
+    (i.fromHash = function (u) {
+      return u === e
         ? t
         : new i(
-            (n.call(l, 0) | (n.call(l, 1) << 8) | (n.call(l, 2) << 16) | (n.call(l, 3) << 24)) >>> 0,
-            (n.call(l, 4) | (n.call(l, 5) << 8) | (n.call(l, 6) << 16) | (n.call(l, 7) << 24)) >>> 0,
+            (n.call(u, 0) | (n.call(u, 1) << 8) | (n.call(u, 2) << 16) | (n.call(u, 3) << 24)) >>> 0,
+            (n.call(u, 4) | (n.call(u, 5) << 8) | (n.call(u, 6) << 16) | (n.call(u, 7) << 24)) >>> 0,
           );
     }),
     (i.prototype.toHash = function () {
@@ -417,151 +415,732 @@ function requireLongbits() {
       );
     }),
     (i.prototype.zzEncode = function () {
-      var l = this.hi >> 31;
+      var u = this.hi >> 31;
       return (
-        (this.hi = (((this.hi << 1) | (this.lo >>> 31)) ^ l) >>> 0), (this.lo = ((this.lo << 1) ^ l) >>> 0), this
+        (this.hi = (((this.hi << 1) | (this.lo >>> 31)) ^ u) >>> 0), (this.lo = ((this.lo << 1) ^ u) >>> 0), this
       );
     }),
     (i.prototype.zzDecode = function () {
-      var l = -(this.lo & 1);
+      var u = -(this.lo & 1);
       return (
-        (this.lo = (((this.lo >>> 1) | (this.hi << 31)) ^ l) >>> 0), (this.hi = ((this.hi >>> 1) ^ l) >>> 0), this
+        (this.lo = (((this.lo >>> 1) | (this.hi << 31)) ^ u) >>> 0), (this.hi = ((this.hi >>> 1) ^ u) >>> 0), this
       );
     }),
     (i.prototype.length = function () {
-      var l = this.lo,
-        a = ((this.lo >>> 28) | (this.hi << 4)) >>> 0,
-        u = this.hi >>> 24;
-      return u === 0
-        ? a === 0
-          ? l < 16384
-            ? l < 128
+      var u = this.lo,
+        d = ((this.lo >>> 28) | (this.hi << 4)) >>> 0,
+        y = this.hi >>> 24;
+      return y === 0
+        ? d === 0
+          ? u < 16384
+            ? u < 128
               ? 1
               : 2
-            : l < 2097152
+            : u < 2097152
               ? 3
               : 4
-          : a < 16384
-            ? a < 128
+          : d < 16384
+            ? d < 128
               ? 5
               : 6
-            : a < 2097152
+            : d < 2097152
               ? 7
               : 8
-        : u < 128
+        : y < 128
           ? 9
           : 10;
     }),
-    longbits
+    st
   );
 }
-var hasRequiredMinimal;
-function requireMinimal() {
+var rt = {},
+  ce = {
+    get exports() {
+      return rt;
+    },
+    set exports(o) {
+      rt = o;
+    },
+  },
+  Et;
+function fe() {
   return (
-    hasRequiredMinimal ||
-      ((hasRequiredMinimal = 1),
+    Et ||
+      ((Et = 1),
+      (function (o, i) {
+        (function (t, e) {
+          function n(r) {
+            return r.default || r;
+          }
+          (e(i), (o.exports = n(i)));
+        })(typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : X, function (t) {
+          (Object.defineProperty(t, "__esModule", { value: !0 }), (t.default = void 0));
+          /**
+           * @license
+           * Copyright 2009 The Closure Library Authors
+           * Copyright 2020 Daniel Wirtz / The long.js Authors.
+           *
+           * Licensed under the Apache License, Version 2.0 (the "License");
+           * you may not use this file except in compliance with the License.
+           * You may obtain a copy of the License at
+           *
+           *     http://www.apache.org/licenses/LICENSE-2.0
+           *
+           * Unless required by applicable law or agreed to in writing, software
+           * distributed under the License is distributed on an "AS IS" BASIS,
+           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+           * See the License for the specific language governing permissions and
+           * limitations under the License.
+           *
+           * SPDX-License-Identifier: Apache-2.0
+           */ var e = null;
+          try {
+            e = new WebAssembly.Instance(
+              new WebAssembly.Module(
+                new Uint8Array([
+                  0, 97, 115, 109, 1, 0, 0, 0, 1, 13, 2, 96, 0, 1, 127, 96, 4, 127, 127, 127, 127, 1, 127, 3, 7, 6, 0,
+                  1, 1, 1, 1, 1, 6, 6, 1, 127, 1, 65, 0, 11, 7, 50, 6, 3, 109, 117, 108, 0, 1, 5, 100, 105, 118, 95,
+                  115, 0, 2, 5, 100, 105, 118, 95, 117, 0, 3, 5, 114, 101, 109, 95, 115, 0, 4, 5, 114, 101, 109, 95,
+                  117, 0, 5, 8, 103, 101, 116, 95, 104, 105, 103, 104, 0, 0, 10, 191, 1, 6, 4, 0, 35, 0, 11, 36, 1, 1,
+                  126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 126, 34, 4,
+                  66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32,
+                  2, 173, 32, 3, 173, 66, 32, 134, 132, 127, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1,
+                  126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 128, 34, 4,
+                  66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32,
+                  2, 173, 32, 3, 173, 66, 32, 134, 132, 129, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1,
+                  126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 130, 34, 4,
+                  66, 32, 135, 167, 36, 0, 32, 4, 167, 11,
+                ]),
+              ),
+              {},
+            ).exports;
+          } catch {}
+          function n(I, p, D) {
+            ((this.low = I | 0), (this.high = p | 0), (this.unsigned = !!D));
+          }
+          (n.prototype.__isLong__, Object.defineProperty(n.prototype, "__isLong__", { value: !0 }));
+          function r(I) {
+            return (I && I.__isLong__) === !0;
+          }
+          function u(I) {
+            var p = Math.clz32(I & -I);
+            return I ? 31 - p : p;
+          }
+          n.isLong = r;
+          var d = {},
+            y = {};
+          function s(I, p) {
+            var D, M, g;
+            return p
+              ? ((I >>>= 0), (g = 0 <= I && I < 256) && ((M = y[I]), M) ? M : ((D = O(I, 0, !0)), g && (y[I] = D), D))
+              : ((I |= 0),
+                (g = -128 <= I && I < 128) && ((M = d[I]), M)
+                  ? M
+                  : ((D = O(I, I < 0 ? -1 : 0, !1)), g && (d[I] = D), D));
+          }
+          n.fromInt = s;
+          function k(I, p) {
+            if (isNaN(I)) return p ? Y : K;
+            if (p) {
+              if (I < 0) return Y;
+              if (I >= vt) return mt;
+            } else {
+              if (I <= -Ct) return q;
+              if (I + 1 >= Ct) return Mt;
+            }
+            return I < 0 ? k(-I, p).neg() : O((I % it) | 0, (I / it) | 0, p);
+          }
+          n.fromNumber = k;
+          function O(I, p, D) {
+            return new n(I, p, D);
+          }
+          n.fromBits = O;
+          var A = Math.pow;
+          function Q(I, p, D) {
+            if (I.length === 0) throw Error("empty string");
+            if (
+              (typeof p == "number" ? ((D = p), (p = !1)) : (p = !!p),
+              I === "NaN" || I === "Infinity" || I === "+Infinity" || I === "-Infinity")
+            )
+              return p ? Y : K;
+            if (((D = D || 10), D < 2 || 36 < D)) throw RangeError("radix");
+            var M;
+            if ((M = I.indexOf("-")) > 0) throw Error("interior hyphen");
+            if (M === 0) return Q(I.substring(1), p, D).neg();
+            for (var g = k(A(D, 8)), N = K, U = 0; U < I.length; U += 8) {
+              var B = Math.min(8, I.length - U),
+                J = parseInt(I.substring(U, U + B), D);
+              if (B < 8) {
+                var _ = k(A(D, B));
+                N = N.mul(_).add(k(J));
+              } else ((N = N.mul(g)), (N = N.add(k(J))));
+            }
+            return ((N.unsigned = p), N);
+          }
+          n.fromString = Q;
+          function R(I, p) {
+            return typeof I == "number"
+              ? k(I, p)
+              : typeof I == "string"
+                ? Q(I, p)
+                : O(I.low, I.high, typeof p == "boolean" ? p : I.unsigned);
+          }
+          n.fromValue = R;
+          var $ = 1 << 16,
+            te = 1 << 24,
+            it = $ * $,
+            vt = it * it,
+            Ct = vt / 2,
+            Tt = s(te),
+            K = s(0);
+          n.ZERO = K;
+          var Y = s(0, !0);
+          n.UZERO = Y;
+          var ot = s(1);
+          n.ONE = ot;
+          var At = s(1, !0);
+          n.UONE = At;
+          var dt = s(-1);
+          n.NEG_ONE = dt;
+          var Mt = O(-1, 2147483647, !1);
+          n.MAX_VALUE = Mt;
+          var mt = O(-1, -1, !0);
+          n.MAX_UNSIGNED_VALUE = mt;
+          var q = O(0, -2147483648, !1);
+          n.MIN_VALUE = q;
+          var S = n.prototype;
+          ((S.toInt = function () {
+            return this.unsigned ? this.low >>> 0 : this.low;
+          }),
+            (S.toNumber = function () {
+              return this.unsigned ? (this.high >>> 0) * it + (this.low >>> 0) : this.high * it + (this.low >>> 0);
+            }),
+            (S.toString = function (p) {
+              if (((p = p || 10), p < 2 || 36 < p)) throw RangeError("radix");
+              if (this.isZero()) return "0";
+              if (this.isNegative())
+                if (this.eq(q)) {
+                  var D = k(p),
+                    M = this.div(D),
+                    g = M.mul(D).sub(this);
+                  return M.toString(p) + g.toInt().toString(p);
+                } else return "-" + this.neg().toString(p);
+              for (var N = k(A(p, 6), this.unsigned), U = this, B = ""; ;) {
+                var J = U.div(N),
+                  _ = U.sub(J.mul(N)).toInt() >>> 0,
+                  x = _.toString(p);
+                if (((U = J), U.isZero())) return x + B;
+                for (; x.length < 6;) x = "0" + x;
+                B = "" + x + B;
+              }
+            }),
+            (S.getHighBits = function () {
+              return this.high;
+            }),
+            (S.getHighBitsUnsigned = function () {
+              return this.high >>> 0;
+            }),
+            (S.getLowBits = function () {
+              return this.low;
+            }),
+            (S.getLowBitsUnsigned = function () {
+              return this.low >>> 0;
+            }),
+            (S.getNumBitsAbs = function () {
+              if (this.isNegative()) return this.eq(q) ? 64 : this.neg().getNumBitsAbs();
+              for (var p = this.high != 0 ? this.high : this.low, D = 31; D > 0 && !(p & (1 << D)); D--);
+              return this.high != 0 ? D + 33 : D + 1;
+            }),
+            (S.isSafeInteger = function () {
+              var p = this.high >> 21;
+              return p ? (this.unsigned ? !1 : p === -1 && !(this.low === 0 && this.high === -2097152)) : !0;
+            }),
+            (S.isZero = function () {
+              return this.high === 0 && this.low === 0;
+            }),
+            (S.eqz = S.isZero),
+            (S.isNegative = function () {
+              return !this.unsigned && this.high < 0;
+            }),
+            (S.isPositive = function () {
+              return this.unsigned || this.high >= 0;
+            }),
+            (S.isOdd = function () {
+              return (this.low & 1) === 1;
+            }),
+            (S.isEven = function () {
+              return (this.low & 1) === 0;
+            }),
+            (S.equals = function (p) {
+              return (
+                r(p) || (p = R(p)),
+                this.unsigned !== p.unsigned && this.high >>> 31 === 1 && p.high >>> 31 === 1
+                  ? !1
+                  : this.high === p.high && this.low === p.low
+              );
+            }),
+            (S.eq = S.equals),
+            (S.notEquals = function (p) {
+              return !this.eq(p);
+            }),
+            (S.neq = S.notEquals),
+            (S.ne = S.notEquals),
+            (S.lessThan = function (p) {
+              return this.comp(p) < 0;
+            }),
+            (S.lt = S.lessThan),
+            (S.lessThanOrEqual = function (p) {
+              return this.comp(p) <= 0;
+            }),
+            (S.lte = S.lessThanOrEqual),
+            (S.le = S.lessThanOrEqual),
+            (S.greaterThan = function (p) {
+              return this.comp(p) > 0;
+            }),
+            (S.gt = S.greaterThan),
+            (S.greaterThanOrEqual = function (p) {
+              return this.comp(p) >= 0;
+            }),
+            (S.gte = S.greaterThanOrEqual),
+            (S.ge = S.greaterThanOrEqual),
+            (S.compare = function (p) {
+              if ((r(p) || (p = R(p)), this.eq(p))) return 0;
+              var D = this.isNegative(),
+                M = p.isNegative();
+              return D && !M
+                ? -1
+                : !D && M
+                  ? 1
+                  : this.unsigned
+                    ? p.high >>> 0 > this.high >>> 0 || (p.high === this.high && p.low >>> 0 > this.low >>> 0)
+                      ? -1
+                      : 1
+                    : this.sub(p).isNegative()
+                      ? -1
+                      : 1;
+            }),
+            (S.comp = S.compare),
+            (S.negate = function () {
+              return !this.unsigned && this.eq(q) ? q : this.not().add(ot);
+            }),
+            (S.neg = S.negate),
+            (S.add = function (p) {
+              r(p) || (p = R(p));
+              var D = this.high >>> 16,
+                M = this.high & 65535,
+                g = this.low >>> 16,
+                N = this.low & 65535,
+                U = p.high >>> 16,
+                B = p.high & 65535,
+                J = p.low >>> 16,
+                _ = p.low & 65535,
+                x = 0,
+                H = 0,
+                E = 0,
+                V = 0;
+              return (
+                (V += N + _),
+                (E += V >>> 16),
+                (V &= 65535),
+                (E += g + J),
+                (H += E >>> 16),
+                (E &= 65535),
+                (H += M + B),
+                (x += H >>> 16),
+                (H &= 65535),
+                (x += D + U),
+                (x &= 65535),
+                O((E << 16) | V, (x << 16) | H, this.unsigned)
+              );
+            }),
+            (S.subtract = function (p) {
+              return (r(p) || (p = R(p)), this.add(p.neg()));
+            }),
+            (S.sub = S.subtract),
+            (S.multiply = function (p) {
+              if (this.isZero()) return this;
+              if ((r(p) || (p = R(p)), e)) {
+                var D = e.mul(this.low, this.high, p.low, p.high);
+                return O(D, e.get_high(), this.unsigned);
+              }
+              if (p.isZero()) return this.unsigned ? Y : K;
+              if (this.eq(q)) return p.isOdd() ? q : K;
+              if (p.eq(q)) return this.isOdd() ? q : K;
+              if (this.isNegative()) return p.isNegative() ? this.neg().mul(p.neg()) : this.neg().mul(p).neg();
+              if (p.isNegative()) return this.mul(p.neg()).neg();
+              if (this.lt(Tt) && p.lt(Tt)) return k(this.toNumber() * p.toNumber(), this.unsigned);
+              var M = this.high >>> 16,
+                g = this.high & 65535,
+                N = this.low >>> 16,
+                U = this.low & 65535,
+                B = p.high >>> 16,
+                J = p.high & 65535,
+                _ = p.low >>> 16,
+                x = p.low & 65535,
+                H = 0,
+                E = 0,
+                V = 0,
+                ut = 0;
+              return (
+                (ut += U * x),
+                (V += ut >>> 16),
+                (ut &= 65535),
+                (V += N * x),
+                (E += V >>> 16),
+                (V &= 65535),
+                (V += U * _),
+                (E += V >>> 16),
+                (V &= 65535),
+                (E += g * x),
+                (H += E >>> 16),
+                (E &= 65535),
+                (E += N * _),
+                (H += E >>> 16),
+                (E &= 65535),
+                (E += U * J),
+                (H += E >>> 16),
+                (E &= 65535),
+                (H += M * x + g * _ + N * J + U * B),
+                (H &= 65535),
+                O((V << 16) | ut, (H << 16) | E, this.unsigned)
+              );
+            }),
+            (S.mul = S.multiply),
+            (S.divide = function (p) {
+              if ((r(p) || (p = R(p)), p.isZero())) throw Error("division by zero");
+              if (e) {
+                if (!this.unsigned && this.high === -2147483648 && p.low === -1 && p.high === -1) return this;
+                var D = (this.unsigned ? e.div_u : e.div_s)(this.low, this.high, p.low, p.high);
+                return O(D, e.get_high(), this.unsigned);
+              }
+              if (this.isZero()) return this.unsigned ? Y : K;
+              var M, g, N;
+              if (this.unsigned) {
+                if ((p.unsigned || (p = p.toUnsigned()), p.gt(this))) return Y;
+                if (p.gt(this.shru(1))) return At;
+                N = Y;
+              } else {
+                if (this.eq(q)) {
+                  if (p.eq(ot) || p.eq(dt)) return q;
+                  if (p.eq(q)) return ot;
+                  var U = this.shr(1);
+                  return (
+                    (M = U.div(p).shl(1)),
+                    M.eq(K) ? (p.isNegative() ? ot : dt) : ((g = this.sub(p.mul(M))), (N = M.add(g.div(p))), N)
+                  );
+                } else if (p.eq(q)) return this.unsigned ? Y : K;
+                if (this.isNegative()) return p.isNegative() ? this.neg().div(p.neg()) : this.neg().div(p).neg();
+                if (p.isNegative()) return this.div(p.neg()).neg();
+                N = K;
+              }
+              for (g = this; g.gte(p);) {
+                M = Math.max(1, Math.floor(g.toNumber() / p.toNumber()));
+                for (
+                  var B = Math.ceil(Math.log(M) / Math.LN2), J = B <= 48 ? 1 : A(2, B - 48), _ = k(M), x = _.mul(p);
+                  x.isNegative() || x.gt(g);
+                )
+                  ((M -= J), (_ = k(M, this.unsigned)), (x = _.mul(p)));
+                (_.isZero() && (_ = ot), (N = N.add(_)), (g = g.sub(x)));
+              }
+              return N;
+            }),
+            (S.div = S.divide),
+            (S.modulo = function (p) {
+              if ((r(p) || (p = R(p)), e)) {
+                var D = (this.unsigned ? e.rem_u : e.rem_s)(this.low, this.high, p.low, p.high);
+                return O(D, e.get_high(), this.unsigned);
+              }
+              return this.sub(this.div(p).mul(p));
+            }),
+            (S.mod = S.modulo),
+            (S.rem = S.modulo),
+            (S.not = function () {
+              return O(~this.low, ~this.high, this.unsigned);
+            }),
+            (S.countLeadingZeros = function () {
+              return this.high ? Math.clz32(this.high) : Math.clz32(this.low) + 32;
+            }),
+            (S.clz = S.countLeadingZeros),
+            (S.countTrailingZeros = function () {
+              return this.low ? u(this.low) : u(this.high) + 32;
+            }),
+            (S.ctz = S.countTrailingZeros),
+            (S.and = function (p) {
+              return (r(p) || (p = R(p)), O(this.low & p.low, this.high & p.high, this.unsigned));
+            }),
+            (S.or = function (p) {
+              return (r(p) || (p = R(p)), O(this.low | p.low, this.high | p.high, this.unsigned));
+            }),
+            (S.xor = function (p) {
+              return (r(p) || (p = R(p)), O(this.low ^ p.low, this.high ^ p.high, this.unsigned));
+            }),
+            (S.shiftLeft = function (p) {
+              return (
+                r(p) && (p = p.toInt()),
+                (p &= 63) === 0
+                  ? this
+                  : p < 32
+                    ? O(this.low << p, (this.high << p) | (this.low >>> (32 - p)), this.unsigned)
+                    : O(0, this.low << (p - 32), this.unsigned)
+              );
+            }),
+            (S.shl = S.shiftLeft),
+            (S.shiftRight = function (p) {
+              return (
+                r(p) && (p = p.toInt()),
+                (p &= 63) === 0
+                  ? this
+                  : p < 32
+                    ? O((this.low >>> p) | (this.high << (32 - p)), this.high >> p, this.unsigned)
+                    : O(this.high >> (p - 32), this.high >= 0 ? 0 : -1, this.unsigned)
+              );
+            }),
+            (S.shr = S.shiftRight),
+            (S.shiftRightUnsigned = function (p) {
+              return (
+                r(p) && (p = p.toInt()),
+                (p &= 63) === 0
+                  ? this
+                  : p < 32
+                    ? O((this.low >>> p) | (this.high << (32 - p)), this.high >>> p, this.unsigned)
+                    : p === 32
+                      ? O(this.high, 0, this.unsigned)
+                      : O(this.high >>> (p - 32), 0, this.unsigned)
+              );
+            }),
+            (S.shru = S.shiftRightUnsigned),
+            (S.shr_u = S.shiftRightUnsigned),
+            (S.rotateLeft = function (p) {
+              var D;
+              return (
+                r(p) && (p = p.toInt()),
+                (p &= 63) === 0
+                  ? this
+                  : p === 32
+                    ? O(this.high, this.low, this.unsigned)
+                    : p < 32
+                      ? ((D = 32 - p),
+                        O((this.low << p) | (this.high >>> D), (this.high << p) | (this.low >>> D), this.unsigned))
+                      : ((p -= 32),
+                        (D = 32 - p),
+                        O((this.high << p) | (this.low >>> D), (this.low << p) | (this.high >>> D), this.unsigned))
+              );
+            }),
+            (S.rotl = S.rotateLeft),
+            (S.rotateRight = function (p) {
+              var D;
+              return (
+                r(p) && (p = p.toInt()),
+                (p &= 63) === 0
+                  ? this
+                  : p === 32
+                    ? O(this.high, this.low, this.unsigned)
+                    : p < 32
+                      ? ((D = 32 - p),
+                        O((this.high << D) | (this.low >>> p), (this.low << D) | (this.high >>> p), this.unsigned))
+                      : ((p -= 32),
+                        (D = 32 - p),
+                        O((this.low << D) | (this.high >>> p), (this.high << D) | (this.low >>> p), this.unsigned))
+              );
+            }),
+            (S.rotr = S.rotateRight),
+            (S.toSigned = function () {
+              return this.unsigned ? O(this.low, this.high, !1) : this;
+            }),
+            (S.toUnsigned = function () {
+              return this.unsigned ? this : O(this.low, this.high, !0);
+            }),
+            (S.toBytes = function (p) {
+              return p ? this.toBytesLE() : this.toBytesBE();
+            }),
+            (S.toBytesLE = function () {
+              var p = this.high,
+                D = this.low;
+              return [
+                D & 255,
+                (D >>> 8) & 255,
+                (D >>> 16) & 255,
+                D >>> 24,
+                p & 255,
+                (p >>> 8) & 255,
+                (p >>> 16) & 255,
+                p >>> 24,
+              ];
+            }),
+            (S.toBytesBE = function () {
+              var p = this.high,
+                D = this.low;
+              return [
+                p >>> 24,
+                (p >>> 16) & 255,
+                (p >>> 8) & 255,
+                p & 255,
+                D >>> 24,
+                (D >>> 16) & 255,
+                (D >>> 8) & 255,
+                D & 255,
+              ];
+            }),
+            (n.fromBytes = function (p, D, M) {
+              return M ? n.fromBytesLE(p, D) : n.fromBytesBE(p, D);
+            }),
+            (n.fromBytesLE = function (p, D) {
+              return new n(
+                p[0] | (p[1] << 8) | (p[2] << 16) | (p[3] << 24),
+                p[4] | (p[5] << 8) | (p[6] << 16) | (p[7] << 24),
+                D,
+              );
+            }),
+            (n.fromBytesBE = function (p, D) {
+              return new n(
+                (p[4] << 24) | (p[5] << 16) | (p[6] << 8) | p[7],
+                (p[0] << 24) | (p[1] << 16) | (p[2] << 8) | p[3],
+                D,
+              );
+            }),
+            typeof BigInt == "function" &&
+              ((n.fromBigInt = function (p, D) {
+                var M = Number(BigInt.asIntN(32, p)),
+                  g = Number(BigInt.asIntN(32, p >> BigInt(32)));
+                return O(M, g, D);
+              }),
+              (n.fromValue = function (p, D) {
+                return typeof p == "bigint" ? n.fromBigInt(p, D) : R(p, D);
+              }),
+              (S.toBigInt = function () {
+                var p = BigInt(this.low >>> 0),
+                  D = BigInt(this.unsigned ? this.high >>> 0 : this.high);
+                return (D << BigInt(32)) | p;
+              })),
+            (t.default = n));
+        });
+      })(ce, rt)),
+    rt
+  );
+}
+var Qt;
+function nt() {
+  return (
+    Qt ||
+      ((Qt = 1),
       (function (o) {
         var i = o;
-        ((i.asPromise = aspromise),
-          (i.base64 = base64$1),
-          (i.EventEmitter = eventemitter),
-          (i.float = float),
-          (i.inquire = inquire_1),
-          (i.utf8 = utf8$2),
-          (i.pool = pool_1),
-          (i.LongBits = requireLongbits()),
-          (i.isNode = !!(
-            typeof commonjsGlobal < "u" &&
-            commonjsGlobal &&
-            commonjsGlobal.process &&
-            commonjsGlobal.process.versions &&
-            commonjsGlobal.process.versions.node
-          )),
-          (i.global =
-            (i.isNode && commonjsGlobal) ||
-            (typeof window < "u" && window) ||
-            (typeof self < "u" && self) ||
-            commonjsGlobal),
+        ((i.asPromise = ne),
+          (i.base64 = zt),
+          (i.EventEmitter = oe),
+          (i.float = re),
+          (i.utf8 = Jt),
+          (i.pool = le),
+          (i.LongBits = ue()));
+        function t(r) {
+          return r === "__proto__" || r === "prototype" || r === "constructor";
+        }
+        ((i.isUnsafeProperty = t),
+          (i.isNode = !!(typeof X < "u" && X && X.process && X.process.versions && X.process.versions.node)),
+          (i.global = (i.isNode && X) || (typeof window < "u" && window) || (typeof self < "u" && self) || X),
           (i.emptyArray = Object.freeze ? Object.freeze([]) : []),
           (i.emptyObject = Object.freeze ? Object.freeze({}) : {}),
           (i.isInteger =
             Number.isInteger ||
-            function (r) {
-              return typeof r == "number" && isFinite(r) && Math.floor(r) === r;
+            function (u) {
+              return typeof u == "number" && isFinite(u) && Math.floor(u) === u;
             }),
-          (i.isString = function (r) {
-            return typeof r == "string" || r instanceof String;
+          (i.isString = function (u) {
+            return typeof u == "string" || u instanceof String;
           }),
-          (i.isObject = function (r) {
-            return r && typeof r == "object";
+          (i.isObject = function (u) {
+            return u && typeof u == "object";
           }),
           (i.isset = i.isSet =
-            function (r, l) {
-              var a = r[l];
-              return a != null && r.hasOwnProperty(l)
-                ? typeof a != "object" || (Array.isArray(a) ? a.length : Object.keys(a).length) > 0
+            function (u, d) {
+              var y = u[d];
+              return y != null && Object.hasOwnProperty.call(u, d)
+                ? typeof y != "object" || (Array.isArray(y) ? y.length : Object.keys(y).length) > 0
                 : !1;
             }),
           (i.Buffer = (function () {
             try {
-              var n = i.inquire("buffer").Buffer;
-              return n.prototype.utf8Write ? n : null;
-            } catch (r) {
+              var r = i.global.Buffer;
+              return r.prototype.utf8Write ? r : null;
+            } catch {
               return null;
             }
           })()),
           (i._Buffer_from = null),
           (i._Buffer_allocUnsafe = null),
-          (i.newBuffer = function (r) {
-            return typeof r == "number"
+          (i.newBuffer = function (u) {
+            return typeof u == "number"
               ? i.Buffer
-                ? i._Buffer_allocUnsafe(r)
-                : new i.Array(r)
+                ? i._Buffer_allocUnsafe(u)
+                : new i.Array(u)
               : i.Buffer
-                ? i._Buffer_from(r)
+                ? i._Buffer_from(u)
                 : typeof Uint8Array > "u"
-                  ? r
-                  : new Uint8Array(r);
+                  ? u
+                  : new Uint8Array(u);
           }),
           (i.Array = typeof Uint8Array < "u" ? Uint8Array : Array),
-          (i.Long = (i.global.dcodeIO && i.global.dcodeIO.Long) || i.global.Long || i.inquire("long")),
+          (i.Long =
+            (i.global.dcodeIO && i.global.dcodeIO.Long) ||
+            i.global.Long ||
+            (function () {
+              try {
+                var r = fe();
+                return r && r.isLong ? r : null;
+              } catch {
+                return null;
+              }
+            })()),
           (i.key2Re = /^true|false|0|1$/),
           (i.key32Re = /^-?(?:0|[1-9][0-9]*)$/),
           (i.key64Re = /^(?:[\\x00-\\xff]{8}|-?(?:0|[1-9][0-9]*))$/),
-          (i.longToHash = function (r) {
-            return r ? i.LongBits.from(r).toHash() : i.LongBits.zeroHash;
+          (i.longToHash = function (u) {
+            return u ? i.LongBits.from(u).toHash() : i.LongBits.zeroHash;
           }),
-          (i.longFromHash = function (r, l) {
-            var a = i.LongBits.fromHash(r);
-            return i.Long ? i.Long.fromBits(a.lo, a.hi, l) : a.toNumber(!!l);
+          (i.longFromHash = function (u, d) {
+            var y = i.LongBits.fromHash(u);
+            return i.Long ? i.Long.fromBits(y.lo, y.hi, d) : y.toNumber(!!d);
           }));
-        function t(n, r, l) {
-          for (var a = Object.keys(r), u = 0; u < a.length; ++u) (n[a[u]] === void 0 || !l) && (n[a[u]] = r[a[u]]);
-          return n;
+        function e(r) {
+          var u = typeof arguments[arguments.length - 1] == "boolean",
+            d = u ? arguments.length - 1 : arguments.length;
+          u = u && arguments[arguments.length - 1];
+          for (var y = 1; y < d; ++y) {
+            var s = arguments[y];
+            if (s)
+              for (var k = Object.keys(s), O = 0; O < k.length; ++O)
+                !t(k[O]) && (r[k[O]] === void 0 || !u) && (r[k[O]] = s[k[O]]);
+          }
+          return r;
         }
-        ((i.merge = t),
-          (i.lcFirst = function (r) {
-            return r.charAt(0).toLowerCase() + r.substring(1);
+        ((i.merge = e),
+          (i.nestingLimit = 32),
+          (i.recursionLimit = 100),
+          (i.makeProp = function (u, d) {
+            Object.defineProperty(u, d, { enumerable: !0, configurable: !0, writable: !0 });
+          }),
+          (i.lcFirst = function (u) {
+            return u.charAt(0).toLowerCase() + u.substring(1);
           }));
-        function e(n) {
-          function r(l, a) {
-            if (!(this instanceof r)) return new r(l, a);
+        function n(r) {
+          function u(d, y) {
+            if (!(this instanceof u)) return new u(d, y);
             (Object.defineProperty(this, "message", {
               get: function () {
-                return l;
+                return d;
               },
             }),
               Error.captureStackTrace
-                ? Error.captureStackTrace(this, r)
+                ? Error.captureStackTrace(this, u)
                 : Object.defineProperty(this, "stack", { value: new Error().stack || "" }),
-              a && t(this, a));
+              y && e(this, y));
           }
           return (
-            (r.prototype = Object.create(Error.prototype, {
-              constructor: { value: r, writable: !0, enumerable: !1, configurable: !0 },
+            (u.prototype = Object.create(Error.prototype, {
+              constructor: { value: u, writable: !0, enumerable: !1, configurable: !0 },
               name: {
                 get: function () {
-                  return n;
+                  return r;
                 },
                 set: void 0,
                 enumerable: !1,
@@ -576,199 +1155,199 @@ function requireMinimal() {
                 configurable: !0,
               },
             })),
-            r
+            u
           );
         }
-        ((i.newError = e),
-          (i.ProtocolError = e("ProtocolError")),
-          (i.oneOfGetter = function (r) {
-            for (var l = {}, a = 0; a < r.length; ++a) l[r[a]] = 1;
+        ((i.newError = n),
+          (i.ProtocolError = n("ProtocolError")),
+          (i.oneOfGetter = function (u) {
+            for (var d = {}, y = 0; y < u.length; ++y) d[u[y]] = 1;
             return function () {
-              for (var u = Object.keys(this), c = u.length - 1; c > -1; --c)
-                if (l[u[c]] === 1 && this[u[c]] !== void 0 && this[u[c]] !== null) return u[c];
+              for (var s = Object.keys(this), k = s.length - 1; k > -1; --k)
+                if (d[s[k]] === 1 && this[s[k]] !== void 0 && this[s[k]] !== null) return s[k];
             };
           }),
-          (i.oneOfSetter = function (r) {
-            return function (l) {
-              for (var a = 0; a < r.length; ++a) r[a] !== l && delete this[r[a]];
+          (i.oneOfSetter = function (u) {
+            return function (d) {
+              for (var y = 0; y < u.length; ++y) u[y] !== d && delete this[u[y]];
             };
           }),
           (i.toJSONOptions = { longs: String, enums: String, bytes: String, json: !0 }),
           (i._configure = function () {
-            var n = i.Buffer;
-            if (!n) {
+            var r = i.Buffer;
+            if (!r) {
               i._Buffer_from = i._Buffer_allocUnsafe = null;
               return;
             }
             ((i._Buffer_from =
-              (n.from !== Uint8Array.from && n.from) ||
-              function (l, a) {
-                return new n(l, a);
+              (r.from !== Uint8Array.from && r.from) ||
+              function (d, y) {
+                return new r(d, y);
               }),
               (i._Buffer_allocUnsafe =
-                n.allocUnsafe ||
-                function (l) {
-                  return new n(l);
+                r.allocUnsafe ||
+                function (d) {
+                  return new r(d);
                 }));
           }));
-      })(minimal)),
-    minimal
+      })(yt)),
+    yt
   );
 }
-var writer = Writer$1,
-  util$4 = requireMinimal(),
-  BufferWriter$1,
-  LongBits$1 = util$4.LongBits,
-  base64 = util$4.base64,
-  utf8$1 = util$4.utf8;
-function Op(o, i, t) {
+var Ht = m,
+  W = nt(),
+  ht,
+  pt = W.LongBits,
+  _t = W.base64,
+  qt = W.utf8;
+function at(o, i, t) {
   ((this.fn = o), (this.len = i), (this.next = void 0), (this.val = t));
 }
-function noop() {}
-function State(o) {
+function kt() {}
+function pe(o) {
   ((this.head = o.head), (this.tail = o.tail), (this.len = o.len), (this.next = o.states));
 }
-function Writer$1() {
-  ((this.len = 0), (this.head = new Op(noop, 0, 0)), (this.tail = this.head), (this.states = null));
+function m() {
+  ((this.len = 0), (this.head = new at(kt, 0, 0)), (this.tail = this.head), (this.states = null));
 }
-var create$1 = function o() {
-  return util$4.Buffer
+var Wt = function () {
+  return W.Buffer
     ? function () {
-        return (Writer$1.create = function () {
-          return new BufferWriter$1();
+        return (m.create = function () {
+          return new ht();
         })();
       }
     : function () {
-        return new Writer$1();
+        return new m();
       };
 };
-Writer$1.create = create$1();
-Writer$1.alloc = function o(i) {
-  return new util$4.Array(i);
+m.create = Wt();
+m.alloc = function (i) {
+  return new W.Array(i);
 };
-util$4.Array !== Array && (Writer$1.alloc = util$4.pool(Writer$1.alloc, util$4.Array.prototype.subarray));
-Writer$1.prototype._push = function o(i, t, e) {
-  return ((this.tail = this.tail.next = new Op(i, t, e)), (this.len += t), this);
+W.Array !== Array && (m.alloc = W.pool(m.alloc, W.Array.prototype.subarray));
+m.prototype._push = function (i, t, e) {
+  return ((this.tail = this.tail.next = new at(i, t, e)), (this.len += t), this);
 };
-function writeByte(o, i, t) {
+function St(o, i, t) {
   i[t] = o & 255;
 }
-function writeVarint32(o, i, t) {
+function de(o, i, t) {
   for (; o > 127;) ((i[t++] = (o & 127) | 128), (o >>>= 7));
   i[t] = o;
 }
-function VarintOp(o, i) {
+function Ot(o, i) {
   ((this.len = o), (this.next = void 0), (this.val = i));
 }
-VarintOp.prototype = Object.create(Op.prototype);
-VarintOp.prototype.fn = writeVarint32;
-Writer$1.prototype.uint32 = function o(i) {
+Ot.prototype = Object.create(at.prototype);
+Ot.prototype.fn = de;
+m.prototype.uint32 = function (i) {
   return (
     (this.len += (this.tail = this.tail.next =
-      new VarintOp((i = i >>> 0) < 128 ? 1 : i < 16384 ? 2 : i < 2097152 ? 3 : i < 268435456 ? 4 : 5, i)).len),
+      new Ot((i = i >>> 0) < 128 ? 1 : i < 16384 ? 2 : i < 2097152 ? 3 : i < 268435456 ? 4 : 5, i)).len),
     this
   );
 };
-Writer$1.prototype.int32 = function o(i) {
-  return i < 0 ? this._push(writeVarint64, 10, LongBits$1.fromNumber(i)) : this.uint32(i);
+m.prototype.int32 = function (i) {
+  return (i |= 0) < 0 ? this._push(Dt, 10, pt.fromNumber(i)) : this.uint32(i);
 };
-Writer$1.prototype.sint32 = function o(i) {
+m.prototype.sint32 = function (i) {
   return this.uint32(((i << 1) ^ (i >> 31)) >>> 0);
 };
-function writeVarint64(o, i, t) {
-  for (; o.hi;) ((i[t++] = (o.lo & 127) | 128), (o.lo = ((o.lo >>> 7) | (o.hi << 25)) >>> 0), (o.hi >>>= 7));
-  for (; o.lo > 127;) ((i[t++] = (o.lo & 127) | 128), (o.lo = o.lo >>> 7));
-  i[t++] = o.lo;
+function Dt(o, i, t) {
+  for (var e = o.lo, n = o.hi; n;) ((i[t++] = (e & 127) | 128), (e = ((e >>> 7) | (n << 25)) >>> 0), (n >>>= 7));
+  for (; e > 127;) ((i[t++] = (e & 127) | 128), (e = e >>> 7));
+  i[t++] = e;
 }
-Writer$1.prototype.uint64 = function o(i) {
-  var t = LongBits$1.from(i);
-  return this._push(writeVarint64, t.length(), t);
+m.prototype.uint64 = function (i) {
+  var t = pt.from(i);
+  return this._push(Dt, t.length(), t);
 };
-Writer$1.prototype.int64 = Writer$1.prototype.uint64;
-Writer$1.prototype.sint64 = function o(i) {
-  var t = LongBits$1.from(i).zzEncode();
-  return this._push(writeVarint64, t.length(), t);
+m.prototype.int64 = m.prototype.uint64;
+m.prototype.sint64 = function (i) {
+  var t = pt.from(i).zzEncode();
+  return this._push(Dt, t.length(), t);
 };
-Writer$1.prototype.bool = function o(i) {
-  return this._push(writeByte, 1, i ? 1 : 0);
+m.prototype.bool = function (i) {
+  return this._push(St, 1, i ? 1 : 0);
 };
-function writeFixed32(o, i, t) {
+function Pt(o, i, t) {
   ((i[t] = o & 255), (i[t + 1] = (o >>> 8) & 255), (i[t + 2] = (o >>> 16) & 255), (i[t + 3] = o >>> 24));
 }
-Writer$1.prototype.fixed32 = function o(i) {
-  return this._push(writeFixed32, 4, i >>> 0);
+m.prototype.fixed32 = function (i) {
+  return this._push(Pt, 4, i >>> 0);
 };
-Writer$1.prototype.sfixed32 = Writer$1.prototype.fixed32;
-Writer$1.prototype.fixed64 = function o(i) {
-  var t = LongBits$1.from(i);
-  return this._push(writeFixed32, 4, t.lo)._push(writeFixed32, 4, t.hi);
+m.prototype.sfixed32 = m.prototype.fixed32;
+m.prototype.fixed64 = function (i) {
+  var t = pt.from(i);
+  return this._push(Pt, 4, t.lo)._push(Pt, 4, t.hi);
 };
-Writer$1.prototype.sfixed64 = Writer$1.prototype.fixed64;
-Writer$1.prototype.float = function o(i) {
-  return this._push(util$4.float.writeFloatLE, 4, i);
+m.prototype.sfixed64 = m.prototype.fixed64;
+m.prototype.float = function (i) {
+  return this._push(W.float.writeFloatLE, 4, i);
 };
-Writer$1.prototype.double = function o(i) {
-  return this._push(util$4.float.writeDoubleLE, 8, i);
+m.prototype.double = function (i) {
+  return this._push(W.float.writeDoubleLE, 8, i);
 };
-var writeBytes = util$4.Array.prototype.set
-  ? function o(i, t, e) {
+var ye = W.Array.prototype.set
+  ? function (i, t, e) {
       t.set(i, e);
     }
-  : function o(i, t, e) {
+  : function (i, t, e) {
       for (var n = 0; n < i.length; ++n) t[e + n] = i[n];
     };
-Writer$1.prototype.bytes = function o(i) {
+m.prototype.bytes = function (i) {
   var t = i.length >>> 0;
-  if (!t) return this._push(writeByte, 1, 0);
-  if (util$4.isString(i)) {
-    var e = Writer$1.alloc((t = base64.length(i)));
-    (base64.decode(i, e, 0), (i = e));
+  if (!t) return this._push(St, 1, 0);
+  if (W.isString(i)) {
+    var e = m.alloc((t = _t.length(i)));
+    (_t.decode(i, e, 0), (i = e));
   }
-  return this.uint32(t)._push(writeBytes, t, i);
+  return this.uint32(t)._push(ye, t, i);
 };
-Writer$1.prototype.string = function o(i) {
-  var t = utf8$1.length(i);
-  return t ? this.uint32(t)._push(utf8$1.write, t, i) : this._push(writeByte, 1, 0);
+m.prototype.string = function (i) {
+  var t = qt.length(i);
+  return t ? this.uint32(t)._push(qt.write, t, i) : this._push(St, 1, 0);
 };
-Writer$1.prototype.fork = function o() {
-  return ((this.states = new State(this)), (this.head = this.tail = new Op(noop, 0, 0)), (this.len = 0), this);
+m.prototype.fork = function () {
+  return ((this.states = new pe(this)), (this.head = this.tail = new at(kt, 0, 0)), (this.len = 0), this);
 };
-Writer$1.prototype.reset = function o() {
+m.prototype.reset = function () {
   return (
     this.states
       ? ((this.head = this.states.head),
         (this.tail = this.states.tail),
         (this.len = this.states.len),
         (this.states = this.states.next))
-      : ((this.head = this.tail = new Op(noop, 0, 0)), (this.len = 0)),
+      : ((this.head = this.tail = new at(kt, 0, 0)), (this.len = 0)),
     this
   );
 };
-Writer$1.prototype.ldelim = function o() {
+m.prototype.ldelim = function () {
   var i = this.head,
     t = this.tail,
     e = this.len;
   return (this.reset().uint32(e), e && ((this.tail.next = i.next), (this.tail = t), (this.len += e)), this);
 };
-Writer$1.prototype.finish = function o() {
+m.prototype.finish = function () {
   for (var i = this.head.next, t = this.constructor.alloc(this.len), e = 0; i;)
     (i.fn(i.val, t, e), (e += i.len), (i = i.next));
   return t;
 };
-Writer$1._configure = function (o) {
-  ((BufferWriter$1 = o), (Writer$1.create = create$1()), BufferWriter$1._configure());
+m._configure = function (o) {
+  ((ht = o), (m.create = Wt()), ht._configure());
 };
-var writer_buffer = BufferWriter,
-  Writer = writer;
-(BufferWriter.prototype = Object.create(Writer.prototype)).constructor = BufferWriter;
-var util$3 = requireMinimal();
-function BufferWriter() {
-  Writer.call(this);
+var se = Z,
+  jt = Ht;
+(Z.prototype = Object.create(jt.prototype)).constructor = Z;
+var tt = nt();
+function Z() {
+  jt.call(this);
 }
-BufferWriter._configure = function () {
-  ((BufferWriter.alloc = util$3._Buffer_allocUnsafe),
-    (BufferWriter.writeBytesBuffer =
-      util$3.Buffer && util$3.Buffer.prototype instanceof Uint8Array && util$3.Buffer.prototype.set.name === "set"
+Z._configure = function () {
+  ((Z.alloc = tt._Buffer_allocUnsafe),
+    (Z.writeBytesBuffer =
+      tt.Buffer && tt.Buffer.prototype instanceof Uint8Array && tt.Buffer.prototype.set.name === "set"
         ? function (i, t, e) {
             t.set(i, e);
           }
@@ -777,54 +1356,66 @@ BufferWriter._configure = function () {
             else for (var n = 0; n < i.length;) t[e++] = i[n++];
           }));
 };
-BufferWriter.prototype.bytes = function o(i) {
-  util$3.isString(i) && (i = util$3._Buffer_from(i, "base64"));
+Z.prototype.bytes = function (i) {
+  tt.isString(i) && (i = tt._Buffer_from(i, "base64"));
   var t = i.length >>> 0;
-  return (this.uint32(t), t && this._push(BufferWriter.writeBytesBuffer, t, i), this);
+  return (this.uint32(t), t && this._push(Z.writeBytesBuffer, t, i), this);
 };
-function writeStringBuffer(o, i, t) {
-  o.length < 40 ? util$3.utf8.write(o, i, t) : i.utf8Write ? i.utf8Write(o, t) : i.write(o, t);
+function be(o, i, t) {
+  o.length < 40 ? tt.utf8.write(o, i, t) : i.utf8Write ? i.utf8Write(o, t) : i.write(o, t);
 }
-BufferWriter.prototype.string = function o(i) {
-  var t = util$3.Buffer.byteLength(i);
-  return (this.uint32(t), t && this._push(writeStringBuffer, t, i), this);
+Z.prototype.string = function (i) {
+  var t = tt.Buffer.byteLength(i);
+  return (this.uint32(t), t && this._push(be, t, i), this);
 };
-BufferWriter._configure();
-var reader = Reader$1,
-  util$2 = requireMinimal(),
-  BufferReader$1,
-  LongBits = util$2.LongBits,
-  utf8 = util$2.utf8;
-function indexOutOfRange(o, i) {
+Z._configure();
+var Kt = L,
+  j = nt(),
+  It,
+  Zt = j.LongBits,
+  he = j.utf8;
+function F(o, i) {
   return RangeError("index out of range: " + o.pos + " + " + (i || 1) + " > " + o.len);
 }
-function Reader$1(o) {
+function L(o) {
   ((this.buf = o), (this.pos = 0), (this.len = o.length));
 }
-var create_array =
+var Bt =
     typeof Uint8Array < "u"
-      ? function o(i) {
-          if (i instanceof Uint8Array || Array.isArray(i)) return new Reader$1(i);
+      ? function (i) {
+          if (i instanceof Uint8Array || Array.isArray(i)) return new L(i);
           throw Error("illegal buffer");
         }
-      : function o(i) {
-          if (Array.isArray(i)) return new Reader$1(i);
+      : function (i) {
+          if (Array.isArray(i)) return new L(i);
           throw Error("illegal buffer");
         },
-  create = function o() {
-    return util$2.Buffer
+  $t = function () {
+    return j.Buffer
       ? function (t) {
-          return (Reader$1.create = function (n) {
-            return util$2.Buffer.isBuffer(n) ? new BufferReader$1(n) : create_array(n);
+          return (L.create = function (n) {
+            return j.Buffer.isBuffer(n) ? new It(n) : Bt(n);
           })(t);
         }
-      : create_array;
+      : Bt;
   };
-Reader$1.create = create();
-Reader$1.prototype._slice = util$2.Array.prototype.subarray || util$2.Array.prototype.slice;
-Reader$1.prototype.uint32 = (function o() {
+L.create = $t();
+L.prototype._slice = j.Array.prototype.subarray || j.Array.prototype.slice;
+function Pe(o) {
+  for (var i = 0, t = 0; t < 4; ++t) {
+    if (o.pos >= o.len) throw F(o);
+    var e = o.buf[o.pos++];
+    if (((i = (i | ((e & 127) << (t * 7))) >>> 0), e < 128)) return i;
+  }
+  throw F(o);
+}
+L.prototype.uint32 = (function () {
   var i = 4294967295;
   return function () {
+    if (this.len - this.pos < 5) {
+      if (this.pos >= this.len) throw F(this);
+      if (this.buf[this.pos] >= 128) return Pe(this);
+    }
     if (
       ((i = (this.buf[this.pos] & 127) >>> 0),
       this.buf[this.pos++] < 128 ||
@@ -834,19 +1425,19 @@ Reader$1.prototype.uint32 = (function o() {
         ((i = (i | ((this.buf[this.pos] & 15) << 28)) >>> 0), this.buf[this.pos++] < 128))
     )
       return i;
-    if ((this.pos += 5) > this.len) throw ((this.pos = this.len), indexOutOfRange(this, 10));
+    if ((this.pos += 5) > this.len) throw ((this.pos = this.len), F(this, 10));
     return i;
   };
 })();
-Reader$1.prototype.int32 = function o() {
+L.prototype.int32 = function () {
   return this.uint32() | 0;
 };
-Reader$1.prototype.sint32 = function o() {
+L.prototype.sint32 = function () {
   var i = this.uint32();
   return ((i >>> 1) ^ -(i & 1)) | 0;
 };
-function readLongVarint() {
-  var o = new LongBits(0, 0),
+function bt() {
+  var o = new Zt(0, 0),
     i = 0;
   if (this.len - this.pos > 4) {
     for (; i < 4; ++i)
@@ -860,7 +1451,7 @@ function readLongVarint() {
     i = 0;
   } else {
     for (; i < 3; ++i) {
-      if (this.pos >= this.len) throw indexOutOfRange(this);
+      if (this.pos >= this.len) throw F(this);
       if (((o.lo = (o.lo | ((this.buf[this.pos] & 127) << (i * 7))) >>> 0), this.buf[this.pos++] < 128)) return o;
     }
     return ((o.lo = (o.lo | ((this.buf[this.pos++] & 127) << (i * 7))) >>> 0), o);
@@ -870,65 +1461,67 @@ function readLongVarint() {
       if (((o.hi = (o.hi | ((this.buf[this.pos] & 127) << (i * 7 + 3))) >>> 0), this.buf[this.pos++] < 128)) return o;
   } else
     for (; i < 5; ++i) {
-      if (this.pos >= this.len) throw indexOutOfRange(this);
+      if (this.pos >= this.len) throw F(this);
       if (((o.hi = (o.hi | ((this.buf[this.pos] & 127) << (i * 7 + 3))) >>> 0), this.buf[this.pos++] < 128)) return o;
     }
   throw Error("invalid varint encoding");
 }
-Reader$1.prototype.bool = function o() {
+L.prototype.bool = function () {
   return this.uint32() !== 0;
 };
-function readFixed32_end(o, i) {
+function ct(o, i) {
   return (o[i - 4] | (o[i - 3] << 8) | (o[i - 2] << 16) | (o[i - 1] << 24)) >>> 0;
 }
-Reader$1.prototype.fixed32 = function o() {
-  if (this.pos + 4 > this.len) throw indexOutOfRange(this, 4);
-  return readFixed32_end(this.buf, (this.pos += 4));
+L.prototype.fixed32 = function () {
+  if (this.pos + 4 > this.len) throw F(this, 4);
+  return ct(this.buf, (this.pos += 4));
 };
-Reader$1.prototype.sfixed32 = function o() {
-  if (this.pos + 4 > this.len) throw indexOutOfRange(this, 4);
-  return readFixed32_end(this.buf, (this.pos += 4)) | 0;
+L.prototype.sfixed32 = function () {
+  if (this.pos + 4 > this.len) throw F(this, 4);
+  return ct(this.buf, (this.pos += 4)) | 0;
 };
-function readFixed64() {
-  if (this.pos + 8 > this.len) throw indexOutOfRange(this, 8);
-  return new LongBits(readFixed32_end(this.buf, (this.pos += 4)), readFixed32_end(this.buf, (this.pos += 4)));
+function Ft() {
+  if (this.pos + 8 > this.len) throw F(this, 8);
+  return new Zt(ct(this.buf, (this.pos += 4)), ct(this.buf, (this.pos += 4)));
 }
-Reader$1.prototype.float = function o() {
-  if (this.pos + 4 > this.len) throw indexOutOfRange(this, 4);
-  var i = util$2.float.readFloatLE(this.buf, this.pos);
+L.prototype.float = function () {
+  if (this.pos + 4 > this.len) throw F(this, 4);
+  var i = j.float.readFloatLE(this.buf, this.pos);
   return ((this.pos += 4), i);
 };
-Reader$1.prototype.double = function o() {
-  if (this.pos + 8 > this.len) throw indexOutOfRange(this, 4);
-  var i = util$2.float.readDoubleLE(this.buf, this.pos);
+L.prototype.double = function () {
+  if (this.pos + 8 > this.len) throw F(this, 4);
+  var i = j.float.readDoubleLE(this.buf, this.pos);
   return ((this.pos += 8), i);
 };
-Reader$1.prototype.bytes = function o() {
+L.prototype.bytes = function () {
   var i = this.uint32(),
     t = this.pos,
     e = this.pos + i;
-  if (e > this.len) throw indexOutOfRange(this, i);
+  if (e > this.len) throw F(this, i);
   if (((this.pos += i), Array.isArray(this.buf))) return this.buf.slice(t, e);
   if (t === e) {
-    var n = util$2.Buffer;
+    var n = j.Buffer;
     return n ? n.alloc(0) : new this.buf.constructor(0);
   }
   return this._slice.call(this.buf, t, e);
 };
-Reader$1.prototype.string = function o() {
+L.prototype.string = function () {
   var i = this.bytes();
-  return utf8.read(i, 0, i.length);
+  return he.read(i, 0, i.length);
 };
-Reader$1.prototype.skip = function o(i) {
+L.prototype.skip = function (i) {
   if (typeof i == "number") {
-    if (this.pos + i > this.len) throw indexOutOfRange(this, i);
+    if (this.pos + i > this.len) throw F(this, i);
     this.pos += i;
   } else
-    do if (this.pos >= this.len) throw indexOutOfRange(this);
+    do if (this.pos >= this.len) throw F(this);
     while (this.buf[this.pos++] & 128);
   return this;
 };
-Reader$1.prototype.skipType = function (o) {
+L.recursionLimit = j.recursionLimit;
+L.prototype.skipType = function (o, i) {
+  if ((i === void 0 && (i = 0), i > L.recursionLimit)) throw Error("maximum nesting depth exceeded");
   switch (o) {
     case 0:
       this.skip();
@@ -940,7 +1533,7 @@ Reader$1.prototype.skipType = function (o) {
       this.skip(this.uint32());
       break;
     case 3:
-      for (; (o = this.uint32() & 7) !== 4;) this.skipType(o);
+      for (; (o = this.uint32() & 7) !== 4;) this.skipType(o, i + 1);
       break;
     case 5:
       this.skip(4);
@@ -950,117 +1543,117 @@ Reader$1.prototype.skipType = function (o) {
   }
   return this;
 };
-Reader$1._configure = function (o) {
-  ((BufferReader$1 = o), (Reader$1.create = create()), BufferReader$1._configure());
-  var i = util$2.Long ? "toLong" : "toNumber";
-  util$2.merge(Reader$1.prototype, {
+L._configure = function (o) {
+  ((It = o), (L.create = $t()), It._configure());
+  var i = j.Long ? "toLong" : "toNumber";
+  j.merge(L.prototype, {
     int64: function () {
-      return readLongVarint.call(this)[i](!1);
+      return bt.call(this)[i](!1);
     },
     uint64: function () {
-      return readLongVarint.call(this)[i](!0);
+      return bt.call(this)[i](!0);
     },
     sint64: function () {
-      return readLongVarint.call(this).zzDecode()[i](!1);
+      return bt.call(this).zzDecode()[i](!1);
     },
     fixed64: function () {
-      return readFixed64.call(this)[i](!0);
+      return Ft.call(this)[i](!0);
     },
     sfixed64: function () {
-      return readFixed64.call(this)[i](!1);
+      return Ft.call(this)[i](!1);
     },
   });
 };
-var reader_buffer = BufferReader,
-  Reader = reader;
-(BufferReader.prototype = Object.create(Reader.prototype)).constructor = BufferReader;
-var util$1 = requireMinimal();
-function BufferReader(o) {
-  Reader.call(this, o);
+var Ie = et,
+  Yt = Kt;
+(et.prototype = Object.create(Yt.prototype)).constructor = et;
+var Gt = nt();
+function et(o) {
+  Yt.call(this, o);
 }
-BufferReader._configure = function () {
-  util$1.Buffer && (BufferReader.prototype._slice = util$1.Buffer.prototype.slice);
+et._configure = function () {
+  Gt.Buffer && (et.prototype._slice = Gt.Buffer.prototype.slice);
 };
-BufferReader.prototype.string = function o() {
+et.prototype.string = function () {
   var i = this.uint32();
   return this.buf.utf8Slice
     ? this.buf.utf8Slice(this.pos, (this.pos = Math.min(this.pos + i, this.len)))
     : this.buf.toString("utf-8", this.pos, (this.pos = Math.min(this.pos + i, this.len)));
 };
-BufferReader._configure();
-var rpc = {},
-  service = Service,
-  util = requireMinimal();
-(Service.prototype = Object.create(util.EventEmitter.prototype)).constructor = Service;
-function Service(o, i, t) {
+et._configure();
+var Xt = {},
+  ke = lt,
+  wt = nt();
+(lt.prototype = Object.create(wt.EventEmitter.prototype)).constructor = lt;
+function lt(o, i, t) {
   if (typeof o != "function") throw TypeError("rpcImpl must be a function");
-  (util.EventEmitter.call(this), (this.rpcImpl = o), (this.requestDelimited = !!i), (this.responseDelimited = !!t));
+  (wt.EventEmitter.call(this), (this.rpcImpl = o), (this.requestDelimited = !!i), (this.responseDelimited = !!t));
 }
-Service.prototype.rpcCall = function o(i, t, e, n, r) {
+lt.prototype.rpcCall = function o(i, t, e, n, r) {
   if (!n) throw TypeError("request must be specified");
-  var l = this;
-  if (!r) return util.asPromise(o, l, i, t, e, n);
-  if (!l.rpcImpl) {
+  var u = this;
+  if (!r) return wt.asPromise(o, u, i, t, e, n);
+  if (!u.rpcImpl) {
     setTimeout(function () {
       r(Error("already ended"));
     }, 0);
     return;
   }
   try {
-    return l.rpcImpl(i, t[l.requestDelimited ? "encodeDelimited" : "encode"](n).finish(), function (u, c) {
-      if (u) return (l.emit("error", u, i), r(u));
-      if (c === null) {
-        l.end(!0);
+    return u.rpcImpl(i, t[u.requestDelimited ? "encodeDelimited" : "encode"](n).finish(), function (y, s) {
+      if (y) return (u.emit("error", y, i), r(y));
+      if (s === null) {
+        u.end(!0);
         return;
       }
-      if (!(c instanceof e))
+      if (!(s instanceof e))
         try {
-          c = e[l.responseDelimited ? "decodeDelimited" : "decode"](c);
-        } catch (f) {
-          return (l.emit("error", f, i), r(f));
+          s = e[u.responseDelimited ? "decodeDelimited" : "decode"](s);
+        } catch (k) {
+          return (u.emit("error", k, i), r(k));
         }
-      return (l.emit("data", c, i), r(null, c));
+      return (u.emit("data", s, i), r(null, s));
     });
-  } catch (a) {
-    (l.emit("error", a, i),
+  } catch (d) {
+    (u.emit("error", d, i),
       setTimeout(function () {
-        r(a);
+        r(d);
       }, 0));
     return;
   }
 };
-Service.prototype.end = function o(i) {
+lt.prototype.end = function (i) {
   return (this.rpcImpl && (i || this.rpcImpl(null, null, null), (this.rpcImpl = null), this.emit("end").off()), this);
 };
 (function (o) {
   var i = o;
-  i.Service = service;
-})(rpc);
-var roots = {};
+  i.Service = ke;
+})(Xt);
+var Se = Object.create(null);
 (function (o) {
   var i = o;
   ((i.build = "minimal"),
-    (i.Writer = writer),
-    (i.BufferWriter = writer_buffer),
-    (i.Reader = reader),
-    (i.BufferReader = reader_buffer),
-    (i.util = requireMinimal()),
-    (i.rpc = rpc),
-    (i.roots = roots),
+    (i.Writer = Ht),
+    (i.BufferWriter = se),
+    (i.Reader = Kt),
+    (i.BufferReader = Ie),
+    (i.util = nt()),
+    (i.rpc = Xt),
+    (i.roots = Se),
     (i.configure = t));
   function t() {
     (i.util._configure(), i.Writer._configure(i.BufferWriter), i.Reader._configure(i.BufferReader));
   }
   t();
-})(indexMinimal);
+})(Vt);
 (function (o) {
-  o.exports = indexMinimal;
-})(minimal$1);
-const $Reader$2 = minimalExports.Reader,
-  $Writer$2 = minimalExports.Writer,
-  $util$2 = minimalExports.util,
-  $root$2 = minimalExports.roots.default || (minimalExports.roots.default = {}),
-  MediaRemoteMessageType = ($root$2.MediaRemoteMessageType = (() => {
+  o.exports = Vt;
+})(ee);
+const c = b.Reader,
+  w = b.Writer,
+  a = b.util,
+  l = b.roots.default || (b.roots.default = {}),
+  De = (l.MediaRemoteMessageType = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -1162,7 +1755,7 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  MediaRemoteMessageProtobuf = ($root$2.MediaRemoteMessageProtobuf = (() => {
+  we = (l.MediaRemoteMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -1171,7 +1764,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.replyIdentifier = ""),
       (o.prototype.authenticationToken = ""),
       (o.prototype.errorCode = 0),
-      (o.prototype.timestamp = $util$2.Long ? $util$2.Long.fromBits(0, 0, !0) : 0),
+      (o.prototype.timestamp = a.Long ? a.Long.fromBits(0, 0, !0) : 0),
       (o.prototype.uniqueIdentifier = ""),
       (o.prototype.sendCommandMessage = null),
       (o.prototype.sendCommandResultMessage = null),
@@ -1198,7 +1791,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(8).int32(t.type),
           t.replyIdentifier != null &&
             Object.hasOwnProperty.call(t, "replyIdentifier") &&
@@ -1210,79 +1803,73 @@ const $Reader$2 = minimalExports.Reader,
           t.timestamp != null && Object.hasOwnProperty.call(t, "timestamp") && e.uint32(40).uint64(t.timestamp),
           t.sendCommandMessage != null &&
             Object.hasOwnProperty.call(t, "sendCommandMessage") &&
-            $root$2.SendCommandMessageProtobuf.encode(t.sendCommandMessage, e.uint32(50).fork()).ldelim(),
+            l.SendCommandMessageProtobuf.encode(t.sendCommandMessage, e.uint32(50).fork()).ldelim(),
           t.sendCommandResultMessage != null &&
             Object.hasOwnProperty.call(t, "sendCommandResultMessage") &&
-            $root$2.SendCommandResultMessageProtobuf.encode(t.sendCommandResultMessage, e.uint32(58).fork()).ldelim(),
+            l.SendCommandResultMessageProtobuf.encode(t.sendCommandResultMessage, e.uint32(58).fork()).ldelim(),
           t.getStateMessage != null &&
             Object.hasOwnProperty.call(t, "getStateMessage") &&
-            $root$2.GetStateMessageProtobuf.encode(t.getStateMessage, e.uint32(66).fork()).ldelim(),
+            l.GetStateMessageProtobuf.encode(t.getStateMessage, e.uint32(66).fork()).ldelim(),
           t.setStateMessage != null &&
             Object.hasOwnProperty.call(t, "setStateMessage") &&
-            $root$2.SetStateMessageProtobuf.encode(t.setStateMessage, e.uint32(74).fork()).ldelim(),
+            l.SetStateMessageProtobuf.encode(t.setStateMessage, e.uint32(74).fork()).ldelim(),
           t.notificationMessage != null &&
             Object.hasOwnProperty.call(t, "notificationMessage") &&
-            $root$2.NotificationMessageProtobuf.encode(t.notificationMessage, e.uint32(130).fork()).ldelim(),
+            l.NotificationMessageProtobuf.encode(t.notificationMessage, e.uint32(130).fork()).ldelim(),
           t.contentItemsChangedNotificationMessage != null &&
             Object.hasOwnProperty.call(t, "contentItemsChangedNotificationMessage") &&
-            $root$2.PlaybackQueueProtobuf.encode(
-              t.contentItemsChangedNotificationMessage,
-              e.uint32(138).fork(),
-            ).ldelim(),
+            l.PlaybackQueueProtobuf.encode(t.contentItemsChangedNotificationMessage, e.uint32(138).fork()).ldelim(),
           t.deviceInfoMessage != null &&
             Object.hasOwnProperty.call(t, "deviceInfoMessage") &&
-            $root$2.DeviceInfoMessageProtobuf.encode(t.deviceInfoMessage, e.uint32(162).fork()).ldelim(),
+            l.DeviceInfoMessageProtobuf.encode(t.deviceInfoMessage, e.uint32(162).fork()).ldelim(),
           t.clientUpdatesConfigMessage != null &&
             Object.hasOwnProperty.call(t, "clientUpdatesConfigMessage") &&
-            $root$2.ClientUpdatesConfigurationProtobuf.encode(
-              t.clientUpdatesConfigMessage,
-              e.uint32(170).fork(),
-            ).ldelim(),
+            l.ClientUpdatesConfigurationProtobuf.encode(t.clientUpdatesConfigMessage, e.uint32(170).fork()).ldelim(),
           t.playbackQueueRequest != null &&
             Object.hasOwnProperty.call(t, "playbackQueueRequest") &&
-            $root$2.PlaybackQueueRequestProtobuf.encode(t.playbackQueueRequest, e.uint32(298).fork()).ldelim(),
+            l.PlaybackQueueRequestProtobuf.encode(t.playbackQueueRequest, e.uint32(298).fork()).ldelim(),
           t.connectionState != null &&
             Object.hasOwnProperty.call(t, "connectionState") &&
-            $root$2.SetConnectionStateMessageProtobuf.encode(t.connectionState, e.uint32(338).fork()).ldelim(),
+            l.SetConnectionStateMessageProtobuf.encode(t.connectionState, e.uint32(338).fork()).ldelim(),
           t.getVolumeMessage != null &&
             Object.hasOwnProperty.call(t, "getVolumeMessage") &&
-            $root$2.GetVolumeMessageProtobuf.encode(t.getVolumeMessage, e.uint32(426).fork()).ldelim(),
+            l.GetVolumeMessageProtobuf.encode(t.getVolumeMessage, e.uint32(426).fork()).ldelim(),
           t.getVolumeResultMessage != null &&
             Object.hasOwnProperty.call(t, "getVolumeResultMessage") &&
-            $root$2.GetVolumeResultMessageProtobuf.encode(t.getVolumeResultMessage, e.uint32(434).fork()).ldelim(),
+            l.GetVolumeResultMessageProtobuf.encode(t.getVolumeResultMessage, e.uint32(434).fork()).ldelim(),
           t.setVolumeMessage != null &&
             Object.hasOwnProperty.call(t, "setVolumeMessage") &&
-            $root$2.SetVolumeMessageProtobuf.encode(t.setVolumeMessage, e.uint32(442).fork()).ldelim(),
+            l.SetVolumeMessageProtobuf.encode(t.setVolumeMessage, e.uint32(442).fork()).ldelim(),
           t.volumeDidChangeMessage != null &&
             Object.hasOwnProperty.call(t, "volumeDidChangeMessage") &&
-            $root$2.VolumeDidChangeMessageProtobuf.encode(t.volumeDidChangeMessage, e.uint32(450).fork()).ldelim(),
+            l.VolumeDidChangeMessageProtobuf.encode(t.volumeDidChangeMessage, e.uint32(450).fork()).ldelim(),
           t.updateContentItemMessage != null &&
             Object.hasOwnProperty.call(t, "updateContentItemMessage") &&
-            $root$2.UpdateContentItemMessageProtobuf.encode(t.updateContentItemMessage, e.uint32(482).fork()).ldelim(),
+            l.UpdateContentItemMessageProtobuf.encode(t.updateContentItemMessage, e.uint32(482).fork()).ldelim(),
           t.getVolumeControlCapabilitiesMessage != null &&
             Object.hasOwnProperty.call(t, "getVolumeControlCapabilitiesMessage") &&
-            $root$2.GetVolumeControlCapabilitiesMessageProtobuf.encode(
+            l.GetVolumeControlCapabilitiesMessageProtobuf.encode(
               t.getVolumeControlCapabilitiesMessage,
               e.uint32(530).fork(),
             ).ldelim(),
           t.getVolumeControlCapabilitiesResultMessage != null &&
             Object.hasOwnProperty.call(t, "getVolumeControlCapabilitiesResultMessage") &&
-            $root$2.GetVolumeControlCapabilitiesResultMessageProtobuf.encode(
+            l.GetVolumeControlCapabilitiesResultMessageProtobuf.encode(
               t.getVolumeControlCapabilitiesResultMessage,
               e.uint32(538).fork(),
             ).ldelim(),
           t.setDefaultSupportedCommandsMessage != null &&
             Object.hasOwnProperty.call(t, "setDefaultSupportedCommandsMessage") &&
-            $root$2.SetStateMessageProtobuf.encode(t.setDefaultSupportedCommandsMessage, e.uint32(602).fork()).ldelim(),
+            l.SetStateMessageProtobuf.encode(t.setDefaultSupportedCommandsMessage, e.uint32(602).fork()).ldelim(),
           t.uniqueIdentifier != null &&
             Object.hasOwnProperty.call(t, "uniqueIdentifier") &&
             e.uint32(682).string(t.uniqueIdentifier),
           t.error != null &&
             Object.hasOwnProperty.call(t, "error") &&
-            $root$2.ErrorProtobuf.encode(t.error, e.uint32(746).fork()).ldelim(),
+            l.ErrorProtobuf.encode(t.error, e.uint32(746).fork()).ldelim(),
           t.playerClientParticipantsUpdateMessage != null &&
             Object.hasOwnProperty.call(t, "playerClientParticipantsUpdateMessage") &&
-            $root$2.PlayerClientParticipantsUpdateMessageProtobuf.encode(
+            l.PlayerClientParticipantsUpdateMessageProtobuf.encode(
               t.playerClientParticipantsUpdateMessage,
               e.uint32(826).fork(),
             ).ldelim(),
@@ -1293,12 +1880,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.MediaRemoteMessageProtobuf();
+          r = new l.MediaRemoteMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.type = t.int32();
               break;
@@ -1324,101 +1911,103 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 6: {
-              r.sendCommandMessage = $root$2.SendCommandMessageProtobuf.decode(t, t.uint32());
+              r.sendCommandMessage = l.SendCommandMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 7: {
-              r.sendCommandResultMessage = $root$2.SendCommandResultMessageProtobuf.decode(t, t.uint32());
+              r.sendCommandResultMessage = l.SendCommandResultMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 9: {
-              r.setStateMessage = $root$2.SetStateMessageProtobuf.decode(t, t.uint32());
+              r.setStateMessage = l.SetStateMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 16: {
-              r.notificationMessage = $root$2.NotificationMessageProtobuf.decode(t, t.uint32());
+              r.notificationMessage = l.NotificationMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 17: {
-              r.contentItemsChangedNotificationMessage = $root$2.PlaybackQueueProtobuf.decode(t, t.uint32());
+              r.contentItemsChangedNotificationMessage = l.PlaybackQueueProtobuf.decode(t, t.uint32());
               break;
             }
             case 20: {
-              r.deviceInfoMessage = $root$2.DeviceInfoMessageProtobuf.decode(t, t.uint32());
+              r.deviceInfoMessage = l.DeviceInfoMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 21: {
-              r.clientUpdatesConfigMessage = $root$2.ClientUpdatesConfigurationProtobuf.decode(t, t.uint32());
+              r.clientUpdatesConfigMessage = l.ClientUpdatesConfigurationProtobuf.decode(t, t.uint32());
               break;
             }
             case 37: {
-              r.playbackQueueRequest = $root$2.PlaybackQueueRequestProtobuf.decode(t, t.uint32());
+              r.playbackQueueRequest = l.PlaybackQueueRequestProtobuf.decode(t, t.uint32());
               break;
             }
             case 42: {
-              r.connectionState = $root$2.SetConnectionStateMessageProtobuf.decode(t, t.uint32());
+              r.connectionState = l.SetConnectionStateMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 53: {
-              r.getVolumeMessage = $root$2.GetVolumeMessageProtobuf.decode(t, t.uint32());
+              r.getVolumeMessage = l.GetVolumeMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 54: {
-              r.getVolumeResultMessage = $root$2.GetVolumeResultMessageProtobuf.decode(t, t.uint32());
+              r.getVolumeResultMessage = l.GetVolumeResultMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 55: {
-              r.setVolumeMessage = $root$2.SetVolumeMessageProtobuf.decode(t, t.uint32());
+              r.setVolumeMessage = l.SetVolumeMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 56: {
-              r.volumeDidChangeMessage = $root$2.VolumeDidChangeMessageProtobuf.decode(t, t.uint32());
+              r.volumeDidChangeMessage = l.VolumeDidChangeMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 60: {
-              r.updateContentItemMessage = $root$2.UpdateContentItemMessageProtobuf.decode(t, t.uint32());
+              r.updateContentItemMessage = l.UpdateContentItemMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 66: {
-              r.getVolumeControlCapabilitiesMessage = $root$2.GetVolumeControlCapabilitiesMessageProtobuf.decode(
+              r.getVolumeControlCapabilitiesMessage = l.GetVolumeControlCapabilitiesMessageProtobuf.decode(
                 t,
                 t.uint32(),
               );
               break;
             }
             case 67: {
-              r.getVolumeControlCapabilitiesResultMessage =
-                $root$2.GetVolumeControlCapabilitiesResultMessageProtobuf.decode(t, t.uint32());
+              r.getVolumeControlCapabilitiesResultMessage = l.GetVolumeControlCapabilitiesResultMessageProtobuf.decode(
+                t,
+                t.uint32(),
+              );
               break;
             }
             case 75: {
-              r.setDefaultSupportedCommandsMessage = $root$2.SetStateMessageProtobuf.decode(t, t.uint32());
+              r.setDefaultSupportedCommandsMessage = l.SetStateMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 8: {
-              r.getStateMessage = $root$2.GetStateMessageProtobuf.decode(t, t.uint32());
+              r.getStateMessage = l.GetStateMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 93: {
-              r.error = $root$2.ErrorProtobuf.decode(t, t.uint32());
+              r.error = l.ErrorProtobuf.decode(t, t.uint32());
               break;
             }
             case 103: {
-              r.playerClientParticipantsUpdateMessage = $root$2.PlayerClientParticipantsUpdateMessageProtobuf.decode(
+              r.playerClientParticipantsUpdateMessage = l.PlayerClientParticipantsUpdateMessageProtobuf.decode(
                 t,
                 t.uint32(),
               );
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -1523,121 +2112,121 @@ const $Reader$2 = minimalExports.Reader,
             case 132:
               break;
           }
-        if (t.replyIdentifier != null && t.hasOwnProperty("replyIdentifier") && !$util$2.isString(t.replyIdentifier))
+        if (t.replyIdentifier != null && t.hasOwnProperty("replyIdentifier") && !a.isString(t.replyIdentifier))
           return "replyIdentifier: string expected";
         if (
           t.authenticationToken != null &&
           t.hasOwnProperty("authenticationToken") &&
-          !$util$2.isString(t.authenticationToken)
+          !a.isString(t.authenticationToken)
         )
           return "authenticationToken: string expected";
-        if (t.errorCode != null && t.hasOwnProperty("errorCode") && !$util$2.isInteger(t.errorCode))
+        if (t.errorCode != null && t.hasOwnProperty("errorCode") && !a.isInteger(t.errorCode))
           return "errorCode: integer expected";
         if (
           t.timestamp != null &&
           t.hasOwnProperty("timestamp") &&
-          !$util$2.isInteger(t.timestamp) &&
-          !(t.timestamp && $util$2.isInteger(t.timestamp.low) && $util$2.isInteger(t.timestamp.high))
+          !a.isInteger(t.timestamp) &&
+          !(t.timestamp && a.isInteger(t.timestamp.low) && a.isInteger(t.timestamp.high))
         )
           return "timestamp: integer|Long expected";
-        if (t.uniqueIdentifier != null && t.hasOwnProperty("uniqueIdentifier") && !$util$2.isString(t.uniqueIdentifier))
+        if (t.uniqueIdentifier != null && t.hasOwnProperty("uniqueIdentifier") && !a.isString(t.uniqueIdentifier))
           return "uniqueIdentifier: string expected";
         if (t.sendCommandMessage != null && t.hasOwnProperty("sendCommandMessage")) {
-          let e = $root$2.SendCommandMessageProtobuf.verify(t.sendCommandMessage);
+          let e = l.SendCommandMessageProtobuf.verify(t.sendCommandMessage);
           if (e) return "sendCommandMessage." + e;
         }
         if (t.sendCommandResultMessage != null && t.hasOwnProperty("sendCommandResultMessage")) {
-          let e = $root$2.SendCommandResultMessageProtobuf.verify(t.sendCommandResultMessage);
+          let e = l.SendCommandResultMessageProtobuf.verify(t.sendCommandResultMessage);
           if (e) return "sendCommandResultMessage." + e;
         }
         if (t.setStateMessage != null && t.hasOwnProperty("setStateMessage")) {
-          let e = $root$2.SetStateMessageProtobuf.verify(t.setStateMessage);
+          let e = l.SetStateMessageProtobuf.verify(t.setStateMessage);
           if (e) return "setStateMessage." + e;
         }
         if (t.notificationMessage != null && t.hasOwnProperty("notificationMessage")) {
-          let e = $root$2.NotificationMessageProtobuf.verify(t.notificationMessage);
+          let e = l.NotificationMessageProtobuf.verify(t.notificationMessage);
           if (e) return "notificationMessage." + e;
         }
         if (
           t.contentItemsChangedNotificationMessage != null &&
           t.hasOwnProperty("contentItemsChangedNotificationMessage")
         ) {
-          let e = $root$2.PlaybackQueueProtobuf.verify(t.contentItemsChangedNotificationMessage);
+          let e = l.PlaybackQueueProtobuf.verify(t.contentItemsChangedNotificationMessage);
           if (e) return "contentItemsChangedNotificationMessage." + e;
         }
         if (t.deviceInfoMessage != null && t.hasOwnProperty("deviceInfoMessage")) {
-          let e = $root$2.DeviceInfoMessageProtobuf.verify(t.deviceInfoMessage);
+          let e = l.DeviceInfoMessageProtobuf.verify(t.deviceInfoMessage);
           if (e) return "deviceInfoMessage." + e;
         }
         if (t.clientUpdatesConfigMessage != null && t.hasOwnProperty("clientUpdatesConfigMessage")) {
-          let e = $root$2.ClientUpdatesConfigurationProtobuf.verify(t.clientUpdatesConfigMessage);
+          let e = l.ClientUpdatesConfigurationProtobuf.verify(t.clientUpdatesConfigMessage);
           if (e) return "clientUpdatesConfigMessage." + e;
         }
         if (t.playbackQueueRequest != null && t.hasOwnProperty("playbackQueueRequest")) {
-          let e = $root$2.PlaybackQueueRequestProtobuf.verify(t.playbackQueueRequest);
+          let e = l.PlaybackQueueRequestProtobuf.verify(t.playbackQueueRequest);
           if (e) return "playbackQueueRequest." + e;
         }
         if (t.connectionState != null && t.hasOwnProperty("connectionState")) {
-          let e = $root$2.SetConnectionStateMessageProtobuf.verify(t.connectionState);
+          let e = l.SetConnectionStateMessageProtobuf.verify(t.connectionState);
           if (e) return "connectionState." + e;
         }
         if (t.getVolumeMessage != null && t.hasOwnProperty("getVolumeMessage")) {
-          let e = $root$2.GetVolumeMessageProtobuf.verify(t.getVolumeMessage);
+          let e = l.GetVolumeMessageProtobuf.verify(t.getVolumeMessage);
           if (e) return "getVolumeMessage." + e;
         }
         if (t.getVolumeResultMessage != null && t.hasOwnProperty("getVolumeResultMessage")) {
-          let e = $root$2.GetVolumeResultMessageProtobuf.verify(t.getVolumeResultMessage);
+          let e = l.GetVolumeResultMessageProtobuf.verify(t.getVolumeResultMessage);
           if (e) return "getVolumeResultMessage." + e;
         }
         if (t.setVolumeMessage != null && t.hasOwnProperty("setVolumeMessage")) {
-          let e = $root$2.SetVolumeMessageProtobuf.verify(t.setVolumeMessage);
+          let e = l.SetVolumeMessageProtobuf.verify(t.setVolumeMessage);
           if (e) return "setVolumeMessage." + e;
         }
         if (t.volumeDidChangeMessage != null && t.hasOwnProperty("volumeDidChangeMessage")) {
-          let e = $root$2.VolumeDidChangeMessageProtobuf.verify(t.volumeDidChangeMessage);
+          let e = l.VolumeDidChangeMessageProtobuf.verify(t.volumeDidChangeMessage);
           if (e) return "volumeDidChangeMessage." + e;
         }
         if (t.updateContentItemMessage != null && t.hasOwnProperty("updateContentItemMessage")) {
-          let e = $root$2.UpdateContentItemMessageProtobuf.verify(t.updateContentItemMessage);
+          let e = l.UpdateContentItemMessageProtobuf.verify(t.updateContentItemMessage);
           if (e) return "updateContentItemMessage." + e;
         }
         if (t.getVolumeControlCapabilitiesMessage != null && t.hasOwnProperty("getVolumeControlCapabilitiesMessage")) {
-          let e = $root$2.GetVolumeControlCapabilitiesMessageProtobuf.verify(t.getVolumeControlCapabilitiesMessage);
+          let e = l.GetVolumeControlCapabilitiesMessageProtobuf.verify(t.getVolumeControlCapabilitiesMessage);
           if (e) return "getVolumeControlCapabilitiesMessage." + e;
         }
         if (
           t.getVolumeControlCapabilitiesResultMessage != null &&
           t.hasOwnProperty("getVolumeControlCapabilitiesResultMessage")
         ) {
-          let e = $root$2.GetVolumeControlCapabilitiesResultMessageProtobuf.verify(
+          let e = l.GetVolumeControlCapabilitiesResultMessageProtobuf.verify(
             t.getVolumeControlCapabilitiesResultMessage,
           );
           if (e) return "getVolumeControlCapabilitiesResultMessage." + e;
         }
         if (t.setDefaultSupportedCommandsMessage != null && t.hasOwnProperty("setDefaultSupportedCommandsMessage")) {
-          let e = $root$2.SetStateMessageProtobuf.verify(t.setDefaultSupportedCommandsMessage);
+          let e = l.SetStateMessageProtobuf.verify(t.setDefaultSupportedCommandsMessage);
           if (e) return "setDefaultSupportedCommandsMessage." + e;
         }
         if (t.getStateMessage != null && t.hasOwnProperty("getStateMessage")) {
-          let e = $root$2.GetStateMessageProtobuf.verify(t.getStateMessage);
+          let e = l.GetStateMessageProtobuf.verify(t.getStateMessage);
           if (e) return "getStateMessage." + e;
         }
         if (t.error != null && t.hasOwnProperty("error")) {
-          let e = $root$2.ErrorProtobuf.verify(t.error);
+          let e = l.ErrorProtobuf.verify(t.error);
           if (e) return "error." + e;
         }
         if (
           t.playerClientParticipantsUpdateMessage != null &&
           t.hasOwnProperty("playerClientParticipantsUpdateMessage")
         ) {
-          let e = $root$2.PlayerClientParticipantsUpdateMessageProtobuf.verify(t.playerClientParticipantsUpdateMessage);
+          let e = l.PlayerClientParticipantsUpdateMessageProtobuf.verify(t.playerClientParticipantsUpdateMessage);
           if (e) return "playerClientParticipantsUpdateMessage." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.MediaRemoteMessageProtobuf) return t;
-        let e = new $root$2.MediaRemoteMessageProtobuf();
+        if (t instanceof l.MediaRemoteMessageProtobuf) return t;
+        let e = new l.MediaRemoteMessageProtobuf();
         switch (t.type) {
           default:
             if (typeof t.type == "number") {
@@ -2031,125 +2620,122 @@ const $Reader$2 = minimalExports.Reader,
           t.authenticationToken != null && (e.authenticationToken = String(t.authenticationToken)),
           t.errorCode != null && (e.errorCode = t.errorCode >>> 0),
           t.timestamp != null &&
-            ($util$2.Long
-              ? ((e.timestamp = $util$2.Long.fromValue(t.timestamp)).unsigned = !0)
+            (a.Long
+              ? ((e.timestamp = a.Long.fromValue(t.timestamp)).unsigned = !0)
               : typeof t.timestamp == "string"
                 ? (e.timestamp = parseInt(t.timestamp, 10))
                 : typeof t.timestamp == "number"
                   ? (e.timestamp = t.timestamp)
                   : typeof t.timestamp == "object" &&
-                    (e.timestamp = new $util$2.LongBits(t.timestamp.low >>> 0, t.timestamp.high >>> 0).toNumber(!0))),
+                    (e.timestamp = new a.LongBits(t.timestamp.low >>> 0, t.timestamp.high >>> 0).toNumber(!0))),
           t.uniqueIdentifier != null && (e.uniqueIdentifier = String(t.uniqueIdentifier)),
           t.sendCommandMessage != null)
         ) {
           if (typeof t.sendCommandMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.sendCommandMessage: object expected");
-          e.sendCommandMessage = $root$2.SendCommandMessageProtobuf.fromObject(t.sendCommandMessage);
+          e.sendCommandMessage = l.SendCommandMessageProtobuf.fromObject(t.sendCommandMessage);
         }
         if (t.sendCommandResultMessage != null) {
           if (typeof t.sendCommandResultMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.sendCommandResultMessage: object expected");
-          e.sendCommandResultMessage = $root$2.SendCommandResultMessageProtobuf.fromObject(t.sendCommandResultMessage);
+          e.sendCommandResultMessage = l.SendCommandResultMessageProtobuf.fromObject(t.sendCommandResultMessage);
         }
         if (t.setStateMessage != null) {
           if (typeof t.setStateMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.setStateMessage: object expected");
-          e.setStateMessage = $root$2.SetStateMessageProtobuf.fromObject(t.setStateMessage);
+          e.setStateMessage = l.SetStateMessageProtobuf.fromObject(t.setStateMessage);
         }
         if (t.notificationMessage != null) {
           if (typeof t.notificationMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.notificationMessage: object expected");
-          e.notificationMessage = $root$2.NotificationMessageProtobuf.fromObject(t.notificationMessage);
+          e.notificationMessage = l.NotificationMessageProtobuf.fromObject(t.notificationMessage);
         }
         if (t.contentItemsChangedNotificationMessage != null) {
           if (typeof t.contentItemsChangedNotificationMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.contentItemsChangedNotificationMessage: object expected");
-          e.contentItemsChangedNotificationMessage = $root$2.PlaybackQueueProtobuf.fromObject(
+          e.contentItemsChangedNotificationMessage = l.PlaybackQueueProtobuf.fromObject(
             t.contentItemsChangedNotificationMessage,
           );
         }
         if (t.deviceInfoMessage != null) {
           if (typeof t.deviceInfoMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.deviceInfoMessage: object expected");
-          e.deviceInfoMessage = $root$2.DeviceInfoMessageProtobuf.fromObject(t.deviceInfoMessage);
+          e.deviceInfoMessage = l.DeviceInfoMessageProtobuf.fromObject(t.deviceInfoMessage);
         }
         if (t.clientUpdatesConfigMessage != null) {
           if (typeof t.clientUpdatesConfigMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.clientUpdatesConfigMessage: object expected");
-          e.clientUpdatesConfigMessage = $root$2.ClientUpdatesConfigurationProtobuf.fromObject(
-            t.clientUpdatesConfigMessage,
-          );
+          e.clientUpdatesConfigMessage = l.ClientUpdatesConfigurationProtobuf.fromObject(t.clientUpdatesConfigMessage);
         }
         if (t.playbackQueueRequest != null) {
           if (typeof t.playbackQueueRequest != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.playbackQueueRequest: object expected");
-          e.playbackQueueRequest = $root$2.PlaybackQueueRequestProtobuf.fromObject(t.playbackQueueRequest);
+          e.playbackQueueRequest = l.PlaybackQueueRequestProtobuf.fromObject(t.playbackQueueRequest);
         }
         if (t.connectionState != null) {
           if (typeof t.connectionState != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.connectionState: object expected");
-          e.connectionState = $root$2.SetConnectionStateMessageProtobuf.fromObject(t.connectionState);
+          e.connectionState = l.SetConnectionStateMessageProtobuf.fromObject(t.connectionState);
         }
         if (t.getVolumeMessage != null) {
           if (typeof t.getVolumeMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.getVolumeMessage: object expected");
-          e.getVolumeMessage = $root$2.GetVolumeMessageProtobuf.fromObject(t.getVolumeMessage);
+          e.getVolumeMessage = l.GetVolumeMessageProtobuf.fromObject(t.getVolumeMessage);
         }
         if (t.getVolumeResultMessage != null) {
           if (typeof t.getVolumeResultMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.getVolumeResultMessage: object expected");
-          e.getVolumeResultMessage = $root$2.GetVolumeResultMessageProtobuf.fromObject(t.getVolumeResultMessage);
+          e.getVolumeResultMessage = l.GetVolumeResultMessageProtobuf.fromObject(t.getVolumeResultMessage);
         }
         if (t.setVolumeMessage != null) {
           if (typeof t.setVolumeMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.setVolumeMessage: object expected");
-          e.setVolumeMessage = $root$2.SetVolumeMessageProtobuf.fromObject(t.setVolumeMessage);
+          e.setVolumeMessage = l.SetVolumeMessageProtobuf.fromObject(t.setVolumeMessage);
         }
         if (t.volumeDidChangeMessage != null) {
           if (typeof t.volumeDidChangeMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.volumeDidChangeMessage: object expected");
-          e.volumeDidChangeMessage = $root$2.VolumeDidChangeMessageProtobuf.fromObject(t.volumeDidChangeMessage);
+          e.volumeDidChangeMessage = l.VolumeDidChangeMessageProtobuf.fromObject(t.volumeDidChangeMessage);
         }
         if (t.updateContentItemMessage != null) {
           if (typeof t.updateContentItemMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.updateContentItemMessage: object expected");
-          e.updateContentItemMessage = $root$2.UpdateContentItemMessageProtobuf.fromObject(t.updateContentItemMessage);
+          e.updateContentItemMessage = l.UpdateContentItemMessageProtobuf.fromObject(t.updateContentItemMessage);
         }
         if (t.getVolumeControlCapabilitiesMessage != null) {
           if (typeof t.getVolumeControlCapabilitiesMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.getVolumeControlCapabilitiesMessage: object expected");
-          e.getVolumeControlCapabilitiesMessage = $root$2.GetVolumeControlCapabilitiesMessageProtobuf.fromObject(
+          e.getVolumeControlCapabilitiesMessage = l.GetVolumeControlCapabilitiesMessageProtobuf.fromObject(
             t.getVolumeControlCapabilitiesMessage,
           );
         }
         if (t.getVolumeControlCapabilitiesResultMessage != null) {
           if (typeof t.getVolumeControlCapabilitiesResultMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.getVolumeControlCapabilitiesResultMessage: object expected");
-          e.getVolumeControlCapabilitiesResultMessage =
-            $root$2.GetVolumeControlCapabilitiesResultMessageProtobuf.fromObject(
-              t.getVolumeControlCapabilitiesResultMessage,
-            );
+          e.getVolumeControlCapabilitiesResultMessage = l.GetVolumeControlCapabilitiesResultMessageProtobuf.fromObject(
+            t.getVolumeControlCapabilitiesResultMessage,
+          );
         }
         if (t.setDefaultSupportedCommandsMessage != null) {
           if (typeof t.setDefaultSupportedCommandsMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.setDefaultSupportedCommandsMessage: object expected");
-          e.setDefaultSupportedCommandsMessage = $root$2.SetStateMessageProtobuf.fromObject(
+          e.setDefaultSupportedCommandsMessage = l.SetStateMessageProtobuf.fromObject(
             t.setDefaultSupportedCommandsMessage,
           );
         }
         if (t.getStateMessage != null) {
           if (typeof t.getStateMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.getStateMessage: object expected");
-          e.getStateMessage = $root$2.GetStateMessageProtobuf.fromObject(t.getStateMessage);
+          e.getStateMessage = l.GetStateMessageProtobuf.fromObject(t.getStateMessage);
         }
         if (t.error != null) {
           if (typeof t.error != "object") throw TypeError(".MediaRemoteMessageProtobuf.error: object expected");
-          e.error = $root$2.ErrorProtobuf.fromObject(t.error);
+          e.error = l.ErrorProtobuf.fromObject(t.error);
         }
         if (t.playerClientParticipantsUpdateMessage != null) {
           if (typeof t.playerClientParticipantsUpdateMessage != "object")
             throw TypeError(".MediaRemoteMessageProtobuf.playerClientParticipantsUpdateMessage: object expected");
-          e.playerClientParticipantsUpdateMessage = $root$2.PlayerClientParticipantsUpdateMessageProtobuf.fromObject(
+          e.playerClientParticipantsUpdateMessage = l.PlayerClientParticipantsUpdateMessageProtobuf.fromObject(
             t.playerClientParticipantsUpdateMessage,
           );
         }
@@ -2164,9 +2750,9 @@ const $Reader$2 = minimalExports.Reader,
             (n.replyIdentifier = ""),
             (n.authenticationToken = ""),
             (n.errorCode = 0),
-            $util$2.Long)
+            a.Long)
           ) {
-            let r = new $util$2.Long(0, 0, !0);
+            let r = new a.Long(0, 0, !0);
             n.timestamp = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.timestamp = e.longs === String ? "0" : 0;
           ((n.sendCommandMessage = null),
@@ -2196,9 +2782,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("type") &&
             (n.type =
               e.enums === String
-                ? $root$2.MediaRemoteMessageType[t.type] === void 0
+                ? l.MediaRemoteMessageType[t.type] === void 0
                   ? t.type
-                  : $root$2.MediaRemoteMessageType[t.type]
+                  : l.MediaRemoteMessageType[t.type]
                 : t.type),
           t.replyIdentifier != null && t.hasOwnProperty("replyIdentifier") && (n.replyIdentifier = t.replyIdentifier),
           t.authenticationToken != null &&
@@ -2211,93 +2797,86 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.timestamp = e.longs === String ? String(t.timestamp) : t.timestamp)
               : (n.timestamp =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.timestamp)
+                    ? a.Long.prototype.toString.call(t.timestamp)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.timestamp.low >>> 0, t.timestamp.high >>> 0).toNumber(!0)
+                      ? new a.LongBits(t.timestamp.low >>> 0, t.timestamp.high >>> 0).toNumber(!0)
                       : t.timestamp)),
           t.sendCommandMessage != null &&
             t.hasOwnProperty("sendCommandMessage") &&
-            (n.sendCommandMessage = $root$2.SendCommandMessageProtobuf.toObject(t.sendCommandMessage, e)),
+            (n.sendCommandMessage = l.SendCommandMessageProtobuf.toObject(t.sendCommandMessage, e)),
           t.sendCommandResultMessage != null &&
             t.hasOwnProperty("sendCommandResultMessage") &&
-            (n.sendCommandResultMessage = $root$2.SendCommandResultMessageProtobuf.toObject(
-              t.sendCommandResultMessage,
-              e,
-            )),
+            (n.sendCommandResultMessage = l.SendCommandResultMessageProtobuf.toObject(t.sendCommandResultMessage, e)),
           t.getStateMessage != null &&
             t.hasOwnProperty("getStateMessage") &&
-            (n.getStateMessage = $root$2.GetStateMessageProtobuf.toObject(t.getStateMessage, e)),
+            (n.getStateMessage = l.GetStateMessageProtobuf.toObject(t.getStateMessage, e)),
           t.setStateMessage != null &&
             t.hasOwnProperty("setStateMessage") &&
-            (n.setStateMessage = $root$2.SetStateMessageProtobuf.toObject(t.setStateMessage, e)),
+            (n.setStateMessage = l.SetStateMessageProtobuf.toObject(t.setStateMessage, e)),
           t.notificationMessage != null &&
             t.hasOwnProperty("notificationMessage") &&
-            (n.notificationMessage = $root$2.NotificationMessageProtobuf.toObject(t.notificationMessage, e)),
+            (n.notificationMessage = l.NotificationMessageProtobuf.toObject(t.notificationMessage, e)),
           t.contentItemsChangedNotificationMessage != null &&
             t.hasOwnProperty("contentItemsChangedNotificationMessage") &&
-            (n.contentItemsChangedNotificationMessage = $root$2.PlaybackQueueProtobuf.toObject(
+            (n.contentItemsChangedNotificationMessage = l.PlaybackQueueProtobuf.toObject(
               t.contentItemsChangedNotificationMessage,
               e,
             )),
           t.deviceInfoMessage != null &&
             t.hasOwnProperty("deviceInfoMessage") &&
-            (n.deviceInfoMessage = $root$2.DeviceInfoMessageProtobuf.toObject(t.deviceInfoMessage, e)),
+            (n.deviceInfoMessage = l.DeviceInfoMessageProtobuf.toObject(t.deviceInfoMessage, e)),
           t.clientUpdatesConfigMessage != null &&
             t.hasOwnProperty("clientUpdatesConfigMessage") &&
-            (n.clientUpdatesConfigMessage = $root$2.ClientUpdatesConfigurationProtobuf.toObject(
+            (n.clientUpdatesConfigMessage = l.ClientUpdatesConfigurationProtobuf.toObject(
               t.clientUpdatesConfigMessage,
               e,
             )),
           t.playbackQueueRequest != null &&
             t.hasOwnProperty("playbackQueueRequest") &&
-            (n.playbackQueueRequest = $root$2.PlaybackQueueRequestProtobuf.toObject(t.playbackQueueRequest, e)),
+            (n.playbackQueueRequest = l.PlaybackQueueRequestProtobuf.toObject(t.playbackQueueRequest, e)),
           t.connectionState != null &&
             t.hasOwnProperty("connectionState") &&
-            (n.connectionState = $root$2.SetConnectionStateMessageProtobuf.toObject(t.connectionState, e)),
+            (n.connectionState = l.SetConnectionStateMessageProtobuf.toObject(t.connectionState, e)),
           t.getVolumeMessage != null &&
             t.hasOwnProperty("getVolumeMessage") &&
-            (n.getVolumeMessage = $root$2.GetVolumeMessageProtobuf.toObject(t.getVolumeMessage, e)),
+            (n.getVolumeMessage = l.GetVolumeMessageProtobuf.toObject(t.getVolumeMessage, e)),
           t.getVolumeResultMessage != null &&
             t.hasOwnProperty("getVolumeResultMessage") &&
-            (n.getVolumeResultMessage = $root$2.GetVolumeResultMessageProtobuf.toObject(t.getVolumeResultMessage, e)),
+            (n.getVolumeResultMessage = l.GetVolumeResultMessageProtobuf.toObject(t.getVolumeResultMessage, e)),
           t.setVolumeMessage != null &&
             t.hasOwnProperty("setVolumeMessage") &&
-            (n.setVolumeMessage = $root$2.SetVolumeMessageProtobuf.toObject(t.setVolumeMessage, e)),
+            (n.setVolumeMessage = l.SetVolumeMessageProtobuf.toObject(t.setVolumeMessage, e)),
           t.volumeDidChangeMessage != null &&
             t.hasOwnProperty("volumeDidChangeMessage") &&
-            (n.volumeDidChangeMessage = $root$2.VolumeDidChangeMessageProtobuf.toObject(t.volumeDidChangeMessage, e)),
+            (n.volumeDidChangeMessage = l.VolumeDidChangeMessageProtobuf.toObject(t.volumeDidChangeMessage, e)),
           t.updateContentItemMessage != null &&
             t.hasOwnProperty("updateContentItemMessage") &&
-            (n.updateContentItemMessage = $root$2.UpdateContentItemMessageProtobuf.toObject(
-              t.updateContentItemMessage,
-              e,
-            )),
+            (n.updateContentItemMessage = l.UpdateContentItemMessageProtobuf.toObject(t.updateContentItemMessage, e)),
           t.getVolumeControlCapabilitiesMessage != null &&
             t.hasOwnProperty("getVolumeControlCapabilitiesMessage") &&
-            (n.getVolumeControlCapabilitiesMessage = $root$2.GetVolumeControlCapabilitiesMessageProtobuf.toObject(
+            (n.getVolumeControlCapabilitiesMessage = l.GetVolumeControlCapabilitiesMessageProtobuf.toObject(
               t.getVolumeControlCapabilitiesMessage,
               e,
             )),
           t.getVolumeControlCapabilitiesResultMessage != null &&
             t.hasOwnProperty("getVolumeControlCapabilitiesResultMessage") &&
-            (n.getVolumeControlCapabilitiesResultMessage =
-              $root$2.GetVolumeControlCapabilitiesResultMessageProtobuf.toObject(
-                t.getVolumeControlCapabilitiesResultMessage,
-                e,
-              )),
+            (n.getVolumeControlCapabilitiesResultMessage = l.GetVolumeControlCapabilitiesResultMessageProtobuf.toObject(
+              t.getVolumeControlCapabilitiesResultMessage,
+              e,
+            )),
           t.setDefaultSupportedCommandsMessage != null &&
             t.hasOwnProperty("setDefaultSupportedCommandsMessage") &&
-            (n.setDefaultSupportedCommandsMessage = $root$2.SetStateMessageProtobuf.toObject(
+            (n.setDefaultSupportedCommandsMessage = l.SetStateMessageProtobuf.toObject(
               t.setDefaultSupportedCommandsMessage,
               e,
             )),
           t.uniqueIdentifier != null &&
             t.hasOwnProperty("uniqueIdentifier") &&
             (n.uniqueIdentifier = t.uniqueIdentifier),
-          t.error != null && t.hasOwnProperty("error") && (n.error = $root$2.ErrorProtobuf.toObject(t.error, e)),
+          t.error != null && t.hasOwnProperty("error") && (n.error = l.ErrorProtobuf.toObject(t.error, e)),
           t.playerClientParticipantsUpdateMessage != null &&
             t.hasOwnProperty("playerClientParticipantsUpdateMessage") &&
-            (n.playerClientParticipantsUpdateMessage = $root$2.PlayerClientParticipantsUpdateMessageProtobuf.toObject(
+            (n.playerClientParticipantsUpdateMessage = l.PlayerClientParticipantsUpdateMessageProtobuf.toObject(
               t.playerClientParticipantsUpdateMessage,
               e,
             )),
@@ -2305,7 +2884,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/MediaRemoteMessageProtobuf");
@@ -2313,7 +2892,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  ClientUpdatesConfigurationProtobuf = ($root$2.ClientUpdatesConfigurationProtobuf = (() => {
+  ve = (l.ClientUpdatesConfigurationProtobuf = (() => {
     function o(i) {
       if (((this.subscribedPlayerPaths = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -2325,13 +2904,13 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.keyboardUpdates = !1),
       (o.prototype.outputDeviceUpdates = !1),
       (o.prototype.systemEndpointUpdates = !1),
-      (o.prototype.subscribedPlayerPaths = $util$2.emptyArray),
+      (o.prototype.subscribedPlayerPaths = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.nowPlayingUpdates != null &&
             Object.hasOwnProperty.call(t, "nowPlayingUpdates") &&
             e.uint32(8).bool(t.nowPlayingUpdates),
@@ -2353,19 +2932,19 @@ const $Reader$2 = minimalExports.Reader,
           t.subscribedPlayerPaths != null && t.subscribedPlayerPaths.length)
         )
           for (let n = 0; n < t.subscribedPlayerPaths.length; ++n)
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.subscribedPlayerPaths[n], e.uint32(58).fork()).ldelim();
+            l.NowPlayingPlayerPathProtobuf.encode(t.subscribedPlayerPaths[n], e.uint32(58).fork()).ldelim();
         return e;
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.ClientUpdatesConfigurationProtobuf();
+          r = new l.ClientUpdatesConfigurationProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.nowPlayingUpdates = t.bool();
               break;
@@ -2392,18 +2971,18 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 7: {
               ((r.subscribedPlayerPaths && r.subscribedPlayerPaths.length) || (r.subscribedPlayerPaths = []),
-                r.subscribedPlayerPaths.push($root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32())));
+                r.subscribedPlayerPaths.push(l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32())));
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -2434,15 +3013,15 @@ const $Reader$2 = minimalExports.Reader,
         if (t.subscribedPlayerPaths != null && t.hasOwnProperty("subscribedPlayerPaths")) {
           if (!Array.isArray(t.subscribedPlayerPaths)) return "subscribedPlayerPaths: array expected";
           for (let e = 0; e < t.subscribedPlayerPaths.length; ++e) {
-            let n = $root$2.NowPlayingPlayerPathProtobuf.verify(t.subscribedPlayerPaths[e]);
+            let n = l.NowPlayingPlayerPathProtobuf.verify(t.subscribedPlayerPaths[e]);
             if (n) return "subscribedPlayerPaths." + n;
           }
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.ClientUpdatesConfigurationProtobuf) return t;
-        let e = new $root$2.ClientUpdatesConfigurationProtobuf();
+        if (t instanceof l.ClientUpdatesConfigurationProtobuf) return t;
+        let e = new l.ClientUpdatesConfigurationProtobuf();
         if (
           (t.nowPlayingUpdates != null && (e.nowPlayingUpdates = !!t.nowPlayingUpdates),
           t.artworkUpdates != null && (e.artworkUpdates = !!t.artworkUpdates),
@@ -2458,7 +3037,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.subscribedPlayerPaths.length; ++n) {
             if (typeof t.subscribedPlayerPaths[n] != "object")
               throw TypeError(".ClientUpdatesConfigurationProtobuf.subscribedPlayerPaths: object expected");
-            e.subscribedPlayerPaths[n] = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.subscribedPlayerPaths[n]);
+            e.subscribedPlayerPaths[n] = l.NowPlayingPlayerPathProtobuf.fromObject(t.subscribedPlayerPaths[n]);
           }
         }
         return e;
@@ -2491,12 +3070,12 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.subscribedPlayerPaths = [];
           for (let r = 0; r < t.subscribedPlayerPaths.length; ++r)
-            n.subscribedPlayerPaths[r] = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.subscribedPlayerPaths[r], e);
+            n.subscribedPlayerPaths[r] = l.NowPlayingPlayerPathProtobuf.toObject(t.subscribedPlayerPaths[r], e);
         }
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/ClientUpdatesConfigurationProtobuf");
@@ -2504,12 +3083,12 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  OriginType = ($root$2.OriginType = (() => {
+  Ce = (l.OriginType = (() => {
     const o = {},
       i = Object.create(o);
     return ((i[(o[1] = "Local")] = 1), (i[(o[2] = "Custom")] = 2), i);
   })()),
-  NowPlayingClientVisibility = ($root$2.NowPlayingClientVisibility = (() => {
+  Te = (l.NowPlayingClientVisibility = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -2520,7 +3099,7 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  OriginProtobuf = ($root$2.OriginProtobuf = (() => {
+  Ae = (l.OriginProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -2535,13 +3114,13 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(8).int32(t.type),
           t.displayName != null && Object.hasOwnProperty.call(t, "displayName") && e.uint32(18).string(t.displayName),
           t.identifier != null && Object.hasOwnProperty.call(t, "identifier") && e.uint32(24).int32(t.identifier),
           t.deviceInfoDeprecated != null &&
             Object.hasOwnProperty.call(t, "deviceInfoDeprecated") &&
-            $root$2.DeviceInfoMessageProtobuf.encode(t.deviceInfoDeprecated, e.uint32(34).fork()).ldelim(),
+            l.DeviceInfoMessageProtobuf.encode(t.deviceInfoDeprecated, e.uint32(34).fork()).ldelim(),
           t.isLocallyHosted != null &&
             Object.hasOwnProperty.call(t, "isLocallyHosted") &&
             e.uint32(40).bool(t.isLocallyHosted),
@@ -2552,12 +3131,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.OriginProtobuf();
+          r = new l.OriginProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.type = t.int32();
               break;
@@ -2571,7 +3150,7 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 4: {
-              r.deviceInfoDeprecated = $root$2.DeviceInfoMessageProtobuf.decode(t, t.uint32());
+              r.deviceInfoDeprecated = l.DeviceInfoMessageProtobuf.decode(t, t.uint32());
               break;
             }
             case 5: {
@@ -2579,14 +3158,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -2598,12 +3177,12 @@ const $Reader$2 = minimalExports.Reader,
             case 2:
               break;
           }
-        if (t.displayName != null && t.hasOwnProperty("displayName") && !$util$2.isString(t.displayName))
+        if (t.displayName != null && t.hasOwnProperty("displayName") && !a.isString(t.displayName))
           return "displayName: string expected";
-        if (t.identifier != null && t.hasOwnProperty("identifier") && !$util$2.isInteger(t.identifier))
+        if (t.identifier != null && t.hasOwnProperty("identifier") && !a.isInteger(t.identifier))
           return "identifier: integer expected";
         if (t.deviceInfoDeprecated != null && t.hasOwnProperty("deviceInfoDeprecated")) {
-          let e = $root$2.DeviceInfoMessageProtobuf.verify(t.deviceInfoDeprecated);
+          let e = l.DeviceInfoMessageProtobuf.verify(t.deviceInfoDeprecated);
           if (e) return "deviceInfoDeprecated." + e;
         }
         return t.isLocallyHosted != null && t.hasOwnProperty("isLocallyHosted") && typeof t.isLocallyHosted != "boolean"
@@ -2611,8 +3190,8 @@ const $Reader$2 = minimalExports.Reader,
           : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.OriginProtobuf) return t;
-        let e = new $root$2.OriginProtobuf();
+        if (t instanceof l.OriginProtobuf) return t;
+        let e = new l.OriginProtobuf();
         switch (t.type) {
           default:
             if (typeof t.type == "number") {
@@ -2636,7 +3215,7 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           if (typeof t.deviceInfoDeprecated != "object")
             throw TypeError(".OriginProtobuf.deviceInfoDeprecated: object expected");
-          e.deviceInfoDeprecated = $root$2.DeviceInfoMessageProtobuf.fromObject(t.deviceInfoDeprecated);
+          e.deviceInfoDeprecated = l.DeviceInfoMessageProtobuf.fromObject(t.deviceInfoDeprecated);
         }
         return (t.isLocallyHosted != null && (e.isLocallyHosted = !!t.isLocallyHosted), e);
       }),
@@ -2652,23 +3231,18 @@ const $Reader$2 = minimalExports.Reader,
             (n.isLocallyHosted = !1)),
           t.type != null &&
             t.hasOwnProperty("type") &&
-            (n.type =
-              e.enums === String
-                ? $root$2.OriginType[t.type] === void 0
-                  ? t.type
-                  : $root$2.OriginType[t.type]
-                : t.type),
+            (n.type = e.enums === String ? (l.OriginType[t.type] === void 0 ? t.type : l.OriginType[t.type]) : t.type),
           t.displayName != null && t.hasOwnProperty("displayName") && (n.displayName = t.displayName),
           t.identifier != null && t.hasOwnProperty("identifier") && (n.identifier = t.identifier),
           t.deviceInfoDeprecated != null &&
             t.hasOwnProperty("deviceInfoDeprecated") &&
-            (n.deviceInfoDeprecated = $root$2.DeviceInfoMessageProtobuf.toObject(t.deviceInfoDeprecated, e)),
+            (n.deviceInfoDeprecated = l.DeviceInfoMessageProtobuf.toObject(t.deviceInfoDeprecated, e)),
           t.isLocallyHosted != null && t.hasOwnProperty("isLocallyHosted") && (n.isLocallyHosted = t.isLocallyHosted),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/OriginProtobuf");
@@ -2676,7 +3250,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  NowPlayingClientProtobuf = ($root$2.NowPlayingClientProtobuf = (() => {
+  Me = (l.NowPlayingClientProtobuf = (() => {
     function o(i) {
       if (((this.extendedBundleIdentifierHierarchy = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -2689,7 +3263,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.nowPlayingVisibility = 0),
       (o.prototype.tintColor = null),
       (o.prototype.displayName = ""),
-      (o.prototype.extendedBundleIdentifierHierarchy = $util$2.emptyArray),
+      (o.prototype.extendedBundleIdentifierHierarchy = a.emptyArray),
       (o.prototype.isEmptyDeprecated = !1),
       (o.prototype.iconURL = ""),
       (o.create = function (t) {
@@ -2697,7 +3271,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.processIdentifier != null &&
             Object.hasOwnProperty.call(t, "processIdentifier") &&
             e.uint32(8).int32(t.processIdentifier),
@@ -2715,7 +3289,7 @@ const $Reader$2 = minimalExports.Reader,
             e.uint32(40).int32(t.nowPlayingVisibility),
           t.tintColor != null &&
             Object.hasOwnProperty.call(t, "tintColor") &&
-            $root$2.ColorProtobuf.encode(t.tintColor, e.uint32(50).fork()).ldelim(),
+            l.ColorProtobuf.encode(t.tintColor, e.uint32(50).fork()).ldelim(),
           t.displayName != null && Object.hasOwnProperty.call(t, "displayName") && e.uint32(58).string(t.displayName),
           t.extendedBundleIdentifierHierarchy != null && t.extendedBundleIdentifierHierarchy.length)
         )
@@ -2733,12 +3307,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.NowPlayingClientProtobuf();
+          r = new l.NowPlayingClientProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.processIdentifier = t.int32();
               break;
@@ -2760,7 +3334,7 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 6: {
-              r.tintColor = $root$2.ColorProtobuf.decode(t, t.uint32());
+              r.tintColor = l.ColorProtobuf.decode(t, t.uint32());
               break;
             }
             case 7: {
@@ -2782,35 +3356,31 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (
-          t.processIdentifier != null &&
-          t.hasOwnProperty("processIdentifier") &&
-          !$util$2.isInteger(t.processIdentifier)
-        )
+        if (t.processIdentifier != null && t.hasOwnProperty("processIdentifier") && !a.isInteger(t.processIdentifier))
           return "processIdentifier: integer expected";
-        if (t.bundleIdentifier != null && t.hasOwnProperty("bundleIdentifier") && !$util$2.isString(t.bundleIdentifier))
+        if (t.bundleIdentifier != null && t.hasOwnProperty("bundleIdentifier") && !a.isString(t.bundleIdentifier))
           return "bundleIdentifier: string expected";
         if (
           t.parentApplicationBundleIdentifier != null &&
           t.hasOwnProperty("parentApplicationBundleIdentifier") &&
-          !$util$2.isString(t.parentApplicationBundleIdentifier)
+          !a.isString(t.parentApplicationBundleIdentifier)
         )
           return "parentApplicationBundleIdentifier: string expected";
         if (
           t.processUserIdentifier != null &&
           t.hasOwnProperty("processUserIdentifier") &&
-          !$util$2.isInteger(t.processUserIdentifier)
+          !a.isInteger(t.processUserIdentifier)
         )
           return "processUserIdentifier: integer expected";
         if (t.nowPlayingVisibility != null && t.hasOwnProperty("nowPlayingVisibility"))
@@ -2824,29 +3394,29 @@ const $Reader$2 = minimalExports.Reader,
               break;
           }
         if (t.tintColor != null && t.hasOwnProperty("tintColor")) {
-          let e = $root$2.ColorProtobuf.verify(t.tintColor);
+          let e = l.ColorProtobuf.verify(t.tintColor);
           if (e) return "tintColor." + e;
         }
-        if (t.displayName != null && t.hasOwnProperty("displayName") && !$util$2.isString(t.displayName))
+        if (t.displayName != null && t.hasOwnProperty("displayName") && !a.isString(t.displayName))
           return "displayName: string expected";
         if (t.extendedBundleIdentifierHierarchy != null && t.hasOwnProperty("extendedBundleIdentifierHierarchy")) {
           if (!Array.isArray(t.extendedBundleIdentifierHierarchy))
             return "extendedBundleIdentifierHierarchy: array expected";
           for (let e = 0; e < t.extendedBundleIdentifierHierarchy.length; ++e)
-            if (!$util$2.isString(t.extendedBundleIdentifierHierarchy[e]))
+            if (!a.isString(t.extendedBundleIdentifierHierarchy[e]))
               return "extendedBundleIdentifierHierarchy: string[] expected";
         }
         return t.isEmptyDeprecated != null &&
           t.hasOwnProperty("isEmptyDeprecated") &&
           typeof t.isEmptyDeprecated != "boolean"
           ? "isEmptyDeprecated: boolean expected"
-          : t.iconURL != null && t.hasOwnProperty("iconURL") && !$util$2.isString(t.iconURL)
+          : t.iconURL != null && t.hasOwnProperty("iconURL") && !a.isString(t.iconURL)
             ? "iconURL: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.NowPlayingClientProtobuf) return t;
-        let e = new $root$2.NowPlayingClientProtobuf();
+        if (t instanceof l.NowPlayingClientProtobuf) return t;
+        let e = new l.NowPlayingClientProtobuf();
         switch (
           (t.processIdentifier != null && (e.processIdentifier = t.processIdentifier | 0),
           t.bundleIdentifier != null && (e.bundleIdentifier = String(t.bundleIdentifier)),
@@ -2880,7 +3450,7 @@ const $Reader$2 = minimalExports.Reader,
         }
         if (t.tintColor != null) {
           if (typeof t.tintColor != "object") throw TypeError(".NowPlayingClientProtobuf.tintColor: object expected");
-          e.tintColor = $root$2.ColorProtobuf.fromObject(t.tintColor);
+          e.tintColor = l.ColorProtobuf.fromObject(t.tintColor);
         }
         if ((t.displayName != null && (e.displayName = String(t.displayName)), t.extendedBundleIdentifierHierarchy)) {
           if (!Array.isArray(t.extendedBundleIdentifierHierarchy))
@@ -2926,13 +3496,13 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("nowPlayingVisibility") &&
             (n.nowPlayingVisibility =
               e.enums === String
-                ? $root$2.NowPlayingClientVisibility[t.nowPlayingVisibility] === void 0
+                ? l.NowPlayingClientVisibility[t.nowPlayingVisibility] === void 0
                   ? t.nowPlayingVisibility
-                  : $root$2.NowPlayingClientVisibility[t.nowPlayingVisibility]
+                  : l.NowPlayingClientVisibility[t.nowPlayingVisibility]
                 : t.nowPlayingVisibility),
           t.tintColor != null &&
             t.hasOwnProperty("tintColor") &&
-            (n.tintColor = $root$2.ColorProtobuf.toObject(t.tintColor, e)),
+            (n.tintColor = l.ColorProtobuf.toObject(t.tintColor, e)),
           t.displayName != null && t.hasOwnProperty("displayName") && (n.displayName = t.displayName),
           t.extendedBundleIdentifierHierarchy && t.extendedBundleIdentifierHierarchy.length)
         ) {
@@ -2949,7 +3519,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/NowPlayingClientProtobuf");
@@ -2957,7 +3527,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  NowPlayingPlayerProtobuf = ($root$2.NowPlayingPlayerProtobuf = (() => {
+  me = (l.NowPlayingPlayerProtobuf = (() => {
     function o(i) {
       if (((this.mxSessionID = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -2966,7 +3536,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.identifier = ""),
       (o.prototype.displayName = ""),
       (o.prototype.audioSessionType = 0),
-      (o.prototype.mxSessionID = $util$2.emptyArray),
+      (o.prototype.mxSessionID = a.emptyArray),
       (o.prototype.audioSessionID = 0),
       (o.prototype.iconURL = ""),
       (o.create = function (t) {
@@ -2974,7 +3544,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.identifier != null && Object.hasOwnProperty.call(t, "identifier") && e.uint32(10).string(t.identifier),
           t.displayName != null && Object.hasOwnProperty.call(t, "displayName") && e.uint32(18).string(t.displayName),
           t.audioSessionType != null &&
@@ -2995,12 +3565,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.NowPlayingPlayerProtobuf();
+          r = new l.NowPlayingPlayerProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.identifier = t.string();
               break;
@@ -3014,9 +3584,9 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 5: {
-              if (((r.mxSessionID && r.mxSessionID.length) || (r.mxSessionID = []), (l & 7) === 2)) {
-                let a = t.uint32() + t.pos;
-                for (; t.pos < a;) r.mxSessionID.push(t.int64());
+              if (((r.mxSessionID && r.mxSessionID.length) || (r.mxSessionID = []), (u & 7) === 2)) {
+                let d = t.uint32() + t.pos;
+                for (; t.pos < d;) r.mxSessionID.push(t.int64());
               } else r.mxSessionID.push(t.int64());
               break;
             }
@@ -3029,20 +3599,20 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.identifier != null && t.hasOwnProperty("identifier") && !$util$2.isString(t.identifier))
+        if (t.identifier != null && t.hasOwnProperty("identifier") && !a.isString(t.identifier))
           return "identifier: string expected";
-        if (t.displayName != null && t.hasOwnProperty("displayName") && !$util$2.isString(t.displayName))
+        if (t.displayName != null && t.hasOwnProperty("displayName") && !a.isString(t.displayName))
           return "displayName: string expected";
         if (t.audioSessionType != null && t.hasOwnProperty("audioSessionType"))
           switch (t.audioSessionType) {
@@ -3057,20 +3627,20 @@ const $Reader$2 = minimalExports.Reader,
           if (!Array.isArray(t.mxSessionID)) return "mxSessionID: array expected";
           for (let e = 0; e < t.mxSessionID.length; ++e)
             if (
-              !$util$2.isInteger(t.mxSessionID[e]) &&
-              !(t.mxSessionID[e] && $util$2.isInteger(t.mxSessionID[e].low) && $util$2.isInteger(t.mxSessionID[e].high))
+              !a.isInteger(t.mxSessionID[e]) &&
+              !(t.mxSessionID[e] && a.isInteger(t.mxSessionID[e].low) && a.isInteger(t.mxSessionID[e].high))
             )
               return "mxSessionID: integer|Long[] expected";
         }
-        return t.audioSessionID != null && t.hasOwnProperty("audioSessionID") && !$util$2.isInteger(t.audioSessionID)
+        return t.audioSessionID != null && t.hasOwnProperty("audioSessionID") && !a.isInteger(t.audioSessionID)
           ? "audioSessionID: integer expected"
-          : t.iconURL != null && t.hasOwnProperty("iconURL") && !$util$2.isString(t.iconURL)
+          : t.iconURL != null && t.hasOwnProperty("iconURL") && !a.isString(t.iconURL)
             ? "iconURL: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.NowPlayingPlayerProtobuf) return t;
-        let e = new $root$2.NowPlayingPlayerProtobuf();
+        if (t instanceof l.NowPlayingPlayerProtobuf) return t;
+        let e = new l.NowPlayingPlayerProtobuf();
         switch (
           (t.identifier != null && (e.identifier = String(t.identifier)),
           t.displayName != null && (e.displayName = String(t.displayName)),
@@ -3099,14 +3669,14 @@ const $Reader$2 = minimalExports.Reader,
           if (!Array.isArray(t.mxSessionID)) throw TypeError(".NowPlayingPlayerProtobuf.mxSessionID: array expected");
           e.mxSessionID = [];
           for (let n = 0; n < t.mxSessionID.length; ++n)
-            $util$2.Long
-              ? ((e.mxSessionID[n] = $util$2.Long.fromValue(t.mxSessionID[n])).unsigned = !1)
+            a.Long
+              ? ((e.mxSessionID[n] = a.Long.fromValue(t.mxSessionID[n])).unsigned = !1)
               : typeof t.mxSessionID[n] == "string"
                 ? (e.mxSessionID[n] = parseInt(t.mxSessionID[n], 10))
                 : typeof t.mxSessionID[n] == "number"
                   ? (e.mxSessionID[n] = t.mxSessionID[n])
                   : typeof t.mxSessionID[n] == "object" &&
-                    (e.mxSessionID[n] = new $util$2.LongBits(
+                    (e.mxSessionID[n] = new a.LongBits(
                       t.mxSessionID[n].low >>> 0,
                       t.mxSessionID[n].high >>> 0,
                     ).toNumber());
@@ -3134,9 +3704,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("audioSessionType") &&
             (n.audioSessionType =
               e.enums === String
-                ? $root$2.NowPlayingPlayerProtobuf.AudioSessionType[t.audioSessionType] === void 0
+                ? l.NowPlayingPlayerProtobuf.AudioSessionType[t.audioSessionType] === void 0
                   ? t.audioSessionType
-                  : $root$2.NowPlayingPlayerProtobuf.AudioSessionType[t.audioSessionType]
+                  : l.NowPlayingPlayerProtobuf.AudioSessionType[t.audioSessionType]
                 : t.audioSessionType),
           t.mxSessionID && t.mxSessionID.length)
         ) {
@@ -3146,9 +3716,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.mxSessionID[r] = e.longs === String ? String(t.mxSessionID[r]) : t.mxSessionID[r])
               : (n.mxSessionID[r] =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.mxSessionID[r])
+                    ? a.Long.prototype.toString.call(t.mxSessionID[r])
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.mxSessionID[r].low >>> 0, t.mxSessionID[r].high >>> 0).toNumber()
+                      ? new a.LongBits(t.mxSessionID[r].low >>> 0, t.mxSessionID[r].high >>> 0).toNumber()
                       : t.mxSessionID[r]);
         }
         return (
@@ -3158,7 +3728,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/NowPlayingPlayerProtobuf");
@@ -3171,7 +3741,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  NowPlayingPlayerPathProtobuf = ($root$2.NowPlayingPlayerPathProtobuf = (() => {
+  Re = (l.NowPlayingPlayerPathProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -3184,16 +3754,16 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.origin != null &&
             Object.hasOwnProperty.call(t, "origin") &&
-            $root$2.OriginProtobuf.encode(t.origin, e.uint32(10).fork()).ldelim(),
+            l.OriginProtobuf.encode(t.origin, e.uint32(10).fork()).ldelim(),
           t.client != null &&
             Object.hasOwnProperty.call(t, "client") &&
-            $root$2.NowPlayingClientProtobuf.encode(t.client, e.uint32(18).fork()).ldelim(),
+            l.NowPlayingClientProtobuf.encode(t.client, e.uint32(18).fork()).ldelim(),
           t.player != null &&
             Object.hasOwnProperty.call(t, "player") &&
-            $root$2.NowPlayingPlayerProtobuf.encode(t.player, e.uint32(26).fork()).ldelim(),
+            l.NowPlayingPlayerProtobuf.encode(t.player, e.uint32(26).fork()).ldelim(),
           e
         );
       }),
@@ -3201,64 +3771,64 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.NowPlayingPlayerPathProtobuf();
+          r = new l.NowPlayingPlayerPathProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.origin = $root$2.OriginProtobuf.decode(t, t.uint32());
+              r.origin = l.OriginProtobuf.decode(t, t.uint32());
               break;
             }
             case 2: {
-              r.client = $root$2.NowPlayingClientProtobuf.decode(t, t.uint32());
+              r.client = l.NowPlayingClientProtobuf.decode(t, t.uint32());
               break;
             }
             case 3: {
-              r.player = $root$2.NowPlayingPlayerProtobuf.decode(t, t.uint32());
+              r.player = l.NowPlayingPlayerProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.origin != null && t.hasOwnProperty("origin")) {
-          let e = $root$2.OriginProtobuf.verify(t.origin);
+          let e = l.OriginProtobuf.verify(t.origin);
           if (e) return "origin." + e;
         }
         if (t.client != null && t.hasOwnProperty("client")) {
-          let e = $root$2.NowPlayingClientProtobuf.verify(t.client);
+          let e = l.NowPlayingClientProtobuf.verify(t.client);
           if (e) return "client." + e;
         }
         if (t.player != null && t.hasOwnProperty("player")) {
-          let e = $root$2.NowPlayingPlayerProtobuf.verify(t.player);
+          let e = l.NowPlayingPlayerProtobuf.verify(t.player);
           if (e) return "player." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.NowPlayingPlayerPathProtobuf) return t;
-        let e = new $root$2.NowPlayingPlayerPathProtobuf();
+        if (t instanceof l.NowPlayingPlayerPathProtobuf) return t;
+        let e = new l.NowPlayingPlayerPathProtobuf();
         if (t.origin != null) {
           if (typeof t.origin != "object") throw TypeError(".NowPlayingPlayerPathProtobuf.origin: object expected");
-          e.origin = $root$2.OriginProtobuf.fromObject(t.origin);
+          e.origin = l.OriginProtobuf.fromObject(t.origin);
         }
         if (t.client != null) {
           if (typeof t.client != "object") throw TypeError(".NowPlayingPlayerPathProtobuf.client: object expected");
-          e.client = $root$2.NowPlayingClientProtobuf.fromObject(t.client);
+          e.client = l.NowPlayingClientProtobuf.fromObject(t.client);
         }
         if (t.player != null) {
           if (typeof t.player != "object") throw TypeError(".NowPlayingPlayerPathProtobuf.player: object expected");
-          e.player = $root$2.NowPlayingPlayerProtobuf.fromObject(t.player);
+          e.player = l.NowPlayingPlayerProtobuf.fromObject(t.player);
         }
         return e;
       }),
@@ -3267,18 +3837,18 @@ const $Reader$2 = minimalExports.Reader,
         let n = {};
         return (
           e.defaults && ((n.origin = null), (n.client = null), (n.player = null)),
-          t.origin != null && t.hasOwnProperty("origin") && (n.origin = $root$2.OriginProtobuf.toObject(t.origin, e)),
+          t.origin != null && t.hasOwnProperty("origin") && (n.origin = l.OriginProtobuf.toObject(t.origin, e)),
           t.client != null &&
             t.hasOwnProperty("client") &&
-            (n.client = $root$2.NowPlayingClientProtobuf.toObject(t.client, e)),
+            (n.client = l.NowPlayingClientProtobuf.toObject(t.client, e)),
           t.player != null &&
             t.hasOwnProperty("player") &&
-            (n.player = $root$2.NowPlayingPlayerProtobuf.toObject(t.player, e)),
+            (n.player = l.NowPlayingPlayerProtobuf.toObject(t.player, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/NowPlayingPlayerPathProtobuf");
@@ -3286,7 +3856,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  ColorProtobuf = ($root$2.ColorProtobuf = (() => {
+  Ne = (l.ColorProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -3300,7 +3870,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.red != null && Object.hasOwnProperty.call(t, "red") && e.uint32(13).float(t.red),
           t.green != null && Object.hasOwnProperty.call(t, "green") && e.uint32(21).float(t.green),
           t.blue != null && Object.hasOwnProperty.call(t, "blue") && e.uint32(29).float(t.blue),
@@ -3312,12 +3882,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.ColorProtobuf();
+          r = new l.ColorProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.red = t.float();
               break;
@@ -3335,14 +3905,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
@@ -3358,8 +3928,8 @@ const $Reader$2 = minimalExports.Reader,
                   : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.ColorProtobuf) return t;
-        let e = new $root$2.ColorProtobuf();
+        if (t instanceof l.ColorProtobuf) return t;
+        let e = new l.ColorProtobuf();
         return (
           t.red != null && (e.red = Number(t.red)),
           t.green != null && (e.green = Number(t.green)),
@@ -3387,7 +3957,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/ColorProtobuf");
@@ -3395,7 +3965,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  DeviceInfoMessageProtobuf = ($root$2.DeviceInfoMessageProtobuf = (() => {
+  ge = (l.DeviceInfoMessageProtobuf = (() => {
     function o(i) {
       if (
         ((this.groupedDevices = []),
@@ -3413,7 +3983,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.systemBuildVersion = ""),
       (o.prototype.applicationBundleIdentifier = ""),
       (o.prototype.applicationBundleVersion = ""),
-      (o.prototype.protocolVersion = $util$2.Long ? $util$2.Long.fromBits(0, 0, !0) : 0),
+      (o.prototype.protocolVersion = a.Long ? a.Long.fromBits(0, 0, !0) : 0),
       (o.prototype.lastSupportedMessageType = 0),
       (o.prototype.supportsSystemPairing = !1),
       (o.prototype.allowsPairing = !1),
@@ -3422,7 +3992,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.supportsACL = !1),
       (o.prototype.supportsSharedQueue = !1),
       (o.prototype.supportsExtendedMotion = !1),
-      (o.prototype.bluetoothAddress = $util$2.newBuffer([])),
+      (o.prototype.bluetoothAddress = a.newBuffer([])),
       (o.prototype.sharedQueueVersion = 0),
       (o.prototype.deviceUID = ""),
       (o.prototype.managedConfigDeviceID = ""),
@@ -3433,12 +4003,12 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.tightSyncUID = ""),
       (o.prototype.groupUID = ""),
       (o.prototype.groupName = ""),
-      (o.prototype.groupedDevices = $util$2.emptyArray),
+      (o.prototype.groupedDevices = a.emptyArray),
       (o.prototype.isGroupLeader = !1),
       (o.prototype.isAirplayActive = !1),
       (o.prototype.systemPodcastApplication = ""),
       (o.prototype.senderDefaultGroupUID = ""),
-      (o.prototype.airplayReceivers = $util$2.emptyArray),
+      (o.prototype.airplayReceivers = a.emptyArray),
       (o.prototype.linkAgent = ""),
       (o.prototype.clusterID = ""),
       (o.prototype.clusterLeaderID = ""),
@@ -3449,11 +4019,11 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.routingContextID = ""),
       (o.prototype.airPlayGroupID = ""),
       (o.prototype.systemBooksApplication = ""),
-      (o.prototype.clusteredDevices = $util$2.emptyArray),
+      (o.prototype.clusteredDevices = a.emptyArray),
       (o.prototype.parentGroupContainsDiscoverableGroupLeader = !1),
       (o.prototype.groupContainsDiscoverableGroupLeader = !1),
       (o.prototype.lastKnownClusterType = 2),
-      (o.prototype.allClusteredDevices = $util$2.emptyArray),
+      (o.prototype.allClusteredDevices = a.emptyArray),
       (o.prototype.supportsOutputContextSync = !1),
       (o.prototype.computerName = ""),
       (o.prototype.configuredClusterSize = 0),
@@ -3463,7 +4033,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.uniqueIdentifier != null &&
             Object.hasOwnProperty.call(t, "uniqueIdentifier") &&
             e.uint32(10).string(t.uniqueIdentifier),
@@ -3531,7 +4101,7 @@ const $Reader$2 = minimalExports.Reader,
           t.groupedDevices != null && t.groupedDevices.length)
         )
           for (let n = 0; n < t.groupedDevices.length; ++n)
-            $root$2.DeviceInfoMessageProtobuf.encode(t.groupedDevices[n], e.uint32(226).fork()).ldelim();
+            l.DeviceInfoMessageProtobuf.encode(t.groupedDevices[n], e.uint32(226).fork()).ldelim();
         if (
           (t.isGroupLeader != null &&
             Object.hasOwnProperty.call(t, "isGroupLeader") &&
@@ -3574,7 +4144,7 @@ const $Reader$2 = minimalExports.Reader,
           t.clusteredDevices != null && t.clusteredDevices.length)
         )
           for (let n = 0; n < t.clusteredDevices.length; ++n)
-            $root$2.DeviceInfoMessageProtobuf.encode(t.clusteredDevices[n], e.uint32(354).fork()).ldelim();
+            l.DeviceInfoMessageProtobuf.encode(t.clusteredDevices[n], e.uint32(354).fork()).ldelim();
         if (
           (t.parentGroupContainsDiscoverableGroupLeader != null &&
             Object.hasOwnProperty.call(t, "parentGroupContainsDiscoverableGroupLeader") &&
@@ -3588,7 +4158,7 @@ const $Reader$2 = minimalExports.Reader,
           t.allClusteredDevices != null && t.allClusteredDevices.length)
         )
           for (let n = 0; n < t.allClusteredDevices.length; ++n)
-            $root$2.DeviceInfoMessageProtobuf.encode(t.allClusteredDevices[n], e.uint32(386).fork()).ldelim();
+            l.DeviceInfoMessageProtobuf.encode(t.allClusteredDevices[n], e.uint32(386).fork()).ldelim();
         return (
           t.supportsOutputContextSync != null &&
             Object.hasOwnProperty.call(t, "supportsOutputContextSync") &&
@@ -3609,12 +4179,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.DeviceInfoMessageProtobuf();
+          r = new l.DeviceInfoMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.uniqueIdentifier = t.string();
               break;
@@ -3721,7 +4291,7 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 28: {
               ((r.groupedDevices && r.groupedDevices.length) || (r.groupedDevices = []),
-                r.groupedDevices.push($root$2.DeviceInfoMessageProtobuf.decode(t, t.uint32())));
+                r.groupedDevices.push(l.DeviceInfoMessageProtobuf.decode(t, t.uint32())));
               break;
             }
             case 29: {
@@ -3787,7 +4357,7 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 44: {
               ((r.clusteredDevices && r.clusteredDevices.length) || (r.clusteredDevices = []),
-                r.clusteredDevices.push($root$2.DeviceInfoMessageProtobuf.decode(t, t.uint32())));
+                r.clusteredDevices.push(l.DeviceInfoMessageProtobuf.decode(t, t.uint32())));
               break;
             }
             case 45: {
@@ -3804,7 +4374,7 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 48: {
               ((r.allClusteredDevices && r.allClusteredDevices.length) || (r.allClusteredDevices = []),
-                r.allClusteredDevices.push($root$2.DeviceInfoMessageProtobuf.decode(t, t.uint32())));
+                r.allClusteredDevices.push(l.DeviceInfoMessageProtobuf.decode(t, t.uint32())));
               break;
             }
             case 49: {
@@ -3824,55 +4394,47 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.uniqueIdentifier != null && t.hasOwnProperty("uniqueIdentifier") && !$util$2.isString(t.uniqueIdentifier))
+        if (t.uniqueIdentifier != null && t.hasOwnProperty("uniqueIdentifier") && !a.isString(t.uniqueIdentifier))
           return "uniqueIdentifier: string expected";
-        if (t.name != null && t.hasOwnProperty("name") && !$util$2.isString(t.name)) return "name: string expected";
-        if (
-          t.localizedModelName != null &&
-          t.hasOwnProperty("localizedModelName") &&
-          !$util$2.isString(t.localizedModelName)
-        )
+        if (t.name != null && t.hasOwnProperty("name") && !a.isString(t.name)) return "name: string expected";
+        if (t.localizedModelName != null && t.hasOwnProperty("localizedModelName") && !a.isString(t.localizedModelName))
           return "localizedModelName: string expected";
-        if (
-          t.systemBuildVersion != null &&
-          t.hasOwnProperty("systemBuildVersion") &&
-          !$util$2.isString(t.systemBuildVersion)
-        )
+        if (t.systemBuildVersion != null && t.hasOwnProperty("systemBuildVersion") && !a.isString(t.systemBuildVersion))
           return "systemBuildVersion: string expected";
         if (
           t.applicationBundleIdentifier != null &&
           t.hasOwnProperty("applicationBundleIdentifier") &&
-          !$util$2.isString(t.applicationBundleIdentifier)
+          !a.isString(t.applicationBundleIdentifier)
         )
           return "applicationBundleIdentifier: string expected";
         if (
           t.applicationBundleVersion != null &&
           t.hasOwnProperty("applicationBundleVersion") &&
-          !$util$2.isString(t.applicationBundleVersion)
+          !a.isString(t.applicationBundleVersion)
         )
           return "applicationBundleVersion: string expected";
         if (
           t.protocolVersion != null &&
           t.hasOwnProperty("protocolVersion") &&
-          !$util$2.isInteger(t.protocolVersion) &&
-          !(t.protocolVersion && $util$2.isInteger(t.protocolVersion.low) && $util$2.isInteger(t.protocolVersion.high))
+          !a.isInteger(t.protocolVersion) &&
+          !(t.protocolVersion && a.isInteger(t.protocolVersion.low) && a.isInteger(t.protocolVersion.high))
         )
           return "protocolVersion: integer|Long expected";
         if (
           t.lastSupportedMessageType != null &&
           t.hasOwnProperty("lastSupportedMessageType") &&
-          !$util$2.isInteger(t.lastSupportedMessageType)
+          !a.isInteger(t.lastSupportedMessageType)
         )
           return "lastSupportedMessageType: integer expected";
         if (
@@ -3888,7 +4450,7 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.systemMediaApplication != null &&
           t.hasOwnProperty("systemMediaApplication") &&
-          !$util$2.isString(t.systemMediaApplication)
+          !a.isString(t.systemMediaApplication)
         )
           return "systemMediaApplication: string expected";
         if (t.supportsACL != null && t.hasOwnProperty("supportsACL") && typeof t.supportsACL != "boolean")
@@ -3908,24 +4470,21 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.bluetoothAddress != null &&
           t.hasOwnProperty("bluetoothAddress") &&
-          !(
-            (t.bluetoothAddress && typeof t.bluetoothAddress.length == "number") ||
-            $util$2.isString(t.bluetoothAddress)
-          )
+          !((t.bluetoothAddress && typeof t.bluetoothAddress.length == "number") || a.isString(t.bluetoothAddress))
         )
           return "bluetoothAddress: buffer expected";
         if (
           t.sharedQueueVersion != null &&
           t.hasOwnProperty("sharedQueueVersion") &&
-          !$util$2.isInteger(t.sharedQueueVersion)
+          !a.isInteger(t.sharedQueueVersion)
         )
           return "sharedQueueVersion: integer expected";
-        if (t.deviceUID != null && t.hasOwnProperty("deviceUID") && !$util$2.isString(t.deviceUID))
+        if (t.deviceUID != null && t.hasOwnProperty("deviceUID") && !a.isString(t.deviceUID))
           return "deviceUID: string expected";
         if (
           t.managedConfigDeviceID != null &&
           t.hasOwnProperty("managedConfigDeviceID") &&
-          !$util$2.isString(t.managedConfigDeviceID)
+          !a.isString(t.managedConfigDeviceID)
         )
           return "managedConfigDeviceID: string expected";
         if (t.deviceClass != null && t.hasOwnProperty("deviceClass"))
@@ -3947,7 +4506,7 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.logicalDeviceCount != null &&
           t.hasOwnProperty("logicalDeviceCount") &&
-          !$util$2.isInteger(t.logicalDeviceCount)
+          !a.isInteger(t.logicalDeviceCount)
         )
           return "logicalDeviceCount: integer expected";
         if (
@@ -3962,16 +4521,16 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.isProxyGroupPlayer != "boolean"
         )
           return "isProxyGroupPlayer: boolean expected";
-        if (t.tightSyncUID != null && t.hasOwnProperty("tightSyncUID") && !$util$2.isString(t.tightSyncUID))
+        if (t.tightSyncUID != null && t.hasOwnProperty("tightSyncUID") && !a.isString(t.tightSyncUID))
           return "tightSyncUID: string expected";
-        if (t.groupUID != null && t.hasOwnProperty("groupUID") && !$util$2.isString(t.groupUID))
+        if (t.groupUID != null && t.hasOwnProperty("groupUID") && !a.isString(t.groupUID))
           return "groupUID: string expected";
-        if (t.groupName != null && t.hasOwnProperty("groupName") && !$util$2.isString(t.groupName))
+        if (t.groupName != null && t.hasOwnProperty("groupName") && !a.isString(t.groupName))
           return "groupName: string expected";
         if (t.groupedDevices != null && t.hasOwnProperty("groupedDevices")) {
           if (!Array.isArray(t.groupedDevices)) return "groupedDevices: array expected";
           for (let e = 0; e < t.groupedDevices.length; ++e) {
-            let n = $root$2.DeviceInfoMessageProtobuf.verify(t.groupedDevices[e]);
+            let n = l.DeviceInfoMessageProtobuf.verify(t.groupedDevices[e]);
             if (n) return "groupedDevices." + n;
           }
         }
@@ -3982,31 +4541,31 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.systemPodcastApplication != null &&
           t.hasOwnProperty("systemPodcastApplication") &&
-          !$util$2.isString(t.systemPodcastApplication)
+          !a.isString(t.systemPodcastApplication)
         )
           return "systemPodcastApplication: string expected";
         if (
           t.senderDefaultGroupUID != null &&
           t.hasOwnProperty("senderDefaultGroupUID") &&
-          !$util$2.isString(t.senderDefaultGroupUID)
+          !a.isString(t.senderDefaultGroupUID)
         )
           return "senderDefaultGroupUID: string expected";
         if (t.airplayReceivers != null && t.hasOwnProperty("airplayReceivers")) {
           if (!Array.isArray(t.airplayReceivers)) return "airplayReceivers: array expected";
           for (let e = 0; e < t.airplayReceivers.length; ++e)
-            if (!$util$2.isString(t.airplayReceivers[e])) return "airplayReceivers: string[] expected";
+            if (!a.isString(t.airplayReceivers[e])) return "airplayReceivers: string[] expected";
         }
-        if (t.linkAgent != null && t.hasOwnProperty("linkAgent") && !$util$2.isString(t.linkAgent))
+        if (t.linkAgent != null && t.hasOwnProperty("linkAgent") && !a.isString(t.linkAgent))
           return "linkAgent: string expected";
-        if (t.clusterID != null && t.hasOwnProperty("clusterID") && !$util$2.isString(t.clusterID))
+        if (t.clusterID != null && t.hasOwnProperty("clusterID") && !a.isString(t.clusterID))
           return "clusterID: string expected";
-        if (t.clusterLeaderID != null && t.hasOwnProperty("clusterLeaderID") && !$util$2.isString(t.clusterLeaderID))
+        if (t.clusterLeaderID != null && t.hasOwnProperty("clusterLeaderID") && !a.isString(t.clusterLeaderID))
           return "clusterLeaderID: string expected";
-        if (t.clusterType != null && t.hasOwnProperty("clusterType") && !$util$2.isInteger(t.clusterType))
+        if (t.clusterType != null && t.hasOwnProperty("clusterType") && !a.isInteger(t.clusterType))
           return "clusterType: integer expected";
         if (t.isClusterAware != null && t.hasOwnProperty("isClusterAware") && typeof t.isClusterAware != "boolean")
           return "isClusterAware: boolean expected";
-        if (t.modelID != null && t.hasOwnProperty("modelID") && !$util$2.isString(t.modelID))
+        if (t.modelID != null && t.hasOwnProperty("modelID") && !a.isString(t.modelID))
           return "modelID: string expected";
         if (
           t.supportsMultiplayer != null &&
@@ -4014,20 +4573,20 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.supportsMultiplayer != "boolean"
         )
           return "supportsMultiplayer: boolean expected";
-        if (t.routingContextID != null && t.hasOwnProperty("routingContextID") && !$util$2.isString(t.routingContextID))
+        if (t.routingContextID != null && t.hasOwnProperty("routingContextID") && !a.isString(t.routingContextID))
           return "routingContextID: string expected";
-        if (t.airPlayGroupID != null && t.hasOwnProperty("airPlayGroupID") && !$util$2.isString(t.airPlayGroupID))
+        if (t.airPlayGroupID != null && t.hasOwnProperty("airPlayGroupID") && !a.isString(t.airPlayGroupID))
           return "airPlayGroupID: string expected";
         if (
           t.systemBooksApplication != null &&
           t.hasOwnProperty("systemBooksApplication") &&
-          !$util$2.isString(t.systemBooksApplication)
+          !a.isString(t.systemBooksApplication)
         )
           return "systemBooksApplication: string expected";
         if (t.clusteredDevices != null && t.hasOwnProperty("clusteredDevices")) {
           if (!Array.isArray(t.clusteredDevices)) return "clusteredDevices: array expected";
           for (let e = 0; e < t.clusteredDevices.length; ++e) {
-            let n = $root$2.DeviceInfoMessageProtobuf.verify(t.clusteredDevices[e]);
+            let n = l.DeviceInfoMessageProtobuf.verify(t.clusteredDevices[e]);
             if (n) return "clusteredDevices." + n;
           }
         }
@@ -4046,13 +4605,13 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.lastKnownClusterType != null &&
           t.hasOwnProperty("lastKnownClusterType") &&
-          !$util$2.isInteger(t.lastKnownClusterType)
+          !a.isInteger(t.lastKnownClusterType)
         )
           return "lastKnownClusterType: integer expected";
         if (t.allClusteredDevices != null && t.hasOwnProperty("allClusteredDevices")) {
           if (!Array.isArray(t.allClusteredDevices)) return "allClusteredDevices: array expected";
           for (let e = 0; e < t.allClusteredDevices.length; ++e) {
-            let n = $root$2.DeviceInfoMessageProtobuf.verify(t.allClusteredDevices[e]);
+            let n = l.DeviceInfoMessageProtobuf.verify(t.allClusteredDevices[e]);
             if (n) return "allClusteredDevices." + n;
           }
         }
@@ -4062,12 +4621,12 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.supportsOutputContextSync != "boolean"
         )
           return "supportsOutputContextSync: boolean expected";
-        if (t.computerName != null && t.hasOwnProperty("computerName") && !$util$2.isString(t.computerName))
+        if (t.computerName != null && t.hasOwnProperty("computerName") && !a.isString(t.computerName))
           return "computerName: string expected";
         if (
           t.configuredClusterSize != null &&
           t.hasOwnProperty("configuredClusterSize") &&
-          !$util$2.isInteger(t.configuredClusterSize)
+          !a.isInteger(t.configuredClusterSize)
         )
           return "configuredClusterSize: integer expected";
         if (t.preferredEncoding != null && t.hasOwnProperty("preferredEncoding"))
@@ -4081,8 +4640,8 @@ const $Reader$2 = minimalExports.Reader,
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.DeviceInfoMessageProtobuf) return t;
-        let e = new $root$2.DeviceInfoMessageProtobuf();
+        if (t instanceof l.DeviceInfoMessageProtobuf) return t;
+        let e = new l.DeviceInfoMessageProtobuf();
         switch (
           (t.uniqueIdentifier != null && (e.uniqueIdentifier = String(t.uniqueIdentifier)),
           t.name != null && (e.name = String(t.name)),
@@ -4092,14 +4651,14 @@ const $Reader$2 = minimalExports.Reader,
             (e.applicationBundleIdentifier = String(t.applicationBundleIdentifier)),
           t.applicationBundleVersion != null && (e.applicationBundleVersion = String(t.applicationBundleVersion)),
           t.protocolVersion != null &&
-            ($util$2.Long
-              ? ((e.protocolVersion = $util$2.Long.fromValue(t.protocolVersion)).unsigned = !0)
+            (a.Long
+              ? ((e.protocolVersion = a.Long.fromValue(t.protocolVersion)).unsigned = !0)
               : typeof t.protocolVersion == "string"
                 ? (e.protocolVersion = parseInt(t.protocolVersion, 10))
                 : typeof t.protocolVersion == "number"
                   ? (e.protocolVersion = t.protocolVersion)
                   : typeof t.protocolVersion == "object" &&
-                    (e.protocolVersion = new $util$2.LongBits(
+                    (e.protocolVersion = new a.LongBits(
                       t.protocolVersion.low >>> 0,
                       t.protocolVersion.high >>> 0,
                     ).toNumber(!0))),
@@ -4113,9 +4672,9 @@ const $Reader$2 = minimalExports.Reader,
           t.supportsExtendedMotion != null && (e.supportsExtendedMotion = !!t.supportsExtendedMotion),
           t.bluetoothAddress != null &&
             (typeof t.bluetoothAddress == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.bluetoothAddress,
-                  (e.bluetoothAddress = $util$2.newBuffer($util$2.base64.length(t.bluetoothAddress))),
+                  (e.bluetoothAddress = a.newBuffer(a.base64.length(t.bluetoothAddress))),
                   0,
                 )
               : t.bluetoothAddress.length >= 0 && (e.bluetoothAddress = t.bluetoothAddress)),
@@ -4186,7 +4745,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.groupedDevices.length; ++n) {
             if (typeof t.groupedDevices[n] != "object")
               throw TypeError(".DeviceInfoMessageProtobuf.groupedDevices: object expected");
-            e.groupedDevices[n] = $root$2.DeviceInfoMessageProtobuf.fromObject(t.groupedDevices[n]);
+            e.groupedDevices[n] = l.DeviceInfoMessageProtobuf.fromObject(t.groupedDevices[n]);
           }
         }
         if (
@@ -4220,7 +4779,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.clusteredDevices.length; ++n) {
             if (typeof t.clusteredDevices[n] != "object")
               throw TypeError(".DeviceInfoMessageProtobuf.clusteredDevices: object expected");
-            e.clusteredDevices[n] = $root$2.DeviceInfoMessageProtobuf.fromObject(t.clusteredDevices[n]);
+            e.clusteredDevices[n] = l.DeviceInfoMessageProtobuf.fromObject(t.clusteredDevices[n]);
           }
         }
         if (
@@ -4237,7 +4796,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.allClusteredDevices.length; ++n) {
             if (typeof t.allClusteredDevices[n] != "object")
               throw TypeError(".DeviceInfoMessageProtobuf.allClusteredDevices: object expected");
-            e.allClusteredDevices[n] = $root$2.DeviceInfoMessageProtobuf.fromObject(t.allClusteredDevices[n]);
+            e.allClusteredDevices[n] = l.DeviceInfoMessageProtobuf.fromObject(t.allClusteredDevices[n]);
           }
         }
         switch (
@@ -4281,9 +4840,9 @@ const $Reader$2 = minimalExports.Reader,
             (n.systemBuildVersion = ""),
             (n.applicationBundleIdentifier = ""),
             (n.applicationBundleVersion = ""),
-            $util$2.Long)
+            a.Long)
           ) {
-            let r = new $util$2.Long(0, 0, !0);
+            let r = new a.Long(0, 0, !0);
             n.protocolVersion = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.protocolVersion = e.longs === String ? "0" : 0;
           ((n.lastSupportedMessageType = 0),
@@ -4297,7 +4856,7 @@ const $Reader$2 = minimalExports.Reader,
             e.bytes === String
               ? (n.bluetoothAddress = "")
               : ((n.bluetoothAddress = []),
-                e.bytes !== Array && (n.bluetoothAddress = $util$2.newBuffer(n.bluetoothAddress))),
+                e.bytes !== Array && (n.bluetoothAddress = a.newBuffer(n.bluetoothAddress))),
             (n.sharedQueueVersion = 0),
             (n.deviceUID = ""),
             (n.managedConfigDeviceID = ""),
@@ -4353,9 +4912,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.protocolVersion = e.longs === String ? String(t.protocolVersion) : t.protocolVersion)
               : (n.protocolVersion =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.protocolVersion)
+                    ? a.Long.prototype.toString.call(t.protocolVersion)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.protocolVersion.low >>> 0, t.protocolVersion.high >>> 0).toNumber(!0)
+                      ? new a.LongBits(t.protocolVersion.low >>> 0, t.protocolVersion.high >>> 0).toNumber(!0)
                       : t.protocolVersion)),
           t.lastSupportedMessageType != null &&
             t.hasOwnProperty("lastSupportedMessageType") &&
@@ -4379,7 +4938,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("bluetoothAddress") &&
             (n.bluetoothAddress =
               e.bytes === String
-                ? $util$2.base64.encode(t.bluetoothAddress, 0, t.bluetoothAddress.length)
+                ? a.base64.encode(t.bluetoothAddress, 0, t.bluetoothAddress.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.bluetoothAddress)
                   : t.bluetoothAddress),
@@ -4394,9 +4953,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("deviceClass") &&
             (n.deviceClass =
               e.enums === String
-                ? $root$2.DeviceInfoMessageProtobuf.DeviceClass[t.deviceClass] === void 0
+                ? l.DeviceInfoMessageProtobuf.DeviceClass[t.deviceClass] === void 0
                   ? t.deviceClass
-                  : $root$2.DeviceInfoMessageProtobuf.DeviceClass[t.deviceClass]
+                  : l.DeviceInfoMessageProtobuf.DeviceClass[t.deviceClass]
                 : t.deviceClass),
           t.logicalDeviceCount != null &&
             t.hasOwnProperty("logicalDeviceCount") &&
@@ -4414,7 +4973,7 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.groupedDevices = [];
           for (let r = 0; r < t.groupedDevices.length; ++r)
-            n.groupedDevices[r] = $root$2.DeviceInfoMessageProtobuf.toObject(t.groupedDevices[r], e);
+            n.groupedDevices[r] = l.DeviceInfoMessageProtobuf.toObject(t.groupedDevices[r], e);
         }
         if (
           (t.isGroupLeader != null && t.hasOwnProperty("isGroupLeader") && (n.isGroupLeader = t.isGroupLeader),
@@ -4451,7 +5010,7 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.clusteredDevices = [];
           for (let r = 0; r < t.clusteredDevices.length; ++r)
-            n.clusteredDevices[r] = $root$2.DeviceInfoMessageProtobuf.toObject(t.clusteredDevices[r], e);
+            n.clusteredDevices[r] = l.DeviceInfoMessageProtobuf.toObject(t.clusteredDevices[r], e);
         }
         if (
           (t.parentGroupContainsDiscoverableGroupLeader != null &&
@@ -4467,7 +5026,7 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.allClusteredDevices = [];
           for (let r = 0; r < t.allClusteredDevices.length; ++r)
-            n.allClusteredDevices[r] = $root$2.DeviceInfoMessageProtobuf.toObject(t.allClusteredDevices[r], e);
+            n.allClusteredDevices[r] = l.DeviceInfoMessageProtobuf.toObject(t.allClusteredDevices[r], e);
         }
         return (
           t.supportsOutputContextSync != null &&
@@ -4481,15 +5040,15 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("preferredEncoding") &&
             (n.preferredEncoding =
               e.enums === String
-                ? $root$2.DeviceInfoMessageProtobuf.PreferredEncoding[t.preferredEncoding] === void 0
+                ? l.DeviceInfoMessageProtobuf.PreferredEncoding[t.preferredEncoding] === void 0
                   ? t.preferredEncoding
-                  : $root$2.DeviceInfoMessageProtobuf.PreferredEncoding[t.preferredEncoding]
+                  : l.DeviceInfoMessageProtobuf.PreferredEncoding[t.preferredEncoding]
                 : t.preferredEncoding),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/DeviceInfoMessageProtobuf");
@@ -4519,7 +5078,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  ErrorProtobuf = ($root$2.ErrorProtobuf = (() => {
+  Le = (l.ErrorProtobuf = (() => {
     function o(i) {
       if (((this.underlyingErrors = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -4529,13 +5088,13 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.code = 0),
       (o.prototype.localizedDescription = ""),
       (o.prototype.localizedFailureReason = ""),
-      (o.prototype.underlyingErrors = $util$2.emptyArray),
+      (o.prototype.underlyingErrors = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.domain != null && Object.hasOwnProperty.call(t, "domain") && e.uint32(10).string(t.domain),
           t.code != null && Object.hasOwnProperty.call(t, "code") && e.uint32(16).int32(t.code),
           t.localizedDescription != null &&
@@ -4547,19 +5106,19 @@ const $Reader$2 = minimalExports.Reader,
           t.underlyingErrors != null && t.underlyingErrors.length)
         )
           for (let n = 0; n < t.underlyingErrors.length; ++n)
-            $root$2.ErrorProtobuf.encode(t.underlyingErrors[n], e.uint32(42).fork()).ldelim();
+            l.ErrorProtobuf.encode(t.underlyingErrors[n], e.uint32(42).fork()).ldelim();
         return e;
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.ErrorProtobuf();
+          r = new l.ErrorProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.domain = t.string();
               break;
@@ -4578,48 +5137,47 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 5: {
               ((r.underlyingErrors && r.underlyingErrors.length) || (r.underlyingErrors = []),
-                r.underlyingErrors.push($root$2.ErrorProtobuf.decode(t, t.uint32())));
+                r.underlyingErrors.push(l.ErrorProtobuf.decode(t, t.uint32())));
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.domain != null && t.hasOwnProperty("domain") && !$util$2.isString(t.domain))
-          return "domain: string expected";
-        if (t.code != null && t.hasOwnProperty("code") && !$util$2.isInteger(t.code)) return "code: integer expected";
+        if (t.domain != null && t.hasOwnProperty("domain") && !a.isString(t.domain)) return "domain: string expected";
+        if (t.code != null && t.hasOwnProperty("code") && !a.isInteger(t.code)) return "code: integer expected";
         if (
           t.localizedDescription != null &&
           t.hasOwnProperty("localizedDescription") &&
-          !$util$2.isString(t.localizedDescription)
+          !a.isString(t.localizedDescription)
         )
           return "localizedDescription: string expected";
         if (
           t.localizedFailureReason != null &&
           t.hasOwnProperty("localizedFailureReason") &&
-          !$util$2.isString(t.localizedFailureReason)
+          !a.isString(t.localizedFailureReason)
         )
           return "localizedFailureReason: string expected";
         if (t.underlyingErrors != null && t.hasOwnProperty("underlyingErrors")) {
           if (!Array.isArray(t.underlyingErrors)) return "underlyingErrors: array expected";
           for (let e = 0; e < t.underlyingErrors.length; ++e) {
-            let n = $root$2.ErrorProtobuf.verify(t.underlyingErrors[e]);
+            let n = l.ErrorProtobuf.verify(t.underlyingErrors[e]);
             if (n) return "underlyingErrors." + n;
           }
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.ErrorProtobuf) return t;
-        let e = new $root$2.ErrorProtobuf();
+        if (t instanceof l.ErrorProtobuf) return t;
+        let e = new l.ErrorProtobuf();
         if (
           (t.domain != null && (e.domain = String(t.domain)),
           t.code != null && (e.code = t.code | 0),
@@ -4632,7 +5190,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.underlyingErrors.length; ++n) {
             if (typeof t.underlyingErrors[n] != "object")
               throw TypeError(".ErrorProtobuf.underlyingErrors: object expected");
-            e.underlyingErrors[n] = $root$2.ErrorProtobuf.fromObject(t.underlyingErrors[n]);
+            e.underlyingErrors[n] = l.ErrorProtobuf.fromObject(t.underlyingErrors[n]);
           }
         }
         return e;
@@ -4655,12 +5213,12 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.underlyingErrors = [];
           for (let r = 0; r < t.underlyingErrors.length; ++r)
-            n.underlyingErrors[r] = $root$2.ErrorProtobuf.toObject(t.underlyingErrors[r], e);
+            n.underlyingErrors[r] = l.ErrorProtobuf.toObject(t.underlyingErrors[r], e);
         }
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/ErrorProtobuf");
@@ -4668,7 +5226,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SendCommandMessageProtobuf = ($root$2.SendCommandMessageProtobuf = (() => {
+  xe = (l.SendCommandMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -4681,14 +5239,14 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.command != null && Object.hasOwnProperty.call(t, "command") && e.uint32(8).int32(t.command),
           t.options != null &&
             Object.hasOwnProperty.call(t, "options") &&
-            $root$2.CommandOptionsProtobuf.encode(t.options, e.uint32(18).fork()).ldelim(),
+            l.CommandOptionsProtobuf.encode(t.options, e.uint32(18).fork()).ldelim(),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(26).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(26).fork()).ldelim(),
           e
         );
       }),
@@ -4696,33 +5254,33 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SendCommandMessageProtobuf();
+          r = new l.SendCommandMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.command = t.int32();
               break;
             }
             case 2: {
-              r.options = $root$2.CommandOptionsProtobuf.decode(t, t.uint32());
+              r.options = l.CommandOptionsProtobuf.decode(t, t.uint32());
               break;
             }
             case 3: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -4793,18 +5351,18 @@ const $Reader$2 = minimalExports.Reader,
               break;
           }
         if (t.options != null && t.hasOwnProperty("options")) {
-          let e = $root$2.CommandOptionsProtobuf.verify(t.options);
+          let e = l.CommandOptionsProtobuf.verify(t.options);
           if (e) return "options." + e;
         }
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SendCommandMessageProtobuf) return t;
-        let e = new $root$2.SendCommandMessageProtobuf();
+        if (t instanceof l.SendCommandMessageProtobuf) return t;
+        let e = new l.SendCommandMessageProtobuf();
         switch (t.command) {
           default:
             if (typeof t.command == "number") {
@@ -5055,12 +5613,12 @@ const $Reader$2 = minimalExports.Reader,
         }
         if (t.options != null) {
           if (typeof t.options != "object") throw TypeError(".SendCommandMessageProtobuf.options: object expected");
-          e.options = $root$2.CommandOptionsProtobuf.fromObject(t.options);
+          e.options = l.CommandOptionsProtobuf.fromObject(t.options);
         }
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".SendCommandMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         return e;
       }),
@@ -5076,21 +5634,21 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("command") &&
             (n.command =
               e.enums === String
-                ? $root$2.CommandProtobuf[t.command] === void 0
+                ? l.CommandProtobuf[t.command] === void 0
                   ? t.command
-                  : $root$2.CommandProtobuf[t.command]
+                  : l.CommandProtobuf[t.command]
                 : t.command),
           t.options != null &&
             t.hasOwnProperty("options") &&
-            (n.options = $root$2.CommandOptionsProtobuf.toObject(t.options, e)),
+            (n.options = l.CommandOptionsProtobuf.toObject(t.options, e)),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SendCommandMessageProtobuf");
@@ -5098,7 +5656,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  CommandProtobuf = ($root$2.CommandProtobuf = (() => {
+  Ue = (l.CommandProtobuf = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -5165,7 +5723,7 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  CommandOptionsProtobuf = ($root$2.CommandOptionsProtobuf = (() => {
+  Ee = (l.CommandOptionsProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -5181,10 +5739,10 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.repeatMode = 0),
       (o.prototype.shuffleMode = 0),
       (o.prototype.contextID = ""),
-      (o.prototype.trackID = $util$2.Long ? $util$2.Long.fromBits(0, 0, !0) : 0),
-      (o.prototype.radioStationID = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.trackID = a.Long ? a.Long.fromBits(0, 0, !0) : 0),
+      (o.prototype.radioStationID = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
       (o.prototype.radioStationHash = ""),
-      (o.prototype.systemAppPlaybackQueueData = $util$2.newBuffer([])),
+      (o.prototype.systemAppPlaybackQueueData = a.newBuffer([])),
       (o.prototype.destinationAppDisplayID = ""),
       (o.prototype.sendOptions = 0),
       (o.prototype.requestDefermentToPlaybackQueuePosition = !1),
@@ -5195,8 +5753,8 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.contentItemID = ""),
       (o.prototype.playbackQueueOffset = 0),
       (o.prototype.playbackQueueDestinationOffset = 0),
-      (o.prototype.languageOption = $util$2.newBuffer([])),
-      (o.prototype.playbackQueueContext = $util$2.newBuffer([])),
+      (o.prototype.languageOption = a.newBuffer([])),
+      (o.prototype.playbackQueueContext = a.newBuffer([])),
       (o.prototype.insertAfterContentItemID = ""),
       (o.prototype.nowPlayingContentItemID = ""),
       (o.prototype.replaceIntent = 0),
@@ -5205,8 +5763,8 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.remoteControlInterface = ""),
       (o.prototype.beginSeek = !1),
       (o.prototype.endSeek = !1),
-      (o.prototype.playbackSession = $util$2.newBuffer([])),
-      (o.prototype.userIdentityData = $util$2.newBuffer([])),
+      (o.prototype.playbackSession = a.newBuffer([])),
+      (o.prototype.userIdentityData = a.newBuffer([])),
       (o.prototype.insertBeforeContentItemID = ""),
       (o.prototype.queueEndAction = 0),
       (o.prototype.preservesRepeatMode = !1),
@@ -5218,7 +5776,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.playbackSessionPriority = 0),
       (o.prototype.playbackSessionFilePath = ""),
       (o.prototype.playbackSessionRevision = ""),
-      (o.prototype.playbackSessionMetadata = $util$2.newBuffer([])),
+      (o.prototype.playbackSessionMetadata = a.newBuffer([])),
       (o.prototype.playbackSessionType = ""),
       (o.prototype.trueCompletion = !1),
       (o.prototype.playbackAuthorizationToken = ""),
@@ -5229,7 +5787,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.assistantTTSEndTimestamp = 0),
       (o.prototype.assistantCommandSendTimestamp = 0),
       (o.prototype.originatingDeviceUID = ""),
-      (o.prototype.destinationDeviceUIDs = $util$2.newBuffer([])),
+      (o.prototype.destinationDeviceUIDs = a.newBuffer([])),
       (o.prototype.desiredSessionID = ""),
       (o.prototype.alwaysIgnoreDuringCall = !1),
       (o.prototype.alwaysIgnoreDuringSharePlay = !1),
@@ -5240,7 +5798,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.prepareForSetQueueIsProactive = !1),
       (o.prototype.prepareForSetQueueProactiveReason = ""),
       (o.prototype.prepareForSetQueueProactiveReasonType = 0),
-      (o.prototype.applicationUserIdentity = $util$2.newBuffer([])),
+      (o.prototype.applicationUserIdentity = a.newBuffer([])),
       (o.prototype.systemAppPlaybackQueue = null),
       (o.prototype.vocalsControlActive = !1),
       (o.prototype.vocalsControlLevel = 0),
@@ -5253,7 +5811,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.sourceID != null && Object.hasOwnProperty.call(t, "sourceID") && e.uint32(18).string(t.sourceID),
           t.mediaType != null && Object.hasOwnProperty.call(t, "mediaType") && e.uint32(26).string(t.mediaType),
           t.externalPlayerCommand != null &&
@@ -5437,7 +5995,7 @@ const $Reader$2 = minimalExports.Reader,
             e.uint32(618).bytes(t.applicationUserIdentity),
           t.systemAppPlaybackQueue != null &&
             Object.hasOwnProperty.call(t, "systemAppPlaybackQueue") &&
-            $root$2.SystemPlaybackQueueProtobuf.encode(t.systemAppPlaybackQueue, e.uint32(626).fork()).ldelim(),
+            l.SystemPlaybackQueueProtobuf.encode(t.systemAppPlaybackQueue, e.uint32(626).fork()).ldelim(),
           t.vocalsControlActive != null &&
             Object.hasOwnProperty.call(t, "vocalsControlActive") &&
             e.uint32(632).bool(t.vocalsControlActive),
@@ -5463,12 +6021,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.CommandOptionsProtobuf();
+          r = new l.CommandOptionsProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 2: {
               r.sourceID = t.string();
               break;
@@ -5754,7 +6312,7 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 78: {
-              r.systemAppPlaybackQueue = $root$2.SystemPlaybackQueueProtobuf.decode(t, t.uint32());
+              r.systemAppPlaybackQueue = l.SystemPlaybackQueueProtobuf.decode(t, t.uint32());
               break;
             }
             case 79: {
@@ -5782,20 +6340,20 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.sourceID != null && t.hasOwnProperty("sourceID") && !$util$2.isString(t.sourceID))
+        if (t.sourceID != null && t.hasOwnProperty("sourceID") && !a.isString(t.sourceID))
           return "sourceID: string expected";
-        if (t.mediaType != null && t.hasOwnProperty("mediaType") && !$util$2.isString(t.mediaType))
+        if (t.mediaType != null && t.hasOwnProperty("mediaType") && !a.isString(t.mediaType))
           return "mediaType: string expected";
         if (
           t.externalPlayerCommand != null &&
@@ -5833,37 +6391,37 @@ const $Reader$2 = minimalExports.Reader,
             case 3:
               break;
           }
-        if (t.contextID != null && t.hasOwnProperty("contextID") && !$util$2.isString(t.contextID))
+        if (t.contextID != null && t.hasOwnProperty("contextID") && !a.isString(t.contextID))
           return "contextID: string expected";
         if (
           t.trackID != null &&
           t.hasOwnProperty("trackID") &&
-          !$util$2.isInteger(t.trackID) &&
-          !(t.trackID && $util$2.isInteger(t.trackID.low) && $util$2.isInteger(t.trackID.high))
+          !a.isInteger(t.trackID) &&
+          !(t.trackID && a.isInteger(t.trackID.low) && a.isInteger(t.trackID.high))
         )
           return "trackID: integer|Long expected";
         if (
           t.radioStationID != null &&
           t.hasOwnProperty("radioStationID") &&
-          !$util$2.isInteger(t.radioStationID) &&
-          !(t.radioStationID && $util$2.isInteger(t.radioStationID.low) && $util$2.isInteger(t.radioStationID.high))
+          !a.isInteger(t.radioStationID) &&
+          !(t.radioStationID && a.isInteger(t.radioStationID.low) && a.isInteger(t.radioStationID.high))
         )
           return "radioStationID: integer|Long expected";
-        if (t.radioStationHash != null && t.hasOwnProperty("radioStationHash") && !$util$2.isString(t.radioStationHash))
+        if (t.radioStationHash != null && t.hasOwnProperty("radioStationHash") && !a.isString(t.radioStationHash))
           return "radioStationHash: string expected";
         if (
           t.systemAppPlaybackQueueData != null &&
           t.hasOwnProperty("systemAppPlaybackQueueData") &&
           !(
             (t.systemAppPlaybackQueueData && typeof t.systemAppPlaybackQueueData.length == "number") ||
-            $util$2.isString(t.systemAppPlaybackQueueData)
+            a.isString(t.systemAppPlaybackQueueData)
           )
         )
           return "systemAppPlaybackQueueData: buffer expected";
         if (
           t.destinationAppDisplayID != null &&
           t.hasOwnProperty("destinationAppDisplayID") &&
-          !$util$2.isString(t.destinationAppDisplayID)
+          !a.isString(t.destinationAppDisplayID)
         )
           return "destinationAppDisplayID: string expected";
         if (t.sendOptions != null && t.hasOwnProperty("sendOptions"))
@@ -5886,7 +6444,7 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.shouldOverrideManuallyCuratedQueue != "boolean"
         )
           return "shouldOverrideManuallyCuratedQueue: boolean expected";
-        if (t.stationURL != null && t.hasOwnProperty("stationURL") && !$util$2.isString(t.stationURL))
+        if (t.stationURL != null && t.hasOwnProperty("stationURL") && !a.isString(t.stationURL))
           return "stationURL: string expected";
         if (
           t.shouldBeginRadioPlayback != null &&
@@ -5897,27 +6455,27 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.playbackQueueInsertionPosition != null &&
           t.hasOwnProperty("playbackQueueInsertionPosition") &&
-          !$util$2.isInteger(t.playbackQueueInsertionPosition)
+          !a.isInteger(t.playbackQueueInsertionPosition)
         )
           return "playbackQueueInsertionPosition: integer expected";
-        if (t.contentItemID != null && t.hasOwnProperty("contentItemID") && !$util$2.isString(t.contentItemID))
+        if (t.contentItemID != null && t.hasOwnProperty("contentItemID") && !a.isString(t.contentItemID))
           return "contentItemID: string expected";
         if (
           t.playbackQueueOffset != null &&
           t.hasOwnProperty("playbackQueueOffset") &&
-          !$util$2.isInteger(t.playbackQueueOffset)
+          !a.isInteger(t.playbackQueueOffset)
         )
           return "playbackQueueOffset: integer expected";
         if (
           t.playbackQueueDestinationOffset != null &&
           t.hasOwnProperty("playbackQueueDestinationOffset") &&
-          !$util$2.isInteger(t.playbackQueueDestinationOffset)
+          !a.isInteger(t.playbackQueueDestinationOffset)
         )
           return "playbackQueueDestinationOffset: integer expected";
         if (
           t.languageOption != null &&
           t.hasOwnProperty("languageOption") &&
-          !((t.languageOption && typeof t.languageOption.length == "number") || $util$2.isString(t.languageOption))
+          !((t.languageOption && typeof t.languageOption.length == "number") || a.isString(t.languageOption))
         )
           return "languageOption: buffer expected";
         if (
@@ -5925,20 +6483,20 @@ const $Reader$2 = minimalExports.Reader,
           t.hasOwnProperty("playbackQueueContext") &&
           !(
             (t.playbackQueueContext && typeof t.playbackQueueContext.length == "number") ||
-            $util$2.isString(t.playbackQueueContext)
+            a.isString(t.playbackQueueContext)
           )
         )
           return "playbackQueueContext: buffer expected";
         if (
           t.insertAfterContentItemID != null &&
           t.hasOwnProperty("insertAfterContentItemID") &&
-          !$util$2.isString(t.insertAfterContentItemID)
+          !a.isString(t.insertAfterContentItemID)
         )
           return "insertAfterContentItemID: string expected";
         if (
           t.nowPlayingContentItemID != null &&
           t.hasOwnProperty("nowPlayingContentItemID") &&
-          !$util$2.isString(t.nowPlayingContentItemID)
+          !a.isString(t.nowPlayingContentItemID)
         )
           return "nowPlayingContentItemID: string expected";
         if (t.replaceIntent != null && t.hasOwnProperty("replaceIntent"))
@@ -5951,14 +6509,14 @@ const $Reader$2 = minimalExports.Reader,
             case 3:
               break;
           }
-        if (t.commandID != null && t.hasOwnProperty("commandID") && !$util$2.isString(t.commandID))
+        if (t.commandID != null && t.hasOwnProperty("commandID") && !a.isString(t.commandID))
           return "commandID: string expected";
-        if (t.senderID != null && t.hasOwnProperty("senderID") && !$util$2.isString(t.senderID))
+        if (t.senderID != null && t.hasOwnProperty("senderID") && !a.isString(t.senderID))
           return "senderID: string expected";
         if (
           t.remoteControlInterface != null &&
           t.hasOwnProperty("remoteControlInterface") &&
-          !$util$2.isString(t.remoteControlInterface)
+          !a.isString(t.remoteControlInterface)
         )
           return "remoteControlInterface: string expected";
         if (t.beginSeek != null && t.hasOwnProperty("beginSeek") && typeof t.beginSeek != "boolean")
@@ -5968,22 +6526,19 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.playbackSession != null &&
           t.hasOwnProperty("playbackSession") &&
-          !((t.playbackSession && typeof t.playbackSession.length == "number") || $util$2.isString(t.playbackSession))
+          !((t.playbackSession && typeof t.playbackSession.length == "number") || a.isString(t.playbackSession))
         )
           return "playbackSession: buffer expected";
         if (
           t.userIdentityData != null &&
           t.hasOwnProperty("userIdentityData") &&
-          !(
-            (t.userIdentityData && typeof t.userIdentityData.length == "number") ||
-            $util$2.isString(t.userIdentityData)
-          )
+          !((t.userIdentityData && typeof t.userIdentityData.length == "number") || a.isString(t.userIdentityData))
         )
           return "userIdentityData: buffer expected";
         if (
           t.insertBeforeContentItemID != null &&
           t.hasOwnProperty("insertBeforeContentItemID") &&
-          !$util$2.isString(t.insertBeforeContentItemID)
+          !a.isString(t.insertBeforeContentItemID)
         )
           return "insertBeforeContentItemID: string expected";
         if (t.queueEndAction != null && t.hasOwnProperty("queueEndAction"))
@@ -6017,7 +6572,7 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.homeKitUserIdentifier != null &&
           t.hasOwnProperty("homeKitUserIdentifier") &&
-          !$util$2.isString(t.homeKitUserIdentifier)
+          !a.isString(t.homeKitUserIdentifier)
         )
           return "homeKitUserIdentifier: string expected";
         if (
@@ -6029,7 +6584,7 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.playbackSessionIdentifier != null &&
           t.hasOwnProperty("playbackSessionIdentifier") &&
-          !$util$2.isString(t.playbackSessionIdentifier)
+          !a.isString(t.playbackSessionIdentifier)
         )
           return "playbackSessionIdentifier: string expected";
         if (t.playbackSessionPriority != null && t.hasOwnProperty("playbackSessionPriority"))
@@ -6044,13 +6599,13 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.playbackSessionFilePath != null &&
           t.hasOwnProperty("playbackSessionFilePath") &&
-          !$util$2.isString(t.playbackSessionFilePath)
+          !a.isString(t.playbackSessionFilePath)
         )
           return "playbackSessionFilePath: string expected";
         if (
           t.playbackSessionRevision != null &&
           t.hasOwnProperty("playbackSessionRevision") &&
-          !$util$2.isString(t.playbackSessionRevision)
+          !a.isString(t.playbackSessionRevision)
         )
           return "playbackSessionRevision: string expected";
         if (
@@ -6058,14 +6613,14 @@ const $Reader$2 = minimalExports.Reader,
           t.hasOwnProperty("playbackSessionMetadata") &&
           !(
             (t.playbackSessionMetadata && typeof t.playbackSessionMetadata.length == "number") ||
-            $util$2.isString(t.playbackSessionMetadata)
+            a.isString(t.playbackSessionMetadata)
           )
         )
           return "playbackSessionMetadata: buffer expected";
         if (
           t.playbackSessionType != null &&
           t.hasOwnProperty("playbackSessionType") &&
-          !$util$2.isString(t.playbackSessionType)
+          !a.isString(t.playbackSessionType)
         )
           return "playbackSessionType: string expected";
         if (t.trueCompletion != null && t.hasOwnProperty("trueCompletion") && typeof t.trueCompletion != "boolean")
@@ -6073,21 +6628,21 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.playbackAuthorizationToken != null &&
           t.hasOwnProperty("playbackAuthorizationToken") &&
-          !$util$2.isString(t.playbackAuthorizationToken)
+          !a.isString(t.playbackAuthorizationToken)
         )
           return "playbackAuthorizationToken: string expected";
-        if (t.eventNoticeType != null && t.hasOwnProperty("eventNoticeType") && !$util$2.isString(t.eventNoticeType))
+        if (t.eventNoticeType != null && t.hasOwnProperty("eventNoticeType") && !a.isString(t.eventNoticeType))
           return "eventNoticeType: string expected";
         if (
           t.eventNoticeIdentifier != null &&
           t.hasOwnProperty("eventNoticeIdentifier") &&
-          !$util$2.isString(t.eventNoticeIdentifier)
+          !a.isString(t.eventNoticeIdentifier)
         )
           return "eventNoticeIdentifier: string expected";
         if (
           t.sharedPlaybackSessionIdentifier != null &&
           t.hasOwnProperty("sharedPlaybackSessionIdentifier") &&
-          !$util$2.isString(t.sharedPlaybackSessionIdentifier)
+          !a.isString(t.sharedPlaybackSessionIdentifier)
         )
           return "sharedPlaybackSessionIdentifier: string expected";
         if (t.commandTimeout != null && t.hasOwnProperty("commandTimeout") && typeof t.commandTimeout != "number")
@@ -6107,7 +6662,7 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.originatingDeviceUID != null &&
           t.hasOwnProperty("originatingDeviceUID") &&
-          !$util$2.isString(t.originatingDeviceUID)
+          !a.isString(t.originatingDeviceUID)
         )
           return "originatingDeviceUID: string expected";
         if (
@@ -6115,11 +6670,11 @@ const $Reader$2 = minimalExports.Reader,
           t.hasOwnProperty("destinationDeviceUIDs") &&
           !(
             (t.destinationDeviceUIDs && typeof t.destinationDeviceUIDs.length == "number") ||
-            $util$2.isString(t.destinationDeviceUIDs)
+            a.isString(t.destinationDeviceUIDs)
           )
         )
           return "destinationDeviceUIDs: buffer expected";
-        if (t.desiredSessionID != null && t.hasOwnProperty("desiredSessionID") && !$util$2.isString(t.desiredSessionID))
+        if (t.desiredSessionID != null && t.hasOwnProperty("desiredSessionID") && !a.isString(t.desiredSessionID))
           return "desiredSessionID: string expected";
         if (
           t.alwaysIgnoreDuringCall != null &&
@@ -6136,7 +6691,7 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.commandSequenceUUID != null &&
           t.hasOwnProperty("commandSequenceUUID") &&
-          !$util$2.isString(t.commandSequenceUUID)
+          !a.isString(t.commandSequenceUUID)
         )
           return "commandSequenceUUID: string expected";
         if (
@@ -6145,16 +6700,12 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.originatedFromRemoteDevice != "boolean"
         )
           return "originatedFromRemoteDevice: boolean expected";
-        if (
-          t.siriTurnIdentifier != null &&
-          t.hasOwnProperty("siriTurnIdentifier") &&
-          !$util$2.isString(t.siriTurnIdentifier)
-        )
+        if (t.siriTurnIdentifier != null && t.hasOwnProperty("siriTurnIdentifier") && !a.isString(t.siriTurnIdentifier))
           return "siriTurnIdentifier: string expected";
         if (
           t.siriSearchDataSetIdentifier != null &&
           t.hasOwnProperty("siriSearchDataSetIdentifier") &&
-          !$util$2.isString(t.siriSearchDataSetIdentifier)
+          !a.isString(t.siriSearchDataSetIdentifier)
         )
           return "siriSearchDataSetIdentifier: string expected";
         if (
@@ -6166,7 +6717,7 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.prepareForSetQueueProactiveReason != null &&
           t.hasOwnProperty("prepareForSetQueueProactiveReason") &&
-          !$util$2.isString(t.prepareForSetQueueProactiveReason)
+          !a.isString(t.prepareForSetQueueProactiveReason)
         )
           return "prepareForSetQueueProactiveReason: string expected";
         if (
@@ -6187,12 +6738,12 @@ const $Reader$2 = minimalExports.Reader,
           t.hasOwnProperty("applicationUserIdentity") &&
           !(
             (t.applicationUserIdentity && typeof t.applicationUserIdentity.length == "number") ||
-            $util$2.isString(t.applicationUserIdentity)
+            a.isString(t.applicationUserIdentity)
           )
         )
           return "applicationUserIdentity: buffer expected";
         if (t.systemAppPlaybackQueue != null && t.hasOwnProperty("systemAppPlaybackQueue")) {
-          let e = $root$2.SystemPlaybackQueueProtobuf.verify(t.systemAppPlaybackQueue);
+          let e = l.SystemPlaybackQueueProtobuf.verify(t.systemAppPlaybackQueue);
           if (e) return "systemAppPlaybackQueue." + e;
         }
         return t.vocalsControlActive != null &&
@@ -6217,13 +6768,13 @@ const $Reader$2 = minimalExports.Reader,
                   ? "vocalsControlContinuous: boolean expected"
                   : t.associatedParticipantIdentifier != null &&
                       t.hasOwnProperty("associatedParticipantIdentifier") &&
-                      !$util$2.isString(t.associatedParticipantIdentifier)
+                      !a.isString(t.associatedParticipantIdentifier)
                     ? "associatedParticipantIdentifier: string expected"
                     : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.CommandOptionsProtobuf) return t;
-        let e = new $root$2.CommandOptionsProtobuf();
+        if (t instanceof l.CommandOptionsProtobuf) return t;
+        let e = new l.CommandOptionsProtobuf();
         switch (
           (t.sourceID != null && (e.sourceID = String(t.sourceID)),
           t.mediaType != null && (e.mediaType = String(t.mediaType)),
@@ -6285,34 +6836,32 @@ const $Reader$2 = minimalExports.Reader,
         switch (
           (t.contextID != null && (e.contextID = String(t.contextID)),
           t.trackID != null &&
-            ($util$2.Long
-              ? ((e.trackID = $util$2.Long.fromValue(t.trackID)).unsigned = !0)
+            (a.Long
+              ? ((e.trackID = a.Long.fromValue(t.trackID)).unsigned = !0)
               : typeof t.trackID == "string"
                 ? (e.trackID = parseInt(t.trackID, 10))
                 : typeof t.trackID == "number"
                   ? (e.trackID = t.trackID)
                   : typeof t.trackID == "object" &&
-                    (e.trackID = new $util$2.LongBits(t.trackID.low >>> 0, t.trackID.high >>> 0).toNumber(!0))),
+                    (e.trackID = new a.LongBits(t.trackID.low >>> 0, t.trackID.high >>> 0).toNumber(!0))),
           t.radioStationID != null &&
-            ($util$2.Long
-              ? ((e.radioStationID = $util$2.Long.fromValue(t.radioStationID)).unsigned = !1)
+            (a.Long
+              ? ((e.radioStationID = a.Long.fromValue(t.radioStationID)).unsigned = !1)
               : typeof t.radioStationID == "string"
                 ? (e.radioStationID = parseInt(t.radioStationID, 10))
                 : typeof t.radioStationID == "number"
                   ? (e.radioStationID = t.radioStationID)
                   : typeof t.radioStationID == "object" &&
-                    (e.radioStationID = new $util$2.LongBits(
+                    (e.radioStationID = new a.LongBits(
                       t.radioStationID.low >>> 0,
                       t.radioStationID.high >>> 0,
                     ).toNumber())),
           t.radioStationHash != null && (e.radioStationHash = String(t.radioStationHash)),
           t.systemAppPlaybackQueueData != null &&
             (typeof t.systemAppPlaybackQueueData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.systemAppPlaybackQueueData,
-                  (e.systemAppPlaybackQueueData = $util$2.newBuffer(
-                    $util$2.base64.length(t.systemAppPlaybackQueueData),
-                  )),
+                  (e.systemAppPlaybackQueueData = a.newBuffer(a.base64.length(t.systemAppPlaybackQueueData))),
                   0,
                 )
               : t.systemAppPlaybackQueueData.length >= 0 &&
@@ -6350,17 +6899,17 @@ const $Reader$2 = minimalExports.Reader,
             (e.playbackQueueDestinationOffset = t.playbackQueueDestinationOffset | 0),
           t.languageOption != null &&
             (typeof t.languageOption == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.languageOption,
-                  (e.languageOption = $util$2.newBuffer($util$2.base64.length(t.languageOption))),
+                  (e.languageOption = a.newBuffer(a.base64.length(t.languageOption))),
                   0,
                 )
               : t.languageOption.length >= 0 && (e.languageOption = t.languageOption)),
           t.playbackQueueContext != null &&
             (typeof t.playbackQueueContext == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.playbackQueueContext,
-                  (e.playbackQueueContext = $util$2.newBuffer($util$2.base64.length(t.playbackQueueContext))),
+                  (e.playbackQueueContext = a.newBuffer(a.base64.length(t.playbackQueueContext))),
                   0,
                 )
               : t.playbackQueueContext.length >= 0 && (e.playbackQueueContext = t.playbackQueueContext)),
@@ -6399,17 +6948,17 @@ const $Reader$2 = minimalExports.Reader,
           t.endSeek != null && (e.endSeek = !!t.endSeek),
           t.playbackSession != null &&
             (typeof t.playbackSession == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.playbackSession,
-                  (e.playbackSession = $util$2.newBuffer($util$2.base64.length(t.playbackSession))),
+                  (e.playbackSession = a.newBuffer(a.base64.length(t.playbackSession))),
                   0,
                 )
               : t.playbackSession.length >= 0 && (e.playbackSession = t.playbackSession)),
           t.userIdentityData != null &&
             (typeof t.userIdentityData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.userIdentityData,
-                  (e.userIdentityData = $util$2.newBuffer($util$2.base64.length(t.userIdentityData))),
+                  (e.userIdentityData = a.newBuffer(a.base64.length(t.userIdentityData))),
                   0,
                 )
               : t.userIdentityData.length >= 0 && (e.userIdentityData = t.userIdentityData)),
@@ -6472,9 +7021,9 @@ const $Reader$2 = minimalExports.Reader,
           t.playbackSessionRevision != null && (e.playbackSessionRevision = String(t.playbackSessionRevision)),
           t.playbackSessionMetadata != null &&
             (typeof t.playbackSessionMetadata == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.playbackSessionMetadata,
-                  (e.playbackSessionMetadata = $util$2.newBuffer($util$2.base64.length(t.playbackSessionMetadata))),
+                  (e.playbackSessionMetadata = a.newBuffer(a.base64.length(t.playbackSessionMetadata))),
                   0,
                 )
               : t.playbackSessionMetadata.length >= 0 && (e.playbackSessionMetadata = t.playbackSessionMetadata)),
@@ -6492,9 +7041,9 @@ const $Reader$2 = minimalExports.Reader,
           t.originatingDeviceUID != null && (e.originatingDeviceUID = String(t.originatingDeviceUID)),
           t.destinationDeviceUIDs != null &&
             (typeof t.destinationDeviceUIDs == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.destinationDeviceUIDs,
-                  (e.destinationDeviceUIDs = $util$2.newBuffer($util$2.base64.length(t.destinationDeviceUIDs))),
+                  (e.destinationDeviceUIDs = a.newBuffer(a.base64.length(t.destinationDeviceUIDs))),
                   0,
                 )
               : t.destinationDeviceUIDs.length >= 0 && (e.destinationDeviceUIDs = t.destinationDeviceUIDs)),
@@ -6538,9 +7087,9 @@ const $Reader$2 = minimalExports.Reader,
         if (
           (t.applicationUserIdentity != null &&
             (typeof t.applicationUserIdentity == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.applicationUserIdentity,
-                  (e.applicationUserIdentity = $util$2.newBuffer($util$2.base64.length(t.applicationUserIdentity))),
+                  (e.applicationUserIdentity = a.newBuffer(a.base64.length(t.applicationUserIdentity))),
                   0,
                 )
               : t.applicationUserIdentity.length >= 0 && (e.applicationUserIdentity = t.applicationUserIdentity)),
@@ -6548,7 +7097,7 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           if (typeof t.systemAppPlaybackQueue != "object")
             throw TypeError(".CommandOptionsProtobuf.systemAppPlaybackQueue: object expected");
-          e.systemAppPlaybackQueue = $root$2.SystemPlaybackQueueProtobuf.fromObject(t.systemAppPlaybackQueue);
+          e.systemAppPlaybackQueue = l.SystemPlaybackQueueProtobuf.fromObject(t.systemAppPlaybackQueue);
         }
         return (
           t.vocalsControlActive != null && (e.vocalsControlActive = !!t.vocalsControlActive),
@@ -6576,20 +7125,20 @@ const $Reader$2 = minimalExports.Reader,
             (n.playbackPosition = 0),
             (n.repeatMode = e.enums === String ? "RepeatModeProtobuf_Unknown" : 0),
             (n.shuffleMode = e.enums === String ? "ShuffleModeProtobuf_Unknown" : 0),
-            $util$2.Long)
+            a.Long)
           ) {
-            let r = new $util$2.Long(0, 0, !0);
+            let r = new a.Long(0, 0, !0);
             n.trackID = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.trackID = e.longs === String ? "0" : 0;
-          if ($util$2.Long) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (a.Long) {
+            let r = new a.Long(0, 0, !1);
             n.radioStationID = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.radioStationID = e.longs === String ? "0" : 0;
           ((n.radioStationHash = ""),
             e.bytes === String
               ? (n.systemAppPlaybackQueueData = "")
               : ((n.systemAppPlaybackQueueData = []),
-                e.bytes !== Array && (n.systemAppPlaybackQueueData = $util$2.newBuffer(n.systemAppPlaybackQueueData))),
+                e.bytes !== Array && (n.systemAppPlaybackQueueData = a.newBuffer(n.systemAppPlaybackQueueData))),
             (n.destinationAppDisplayID = ""),
             (n.sendOptions = e.enums === String ? "None" : 0),
             (n.requestDefermentToPlaybackQueuePosition = !1),
@@ -6603,12 +7152,11 @@ const $Reader$2 = minimalExports.Reader,
             (n.playbackQueueDestinationOffset = 0),
             e.bytes === String
               ? (n.languageOption = "")
-              : ((n.languageOption = []),
-                e.bytes !== Array && (n.languageOption = $util$2.newBuffer(n.languageOption))),
+              : ((n.languageOption = []), e.bytes !== Array && (n.languageOption = a.newBuffer(n.languageOption))),
             e.bytes === String
               ? (n.playbackQueueContext = "")
               : ((n.playbackQueueContext = []),
-                e.bytes !== Array && (n.playbackQueueContext = $util$2.newBuffer(n.playbackQueueContext))),
+                e.bytes !== Array && (n.playbackQueueContext = a.newBuffer(n.playbackQueueContext))),
             (n.insertAfterContentItemID = ""),
             (n.nowPlayingContentItemID = ""),
             (n.replaceIntent = e.enums === String ? "NonDestructive" : 0),
@@ -6619,12 +7167,11 @@ const $Reader$2 = minimalExports.Reader,
             (n.endSeek = !1),
             e.bytes === String
               ? (n.playbackSession = "")
-              : ((n.playbackSession = []),
-                e.bytes !== Array && (n.playbackSession = $util$2.newBuffer(n.playbackSession))),
+              : ((n.playbackSession = []), e.bytes !== Array && (n.playbackSession = a.newBuffer(n.playbackSession))),
             e.bytes === String
               ? (n.userIdentityData = "")
               : ((n.userIdentityData = []),
-                e.bytes !== Array && (n.userIdentityData = $util$2.newBuffer(n.userIdentityData))),
+                e.bytes !== Array && (n.userIdentityData = a.newBuffer(n.userIdentityData))),
             (n.insertBeforeContentItemID = ""),
             (n.queueEndAction = e.enums === String ? "Clear" : 0),
             (n.preservesRepeatMode = !1),
@@ -6639,7 +7186,7 @@ const $Reader$2 = minimalExports.Reader,
             e.bytes === String
               ? (n.playbackSessionMetadata = "")
               : ((n.playbackSessionMetadata = []),
-                e.bytes !== Array && (n.playbackSessionMetadata = $util$2.newBuffer(n.playbackSessionMetadata))),
+                e.bytes !== Array && (n.playbackSessionMetadata = a.newBuffer(n.playbackSessionMetadata))),
             (n.playbackSessionType = ""),
             (n.trueCompletion = !1),
             (n.playbackAuthorizationToken = ""),
@@ -6653,7 +7200,7 @@ const $Reader$2 = minimalExports.Reader,
             e.bytes === String
               ? (n.destinationDeviceUIDs = "")
               : ((n.destinationDeviceUIDs = []),
-                e.bytes !== Array && (n.destinationDeviceUIDs = $util$2.newBuffer(n.destinationDeviceUIDs))),
+                e.bytes !== Array && (n.destinationDeviceUIDs = a.newBuffer(n.destinationDeviceUIDs))),
             (n.desiredSessionID = ""),
             (n.alwaysIgnoreDuringCall = !1),
             (n.alwaysIgnoreDuringSharePlay = !1),
@@ -6667,7 +7214,7 @@ const $Reader$2 = minimalExports.Reader,
             e.bytes === String
               ? (n.applicationUserIdentity = "")
               : ((n.applicationUserIdentity = []),
-                e.bytes !== Array && (n.applicationUserIdentity = $util$2.newBuffer(n.applicationUserIdentity))),
+                e.bytes !== Array && (n.applicationUserIdentity = a.newBuffer(n.applicationUserIdentity))),
             (n.systemAppPlaybackQueue = null),
             (n.vocalsControlActive = !1),
             (n.vocalsControlLevel = 0),
@@ -6700,17 +7247,17 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("repeatMode") &&
             (n.repeatMode =
               e.enums === String
-                ? $root$2.RepeatModeProtobuf[t.repeatMode] === void 0
+                ? l.RepeatModeProtobuf[t.repeatMode] === void 0
                   ? t.repeatMode
-                  : $root$2.RepeatModeProtobuf[t.repeatMode]
+                  : l.RepeatModeProtobuf[t.repeatMode]
                 : t.repeatMode),
           t.shuffleMode != null &&
             t.hasOwnProperty("shuffleMode") &&
             (n.shuffleMode =
               e.enums === String
-                ? $root$2.ShuffleModeProtobuf[t.shuffleMode] === void 0
+                ? l.ShuffleModeProtobuf[t.shuffleMode] === void 0
                   ? t.shuffleMode
-                  : $root$2.ShuffleModeProtobuf[t.shuffleMode]
+                  : l.ShuffleModeProtobuf[t.shuffleMode]
                 : t.shuffleMode),
           t.trackID != null &&
             t.hasOwnProperty("trackID") &&
@@ -6718,9 +7265,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.trackID = e.longs === String ? String(t.trackID) : t.trackID)
               : (n.trackID =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.trackID)
+                    ? a.Long.prototype.toString.call(t.trackID)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.trackID.low >>> 0, t.trackID.high >>> 0).toNumber(!0)
+                      ? new a.LongBits(t.trackID.low >>> 0, t.trackID.high >>> 0).toNumber(!0)
                       : t.trackID)),
           t.radioStationID != null &&
             t.hasOwnProperty("radioStationID") &&
@@ -6728,9 +7275,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.radioStationID = e.longs === String ? String(t.radioStationID) : t.radioStationID)
               : (n.radioStationID =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.radioStationID)
+                    ? a.Long.prototype.toString.call(t.radioStationID)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.radioStationID.low >>> 0, t.radioStationID.high >>> 0).toNumber()
+                      ? new a.LongBits(t.radioStationID.low >>> 0, t.radioStationID.high >>> 0).toNumber()
                       : t.radioStationID)),
           t.radioStationHash != null &&
             t.hasOwnProperty("radioStationHash") &&
@@ -6739,7 +7286,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("systemAppPlaybackQueueData") &&
             (n.systemAppPlaybackQueueData =
               e.bytes === String
-                ? $util$2.base64.encode(t.systemAppPlaybackQueueData, 0, t.systemAppPlaybackQueueData.length)
+                ? a.base64.encode(t.systemAppPlaybackQueueData, 0, t.systemAppPlaybackQueueData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.systemAppPlaybackQueueData)
                   : t.systemAppPlaybackQueueData),
@@ -6750,9 +7297,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("sendOptions") &&
             (n.sendOptions =
               e.enums === String
-                ? $root$2.CommandOptionsProtobuf.SendOptions[t.sendOptions] === void 0
+                ? l.CommandOptionsProtobuf.SendOptions[t.sendOptions] === void 0
                   ? t.sendOptions
-                  : $root$2.CommandOptionsProtobuf.SendOptions[t.sendOptions]
+                  : l.CommandOptionsProtobuf.SendOptions[t.sendOptions]
                 : t.sendOptions),
           t.requestDefermentToPlaybackQueuePosition != null &&
             t.hasOwnProperty("requestDefermentToPlaybackQueuePosition") &&
@@ -6779,7 +7326,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("languageOption") &&
             (n.languageOption =
               e.bytes === String
-                ? $util$2.base64.encode(t.languageOption, 0, t.languageOption.length)
+                ? a.base64.encode(t.languageOption, 0, t.languageOption.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.languageOption)
                   : t.languageOption),
@@ -6787,7 +7334,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("playbackQueueContext") &&
             (n.playbackQueueContext =
               e.bytes === String
-                ? $util$2.base64.encode(t.playbackQueueContext, 0, t.playbackQueueContext.length)
+                ? a.base64.encode(t.playbackQueueContext, 0, t.playbackQueueContext.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.playbackQueueContext)
                   : t.playbackQueueContext),
@@ -6801,9 +7348,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("replaceIntent") &&
             (n.replaceIntent =
               e.enums === String
-                ? $root$2.CommandOptionsProtobuf.ReplaceIntent[t.replaceIntent] === void 0
+                ? l.CommandOptionsProtobuf.ReplaceIntent[t.replaceIntent] === void 0
                   ? t.replaceIntent
-                  : $root$2.CommandOptionsProtobuf.ReplaceIntent[t.replaceIntent]
+                  : l.CommandOptionsProtobuf.ReplaceIntent[t.replaceIntent]
                 : t.replaceIntent),
           t.commandID != null && t.hasOwnProperty("commandID") && (n.commandID = t.commandID),
           t.senderID != null && t.hasOwnProperty("senderID") && (n.senderID = t.senderID),
@@ -6816,7 +7363,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("playbackSession") &&
             (n.playbackSession =
               e.bytes === String
-                ? $util$2.base64.encode(t.playbackSession, 0, t.playbackSession.length)
+                ? a.base64.encode(t.playbackSession, 0, t.playbackSession.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.playbackSession)
                   : t.playbackSession),
@@ -6824,7 +7371,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("userIdentityData") &&
             (n.userIdentityData =
               e.bytes === String
-                ? $util$2.base64.encode(t.userIdentityData, 0, t.userIdentityData.length)
+                ? a.base64.encode(t.userIdentityData, 0, t.userIdentityData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.userIdentityData)
                   : t.userIdentityData),
@@ -6835,9 +7382,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("queueEndAction") &&
             (n.queueEndAction =
               e.enums === String
-                ? $root$2.QueueEndActionProtobuf[t.queueEndAction] === void 0
+                ? l.QueueEndActionProtobuf[t.queueEndAction] === void 0
                   ? t.queueEndAction
-                  : $root$2.QueueEndActionProtobuf[t.queueEndAction]
+                  : l.QueueEndActionProtobuf[t.queueEndAction]
                 : t.queueEndAction),
           t.preservesRepeatMode != null &&
             t.hasOwnProperty("preservesRepeatMode") &&
@@ -6861,9 +7408,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("playbackSessionPriority") &&
             (n.playbackSessionPriority =
               e.enums === String
-                ? $root$2.CommandOptionsProtobuf.SessionPriority[t.playbackSessionPriority] === void 0
+                ? l.CommandOptionsProtobuf.SessionPriority[t.playbackSessionPriority] === void 0
                   ? t.playbackSessionPriority
-                  : $root$2.CommandOptionsProtobuf.SessionPriority[t.playbackSessionPriority]
+                  : l.CommandOptionsProtobuf.SessionPriority[t.playbackSessionPriority]
                 : t.playbackSessionPriority),
           t.playbackSessionFilePath != null &&
             t.hasOwnProperty("playbackSessionFilePath") &&
@@ -6875,7 +7422,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("playbackSessionMetadata") &&
             (n.playbackSessionMetadata =
               e.bytes === String
-                ? $util$2.base64.encode(t.playbackSessionMetadata, 0, t.playbackSessionMetadata.length)
+                ? a.base64.encode(t.playbackSessionMetadata, 0, t.playbackSessionMetadata.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.playbackSessionMetadata)
                   : t.playbackSessionMetadata),
@@ -6915,7 +7462,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("destinationDeviceUIDs") &&
             (n.destinationDeviceUIDs =
               e.bytes === String
-                ? $util$2.base64.encode(t.destinationDeviceUIDs, 0, t.destinationDeviceUIDs.length)
+                ? a.base64.encode(t.destinationDeviceUIDs, 0, t.destinationDeviceUIDs.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.destinationDeviceUIDs)
                   : t.destinationDeviceUIDs),
@@ -6950,11 +7497,11 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("prepareForSetQueueProactiveReasonType") &&
             (n.prepareForSetQueueProactiveReasonType =
               e.enums === String
-                ? $root$2.CommandOptionsProtobuf.PrepareForSetQueueProactiveReasonType[
+                ? l.CommandOptionsProtobuf.PrepareForSetQueueProactiveReasonType[
                     t.prepareForSetQueueProactiveReasonType
                   ] === void 0
                   ? t.prepareForSetQueueProactiveReasonType
-                  : $root$2.CommandOptionsProtobuf.PrepareForSetQueueProactiveReasonType[
+                  : l.CommandOptionsProtobuf.PrepareForSetQueueProactiveReasonType[
                       t.prepareForSetQueueProactiveReasonType
                     ]
                 : t.prepareForSetQueueProactiveReasonType),
@@ -6962,13 +7509,13 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("applicationUserIdentity") &&
             (n.applicationUserIdentity =
               e.bytes === String
-                ? $util$2.base64.encode(t.applicationUserIdentity, 0, t.applicationUserIdentity.length)
+                ? a.base64.encode(t.applicationUserIdentity, 0, t.applicationUserIdentity.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.applicationUserIdentity)
                   : t.applicationUserIdentity),
           t.systemAppPlaybackQueue != null &&
             t.hasOwnProperty("systemAppPlaybackQueue") &&
-            (n.systemAppPlaybackQueue = $root$2.SystemPlaybackQueueProtobuf.toObject(t.systemAppPlaybackQueue, e)),
+            (n.systemAppPlaybackQueue = l.SystemPlaybackQueueProtobuf.toObject(t.systemAppPlaybackQueue, e)),
           t.vocalsControlActive != null &&
             t.hasOwnProperty("vocalsControlActive") &&
             (n.vocalsControlActive = t.vocalsControlActive),
@@ -6994,7 +7541,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/CommandOptionsProtobuf");
@@ -7034,7 +7581,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  RepeatModeProtobuf = ($root$2.RepeatModeProtobuf = (() => {
+  Qe = (l.RepeatModeProtobuf = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -7045,7 +7592,7 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  ShuffleModeProtobuf = ($root$2.ShuffleModeProtobuf = (() => {
+  _e = (l.ShuffleModeProtobuf = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -7056,14 +7603,14 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  QueueEndActionProtobuf = ($root$2.QueueEndActionProtobuf = (() => {
+  qe = (l.QueueEndActionProtobuf = (() => {
     const o = {},
       i = Object.create(o);
     return (
       (i[(o[0] = "Clear")] = 0), (i[(o[1] = "None")] = 1), (i[(o[2] = "Reset")] = 2), (i[(o[3] = "AutoPlay")] = 3), i
     );
   })()),
-  PlaybackQueueContextProtobuf = ($root$2.PlaybackQueueContextProtobuf = (() => {
+  Be = (l.PlaybackQueueContextProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -7074,7 +7621,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.revision != null && Object.hasOwnProperty.call(t, "revision") && e.uint32(10).string(t.revision),
           e
         );
@@ -7083,36 +7630,36 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.PlaybackQueueContextProtobuf();
+          r = new l.PlaybackQueueContextProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.revision = t.string();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : t.revision != null && t.hasOwnProperty("revision") && !$util$2.isString(t.revision)
+          : t.revision != null && t.hasOwnProperty("revision") && !a.isString(t.revision)
             ? "revision: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.PlaybackQueueContextProtobuf) return t;
-        let e = new $root$2.PlaybackQueueContextProtobuf();
+        if (t instanceof l.PlaybackQueueContextProtobuf) return t;
+        let e = new l.PlaybackQueueContextProtobuf();
         return (t.revision != null && (e.revision = String(t.revision)), e);
       }),
       (o.toObject = function (t, e) {
@@ -7125,7 +7672,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/PlaybackQueueContextProtobuf");
@@ -7133,40 +7680,40 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  PlaybackQueueProtobuf = ($root$2.PlaybackQueueProtobuf = (() => {
+  Fe = (l.PlaybackQueueProtobuf = (() => {
     function o(i) {
       if (((this.contentItem = []), (this.participants = []), (this.homeUserIdentifiers = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
       (o.prototype.location = 0),
-      (o.prototype.contentItem = $util$2.emptyArray),
+      (o.prototype.contentItem = a.emptyArray),
       (o.prototype.context = null),
       (o.prototype.requestID = ""),
       (o.prototype.resolvedPlayerPath = null),
       (o.prototype.sendingPlaybackQueueTransaction = !1),
       (o.prototype.queueIdentifier = ""),
-      (o.prototype.participants = $util$2.emptyArray),
-      (o.prototype.homeUserIdentifiers = $util$2.emptyArray),
+      (o.prototype.participants = a.emptyArray),
+      (o.prototype.homeUserIdentifiers = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.location != null && Object.hasOwnProperty.call(t, "location") && e.uint32(8).int32(t.location),
           t.contentItem != null && t.contentItem.length)
         )
           for (let n = 0; n < t.contentItem.length; ++n)
-            $root$2.ContentItemProtobuf.encode(t.contentItem[n], e.uint32(18).fork()).ldelim();
+            l.ContentItemProtobuf.encode(t.contentItem[n], e.uint32(18).fork()).ldelim();
         if (
           (t.context != null &&
             Object.hasOwnProperty.call(t, "context") &&
-            $root$2.PlaybackQueueContextProtobuf.encode(t.context, e.uint32(26).fork()).ldelim(),
+            l.PlaybackQueueContextProtobuf.encode(t.context, e.uint32(26).fork()).ldelim(),
           t.requestID != null && Object.hasOwnProperty.call(t, "requestID") && e.uint32(34).string(t.requestID),
           t.resolvedPlayerPath != null &&
             Object.hasOwnProperty.call(t, "resolvedPlayerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.resolvedPlayerPath, e.uint32(42).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.resolvedPlayerPath, e.uint32(42).fork()).ldelim(),
           t.sendingPlaybackQueueTransaction != null &&
             Object.hasOwnProperty.call(t, "sendingPlaybackQueueTransaction") &&
             e.uint32(48).bool(t.sendingPlaybackQueueTransaction),
@@ -7176,7 +7723,7 @@ const $Reader$2 = minimalExports.Reader,
           t.participants != null && t.participants.length)
         )
           for (let n = 0; n < t.participants.length; ++n)
-            $root$2.ContentItemProtobuf.encode(t.participants[n], e.uint32(66).fork()).ldelim();
+            l.ContentItemProtobuf.encode(t.participants[n], e.uint32(66).fork()).ldelim();
         if (t.homeUserIdentifiers != null && t.homeUserIdentifiers.length)
           for (let n = 0; n < t.homeUserIdentifiers.length; ++n) e.uint32(74).string(t.homeUserIdentifiers[n]);
         return e;
@@ -7185,23 +7732,23 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.PlaybackQueueProtobuf();
+          r = new l.PlaybackQueueProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.location = t.int32();
               break;
             }
             case 2: {
               ((r.contentItem && r.contentItem.length) || (r.contentItem = []),
-                r.contentItem.push($root$2.ContentItemProtobuf.decode(t, t.uint32())));
+                r.contentItem.push(l.ContentItemProtobuf.decode(t, t.uint32())));
               break;
             }
             case 3: {
-              r.context = $root$2.PlaybackQueueContextProtobuf.decode(t, t.uint32());
+              r.context = l.PlaybackQueueContextProtobuf.decode(t, t.uint32());
               break;
             }
             case 4: {
@@ -7209,7 +7756,7 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 5: {
-              r.resolvedPlayerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.resolvedPlayerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             case 6: {
@@ -7222,7 +7769,7 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 8: {
               ((r.participants && r.participants.length) || (r.participants = []),
-                r.participants.push($root$2.ContentItemProtobuf.decode(t, t.uint32())));
+                r.participants.push(l.ContentItemProtobuf.decode(t, t.uint32())));
               break;
             }
             case 9: {
@@ -7231,34 +7778,34 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.location != null && t.hasOwnProperty("location") && !$util$2.isInteger(t.location))
+        if (t.location != null && t.hasOwnProperty("location") && !a.isInteger(t.location))
           return "location: integer expected";
         if (t.contentItem != null && t.hasOwnProperty("contentItem")) {
           if (!Array.isArray(t.contentItem)) return "contentItem: array expected";
           for (let e = 0; e < t.contentItem.length; ++e) {
-            let n = $root$2.ContentItemProtobuf.verify(t.contentItem[e]);
+            let n = l.ContentItemProtobuf.verify(t.contentItem[e]);
             if (n) return "contentItem." + n;
           }
         }
         if (t.context != null && t.hasOwnProperty("context")) {
-          let e = $root$2.PlaybackQueueContextProtobuf.verify(t.context);
+          let e = l.PlaybackQueueContextProtobuf.verify(t.context);
           if (e) return "context." + e;
         }
-        if (t.requestID != null && t.hasOwnProperty("requestID") && !$util$2.isString(t.requestID))
+        if (t.requestID != null && t.hasOwnProperty("requestID") && !a.isString(t.requestID))
           return "requestID: string expected";
         if (t.resolvedPlayerPath != null && t.hasOwnProperty("resolvedPlayerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.resolvedPlayerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.resolvedPlayerPath);
           if (e) return "resolvedPlayerPath." + e;
         }
         if (
@@ -7267,42 +7814,42 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.sendingPlaybackQueueTransaction != "boolean"
         )
           return "sendingPlaybackQueueTransaction: boolean expected";
-        if (t.queueIdentifier != null && t.hasOwnProperty("queueIdentifier") && !$util$2.isString(t.queueIdentifier))
+        if (t.queueIdentifier != null && t.hasOwnProperty("queueIdentifier") && !a.isString(t.queueIdentifier))
           return "queueIdentifier: string expected";
         if (t.participants != null && t.hasOwnProperty("participants")) {
           if (!Array.isArray(t.participants)) return "participants: array expected";
           for (let e = 0; e < t.participants.length; ++e) {
-            let n = $root$2.ContentItemProtobuf.verify(t.participants[e]);
+            let n = l.ContentItemProtobuf.verify(t.participants[e]);
             if (n) return "participants." + n;
           }
         }
         if (t.homeUserIdentifiers != null && t.hasOwnProperty("homeUserIdentifiers")) {
           if (!Array.isArray(t.homeUserIdentifiers)) return "homeUserIdentifiers: array expected";
           for (let e = 0; e < t.homeUserIdentifiers.length; ++e)
-            if (!$util$2.isString(t.homeUserIdentifiers[e])) return "homeUserIdentifiers: string[] expected";
+            if (!a.isString(t.homeUserIdentifiers[e])) return "homeUserIdentifiers: string[] expected";
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.PlaybackQueueProtobuf) return t;
-        let e = new $root$2.PlaybackQueueProtobuf();
+        if (t instanceof l.PlaybackQueueProtobuf) return t;
+        let e = new l.PlaybackQueueProtobuf();
         if ((t.location != null && (e.location = t.location | 0), t.contentItem)) {
           if (!Array.isArray(t.contentItem)) throw TypeError(".PlaybackQueueProtobuf.contentItem: array expected");
           e.contentItem = [];
           for (let n = 0; n < t.contentItem.length; ++n) {
             if (typeof t.contentItem[n] != "object")
               throw TypeError(".PlaybackQueueProtobuf.contentItem: object expected");
-            e.contentItem[n] = $root$2.ContentItemProtobuf.fromObject(t.contentItem[n]);
+            e.contentItem[n] = l.ContentItemProtobuf.fromObject(t.contentItem[n]);
           }
         }
         if (t.context != null) {
           if (typeof t.context != "object") throw TypeError(".PlaybackQueueProtobuf.context: object expected");
-          e.context = $root$2.PlaybackQueueContextProtobuf.fromObject(t.context);
+          e.context = l.PlaybackQueueContextProtobuf.fromObject(t.context);
         }
         if ((t.requestID != null && (e.requestID = String(t.requestID)), t.resolvedPlayerPath != null)) {
           if (typeof t.resolvedPlayerPath != "object")
             throw TypeError(".PlaybackQueueProtobuf.resolvedPlayerPath: object expected");
-          e.resolvedPlayerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.resolvedPlayerPath);
+          e.resolvedPlayerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.resolvedPlayerPath);
         }
         if (
           (t.sendingPlaybackQueueTransaction != null &&
@@ -7315,7 +7862,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.participants.length; ++n) {
             if (typeof t.participants[n] != "object")
               throw TypeError(".PlaybackQueueProtobuf.participants: object expected");
-            e.participants[n] = $root$2.ContentItemProtobuf.fromObject(t.participants[n]);
+            e.participants[n] = l.ContentItemProtobuf.fromObject(t.participants[n]);
           }
         }
         if (t.homeUserIdentifiers) {
@@ -7344,16 +7891,16 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.contentItem = [];
           for (let r = 0; r < t.contentItem.length; ++r)
-            n.contentItem[r] = $root$2.ContentItemProtobuf.toObject(t.contentItem[r], e);
+            n.contentItem[r] = l.ContentItemProtobuf.toObject(t.contentItem[r], e);
         }
         if (
           (t.context != null &&
             t.hasOwnProperty("context") &&
-            (n.context = $root$2.PlaybackQueueContextProtobuf.toObject(t.context, e)),
+            (n.context = l.PlaybackQueueContextProtobuf.toObject(t.context, e)),
           t.requestID != null && t.hasOwnProperty("requestID") && (n.requestID = t.requestID),
           t.resolvedPlayerPath != null &&
             t.hasOwnProperty("resolvedPlayerPath") &&
-            (n.resolvedPlayerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.resolvedPlayerPath, e)),
+            (n.resolvedPlayerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.resolvedPlayerPath, e)),
           t.sendingPlaybackQueueTransaction != null &&
             t.hasOwnProperty("sendingPlaybackQueueTransaction") &&
             (n.sendingPlaybackQueueTransaction = t.sendingPlaybackQueueTransaction),
@@ -7362,7 +7909,7 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.participants = [];
           for (let r = 0; r < t.participants.length; ++r)
-            n.participants[r] = $root$2.ContentItemProtobuf.toObject(t.participants[r], e);
+            n.participants[r] = l.ContentItemProtobuf.toObject(t.participants[r], e);
         }
         if (t.homeUserIdentifiers && t.homeUserIdentifiers.length) {
           n.homeUserIdentifiers = [];
@@ -7371,7 +7918,7 @@ const $Reader$2 = minimalExports.Reader,
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/PlaybackQueueProtobuf");
@@ -7379,7 +7926,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  PlaybackQueueRequestProtobuf = ($root$2.PlaybackQueueRequestProtobuf = (() => {
+  Ge = (l.PlaybackQueueRequestProtobuf = (() => {
     function o(i) {
       if (
         ((this.contentItemIdentifiers = []),
@@ -7401,7 +7948,7 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.includeLanguageOptions = !1),
       (o.prototype.context = null),
       (o.prototype.requestID = ""),
-      (o.prototype.contentItemIdentifiers = $util$2.emptyArray),
+      (o.prototype.contentItemIdentifiers = a.emptyArray),
       (o.prototype.returnContentItemAssetsInUserCompletion = !1),
       (o.prototype.playerPath = null),
       (o.prototype.cachingPolicy = 0),
@@ -7409,14 +7956,14 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.isLegacyNowPlayingInfoRequest = !1),
       (o.prototype.includeParticipants = !1),
       (o.prototype.includeAvailableArtworkFormats = !1),
-      (o.prototype.requestedArtworkFormats = $util$2.emptyArray),
-      (o.prototype.requestedRemoteArtworkFormats = $util$2.emptyArray),
+      (o.prototype.requestedArtworkFormats = a.emptyArray),
+      (o.prototype.requestedRemoteArtworkFormats = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.location != null && Object.hasOwnProperty.call(t, "location") && e.uint32(8).int32(t.location),
           t.length != null && Object.hasOwnProperty.call(t, "length") && e.uint32(16).int32(t.length),
           t.includeMetadata != null &&
@@ -7440,7 +7987,7 @@ const $Reader$2 = minimalExports.Reader,
             e.uint32(72).bool(t.includeLanguageOptions),
           t.context != null &&
             Object.hasOwnProperty.call(t, "context") &&
-            $root$2.PlaybackQueueContextProtobuf.encode(t.context, e.uint32(82).fork()).ldelim(),
+            l.PlaybackQueueContextProtobuf.encode(t.context, e.uint32(82).fork()).ldelim(),
           t.requestID != null && Object.hasOwnProperty.call(t, "requestID") && e.uint32(90).string(t.requestID),
           t.contentItemIdentifiers != null && t.contentItemIdentifiers.length)
         )
@@ -7451,7 +7998,7 @@ const $Reader$2 = minimalExports.Reader,
             e.uint32(104).bool(t.returnContentItemAssetsInUserCompletion),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(114).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(114).fork()).ldelim(),
           t.cachingPolicy != null &&
             Object.hasOwnProperty.call(t, "cachingPolicy") &&
             e.uint32(120).int32(t.cachingPolicy),
@@ -7477,12 +8024,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.PlaybackQueueRequestProtobuf();
+          r = new l.PlaybackQueueRequestProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.location = t.int32();
               break;
@@ -7520,7 +8067,7 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 10: {
-              r.context = $root$2.PlaybackQueueContextProtobuf.decode(t, t.uint32());
+              r.context = l.PlaybackQueueContextProtobuf.decode(t, t.uint32());
               break;
             }
             case 11: {
@@ -7537,7 +8084,7 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 14: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             case 15: {
@@ -7572,21 +8119,20 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.location != null && t.hasOwnProperty("location") && !$util$2.isInteger(t.location))
+        if (t.location != null && t.hasOwnProperty("location") && !a.isInteger(t.location))
           return "location: integer expected";
-        if (t.length != null && t.hasOwnProperty("length") && !$util$2.isInteger(t.length))
-          return "length: integer expected";
+        if (t.length != null && t.hasOwnProperty("length") && !a.isInteger(t.length)) return "length: integer expected";
         if (t.includeMetadata != null && t.hasOwnProperty("includeMetadata") && typeof t.includeMetadata != "boolean")
           return "includeMetadata: boolean expected";
         if (t.artworkWidth != null && t.hasOwnProperty("artworkWidth") && typeof t.artworkWidth != "number")
@@ -7606,15 +8152,15 @@ const $Reader$2 = minimalExports.Reader,
         )
           return "includeLanguageOptions: boolean expected";
         if (t.context != null && t.hasOwnProperty("context")) {
-          let e = $root$2.PlaybackQueueContextProtobuf.verify(t.context);
+          let e = l.PlaybackQueueContextProtobuf.verify(t.context);
           if (e) return "context." + e;
         }
-        if (t.requestID != null && t.hasOwnProperty("requestID") && !$util$2.isString(t.requestID))
+        if (t.requestID != null && t.hasOwnProperty("requestID") && !a.isString(t.requestID))
           return "requestID: string expected";
         if (t.contentItemIdentifiers != null && t.hasOwnProperty("contentItemIdentifiers")) {
           if (!Array.isArray(t.contentItemIdentifiers)) return "contentItemIdentifiers: array expected";
           for (let e = 0; e < t.contentItemIdentifiers.length; ++e)
-            if (!$util$2.isString(t.contentItemIdentifiers[e])) return "contentItemIdentifiers: string[] expected";
+            if (!a.isString(t.contentItemIdentifiers[e])) return "contentItemIdentifiers: string[] expected";
         }
         if (
           t.returnContentItemAssetsInUserCompletion != null &&
@@ -7623,12 +8169,12 @@ const $Reader$2 = minimalExports.Reader,
         )
           return "returnContentItemAssetsInUserCompletion: boolean expected";
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
-        if (t.cachingPolicy != null && t.hasOwnProperty("cachingPolicy") && !$util$2.isInteger(t.cachingPolicy))
+        if (t.cachingPolicy != null && t.hasOwnProperty("cachingPolicy") && !a.isInteger(t.cachingPolicy))
           return "cachingPolicy: integer expected";
-        if (t.label != null && t.hasOwnProperty("label") && !$util$2.isString(t.label)) return "label: string expected";
+        if (t.label != null && t.hasOwnProperty("label") && !a.isString(t.label)) return "label: string expected";
         if (
           t.isLegacyNowPlayingInfoRequest != null &&
           t.hasOwnProperty("isLegacyNowPlayingInfoRequest") &&
@@ -7650,19 +8196,19 @@ const $Reader$2 = minimalExports.Reader,
         if (t.requestedArtworkFormats != null && t.hasOwnProperty("requestedArtworkFormats")) {
           if (!Array.isArray(t.requestedArtworkFormats)) return "requestedArtworkFormats: array expected";
           for (let e = 0; e < t.requestedArtworkFormats.length; ++e)
-            if (!$util$2.isString(t.requestedArtworkFormats[e])) return "requestedArtworkFormats: string[] expected";
+            if (!a.isString(t.requestedArtworkFormats[e])) return "requestedArtworkFormats: string[] expected";
         }
         if (t.requestedRemoteArtworkFormats != null && t.hasOwnProperty("requestedRemoteArtworkFormats")) {
           if (!Array.isArray(t.requestedRemoteArtworkFormats)) return "requestedRemoteArtworkFormats: array expected";
           for (let e = 0; e < t.requestedRemoteArtworkFormats.length; ++e)
-            if (!$util$2.isString(t.requestedRemoteArtworkFormats[e]))
+            if (!a.isString(t.requestedRemoteArtworkFormats[e]))
               return "requestedRemoteArtworkFormats: string[] expected";
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.PlaybackQueueRequestProtobuf) return t;
-        let e = new $root$2.PlaybackQueueRequestProtobuf();
+        if (t instanceof l.PlaybackQueueRequestProtobuf) return t;
+        let e = new l.PlaybackQueueRequestProtobuf();
         if (
           (t.location != null && (e.location = t.location | 0),
           t.length != null && (e.length = t.length | 0),
@@ -7676,7 +8222,7 @@ const $Reader$2 = minimalExports.Reader,
           t.context != null)
         ) {
           if (typeof t.context != "object") throw TypeError(".PlaybackQueueRequestProtobuf.context: object expected");
-          e.context = $root$2.PlaybackQueueContextProtobuf.fromObject(t.context);
+          e.context = l.PlaybackQueueContextProtobuf.fromObject(t.context);
         }
         if ((t.requestID != null && (e.requestID = String(t.requestID)), t.contentItemIdentifiers)) {
           if (!Array.isArray(t.contentItemIdentifiers))
@@ -7692,7 +8238,7 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           if (typeof t.playerPath != "object")
             throw TypeError(".PlaybackQueueRequestProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         if (
           (t.cachingPolicy != null && (e.cachingPolicy = t.cachingPolicy | 0),
@@ -7761,7 +8307,7 @@ const $Reader$2 = minimalExports.Reader,
             (n.includeLanguageOptions = t.includeLanguageOptions),
           t.context != null &&
             t.hasOwnProperty("context") &&
-            (n.context = $root$2.PlaybackQueueContextProtobuf.toObject(t.context, e)),
+            (n.context = l.PlaybackQueueContextProtobuf.toObject(t.context, e)),
           t.requestID != null && t.hasOwnProperty("requestID") && (n.requestID = t.requestID),
           t.contentItemIdentifiers && t.contentItemIdentifiers.length)
         ) {
@@ -7775,7 +8321,7 @@ const $Reader$2 = minimalExports.Reader,
             (n.returnContentItemAssetsInUserCompletion = t.returnContentItemAssetsInUserCompletion),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           t.cachingPolicy != null && t.hasOwnProperty("cachingPolicy") && (n.cachingPolicy = t.cachingPolicy),
           t.label != null && t.hasOwnProperty("label") && (n.label = t.label),
           t.isLegacyNowPlayingInfoRequest != null &&
@@ -7801,7 +8347,7 @@ const $Reader$2 = minimalExports.Reader,
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/PlaybackQueueRequestProtobuf");
@@ -7809,7 +8355,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  PlaybackQueueCapabilitiesProtobuf = ($root$2.PlaybackQueueCapabilitiesProtobuf = (() => {
+  Ve = (l.PlaybackQueueCapabilitiesProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -7822,7 +8368,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.requestByRange != null &&
             Object.hasOwnProperty.call(t, "requestByRange") &&
             e.uint32(8).bool(t.requestByRange),
@@ -7839,12 +8385,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.PlaybackQueueCapabilitiesProtobuf();
+          r = new l.PlaybackQueueCapabilitiesProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.requestByRange = t.bool();
               break;
@@ -7858,14 +8404,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
@@ -7883,8 +8429,8 @@ const $Reader$2 = minimalExports.Reader,
                 : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.PlaybackQueueCapabilitiesProtobuf) return t;
-        let e = new $root$2.PlaybackQueueCapabilitiesProtobuf();
+        if (t instanceof l.PlaybackQueueCapabilitiesProtobuf) return t;
+        let e = new l.PlaybackQueueCapabilitiesProtobuf();
         return (
           t.requestByRange != null && (e.requestByRange = !!t.requestByRange),
           t.requestByIdentifiers != null && (e.requestByIdentifiers = !!t.requestByIdentifiers),
@@ -7908,7 +8454,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/PlaybackQueueCapabilitiesProtobuf");
@@ -7916,7 +8462,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SystemPlaybackQueueProtobuf = ($root$2.SystemPlaybackQueueProtobuf = (() => {
+  ze = (l.SystemPlaybackQueueProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -7927,14 +8473,14 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.featureName = ""),
       (o.prototype.customData = null),
       (o.prototype.tracklist = null),
-      (o.prototype.userInfo = $util$2.newBuffer([])),
-      (o.prototype.metrics = $util$2.newBuffer([])),
+      (o.prototype.userInfo = a.newBuffer([])),
+      (o.prototype.metrics = a.newBuffer([])),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           e.uint32(8).int32(t.type),
           t.replaceIntent != null &&
             Object.hasOwnProperty.call(t, "replaceIntent") &&
@@ -7945,13 +8491,13 @@ const $Reader$2 = minimalExports.Reader,
           t.featureName != null && Object.hasOwnProperty.call(t, "featureName") && e.uint32(34).string(t.featureName),
           t.customData != null &&
             Object.hasOwnProperty.call(t, "customData") &&
-            $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.encode(
+            l.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.encode(
               t.customData,
               e.uint32(50).fork(),
             ).ldelim(),
           t.tracklist != null &&
             Object.hasOwnProperty.call(t, "tracklist") &&
-            $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.encode(
+            l.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.encode(
               t.tracklist,
               e.uint32(58).fork(),
             ).ldelim(),
@@ -7964,12 +8510,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SystemPlaybackQueueProtobuf();
+          r = new l.SystemPlaybackQueueProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.type = t.int32();
               break;
@@ -7987,14 +8533,11 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 6: {
-              r.customData = $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.decode(
-                t,
-                t.uint32(),
-              );
+              r.customData = l.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.decode(t, t.uint32());
               break;
             }
             case 7: {
-              r.tracklist = $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.decode(
+              r.tracklist = l.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.decode(
                 t,
                 t.uint32(),
               );
@@ -8009,15 +8552,15 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
-        if (!r.hasOwnProperty("type")) throw $util$2.ProtocolError("missing required 'type'", { instance: r });
+        if (!r.hasOwnProperty("type")) throw a.ProtocolError("missing required 'type'", { instance: r });
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -8046,29 +8589,29 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.isRequestingImmediatePlayback != "boolean"
         )
           return "isRequestingImmediatePlayback: boolean expected";
-        if (t.featureName != null && t.hasOwnProperty("featureName") && !$util$2.isString(t.featureName))
+        if (t.featureName != null && t.hasOwnProperty("featureName") && !a.isString(t.featureName))
           return "featureName: string expected";
         if (t.customData != null && t.hasOwnProperty("customData")) {
-          let e = $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.verify(t.customData);
+          let e = l.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.verify(t.customData);
           if (e) return "customData." + e;
         }
         if (t.tracklist != null && t.hasOwnProperty("tracklist")) {
-          let e = $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.verify(t.tracklist);
+          let e = l.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.verify(t.tracklist);
           if (e) return "tracklist." + e;
         }
         return t.userInfo != null &&
           t.hasOwnProperty("userInfo") &&
-          !((t.userInfo && typeof t.userInfo.length == "number") || $util$2.isString(t.userInfo))
+          !((t.userInfo && typeof t.userInfo.length == "number") || a.isString(t.userInfo))
           ? "userInfo: buffer expected"
           : t.metrics != null &&
               t.hasOwnProperty("metrics") &&
-              !((t.metrics && typeof t.metrics.length == "number") || $util$2.isString(t.metrics))
+              !((t.metrics && typeof t.metrics.length == "number") || a.isString(t.metrics))
             ? "metrics: buffer expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SystemPlaybackQueueProtobuf) return t;
-        let e = new $root$2.SystemPlaybackQueueProtobuf();
+        if (t instanceof l.SystemPlaybackQueueProtobuf) return t;
+        let e = new l.SystemPlaybackQueueProtobuf();
         switch (t.type) {
           default:
             if (typeof t.type == "number") {
@@ -8125,29 +8668,23 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           if (typeof t.customData != "object")
             throw TypeError(".SystemPlaybackQueueProtobuf.customData: object expected");
-          e.customData = $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.fromObject(
-            t.customData,
-          );
+          e.customData = l.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.fromObject(t.customData);
         }
         if (t.tracklist != null) {
           if (typeof t.tracklist != "object")
             throw TypeError(".SystemPlaybackQueueProtobuf.tracklist: object expected");
-          e.tracklist = $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.fromObject(
+          e.tracklist = l.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.fromObject(
             t.tracklist,
           );
         }
         return (
           t.userInfo != null &&
             (typeof t.userInfo == "string"
-              ? $util$2.base64.decode(
-                  t.userInfo,
-                  (e.userInfo = $util$2.newBuffer($util$2.base64.length(t.userInfo))),
-                  0,
-                )
+              ? a.base64.decode(t.userInfo, (e.userInfo = a.newBuffer(a.base64.length(t.userInfo))), 0)
               : t.userInfo.length >= 0 && (e.userInfo = t.userInfo)),
           t.metrics != null &&
             (typeof t.metrics == "string"
-              ? $util$2.base64.decode(t.metrics, (e.metrics = $util$2.newBuffer($util$2.base64.length(t.metrics))), 0)
+              ? a.base64.decode(t.metrics, (e.metrics = a.newBuffer(a.base64.length(t.metrics))), 0)
               : t.metrics.length >= 0 && (e.metrics = t.metrics)),
           e
         );
@@ -8165,25 +8702,25 @@ const $Reader$2 = minimalExports.Reader,
             (n.tracklist = null),
             e.bytes === String
               ? (n.userInfo = "")
-              : ((n.userInfo = []), e.bytes !== Array && (n.userInfo = $util$2.newBuffer(n.userInfo))),
+              : ((n.userInfo = []), e.bytes !== Array && (n.userInfo = a.newBuffer(n.userInfo))),
             e.bytes === String
               ? (n.metrics = "")
-              : ((n.metrics = []), e.bytes !== Array && (n.metrics = $util$2.newBuffer(n.metrics)))),
+              : ((n.metrics = []), e.bytes !== Array && (n.metrics = a.newBuffer(n.metrics)))),
           t.type != null &&
             t.hasOwnProperty("type") &&
             (n.type =
               e.enums === String
-                ? $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackQueueType[t.type] === void 0
+                ? l.SystemPlaybackQueueProtobuf.SystemPlaybackQueueType[t.type] === void 0
                   ? t.type
-                  : $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackQueueType[t.type]
+                  : l.SystemPlaybackQueueProtobuf.SystemPlaybackQueueType[t.type]
                 : t.type),
           t.replaceIntent != null &&
             t.hasOwnProperty("replaceIntent") &&
             (n.replaceIntent =
               e.enums === String
-                ? $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackQueueReplaceIntent[t.replaceIntent] === void 0
+                ? l.SystemPlaybackQueueProtobuf.SystemPlaybackQueueReplaceIntent[t.replaceIntent] === void 0
                   ? t.replaceIntent
-                  : $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackQueueReplaceIntent[t.replaceIntent]
+                  : l.SystemPlaybackQueueProtobuf.SystemPlaybackQueueReplaceIntent[t.replaceIntent]
                 : t.replaceIntent),
           t.isRequestingImmediatePlayback != null &&
             t.hasOwnProperty("isRequestingImmediatePlayback") &&
@@ -8191,13 +8728,13 @@ const $Reader$2 = minimalExports.Reader,
           t.featureName != null && t.hasOwnProperty("featureName") && (n.featureName = t.featureName),
           t.customData != null &&
             t.hasOwnProperty("customData") &&
-            (n.customData = $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.toObject(
+            (n.customData = l.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf.toObject(
               t.customData,
               e,
             )),
           t.tracklist != null &&
             t.hasOwnProperty("tracklist") &&
-            (n.tracklist = $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.toObject(
+            (n.tracklist = l.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf.toObject(
               t.tracklist,
               e,
             )),
@@ -8205,7 +8742,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("userInfo") &&
             (n.userInfo =
               e.bytes === String
-                ? $util$2.base64.encode(t.userInfo, 0, t.userInfo.length)
+                ? a.base64.encode(t.userInfo, 0, t.userInfo.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.userInfo)
                   : t.userInfo),
@@ -8213,7 +8750,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("metrics") &&
             (n.metrics =
               e.bytes === String
-                ? $util$2.base64.encode(t.metrics, 0, t.metrics.length)
+                ? a.base64.encode(t.metrics, 0, t.metrics.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.metrics)
                   : t.metrics),
@@ -8221,7 +8758,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SystemPlaybackQueueProtobuf");
@@ -8255,7 +8792,7 @@ const $Reader$2 = minimalExports.Reader,
         return (
           (i.prototype.firstTrackIdentifier = ""),
           (i.prototype.trackIdentifiers = ""),
-          (i.prototype.collectionIdentifierSet = $util$2.newBuffer([])),
+          (i.prototype.collectionIdentifierSet = a.newBuffer([])),
           (i.prototype.shuffleMode = 0),
           (i.prototype.repeatMode = 0),
           (i.create = function (e) {
@@ -8263,7 +8800,7 @@ const $Reader$2 = minimalExports.Reader,
           }),
           (i.encode = function (e, n) {
             return (
-              n || (n = $Writer$2.create()),
+              n || (n = w.create()),
               e.firstTrackIdentifier != null &&
                 Object.hasOwnProperty.call(e, "firstTrackIdentifier") &&
                 n.uint32(10).string(e.firstTrackIdentifier),
@@ -8284,62 +8821,58 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$2 || (e = $Reader$2.create(e));
+            e instanceof c || (e = c.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf();
+              u = new l.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.firstTrackIdentifier = e.string();
+                  u.firstTrackIdentifier = e.string();
                   break;
                 }
                 case 2: {
-                  l.trackIdentifiers = e.string();
+                  u.trackIdentifiers = e.string();
                   break;
                 }
                 case 3: {
-                  l.collectionIdentifierSet = e.bytes();
+                  u.collectionIdentifierSet = e.bytes();
                   break;
                 }
                 case 4: {
-                  l.shuffleMode = e.int32();
+                  u.shuffleMode = e.int32();
                   break;
                 }
                 case 5: {
-                  l.repeatMode = e.int32();
+                  u.repeatMode = e.int32();
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$2 || (e = new $Reader$2(e)), this.decode(e, e.uint32()));
+            return (e instanceof c || (e = new c(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             if (typeof e != "object" || e === null) return "object expected";
             if (
               e.firstTrackIdentifier != null &&
               e.hasOwnProperty("firstTrackIdentifier") &&
-              !$util$2.isString(e.firstTrackIdentifier)
+              !a.isString(e.firstTrackIdentifier)
             )
               return "firstTrackIdentifier: string expected";
-            if (
-              e.trackIdentifiers != null &&
-              e.hasOwnProperty("trackIdentifiers") &&
-              !$util$2.isString(e.trackIdentifiers)
-            )
+            if (e.trackIdentifiers != null && e.hasOwnProperty("trackIdentifiers") && !a.isString(e.trackIdentifiers))
               return "trackIdentifiers: string expected";
             if (
               e.collectionIdentifierSet != null &&
               e.hasOwnProperty("collectionIdentifierSet") &&
               !(
                 (e.collectionIdentifierSet && typeof e.collectionIdentifierSet.length == "number") ||
-                $util$2.isString(e.collectionIdentifierSet)
+                a.isString(e.collectionIdentifierSet)
               )
             )
               return "collectionIdentifierSet: buffer expected";
@@ -8366,16 +8899,16 @@ const $Reader$2 = minimalExports.Reader,
             return null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf) return e;
-            let n = new $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf();
+            if (e instanceof l.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf) return e;
+            let n = new l.SystemPlaybackQueueProtobuf.SystemPlaybackGenericTracklistQueueProtobuf();
             switch (
               (e.firstTrackIdentifier != null && (n.firstTrackIdentifier = String(e.firstTrackIdentifier)),
               e.trackIdentifiers != null && (n.trackIdentifiers = String(e.trackIdentifiers)),
               e.collectionIdentifierSet != null &&
                 (typeof e.collectionIdentifierSet == "string"
-                  ? $util$2.base64.decode(
+                  ? a.base64.decode(
                       e.collectionIdentifierSet,
-                      (n.collectionIdentifierSet = $util$2.newBuffer($util$2.base64.length(e.collectionIdentifierSet))),
+                      (n.collectionIdentifierSet = a.newBuffer(a.base64.length(e.collectionIdentifierSet))),
                       0,
                     )
                   : e.collectionIdentifierSet.length >= 0 && (n.collectionIdentifierSet = e.collectionIdentifierSet)),
@@ -8440,7 +8973,7 @@ const $Reader$2 = minimalExports.Reader,
                 n.bytes === String
                   ? (r.collectionIdentifierSet = "")
                   : ((r.collectionIdentifierSet = []),
-                    n.bytes !== Array && (r.collectionIdentifierSet = $util$2.newBuffer(r.collectionIdentifierSet))),
+                    n.bytes !== Array && (r.collectionIdentifierSet = a.newBuffer(r.collectionIdentifierSet))),
                 (r.shuffleMode = n.enums === String ? "ShuffleModeProtobuf_Unknown" : 0),
                 (r.repeatMode = n.enums === String ? "RepeatModeProtobuf_Unknown" : 0)),
               e.firstTrackIdentifier != null &&
@@ -8453,7 +8986,7 @@ const $Reader$2 = minimalExports.Reader,
                 e.hasOwnProperty("collectionIdentifierSet") &&
                 (r.collectionIdentifierSet =
                   n.bytes === String
-                    ? $util$2.base64.encode(e.collectionIdentifierSet, 0, e.collectionIdentifierSet.length)
+                    ? a.base64.encode(e.collectionIdentifierSet, 0, e.collectionIdentifierSet.length)
                     : n.bytes === Array
                       ? Array.prototype.slice.call(e.collectionIdentifierSet)
                       : e.collectionIdentifierSet),
@@ -8461,23 +8994,23 @@ const $Reader$2 = minimalExports.Reader,
                 e.hasOwnProperty("shuffleMode") &&
                 (r.shuffleMode =
                   n.enums === String
-                    ? $root$2.ShuffleModeProtobuf[e.shuffleMode] === void 0
+                    ? l.ShuffleModeProtobuf[e.shuffleMode] === void 0
                       ? e.shuffleMode
-                      : $root$2.ShuffleModeProtobuf[e.shuffleMode]
+                      : l.ShuffleModeProtobuf[e.shuffleMode]
                     : e.shuffleMode),
               e.repeatMode != null &&
                 e.hasOwnProperty("repeatMode") &&
                 (r.repeatMode =
                   n.enums === String
-                    ? $root$2.RepeatModeProtobuf[e.repeatMode] === void 0
+                    ? l.RepeatModeProtobuf[e.repeatMode] === void 0
                       ? e.repeatMode
-                      : $root$2.RepeatModeProtobuf[e.repeatMode]
+                      : l.RepeatModeProtobuf[e.repeatMode]
                     : e.repeatMode),
               r
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (
@@ -8494,61 +9027,61 @@ const $Reader$2 = minimalExports.Reader,
         }
         return (
           (i.prototype.identifier = ""),
-          (i.prototype.data = $util$2.newBuffer([])),
+          (i.prototype.data = a.newBuffer([])),
           (i.create = function (e) {
             return new i(e);
           }),
           (i.encode = function (e, n) {
-            return (n || (n = $Writer$2.create()), n.uint32(10).string(e.identifier), n.uint32(18).bytes(e.data), n);
+            return (n || (n = w.create()), n.uint32(10).string(e.identifier), n.uint32(18).bytes(e.data), n);
           }),
           (i.encodeDelimited = function (e, n) {
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$2 || (e = $Reader$2.create(e));
+            e instanceof c || (e = c.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf();
+              u = new l.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.identifier = e.string();
+                  u.identifier = e.string();
                   break;
                 }
                 case 2: {
-                  l.data = e.bytes();
+                  u.data = e.bytes();
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            if (!l.hasOwnProperty("identifier"))
-              throw $util$2.ProtocolError("missing required 'identifier'", { instance: l });
-            if (!l.hasOwnProperty("data")) throw $util$2.ProtocolError("missing required 'data'", { instance: l });
-            return l;
+            if (!u.hasOwnProperty("identifier"))
+              throw a.ProtocolError("missing required 'identifier'", { instance: u });
+            if (!u.hasOwnProperty("data")) throw a.ProtocolError("missing required 'data'", { instance: u });
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$2 || (e = new $Reader$2(e)), this.decode(e, e.uint32()));
+            return (e instanceof c || (e = new c(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             return typeof e != "object" || e === null
               ? "object expected"
-              : $util$2.isString(e.identifier)
-                ? (e.data && typeof e.data.length == "number") || $util$2.isString(e.data)
+              : a.isString(e.identifier)
+                ? (e.data && typeof e.data.length == "number") || a.isString(e.data)
                   ? null
                   : "data: buffer expected"
                 : "identifier: string expected";
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf) return e;
-            let n = new $root$2.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf();
+            if (e instanceof l.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf) return e;
+            let n = new l.SystemPlaybackQueueProtobuf.SystemPlaybackCustomDataQueueProtobuf();
             return (
               e.identifier != null && (n.identifier = String(e.identifier)),
               e.data != null &&
                 (typeof e.data == "string"
-                  ? $util$2.base64.decode(e.data, (n.data = $util$2.newBuffer($util$2.base64.length(e.data))), 0)
+                  ? a.base64.decode(e.data, (n.data = a.newBuffer(a.base64.length(e.data))), 0)
                   : e.data.length >= 0 && (n.data = e.data)),
               n
             );
@@ -8561,13 +9094,13 @@ const $Reader$2 = minimalExports.Reader,
                 ((r.identifier = ""),
                 n.bytes === String
                   ? (r.data = "")
-                  : ((r.data = []), n.bytes !== Array && (r.data = $util$2.newBuffer(r.data)))),
+                  : ((r.data = []), n.bytes !== Array && (r.data = a.newBuffer(r.data)))),
               e.identifier != null && e.hasOwnProperty("identifier") && (r.identifier = e.identifier),
               e.data != null &&
                 e.hasOwnProperty("data") &&
                 (r.data =
                   n.bytes === String
-                    ? $util$2.base64.encode(e.data, 0, e.data.length)
+                    ? a.base64.encode(e.data, 0, e.data.length)
                     : n.bytes === Array
                       ? Array.prototype.slice.call(e.data)
                       : e.data),
@@ -8575,7 +9108,7 @@ const $Reader$2 = minimalExports.Reader,
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (
@@ -8589,7 +9122,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  ContentItemProtobuf = ($root$2.ContentItemProtobuf = (() => {
+  Je = (l.ContentItemProtobuf = (() => {
     function o(i) {
       if (
         ((this.availableLanguageOptions = []),
@@ -8606,12 +9139,12 @@ const $Reader$2 = minimalExports.Reader,
     return (
       (o.prototype.identifier = ""),
       (o.prototype.metadata = null),
-      (o.prototype.artworkData = $util$2.newBuffer([])),
+      (o.prototype.artworkData = a.newBuffer([])),
       (o.prototype.info = ""),
-      (o.prototype.availableLanguageOptions = $util$2.emptyArray),
-      (o.prototype.currentLanguageOptions = $util$2.emptyArray),
+      (o.prototype.availableLanguageOptions = a.emptyArray),
+      (o.prototype.currentLanguageOptions = a.emptyArray),
       (o.prototype.lyrics = null),
-      (o.prototype.sections = $util$2.emptyArray),
+      (o.prototype.sections = a.emptyArray),
       (o.prototype.parentIdentifier = ""),
       (o.prototype.ancestorIdentifier = ""),
       (o.prototype.queueIdentifier = ""),
@@ -8619,37 +9152,37 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.artworkDataWidth = 0),
       (o.prototype.artworkDataHeight = 0),
       (o.prototype.associatedParticipantIdentifier = ""),
-      (o.prototype.availableArtworkFormats = $util$2.emptyArray),
-      (o.prototype.availableRemoteArtworkFormats = $util$2.emptyArray),
-      (o.prototype.dataArtworks = $util$2.emptyArray),
-      (o.prototype.remoteArtworks = $util$2.emptyArray),
+      (o.prototype.availableArtworkFormats = a.emptyArray),
+      (o.prototype.availableRemoteArtworkFormats = a.emptyArray),
+      (o.prototype.dataArtworks = a.emptyArray),
+      (o.prototype.remoteArtworks = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.identifier != null && Object.hasOwnProperty.call(t, "identifier") && e.uint32(10).string(t.identifier),
           t.metadata != null &&
             Object.hasOwnProperty.call(t, "metadata") &&
-            $root$2.ContentItemMetadataProtobuf.encode(t.metadata, e.uint32(18).fork()).ldelim(),
+            l.ContentItemMetadataProtobuf.encode(t.metadata, e.uint32(18).fork()).ldelim(),
           t.artworkData != null && Object.hasOwnProperty.call(t, "artworkData") && e.uint32(26).bytes(t.artworkData),
           t.info != null && Object.hasOwnProperty.call(t, "info") && e.uint32(34).string(t.info),
           t.availableLanguageOptions != null && t.availableLanguageOptions.length)
         )
           for (let n = 0; n < t.availableLanguageOptions.length; ++n)
-            $root$2.LanguageOptionGroupProtobuf.encode(t.availableLanguageOptions[n], e.uint32(42).fork()).ldelim();
+            l.LanguageOptionGroupProtobuf.encode(t.availableLanguageOptions[n], e.uint32(42).fork()).ldelim();
         if (t.currentLanguageOptions != null && t.currentLanguageOptions.length)
           for (let n = 0; n < t.currentLanguageOptions.length; ++n)
-            $root$2.LanguageOptionProtobuf.encode(t.currentLanguageOptions[n], e.uint32(50).fork()).ldelim();
+            l.LanguageOptionProtobuf.encode(t.currentLanguageOptions[n], e.uint32(50).fork()).ldelim();
         if (
           (t.lyrics != null &&
             Object.hasOwnProperty.call(t, "lyrics") &&
-            $root$2.LyricsItemProtobuf.encode(t.lyrics, e.uint32(58).fork()).ldelim(),
+            l.LyricsItemProtobuf.encode(t.lyrics, e.uint32(58).fork()).ldelim(),
           t.sections != null && t.sections.length)
         )
           for (let n = 0; n < t.sections.length; ++n)
-            $root$2.ContentItemProtobuf.encode(t.sections[n], e.uint32(66).fork()).ldelim();
+            l.ContentItemProtobuf.encode(t.sections[n], e.uint32(66).fork()).ldelim();
         if (
           (t.parentIdentifier != null &&
             Object.hasOwnProperty.call(t, "parentIdentifier") &&
@@ -8680,28 +9213,28 @@ const $Reader$2 = minimalExports.Reader,
             e.uint32(138).string(t.availableRemoteArtworkFormats[n]);
         if (t.dataArtworks != null && t.dataArtworks.length)
           for (let n = 0; n < t.dataArtworks.length; ++n)
-            $root$2.DataArtworkProtobuf.encode(t.dataArtworks[n], e.uint32(146).fork()).ldelim();
+            l.DataArtworkProtobuf.encode(t.dataArtworks[n], e.uint32(146).fork()).ldelim();
         if (t.remoteArtworks != null && t.remoteArtworks.length)
           for (let n = 0; n < t.remoteArtworks.length; ++n)
-            $root$2.RemoteArtworkProtobuf.encode(t.remoteArtworks[n], e.uint32(154).fork()).ldelim();
+            l.RemoteArtworkProtobuf.encode(t.remoteArtworks[n], e.uint32(154).fork()).ldelim();
         return e;
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.ContentItemProtobuf();
+          r = new l.ContentItemProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.identifier = t.string();
               break;
             }
             case 2: {
-              r.metadata = $root$2.ContentItemMetadataProtobuf.decode(t, t.uint32());
+              r.metadata = l.ContentItemMetadataProtobuf.decode(t, t.uint32());
               break;
             }
             case 3: {
@@ -8714,21 +9247,21 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 5: {
               ((r.availableLanguageOptions && r.availableLanguageOptions.length) || (r.availableLanguageOptions = []),
-                r.availableLanguageOptions.push($root$2.LanguageOptionGroupProtobuf.decode(t, t.uint32())));
+                r.availableLanguageOptions.push(l.LanguageOptionGroupProtobuf.decode(t, t.uint32())));
               break;
             }
             case 6: {
               ((r.currentLanguageOptions && r.currentLanguageOptions.length) || (r.currentLanguageOptions = []),
-                r.currentLanguageOptions.push($root$2.LanguageOptionProtobuf.decode(t, t.uint32())));
+                r.currentLanguageOptions.push(l.LanguageOptionProtobuf.decode(t, t.uint32())));
               break;
             }
             case 7: {
-              r.lyrics = $root$2.LyricsItemProtobuf.decode(t, t.uint32());
+              r.lyrics = l.LyricsItemProtobuf.decode(t, t.uint32());
               break;
             }
             case 8: {
               ((r.sections && r.sections.length) || (r.sections = []),
-                r.sections.push($root$2.ContentItemProtobuf.decode(t, t.uint32())));
+                r.sections.push(l.ContentItemProtobuf.decode(t, t.uint32())));
               break;
             }
             case 9: {
@@ -8772,140 +9305,120 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 18: {
               ((r.dataArtworks && r.dataArtworks.length) || (r.dataArtworks = []),
-                r.dataArtworks.push($root$2.DataArtworkProtobuf.decode(t, t.uint32())));
+                r.dataArtworks.push(l.DataArtworkProtobuf.decode(t, t.uint32())));
               break;
             }
             case 19: {
               ((r.remoteArtworks && r.remoteArtworks.length) || (r.remoteArtworks = []),
-                r.remoteArtworks.push($root$2.RemoteArtworkProtobuf.decode(t, t.uint32())));
+                r.remoteArtworks.push(l.RemoteArtworkProtobuf.decode(t, t.uint32())));
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.identifier != null && t.hasOwnProperty("identifier") && !$util$2.isString(t.identifier))
+        if (t.identifier != null && t.hasOwnProperty("identifier") && !a.isString(t.identifier))
           return "identifier: string expected";
         if (t.metadata != null && t.hasOwnProperty("metadata")) {
-          let e = $root$2.ContentItemMetadataProtobuf.verify(t.metadata);
+          let e = l.ContentItemMetadataProtobuf.verify(t.metadata);
           if (e) return "metadata." + e;
         }
         if (
           t.artworkData != null &&
           t.hasOwnProperty("artworkData") &&
-          !((t.artworkData && typeof t.artworkData.length == "number") || $util$2.isString(t.artworkData))
+          !((t.artworkData && typeof t.artworkData.length == "number") || a.isString(t.artworkData))
         )
           return "artworkData: buffer expected";
-        if (t.info != null && t.hasOwnProperty("info") && !$util$2.isString(t.info)) return "info: string expected";
+        if (t.info != null && t.hasOwnProperty("info") && !a.isString(t.info)) return "info: string expected";
         if (t.availableLanguageOptions != null && t.hasOwnProperty("availableLanguageOptions")) {
           if (!Array.isArray(t.availableLanguageOptions)) return "availableLanguageOptions: array expected";
           for (let e = 0; e < t.availableLanguageOptions.length; ++e) {
-            let n = $root$2.LanguageOptionGroupProtobuf.verify(t.availableLanguageOptions[e]);
+            let n = l.LanguageOptionGroupProtobuf.verify(t.availableLanguageOptions[e]);
             if (n) return "availableLanguageOptions." + n;
           }
         }
         if (t.currentLanguageOptions != null && t.hasOwnProperty("currentLanguageOptions")) {
           if (!Array.isArray(t.currentLanguageOptions)) return "currentLanguageOptions: array expected";
           for (let e = 0; e < t.currentLanguageOptions.length; ++e) {
-            let n = $root$2.LanguageOptionProtobuf.verify(t.currentLanguageOptions[e]);
+            let n = l.LanguageOptionProtobuf.verify(t.currentLanguageOptions[e]);
             if (n) return "currentLanguageOptions." + n;
           }
         }
         if (t.lyrics != null && t.hasOwnProperty("lyrics")) {
-          let e = $root$2.LyricsItemProtobuf.verify(t.lyrics);
+          let e = l.LyricsItemProtobuf.verify(t.lyrics);
           if (e) return "lyrics." + e;
         }
         if (t.sections != null && t.hasOwnProperty("sections")) {
           if (!Array.isArray(t.sections)) return "sections: array expected";
           for (let e = 0; e < t.sections.length; ++e) {
-            let n = $root$2.ContentItemProtobuf.verify(t.sections[e]);
+            let n = l.ContentItemProtobuf.verify(t.sections[e]);
             if (n) return "sections." + n;
           }
         }
-        if (t.parentIdentifier != null && t.hasOwnProperty("parentIdentifier") && !$util$2.isString(t.parentIdentifier))
+        if (t.parentIdentifier != null && t.hasOwnProperty("parentIdentifier") && !a.isString(t.parentIdentifier))
           return "parentIdentifier: string expected";
-        if (
-          t.ancestorIdentifier != null &&
-          t.hasOwnProperty("ancestorIdentifier") &&
-          !$util$2.isString(t.ancestorIdentifier)
-        )
+        if (t.ancestorIdentifier != null && t.hasOwnProperty("ancestorIdentifier") && !a.isString(t.ancestorIdentifier))
           return "ancestorIdentifier: string expected";
-        if (t.queueIdentifier != null && t.hasOwnProperty("queueIdentifier") && !$util$2.isString(t.queueIdentifier))
+        if (t.queueIdentifier != null && t.hasOwnProperty("queueIdentifier") && !a.isString(t.queueIdentifier))
           return "queueIdentifier: string expected";
-        if (
-          t.requestIdentifier != null &&
-          t.hasOwnProperty("requestIdentifier") &&
-          !$util$2.isString(t.requestIdentifier)
-        )
+        if (t.requestIdentifier != null && t.hasOwnProperty("requestIdentifier") && !a.isString(t.requestIdentifier))
           return "requestIdentifier: string expected";
-        if (
-          t.artworkDataWidth != null &&
-          t.hasOwnProperty("artworkDataWidth") &&
-          !$util$2.isInteger(t.artworkDataWidth)
-        )
+        if (t.artworkDataWidth != null && t.hasOwnProperty("artworkDataWidth") && !a.isInteger(t.artworkDataWidth))
           return "artworkDataWidth: integer expected";
-        if (
-          t.artworkDataHeight != null &&
-          t.hasOwnProperty("artworkDataHeight") &&
-          !$util$2.isInteger(t.artworkDataHeight)
-        )
+        if (t.artworkDataHeight != null && t.hasOwnProperty("artworkDataHeight") && !a.isInteger(t.artworkDataHeight))
           return "artworkDataHeight: integer expected";
         if (
           t.associatedParticipantIdentifier != null &&
           t.hasOwnProperty("associatedParticipantIdentifier") &&
-          !$util$2.isString(t.associatedParticipantIdentifier)
+          !a.isString(t.associatedParticipantIdentifier)
         )
           return "associatedParticipantIdentifier: string expected";
         if (t.availableArtworkFormats != null && t.hasOwnProperty("availableArtworkFormats")) {
           if (!Array.isArray(t.availableArtworkFormats)) return "availableArtworkFormats: array expected";
           for (let e = 0; e < t.availableArtworkFormats.length; ++e)
-            if (!$util$2.isString(t.availableArtworkFormats[e])) return "availableArtworkFormats: string[] expected";
+            if (!a.isString(t.availableArtworkFormats[e])) return "availableArtworkFormats: string[] expected";
         }
         if (t.availableRemoteArtworkFormats != null && t.hasOwnProperty("availableRemoteArtworkFormats")) {
           if (!Array.isArray(t.availableRemoteArtworkFormats)) return "availableRemoteArtworkFormats: array expected";
           for (let e = 0; e < t.availableRemoteArtworkFormats.length; ++e)
-            if (!$util$2.isString(t.availableRemoteArtworkFormats[e]))
+            if (!a.isString(t.availableRemoteArtworkFormats[e]))
               return "availableRemoteArtworkFormats: string[] expected";
         }
         if (t.dataArtworks != null && t.hasOwnProperty("dataArtworks")) {
           if (!Array.isArray(t.dataArtworks)) return "dataArtworks: array expected";
           for (let e = 0; e < t.dataArtworks.length; ++e) {
-            let n = $root$2.DataArtworkProtobuf.verify(t.dataArtworks[e]);
+            let n = l.DataArtworkProtobuf.verify(t.dataArtworks[e]);
             if (n) return "dataArtworks." + n;
           }
         }
         if (t.remoteArtworks != null && t.hasOwnProperty("remoteArtworks")) {
           if (!Array.isArray(t.remoteArtworks)) return "remoteArtworks: array expected";
           for (let e = 0; e < t.remoteArtworks.length; ++e) {
-            let n = $root$2.RemoteArtworkProtobuf.verify(t.remoteArtworks[e]);
+            let n = l.RemoteArtworkProtobuf.verify(t.remoteArtworks[e]);
             if (n) return "remoteArtworks." + n;
           }
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.ContentItemProtobuf) return t;
-        let e = new $root$2.ContentItemProtobuf();
+        if (t instanceof l.ContentItemProtobuf) return t;
+        let e = new l.ContentItemProtobuf();
         if ((t.identifier != null && (e.identifier = String(t.identifier)), t.metadata != null)) {
           if (typeof t.metadata != "object") throw TypeError(".ContentItemProtobuf.metadata: object expected");
-          e.metadata = $root$2.ContentItemMetadataProtobuf.fromObject(t.metadata);
+          e.metadata = l.ContentItemMetadataProtobuf.fromObject(t.metadata);
         }
         if (
           (t.artworkData != null &&
             (typeof t.artworkData == "string"
-              ? $util$2.base64.decode(
-                  t.artworkData,
-                  (e.artworkData = $util$2.newBuffer($util$2.base64.length(t.artworkData))),
-                  0,
-                )
+              ? a.base64.decode(t.artworkData, (e.artworkData = a.newBuffer(a.base64.length(t.artworkData))), 0)
               : t.artworkData.length >= 0 && (e.artworkData = t.artworkData)),
           t.info != null && (e.info = String(t.info)),
           t.availableLanguageOptions)
@@ -8916,9 +9429,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.availableLanguageOptions.length; ++n) {
             if (typeof t.availableLanguageOptions[n] != "object")
               throw TypeError(".ContentItemProtobuf.availableLanguageOptions: object expected");
-            e.availableLanguageOptions[n] = $root$2.LanguageOptionGroupProtobuf.fromObject(
-              t.availableLanguageOptions[n],
-            );
+            e.availableLanguageOptions[n] = l.LanguageOptionGroupProtobuf.fromObject(t.availableLanguageOptions[n]);
           }
         }
         if (t.currentLanguageOptions) {
@@ -8928,19 +9439,19 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.currentLanguageOptions.length; ++n) {
             if (typeof t.currentLanguageOptions[n] != "object")
               throw TypeError(".ContentItemProtobuf.currentLanguageOptions: object expected");
-            e.currentLanguageOptions[n] = $root$2.LanguageOptionProtobuf.fromObject(t.currentLanguageOptions[n]);
+            e.currentLanguageOptions[n] = l.LanguageOptionProtobuf.fromObject(t.currentLanguageOptions[n]);
           }
         }
         if (t.lyrics != null) {
           if (typeof t.lyrics != "object") throw TypeError(".ContentItemProtobuf.lyrics: object expected");
-          e.lyrics = $root$2.LyricsItemProtobuf.fromObject(t.lyrics);
+          e.lyrics = l.LyricsItemProtobuf.fromObject(t.lyrics);
         }
         if (t.sections) {
           if (!Array.isArray(t.sections)) throw TypeError(".ContentItemProtobuf.sections: array expected");
           e.sections = [];
           for (let n = 0; n < t.sections.length; ++n) {
             if (typeof t.sections[n] != "object") throw TypeError(".ContentItemProtobuf.sections: object expected");
-            e.sections[n] = $root$2.ContentItemProtobuf.fromObject(t.sections[n]);
+            e.sections[n] = l.ContentItemProtobuf.fromObject(t.sections[n]);
           }
         }
         if (
@@ -8973,7 +9484,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.dataArtworks.length; ++n) {
             if (typeof t.dataArtworks[n] != "object")
               throw TypeError(".ContentItemProtobuf.dataArtworks: object expected");
-            e.dataArtworks[n] = $root$2.DataArtworkProtobuf.fromObject(t.dataArtworks[n]);
+            e.dataArtworks[n] = l.DataArtworkProtobuf.fromObject(t.dataArtworks[n]);
           }
         }
         if (t.remoteArtworks) {
@@ -8982,7 +9493,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.remoteArtworks.length; ++n) {
             if (typeof t.remoteArtworks[n] != "object")
               throw TypeError(".ContentItemProtobuf.remoteArtworks: object expected");
-            e.remoteArtworks[n] = $root$2.RemoteArtworkProtobuf.fromObject(t.remoteArtworks[n]);
+            e.remoteArtworks[n] = l.RemoteArtworkProtobuf.fromObject(t.remoteArtworks[n]);
           }
         }
         return e;
@@ -9004,7 +9515,7 @@ const $Reader$2 = minimalExports.Reader,
             (n.metadata = null),
             e.bytes === String
               ? (n.artworkData = "")
-              : ((n.artworkData = []), e.bytes !== Array && (n.artworkData = $util$2.newBuffer(n.artworkData))),
+              : ((n.artworkData = []), e.bytes !== Array && (n.artworkData = a.newBuffer(n.artworkData))),
             (n.info = ""),
             (n.lyrics = null),
             (n.parentIdentifier = ""),
@@ -9017,12 +9528,12 @@ const $Reader$2 = minimalExports.Reader,
           t.identifier != null && t.hasOwnProperty("identifier") && (n.identifier = t.identifier),
           t.metadata != null &&
             t.hasOwnProperty("metadata") &&
-            (n.metadata = $root$2.ContentItemMetadataProtobuf.toObject(t.metadata, e)),
+            (n.metadata = l.ContentItemMetadataProtobuf.toObject(t.metadata, e)),
           t.artworkData != null &&
             t.hasOwnProperty("artworkData") &&
             (n.artworkData =
               e.bytes === String
-                ? $util$2.base64.encode(t.artworkData, 0, t.artworkData.length)
+                ? a.base64.encode(t.artworkData, 0, t.artworkData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.artworkData)
                   : t.artworkData),
@@ -9031,25 +9542,19 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.availableLanguageOptions = [];
           for (let r = 0; r < t.availableLanguageOptions.length; ++r)
-            n.availableLanguageOptions[r] = $root$2.LanguageOptionGroupProtobuf.toObject(
-              t.availableLanguageOptions[r],
-              e,
-            );
+            n.availableLanguageOptions[r] = l.LanguageOptionGroupProtobuf.toObject(t.availableLanguageOptions[r], e);
         }
         if (t.currentLanguageOptions && t.currentLanguageOptions.length) {
           n.currentLanguageOptions = [];
           for (let r = 0; r < t.currentLanguageOptions.length; ++r)
-            n.currentLanguageOptions[r] = $root$2.LanguageOptionProtobuf.toObject(t.currentLanguageOptions[r], e);
+            n.currentLanguageOptions[r] = l.LanguageOptionProtobuf.toObject(t.currentLanguageOptions[r], e);
         }
         if (
-          (t.lyrics != null &&
-            t.hasOwnProperty("lyrics") &&
-            (n.lyrics = $root$2.LyricsItemProtobuf.toObject(t.lyrics, e)),
+          (t.lyrics != null && t.hasOwnProperty("lyrics") && (n.lyrics = l.LyricsItemProtobuf.toObject(t.lyrics, e)),
           t.sections && t.sections.length)
         ) {
           n.sections = [];
-          for (let r = 0; r < t.sections.length; ++r)
-            n.sections[r] = $root$2.ContentItemProtobuf.toObject(t.sections[r], e);
+          for (let r = 0; r < t.sections.length; ++r) n.sections[r] = l.ContentItemProtobuf.toObject(t.sections[r], e);
         }
         if (
           (t.parentIdentifier != null &&
@@ -9085,17 +9590,17 @@ const $Reader$2 = minimalExports.Reader,
         if (t.dataArtworks && t.dataArtworks.length) {
           n.dataArtworks = [];
           for (let r = 0; r < t.dataArtworks.length; ++r)
-            n.dataArtworks[r] = $root$2.DataArtworkProtobuf.toObject(t.dataArtworks[r], e);
+            n.dataArtworks[r] = l.DataArtworkProtobuf.toObject(t.dataArtworks[r], e);
         }
         if (t.remoteArtworks && t.remoteArtworks.length) {
           n.remoteArtworks = [];
           for (let r = 0; r < t.remoteArtworks.length; ++r)
-            n.remoteArtworks[r] = $root$2.RemoteArtworkProtobuf.toObject(t.remoteArtworks[r], e);
+            n.remoteArtworks[r] = l.RemoteArtworkProtobuf.toObject(t.remoteArtworks[r], e);
         }
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/ContentItemProtobuf");
@@ -9103,7 +9608,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  ContentItemMetadataProtobuf = ($root$2.ContentItemMetadataProtobuf = (() => {
+  He = (l.ContentItemMetadataProtobuf = (() => {
     function o(i) {
       if (((this.alternativeFormats = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -9154,38 +9659,38 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.isSharable = !1),
       (o.prototype.isLiked = !1),
       (o.prototype.isInWishList = !1),
-      (o.prototype.radioStationIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.radioStationIdentifier = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
       (o.prototype.radioStationName = ""),
       (o.prototype.radioStationString = ""),
-      (o.prototype.iTunesStoreIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
-      (o.prototype.iTunesStoreSubscriptionIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
-      (o.prototype.iTunesStoreArtistIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
-      (o.prototype.iTunesStoreAlbumIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
-      (o.prototype.purchaseInfoData = $util$2.newBuffer([])),
+      (o.prototype.iTunesStoreIdentifier = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.iTunesStoreSubscriptionIdentifier = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.iTunesStoreArtistIdentifier = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.iTunesStoreAlbumIdentifier = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.purchaseInfoData = a.newBuffer([])),
       (o.prototype.defaultPlaybackRate = 0),
       (o.prototype.downloadState = 0),
       (o.prototype.downloadProgress = 0),
-      (o.prototype.appMetricsData = $util$2.newBuffer([])),
+      (o.prototype.appMetricsData = a.newBuffer([])),
       (o.prototype.seriesName = ""),
       (o.prototype.mediaType = 0),
       (o.prototype.mediaSubType = 0),
-      (o.prototype.nowPlayingInfoData = $util$2.newBuffer([])),
-      (o.prototype.userInfoData = $util$2.newBuffer([])),
+      (o.prototype.nowPlayingInfoData = a.newBuffer([])),
+      (o.prototype.userInfoData = a.newBuffer([])),
       (o.prototype.isSteerable = !1),
       (o.prototype.artworkURL = ""),
       (o.prototype.lyricsURL = ""),
-      (o.prototype.deviceSpecificUserInfoData = $util$2.newBuffer([])),
-      (o.prototype.collectionInfoData = $util$2.newBuffer([])),
+      (o.prototype.deviceSpecificUserInfoData = a.newBuffer([])),
+      (o.prototype.collectionInfoData = a.newBuffer([])),
       (o.prototype.elapsedTimeTimestamp = 0),
       (o.prototype.inferredTimestamp = 0),
       (o.prototype.serviceIdentifier = ""),
       (o.prototype.artworkDataWidthDeprecated = 0),
       (o.prototype.artworkDataHeightDeprecated = 0),
-      (o.prototype.currentPlaybackDateData = $util$2.newBuffer([])),
+      (o.prototype.currentPlaybackDateData = a.newBuffer([])),
       (o.prototype.artworkIdentifier = ""),
       (o.prototype.isLoading = !1),
-      (o.prototype.artworkURLTemplatesData = $util$2.newBuffer([])),
-      (o.prototype.legacyUniqueIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.artworkURLTemplatesData = a.newBuffer([])),
+      (o.prototype.legacyUniqueIdentifier = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
       (o.prototype.episodeType = 0),
       (o.prototype.artworkFileURL = ""),
       (o.prototype.brandIdentifier = ""),
@@ -9199,15 +9704,15 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.activeFormatJustification = 0),
       (o.prototype.formatTierPreference = 1),
       (o.prototype.audioRoute = null),
-      (o.prototype.alternativeFormats = $util$2.emptyArray),
+      (o.prototype.alternativeFormats = a.emptyArray),
       (o.prototype.isAdvertisement = !1),
       (o.prototype.hasAlternativeFormats = !1),
       (o.prototype.participantName = ""),
       (o.prototype.participantIdentifier = ""),
       (o.prototype.classicalWork = ""),
-      (o.prototype.reportingAdamID = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
-      (o.prototype.lyricsAdamID = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
-      (o.prototype.iTunesStoreAlbumArtistIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.reportingAdamID = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.lyricsAdamID = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.iTunesStoreAlbumArtistIdentifier = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
       (o.prototype.durationStringLocalizationKey = ""),
       (o.prototype.isResolvableParticipant = !1),
       (o.create = function (t) {
@@ -9215,7 +9720,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.title != null && Object.hasOwnProperty.call(t, "title") && e.uint32(10).string(t.title),
           t.subtitle != null && Object.hasOwnProperty.call(t, "subtitle") && e.uint32(18).string(t.subtitle),
           t.isContainer != null && Object.hasOwnProperty.call(t, "isContainer") && e.uint32(24).bool(t.isContainer),
@@ -9415,10 +9920,10 @@ const $Reader$2 = minimalExports.Reader,
             e.uint32(728).int32(t.playlistTraits),
           t.preferredFormat != null &&
             Object.hasOwnProperty.call(t, "preferredFormat") &&
-            $root$2.AudioFormatProtobuf.encode(t.preferredFormat, e.uint32(738).fork()).ldelim(),
+            l.AudioFormatProtobuf.encode(t.preferredFormat, e.uint32(738).fork()).ldelim(),
           t.activeFormat != null &&
             Object.hasOwnProperty.call(t, "activeFormat") &&
-            $root$2.AudioFormatProtobuf.encode(t.activeFormat, e.uint32(746).fork()).ldelim(),
+            l.AudioFormatProtobuf.encode(t.activeFormat, e.uint32(746).fork()).ldelim(),
           t.activeFormatJustification != null &&
             Object.hasOwnProperty.call(t, "activeFormatJustification") &&
             e.uint32(752).int32(t.activeFormatJustification),
@@ -9427,11 +9932,11 @@ const $Reader$2 = minimalExports.Reader,
             e.uint32(760).int32(t.formatTierPreference),
           t.audioRoute != null &&
             Object.hasOwnProperty.call(t, "audioRoute") &&
-            $root$2.AudioRouteProtobuf.encode(t.audioRoute, e.uint32(770).fork()).ldelim(),
+            l.AudioRouteProtobuf.encode(t.audioRoute, e.uint32(770).fork()).ldelim(),
           t.alternativeFormats != null && t.alternativeFormats.length)
         )
           for (let n = 0; n < t.alternativeFormats.length; ++n)
-            $root$2.AudioFormatProtobuf.encode(t.alternativeFormats[n], e.uint32(778).fork()).ldelim();
+            l.AudioFormatProtobuf.encode(t.alternativeFormats[n], e.uint32(778).fork()).ldelim();
         return (
           t.isAdvertisement != null &&
             Object.hasOwnProperty.call(t, "isAdvertisement") &&
@@ -9470,12 +9975,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.ContentItemMetadataProtobuf();
+          r = new l.ContentItemMetadataProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.title = t.string();
               break;
@@ -9817,11 +10322,11 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 92: {
-              r.preferredFormat = $root$2.AudioFormatProtobuf.decode(t, t.uint32());
+              r.preferredFormat = l.AudioFormatProtobuf.decode(t, t.uint32());
               break;
             }
             case 93: {
-              r.activeFormat = $root$2.AudioFormatProtobuf.decode(t, t.uint32());
+              r.activeFormat = l.AudioFormatProtobuf.decode(t, t.uint32());
               break;
             }
             case 94: {
@@ -9833,12 +10338,12 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 96: {
-              r.audioRoute = $root$2.AudioRouteProtobuf.decode(t, t.uint32());
+              r.audioRoute = l.AudioRouteProtobuf.decode(t, t.uint32());
               break;
             }
             case 97: {
               ((r.alternativeFormats && r.alternativeFormats.length) || (r.alternativeFormats = []),
-                r.alternativeFormats.push($root$2.AudioFormatProtobuf.decode(t, t.uint32())));
+                r.alternativeFormats.push(l.AudioFormatProtobuf.decode(t, t.uint32())));
               break;
             }
             case 98: {
@@ -9882,19 +10387,19 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.title != null && t.hasOwnProperty("title") && !$util$2.isString(t.title)) return "title: string expected";
-        if (t.subtitle != null && t.hasOwnProperty("subtitle") && !$util$2.isString(t.subtitle))
+        if (t.title != null && t.hasOwnProperty("title") && !a.isString(t.title)) return "title: string expected";
+        if (t.subtitle != null && t.hasOwnProperty("subtitle") && !a.isString(t.subtitle))
           return "subtitle: string expected";
         if (t.isContainer != null && t.hasOwnProperty("isContainer") && typeof t.isContainer != "boolean")
           return "isContainer: boolean expected";
@@ -9902,39 +10407,35 @@ const $Reader$2 = minimalExports.Reader,
           return "isPlayable: boolean expected";
         if (t.playbackProgress != null && t.hasOwnProperty("playbackProgress") && typeof t.playbackProgress != "number")
           return "playbackProgress: number expected";
-        if (t.albumName != null && t.hasOwnProperty("albumName") && !$util$2.isString(t.albumName))
+        if (t.albumName != null && t.hasOwnProperty("albumName") && !a.isString(t.albumName))
           return "albumName: string expected";
-        if (t.trackArtistName != null && t.hasOwnProperty("trackArtistName") && !$util$2.isString(t.trackArtistName))
+        if (t.trackArtistName != null && t.hasOwnProperty("trackArtistName") && !a.isString(t.trackArtistName))
           return "trackArtistName: string expected";
-        if (t.albumArtistName != null && t.hasOwnProperty("albumArtistName") && !$util$2.isString(t.albumArtistName))
+        if (t.albumArtistName != null && t.hasOwnProperty("albumArtistName") && !a.isString(t.albumArtistName))
           return "albumArtistName: string expected";
-        if (t.directorName != null && t.hasOwnProperty("directorName") && !$util$2.isString(t.directorName))
+        if (t.directorName != null && t.hasOwnProperty("directorName") && !a.isString(t.directorName))
           return "directorName: string expected";
-        if (t.seasonNumber != null && t.hasOwnProperty("seasonNumber") && !$util$2.isInteger(t.seasonNumber))
+        if (t.seasonNumber != null && t.hasOwnProperty("seasonNumber") && !a.isInteger(t.seasonNumber))
           return "seasonNumber: integer expected";
-        if (t.episodeNumber != null && t.hasOwnProperty("episodeNumber") && !$util$2.isInteger(t.episodeNumber))
+        if (t.episodeNumber != null && t.hasOwnProperty("episodeNumber") && !a.isInteger(t.episodeNumber))
           return "episodeNumber: integer expected";
         if (t.releaseDate != null && t.hasOwnProperty("releaseDate") && typeof t.releaseDate != "number")
           return "releaseDate: number expected";
-        if (t.playCount != null && t.hasOwnProperty("playCount") && !$util$2.isInteger(t.playCount))
+        if (t.playCount != null && t.hasOwnProperty("playCount") && !a.isInteger(t.playCount))
           return "playCount: integer expected";
         if (t.duration != null && t.hasOwnProperty("duration") && typeof t.duration != "number")
           return "duration: number expected";
         if (
           t.localizedContentRating != null &&
           t.hasOwnProperty("localizedContentRating") &&
-          !$util$2.isString(t.localizedContentRating)
+          !a.isString(t.localizedContentRating)
         )
           return "localizedContentRating: string expected";
         if (t.isExplicitItem != null && t.hasOwnProperty("isExplicitItem") && typeof t.isExplicitItem != "boolean")
           return "isExplicitItem: boolean expected";
-        if (t.playlistType != null && t.hasOwnProperty("playlistType") && !$util$2.isInteger(t.playlistType))
+        if (t.playlistType != null && t.hasOwnProperty("playlistType") && !a.isInteger(t.playlistType))
           return "playlistType: integer expected";
-        if (
-          t.radioStationType != null &&
-          t.hasOwnProperty("radioStationType") &&
-          !$util$2.isInteger(t.radioStationType)
-        )
+        if (t.radioStationType != null && t.hasOwnProperty("radioStationType") && !a.isInteger(t.radioStationType))
           return "radioStationType: integer expected";
         if (
           t.artworkAvailable != null &&
@@ -9950,19 +10451,11 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.languageOptionsAvailable != "boolean"
         )
           return "languageOptionsAvailable: boolean expected";
-        if (
-          t.numberOfSections != null &&
-          t.hasOwnProperty("numberOfSections") &&
-          !$util$2.isInteger(t.numberOfSections)
-        )
+        if (t.numberOfSections != null && t.hasOwnProperty("numberOfSections") && !a.isInteger(t.numberOfSections))
           return "numberOfSections: integer expected";
         if (t.lyricsAvailable != null && t.hasOwnProperty("lyricsAvailable") && typeof t.lyricsAvailable != "boolean")
           return "lyricsAvailable: boolean expected";
-        if (
-          t.editingStyleFlags != null &&
-          t.hasOwnProperty("editingStyleFlags") &&
-          !$util$2.isInteger(t.editingStyleFlags)
-        )
+        if (t.editingStyleFlags != null && t.hasOwnProperty("editingStyleFlags") && !a.isInteger(t.editingStyleFlags))
           return "editingStyleFlags: integer expected";
         if (
           t.isStreamingContent != null &&
@@ -9979,45 +10472,37 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.collectionIdentifier != null &&
           t.hasOwnProperty("collectionIdentifier") &&
-          !$util$2.isString(t.collectionIdentifier)
+          !a.isString(t.collectionIdentifier)
         )
           return "collectionIdentifier: string expected";
-        if (
-          t.profileIdentifier != null &&
-          t.hasOwnProperty("profileIdentifier") &&
-          !$util$2.isString(t.profileIdentifier)
-        )
+        if (t.profileIdentifier != null && t.hasOwnProperty("profileIdentifier") && !a.isString(t.profileIdentifier))
           return "profileIdentifier: string expected";
         if (t.startTime != null && t.hasOwnProperty("startTime") && typeof t.startTime != "number")
           return "startTime: number expected";
-        if (t.artworkMIMEType != null && t.hasOwnProperty("artworkMIMEType") && !$util$2.isString(t.artworkMIMEType))
+        if (t.artworkMIMEType != null && t.hasOwnProperty("artworkMIMEType") && !a.isString(t.artworkMIMEType))
           return "artworkMIMEType: string expected";
-        if (t.assetURLString != null && t.hasOwnProperty("assetURLString") && !$util$2.isString(t.assetURLString))
+        if (t.assetURLString != null && t.hasOwnProperty("assetURLString") && !a.isString(t.assetURLString))
           return "assetURLString: string expected";
-        if (t.composer != null && t.hasOwnProperty("composer") && !$util$2.isString(t.composer))
+        if (t.composer != null && t.hasOwnProperty("composer") && !a.isString(t.composer))
           return "composer: string expected";
-        if (t.discNumber != null && t.hasOwnProperty("discNumber") && !$util$2.isInteger(t.discNumber))
+        if (t.discNumber != null && t.hasOwnProperty("discNumber") && !a.isInteger(t.discNumber))
           return "discNumber: integer expected";
         if (t.elapsedTime != null && t.hasOwnProperty("elapsedTime") && typeof t.elapsedTime != "number")
           return "elapsedTime: number expected";
-        if (t.genre != null && t.hasOwnProperty("genre") && !$util$2.isString(t.genre)) return "genre: string expected";
+        if (t.genre != null && t.hasOwnProperty("genre") && !a.isString(t.genre)) return "genre: string expected";
         if (t.isAlwaysLive != null && t.hasOwnProperty("isAlwaysLive") && typeof t.isAlwaysLive != "boolean")
           return "isAlwaysLive: boolean expected";
         if (t.playbackRate != null && t.hasOwnProperty("playbackRate") && typeof t.playbackRate != "number")
           return "playbackRate: number expected";
-        if (t.chapterCount != null && t.hasOwnProperty("chapterCount") && !$util$2.isInteger(t.chapterCount))
+        if (t.chapterCount != null && t.hasOwnProperty("chapterCount") && !a.isInteger(t.chapterCount))
           return "chapterCount: integer expected";
-        if (t.totalDiscCount != null && t.hasOwnProperty("totalDiscCount") && !$util$2.isInteger(t.totalDiscCount))
+        if (t.totalDiscCount != null && t.hasOwnProperty("totalDiscCount") && !a.isInteger(t.totalDiscCount))
           return "totalDiscCount: integer expected";
-        if (t.totalTrackCount != null && t.hasOwnProperty("totalTrackCount") && !$util$2.isInteger(t.totalTrackCount))
+        if (t.totalTrackCount != null && t.hasOwnProperty("totalTrackCount") && !a.isInteger(t.totalTrackCount))
           return "totalTrackCount: integer expected";
-        if (t.trackNumber != null && t.hasOwnProperty("trackNumber") && !$util$2.isInteger(t.trackNumber))
+        if (t.trackNumber != null && t.hasOwnProperty("trackNumber") && !a.isInteger(t.trackNumber))
           return "trackNumber: integer expected";
-        if (
-          t.contentIdentifier != null &&
-          t.hasOwnProperty("contentIdentifier") &&
-          !$util$2.isString(t.contentIdentifier)
-        )
+        if (t.contentIdentifier != null && t.hasOwnProperty("contentIdentifier") && !a.isString(t.contentIdentifier))
           return "contentIdentifier: string expected";
         if (t.isSharable != null && t.hasOwnProperty("isSharable") && typeof t.isSharable != "boolean")
           return "isSharable: boolean expected";
@@ -10028,73 +10513,66 @@ const $Reader$2 = minimalExports.Reader,
         if (
           t.radioStationIdentifier != null &&
           t.hasOwnProperty("radioStationIdentifier") &&
-          !$util$2.isInteger(t.radioStationIdentifier) &&
+          !a.isInteger(t.radioStationIdentifier) &&
           !(
             t.radioStationIdentifier &&
-            $util$2.isInteger(t.radioStationIdentifier.low) &&
-            $util$2.isInteger(t.radioStationIdentifier.high)
+            a.isInteger(t.radioStationIdentifier.low) &&
+            a.isInteger(t.radioStationIdentifier.high)
           )
         )
           return "radioStationIdentifier: integer|Long expected";
-        if (t.radioStationName != null && t.hasOwnProperty("radioStationName") && !$util$2.isString(t.radioStationName))
+        if (t.radioStationName != null && t.hasOwnProperty("radioStationName") && !a.isString(t.radioStationName))
           return "radioStationName: string expected";
-        if (
-          t.radioStationString != null &&
-          t.hasOwnProperty("radioStationString") &&
-          !$util$2.isString(t.radioStationString)
-        )
+        if (t.radioStationString != null && t.hasOwnProperty("radioStationString") && !a.isString(t.radioStationString))
           return "radioStationString: string expected";
         if (
           t.iTunesStoreIdentifier != null &&
           t.hasOwnProperty("iTunesStoreIdentifier") &&
-          !$util$2.isInteger(t.iTunesStoreIdentifier) &&
+          !a.isInteger(t.iTunesStoreIdentifier) &&
           !(
             t.iTunesStoreIdentifier &&
-            $util$2.isInteger(t.iTunesStoreIdentifier.low) &&
-            $util$2.isInteger(t.iTunesStoreIdentifier.high)
+            a.isInteger(t.iTunesStoreIdentifier.low) &&
+            a.isInteger(t.iTunesStoreIdentifier.high)
           )
         )
           return "iTunesStoreIdentifier: integer|Long expected";
         if (
           t.iTunesStoreSubscriptionIdentifier != null &&
           t.hasOwnProperty("iTunesStoreSubscriptionIdentifier") &&
-          !$util$2.isInteger(t.iTunesStoreSubscriptionIdentifier) &&
+          !a.isInteger(t.iTunesStoreSubscriptionIdentifier) &&
           !(
             t.iTunesStoreSubscriptionIdentifier &&
-            $util$2.isInteger(t.iTunesStoreSubscriptionIdentifier.low) &&
-            $util$2.isInteger(t.iTunesStoreSubscriptionIdentifier.high)
+            a.isInteger(t.iTunesStoreSubscriptionIdentifier.low) &&
+            a.isInteger(t.iTunesStoreSubscriptionIdentifier.high)
           )
         )
           return "iTunesStoreSubscriptionIdentifier: integer|Long expected";
         if (
           t.iTunesStoreArtistIdentifier != null &&
           t.hasOwnProperty("iTunesStoreArtistIdentifier") &&
-          !$util$2.isInteger(t.iTunesStoreArtistIdentifier) &&
+          !a.isInteger(t.iTunesStoreArtistIdentifier) &&
           !(
             t.iTunesStoreArtistIdentifier &&
-            $util$2.isInteger(t.iTunesStoreArtistIdentifier.low) &&
-            $util$2.isInteger(t.iTunesStoreArtistIdentifier.high)
+            a.isInteger(t.iTunesStoreArtistIdentifier.low) &&
+            a.isInteger(t.iTunesStoreArtistIdentifier.high)
           )
         )
           return "iTunesStoreArtistIdentifier: integer|Long expected";
         if (
           t.iTunesStoreAlbumIdentifier != null &&
           t.hasOwnProperty("iTunesStoreAlbumIdentifier") &&
-          !$util$2.isInteger(t.iTunesStoreAlbumIdentifier) &&
+          !a.isInteger(t.iTunesStoreAlbumIdentifier) &&
           !(
             t.iTunesStoreAlbumIdentifier &&
-            $util$2.isInteger(t.iTunesStoreAlbumIdentifier.low) &&
-            $util$2.isInteger(t.iTunesStoreAlbumIdentifier.high)
+            a.isInteger(t.iTunesStoreAlbumIdentifier.low) &&
+            a.isInteger(t.iTunesStoreAlbumIdentifier.high)
           )
         )
           return "iTunesStoreAlbumIdentifier: integer|Long expected";
         if (
           t.purchaseInfoData != null &&
           t.hasOwnProperty("purchaseInfoData") &&
-          !(
-            (t.purchaseInfoData && typeof t.purchaseInfoData.length == "number") ||
-            $util$2.isString(t.purchaseInfoData)
-          )
+          !((t.purchaseInfoData && typeof t.purchaseInfoData.length == "number") || a.isString(t.purchaseInfoData))
         )
           return "purchaseInfoData: buffer expected";
         if (
@@ -10103,49 +10581,49 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.defaultPlaybackRate != "number"
         )
           return "defaultPlaybackRate: number expected";
-        if (t.downloadState != null && t.hasOwnProperty("downloadState") && !$util$2.isInteger(t.downloadState))
+        if (t.downloadState != null && t.hasOwnProperty("downloadState") && !a.isInteger(t.downloadState))
           return "downloadState: integer expected";
         if (t.downloadProgress != null && t.hasOwnProperty("downloadProgress") && typeof t.downloadProgress != "number")
           return "downloadProgress: number expected";
         if (
           t.appMetricsData != null &&
           t.hasOwnProperty("appMetricsData") &&
-          !((t.appMetricsData && typeof t.appMetricsData.length == "number") || $util$2.isString(t.appMetricsData))
+          !((t.appMetricsData && typeof t.appMetricsData.length == "number") || a.isString(t.appMetricsData))
         )
           return "appMetricsData: buffer expected";
-        if (t.seriesName != null && t.hasOwnProperty("seriesName") && !$util$2.isString(t.seriesName))
+        if (t.seriesName != null && t.hasOwnProperty("seriesName") && !a.isString(t.seriesName))
           return "seriesName: string expected";
-        if (t.mediaType != null && t.hasOwnProperty("mediaType") && !$util$2.isInteger(t.mediaType))
+        if (t.mediaType != null && t.hasOwnProperty("mediaType") && !a.isInteger(t.mediaType))
           return "mediaType: integer expected";
-        if (t.mediaSubType != null && t.hasOwnProperty("mediaSubType") && !$util$2.isInteger(t.mediaSubType))
+        if (t.mediaSubType != null && t.hasOwnProperty("mediaSubType") && !a.isInteger(t.mediaSubType))
           return "mediaSubType: integer expected";
         if (
           t.nowPlayingInfoData != null &&
           t.hasOwnProperty("nowPlayingInfoData") &&
           !(
             (t.nowPlayingInfoData && typeof t.nowPlayingInfoData.length == "number") ||
-            $util$2.isString(t.nowPlayingInfoData)
+            a.isString(t.nowPlayingInfoData)
           )
         )
           return "nowPlayingInfoData: buffer expected";
         if (
           t.userInfoData != null &&
           t.hasOwnProperty("userInfoData") &&
-          !((t.userInfoData && typeof t.userInfoData.length == "number") || $util$2.isString(t.userInfoData))
+          !((t.userInfoData && typeof t.userInfoData.length == "number") || a.isString(t.userInfoData))
         )
           return "userInfoData: buffer expected";
         if (t.isSteerable != null && t.hasOwnProperty("isSteerable") && typeof t.isSteerable != "boolean")
           return "isSteerable: boolean expected";
-        if (t.artworkURL != null && t.hasOwnProperty("artworkURL") && !$util$2.isString(t.artworkURL))
+        if (t.artworkURL != null && t.hasOwnProperty("artworkURL") && !a.isString(t.artworkURL))
           return "artworkURL: string expected";
-        if (t.lyricsURL != null && t.hasOwnProperty("lyricsURL") && !$util$2.isString(t.lyricsURL))
+        if (t.lyricsURL != null && t.hasOwnProperty("lyricsURL") && !a.isString(t.lyricsURL))
           return "lyricsURL: string expected";
         if (
           t.deviceSpecificUserInfoData != null &&
           t.hasOwnProperty("deviceSpecificUserInfoData") &&
           !(
             (t.deviceSpecificUserInfoData && typeof t.deviceSpecificUserInfoData.length == "number") ||
-            $util$2.isString(t.deviceSpecificUserInfoData)
+            a.isString(t.deviceSpecificUserInfoData)
           )
         )
           return "deviceSpecificUserInfoData: buffer expected";
@@ -10154,7 +10632,7 @@ const $Reader$2 = minimalExports.Reader,
           t.hasOwnProperty("collectionInfoData") &&
           !(
             (t.collectionInfoData && typeof t.collectionInfoData.length == "number") ||
-            $util$2.isString(t.collectionInfoData)
+            a.isString(t.collectionInfoData)
           )
         )
           return "collectionInfoData: buffer expected";
@@ -10170,22 +10648,18 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.inferredTimestamp != "number"
         )
           return "inferredTimestamp: number expected";
-        if (
-          t.serviceIdentifier != null &&
-          t.hasOwnProperty("serviceIdentifier") &&
-          !$util$2.isString(t.serviceIdentifier)
-        )
+        if (t.serviceIdentifier != null && t.hasOwnProperty("serviceIdentifier") && !a.isString(t.serviceIdentifier))
           return "serviceIdentifier: string expected";
         if (
           t.artworkDataWidthDeprecated != null &&
           t.hasOwnProperty("artworkDataWidthDeprecated") &&
-          !$util$2.isInteger(t.artworkDataWidthDeprecated)
+          !a.isInteger(t.artworkDataWidthDeprecated)
         )
           return "artworkDataWidthDeprecated: integer expected";
         if (
           t.artworkDataHeightDeprecated != null &&
           t.hasOwnProperty("artworkDataHeightDeprecated") &&
-          !$util$2.isInteger(t.artworkDataHeightDeprecated)
+          !a.isInteger(t.artworkDataHeightDeprecated)
         )
           return "artworkDataHeightDeprecated: integer expected";
         if (
@@ -10193,15 +10667,11 @@ const $Reader$2 = minimalExports.Reader,
           t.hasOwnProperty("currentPlaybackDateData") &&
           !(
             (t.currentPlaybackDateData && typeof t.currentPlaybackDateData.length == "number") ||
-            $util$2.isString(t.currentPlaybackDateData)
+            a.isString(t.currentPlaybackDateData)
           )
         )
           return "currentPlaybackDateData: buffer expected";
-        if (
-          t.artworkIdentifier != null &&
-          t.hasOwnProperty("artworkIdentifier") &&
-          !$util$2.isString(t.artworkIdentifier)
-        )
+        if (t.artworkIdentifier != null && t.hasOwnProperty("artworkIdentifier") && !a.isString(t.artworkIdentifier))
           return "artworkIdentifier: string expected";
         if (t.isLoading != null && t.hasOwnProperty("isLoading") && typeof t.isLoading != "boolean")
           return "isLoading: boolean expected";
@@ -10210,34 +10680,34 @@ const $Reader$2 = minimalExports.Reader,
           t.hasOwnProperty("artworkURLTemplatesData") &&
           !(
             (t.artworkURLTemplatesData && typeof t.artworkURLTemplatesData.length == "number") ||
-            $util$2.isString(t.artworkURLTemplatesData)
+            a.isString(t.artworkURLTemplatesData)
           )
         )
           return "artworkURLTemplatesData: buffer expected";
         if (
           t.legacyUniqueIdentifier != null &&
           t.hasOwnProperty("legacyUniqueIdentifier") &&
-          !$util$2.isInteger(t.legacyUniqueIdentifier) &&
+          !a.isInteger(t.legacyUniqueIdentifier) &&
           !(
             t.legacyUniqueIdentifier &&
-            $util$2.isInteger(t.legacyUniqueIdentifier.low) &&
-            $util$2.isInteger(t.legacyUniqueIdentifier.high)
+            a.isInteger(t.legacyUniqueIdentifier.low) &&
+            a.isInteger(t.legacyUniqueIdentifier.high)
           )
         )
           return "legacyUniqueIdentifier: integer|Long expected";
-        if (t.episodeType != null && t.hasOwnProperty("episodeType") && !$util$2.isInteger(t.episodeType))
+        if (t.episodeType != null && t.hasOwnProperty("episodeType") && !a.isInteger(t.episodeType))
           return "episodeType: integer expected";
-        if (t.artworkFileURL != null && t.hasOwnProperty("artworkFileURL") && !$util$2.isString(t.artworkFileURL))
+        if (t.artworkFileURL != null && t.hasOwnProperty("artworkFileURL") && !a.isString(t.artworkFileURL))
           return "artworkFileURL: string expected";
-        if (t.brandIdentifier != null && t.hasOwnProperty("brandIdentifier") && !$util$2.isString(t.brandIdentifier))
+        if (t.brandIdentifier != null && t.hasOwnProperty("brandIdentifier") && !a.isString(t.brandIdentifier))
           return "brandIdentifier: string expected";
         if (
           t.localizedDurationString != null &&
           t.hasOwnProperty("localizedDurationString") &&
-          !$util$2.isString(t.localizedDurationString)
+          !a.isString(t.localizedDurationString)
         )
           return "localizedDurationString: string expected";
-        if (t.albumYear != null && t.hasOwnProperty("albumYear") && !$util$2.isString(t.albumYear))
+        if (t.albumYear != null && t.hasOwnProperty("albumYear") && !a.isString(t.albumYear))
           return "albumYear: string expected";
         if (t.songTraits != null && t.hasOwnProperty("songTraits"))
           switch (t.songTraits) {
@@ -10277,11 +10747,11 @@ const $Reader$2 = minimalExports.Reader,
               break;
           }
         if (t.preferredFormat != null && t.hasOwnProperty("preferredFormat")) {
-          let e = $root$2.AudioFormatProtobuf.verify(t.preferredFormat);
+          let e = l.AudioFormatProtobuf.verify(t.preferredFormat);
           if (e) return "preferredFormat." + e;
         }
         if (t.activeFormat != null && t.hasOwnProperty("activeFormat")) {
-          let e = $root$2.AudioFormatProtobuf.verify(t.activeFormat);
+          let e = l.AudioFormatProtobuf.verify(t.activeFormat);
           if (e) return "activeFormat." + e;
         }
         if (t.activeFormatJustification != null && t.hasOwnProperty("activeFormatJustification"))
@@ -10309,13 +10779,13 @@ const $Reader$2 = minimalExports.Reader,
               break;
           }
         if (t.audioRoute != null && t.hasOwnProperty("audioRoute")) {
-          let e = $root$2.AudioRouteProtobuf.verify(t.audioRoute);
+          let e = l.AudioRouteProtobuf.verify(t.audioRoute);
           if (e) return "audioRoute." + e;
         }
         if (t.alternativeFormats != null && t.hasOwnProperty("alternativeFormats")) {
           if (!Array.isArray(t.alternativeFormats)) return "alternativeFormats: array expected";
           for (let e = 0; e < t.alternativeFormats.length; ++e) {
-            let n = $root$2.AudioFormatProtobuf.verify(t.alternativeFormats[e]);
+            let n = l.AudioFormatProtobuf.verify(t.alternativeFormats[e]);
             if (n) return "alternativeFormats." + n;
           }
         }
@@ -10325,44 +10795,36 @@ const $Reader$2 = minimalExports.Reader,
               t.hasOwnProperty("hasAlternativeFormats") &&
               typeof t.hasAlternativeFormats != "boolean"
             ? "hasAlternativeFormats: boolean expected"
-            : t.participantName != null && t.hasOwnProperty("participantName") && !$util$2.isString(t.participantName)
+            : t.participantName != null && t.hasOwnProperty("participantName") && !a.isString(t.participantName)
               ? "participantName: string expected"
               : t.participantIdentifier != null &&
                   t.hasOwnProperty("participantIdentifier") &&
-                  !$util$2.isString(t.participantIdentifier)
+                  !a.isString(t.participantIdentifier)
                 ? "participantIdentifier: string expected"
-                : t.classicalWork != null && t.hasOwnProperty("classicalWork") && !$util$2.isString(t.classicalWork)
+                : t.classicalWork != null && t.hasOwnProperty("classicalWork") && !a.isString(t.classicalWork)
                   ? "classicalWork: string expected"
                   : t.reportingAdamID != null &&
                       t.hasOwnProperty("reportingAdamID") &&
-                      !$util$2.isInteger(t.reportingAdamID) &&
-                      !(
-                        t.reportingAdamID &&
-                        $util$2.isInteger(t.reportingAdamID.low) &&
-                        $util$2.isInteger(t.reportingAdamID.high)
-                      )
+                      !a.isInteger(t.reportingAdamID) &&
+                      !(t.reportingAdamID && a.isInteger(t.reportingAdamID.low) && a.isInteger(t.reportingAdamID.high))
                     ? "reportingAdamID: integer|Long expected"
                     : t.lyricsAdamID != null &&
                         t.hasOwnProperty("lyricsAdamID") &&
-                        !$util$2.isInteger(t.lyricsAdamID) &&
-                        !(
-                          t.lyricsAdamID &&
-                          $util$2.isInteger(t.lyricsAdamID.low) &&
-                          $util$2.isInteger(t.lyricsAdamID.high)
-                        )
+                        !a.isInteger(t.lyricsAdamID) &&
+                        !(t.lyricsAdamID && a.isInteger(t.lyricsAdamID.low) && a.isInteger(t.lyricsAdamID.high))
                       ? "lyricsAdamID: integer|Long expected"
                       : t.iTunesStoreAlbumArtistIdentifier != null &&
                           t.hasOwnProperty("iTunesStoreAlbumArtistIdentifier") &&
-                          !$util$2.isInteger(t.iTunesStoreAlbumArtistIdentifier) &&
+                          !a.isInteger(t.iTunesStoreAlbumArtistIdentifier) &&
                           !(
                             t.iTunesStoreAlbumArtistIdentifier &&
-                            $util$2.isInteger(t.iTunesStoreAlbumArtistIdentifier.low) &&
-                            $util$2.isInteger(t.iTunesStoreAlbumArtistIdentifier.high)
+                            a.isInteger(t.iTunesStoreAlbumArtistIdentifier.low) &&
+                            a.isInteger(t.iTunesStoreAlbumArtistIdentifier.high)
                           )
                         ? "iTunesStoreAlbumArtistIdentifier: integer|Long expected"
                         : t.durationStringLocalizationKey != null &&
                             t.hasOwnProperty("durationStringLocalizationKey") &&
-                            !$util$2.isString(t.durationStringLocalizationKey)
+                            !a.isString(t.durationStringLocalizationKey)
                           ? "durationStringLocalizationKey: string expected"
                           : t.isResolvableParticipant != null &&
                               t.hasOwnProperty("isResolvableParticipant") &&
@@ -10371,8 +10833,8 @@ const $Reader$2 = minimalExports.Reader,
                             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.ContentItemMetadataProtobuf) return t;
-        let e = new $root$2.ContentItemMetadataProtobuf();
+        if (t instanceof l.ContentItemMetadataProtobuf) return t;
+        let e = new l.ContentItemMetadataProtobuf();
         switch (
           (t.title != null && (e.title = String(t.title)),
           t.subtitle != null && (e.subtitle = String(t.subtitle)),
@@ -10420,34 +10882,34 @@ const $Reader$2 = minimalExports.Reader,
           t.isLiked != null && (e.isLiked = !!t.isLiked),
           t.isInWishList != null && (e.isInWishList = !!t.isInWishList),
           t.radioStationIdentifier != null &&
-            ($util$2.Long
-              ? ((e.radioStationIdentifier = $util$2.Long.fromValue(t.radioStationIdentifier)).unsigned = !1)
+            (a.Long
+              ? ((e.radioStationIdentifier = a.Long.fromValue(t.radioStationIdentifier)).unsigned = !1)
               : typeof t.radioStationIdentifier == "string"
                 ? (e.radioStationIdentifier = parseInt(t.radioStationIdentifier, 10))
                 : typeof t.radioStationIdentifier == "number"
                   ? (e.radioStationIdentifier = t.radioStationIdentifier)
                   : typeof t.radioStationIdentifier == "object" &&
-                    (e.radioStationIdentifier = new $util$2.LongBits(
+                    (e.radioStationIdentifier = new a.LongBits(
                       t.radioStationIdentifier.low >>> 0,
                       t.radioStationIdentifier.high >>> 0,
                     ).toNumber())),
           t.radioStationName != null && (e.radioStationName = String(t.radioStationName)),
           t.radioStationString != null && (e.radioStationString = String(t.radioStationString)),
           t.iTunesStoreIdentifier != null &&
-            ($util$2.Long
-              ? ((e.iTunesStoreIdentifier = $util$2.Long.fromValue(t.iTunesStoreIdentifier)).unsigned = !1)
+            (a.Long
+              ? ((e.iTunesStoreIdentifier = a.Long.fromValue(t.iTunesStoreIdentifier)).unsigned = !1)
               : typeof t.iTunesStoreIdentifier == "string"
                 ? (e.iTunesStoreIdentifier = parseInt(t.iTunesStoreIdentifier, 10))
                 : typeof t.iTunesStoreIdentifier == "number"
                   ? (e.iTunesStoreIdentifier = t.iTunesStoreIdentifier)
                   : typeof t.iTunesStoreIdentifier == "object" &&
-                    (e.iTunesStoreIdentifier = new $util$2.LongBits(
+                    (e.iTunesStoreIdentifier = new a.LongBits(
                       t.iTunesStoreIdentifier.low >>> 0,
                       t.iTunesStoreIdentifier.high >>> 0,
                     ).toNumber())),
           t.iTunesStoreSubscriptionIdentifier != null &&
-            ($util$2.Long
-              ? ((e.iTunesStoreSubscriptionIdentifier = $util$2.Long.fromValue(
+            (a.Long
+              ? ((e.iTunesStoreSubscriptionIdentifier = a.Long.fromValue(
                   t.iTunesStoreSubscriptionIdentifier,
                 )).unsigned = !1)
               : typeof t.iTunesStoreSubscriptionIdentifier == "string"
@@ -10455,39 +10917,39 @@ const $Reader$2 = minimalExports.Reader,
                 : typeof t.iTunesStoreSubscriptionIdentifier == "number"
                   ? (e.iTunesStoreSubscriptionIdentifier = t.iTunesStoreSubscriptionIdentifier)
                   : typeof t.iTunesStoreSubscriptionIdentifier == "object" &&
-                    (e.iTunesStoreSubscriptionIdentifier = new $util$2.LongBits(
+                    (e.iTunesStoreSubscriptionIdentifier = new a.LongBits(
                       t.iTunesStoreSubscriptionIdentifier.low >>> 0,
                       t.iTunesStoreSubscriptionIdentifier.high >>> 0,
                     ).toNumber())),
           t.iTunesStoreArtistIdentifier != null &&
-            ($util$2.Long
-              ? ((e.iTunesStoreArtistIdentifier = $util$2.Long.fromValue(t.iTunesStoreArtistIdentifier)).unsigned = !1)
+            (a.Long
+              ? ((e.iTunesStoreArtistIdentifier = a.Long.fromValue(t.iTunesStoreArtistIdentifier)).unsigned = !1)
               : typeof t.iTunesStoreArtistIdentifier == "string"
                 ? (e.iTunesStoreArtistIdentifier = parseInt(t.iTunesStoreArtistIdentifier, 10))
                 : typeof t.iTunesStoreArtistIdentifier == "number"
                   ? (e.iTunesStoreArtistIdentifier = t.iTunesStoreArtistIdentifier)
                   : typeof t.iTunesStoreArtistIdentifier == "object" &&
-                    (e.iTunesStoreArtistIdentifier = new $util$2.LongBits(
+                    (e.iTunesStoreArtistIdentifier = new a.LongBits(
                       t.iTunesStoreArtistIdentifier.low >>> 0,
                       t.iTunesStoreArtistIdentifier.high >>> 0,
                     ).toNumber())),
           t.iTunesStoreAlbumIdentifier != null &&
-            ($util$2.Long
-              ? ((e.iTunesStoreAlbumIdentifier = $util$2.Long.fromValue(t.iTunesStoreAlbumIdentifier)).unsigned = !1)
+            (a.Long
+              ? ((e.iTunesStoreAlbumIdentifier = a.Long.fromValue(t.iTunesStoreAlbumIdentifier)).unsigned = !1)
               : typeof t.iTunesStoreAlbumIdentifier == "string"
                 ? (e.iTunesStoreAlbumIdentifier = parseInt(t.iTunesStoreAlbumIdentifier, 10))
                 : typeof t.iTunesStoreAlbumIdentifier == "number"
                   ? (e.iTunesStoreAlbumIdentifier = t.iTunesStoreAlbumIdentifier)
                   : typeof t.iTunesStoreAlbumIdentifier == "object" &&
-                    (e.iTunesStoreAlbumIdentifier = new $util$2.LongBits(
+                    (e.iTunesStoreAlbumIdentifier = new a.LongBits(
                       t.iTunesStoreAlbumIdentifier.low >>> 0,
                       t.iTunesStoreAlbumIdentifier.high >>> 0,
                     ).toNumber())),
           t.purchaseInfoData != null &&
             (typeof t.purchaseInfoData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.purchaseInfoData,
-                  (e.purchaseInfoData = $util$2.newBuffer($util$2.base64.length(t.purchaseInfoData))),
+                  (e.purchaseInfoData = a.newBuffer(a.base64.length(t.purchaseInfoData))),
                   0,
                 )
               : t.purchaseInfoData.length >= 0 && (e.purchaseInfoData = t.purchaseInfoData)),
@@ -10496,9 +10958,9 @@ const $Reader$2 = minimalExports.Reader,
           t.downloadProgress != null && (e.downloadProgress = Number(t.downloadProgress)),
           t.appMetricsData != null &&
             (typeof t.appMetricsData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.appMetricsData,
-                  (e.appMetricsData = $util$2.newBuffer($util$2.base64.length(t.appMetricsData))),
+                  (e.appMetricsData = a.newBuffer(a.base64.length(t.appMetricsData))),
                   0,
                 )
               : t.appMetricsData.length >= 0 && (e.appMetricsData = t.appMetricsData)),
@@ -10507,39 +10969,33 @@ const $Reader$2 = minimalExports.Reader,
           t.mediaSubType != null && (e.mediaSubType = t.mediaSubType | 0),
           t.nowPlayingInfoData != null &&
             (typeof t.nowPlayingInfoData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.nowPlayingInfoData,
-                  (e.nowPlayingInfoData = $util$2.newBuffer($util$2.base64.length(t.nowPlayingInfoData))),
+                  (e.nowPlayingInfoData = a.newBuffer(a.base64.length(t.nowPlayingInfoData))),
                   0,
                 )
               : t.nowPlayingInfoData.length >= 0 && (e.nowPlayingInfoData = t.nowPlayingInfoData)),
           t.userInfoData != null &&
             (typeof t.userInfoData == "string"
-              ? $util$2.base64.decode(
-                  t.userInfoData,
-                  (e.userInfoData = $util$2.newBuffer($util$2.base64.length(t.userInfoData))),
-                  0,
-                )
+              ? a.base64.decode(t.userInfoData, (e.userInfoData = a.newBuffer(a.base64.length(t.userInfoData))), 0)
               : t.userInfoData.length >= 0 && (e.userInfoData = t.userInfoData)),
           t.isSteerable != null && (e.isSteerable = !!t.isSteerable),
           t.artworkURL != null && (e.artworkURL = String(t.artworkURL)),
           t.lyricsURL != null && (e.lyricsURL = String(t.lyricsURL)),
           t.deviceSpecificUserInfoData != null &&
             (typeof t.deviceSpecificUserInfoData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.deviceSpecificUserInfoData,
-                  (e.deviceSpecificUserInfoData = $util$2.newBuffer(
-                    $util$2.base64.length(t.deviceSpecificUserInfoData),
-                  )),
+                  (e.deviceSpecificUserInfoData = a.newBuffer(a.base64.length(t.deviceSpecificUserInfoData))),
                   0,
                 )
               : t.deviceSpecificUserInfoData.length >= 0 &&
                 (e.deviceSpecificUserInfoData = t.deviceSpecificUserInfoData)),
           t.collectionInfoData != null &&
             (typeof t.collectionInfoData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.collectionInfoData,
-                  (e.collectionInfoData = $util$2.newBuffer($util$2.base64.length(t.collectionInfoData))),
+                  (e.collectionInfoData = a.newBuffer(a.base64.length(t.collectionInfoData))),
                   0,
                 )
               : t.collectionInfoData.length >= 0 && (e.collectionInfoData = t.collectionInfoData)),
@@ -10550,9 +11006,9 @@ const $Reader$2 = minimalExports.Reader,
           t.artworkDataHeightDeprecated != null && (e.artworkDataHeightDeprecated = t.artworkDataHeightDeprecated | 0),
           t.currentPlaybackDateData != null &&
             (typeof t.currentPlaybackDateData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.currentPlaybackDateData,
-                  (e.currentPlaybackDateData = $util$2.newBuffer($util$2.base64.length(t.currentPlaybackDateData))),
+                  (e.currentPlaybackDateData = a.newBuffer(a.base64.length(t.currentPlaybackDateData))),
                   0,
                 )
               : t.currentPlaybackDateData.length >= 0 && (e.currentPlaybackDateData = t.currentPlaybackDateData)),
@@ -10560,21 +11016,21 @@ const $Reader$2 = minimalExports.Reader,
           t.isLoading != null && (e.isLoading = !!t.isLoading),
           t.artworkURLTemplatesData != null &&
             (typeof t.artworkURLTemplatesData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.artworkURLTemplatesData,
-                  (e.artworkURLTemplatesData = $util$2.newBuffer($util$2.base64.length(t.artworkURLTemplatesData))),
+                  (e.artworkURLTemplatesData = a.newBuffer(a.base64.length(t.artworkURLTemplatesData))),
                   0,
                 )
               : t.artworkURLTemplatesData.length >= 0 && (e.artworkURLTemplatesData = t.artworkURLTemplatesData)),
           t.legacyUniqueIdentifier != null &&
-            ($util$2.Long
-              ? ((e.legacyUniqueIdentifier = $util$2.Long.fromValue(t.legacyUniqueIdentifier)).unsigned = !1)
+            (a.Long
+              ? ((e.legacyUniqueIdentifier = a.Long.fromValue(t.legacyUniqueIdentifier)).unsigned = !1)
               : typeof t.legacyUniqueIdentifier == "string"
                 ? (e.legacyUniqueIdentifier = parseInt(t.legacyUniqueIdentifier, 10))
                 : typeof t.legacyUniqueIdentifier == "number"
                   ? (e.legacyUniqueIdentifier = t.legacyUniqueIdentifier)
                   : typeof t.legacyUniqueIdentifier == "object" &&
-                    (e.legacyUniqueIdentifier = new $util$2.LongBits(
+                    (e.legacyUniqueIdentifier = new a.LongBits(
                       t.legacyUniqueIdentifier.low >>> 0,
                       t.legacyUniqueIdentifier.high >>> 0,
                     ).toNumber())),
@@ -10687,12 +11143,12 @@ const $Reader$2 = minimalExports.Reader,
         if (t.preferredFormat != null) {
           if (typeof t.preferredFormat != "object")
             throw TypeError(".ContentItemMetadataProtobuf.preferredFormat: object expected");
-          e.preferredFormat = $root$2.AudioFormatProtobuf.fromObject(t.preferredFormat);
+          e.preferredFormat = l.AudioFormatProtobuf.fromObject(t.preferredFormat);
         }
         if (t.activeFormat != null) {
           if (typeof t.activeFormat != "object")
             throw TypeError(".ContentItemMetadataProtobuf.activeFormat: object expected");
-          e.activeFormat = $root$2.AudioFormatProtobuf.fromObject(t.activeFormat);
+          e.activeFormat = l.AudioFormatProtobuf.fromObject(t.activeFormat);
         }
         switch (t.activeFormatJustification) {
           default:
@@ -10761,7 +11217,7 @@ const $Reader$2 = minimalExports.Reader,
         if (t.audioRoute != null) {
           if (typeof t.audioRoute != "object")
             throw TypeError(".ContentItemMetadataProtobuf.audioRoute: object expected");
-          e.audioRoute = $root$2.AudioRouteProtobuf.fromObject(t.audioRoute);
+          e.audioRoute = l.AudioRouteProtobuf.fromObject(t.audioRoute);
         }
         if (t.alternativeFormats) {
           if (!Array.isArray(t.alternativeFormats))
@@ -10770,7 +11226,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.alternativeFormats.length; ++n) {
             if (typeof t.alternativeFormats[n] != "object")
               throw TypeError(".ContentItemMetadataProtobuf.alternativeFormats: object expected");
-            e.alternativeFormats[n] = $root$2.AudioFormatProtobuf.fromObject(t.alternativeFormats[n]);
+            e.alternativeFormats[n] = l.AudioFormatProtobuf.fromObject(t.alternativeFormats[n]);
           }
         }
         return (
@@ -10780,40 +11236,36 @@ const $Reader$2 = minimalExports.Reader,
           t.participantIdentifier != null && (e.participantIdentifier = String(t.participantIdentifier)),
           t.classicalWork != null && (e.classicalWork = String(t.classicalWork)),
           t.reportingAdamID != null &&
-            ($util$2.Long
-              ? ((e.reportingAdamID = $util$2.Long.fromValue(t.reportingAdamID)).unsigned = !1)
+            (a.Long
+              ? ((e.reportingAdamID = a.Long.fromValue(t.reportingAdamID)).unsigned = !1)
               : typeof t.reportingAdamID == "string"
                 ? (e.reportingAdamID = parseInt(t.reportingAdamID, 10))
                 : typeof t.reportingAdamID == "number"
                   ? (e.reportingAdamID = t.reportingAdamID)
                   : typeof t.reportingAdamID == "object" &&
-                    (e.reportingAdamID = new $util$2.LongBits(
+                    (e.reportingAdamID = new a.LongBits(
                       t.reportingAdamID.low >>> 0,
                       t.reportingAdamID.high >>> 0,
                     ).toNumber())),
           t.lyricsAdamID != null &&
-            ($util$2.Long
-              ? ((e.lyricsAdamID = $util$2.Long.fromValue(t.lyricsAdamID)).unsigned = !1)
+            (a.Long
+              ? ((e.lyricsAdamID = a.Long.fromValue(t.lyricsAdamID)).unsigned = !1)
               : typeof t.lyricsAdamID == "string"
                 ? (e.lyricsAdamID = parseInt(t.lyricsAdamID, 10))
                 : typeof t.lyricsAdamID == "number"
                   ? (e.lyricsAdamID = t.lyricsAdamID)
                   : typeof t.lyricsAdamID == "object" &&
-                    (e.lyricsAdamID = new $util$2.LongBits(
-                      t.lyricsAdamID.low >>> 0,
-                      t.lyricsAdamID.high >>> 0,
-                    ).toNumber())),
+                    (e.lyricsAdamID = new a.LongBits(t.lyricsAdamID.low >>> 0, t.lyricsAdamID.high >>> 0).toNumber())),
           t.iTunesStoreAlbumArtistIdentifier != null &&
-            ($util$2.Long
-              ? ((e.iTunesStoreAlbumArtistIdentifier = $util$2.Long.fromValue(
-                  t.iTunesStoreAlbumArtistIdentifier,
-                )).unsigned = !1)
+            (a.Long
+              ? ((e.iTunesStoreAlbumArtistIdentifier = a.Long.fromValue(t.iTunesStoreAlbumArtistIdentifier)).unsigned =
+                  !1)
               : typeof t.iTunesStoreAlbumArtistIdentifier == "string"
                 ? (e.iTunesStoreAlbumArtistIdentifier = parseInt(t.iTunesStoreAlbumArtistIdentifier, 10))
                 : typeof t.iTunesStoreAlbumArtistIdentifier == "number"
                   ? (e.iTunesStoreAlbumArtistIdentifier = t.iTunesStoreAlbumArtistIdentifier)
                   : typeof t.iTunesStoreAlbumArtistIdentifier == "object" &&
-                    (e.iTunesStoreAlbumArtistIdentifier = new $util$2.LongBits(
+                    (e.iTunesStoreAlbumArtistIdentifier = new a.LongBits(
                       t.iTunesStoreAlbumArtistIdentifier.low >>> 0,
                       t.iTunesStoreAlbumArtistIdentifier.high >>> 0,
                     ).toNumber())),
@@ -10873,61 +11325,60 @@ const $Reader$2 = minimalExports.Reader,
             (n.isSharable = !1),
             (n.isLiked = !1),
             (n.isInWishList = !1),
-            $util$2.Long)
+            a.Long)
           ) {
-            let r = new $util$2.Long(0, 0, !1);
+            let r = new a.Long(0, 0, !1);
             n.radioStationIdentifier = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.radioStationIdentifier = e.longs === String ? "0" : 0;
-          if (((n.radioStationName = ""), (n.radioStationString = ""), $util$2.Long)) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (((n.radioStationName = ""), (n.radioStationString = ""), a.Long)) {
+            let r = new a.Long(0, 0, !1);
             n.iTunesStoreIdentifier = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.iTunesStoreIdentifier = e.longs === String ? "0" : 0;
-          if ($util$2.Long) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (a.Long) {
+            let r = new a.Long(0, 0, !1);
             n.iTunesStoreSubscriptionIdentifier =
               e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.iTunesStoreSubscriptionIdentifier = e.longs === String ? "0" : 0;
-          if ($util$2.Long) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (a.Long) {
+            let r = new a.Long(0, 0, !1);
             n.iTunesStoreArtistIdentifier = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.iTunesStoreArtistIdentifier = e.longs === String ? "0" : 0;
-          if ($util$2.Long) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (a.Long) {
+            let r = new a.Long(0, 0, !1);
             n.iTunesStoreAlbumIdentifier = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.iTunesStoreAlbumIdentifier = e.longs === String ? "0" : 0;
           if (
             (e.bytes === String
               ? (n.purchaseInfoData = "")
               : ((n.purchaseInfoData = []),
-                e.bytes !== Array && (n.purchaseInfoData = $util$2.newBuffer(n.purchaseInfoData))),
+                e.bytes !== Array && (n.purchaseInfoData = a.newBuffer(n.purchaseInfoData))),
             (n.defaultPlaybackRate = 0),
             (n.downloadState = 0),
             (n.downloadProgress = 0),
             e.bytes === String
               ? (n.appMetricsData = "")
-              : ((n.appMetricsData = []),
-                e.bytes !== Array && (n.appMetricsData = $util$2.newBuffer(n.appMetricsData))),
+              : ((n.appMetricsData = []), e.bytes !== Array && (n.appMetricsData = a.newBuffer(n.appMetricsData))),
             (n.seriesName = ""),
             (n.mediaType = 0),
             (n.mediaSubType = 0),
             e.bytes === String
               ? (n.nowPlayingInfoData = "")
               : ((n.nowPlayingInfoData = []),
-                e.bytes !== Array && (n.nowPlayingInfoData = $util$2.newBuffer(n.nowPlayingInfoData))),
+                e.bytes !== Array && (n.nowPlayingInfoData = a.newBuffer(n.nowPlayingInfoData))),
             e.bytes === String
               ? (n.userInfoData = "")
-              : ((n.userInfoData = []), e.bytes !== Array && (n.userInfoData = $util$2.newBuffer(n.userInfoData))),
+              : ((n.userInfoData = []), e.bytes !== Array && (n.userInfoData = a.newBuffer(n.userInfoData))),
             (n.isSteerable = !1),
             (n.artworkURL = ""),
             (n.lyricsURL = ""),
             e.bytes === String
               ? (n.deviceSpecificUserInfoData = "")
               : ((n.deviceSpecificUserInfoData = []),
-                e.bytes !== Array && (n.deviceSpecificUserInfoData = $util$2.newBuffer(n.deviceSpecificUserInfoData))),
+                e.bytes !== Array && (n.deviceSpecificUserInfoData = a.newBuffer(n.deviceSpecificUserInfoData))),
             e.bytes === String
               ? (n.collectionInfoData = "")
               : ((n.collectionInfoData = []),
-                e.bytes !== Array && (n.collectionInfoData = $util$2.newBuffer(n.collectionInfoData))),
+                e.bytes !== Array && (n.collectionInfoData = a.newBuffer(n.collectionInfoData))),
             (n.elapsedTimeTimestamp = 0),
             (n.inferredTimestamp = 0),
             (n.serviceIdentifier = ""),
@@ -10936,16 +11387,16 @@ const $Reader$2 = minimalExports.Reader,
             e.bytes === String
               ? (n.currentPlaybackDateData = "")
               : ((n.currentPlaybackDateData = []),
-                e.bytes !== Array && (n.currentPlaybackDateData = $util$2.newBuffer(n.currentPlaybackDateData))),
+                e.bytes !== Array && (n.currentPlaybackDateData = a.newBuffer(n.currentPlaybackDateData))),
             (n.artworkIdentifier = ""),
             (n.isLoading = !1),
             e.bytes === String
               ? (n.artworkURLTemplatesData = "")
               : ((n.artworkURLTemplatesData = []),
-                e.bytes !== Array && (n.artworkURLTemplatesData = $util$2.newBuffer(n.artworkURLTemplatesData))),
-            $util$2.Long)
+                e.bytes !== Array && (n.artworkURLTemplatesData = a.newBuffer(n.artworkURLTemplatesData))),
+            a.Long)
           ) {
-            let r = new $util$2.Long(0, 0, !1);
+            let r = new a.Long(0, 0, !1);
             n.legacyUniqueIdentifier = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.legacyUniqueIdentifier = e.longs === String ? "0" : 0;
           if (
@@ -10967,17 +11418,17 @@ const $Reader$2 = minimalExports.Reader,
             (n.participantName = ""),
             (n.participantIdentifier = ""),
             (n.classicalWork = ""),
-            $util$2.Long)
+            a.Long)
           ) {
-            let r = new $util$2.Long(0, 0, !1);
+            let r = new a.Long(0, 0, !1);
             n.reportingAdamID = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.reportingAdamID = e.longs === String ? "0" : 0;
-          if ($util$2.Long) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (a.Long) {
+            let r = new a.Long(0, 0, !1);
             n.lyricsAdamID = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.lyricsAdamID = e.longs === String ? "0" : 0;
-          if ($util$2.Long) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (a.Long) {
+            let r = new a.Long(0, 0, !1);
             n.iTunesStoreAlbumArtistIdentifier =
               e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.iTunesStoreAlbumArtistIdentifier = e.longs === String ? "0" : 0;
@@ -11071,9 +11522,9 @@ const $Reader$2 = minimalExports.Reader,
                   e.longs === String ? String(t.radioStationIdentifier) : t.radioStationIdentifier)
               : (n.radioStationIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.radioStationIdentifier)
+                    ? a.Long.prototype.toString.call(t.radioStationIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(
+                      ? new a.LongBits(
                           t.radioStationIdentifier.low >>> 0,
                           t.radioStationIdentifier.high >>> 0,
                         ).toNumber()
@@ -11091,12 +11542,9 @@ const $Reader$2 = minimalExports.Reader,
                   e.longs === String ? String(t.iTunesStoreIdentifier) : t.iTunesStoreIdentifier)
               : (n.iTunesStoreIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.iTunesStoreIdentifier)
+                    ? a.Long.prototype.toString.call(t.iTunesStoreIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(
-                          t.iTunesStoreIdentifier.low >>> 0,
-                          t.iTunesStoreIdentifier.high >>> 0,
-                        ).toNumber()
+                      ? new a.LongBits(t.iTunesStoreIdentifier.low >>> 0, t.iTunesStoreIdentifier.high >>> 0).toNumber()
                       : t.iTunesStoreIdentifier)),
           t.iTunesStoreSubscriptionIdentifier != null &&
             t.hasOwnProperty("iTunesStoreSubscriptionIdentifier") &&
@@ -11107,9 +11555,9 @@ const $Reader$2 = minimalExports.Reader,
                     : t.iTunesStoreSubscriptionIdentifier)
               : (n.iTunesStoreSubscriptionIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.iTunesStoreSubscriptionIdentifier)
+                    ? a.Long.prototype.toString.call(t.iTunesStoreSubscriptionIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(
+                      ? new a.LongBits(
                           t.iTunesStoreSubscriptionIdentifier.low >>> 0,
                           t.iTunesStoreSubscriptionIdentifier.high >>> 0,
                         ).toNumber()
@@ -11121,9 +11569,9 @@ const $Reader$2 = minimalExports.Reader,
                   e.longs === String ? String(t.iTunesStoreArtistIdentifier) : t.iTunesStoreArtistIdentifier)
               : (n.iTunesStoreArtistIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.iTunesStoreArtistIdentifier)
+                    ? a.Long.prototype.toString.call(t.iTunesStoreArtistIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(
+                      ? new a.LongBits(
                           t.iTunesStoreArtistIdentifier.low >>> 0,
                           t.iTunesStoreArtistIdentifier.high >>> 0,
                         ).toNumber()
@@ -11135,9 +11583,9 @@ const $Reader$2 = minimalExports.Reader,
                   e.longs === String ? String(t.iTunesStoreAlbumIdentifier) : t.iTunesStoreAlbumIdentifier)
               : (n.iTunesStoreAlbumIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.iTunesStoreAlbumIdentifier)
+                    ? a.Long.prototype.toString.call(t.iTunesStoreAlbumIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(
+                      ? new a.LongBits(
                           t.iTunesStoreAlbumIdentifier.low >>> 0,
                           t.iTunesStoreAlbumIdentifier.high >>> 0,
                         ).toNumber()
@@ -11146,7 +11594,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("purchaseInfoData") &&
             (n.purchaseInfoData =
               e.bytes === String
-                ? $util$2.base64.encode(t.purchaseInfoData, 0, t.purchaseInfoData.length)
+                ? a.base64.encode(t.purchaseInfoData, 0, t.purchaseInfoData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.purchaseInfoData)
                   : t.purchaseInfoData),
@@ -11163,7 +11611,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("appMetricsData") &&
             (n.appMetricsData =
               e.bytes === String
-                ? $util$2.base64.encode(t.appMetricsData, 0, t.appMetricsData.length)
+                ? a.base64.encode(t.appMetricsData, 0, t.appMetricsData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.appMetricsData)
                   : t.appMetricsData),
@@ -11174,7 +11622,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("nowPlayingInfoData") &&
             (n.nowPlayingInfoData =
               e.bytes === String
-                ? $util$2.base64.encode(t.nowPlayingInfoData, 0, t.nowPlayingInfoData.length)
+                ? a.base64.encode(t.nowPlayingInfoData, 0, t.nowPlayingInfoData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.nowPlayingInfoData)
                   : t.nowPlayingInfoData),
@@ -11182,7 +11630,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("userInfoData") &&
             (n.userInfoData =
               e.bytes === String
-                ? $util$2.base64.encode(t.userInfoData, 0, t.userInfoData.length)
+                ? a.base64.encode(t.userInfoData, 0, t.userInfoData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.userInfoData)
                   : t.userInfoData),
@@ -11193,7 +11641,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("deviceSpecificUserInfoData") &&
             (n.deviceSpecificUserInfoData =
               e.bytes === String
-                ? $util$2.base64.encode(t.deviceSpecificUserInfoData, 0, t.deviceSpecificUserInfoData.length)
+                ? a.base64.encode(t.deviceSpecificUserInfoData, 0, t.deviceSpecificUserInfoData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.deviceSpecificUserInfoData)
                   : t.deviceSpecificUserInfoData),
@@ -11201,7 +11649,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("collectionInfoData") &&
             (n.collectionInfoData =
               e.bytes === String
-                ? $util$2.base64.encode(t.collectionInfoData, 0, t.collectionInfoData.length)
+                ? a.base64.encode(t.collectionInfoData, 0, t.collectionInfoData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.collectionInfoData)
                   : t.collectionInfoData),
@@ -11226,7 +11674,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("currentPlaybackDateData") &&
             (n.currentPlaybackDateData =
               e.bytes === String
-                ? $util$2.base64.encode(t.currentPlaybackDateData, 0, t.currentPlaybackDateData.length)
+                ? a.base64.encode(t.currentPlaybackDateData, 0, t.currentPlaybackDateData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.currentPlaybackDateData)
                   : t.currentPlaybackDateData),
@@ -11238,7 +11686,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("artworkURLTemplatesData") &&
             (n.artworkURLTemplatesData =
               e.bytes === String
-                ? $util$2.base64.encode(t.artworkURLTemplatesData, 0, t.artworkURLTemplatesData.length)
+                ? a.base64.encode(t.artworkURLTemplatesData, 0, t.artworkURLTemplatesData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.artworkURLTemplatesData)
                   : t.artworkURLTemplatesData),
@@ -11249,9 +11697,9 @@ const $Reader$2 = minimalExports.Reader,
                   e.longs === String ? String(t.legacyUniqueIdentifier) : t.legacyUniqueIdentifier)
               : (n.legacyUniqueIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.legacyUniqueIdentifier)
+                    ? a.Long.prototype.toString.call(t.legacyUniqueIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(
+                      ? new a.LongBits(
                           t.legacyUniqueIdentifier.low >>> 0,
                           t.legacyUniqueIdentifier.high >>> 0,
                         ).toNumber()
@@ -11267,56 +11715,56 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("songTraits") &&
             (n.songTraits =
               e.enums === String
-                ? $root$2.ContentItemMetadataProtobuf.SongTrait[t.songTraits] === void 0
+                ? l.ContentItemMetadataProtobuf.SongTrait[t.songTraits] === void 0
                   ? t.songTraits
-                  : $root$2.ContentItemMetadataProtobuf.SongTrait[t.songTraits]
+                  : l.ContentItemMetadataProtobuf.SongTrait[t.songTraits]
                 : t.songTraits),
           t.albumTraits != null &&
             t.hasOwnProperty("albumTraits") &&
             (n.albumTraits =
               e.enums === String
-                ? $root$2.ContentItemMetadataProtobuf.AlbumTrait[t.albumTraits] === void 0
+                ? l.ContentItemMetadataProtobuf.AlbumTrait[t.albumTraits] === void 0
                   ? t.albumTraits
-                  : $root$2.ContentItemMetadataProtobuf.AlbumTrait[t.albumTraits]
+                  : l.ContentItemMetadataProtobuf.AlbumTrait[t.albumTraits]
                 : t.albumTraits),
           t.playlistTraits != null &&
             t.hasOwnProperty("playlistTraits") &&
             (n.playlistTraits =
               e.enums === String
-                ? $root$2.ContentItemMetadataProtobuf.PlaylistTrait[t.playlistTraits] === void 0
+                ? l.ContentItemMetadataProtobuf.PlaylistTrait[t.playlistTraits] === void 0
                   ? t.playlistTraits
-                  : $root$2.ContentItemMetadataProtobuf.PlaylistTrait[t.playlistTraits]
+                  : l.ContentItemMetadataProtobuf.PlaylistTrait[t.playlistTraits]
                 : t.playlistTraits),
           t.preferredFormat != null &&
             t.hasOwnProperty("preferredFormat") &&
-            (n.preferredFormat = $root$2.AudioFormatProtobuf.toObject(t.preferredFormat, e)),
+            (n.preferredFormat = l.AudioFormatProtobuf.toObject(t.preferredFormat, e)),
           t.activeFormat != null &&
             t.hasOwnProperty("activeFormat") &&
-            (n.activeFormat = $root$2.AudioFormatProtobuf.toObject(t.activeFormat, e)),
+            (n.activeFormat = l.AudioFormatProtobuf.toObject(t.activeFormat, e)),
           t.activeFormatJustification != null &&
             t.hasOwnProperty("activeFormatJustification") &&
             (n.activeFormatJustification =
               e.enums === String
-                ? $root$2.ContentItemMetadataProtobuf.AudioFormatJustification[t.activeFormatJustification] === void 0
+                ? l.ContentItemMetadataProtobuf.AudioFormatJustification[t.activeFormatJustification] === void 0
                   ? t.activeFormatJustification
-                  : $root$2.ContentItemMetadataProtobuf.AudioFormatJustification[t.activeFormatJustification]
+                  : l.ContentItemMetadataProtobuf.AudioFormatJustification[t.activeFormatJustification]
                 : t.activeFormatJustification),
           t.formatTierPreference != null &&
             t.hasOwnProperty("formatTierPreference") &&
             (n.formatTierPreference =
               e.enums === String
-                ? $root$2.ContentItemMetadataProtobuf.AudioFormatTierPreference[t.formatTierPreference] === void 0
+                ? l.ContentItemMetadataProtobuf.AudioFormatTierPreference[t.formatTierPreference] === void 0
                   ? t.formatTierPreference
-                  : $root$2.ContentItemMetadataProtobuf.AudioFormatTierPreference[t.formatTierPreference]
+                  : l.ContentItemMetadataProtobuf.AudioFormatTierPreference[t.formatTierPreference]
                 : t.formatTierPreference),
           t.audioRoute != null &&
             t.hasOwnProperty("audioRoute") &&
-            (n.audioRoute = $root$2.AudioRouteProtobuf.toObject(t.audioRoute, e)),
+            (n.audioRoute = l.AudioRouteProtobuf.toObject(t.audioRoute, e)),
           t.alternativeFormats && t.alternativeFormats.length)
         ) {
           n.alternativeFormats = [];
           for (let r = 0; r < t.alternativeFormats.length; ++r)
-            n.alternativeFormats[r] = $root$2.AudioFormatProtobuf.toObject(t.alternativeFormats[r], e);
+            n.alternativeFormats[r] = l.AudioFormatProtobuf.toObject(t.alternativeFormats[r], e);
         }
         return (
           t.isAdvertisement != null && t.hasOwnProperty("isAdvertisement") && (n.isAdvertisement = t.isAdvertisement),
@@ -11334,9 +11782,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.reportingAdamID = e.longs === String ? String(t.reportingAdamID) : t.reportingAdamID)
               : (n.reportingAdamID =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.reportingAdamID)
+                    ? a.Long.prototype.toString.call(t.reportingAdamID)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.reportingAdamID.low >>> 0, t.reportingAdamID.high >>> 0).toNumber()
+                      ? new a.LongBits(t.reportingAdamID.low >>> 0, t.reportingAdamID.high >>> 0).toNumber()
                       : t.reportingAdamID)),
           t.lyricsAdamID != null &&
             t.hasOwnProperty("lyricsAdamID") &&
@@ -11344,9 +11792,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.lyricsAdamID = e.longs === String ? String(t.lyricsAdamID) : t.lyricsAdamID)
               : (n.lyricsAdamID =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.lyricsAdamID)
+                    ? a.Long.prototype.toString.call(t.lyricsAdamID)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.lyricsAdamID.low >>> 0, t.lyricsAdamID.high >>> 0).toNumber()
+                      ? new a.LongBits(t.lyricsAdamID.low >>> 0, t.lyricsAdamID.high >>> 0).toNumber()
                       : t.lyricsAdamID)),
           t.iTunesStoreAlbumArtistIdentifier != null &&
             t.hasOwnProperty("iTunesStoreAlbumArtistIdentifier") &&
@@ -11355,9 +11803,9 @@ const $Reader$2 = minimalExports.Reader,
                   e.longs === String ? String(t.iTunesStoreAlbumArtistIdentifier) : t.iTunesStoreAlbumArtistIdentifier)
               : (n.iTunesStoreAlbumArtistIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.iTunesStoreAlbumArtistIdentifier)
+                    ? a.Long.prototype.toString.call(t.iTunesStoreAlbumArtistIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(
+                      ? new a.LongBits(
                           t.iTunesStoreAlbumArtistIdentifier.low >>> 0,
                           t.iTunesStoreAlbumArtistIdentifier.high >>> 0,
                         ).toNumber()
@@ -11372,7 +11820,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/ContentItemMetadataProtobuf");
@@ -11446,19 +11894,19 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  LyricsTokenProtobuf = ($root$2.LyricsTokenProtobuf = (() => {
+  We = (l.LyricsTokenProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
       (o.prototype.identifier = ""),
-      (o.prototype.userData = $util$2.newBuffer([])),
+      (o.prototype.userData = a.newBuffer([])),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.identifier != null && Object.hasOwnProperty.call(t, "identifier") && e.uint32(10).string(t.identifier),
           t.userData != null && Object.hasOwnProperty.call(t, "userData") && e.uint32(18).bytes(t.userData),
           e
@@ -11468,12 +11916,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.LyricsTokenProtobuf();
+          r = new l.LyricsTokenProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.identifier = t.string();
               break;
@@ -11483,38 +11931,34 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : t.identifier != null && t.hasOwnProperty("identifier") && !$util$2.isString(t.identifier)
+          : t.identifier != null && t.hasOwnProperty("identifier") && !a.isString(t.identifier)
             ? "identifier: string expected"
             : t.userData != null &&
                 t.hasOwnProperty("userData") &&
-                !((t.userData && typeof t.userData.length == "number") || $util$2.isString(t.userData))
+                !((t.userData && typeof t.userData.length == "number") || a.isString(t.userData))
               ? "userData: buffer expected"
               : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.LyricsTokenProtobuf) return t;
-        let e = new $root$2.LyricsTokenProtobuf();
+        if (t instanceof l.LyricsTokenProtobuf) return t;
+        let e = new l.LyricsTokenProtobuf();
         return (
           t.identifier != null && (e.identifier = String(t.identifier)),
           t.userData != null &&
             (typeof t.userData == "string"
-              ? $util$2.base64.decode(
-                  t.userData,
-                  (e.userData = $util$2.newBuffer($util$2.base64.length(t.userData))),
-                  0,
-                )
+              ? a.base64.decode(t.userData, (e.userData = a.newBuffer(a.base64.length(t.userData))), 0)
               : t.userData.length >= 0 && (e.userData = t.userData)),
           e
         );
@@ -11527,13 +11971,13 @@ const $Reader$2 = minimalExports.Reader,
             ((n.identifier = ""),
             e.bytes === String
               ? (n.userData = "")
-              : ((n.userData = []), e.bytes !== Array && (n.userData = $util$2.newBuffer(n.userData)))),
+              : ((n.userData = []), e.bytes !== Array && (n.userData = a.newBuffer(n.userData)))),
           t.identifier != null && t.hasOwnProperty("identifier") && (n.identifier = t.identifier),
           t.userData != null &&
             t.hasOwnProperty("userData") &&
             (n.userData =
               e.bytes === String
-                ? $util$2.base64.encode(t.userData, 0, t.userData.length)
+                ? a.base64.encode(t.userData, 0, t.userData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.userData)
                   : t.userData),
@@ -11541,7 +11985,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/LyricsTokenProtobuf");
@@ -11549,7 +11993,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  LyricsItemProtobuf = ($root$2.LyricsItemProtobuf = (() => {
+  je = (l.LyricsItemProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -11562,12 +12006,12 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.lyrics != null && Object.hasOwnProperty.call(t, "lyrics") && e.uint32(10).string(t.lyrics),
           t.userProvided != null && Object.hasOwnProperty.call(t, "userProvided") && e.uint32(16).bool(t.userProvided),
           t.token != null &&
             Object.hasOwnProperty.call(t, "token") &&
-            $root$2.LyricsTokenProtobuf.encode(t.token, e.uint32(26).fork()).ldelim(),
+            l.LyricsTokenProtobuf.encode(t.token, e.uint32(26).fork()).ldelim(),
           e
         );
       }),
@@ -11575,12 +12019,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.LyricsItemProtobuf();
+          r = new l.LyricsItemProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.lyrics = t.string();
               break;
@@ -11590,41 +12034,40 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 3: {
-              r.token = $root$2.LyricsTokenProtobuf.decode(t, t.uint32());
+              r.token = l.LyricsTokenProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.lyrics != null && t.hasOwnProperty("lyrics") && !$util$2.isString(t.lyrics))
-          return "lyrics: string expected";
+        if (t.lyrics != null && t.hasOwnProperty("lyrics") && !a.isString(t.lyrics)) return "lyrics: string expected";
         if (t.userProvided != null && t.hasOwnProperty("userProvided") && typeof t.userProvided != "boolean")
           return "userProvided: boolean expected";
         if (t.token != null && t.hasOwnProperty("token")) {
-          let e = $root$2.LyricsTokenProtobuf.verify(t.token);
+          let e = l.LyricsTokenProtobuf.verify(t.token);
           if (e) return "token." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.LyricsItemProtobuf) return t;
-        let e = new $root$2.LyricsItemProtobuf();
+        if (t instanceof l.LyricsItemProtobuf) return t;
+        let e = new l.LyricsItemProtobuf();
         if (
           (t.lyrics != null && (e.lyrics = String(t.lyrics)),
           t.userProvided != null && (e.userProvided = !!t.userProvided),
           t.token != null)
         ) {
           if (typeof t.token != "object") throw TypeError(".LyricsItemProtobuf.token: object expected");
-          e.token = $root$2.LyricsTokenProtobuf.fromObject(t.token);
+          e.token = l.LyricsTokenProtobuf.fromObject(t.token);
         }
         return e;
       }),
@@ -11635,12 +12078,12 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && ((n.lyrics = ""), (n.userProvided = !1), (n.token = null)),
           t.lyrics != null && t.hasOwnProperty("lyrics") && (n.lyrics = t.lyrics),
           t.userProvided != null && t.hasOwnProperty("userProvided") && (n.userProvided = t.userProvided),
-          t.token != null && t.hasOwnProperty("token") && (n.token = $root$2.LyricsTokenProtobuf.toObject(t.token, e)),
+          t.token != null && t.hasOwnProperty("token") && (n.token = l.LyricsTokenProtobuf.toObject(t.token, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/LyricsItemProtobuf");
@@ -11648,7 +12091,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  LyricsEventProtobuf = ($root$2.LyricsEventProtobuf = (() => {
+  Ke = (l.LyricsEventProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -11661,12 +12104,12 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.startTime != null && Object.hasOwnProperty.call(t, "startTime") && e.uint32(9).double(t.startTime),
           t.endTime != null && Object.hasOwnProperty.call(t, "endTime") && e.uint32(17).double(t.endTime),
           t.token != null &&
             Object.hasOwnProperty.call(t, "token") &&
-            $root$2.LyricsTokenProtobuf.encode(t.token, e.uint32(26).fork()).ldelim(),
+            l.LyricsTokenProtobuf.encode(t.token, e.uint32(26).fork()).ldelim(),
           e
         );
       }),
@@ -11674,12 +12117,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.LyricsEventProtobuf();
+          r = new l.LyricsEventProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.startTime = t.double();
               break;
@@ -11689,18 +12132,18 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 3: {
-              r.token = $root$2.LyricsTokenProtobuf.decode(t, t.uint32());
+              r.token = l.LyricsTokenProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -11709,21 +12152,21 @@ const $Reader$2 = minimalExports.Reader,
         if (t.endTime != null && t.hasOwnProperty("endTime") && typeof t.endTime != "number")
           return "endTime: number expected";
         if (t.token != null && t.hasOwnProperty("token")) {
-          let e = $root$2.LyricsTokenProtobuf.verify(t.token);
+          let e = l.LyricsTokenProtobuf.verify(t.token);
           if (e) return "token." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.LyricsEventProtobuf) return t;
-        let e = new $root$2.LyricsEventProtobuf();
+        if (t instanceof l.LyricsEventProtobuf) return t;
+        let e = new l.LyricsEventProtobuf();
         if (
           (t.startTime != null && (e.startTime = Number(t.startTime)),
           t.endTime != null && (e.endTime = Number(t.endTime)),
           t.token != null)
         ) {
           if (typeof t.token != "object") throw TypeError(".LyricsEventProtobuf.token: object expected");
-          e.token = $root$2.LyricsTokenProtobuf.fromObject(t.token);
+          e.token = l.LyricsTokenProtobuf.fromObject(t.token);
         }
         return e;
       }),
@@ -11738,12 +12181,12 @@ const $Reader$2 = minimalExports.Reader,
           t.endTime != null &&
             t.hasOwnProperty("endTime") &&
             (n.endTime = e.json && !isFinite(t.endTime) ? String(t.endTime) : t.endTime),
-          t.token != null && t.hasOwnProperty("token") && (n.token = $root$2.LyricsTokenProtobuf.toObject(t.token, e)),
+          t.token != null && t.hasOwnProperty("token") && (n.token = l.LyricsTokenProtobuf.toObject(t.token, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/LyricsEventProtobuf");
@@ -11751,7 +12194,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SendLyricsEventMessageProtobuf = ($root$2.SendLyricsEventMessageProtobuf = (() => {
+  Ze = (l.SendLyricsEventMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -11762,10 +12205,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.event != null &&
             Object.hasOwnProperty.call(t, "event") &&
-            $root$2.LyricsEventProtobuf.encode(t.event, e.uint32(10).fork()).ldelim(),
+            l.LyricsEventProtobuf.encode(t.event, e.uint32(10).fork()).ldelim(),
           e
         );
       }),
@@ -11773,40 +12216,40 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SendLyricsEventMessageProtobuf();
+          r = new l.SendLyricsEventMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.event = $root$2.LyricsEventProtobuf.decode(t, t.uint32());
+              r.event = l.LyricsEventProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.event != null && t.hasOwnProperty("event")) {
-          let e = $root$2.LyricsEventProtobuf.verify(t.event);
+          let e = l.LyricsEventProtobuf.verify(t.event);
           if (e) return "event." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SendLyricsEventMessageProtobuf) return t;
-        let e = new $root$2.SendLyricsEventMessageProtobuf();
+        if (t instanceof l.SendLyricsEventMessageProtobuf) return t;
+        let e = new l.SendLyricsEventMessageProtobuf();
         if (t.event != null) {
           if (typeof t.event != "object") throw TypeError(".SendLyricsEventMessageProtobuf.event: object expected");
-          e.event = $root$2.LyricsEventProtobuf.fromObject(t.event);
+          e.event = l.LyricsEventProtobuf.fromObject(t.event);
         }
         return e;
       }),
@@ -11815,12 +12258,12 @@ const $Reader$2 = minimalExports.Reader,
         let n = {};
         return (
           e.defaults && (n.event = null),
-          t.event != null && t.hasOwnProperty("event") && (n.event = $root$2.LyricsEventProtobuf.toObject(t.event, e)),
+          t.event != null && t.hasOwnProperty("event") && (n.event = l.LyricsEventProtobuf.toObject(t.event, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SendLyricsEventMessageProtobuf");
@@ -11828,7 +12271,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  LanguageOptionProtobuf = ($root$2.LanguageOptionProtobuf = (() => {
+  $e = (l.LanguageOptionProtobuf = (() => {
     function o(i) {
       if (((this.characteristics = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -11836,7 +12279,7 @@ const $Reader$2 = minimalExports.Reader,
     return (
       (o.prototype.type = 0),
       (o.prototype.languageTag = ""),
-      (o.prototype.characteristics = $util$2.emptyArray),
+      (o.prototype.characteristics = a.emptyArray),
       (o.prototype.displayName = ""),
       (o.prototype.identifier = ""),
       (o.create = function (t) {
@@ -11844,7 +12287,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(8).int32(t.type),
           t.languageTag != null && Object.hasOwnProperty.call(t, "languageTag") && e.uint32(18).string(t.languageTag),
           t.characteristics != null && t.characteristics.length)
@@ -11860,12 +12303,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.LanguageOptionProtobuf();
+          r = new l.LanguageOptionProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.type = t.int32();
               break;
@@ -11888,34 +12331,34 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.type != null && t.hasOwnProperty("type") && !$util$2.isInteger(t.type)) return "type: integer expected";
-        if (t.languageTag != null && t.hasOwnProperty("languageTag") && !$util$2.isString(t.languageTag))
+        if (t.type != null && t.hasOwnProperty("type") && !a.isInteger(t.type)) return "type: integer expected";
+        if (t.languageTag != null && t.hasOwnProperty("languageTag") && !a.isString(t.languageTag))
           return "languageTag: string expected";
         if (t.characteristics != null && t.hasOwnProperty("characteristics")) {
           if (!Array.isArray(t.characteristics)) return "characteristics: array expected";
           for (let e = 0; e < t.characteristics.length; ++e)
-            if (!$util$2.isString(t.characteristics[e])) return "characteristics: string[] expected";
+            if (!a.isString(t.characteristics[e])) return "characteristics: string[] expected";
         }
-        return t.displayName != null && t.hasOwnProperty("displayName") && !$util$2.isString(t.displayName)
+        return t.displayName != null && t.hasOwnProperty("displayName") && !a.isString(t.displayName)
           ? "displayName: string expected"
-          : t.identifier != null && t.hasOwnProperty("identifier") && !$util$2.isString(t.identifier)
+          : t.identifier != null && t.hasOwnProperty("identifier") && !a.isString(t.identifier)
             ? "identifier: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.LanguageOptionProtobuf) return t;
-        let e = new $root$2.LanguageOptionProtobuf();
+        if (t instanceof l.LanguageOptionProtobuf) return t;
+        let e = new l.LanguageOptionProtobuf();
         if (
           (t.type != null && (e.type = t.type | 0),
           t.languageTag != null && (e.languageTag = String(t.languageTag)),
@@ -11952,7 +12395,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/LanguageOptionProtobuf");
@@ -11960,7 +12403,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  LanguageOptionGroupProtobuf = ($root$2.LanguageOptionGroupProtobuf = (() => {
+  Ye = (l.LanguageOptionGroupProtobuf = (() => {
     function o(i) {
       if (((this.languageOptions = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -11968,57 +12411,57 @@ const $Reader$2 = minimalExports.Reader,
     return (
       (o.prototype.allowEmptySelection = !1),
       (o.prototype.defaultLanguageOption = null),
-      (o.prototype.languageOptions = $util$2.emptyArray),
+      (o.prototype.languageOptions = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.allowEmptySelection != null &&
             Object.hasOwnProperty.call(t, "allowEmptySelection") &&
             e.uint32(8).bool(t.allowEmptySelection),
           t.defaultLanguageOption != null &&
             Object.hasOwnProperty.call(t, "defaultLanguageOption") &&
-            $root$2.LanguageOptionProtobuf.encode(t.defaultLanguageOption, e.uint32(18).fork()).ldelim(),
+            l.LanguageOptionProtobuf.encode(t.defaultLanguageOption, e.uint32(18).fork()).ldelim(),
           t.languageOptions != null && t.languageOptions.length)
         )
           for (let n = 0; n < t.languageOptions.length; ++n)
-            $root$2.LanguageOptionProtobuf.encode(t.languageOptions[n], e.uint32(26).fork()).ldelim();
+            l.LanguageOptionProtobuf.encode(t.languageOptions[n], e.uint32(26).fork()).ldelim();
         return e;
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.LanguageOptionGroupProtobuf();
+          r = new l.LanguageOptionGroupProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.allowEmptySelection = t.bool();
               break;
             }
             case 2: {
-              r.defaultLanguageOption = $root$2.LanguageOptionProtobuf.decode(t, t.uint32());
+              r.defaultLanguageOption = l.LanguageOptionProtobuf.decode(t, t.uint32());
               break;
             }
             case 3: {
               ((r.languageOptions && r.languageOptions.length) || (r.languageOptions = []),
-                r.languageOptions.push($root$2.LanguageOptionProtobuf.decode(t, t.uint32())));
+                r.languageOptions.push(l.LanguageOptionProtobuf.decode(t, t.uint32())));
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -12029,28 +12472,28 @@ const $Reader$2 = minimalExports.Reader,
         )
           return "allowEmptySelection: boolean expected";
         if (t.defaultLanguageOption != null && t.hasOwnProperty("defaultLanguageOption")) {
-          let e = $root$2.LanguageOptionProtobuf.verify(t.defaultLanguageOption);
+          let e = l.LanguageOptionProtobuf.verify(t.defaultLanguageOption);
           if (e) return "defaultLanguageOption." + e;
         }
         if (t.languageOptions != null && t.hasOwnProperty("languageOptions")) {
           if (!Array.isArray(t.languageOptions)) return "languageOptions: array expected";
           for (let e = 0; e < t.languageOptions.length; ++e) {
-            let n = $root$2.LanguageOptionProtobuf.verify(t.languageOptions[e]);
+            let n = l.LanguageOptionProtobuf.verify(t.languageOptions[e]);
             if (n) return "languageOptions." + n;
           }
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.LanguageOptionGroupProtobuf) return t;
-        let e = new $root$2.LanguageOptionGroupProtobuf();
+        if (t instanceof l.LanguageOptionGroupProtobuf) return t;
+        let e = new l.LanguageOptionGroupProtobuf();
         if (
           (t.allowEmptySelection != null && (e.allowEmptySelection = !!t.allowEmptySelection),
           t.defaultLanguageOption != null)
         ) {
           if (typeof t.defaultLanguageOption != "object")
             throw TypeError(".LanguageOptionGroupProtobuf.defaultLanguageOption: object expected");
-          e.defaultLanguageOption = $root$2.LanguageOptionProtobuf.fromObject(t.defaultLanguageOption);
+          e.defaultLanguageOption = l.LanguageOptionProtobuf.fromObject(t.defaultLanguageOption);
         }
         if (t.languageOptions) {
           if (!Array.isArray(t.languageOptions))
@@ -12059,7 +12502,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.languageOptions.length; ++n) {
             if (typeof t.languageOptions[n] != "object")
               throw TypeError(".LanguageOptionGroupProtobuf.languageOptions: object expected");
-            e.languageOptions[n] = $root$2.LanguageOptionProtobuf.fromObject(t.languageOptions[n]);
+            e.languageOptions[n] = l.LanguageOptionProtobuf.fromObject(t.languageOptions[n]);
           }
         }
         return e;
@@ -12075,17 +12518,17 @@ const $Reader$2 = minimalExports.Reader,
             (n.allowEmptySelection = t.allowEmptySelection),
           t.defaultLanguageOption != null &&
             t.hasOwnProperty("defaultLanguageOption") &&
-            (n.defaultLanguageOption = $root$2.LanguageOptionProtobuf.toObject(t.defaultLanguageOption, e)),
+            (n.defaultLanguageOption = l.LanguageOptionProtobuf.toObject(t.defaultLanguageOption, e)),
           t.languageOptions && t.languageOptions.length)
         ) {
           n.languageOptions = [];
           for (let r = 0; r < t.languageOptions.length; ++r)
-            n.languageOptions[r] = $root$2.LanguageOptionProtobuf.toObject(t.languageOptions[r], e);
+            n.languageOptions[r] = l.LanguageOptionProtobuf.toObject(t.languageOptions[r], e);
         }
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/LanguageOptionGroupProtobuf");
@@ -12093,15 +12536,15 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  AudioFormatProtobuf = ($root$2.AudioFormatProtobuf = (() => {
+  Xe = (l.AudioFormatProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
       (o.prototype.tier = 0),
-      (o.prototype.bitrate = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
-      (o.prototype.sampleRate = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
-      (o.prototype.bitDepth = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.bitrate = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.sampleRate = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.bitDepth = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
       (o.prototype.codec = 0),
       (o.prototype.spatialized = !1),
       (o.prototype.multiChannel = !1),
@@ -12114,7 +12557,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.tier != null && Object.hasOwnProperty.call(t, "tier") && e.uint32(8).int32(t.tier),
           t.bitrate != null && Object.hasOwnProperty.call(t, "bitrate") && e.uint32(16).int64(t.bitrate),
           t.sampleRate != null && Object.hasOwnProperty.call(t, "sampleRate") && e.uint32(24).int64(t.sampleRate),
@@ -12139,12 +12582,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.AudioFormatProtobuf();
+          r = new l.AudioFormatProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.tier = t.int32();
               break;
@@ -12190,14 +12633,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -12214,44 +12657,42 @@ const $Reader$2 = minimalExports.Reader,
           }
         return t.bitrate != null &&
           t.hasOwnProperty("bitrate") &&
-          !$util$2.isInteger(t.bitrate) &&
-          !(t.bitrate && $util$2.isInteger(t.bitrate.low) && $util$2.isInteger(t.bitrate.high))
+          !a.isInteger(t.bitrate) &&
+          !(t.bitrate && a.isInteger(t.bitrate.low) && a.isInteger(t.bitrate.high))
           ? "bitrate: integer|Long expected"
           : t.sampleRate != null &&
               t.hasOwnProperty("sampleRate") &&
-              !$util$2.isInteger(t.sampleRate) &&
-              !(t.sampleRate && $util$2.isInteger(t.sampleRate.low) && $util$2.isInteger(t.sampleRate.high))
+              !a.isInteger(t.sampleRate) &&
+              !(t.sampleRate && a.isInteger(t.sampleRate.low) && a.isInteger(t.sampleRate.high))
             ? "sampleRate: integer|Long expected"
             : t.bitDepth != null &&
                 t.hasOwnProperty("bitDepth") &&
-                !$util$2.isInteger(t.bitDepth) &&
-                !(t.bitDepth && $util$2.isInteger(t.bitDepth.low) && $util$2.isInteger(t.bitDepth.high))
+                !a.isInteger(t.bitDepth) &&
+                !(t.bitDepth && a.isInteger(t.bitDepth.low) && a.isInteger(t.bitDepth.high))
               ? "bitDepth: integer|Long expected"
-              : t.codec != null && t.hasOwnProperty("codec") && !$util$2.isInteger(t.codec)
+              : t.codec != null && t.hasOwnProperty("codec") && !a.isInteger(t.codec)
                 ? "codec: integer expected"
                 : t.spatialized != null && t.hasOwnProperty("spatialized") && typeof t.spatialized != "boolean"
                   ? "spatialized: boolean expected"
                   : t.multiChannel != null && t.hasOwnProperty("multiChannel") && typeof t.multiChannel != "boolean"
                     ? "multiChannel: boolean expected"
-                    : t.channelLayout != null &&
-                        t.hasOwnProperty("channelLayout") &&
-                        !$util$2.isInteger(t.channelLayout)
+                    : t.channelLayout != null && t.hasOwnProperty("channelLayout") && !a.isInteger(t.channelLayout)
                       ? "channelLayout: integer expected"
                       : t.audioChannelLayoutDescription != null &&
                           t.hasOwnProperty("audioChannelLayoutDescription") &&
-                          !$util$2.isString(t.audioChannelLayoutDescription)
+                          !a.isString(t.audioChannelLayoutDescription)
                         ? "audioChannelLayoutDescription: string expected"
-                        : t.groupID != null && t.hasOwnProperty("groupID") && !$util$2.isString(t.groupID)
+                        : t.groupID != null && t.hasOwnProperty("groupID") && !a.isString(t.groupID)
                           ? "groupID: string expected"
                           : t.stableVariantID != null &&
                               t.hasOwnProperty("stableVariantID") &&
-                              !$util$2.isString(t.stableVariantID)
+                              !a.isString(t.stableVariantID)
                             ? "stableVariantID: string expected"
                             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.AudioFormatProtobuf) return t;
-        let e = new $root$2.AudioFormatProtobuf();
+        if (t instanceof l.AudioFormatProtobuf) return t;
+        let e = new l.AudioFormatProtobuf();
         switch (t.tier) {
           default:
             if (typeof t.tier == "number") {
@@ -12282,32 +12723,32 @@ const $Reader$2 = minimalExports.Reader,
         }
         return (
           t.bitrate != null &&
-            ($util$2.Long
-              ? ((e.bitrate = $util$2.Long.fromValue(t.bitrate)).unsigned = !1)
+            (a.Long
+              ? ((e.bitrate = a.Long.fromValue(t.bitrate)).unsigned = !1)
               : typeof t.bitrate == "string"
                 ? (e.bitrate = parseInt(t.bitrate, 10))
                 : typeof t.bitrate == "number"
                   ? (e.bitrate = t.bitrate)
                   : typeof t.bitrate == "object" &&
-                    (e.bitrate = new $util$2.LongBits(t.bitrate.low >>> 0, t.bitrate.high >>> 0).toNumber())),
+                    (e.bitrate = new a.LongBits(t.bitrate.low >>> 0, t.bitrate.high >>> 0).toNumber())),
           t.sampleRate != null &&
-            ($util$2.Long
-              ? ((e.sampleRate = $util$2.Long.fromValue(t.sampleRate)).unsigned = !1)
+            (a.Long
+              ? ((e.sampleRate = a.Long.fromValue(t.sampleRate)).unsigned = !1)
               : typeof t.sampleRate == "string"
                 ? (e.sampleRate = parseInt(t.sampleRate, 10))
                 : typeof t.sampleRate == "number"
                   ? (e.sampleRate = t.sampleRate)
                   : typeof t.sampleRate == "object" &&
-                    (e.sampleRate = new $util$2.LongBits(t.sampleRate.low >>> 0, t.sampleRate.high >>> 0).toNumber())),
+                    (e.sampleRate = new a.LongBits(t.sampleRate.low >>> 0, t.sampleRate.high >>> 0).toNumber())),
           t.bitDepth != null &&
-            ($util$2.Long
-              ? ((e.bitDepth = $util$2.Long.fromValue(t.bitDepth)).unsigned = !1)
+            (a.Long
+              ? ((e.bitDepth = a.Long.fromValue(t.bitDepth)).unsigned = !1)
               : typeof t.bitDepth == "string"
                 ? (e.bitDepth = parseInt(t.bitDepth, 10))
                 : typeof t.bitDepth == "number"
                   ? (e.bitDepth = t.bitDepth)
                   : typeof t.bitDepth == "object" &&
-                    (e.bitDepth = new $util$2.LongBits(t.bitDepth.low >>> 0, t.bitDepth.high >>> 0).toNumber())),
+                    (e.bitDepth = new a.LongBits(t.bitDepth.low >>> 0, t.bitDepth.high >>> 0).toNumber())),
           t.codec != null && (e.codec = t.codec >>> 0),
           t.spatialized != null && (e.spatialized = !!t.spatialized),
           t.multiChannel != null && (e.multiChannel = !!t.multiChannel),
@@ -12323,16 +12764,16 @@ const $Reader$2 = minimalExports.Reader,
         e || (e = {});
         let n = {};
         if (e.defaults) {
-          if (((n.tier = e.enums === String ? "LowBandwidthStereo" : 0), $util$2.Long)) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (((n.tier = e.enums === String ? "LowBandwidthStereo" : 0), a.Long)) {
+            let r = new a.Long(0, 0, !1);
             n.bitrate = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.bitrate = e.longs === String ? "0" : 0;
-          if ($util$2.Long) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (a.Long) {
+            let r = new a.Long(0, 0, !1);
             n.sampleRate = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.sampleRate = e.longs === String ? "0" : 0;
-          if ($util$2.Long) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (a.Long) {
+            let r = new a.Long(0, 0, !1);
             n.bitDepth = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.bitDepth = e.longs === String ? "0" : 0;
           ((n.codec = 0),
@@ -12348,9 +12789,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("tier") &&
             (n.tier =
               e.enums === String
-                ? $root$2.AudioFormatProtobuf.AudioFormatTier[t.tier] === void 0
+                ? l.AudioFormatProtobuf.AudioFormatTier[t.tier] === void 0
                   ? t.tier
-                  : $root$2.AudioFormatProtobuf.AudioFormatTier[t.tier]
+                  : l.AudioFormatProtobuf.AudioFormatTier[t.tier]
                 : t.tier),
           t.bitrate != null &&
             t.hasOwnProperty("bitrate") &&
@@ -12358,9 +12799,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.bitrate = e.longs === String ? String(t.bitrate) : t.bitrate)
               : (n.bitrate =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.bitrate)
+                    ? a.Long.prototype.toString.call(t.bitrate)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.bitrate.low >>> 0, t.bitrate.high >>> 0).toNumber()
+                      ? new a.LongBits(t.bitrate.low >>> 0, t.bitrate.high >>> 0).toNumber()
                       : t.bitrate)),
           t.sampleRate != null &&
             t.hasOwnProperty("sampleRate") &&
@@ -12368,9 +12809,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.sampleRate = e.longs === String ? String(t.sampleRate) : t.sampleRate)
               : (n.sampleRate =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.sampleRate)
+                    ? a.Long.prototype.toString.call(t.sampleRate)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.sampleRate.low >>> 0, t.sampleRate.high >>> 0).toNumber()
+                      ? new a.LongBits(t.sampleRate.low >>> 0, t.sampleRate.high >>> 0).toNumber()
                       : t.sampleRate)),
           t.bitDepth != null &&
             t.hasOwnProperty("bitDepth") &&
@@ -12378,9 +12819,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.bitDepth = e.longs === String ? String(t.bitDepth) : t.bitDepth)
               : (n.bitDepth =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.bitDepth)
+                    ? a.Long.prototype.toString.call(t.bitDepth)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.bitDepth.low >>> 0, t.bitDepth.high >>> 0).toNumber()
+                      ? new a.LongBits(t.bitDepth.low >>> 0, t.bitDepth.high >>> 0).toNumber()
                       : t.bitDepth)),
           t.codec != null && t.hasOwnProperty("codec") && (n.codec = t.codec),
           t.spatialized != null && t.hasOwnProperty("spatialized") && (n.spatialized = t.spatialized),
@@ -12395,7 +12836,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/AudioFormatProtobuf");
@@ -12415,7 +12856,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  AudioRouteProtobuf = ($root$2.AudioRouteProtobuf = (() => {
+  tn = (l.AudioRouteProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -12429,7 +12870,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(8).int32(t.type),
           t.name != null && Object.hasOwnProperty.call(t, "name") && e.uint32(18).string(t.name),
           t.supportsSpatialization != null &&
@@ -12445,12 +12886,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.AudioRouteProtobuf();
+          r = new l.AudioRouteProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.type = t.int32();
               break;
@@ -12468,14 +12909,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -12495,7 +12936,7 @@ const $Reader$2 = minimalExports.Reader,
             case 9:
               break;
           }
-        return t.name != null && t.hasOwnProperty("name") && !$util$2.isString(t.name)
+        return t.name != null && t.hasOwnProperty("name") && !a.isString(t.name)
           ? "name: string expected"
           : t.supportsSpatialization != null &&
               t.hasOwnProperty("supportsSpatialization") &&
@@ -12508,8 +12949,8 @@ const $Reader$2 = minimalExports.Reader,
               : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.AudioRouteProtobuf) return t;
-        let e = new $root$2.AudioRouteProtobuf();
+        if (t instanceof l.AudioRouteProtobuf) return t;
+        let e = new l.AudioRouteProtobuf();
         switch (t.type) {
           default:
             if (typeof t.type == "number") {
@@ -12578,9 +13019,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("type") &&
             (n.type =
               e.enums === String
-                ? $root$2.AudioRouteProtobuf.AudioRouteType[t.type] === void 0
+                ? l.AudioRouteProtobuf.AudioRouteType[t.type] === void 0
                   ? t.type
-                  : $root$2.AudioRouteProtobuf.AudioRouteType[t.type]
+                  : l.AudioRouteProtobuf.AudioRouteType[t.type]
                 : t.type),
           t.name != null && t.hasOwnProperty("name") && (n.name = t.name),
           t.supportsSpatialization != null &&
@@ -12593,7 +13034,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/AudioRouteProtobuf");
@@ -12618,7 +13059,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  NowPlayingInfoProtobuf = ($root$2.NowPlayingInfoProtobuf = (() => {
+  en = (l.NowPlayingInfoProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -12632,13 +13073,13 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.shuffleMode = 0),
       (o.prototype.timestamp = 0),
       (o.prototype.title = ""),
-      (o.prototype.uniqueIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !0) : 0),
+      (o.prototype.uniqueIdentifier = a.Long ? a.Long.fromBits(0, 0, !0) : 0),
       (o.prototype.isExplicitTrack = !1),
       (o.prototype.isMusicApp = !1),
-      (o.prototype.radioStationIdentifier = $util$2.Long ? $util$2.Long.fromBits(0, 0, !1) : 0),
+      (o.prototype.radioStationIdentifier = a.Long ? a.Long.fromBits(0, 0, !1) : 0),
       (o.prototype.radioStationHash = ""),
       (o.prototype.radioStationName = ""),
-      (o.prototype.artworkDataDigest = $util$2.newBuffer([])),
+      (o.prototype.artworkDataDigest = a.newBuffer([])),
       (o.prototype.isAlwaysLive = !1),
       (o.prototype.isAdvertisement = !1),
       (o.create = function (t) {
@@ -12646,7 +13087,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.album != null && Object.hasOwnProperty.call(t, "album") && e.uint32(10).string(t.album),
           t.artist != null && Object.hasOwnProperty.call(t, "artist") && e.uint32(18).string(t.artist),
           t.duration != null && Object.hasOwnProperty.call(t, "duration") && e.uint32(25).double(t.duration),
@@ -12686,12 +13127,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.NowPlayingInfoProtobuf();
+          r = new l.NowPlayingInfoProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.album = t.string();
               break;
@@ -12765,20 +13206,19 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.album != null && t.hasOwnProperty("album") && !$util$2.isString(t.album)) return "album: string expected";
-        if (t.artist != null && t.hasOwnProperty("artist") && !$util$2.isString(t.artist))
-          return "artist: string expected";
+        if (t.album != null && t.hasOwnProperty("album") && !a.isString(t.album)) return "album: string expected";
+        if (t.artist != null && t.hasOwnProperty("artist") && !a.isString(t.artist)) return "artist: string expected";
         if (t.duration != null && t.hasOwnProperty("duration") && typeof t.duration != "number")
           return "duration: number expected";
         if (t.elapsedTime != null && t.hasOwnProperty("elapsedTime") && typeof t.elapsedTime != "number")
@@ -12807,16 +13247,12 @@ const $Reader$2 = minimalExports.Reader,
           }
         return t.timestamp != null && t.hasOwnProperty("timestamp") && typeof t.timestamp != "number"
           ? "timestamp: number expected"
-          : t.title != null && t.hasOwnProperty("title") && !$util$2.isString(t.title)
+          : t.title != null && t.hasOwnProperty("title") && !a.isString(t.title)
             ? "title: string expected"
             : t.uniqueIdentifier != null &&
                 t.hasOwnProperty("uniqueIdentifier") &&
-                !$util$2.isInteger(t.uniqueIdentifier) &&
-                !(
-                  t.uniqueIdentifier &&
-                  $util$2.isInteger(t.uniqueIdentifier.low) &&
-                  $util$2.isInteger(t.uniqueIdentifier.high)
-                )
+                !a.isInteger(t.uniqueIdentifier) &&
+                !(t.uniqueIdentifier && a.isInteger(t.uniqueIdentifier.low) && a.isInteger(t.uniqueIdentifier.high))
               ? "uniqueIdentifier: integer|Long expected"
               : t.isExplicitTrack != null &&
                   t.hasOwnProperty("isExplicitTrack") &&
@@ -12826,26 +13262,26 @@ const $Reader$2 = minimalExports.Reader,
                   ? "isMusicApp: boolean expected"
                   : t.radioStationIdentifier != null &&
                       t.hasOwnProperty("radioStationIdentifier") &&
-                      !$util$2.isInteger(t.radioStationIdentifier) &&
+                      !a.isInteger(t.radioStationIdentifier) &&
                       !(
                         t.radioStationIdentifier &&
-                        $util$2.isInteger(t.radioStationIdentifier.low) &&
-                        $util$2.isInteger(t.radioStationIdentifier.high)
+                        a.isInteger(t.radioStationIdentifier.low) &&
+                        a.isInteger(t.radioStationIdentifier.high)
                       )
                     ? "radioStationIdentifier: integer|Long expected"
                     : t.radioStationHash != null &&
                         t.hasOwnProperty("radioStationHash") &&
-                        !$util$2.isString(t.radioStationHash)
+                        !a.isString(t.radioStationHash)
                       ? "radioStationHash: string expected"
                       : t.radioStationName != null &&
                           t.hasOwnProperty("radioStationName") &&
-                          !$util$2.isString(t.radioStationName)
+                          !a.isString(t.radioStationName)
                         ? "radioStationName: string expected"
                         : t.artworkDataDigest != null &&
                             t.hasOwnProperty("artworkDataDigest") &&
                             !(
                               (t.artworkDataDigest && typeof t.artworkDataDigest.length == "number") ||
-                              $util$2.isString(t.artworkDataDigest)
+                              a.isString(t.artworkDataDigest)
                             )
                           ? "artworkDataDigest: buffer expected"
                           : t.isAlwaysLive != null &&
@@ -12859,8 +13295,8 @@ const $Reader$2 = minimalExports.Reader,
                               : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.NowPlayingInfoProtobuf) return t;
-        let e = new $root$2.NowPlayingInfoProtobuf();
+        if (t instanceof l.NowPlayingInfoProtobuf) return t;
+        let e = new l.NowPlayingInfoProtobuf();
         switch (
           (t.album != null && (e.album = String(t.album)),
           t.artist != null && (e.artist = String(t.artist)),
@@ -12920,28 +13356,28 @@ const $Reader$2 = minimalExports.Reader,
           t.timestamp != null && (e.timestamp = Number(t.timestamp)),
           t.title != null && (e.title = String(t.title)),
           t.uniqueIdentifier != null &&
-            ($util$2.Long
-              ? ((e.uniqueIdentifier = $util$2.Long.fromValue(t.uniqueIdentifier)).unsigned = !0)
+            (a.Long
+              ? ((e.uniqueIdentifier = a.Long.fromValue(t.uniqueIdentifier)).unsigned = !0)
               : typeof t.uniqueIdentifier == "string"
                 ? (e.uniqueIdentifier = parseInt(t.uniqueIdentifier, 10))
                 : typeof t.uniqueIdentifier == "number"
                   ? (e.uniqueIdentifier = t.uniqueIdentifier)
                   : typeof t.uniqueIdentifier == "object" &&
-                    (e.uniqueIdentifier = new $util$2.LongBits(
+                    (e.uniqueIdentifier = new a.LongBits(
                       t.uniqueIdentifier.low >>> 0,
                       t.uniqueIdentifier.high >>> 0,
                     ).toNumber(!0))),
           t.isExplicitTrack != null && (e.isExplicitTrack = !!t.isExplicitTrack),
           t.isMusicApp != null && (e.isMusicApp = !!t.isMusicApp),
           t.radioStationIdentifier != null &&
-            ($util$2.Long
-              ? ((e.radioStationIdentifier = $util$2.Long.fromValue(t.radioStationIdentifier)).unsigned = !1)
+            (a.Long
+              ? ((e.radioStationIdentifier = a.Long.fromValue(t.radioStationIdentifier)).unsigned = !1)
               : typeof t.radioStationIdentifier == "string"
                 ? (e.radioStationIdentifier = parseInt(t.radioStationIdentifier, 10))
                 : typeof t.radioStationIdentifier == "number"
                   ? (e.radioStationIdentifier = t.radioStationIdentifier)
                   : typeof t.radioStationIdentifier == "object" &&
-                    (e.radioStationIdentifier = new $util$2.LongBits(
+                    (e.radioStationIdentifier = new a.LongBits(
                       t.radioStationIdentifier.low >>> 0,
                       t.radioStationIdentifier.high >>> 0,
                     ).toNumber())),
@@ -12949,9 +13385,9 @@ const $Reader$2 = minimalExports.Reader,
           t.radioStationName != null && (e.radioStationName = String(t.radioStationName)),
           t.artworkDataDigest != null &&
             (typeof t.artworkDataDigest == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.artworkDataDigest,
-                  (e.artworkDataDigest = $util$2.newBuffer($util$2.base64.length(t.artworkDataDigest))),
+                  (e.artworkDataDigest = a.newBuffer(a.base64.length(t.artworkDataDigest))),
                   0,
                 )
               : t.artworkDataDigest.length >= 0 && (e.artworkDataDigest = t.artworkDataDigest)),
@@ -12974,13 +13410,13 @@ const $Reader$2 = minimalExports.Reader,
             (n.shuffleMode = e.enums === String ? "ShuffleModeProtobuf_Unknown" : 0),
             (n.timestamp = 0),
             (n.title = ""),
-            $util$2.Long)
+            a.Long)
           ) {
-            let r = new $util$2.Long(0, 0, !0);
+            let r = new a.Long(0, 0, !0);
             n.uniqueIdentifier = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.uniqueIdentifier = e.longs === String ? "0" : 0;
-          if (((n.isExplicitTrack = !1), (n.isMusicApp = !1), $util$2.Long)) {
-            let r = new $util$2.Long(0, 0, !1);
+          if (((n.isExplicitTrack = !1), (n.isMusicApp = !1), a.Long)) {
+            let r = new a.Long(0, 0, !1);
             n.radioStationIdentifier = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.radioStationIdentifier = e.longs === String ? "0" : 0;
           ((n.radioStationHash = ""),
@@ -12988,7 +13424,7 @@ const $Reader$2 = minimalExports.Reader,
             e.bytes === String
               ? (n.artworkDataDigest = "")
               : ((n.artworkDataDigest = []),
-                e.bytes !== Array && (n.artworkDataDigest = $util$2.newBuffer(n.artworkDataDigest))),
+                e.bytes !== Array && (n.artworkDataDigest = a.newBuffer(n.artworkDataDigest))),
             (n.isAlwaysLive = !1),
             (n.isAdvertisement = !1));
         }
@@ -13008,17 +13444,17 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("repeatMode") &&
             (n.repeatMode =
               e.enums === String
-                ? $root$2.RepeatModeProtobuf[t.repeatMode] === void 0
+                ? l.RepeatModeProtobuf[t.repeatMode] === void 0
                   ? t.repeatMode
-                  : $root$2.RepeatModeProtobuf[t.repeatMode]
+                  : l.RepeatModeProtobuf[t.repeatMode]
                 : t.repeatMode),
           t.shuffleMode != null &&
             t.hasOwnProperty("shuffleMode") &&
             (n.shuffleMode =
               e.enums === String
-                ? $root$2.ShuffleModeProtobuf[t.shuffleMode] === void 0
+                ? l.ShuffleModeProtobuf[t.shuffleMode] === void 0
                   ? t.shuffleMode
-                  : $root$2.ShuffleModeProtobuf[t.shuffleMode]
+                  : l.ShuffleModeProtobuf[t.shuffleMode]
                 : t.shuffleMode),
           t.timestamp != null &&
             t.hasOwnProperty("timestamp") &&
@@ -13030,9 +13466,9 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.uniqueIdentifier = e.longs === String ? String(t.uniqueIdentifier) : t.uniqueIdentifier)
               : (n.uniqueIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.uniqueIdentifier)
+                    ? a.Long.prototype.toString.call(t.uniqueIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.uniqueIdentifier.low >>> 0, t.uniqueIdentifier.high >>> 0).toNumber(!0)
+                      ? new a.LongBits(t.uniqueIdentifier.low >>> 0, t.uniqueIdentifier.high >>> 0).toNumber(!0)
                       : t.uniqueIdentifier)),
           t.isExplicitTrack != null && t.hasOwnProperty("isExplicitTrack") && (n.isExplicitTrack = t.isExplicitTrack),
           t.isMusicApp != null && t.hasOwnProperty("isMusicApp") && (n.isMusicApp = t.isMusicApp),
@@ -13043,9 +13479,9 @@ const $Reader$2 = minimalExports.Reader,
                   e.longs === String ? String(t.radioStationIdentifier) : t.radioStationIdentifier)
               : (n.radioStationIdentifier =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.radioStationIdentifier)
+                    ? a.Long.prototype.toString.call(t.radioStationIdentifier)
                     : e.longs === Number
-                      ? new $util$2.LongBits(
+                      ? new a.LongBits(
                           t.radioStationIdentifier.low >>> 0,
                           t.radioStationIdentifier.high >>> 0,
                         ).toNumber()
@@ -13060,7 +13496,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("artworkDataDigest") &&
             (n.artworkDataDigest =
               e.bytes === String
-                ? $util$2.base64.encode(t.artworkDataDigest, 0, t.artworkDataDigest.length)
+                ? a.base64.encode(t.artworkDataDigest, 0, t.artworkDataDigest.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.artworkDataDigest)
                   : t.artworkDataDigest),
@@ -13070,7 +13506,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/NowPlayingInfoProtobuf");
@@ -13078,19 +13514,19 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  DataArtworkProtobuf = ($root$2.DataArtworkProtobuf = (() => {
+  nn = (l.DataArtworkProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
       (o.prototype.type = ""),
-      (o.prototype.imageData = $util$2.newBuffer([])),
+      (o.prototype.imageData = a.newBuffer([])),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(10).string(t.type),
           t.imageData != null && Object.hasOwnProperty.call(t, "imageData") && e.uint32(18).bytes(t.imageData),
           e
@@ -13100,12 +13536,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.DataArtworkProtobuf();
+          r = new l.DataArtworkProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.type = t.string();
               break;
@@ -13115,38 +13551,34 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : t.type != null && t.hasOwnProperty("type") && !$util$2.isString(t.type)
+          : t.type != null && t.hasOwnProperty("type") && !a.isString(t.type)
             ? "type: string expected"
             : t.imageData != null &&
                 t.hasOwnProperty("imageData") &&
-                !((t.imageData && typeof t.imageData.length == "number") || $util$2.isString(t.imageData))
+                !((t.imageData && typeof t.imageData.length == "number") || a.isString(t.imageData))
               ? "imageData: buffer expected"
               : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.DataArtworkProtobuf) return t;
-        let e = new $root$2.DataArtworkProtobuf();
+        if (t instanceof l.DataArtworkProtobuf) return t;
+        let e = new l.DataArtworkProtobuf();
         return (
           t.type != null && (e.type = String(t.type)),
           t.imageData != null &&
             (typeof t.imageData == "string"
-              ? $util$2.base64.decode(
-                  t.imageData,
-                  (e.imageData = $util$2.newBuffer($util$2.base64.length(t.imageData))),
-                  0,
-                )
+              ? a.base64.decode(t.imageData, (e.imageData = a.newBuffer(a.base64.length(t.imageData))), 0)
               : t.imageData.length >= 0 && (e.imageData = t.imageData)),
           e
         );
@@ -13159,13 +13591,13 @@ const $Reader$2 = minimalExports.Reader,
             ((n.type = ""),
             e.bytes === String
               ? (n.imageData = "")
-              : ((n.imageData = []), e.bytes !== Array && (n.imageData = $util$2.newBuffer(n.imageData)))),
+              : ((n.imageData = []), e.bytes !== Array && (n.imageData = a.newBuffer(n.imageData)))),
           t.type != null && t.hasOwnProperty("type") && (n.type = t.type),
           t.imageData != null &&
             t.hasOwnProperty("imageData") &&
             (n.imageData =
               e.bytes === String
-                ? $util$2.base64.encode(t.imageData, 0, t.imageData.length)
+                ? a.base64.encode(t.imageData, 0, t.imageData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.imageData)
                   : t.imageData),
@@ -13173,7 +13605,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/DataArtworkProtobuf");
@@ -13181,20 +13613,20 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  RemoteArtworkProtobuf = ($root$2.RemoteArtworkProtobuf = (() => {
+  on = (l.RemoteArtworkProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
       (o.prototype.type = ""),
       (o.prototype.artworkURLString = ""),
-      (o.prototype.artworkURLTemplateData = $util$2.newBuffer([])),
+      (o.prototype.artworkURLTemplateData = a.newBuffer([])),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(10).string(t.type),
           t.artworkURLString != null &&
             Object.hasOwnProperty.call(t, "artworkURLString") &&
@@ -13209,12 +13641,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.RemoteArtworkProtobuf();
+          r = new l.RemoteArtworkProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.type = t.string();
               break;
@@ -13228,44 +13660,42 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : t.type != null && t.hasOwnProperty("type") && !$util$2.isString(t.type)
+          : t.type != null && t.hasOwnProperty("type") && !a.isString(t.type)
             ? "type: string expected"
-            : t.artworkURLString != null &&
-                t.hasOwnProperty("artworkURLString") &&
-                !$util$2.isString(t.artworkURLString)
+            : t.artworkURLString != null && t.hasOwnProperty("artworkURLString") && !a.isString(t.artworkURLString)
               ? "artworkURLString: string expected"
               : t.artworkURLTemplateData != null &&
                   t.hasOwnProperty("artworkURLTemplateData") &&
                   !(
                     (t.artworkURLTemplateData && typeof t.artworkURLTemplateData.length == "number") ||
-                    $util$2.isString(t.artworkURLTemplateData)
+                    a.isString(t.artworkURLTemplateData)
                   )
                 ? "artworkURLTemplateData: buffer expected"
                 : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.RemoteArtworkProtobuf) return t;
-        let e = new $root$2.RemoteArtworkProtobuf();
+        if (t instanceof l.RemoteArtworkProtobuf) return t;
+        let e = new l.RemoteArtworkProtobuf();
         return (
           t.type != null && (e.type = String(t.type)),
           t.artworkURLString != null && (e.artworkURLString = String(t.artworkURLString)),
           t.artworkURLTemplateData != null &&
             (typeof t.artworkURLTemplateData == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.artworkURLTemplateData,
-                  (e.artworkURLTemplateData = $util$2.newBuffer($util$2.base64.length(t.artworkURLTemplateData))),
+                  (e.artworkURLTemplateData = a.newBuffer(a.base64.length(t.artworkURLTemplateData))),
                   0,
                 )
               : t.artworkURLTemplateData.length >= 0 && (e.artworkURLTemplateData = t.artworkURLTemplateData)),
@@ -13282,7 +13712,7 @@ const $Reader$2 = minimalExports.Reader,
             e.bytes === String
               ? (n.artworkURLTemplateData = "")
               : ((n.artworkURLTemplateData = []),
-                e.bytes !== Array && (n.artworkURLTemplateData = $util$2.newBuffer(n.artworkURLTemplateData)))),
+                e.bytes !== Array && (n.artworkURLTemplateData = a.newBuffer(n.artworkURLTemplateData)))),
           t.type != null && t.hasOwnProperty("type") && (n.type = t.type),
           t.artworkURLString != null &&
             t.hasOwnProperty("artworkURLString") &&
@@ -13291,7 +13721,7 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("artworkURLTemplateData") &&
             (n.artworkURLTemplateData =
               e.bytes === String
-                ? $util$2.base64.encode(t.artworkURLTemplateData, 0, t.artworkURLTemplateData.length)
+                ? a.base64.encode(t.artworkURLTemplateData, 0, t.artworkURLTemplateData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.artworkURLTemplateData)
                   : t.artworkURLTemplateData),
@@ -13299,7 +13729,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/RemoteArtworkProtobuf");
@@ -13307,7 +13737,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  PlaybackQueueParticipantProtobuf = ($root$2.PlaybackQueueParticipantProtobuf = (() => {
+  rn = (l.PlaybackQueueParticipantProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -13319,11 +13749,11 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.identifier != null && Object.hasOwnProperty.call(t, "identifier") && e.uint32(10).string(t.identifier),
           t.identity != null &&
             Object.hasOwnProperty.call(t, "identity") &&
-            $root$2.UserIdentityProtobuf.encode(t.identity, e.uint32(18).fork()).ldelim(),
+            l.UserIdentityProtobuf.encode(t.identity, e.uint32(18).fork()).ldelim(),
           e
         );
       }),
@@ -13331,47 +13761,47 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.PlaybackQueueParticipantProtobuf();
+          r = new l.PlaybackQueueParticipantProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.identifier = t.string();
               break;
             }
             case 2: {
-              r.identity = $root$2.UserIdentityProtobuf.decode(t, t.uint32());
+              r.identity = l.UserIdentityProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.identifier != null && t.hasOwnProperty("identifier") && !$util$2.isString(t.identifier))
+        if (t.identifier != null && t.hasOwnProperty("identifier") && !a.isString(t.identifier))
           return "identifier: string expected";
         if (t.identity != null && t.hasOwnProperty("identity")) {
-          let e = $root$2.UserIdentityProtobuf.verify(t.identity);
+          let e = l.UserIdentityProtobuf.verify(t.identity);
           if (e) return "identity." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.PlaybackQueueParticipantProtobuf) return t;
-        let e = new $root$2.PlaybackQueueParticipantProtobuf();
+        if (t instanceof l.PlaybackQueueParticipantProtobuf) return t;
+        let e = new l.PlaybackQueueParticipantProtobuf();
         if ((t.identifier != null && (e.identifier = String(t.identifier)), t.identity != null)) {
           if (typeof t.identity != "object")
             throw TypeError(".PlaybackQueueParticipantProtobuf.identity: object expected");
-          e.identity = $root$2.UserIdentityProtobuf.fromObject(t.identity);
+          e.identity = l.UserIdentityProtobuf.fromObject(t.identity);
         }
         return e;
       }),
@@ -13383,12 +13813,12 @@ const $Reader$2 = minimalExports.Reader,
           t.identifier != null && t.hasOwnProperty("identifier") && (n.identifier = t.identifier),
           t.identity != null &&
             t.hasOwnProperty("identity") &&
-            (n.identity = $root$2.UserIdentityProtobuf.toObject(t.identity, e)),
+            (n.identity = l.UserIdentityProtobuf.toObject(t.identity, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/PlaybackQueueParticipantProtobuf");
@@ -13396,80 +13826,80 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  PlayerClientParticipantsUpdateMessageProtobuf = ($root$2.PlayerClientParticipantsUpdateMessageProtobuf = (() => {
+  ln = (l.PlayerClientParticipantsUpdateMessageProtobuf = (() => {
     function o(i) {
       if (((this.participants = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
       (o.prototype.playerPath = null),
-      (o.prototype.participants = $util$2.emptyArray),
+      (o.prototype.participants = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
           t.participants != null && t.participants.length)
         )
           for (let n = 0; n < t.participants.length; ++n)
-            $root$2.PlaybackQueueParticipantProtobuf.encode(t.participants[n], e.uint32(18).fork()).ldelim();
+            l.PlaybackQueueParticipantProtobuf.encode(t.participants[n], e.uint32(18).fork()).ldelim();
         return e;
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.PlayerClientParticipantsUpdateMessageProtobuf();
+          r = new l.PlayerClientParticipantsUpdateMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             case 2: {
               ((r.participants && r.participants.length) || (r.participants = []),
-                r.participants.push($root$2.PlaybackQueueParticipantProtobuf.decode(t, t.uint32())));
+                r.participants.push(l.PlaybackQueueParticipantProtobuf.decode(t, t.uint32())));
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         if (t.participants != null && t.hasOwnProperty("participants")) {
           if (!Array.isArray(t.participants)) return "participants: array expected";
           for (let e = 0; e < t.participants.length; ++e) {
-            let n = $root$2.PlaybackQueueParticipantProtobuf.verify(t.participants[e]);
+            let n = l.PlaybackQueueParticipantProtobuf.verify(t.participants[e]);
             if (n) return "participants." + n;
           }
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.PlayerClientParticipantsUpdateMessageProtobuf) return t;
-        let e = new $root$2.PlayerClientParticipantsUpdateMessageProtobuf();
+        if (t instanceof l.PlayerClientParticipantsUpdateMessageProtobuf) return t;
+        let e = new l.PlayerClientParticipantsUpdateMessageProtobuf();
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".PlayerClientParticipantsUpdateMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         if (t.participants) {
           if (!Array.isArray(t.participants))
@@ -13478,7 +13908,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.participants.length; ++n) {
             if (typeof t.participants[n] != "object")
               throw TypeError(".PlayerClientParticipantsUpdateMessageProtobuf.participants: object expected");
-            e.participants[n] = $root$2.PlaybackQueueParticipantProtobuf.fromObject(t.participants[n]);
+            e.participants[n] = l.PlaybackQueueParticipantProtobuf.fromObject(t.participants[n]);
           }
         }
         return e;
@@ -13491,17 +13921,17 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && (n.playerPath = null),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           t.participants && t.participants.length)
         ) {
           n.participants = [];
           for (let r = 0; r < t.participants.length; ++r)
-            n.participants[r] = $root$2.PlaybackQueueParticipantProtobuf.toObject(t.participants[r], e);
+            n.participants[r] = l.PlaybackQueueParticipantProtobuf.toObject(t.participants[r], e);
         }
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/PlayerClientParticipantsUpdateMessageProtobuf");
@@ -13509,7 +13939,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  UserIdentityProtobuf$1 = ($root$2.UserIdentityProtobuf = (() => {
+  an = (l.UserIdentityProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -13522,7 +13952,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.identifier != null && Object.hasOwnProperty.call(t, "identifier") && e.uint32(10).string(t.identifier),
           t.displayName != null && Object.hasOwnProperty.call(t, "displayName") && e.uint32(18).string(t.displayName),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(24).int32(t.type),
@@ -13533,12 +13963,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.UserIdentityProtobuf();
+          r = new l.UserIdentityProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.identifier = t.string();
               break;
@@ -13552,20 +13982,20 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
-        if (t.identifier != null && t.hasOwnProperty("identifier") && !$util$2.isString(t.identifier))
+        if (t.identifier != null && t.hasOwnProperty("identifier") && !a.isString(t.identifier))
           return "identifier: string expected";
-        if (t.displayName != null && t.hasOwnProperty("displayName") && !$util$2.isString(t.displayName))
+        if (t.displayName != null && t.hasOwnProperty("displayName") && !a.isString(t.displayName))
           return "displayName: string expected";
         if (t.type != null && t.hasOwnProperty("type"))
           switch (t.type) {
@@ -13578,8 +14008,8 @@ const $Reader$2 = minimalExports.Reader,
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.UserIdentityProtobuf) return t;
-        let e = new $root$2.UserIdentityProtobuf();
+        if (t instanceof l.UserIdentityProtobuf) return t;
+        let e = new l.UserIdentityProtobuf();
         switch (
           (t.identifier != null && (e.identifier = String(t.identifier)),
           t.displayName != null && (e.displayName = String(t.displayName)),
@@ -13614,15 +14044,15 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("type") &&
             (n.type =
               e.enums === String
-                ? $root$2.UserIdentityProtobuf.UserIdentityType[t.type] === void 0
+                ? l.UserIdentityProtobuf.UserIdentityType[t.type] === void 0
                   ? t.type
-                  : $root$2.UserIdentityProtobuf.UserIdentityType[t.type]
+                  : l.UserIdentityProtobuf.UserIdentityType[t.type]
                 : t.type),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/UserIdentityProtobuf");
@@ -13635,15 +14065,15 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SendCommandResultMessageProtobuf = ($root$2.SendCommandResultMessageProtobuf = (() => {
+  un = (l.SendCommandResultMessageProtobuf = (() => {
     function o(i) {
       if (((this.handlerReturnStatus = []), (this.handlerReturnStatusData = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
       (o.prototype.sendError = 0),
-      (o.prototype.handlerReturnStatus = $util$2.emptyArray),
-      (o.prototype.handlerReturnStatusData = $util$2.emptyArray),
+      (o.prototype.handlerReturnStatus = a.emptyArray),
+      (o.prototype.handlerReturnStatusData = a.emptyArray),
       (o.prototype.commandID = ""),
       (o.prototype.playerPath = null),
       (o.prototype.commandResult = null),
@@ -13652,7 +14082,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.sendError != null && Object.hasOwnProperty.call(t, "sendError") && e.uint32(8).int32(t.sendError),
           t.handlerReturnStatus != null && t.handlerReturnStatus.length)
         )
@@ -13663,10 +14093,10 @@ const $Reader$2 = minimalExports.Reader,
           t.commandID != null && Object.hasOwnProperty.call(t, "commandID") && e.uint32(34).string(t.commandID),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(42).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(42).fork()).ldelim(),
           t.commandResult != null &&
             Object.hasOwnProperty.call(t, "commandResult") &&
-            $root$2.SendCommandResultProtobuf.encode(t.commandResult, e.uint32(50).fork()).ldelim(),
+            l.SendCommandResultProtobuf.encode(t.commandResult, e.uint32(50).fork()).ldelim(),
           e
         );
       }),
@@ -13674,22 +14104,22 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SendCommandResultMessageProtobuf();
+          r = new l.SendCommandResultMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.sendError = t.int32();
               break;
             }
             case 2: {
               if (
-                ((r.handlerReturnStatus && r.handlerReturnStatus.length) || (r.handlerReturnStatus = []), (l & 7) === 2)
+                ((r.handlerReturnStatus && r.handlerReturnStatus.length) || (r.handlerReturnStatus = []), (u & 7) === 2)
               ) {
-                let a = t.uint32() + t.pos;
-                for (; t.pos < a;) r.handlerReturnStatus.push(t.int32());
+                let d = t.uint32() + t.pos;
+                for (; t.pos < d;) r.handlerReturnStatus.push(t.int32());
               } else r.handlerReturnStatus.push(t.int32());
               break;
             }
@@ -13703,22 +14133,22 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 5: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             case 6: {
-              r.commandResult = $root$2.SendCommandResultProtobuf.decode(t, t.uint32());
+              r.commandResult = l.SendCommandResultProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -13772,26 +14202,26 @@ const $Reader$2 = minimalExports.Reader,
             if (
               !(
                 (t.handlerReturnStatusData[e] && typeof t.handlerReturnStatusData[e].length == "number") ||
-                $util$2.isString(t.handlerReturnStatusData[e])
+                a.isString(t.handlerReturnStatusData[e])
               )
             )
               return "handlerReturnStatusData: buffer[] expected";
         }
-        if (t.commandID != null && t.hasOwnProperty("commandID") && !$util$2.isString(t.commandID))
+        if (t.commandID != null && t.hasOwnProperty("commandID") && !a.isString(t.commandID))
           return "commandID: string expected";
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         if (t.commandResult != null && t.hasOwnProperty("commandResult")) {
-          let e = $root$2.SendCommandResultProtobuf.verify(t.commandResult);
+          let e = l.SendCommandResultProtobuf.verify(t.commandResult);
           if (e) return "commandResult." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SendCommandResultMessageProtobuf) return t;
-        let e = new $root$2.SendCommandResultMessageProtobuf();
+        if (t instanceof l.SendCommandResultMessageProtobuf) return t;
+        let e = new l.SendCommandResultMessageProtobuf();
         switch (t.sendError) {
           default:
             if (typeof t.sendError == "number") {
@@ -13935,11 +14365,9 @@ const $Reader$2 = minimalExports.Reader,
           e.handlerReturnStatusData = [];
           for (let n = 0; n < t.handlerReturnStatusData.length; ++n)
             typeof t.handlerReturnStatusData[n] == "string"
-              ? $util$2.base64.decode(
+              ? a.base64.decode(
                   t.handlerReturnStatusData[n],
-                  (e.handlerReturnStatusData[n] = $util$2.newBuffer(
-                    $util$2.base64.length(t.handlerReturnStatusData[n]),
-                  )),
+                  (e.handlerReturnStatusData[n] = a.newBuffer(a.base64.length(t.handlerReturnStatusData[n]))),
                   0,
                 )
               : t.handlerReturnStatusData[n].length >= 0 &&
@@ -13948,12 +14376,12 @@ const $Reader$2 = minimalExports.Reader,
         if ((t.commandID != null && (e.commandID = String(t.commandID)), t.playerPath != null)) {
           if (typeof t.playerPath != "object")
             throw TypeError(".SendCommandResultMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         if (t.commandResult != null) {
           if (typeof t.commandResult != "object")
             throw TypeError(".SendCommandResultMessageProtobuf.commandResult: object expected");
-          e.commandResult = $root$2.SendCommandResultProtobuf.fromObject(t.commandResult);
+          e.commandResult = l.SendCommandResultProtobuf.fromObject(t.commandResult);
         }
         return e;
       }),
@@ -13971,9 +14399,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("sendError") &&
             (n.sendError =
               e.enums === String
-                ? $root$2.SendCommandResultMessageProtobuf.SendError[t.sendError] === void 0
+                ? l.SendCommandResultMessageProtobuf.SendError[t.sendError] === void 0
                   ? t.sendError
-                  : $root$2.SendCommandResultMessageProtobuf.SendError[t.sendError]
+                  : l.SendCommandResultMessageProtobuf.SendError[t.sendError]
                 : t.sendError),
           t.handlerReturnStatus && t.handlerReturnStatus.length)
         ) {
@@ -13981,9 +14409,9 @@ const $Reader$2 = minimalExports.Reader,
           for (let r = 0; r < t.handlerReturnStatus.length; ++r)
             n.handlerReturnStatus[r] =
               e.enums === String
-                ? $root$2.SendCommandResultMessageProtobuf.CommandHandlerStatus[t.handlerReturnStatus[r]] === void 0
+                ? l.SendCommandResultMessageProtobuf.CommandHandlerStatus[t.handlerReturnStatus[r]] === void 0
                   ? t.handlerReturnStatus[r]
-                  : $root$2.SendCommandResultMessageProtobuf.CommandHandlerStatus[t.handlerReturnStatus[r]]
+                  : l.SendCommandResultMessageProtobuf.CommandHandlerStatus[t.handlerReturnStatus[r]]
                 : t.handlerReturnStatus[r];
         }
         if (t.handlerReturnStatusData && t.handlerReturnStatusData.length) {
@@ -13991,7 +14419,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let r = 0; r < t.handlerReturnStatusData.length; ++r)
             n.handlerReturnStatusData[r] =
               e.bytes === String
-                ? $util$2.base64.encode(t.handlerReturnStatusData[r], 0, t.handlerReturnStatusData[r].length)
+                ? a.base64.encode(t.handlerReturnStatusData[r], 0, t.handlerReturnStatusData[r].length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.handlerReturnStatusData[r])
                   : t.handlerReturnStatusData[r];
@@ -14000,15 +14428,15 @@ const $Reader$2 = minimalExports.Reader,
           t.commandID != null && t.hasOwnProperty("commandID") && (n.commandID = t.commandID),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           t.commandResult != null &&
             t.hasOwnProperty("commandResult") &&
-            (n.commandResult = $root$2.SendCommandResultProtobuf.toObject(t.commandResult, e)),
+            (n.commandResult = l.SendCommandResultProtobuf.toObject(t.commandResult, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SendCommandResultMessageProtobuf");
@@ -14059,7 +14487,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SendCommandResultProtobuf = ($root$2.SendCommandResultProtobuf = (() => {
+  cn = (l.SendCommandResultProtobuf = (() => {
     function o(i) {
       if (((this.statuses = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -14067,22 +14495,22 @@ const $Reader$2 = minimalExports.Reader,
     return (
       (o.prototype.playerPath = null),
       (o.prototype.sendError = 0),
-      (o.prototype.statuses = $util$2.emptyArray),
+      (o.prototype.statuses = a.emptyArray),
       (o.prototype.sendErrorDescription = ""),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
           t.sendError != null && Object.hasOwnProperty.call(t, "sendError") && e.uint32(16).int32(t.sendError),
           t.statuses != null && t.statuses.length)
         )
           for (let n = 0; n < t.statuses.length; ++n)
-            $root$2.SendCommandResultStatusProtobuf.encode(t.statuses[n], e.uint32(26).fork()).ldelim();
+            l.SendCommandResultStatusProtobuf.encode(t.statuses[n], e.uint32(26).fork()).ldelim();
         return (
           t.sendErrorDescription != null &&
             Object.hasOwnProperty.call(t, "sendErrorDescription") &&
@@ -14094,14 +14522,14 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SendCommandResultProtobuf();
+          r = new l.SendCommandResultProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             case 2: {
@@ -14110,7 +14538,7 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 3: {
               ((r.statuses && r.statuses.length) || (r.statuses = []),
-                r.statuses.push($root$2.SendCommandResultStatusProtobuf.decode(t, t.uint32())));
+                r.statuses.push(l.SendCommandResultStatusProtobuf.decode(t, t.uint32())));
               break;
             }
             case 4: {
@@ -14118,19 +14546,19 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         if (t.sendError != null && t.hasOwnProperty("sendError"))
@@ -14153,23 +14581,23 @@ const $Reader$2 = minimalExports.Reader,
         if (t.statuses != null && t.hasOwnProperty("statuses")) {
           if (!Array.isArray(t.statuses)) return "statuses: array expected";
           for (let e = 0; e < t.statuses.length; ++e) {
-            let n = $root$2.SendCommandResultStatusProtobuf.verify(t.statuses[e]);
+            let n = l.SendCommandResultStatusProtobuf.verify(t.statuses[e]);
             if (n) return "statuses." + n;
           }
         }
         return t.sendErrorDescription != null &&
           t.hasOwnProperty("sendErrorDescription") &&
-          !$util$2.isString(t.sendErrorDescription)
+          !a.isString(t.sendErrorDescription)
           ? "sendErrorDescription: string expected"
           : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SendCommandResultProtobuf) return t;
-        let e = new $root$2.SendCommandResultProtobuf();
+        if (t instanceof l.SendCommandResultProtobuf) return t;
+        let e = new l.SendCommandResultProtobuf();
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".SendCommandResultProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         switch (t.sendError) {
           default:
@@ -14229,7 +14657,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.statuses.length; ++n) {
             if (typeof t.statuses[n] != "object")
               throw TypeError(".SendCommandResultProtobuf.statuses: object expected");
-            e.statuses[n] = $root$2.SendCommandResultStatusProtobuf.fromObject(t.statuses[n]);
+            e.statuses[n] = l.SendCommandResultStatusProtobuf.fromObject(t.statuses[n]);
           }
         }
         return (t.sendErrorDescription != null && (e.sendErrorDescription = String(t.sendErrorDescription)), e);
@@ -14245,20 +14673,20 @@ const $Reader$2 = minimalExports.Reader,
             (n.sendErrorDescription = "")),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           t.sendError != null &&
             t.hasOwnProperty("sendError") &&
             (n.sendError =
               e.enums === String
-                ? $root$2.SendCommandResultMessageProtobuf.SendError[t.sendError] === void 0
+                ? l.SendCommandResultMessageProtobuf.SendError[t.sendError] === void 0
                   ? t.sendError
-                  : $root$2.SendCommandResultMessageProtobuf.SendError[t.sendError]
+                  : l.SendCommandResultMessageProtobuf.SendError[t.sendError]
                 : t.sendError),
           t.statuses && t.statuses.length)
         ) {
           n.statuses = [];
           for (let r = 0; r < t.statuses.length; ++r)
-            n.statuses[r] = $root$2.SendCommandResultStatusProtobuf.toObject(t.statuses[r], e);
+            n.statuses[r] = l.SendCommandResultStatusProtobuf.toObject(t.statuses[r], e);
         }
         return (
           t.sendErrorDescription != null &&
@@ -14268,7 +14696,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SendCommandResultProtobuf");
@@ -14276,7 +14704,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SendCommandResultStatusProtobuf = ($root$2.SendCommandResultStatusProtobuf = (() => {
+  fn = (l.SendCommandResultStatusProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -14285,22 +14713,22 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.type = 0),
       (o.prototype.dialog = null),
       (o.prototype.error = null),
-      (o.prototype.customData = $util$2.newBuffer([])),
+      (o.prototype.customData = a.newBuffer([])),
       (o.prototype.customDataType = ""),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.statusCode != null && Object.hasOwnProperty.call(t, "statusCode") && e.uint32(8).int32(t.statusCode),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(16).int32(t.type),
           t.dialog != null &&
             Object.hasOwnProperty.call(t, "dialog") &&
-            $root$2.SendCommandResultHandlerDialogProtobuf.encode(t.dialog, e.uint32(26).fork()).ldelim(),
+            l.SendCommandResultHandlerDialogProtobuf.encode(t.dialog, e.uint32(26).fork()).ldelim(),
           t.error != null &&
             Object.hasOwnProperty.call(t, "error") &&
-            $root$2.ErrorProtobuf.encode(t.error, e.uint32(34).fork()).ldelim(),
+            l.ErrorProtobuf.encode(t.error, e.uint32(34).fork()).ldelim(),
           t.customData != null && Object.hasOwnProperty.call(t, "customData") && e.uint32(42).bytes(t.customData),
           t.customDataType != null &&
             Object.hasOwnProperty.call(t, "customDataType") &&
@@ -14312,12 +14740,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SendCommandResultStatusProtobuf();
+          r = new l.SendCommandResultStatusProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.statusCode = t.int32();
               break;
@@ -14327,11 +14755,11 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 3: {
-              r.dialog = $root$2.SendCommandResultHandlerDialogProtobuf.decode(t, t.uint32());
+              r.dialog = l.SendCommandResultHandlerDialogProtobuf.decode(t, t.uint32());
               break;
             }
             case 4: {
-              r.error = $root$2.ErrorProtobuf.decode(t, t.uint32());
+              r.error = l.ErrorProtobuf.decode(t, t.uint32());
               break;
             }
             case 5: {
@@ -14343,14 +14771,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -14389,24 +14817,24 @@ const $Reader$2 = minimalExports.Reader,
               break;
           }
         if (t.dialog != null && t.hasOwnProperty("dialog")) {
-          let e = $root$2.SendCommandResultHandlerDialogProtobuf.verify(t.dialog);
+          let e = l.SendCommandResultHandlerDialogProtobuf.verify(t.dialog);
           if (e) return "dialog." + e;
         }
         if (t.error != null && t.hasOwnProperty("error")) {
-          let e = $root$2.ErrorProtobuf.verify(t.error);
+          let e = l.ErrorProtobuf.verify(t.error);
           if (e) return "error." + e;
         }
         return t.customData != null &&
           t.hasOwnProperty("customData") &&
-          !((t.customData && typeof t.customData.length == "number") || $util$2.isString(t.customData))
+          !((t.customData && typeof t.customData.length == "number") || a.isString(t.customData))
           ? "customData: buffer expected"
-          : t.customDataType != null && t.hasOwnProperty("customDataType") && !$util$2.isString(t.customDataType)
+          : t.customDataType != null && t.hasOwnProperty("customDataType") && !a.isString(t.customDataType)
             ? "customDataType: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SendCommandResultStatusProtobuf) return t;
-        let e = new $root$2.SendCommandResultStatusProtobuf();
+        if (t instanceof l.SendCommandResultStatusProtobuf) return t;
+        let e = new l.SendCommandResultStatusProtobuf();
         switch (t.statusCode) {
           default:
             if (typeof t.statusCode == "number") {
@@ -14513,20 +14941,16 @@ const $Reader$2 = minimalExports.Reader,
         }
         if (t.dialog != null) {
           if (typeof t.dialog != "object") throw TypeError(".SendCommandResultStatusProtobuf.dialog: object expected");
-          e.dialog = $root$2.SendCommandResultHandlerDialogProtobuf.fromObject(t.dialog);
+          e.dialog = l.SendCommandResultHandlerDialogProtobuf.fromObject(t.dialog);
         }
         if (t.error != null) {
           if (typeof t.error != "object") throw TypeError(".SendCommandResultStatusProtobuf.error: object expected");
-          e.error = $root$2.ErrorProtobuf.fromObject(t.error);
+          e.error = l.ErrorProtobuf.fromObject(t.error);
         }
         return (
           t.customData != null &&
             (typeof t.customData == "string"
-              ? $util$2.base64.decode(
-                  t.customData,
-                  (e.customData = $util$2.newBuffer($util$2.base64.length(t.customData))),
-                  0,
-                )
+              ? a.base64.decode(t.customData, (e.customData = a.newBuffer(a.base64.length(t.customData))), 0)
               : t.customData.length >= 0 && (e.customData = t.customData)),
           t.customDataType != null && (e.customDataType = String(t.customDataType)),
           e
@@ -14543,33 +14967,33 @@ const $Reader$2 = minimalExports.Reader,
             (n.error = null),
             e.bytes === String
               ? (n.customData = "")
-              : ((n.customData = []), e.bytes !== Array && (n.customData = $util$2.newBuffer(n.customData))),
+              : ((n.customData = []), e.bytes !== Array && (n.customData = a.newBuffer(n.customData))),
             (n.customDataType = "")),
           t.statusCode != null &&
             t.hasOwnProperty("statusCode") &&
             (n.statusCode =
               e.enums === String
-                ? $root$2.SendCommandResultMessageProtobuf.CommandHandlerStatus[t.statusCode] === void 0
+                ? l.SendCommandResultMessageProtobuf.CommandHandlerStatus[t.statusCode] === void 0
                   ? t.statusCode
-                  : $root$2.SendCommandResultMessageProtobuf.CommandHandlerStatus[t.statusCode]
+                  : l.SendCommandResultMessageProtobuf.CommandHandlerStatus[t.statusCode]
                 : t.statusCode),
           t.type != null &&
             t.hasOwnProperty("type") &&
             (n.type =
               e.enums === String
-                ? $root$2.SendCommandResultStatusProtobuf.SendCommandResultType[t.type] === void 0
+                ? l.SendCommandResultStatusProtobuf.SendCommandResultType[t.type] === void 0
                   ? t.type
-                  : $root$2.SendCommandResultStatusProtobuf.SendCommandResultType[t.type]
+                  : l.SendCommandResultStatusProtobuf.SendCommandResultType[t.type]
                 : t.type),
           t.dialog != null &&
             t.hasOwnProperty("dialog") &&
-            (n.dialog = $root$2.SendCommandResultHandlerDialogProtobuf.toObject(t.dialog, e)),
-          t.error != null && t.hasOwnProperty("error") && (n.error = $root$2.ErrorProtobuf.toObject(t.error, e)),
+            (n.dialog = l.SendCommandResultHandlerDialogProtobuf.toObject(t.dialog, e)),
+          t.error != null && t.hasOwnProperty("error") && (n.error = l.ErrorProtobuf.toObject(t.error, e)),
           t.customData != null &&
             t.hasOwnProperty("customData") &&
             (n.customData =
               e.bytes === String
-                ? $util$2.base64.encode(t.customData, 0, t.customData.length)
+                ? a.base64.encode(t.customData, 0, t.customData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.customData)
                   : t.customData),
@@ -14578,7 +15002,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SendCommandResultStatusProtobuf");
@@ -14597,7 +15021,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SendCommandResultHandlerDialogActionProtobuf = ($root$2.SendCommandResultHandlerDialogActionProtobuf = (() => {
+  pn = (l.SendCommandResultHandlerDialogActionProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -14610,12 +15034,12 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           e.uint32(8).int32(t.type),
           e.uint32(18).string(t.title),
           t.event != null &&
             Object.hasOwnProperty.call(t, "event") &&
-            $root$2.SendCommandMessageProtobuf.encode(t.event, e.uint32(26).fork()).ldelim(),
+            l.SendCommandMessageProtobuf.encode(t.event, e.uint32(26).fork()).ldelim(),
           e
         );
       }),
@@ -14623,12 +15047,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SendCommandResultHandlerDialogActionProtobuf();
+          r = new l.SendCommandResultHandlerDialogActionProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.type = t.int32();
               break;
@@ -14638,20 +15062,20 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 3: {
-              r.event = $root$2.SendCommandMessageProtobuf.decode(t, t.uint32());
+              r.event = l.SendCommandMessageProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
-        if (!r.hasOwnProperty("type")) throw $util$2.ProtocolError("missing required 'type'", { instance: r });
-        if (!r.hasOwnProperty("title")) throw $util$2.ProtocolError("missing required 'title'", { instance: r });
+        if (!r.hasOwnProperty("type")) throw a.ProtocolError("missing required 'type'", { instance: r });
+        if (!r.hasOwnProperty("title")) throw a.ProtocolError("missing required 'title'", { instance: r });
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -14663,16 +15087,16 @@ const $Reader$2 = minimalExports.Reader,
           case 2:
             break;
         }
-        if (!$util$2.isString(t.title)) return "title: string expected";
+        if (!a.isString(t.title)) return "title: string expected";
         if (t.event != null && t.hasOwnProperty("event")) {
-          let e = $root$2.SendCommandMessageProtobuf.verify(t.event);
+          let e = l.SendCommandMessageProtobuf.verify(t.event);
           if (e) return "event." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SendCommandResultHandlerDialogActionProtobuf) return t;
-        let e = new $root$2.SendCommandResultHandlerDialogActionProtobuf();
+        if (t instanceof l.SendCommandResultHandlerDialogActionProtobuf) return t;
+        let e = new l.SendCommandResultHandlerDialogActionProtobuf();
         switch (t.type) {
           default:
             if (typeof t.type == "number") {
@@ -14696,7 +15120,7 @@ const $Reader$2 = minimalExports.Reader,
         if ((t.title != null && (e.title = String(t.title)), t.event != null)) {
           if (typeof t.event != "object")
             throw TypeError(".SendCommandResultHandlerDialogActionProtobuf.event: object expected");
-          e.event = $root$2.SendCommandMessageProtobuf.fromObject(t.event);
+          e.event = l.SendCommandMessageProtobuf.fromObject(t.event);
         }
         return e;
       }),
@@ -14712,23 +15136,18 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("type") &&
             (n.type =
               e.enums === String
-                ? $root$2.SendCommandResultHandlerDialogActionProtobuf.SendCommandResultHandlerDialogActionType[
-                    t.type
-                  ] === void 0
+                ? l.SendCommandResultHandlerDialogActionProtobuf.SendCommandResultHandlerDialogActionType[t.type] ===
+                  void 0
                   ? t.type
-                  : $root$2.SendCommandResultHandlerDialogActionProtobuf.SendCommandResultHandlerDialogActionType[
-                      t.type
-                    ]
+                  : l.SendCommandResultHandlerDialogActionProtobuf.SendCommandResultHandlerDialogActionType[t.type]
                 : t.type),
           t.title != null && t.hasOwnProperty("title") && (n.title = t.title),
-          t.event != null &&
-            t.hasOwnProperty("event") &&
-            (n.event = $root$2.SendCommandMessageProtobuf.toObject(t.event, e)),
+          t.event != null && t.hasOwnProperty("event") && (n.event = l.SendCommandMessageProtobuf.toObject(t.event, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SendCommandResultHandlerDialogActionProtobuf");
@@ -14746,22 +15165,22 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SendCommandResultHandlerDialogProtobuf = ($root$2.SendCommandResultHandlerDialogProtobuf = (() => {
+  dn = (l.SendCommandResultHandlerDialogProtobuf = (() => {
     function o(i) {
       if (((this.actions = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
-      (o.prototype.actions = $util$2.emptyArray),
+      (o.prototype.actions = a.emptyArray),
       (o.prototype.localizedTitle = ""),
       (o.prototype.localizedMessage = ""),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        if ((e || (e = $Writer$2.create()), t.actions != null && t.actions.length))
+        if ((e || (e = w.create()), t.actions != null && t.actions.length))
           for (let n = 0; n < t.actions.length; ++n)
-            $root$2.SendCommandResultHandlerDialogActionProtobuf.encode(t.actions[n], e.uint32(10).fork()).ldelim();
+            l.SendCommandResultHandlerDialogActionProtobuf.encode(t.actions[n], e.uint32(10).fork()).ldelim();
         return (
           t.localizedTitle != null &&
             Object.hasOwnProperty.call(t, "localizedTitle") &&
@@ -14776,15 +15195,15 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SendCommandResultHandlerDialogProtobuf();
+          r = new l.SendCommandResultHandlerDialogProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               ((r.actions && r.actions.length) || (r.actions = []),
-                r.actions.push($root$2.SendCommandResultHandlerDialogActionProtobuf.decode(t, t.uint32())));
+                r.actions.push(l.SendCommandResultHandlerDialogActionProtobuf.decode(t, t.uint32())));
               break;
             }
             case 2: {
@@ -14796,33 +15215,33 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.actions != null && t.hasOwnProperty("actions")) {
           if (!Array.isArray(t.actions)) return "actions: array expected";
           for (let e = 0; e < t.actions.length; ++e) {
-            let n = $root$2.SendCommandResultHandlerDialogActionProtobuf.verify(t.actions[e]);
+            let n = l.SendCommandResultHandlerDialogActionProtobuf.verify(t.actions[e]);
             if (n) return "actions." + n;
           }
         }
-        return t.localizedTitle != null && t.hasOwnProperty("localizedTitle") && !$util$2.isString(t.localizedTitle)
+        return t.localizedTitle != null && t.hasOwnProperty("localizedTitle") && !a.isString(t.localizedTitle)
           ? "localizedTitle: string expected"
-          : t.localizedMessage != null && t.hasOwnProperty("localizedMessage") && !$util$2.isString(t.localizedMessage)
+          : t.localizedMessage != null && t.hasOwnProperty("localizedMessage") && !a.isString(t.localizedMessage)
             ? "localizedMessage: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SendCommandResultHandlerDialogProtobuf) return t;
-        let e = new $root$2.SendCommandResultHandlerDialogProtobuf();
+        if (t instanceof l.SendCommandResultHandlerDialogProtobuf) return t;
+        let e = new l.SendCommandResultHandlerDialogProtobuf();
         if (t.actions) {
           if (!Array.isArray(t.actions))
             throw TypeError(".SendCommandResultHandlerDialogProtobuf.actions: array expected");
@@ -14830,7 +15249,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.actions.length; ++n) {
             if (typeof t.actions[n] != "object")
               throw TypeError(".SendCommandResultHandlerDialogProtobuf.actions: object expected");
-            e.actions[n] = $root$2.SendCommandResultHandlerDialogActionProtobuf.fromObject(t.actions[n]);
+            e.actions[n] = l.SendCommandResultHandlerDialogActionProtobuf.fromObject(t.actions[n]);
           }
         }
         return (
@@ -14849,7 +15268,7 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.actions = [];
           for (let r = 0; r < t.actions.length; ++r)
-            n.actions[r] = $root$2.SendCommandResultHandlerDialogActionProtobuf.toObject(t.actions[r], e);
+            n.actions[r] = l.SendCommandResultHandlerDialogActionProtobuf.toObject(t.actions[r], e);
         }
         return (
           t.localizedTitle != null && t.hasOwnProperty("localizedTitle") && (n.localizedTitle = t.localizedTitle),
@@ -14860,7 +15279,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SendCommandResultHandlerDialogProtobuf");
@@ -14868,7 +15287,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  PlayerClientPropertiesMessageProtobuf = ($root$2.PlayerClientPropertiesMessageProtobuf = (() => {
+  yn = (l.PlayerClientPropertiesMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -14880,10 +15299,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
           t.lastPlayingTimestamp != null &&
             Object.hasOwnProperty.call(t, "lastPlayingTimestamp") &&
             e.uint32(17).double(t.lastPlayingTimestamp),
@@ -14894,14 +15313,14 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.PlayerClientPropertiesMessageProtobuf();
+          r = new l.PlayerClientPropertiesMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             case 2: {
@@ -14909,19 +15328,19 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         return t.lastPlayingTimestamp != null &&
@@ -14931,12 +15350,12 @@ const $Reader$2 = minimalExports.Reader,
           : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.PlayerClientPropertiesMessageProtobuf) return t;
-        let e = new $root$2.PlayerClientPropertiesMessageProtobuf();
+        if (t instanceof l.PlayerClientPropertiesMessageProtobuf) return t;
+        let e = new l.PlayerClientPropertiesMessageProtobuf();
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".PlayerClientPropertiesMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         return (t.lastPlayingTimestamp != null && (e.lastPlayingTimestamp = Number(t.lastPlayingTimestamp)), e);
       }),
@@ -14947,7 +15366,7 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && ((n.playerPath = null), (n.lastPlayingTimestamp = 0)),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           t.lastPlayingTimestamp != null &&
             t.hasOwnProperty("lastPlayingTimestamp") &&
             (n.lastPlayingTimestamp =
@@ -14956,7 +15375,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/PlayerClientPropertiesMessageProtobuf");
@@ -14964,7 +15383,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  OriginClientPropertiesMessageProtobuf = ($root$2.OriginClientPropertiesMessageProtobuf = (() => {
+  sn = (l.OriginClientPropertiesMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -14975,7 +15394,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.lastPlayingTimestamp != null &&
             Object.hasOwnProperty.call(t, "lastPlayingTimestamp") &&
             e.uint32(9).double(t.lastPlayingTimestamp),
@@ -14986,25 +15405,25 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.OriginClientPropertiesMessageProtobuf();
+          r = new l.OriginClientPropertiesMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.lastPlayingTimestamp = t.double();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
@@ -15016,8 +15435,8 @@ const $Reader$2 = minimalExports.Reader,
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.OriginClientPropertiesMessageProtobuf) return t;
-        let e = new $root$2.OriginClientPropertiesMessageProtobuf();
+        if (t instanceof l.OriginClientPropertiesMessageProtobuf) return t;
+        let e = new l.OriginClientPropertiesMessageProtobuf();
         return (t.lastPlayingTimestamp != null && (e.lastPlayingTimestamp = Number(t.lastPlayingTimestamp)), e);
       }),
       (o.toObject = function (t, e) {
@@ -15033,7 +15452,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/OriginClientPropertiesMessageProtobuf");
@@ -15041,7 +15460,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  GetVolumeControlCapabilitiesMessageProtobuf = ($root$2.GetVolumeControlCapabilitiesMessageProtobuf = (() => {
+  bn = (l.GetVolumeControlCapabilitiesMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15052,7 +15471,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.outputDeviceUID != null &&
             Object.hasOwnProperty.call(t, "outputDeviceUID") &&
             e.uint32(10).string(t.outputDeviceUID),
@@ -15063,36 +15482,36 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.GetVolumeControlCapabilitiesMessageProtobuf();
+          r = new l.GetVolumeControlCapabilitiesMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.outputDeviceUID = t.string();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID)
+          : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID)
             ? "outputDeviceUID: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.GetVolumeControlCapabilitiesMessageProtobuf) return t;
-        let e = new $root$2.GetVolumeControlCapabilitiesMessageProtobuf();
+        if (t instanceof l.GetVolumeControlCapabilitiesMessageProtobuf) return t;
+        let e = new l.GetVolumeControlCapabilitiesMessageProtobuf();
         return (t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)), e);
       }),
       (o.toObject = function (t, e) {
@@ -15105,7 +15524,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GetVolumeControlCapabilitiesMessageProtobuf");
@@ -15113,197 +15532,191 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  GetVolumeControlCapabilitiesResultMessageProtobuf = ($root$2.GetVolumeControlCapabilitiesResultMessageProtobuf =
-    (() => {
-      function o(i) {
-        if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
-      }
-      return (
-        (o.prototype.capabilities = null),
-        (o.create = function (t) {
-          return new o(t);
-        }),
-        (o.encode = function (t, e) {
-          return (
-            e || (e = $Writer$2.create()),
-            t.capabilities != null &&
-              Object.hasOwnProperty.call(t, "capabilities") &&
-              $root$2.VolumeControlAvailabilityProtobuf.encode(t.capabilities, e.uint32(10).fork()).ldelim(),
-            e
-          );
-        }),
-        (o.encodeDelimited = function (t, e) {
-          return this.encode(t, e).ldelim();
-        }),
-        (o.decode = function (t, e) {
-          t instanceof $Reader$2 || (t = $Reader$2.create(t));
-          let n = e === void 0 ? t.len : t.pos + e,
-            r = new $root$2.GetVolumeControlCapabilitiesResultMessageProtobuf();
-          for (; t.pos < n;) {
-            let l = t.uint32();
-            switch (l >>> 3) {
-              case 1: {
-                r.capabilities = $root$2.VolumeControlAvailabilityProtobuf.decode(t, t.uint32());
-                break;
-              }
-              default:
-                t.skipType(l & 7);
-                break;
+  hn = (l.GetVolumeControlCapabilitiesResultMessageProtobuf = (() => {
+    function o(i) {
+      if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
+    }
+    return (
+      (o.prototype.capabilities = null),
+      (o.create = function (t) {
+        return new o(t);
+      }),
+      (o.encode = function (t, e) {
+        return (
+          e || (e = w.create()),
+          t.capabilities != null &&
+            Object.hasOwnProperty.call(t, "capabilities") &&
+            l.VolumeControlAvailabilityProtobuf.encode(t.capabilities, e.uint32(10).fork()).ldelim(),
+          e
+        );
+      }),
+      (o.encodeDelimited = function (t, e) {
+        return this.encode(t, e).ldelim();
+      }),
+      (o.decode = function (t, e) {
+        t instanceof c || (t = c.create(t));
+        let n = e === void 0 ? t.len : t.pos + e,
+          r = new l.GetVolumeControlCapabilitiesResultMessageProtobuf();
+        for (; t.pos < n;) {
+          let u = t.uint32();
+          switch (u >>> 3) {
+            case 1: {
+              r.capabilities = l.VolumeControlAvailabilityProtobuf.decode(t, t.uint32());
+              break;
             }
+            default:
+              t.skipType(u & 7);
+              break;
           }
-          return r;
-        }),
-        (o.decodeDelimited = function (t) {
-          return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
-        }),
-        (o.verify = function (t) {
-          if (typeof t != "object" || t === null) return "object expected";
-          if (t.capabilities != null && t.hasOwnProperty("capabilities")) {
-            let e = $root$2.VolumeControlAvailabilityProtobuf.verify(t.capabilities);
-            if (e) return "capabilities." + e;
-          }
-          return null;
-        }),
-        (o.fromObject = function (t) {
-          if (t instanceof $root$2.GetVolumeControlCapabilitiesResultMessageProtobuf) return t;
-          let e = new $root$2.GetVolumeControlCapabilitiesResultMessageProtobuf();
-          if (t.capabilities != null) {
-            if (typeof t.capabilities != "object")
-              throw TypeError(".GetVolumeControlCapabilitiesResultMessageProtobuf.capabilities: object expected");
-            e.capabilities = $root$2.VolumeControlAvailabilityProtobuf.fromObject(t.capabilities);
-          }
-          return e;
-        }),
-        (o.toObject = function (t, e) {
-          e || (e = {});
-          let n = {};
-          return (
-            e.defaults && (n.capabilities = null),
-            t.capabilities != null &&
-              t.hasOwnProperty("capabilities") &&
-              (n.capabilities = $root$2.VolumeControlAvailabilityProtobuf.toObject(t.capabilities, e)),
-            n
-          );
-        }),
-        (o.prototype.toJSON = function () {
-          return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
-        }),
-        (o.getTypeUrl = function (t) {
-          return (
-            t === void 0 && (t = "type.googleapis.com"), t + "/GetVolumeControlCapabilitiesResultMessageProtobuf"
-          );
-        }),
-        o
-      );
-    })()),
-  VolumeControlCapabilitiesDidChangeMessageProtobuf = ($root$2.VolumeControlCapabilitiesDidChangeMessageProtobuf =
-    (() => {
-      function o(i) {
-        if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
-      }
-      return (
-        (o.prototype.capabilities = null),
-        (o.prototype.endpointUID = ""),
-        (o.prototype.outputDeviceUID = ""),
-        (o.create = function (t) {
-          return new o(t);
-        }),
-        (o.encode = function (t, e) {
-          return (
-            e || (e = $Writer$2.create()),
-            t.capabilities != null &&
-              Object.hasOwnProperty.call(t, "capabilities") &&
-              $root$2.VolumeControlAvailabilityProtobuf.encode(t.capabilities, e.uint32(10).fork()).ldelim(),
-            t.endpointUID != null && Object.hasOwnProperty.call(t, "endpointUID") && e.uint32(26).string(t.endpointUID),
-            t.outputDeviceUID != null &&
-              Object.hasOwnProperty.call(t, "outputDeviceUID") &&
-              e.uint32(34).string(t.outputDeviceUID),
-            e
-          );
-        }),
-        (o.encodeDelimited = function (t, e) {
-          return this.encode(t, e).ldelim();
-        }),
-        (o.decode = function (t, e) {
-          t instanceof $Reader$2 || (t = $Reader$2.create(t));
-          let n = e === void 0 ? t.len : t.pos + e,
-            r = new $root$2.VolumeControlCapabilitiesDidChangeMessageProtobuf();
-          for (; t.pos < n;) {
-            let l = t.uint32();
-            switch (l >>> 3) {
-              case 1: {
-                r.capabilities = $root$2.VolumeControlAvailabilityProtobuf.decode(t, t.uint32());
-                break;
-              }
-              case 3: {
-                r.endpointUID = t.string();
-                break;
-              }
-              case 4: {
-                r.outputDeviceUID = t.string();
-                break;
-              }
-              default:
-                t.skipType(l & 7);
-                break;
+        }
+        return r;
+      }),
+      (o.decodeDelimited = function (t) {
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
+      }),
+      (o.verify = function (t) {
+        if (typeof t != "object" || t === null) return "object expected";
+        if (t.capabilities != null && t.hasOwnProperty("capabilities")) {
+          let e = l.VolumeControlAvailabilityProtobuf.verify(t.capabilities);
+          if (e) return "capabilities." + e;
+        }
+        return null;
+      }),
+      (o.fromObject = function (t) {
+        if (t instanceof l.GetVolumeControlCapabilitiesResultMessageProtobuf) return t;
+        let e = new l.GetVolumeControlCapabilitiesResultMessageProtobuf();
+        if (t.capabilities != null) {
+          if (typeof t.capabilities != "object")
+            throw TypeError(".GetVolumeControlCapabilitiesResultMessageProtobuf.capabilities: object expected");
+          e.capabilities = l.VolumeControlAvailabilityProtobuf.fromObject(t.capabilities);
+        }
+        return e;
+      }),
+      (o.toObject = function (t, e) {
+        e || (e = {});
+        let n = {};
+        return (
+          e.defaults && (n.capabilities = null),
+          t.capabilities != null &&
+            t.hasOwnProperty("capabilities") &&
+            (n.capabilities = l.VolumeControlAvailabilityProtobuf.toObject(t.capabilities, e)),
+          n
+        );
+      }),
+      (o.prototype.toJSON = function () {
+        return this.constructor.toObject(this, b.util.toJSONOptions);
+      }),
+      (o.getTypeUrl = function (t) {
+        return (t === void 0 && (t = "type.googleapis.com"), t + "/GetVolumeControlCapabilitiesResultMessageProtobuf");
+      }),
+      o
+    );
+  })()),
+  Pn = (l.VolumeControlCapabilitiesDidChangeMessageProtobuf = (() => {
+    function o(i) {
+      if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
+    }
+    return (
+      (o.prototype.capabilities = null),
+      (o.prototype.endpointUID = ""),
+      (o.prototype.outputDeviceUID = ""),
+      (o.create = function (t) {
+        return new o(t);
+      }),
+      (o.encode = function (t, e) {
+        return (
+          e || (e = w.create()),
+          t.capabilities != null &&
+            Object.hasOwnProperty.call(t, "capabilities") &&
+            l.VolumeControlAvailabilityProtobuf.encode(t.capabilities, e.uint32(10).fork()).ldelim(),
+          t.endpointUID != null && Object.hasOwnProperty.call(t, "endpointUID") && e.uint32(26).string(t.endpointUID),
+          t.outputDeviceUID != null &&
+            Object.hasOwnProperty.call(t, "outputDeviceUID") &&
+            e.uint32(34).string(t.outputDeviceUID),
+          e
+        );
+      }),
+      (o.encodeDelimited = function (t, e) {
+        return this.encode(t, e).ldelim();
+      }),
+      (o.decode = function (t, e) {
+        t instanceof c || (t = c.create(t));
+        let n = e === void 0 ? t.len : t.pos + e,
+          r = new l.VolumeControlCapabilitiesDidChangeMessageProtobuf();
+        for (; t.pos < n;) {
+          let u = t.uint32();
+          switch (u >>> 3) {
+            case 1: {
+              r.capabilities = l.VolumeControlAvailabilityProtobuf.decode(t, t.uint32());
+              break;
             }
+            case 3: {
+              r.endpointUID = t.string();
+              break;
+            }
+            case 4: {
+              r.outputDeviceUID = t.string();
+              break;
+            }
+            default:
+              t.skipType(u & 7);
+              break;
           }
-          return r;
-        }),
-        (o.decodeDelimited = function (t) {
-          return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
-        }),
-        (o.verify = function (t) {
-          if (typeof t != "object" || t === null) return "object expected";
-          if (t.capabilities != null && t.hasOwnProperty("capabilities")) {
-            let e = $root$2.VolumeControlAvailabilityProtobuf.verify(t.capabilities);
-            if (e) return "capabilities." + e;
-          }
-          return t.endpointUID != null && t.hasOwnProperty("endpointUID") && !$util$2.isString(t.endpointUID)
-            ? "endpointUID: string expected"
-            : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID)
-              ? "outputDeviceUID: string expected"
-              : null;
-        }),
-        (o.fromObject = function (t) {
-          if (t instanceof $root$2.VolumeControlCapabilitiesDidChangeMessageProtobuf) return t;
-          let e = new $root$2.VolumeControlCapabilitiesDidChangeMessageProtobuf();
-          if (t.capabilities != null) {
-            if (typeof t.capabilities != "object")
-              throw TypeError(".VolumeControlCapabilitiesDidChangeMessageProtobuf.capabilities: object expected");
-            e.capabilities = $root$2.VolumeControlAvailabilityProtobuf.fromObject(t.capabilities);
-          }
-          return (
-            t.endpointUID != null && (e.endpointUID = String(t.endpointUID)),
-            t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)),
-            e
-          );
-        }),
-        (o.toObject = function (t, e) {
-          e || (e = {});
-          let n = {};
-          return (
-            e.defaults && ((n.capabilities = null), (n.endpointUID = ""), (n.outputDeviceUID = "")),
-            t.capabilities != null &&
-              t.hasOwnProperty("capabilities") &&
-              (n.capabilities = $root$2.VolumeControlAvailabilityProtobuf.toObject(t.capabilities, e)),
-            t.endpointUID != null && t.hasOwnProperty("endpointUID") && (n.endpointUID = t.endpointUID),
-            t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && (n.outputDeviceUID = t.outputDeviceUID),
-            n
-          );
-        }),
-        (o.prototype.toJSON = function () {
-          return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
-        }),
-        (o.getTypeUrl = function (t) {
-          return (
-            t === void 0 && (t = "type.googleapis.com"), t + "/VolumeControlCapabilitiesDidChangeMessageProtobuf"
-          );
-        }),
-        o
-      );
-    })()),
-  VolumeControlAvailabilityProtobuf = ($root$2.VolumeControlAvailabilityProtobuf = (() => {
+        }
+        return r;
+      }),
+      (o.decodeDelimited = function (t) {
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
+      }),
+      (o.verify = function (t) {
+        if (typeof t != "object" || t === null) return "object expected";
+        if (t.capabilities != null && t.hasOwnProperty("capabilities")) {
+          let e = l.VolumeControlAvailabilityProtobuf.verify(t.capabilities);
+          if (e) return "capabilities." + e;
+        }
+        return t.endpointUID != null && t.hasOwnProperty("endpointUID") && !a.isString(t.endpointUID)
+          ? "endpointUID: string expected"
+          : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID)
+            ? "outputDeviceUID: string expected"
+            : null;
+      }),
+      (o.fromObject = function (t) {
+        if (t instanceof l.VolumeControlCapabilitiesDidChangeMessageProtobuf) return t;
+        let e = new l.VolumeControlCapabilitiesDidChangeMessageProtobuf();
+        if (t.capabilities != null) {
+          if (typeof t.capabilities != "object")
+            throw TypeError(".VolumeControlCapabilitiesDidChangeMessageProtobuf.capabilities: object expected");
+          e.capabilities = l.VolumeControlAvailabilityProtobuf.fromObject(t.capabilities);
+        }
+        return (
+          t.endpointUID != null && (e.endpointUID = String(t.endpointUID)),
+          t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)),
+          e
+        );
+      }),
+      (o.toObject = function (t, e) {
+        e || (e = {});
+        let n = {};
+        return (
+          e.defaults && ((n.capabilities = null), (n.endpointUID = ""), (n.outputDeviceUID = "")),
+          t.capabilities != null &&
+            t.hasOwnProperty("capabilities") &&
+            (n.capabilities = l.VolumeControlAvailabilityProtobuf.toObject(t.capabilities, e)),
+          t.endpointUID != null && t.hasOwnProperty("endpointUID") && (n.endpointUID = t.endpointUID),
+          t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && (n.outputDeviceUID = t.outputDeviceUID),
+          n
+        );
+      }),
+      (o.prototype.toJSON = function () {
+        return this.constructor.toObject(this, b.util.toJSONOptions);
+      }),
+      (o.getTypeUrl = function (t) {
+        return (t === void 0 && (t = "type.googleapis.com"), t + "/VolumeControlCapabilitiesDidChangeMessageProtobuf");
+      }),
+      o
+    );
+  })()),
+  In = (l.VolumeControlAvailabilityProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15315,7 +15728,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.volumeControlAvailable != null &&
             Object.hasOwnProperty.call(t, "volumeControlAvailable") &&
             e.uint32(8).bool(t.volumeControlAvailable),
@@ -15329,12 +15742,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.VolumeControlAvailabilityProtobuf();
+          r = new l.VolumeControlAvailabilityProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.volumeControlAvailable = t.bool();
               break;
@@ -15344,14 +15757,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
@@ -15362,13 +15775,13 @@ const $Reader$2 = minimalExports.Reader,
             ? "volumeControlAvailable: boolean expected"
             : t.volumeCapabilities != null &&
                 t.hasOwnProperty("volumeCapabilities") &&
-                !$util$2.isInteger(t.volumeCapabilities)
+                !a.isInteger(t.volumeCapabilities)
               ? "volumeCapabilities: integer expected"
               : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.VolumeControlAvailabilityProtobuf) return t;
-        let e = new $root$2.VolumeControlAvailabilityProtobuf();
+        if (t instanceof l.VolumeControlAvailabilityProtobuf) return t;
+        let e = new l.VolumeControlAvailabilityProtobuf();
         return (
           t.volumeControlAvailable != null && (e.volumeControlAvailable = !!t.volumeControlAvailable),
           t.volumeCapabilities != null && (e.volumeCapabilities = t.volumeCapabilities | 0),
@@ -15390,7 +15803,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/VolumeControlAvailabilityProtobuf");
@@ -15398,7 +15811,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  GetVolumeMessageProtobuf = ($root$2.GetVolumeMessageProtobuf = (() => {
+  kn = (l.GetVolumeMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15409,7 +15822,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.outputDeviceUID != null &&
             Object.hasOwnProperty.call(t, "outputDeviceUID") &&
             e.uint32(10).string(t.outputDeviceUID),
@@ -15420,36 +15833,36 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.GetVolumeMessageProtobuf();
+          r = new l.GetVolumeMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.outputDeviceUID = t.string();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID)
+          : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID)
             ? "outputDeviceUID: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.GetVolumeMessageProtobuf) return t;
-        let e = new $root$2.GetVolumeMessageProtobuf();
+        if (t instanceof l.GetVolumeMessageProtobuf) return t;
+        let e = new l.GetVolumeMessageProtobuf();
         return (t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)), e);
       }),
       (o.toObject = function (t, e) {
@@ -15462,7 +15875,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GetVolumeMessageProtobuf");
@@ -15470,7 +15883,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  GetVolumeResultMessageProtobuf = ($root$2.GetVolumeResultMessageProtobuf = (() => {
+  Sn = (l.GetVolumeResultMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15481,7 +15894,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.volume != null && Object.hasOwnProperty.call(t, "volume") && e.uint32(13).float(t.volume),
           e
         );
@@ -15490,25 +15903,25 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.GetVolumeResultMessageProtobuf();
+          r = new l.GetVolumeResultMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.volume = t.float();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
@@ -15518,8 +15931,8 @@ const $Reader$2 = minimalExports.Reader,
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.GetVolumeResultMessageProtobuf) return t;
-        let e = new $root$2.GetVolumeResultMessageProtobuf();
+        if (t instanceof l.GetVolumeResultMessageProtobuf) return t;
+        let e = new l.GetVolumeResultMessageProtobuf();
         return (t.volume != null && (e.volume = Number(t.volume)), e);
       }),
       (o.toObject = function (t, e) {
@@ -15534,7 +15947,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GetVolumeResultMessageProtobuf");
@@ -15542,7 +15955,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SetVolumeMessageProtobuf = ($root$2.SetVolumeMessageProtobuf = (() => {
+  On = (l.SetVolumeMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15555,14 +15968,14 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.volume != null && Object.hasOwnProperty.call(t, "volume") && e.uint32(13).float(t.volume),
           t.outputDeviceUID != null &&
             Object.hasOwnProperty.call(t, "outputDeviceUID") &&
             e.uint32(18).string(t.outputDeviceUID),
           t.details != null &&
             Object.hasOwnProperty.call(t, "details") &&
-            $root$2.RequestDetailsProtobuf.encode(t.details, e.uint32(26).fork()).ldelim(),
+            l.RequestDetailsProtobuf.encode(t.details, e.uint32(26).fork()).ldelim(),
           e
         );
       }),
@@ -15570,12 +15983,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetVolumeMessageProtobuf();
+          r = new l.SetVolumeMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.volume = t.float();
               break;
@@ -15585,41 +15998,41 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 3: {
-              r.details = $root$2.RequestDetailsProtobuf.decode(t, t.uint32());
+              r.details = l.RequestDetailsProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.volume != null && t.hasOwnProperty("volume") && typeof t.volume != "number")
           return "volume: number expected";
-        if (t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID))
+        if (t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID))
           return "outputDeviceUID: string expected";
         if (t.details != null && t.hasOwnProperty("details")) {
-          let e = $root$2.RequestDetailsProtobuf.verify(t.details);
+          let e = l.RequestDetailsProtobuf.verify(t.details);
           if (e) return "details." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SetVolumeMessageProtobuf) return t;
-        let e = new $root$2.SetVolumeMessageProtobuf();
+        if (t instanceof l.SetVolumeMessageProtobuf) return t;
+        let e = new l.SetVolumeMessageProtobuf();
         if (
           (t.volume != null && (e.volume = Number(t.volume)),
           t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)),
           t.details != null)
         ) {
           if (typeof t.details != "object") throw TypeError(".SetVolumeMessageProtobuf.details: object expected");
-          e.details = $root$2.RequestDetailsProtobuf.fromObject(t.details);
+          e.details = l.RequestDetailsProtobuf.fromObject(t.details);
         }
         return e;
       }),
@@ -15634,12 +16047,12 @@ const $Reader$2 = minimalExports.Reader,
           t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && (n.outputDeviceUID = t.outputDeviceUID),
           t.details != null &&
             t.hasOwnProperty("details") &&
-            (n.details = $root$2.RequestDetailsProtobuf.toObject(t.details, e)),
+            (n.details = l.RequestDetailsProtobuf.toObject(t.details, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetVolumeMessageProtobuf");
@@ -15647,7 +16060,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  VolumeDidChangeMessageProtobuf = ($root$2.VolumeDidChangeMessageProtobuf = (() => {
+  Dn = (l.VolumeDidChangeMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15660,7 +16073,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.volume != null && Object.hasOwnProperty.call(t, "volume") && e.uint32(13).float(t.volume),
           t.endpointUID != null && Object.hasOwnProperty.call(t, "endpointUID") && e.uint32(18).string(t.endpointUID),
           t.outputDeviceUID != null &&
@@ -15673,12 +16086,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.VolumeDidChangeMessageProtobuf();
+          r = new l.VolumeDidChangeMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.volume = t.float();
               break;
@@ -15692,29 +16105,29 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
           : t.volume != null && t.hasOwnProperty("volume") && typeof t.volume != "number"
             ? "volume: number expected"
-            : t.endpointUID != null && t.hasOwnProperty("endpointUID") && !$util$2.isString(t.endpointUID)
+            : t.endpointUID != null && t.hasOwnProperty("endpointUID") && !a.isString(t.endpointUID)
               ? "endpointUID: string expected"
-              : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID)
+              : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID)
                 ? "outputDeviceUID: string expected"
                 : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.VolumeDidChangeMessageProtobuf) return t;
-        let e = new $root$2.VolumeDidChangeMessageProtobuf();
+        if (t instanceof l.VolumeDidChangeMessageProtobuf) return t;
+        let e = new l.VolumeDidChangeMessageProtobuf();
         return (
           t.volume != null && (e.volume = Number(t.volume)),
           t.endpointUID != null && (e.endpointUID = String(t.endpointUID)),
@@ -15736,7 +16149,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/VolumeDidChangeMessageProtobuf");
@@ -15744,7 +16157,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  AdjustVolumeMessageProtobuf = ($root$2.AdjustVolumeMessageProtobuf = (() => {
+  wn = (l.AdjustVolumeMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15757,14 +16170,14 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.adjustment != null && Object.hasOwnProperty.call(t, "adjustment") && e.uint32(8).int32(t.adjustment),
           t.outputDeviceUID != null &&
             Object.hasOwnProperty.call(t, "outputDeviceUID") &&
             e.uint32(18).string(t.outputDeviceUID),
           t.details != null &&
             Object.hasOwnProperty.call(t, "details") &&
-            $root$2.RequestDetailsProtobuf.encode(t.details, e.uint32(26).fork()).ldelim(),
+            l.RequestDetailsProtobuf.encode(t.details, e.uint32(26).fork()).ldelim(),
           e
         );
       }),
@@ -15772,12 +16185,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.AdjustVolumeMessageProtobuf();
+          r = new l.AdjustVolumeMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.adjustment = t.int32();
               break;
@@ -15787,18 +16200,18 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 3: {
-              r.details = $root$2.RequestDetailsProtobuf.decode(t, t.uint32());
+              r.details = l.RequestDetailsProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -15814,17 +16227,17 @@ const $Reader$2 = minimalExports.Reader,
             case 6:
               break;
           }
-        if (t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID))
+        if (t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID))
           return "outputDeviceUID: string expected";
         if (t.details != null && t.hasOwnProperty("details")) {
-          let e = $root$2.RequestDetailsProtobuf.verify(t.details);
+          let e = l.RequestDetailsProtobuf.verify(t.details);
           if (e) return "details." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.AdjustVolumeMessageProtobuf) return t;
-        let e = new $root$2.AdjustVolumeMessageProtobuf();
+        if (t instanceof l.AdjustVolumeMessageProtobuf) return t;
+        let e = new l.AdjustVolumeMessageProtobuf();
         switch (t.adjustment) {
           default:
             if (typeof t.adjustment == "number") {
@@ -15859,7 +16272,7 @@ const $Reader$2 = minimalExports.Reader,
         }
         if ((t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)), t.details != null)) {
           if (typeof t.details != "object") throw TypeError(".AdjustVolumeMessageProtobuf.details: object expected");
-          e.details = $root$2.RequestDetailsProtobuf.fromObject(t.details);
+          e.details = l.RequestDetailsProtobuf.fromObject(t.details);
         }
         return e;
       }),
@@ -15875,19 +16288,19 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("adjustment") &&
             (n.adjustment =
               e.enums === String
-                ? $root$2.AdjustVolumeMessageProtobuf.VolumeAdjustment[t.adjustment] === void 0
+                ? l.AdjustVolumeMessageProtobuf.VolumeAdjustment[t.adjustment] === void 0
                   ? t.adjustment
-                  : $root$2.AdjustVolumeMessageProtobuf.VolumeAdjustment[t.adjustment]
+                  : l.AdjustVolumeMessageProtobuf.VolumeAdjustment[t.adjustment]
                 : t.adjustment),
           t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && (n.outputDeviceUID = t.outputDeviceUID),
           t.details != null &&
             t.hasOwnProperty("details") &&
-            (n.details = $root$2.RequestDetailsProtobuf.toObject(t.details, e)),
+            (n.details = l.RequestDetailsProtobuf.toObject(t.details, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/AdjustVolumeMessageProtobuf");
@@ -15908,7 +16321,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  GetVolumeMutedMessageProtobuf = ($root$2.GetVolumeMutedMessageProtobuf = (() => {
+  vn = (l.GetVolumeMutedMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15919,7 +16332,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.outputDeviceUID != null &&
             Object.hasOwnProperty.call(t, "outputDeviceUID") &&
             e.uint32(10).string(t.outputDeviceUID),
@@ -15930,36 +16343,36 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.GetVolumeMutedMessageProtobuf();
+          r = new l.GetVolumeMutedMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.outputDeviceUID = t.string();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID)
+          : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID)
             ? "outputDeviceUID: string expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.GetVolumeMutedMessageProtobuf) return t;
-        let e = new $root$2.GetVolumeMutedMessageProtobuf();
+        if (t instanceof l.GetVolumeMutedMessageProtobuf) return t;
+        let e = new l.GetVolumeMutedMessageProtobuf();
         return (t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)), e);
       }),
       (o.toObject = function (t, e) {
@@ -15972,7 +16385,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GetVolumeMutedMessageProtobuf");
@@ -15980,7 +16393,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  GetVolumeMutedResultMessageProtobuf = ($root$2.GetVolumeMutedResultMessageProtobuf = (() => {
+  Cn = (l.GetVolumeMutedResultMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -15991,7 +16404,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.isMuted != null && Object.hasOwnProperty.call(t, "isMuted") && e.uint32(8).bool(t.isMuted),
           e
         );
@@ -16000,25 +16413,25 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.GetVolumeMutedResultMessageProtobuf();
+          r = new l.GetVolumeMutedResultMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.isMuted = t.bool();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
@@ -16028,8 +16441,8 @@ const $Reader$2 = minimalExports.Reader,
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.GetVolumeMutedResultMessageProtobuf) return t;
-        let e = new $root$2.GetVolumeMutedResultMessageProtobuf();
+        if (t instanceof l.GetVolumeMutedResultMessageProtobuf) return t;
+        let e = new l.GetVolumeMutedResultMessageProtobuf();
         return (t.isMuted != null && (e.isMuted = !!t.isMuted), e);
       }),
       (o.toObject = function (t, e) {
@@ -16040,7 +16453,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GetVolumeMutedResultMessageProtobuf");
@@ -16048,7 +16461,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SetVolumeMutedMessageProtobuf = ($root$2.SetVolumeMutedMessageProtobuf = (() => {
+  Tn = (l.SetVolumeMutedMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -16061,14 +16474,14 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.isMuted != null && Object.hasOwnProperty.call(t, "isMuted") && e.uint32(8).bool(t.isMuted),
           t.outputDeviceUID != null &&
             Object.hasOwnProperty.call(t, "outputDeviceUID") &&
             e.uint32(18).string(t.outputDeviceUID),
           t.details != null &&
             Object.hasOwnProperty.call(t, "details") &&
-            $root$2.RequestDetailsProtobuf.encode(t.details, e.uint32(26).fork()).ldelim(),
+            l.RequestDetailsProtobuf.encode(t.details, e.uint32(26).fork()).ldelim(),
           e
         );
       }),
@@ -16076,12 +16489,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetVolumeMutedMessageProtobuf();
+          r = new l.SetVolumeMutedMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.isMuted = t.bool();
               break;
@@ -16091,41 +16504,41 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 3: {
-              r.details = $root$2.RequestDetailsProtobuf.decode(t, t.uint32());
+              r.details = l.RequestDetailsProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.isMuted != null && t.hasOwnProperty("isMuted") && typeof t.isMuted != "boolean")
           return "isMuted: boolean expected";
-        if (t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID))
+        if (t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID))
           return "outputDeviceUID: string expected";
         if (t.details != null && t.hasOwnProperty("details")) {
-          let e = $root$2.RequestDetailsProtobuf.verify(t.details);
+          let e = l.RequestDetailsProtobuf.verify(t.details);
           if (e) return "details." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SetVolumeMutedMessageProtobuf) return t;
-        let e = new $root$2.SetVolumeMutedMessageProtobuf();
+        if (t instanceof l.SetVolumeMutedMessageProtobuf) return t;
+        let e = new l.SetVolumeMutedMessageProtobuf();
         if (
           (t.isMuted != null && (e.isMuted = !!t.isMuted),
           t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)),
           t.details != null)
         ) {
           if (typeof t.details != "object") throw TypeError(".SetVolumeMutedMessageProtobuf.details: object expected");
-          e.details = $root$2.RequestDetailsProtobuf.fromObject(t.details);
+          e.details = l.RequestDetailsProtobuf.fromObject(t.details);
         }
         return e;
       }),
@@ -16138,12 +16551,12 @@ const $Reader$2 = minimalExports.Reader,
           t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && (n.outputDeviceUID = t.outputDeviceUID),
           t.details != null &&
             t.hasOwnProperty("details") &&
-            (n.details = $root$2.RequestDetailsProtobuf.toObject(t.details, e)),
+            (n.details = l.RequestDetailsProtobuf.toObject(t.details, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetVolumeMutedMessageProtobuf");
@@ -16151,7 +16564,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  VolumeMutedDidChangeMessageProtobuf = ($root$2.VolumeMutedDidChangeMessageProtobuf = (() => {
+  An = (l.VolumeMutedDidChangeMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -16163,7 +16576,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.isMuted != null && Object.hasOwnProperty.call(t, "isMuted") && e.uint32(8).bool(t.isMuted),
           t.outputDeviceUID != null &&
             Object.hasOwnProperty.call(t, "outputDeviceUID") &&
@@ -16175,12 +16588,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.VolumeMutedDidChangeMessageProtobuf();
+          r = new l.VolumeMutedDidChangeMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.isMuted = t.bool();
               break;
@@ -16190,27 +16603,27 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
           : t.isMuted != null && t.hasOwnProperty("isMuted") && typeof t.isMuted != "boolean"
             ? "isMuted: boolean expected"
-            : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !$util$2.isString(t.outputDeviceUID)
+            : t.outputDeviceUID != null && t.hasOwnProperty("outputDeviceUID") && !a.isString(t.outputDeviceUID)
               ? "outputDeviceUID: string expected"
               : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.VolumeMutedDidChangeMessageProtobuf) return t;
-        let e = new $root$2.VolumeMutedDidChangeMessageProtobuf();
+        if (t instanceof l.VolumeMutedDidChangeMessageProtobuf) return t;
+        let e = new l.VolumeMutedDidChangeMessageProtobuf();
         return (
           t.isMuted != null && (e.isMuted = !!t.isMuted),
           t.outputDeviceUID != null && (e.outputDeviceUID = String(t.outputDeviceUID)),
@@ -16228,7 +16641,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/VolumeMutedDidChangeMessageProtobuf");
@@ -16236,7 +16649,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  RequestDetailsProtobuf = ($root$2.RequestDetailsProtobuf = (() => {
+  Mn = (l.RequestDetailsProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -16245,14 +16658,14 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.requestID = ""),
       (o.prototype.reason = ""),
       (o.prototype.qos = 0),
-      (o.prototype.startDate = $util$2.Long ? $util$2.Long.fromBits(0, 0, !0) : 0),
+      (o.prototype.startDate = a.Long ? a.Long.fromBits(0, 0, !0) : 0),
       (o.prototype.userInitiated = !1),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.name != null && Object.hasOwnProperty.call(t, "name") && e.uint32(10).string(t.name),
           t.requestID != null && Object.hasOwnProperty.call(t, "requestID") && e.uint32(18).string(t.requestID),
           t.reason != null && Object.hasOwnProperty.call(t, "reason") && e.uint32(26).string(t.reason),
@@ -16268,12 +16681,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.RequestDetailsProtobuf();
+          r = new l.RequestDetailsProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.name = t.string();
               break;
@@ -16299,30 +16712,30 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : t.name != null && t.hasOwnProperty("name") && !$util$2.isString(t.name)
+          : t.name != null && t.hasOwnProperty("name") && !a.isString(t.name)
             ? "name: string expected"
-            : t.requestID != null && t.hasOwnProperty("requestID") && !$util$2.isString(t.requestID)
+            : t.requestID != null && t.hasOwnProperty("requestID") && !a.isString(t.requestID)
               ? "requestID: string expected"
-              : t.reason != null && t.hasOwnProperty("reason") && !$util$2.isString(t.reason)
+              : t.reason != null && t.hasOwnProperty("reason") && !a.isString(t.reason)
                 ? "reason: string expected"
-                : t.qos != null && t.hasOwnProperty("qos") && !$util$2.isInteger(t.qos)
+                : t.qos != null && t.hasOwnProperty("qos") && !a.isInteger(t.qos)
                   ? "qos: integer expected"
                   : t.startDate != null &&
                       t.hasOwnProperty("startDate") &&
-                      !$util$2.isInteger(t.startDate) &&
-                      !(t.startDate && $util$2.isInteger(t.startDate.low) && $util$2.isInteger(t.startDate.high))
+                      !a.isInteger(t.startDate) &&
+                      !(t.startDate && a.isInteger(t.startDate.low) && a.isInteger(t.startDate.high))
                     ? "startDate: integer|Long expected"
                     : t.userInitiated != null &&
                         t.hasOwnProperty("userInitiated") &&
@@ -16331,22 +16744,22 @@ const $Reader$2 = minimalExports.Reader,
                       : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.RequestDetailsProtobuf) return t;
-        let e = new $root$2.RequestDetailsProtobuf();
+        if (t instanceof l.RequestDetailsProtobuf) return t;
+        let e = new l.RequestDetailsProtobuf();
         return (
           t.name != null && (e.name = String(t.name)),
           t.requestID != null && (e.requestID = String(t.requestID)),
           t.reason != null && (e.reason = String(t.reason)),
           t.qos != null && (e.qos = t.qos >>> 0),
           t.startDate != null &&
-            ($util$2.Long
-              ? ((e.startDate = $util$2.Long.fromValue(t.startDate)).unsigned = !0)
+            (a.Long
+              ? ((e.startDate = a.Long.fromValue(t.startDate)).unsigned = !0)
               : typeof t.startDate == "string"
                 ? (e.startDate = parseInt(t.startDate, 10))
                 : typeof t.startDate == "number"
                   ? (e.startDate = t.startDate)
                   : typeof t.startDate == "object" &&
-                    (e.startDate = new $util$2.LongBits(t.startDate.low >>> 0, t.startDate.high >>> 0).toNumber(!0))),
+                    (e.startDate = new a.LongBits(t.startDate.low >>> 0, t.startDate.high >>> 0).toNumber(!0))),
           t.userInitiated != null && (e.userInitiated = !!t.userInitiated),
           e
         );
@@ -16355,8 +16768,8 @@ const $Reader$2 = minimalExports.Reader,
         e || (e = {});
         let n = {};
         if (e.defaults) {
-          if (((n.name = ""), (n.requestID = ""), (n.reason = ""), (n.qos = 0), $util$2.Long)) {
-            let r = new $util$2.Long(0, 0, !0);
+          if (((n.name = ""), (n.requestID = ""), (n.reason = ""), (n.qos = 0), a.Long)) {
+            let r = new a.Long(0, 0, !0);
             n.startDate = e.longs === String ? r.toString() : e.longs === Number ? r.toNumber() : r;
           } else n.startDate = e.longs === String ? "0" : 0;
           n.userInitiated = !1;
@@ -16372,16 +16785,16 @@ const $Reader$2 = minimalExports.Reader,
               ? (n.startDate = e.longs === String ? String(t.startDate) : t.startDate)
               : (n.startDate =
                   e.longs === String
-                    ? $util$2.Long.prototype.toString.call(t.startDate)
+                    ? a.Long.prototype.toString.call(t.startDate)
                     : e.longs === Number
-                      ? new $util$2.LongBits(t.startDate.low >>> 0, t.startDate.high >>> 0).toNumber(!0)
+                      ? new a.LongBits(t.startDate.low >>> 0, t.startDate.high >>> 0).toNumber(!0)
                       : t.startDate)),
           t.userInitiated != null && t.hasOwnProperty("userInitiated") && (n.userInitiated = t.userInitiated),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/RequestDetailsProtobuf");
@@ -16389,7 +16802,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  GroupTopologyModificationRequestProtobuf = ($root$2.GroupTopologyModificationRequestProtobuf = (() => {
+  mn = (l.GroupTopologyModificationRequestProtobuf = (() => {
     function o(i) {
       if (((this.outputDeviceUIDs = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
@@ -16397,7 +16810,7 @@ const $Reader$2 = minimalExports.Reader,
     return (
       (o.prototype.details = null),
       (o.prototype.type = 0),
-      (o.prototype.outputDeviceUIDs = $util$2.emptyArray),
+      (o.prototype.outputDeviceUIDs = a.emptyArray),
       (o.prototype.fadeAudio = !1),
       (o.prototype.password = ""),
       (o.prototype.suppressErrorDialog = !1),
@@ -16407,10 +16820,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.details != null &&
             Object.hasOwnProperty.call(t, "details") &&
-            $root$2.RequestDetailsProtobuf.encode(t.details, e.uint32(10).fork()).ldelim(),
+            l.RequestDetailsProtobuf.encode(t.details, e.uint32(10).fork()).ldelim(),
           t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(16).int32(t.type),
           t.outputDeviceUIDs != null && t.outputDeviceUIDs.length)
         )
@@ -16431,14 +16844,14 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.GroupTopologyModificationRequestProtobuf();
+          r = new l.GroupTopologyModificationRequestProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.details = $root$2.RequestDetailsProtobuf.decode(t, t.uint32());
+              r.details = l.RequestDetailsProtobuf.decode(t, t.uint32());
               break;
             }
             case 2: {
@@ -16467,19 +16880,19 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.details != null && t.hasOwnProperty("details")) {
-          let e = $root$2.RequestDetailsProtobuf.verify(t.details);
+          let e = l.RequestDetailsProtobuf.verify(t.details);
           if (e) return "details." + e;
         }
         if (t.type != null && t.hasOwnProperty("type"))
@@ -16495,11 +16908,11 @@ const $Reader$2 = minimalExports.Reader,
         if (t.outputDeviceUIDs != null && t.hasOwnProperty("outputDeviceUIDs")) {
           if (!Array.isArray(t.outputDeviceUIDs)) return "outputDeviceUIDs: array expected";
           for (let e = 0; e < t.outputDeviceUIDs.length; ++e)
-            if (!$util$2.isString(t.outputDeviceUIDs[e])) return "outputDeviceUIDs: string[] expected";
+            if (!a.isString(t.outputDeviceUIDs[e])) return "outputDeviceUIDs: string[] expected";
         }
         return t.fadeAudio != null && t.hasOwnProperty("fadeAudio") && typeof t.fadeAudio != "boolean"
           ? "fadeAudio: boolean expected"
-          : t.password != null && t.hasOwnProperty("password") && !$util$2.isString(t.password)
+          : t.password != null && t.hasOwnProperty("password") && !a.isString(t.password)
             ? "password: string expected"
             : t.suppressErrorDialog != null &&
                 t.hasOwnProperty("suppressErrorDialog") &&
@@ -16512,12 +16925,12 @@ const $Reader$2 = minimalExports.Reader,
                 : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.GroupTopologyModificationRequestProtobuf) return t;
-        let e = new $root$2.GroupTopologyModificationRequestProtobuf();
+        if (t instanceof l.GroupTopologyModificationRequestProtobuf) return t;
+        let e = new l.GroupTopologyModificationRequestProtobuf();
         if (t.details != null) {
           if (typeof t.details != "object")
             throw TypeError(".GroupTopologyModificationRequestProtobuf.details: object expected");
-          e.details = $root$2.RequestDetailsProtobuf.fromObject(t.details);
+          e.details = l.RequestDetailsProtobuf.fromObject(t.details);
         }
         switch (t.type) {
           default:
@@ -16572,15 +16985,14 @@ const $Reader$2 = minimalExports.Reader,
             (n.shouldNotPauseIfLastDeviceRemoved = !1)),
           t.details != null &&
             t.hasOwnProperty("details") &&
-            (n.details = $root$2.RequestDetailsProtobuf.toObject(t.details, e)),
+            (n.details = l.RequestDetailsProtobuf.toObject(t.details, e)),
           t.type != null &&
             t.hasOwnProperty("type") &&
             (n.type =
               e.enums === String
-                ? $root$2.GroupTopologyModificationRequestProtobuf.GroupTopologyModificationRequestType[t.type] ===
-                  void 0
+                ? l.GroupTopologyModificationRequestProtobuf.GroupTopologyModificationRequestType[t.type] === void 0
                   ? t.type
-                  : $root$2.GroupTopologyModificationRequestProtobuf.GroupTopologyModificationRequestType[t.type]
+                  : l.GroupTopologyModificationRequestProtobuf.GroupTopologyModificationRequestType[t.type]
                 : t.type),
           t.outputDeviceUIDs && t.outputDeviceUIDs.length)
         ) {
@@ -16600,7 +17012,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupTopologyModificationRequestProtobuf");
@@ -16615,7 +17027,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  PlaybackStateProtobuf = ($root$2.PlaybackStateProtobuf = (() => {
+  Rn = (l.PlaybackStateProtobuf = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -16628,7 +17040,7 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  SetStateMessageProtobuf = ($root$2.SetStateMessageProtobuf = (() => {
+  Nn = (l.SetStateMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -16648,16 +17060,16 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.nowPlayingInfo != null &&
             Object.hasOwnProperty.call(t, "nowPlayingInfo") &&
-            $root$2.NowPlayingInfoProtobuf.encode(t.nowPlayingInfo, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingInfoProtobuf.encode(t.nowPlayingInfo, e.uint32(10).fork()).ldelim(),
           t.supportedCommands != null &&
             Object.hasOwnProperty.call(t, "supportedCommands") &&
-            $root$2.SupportedCommandsProtobuf.encode(t.supportedCommands, e.uint32(18).fork()).ldelim(),
+            l.SupportedCommandsProtobuf.encode(t.supportedCommands, e.uint32(18).fork()).ldelim(),
           t.playbackQueue != null &&
             Object.hasOwnProperty.call(t, "playbackQueue") &&
-            $root$2.PlaybackQueueProtobuf.encode(t.playbackQueue, e.uint32(26).fork()).ldelim(),
+            l.PlaybackQueueProtobuf.encode(t.playbackQueue, e.uint32(26).fork()).ldelim(),
           t.displayID != null && Object.hasOwnProperty.call(t, "displayID") && e.uint32(34).string(t.displayID),
           t.displayName != null && Object.hasOwnProperty.call(t, "displayName") && e.uint32(42).string(t.displayName),
           t.playbackState != null &&
@@ -16665,13 +17077,13 @@ const $Reader$2 = minimalExports.Reader,
             e.uint32(48).int32(t.playbackState),
           t.playbackQueueCapabilities != null &&
             Object.hasOwnProperty.call(t, "playbackQueueCapabilities") &&
-            $root$2.PlaybackQueueCapabilitiesProtobuf.encode(t.playbackQueueCapabilities, e.uint32(66).fork()).ldelim(),
+            l.PlaybackQueueCapabilitiesProtobuf.encode(t.playbackQueueCapabilities, e.uint32(66).fork()).ldelim(),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(74).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(74).fork()).ldelim(),
           t.request != null &&
             Object.hasOwnProperty.call(t, "request") &&
-            $root$2.PlaybackQueueRequestProtobuf.encode(t.request, e.uint32(82).fork()).ldelim(),
+            l.PlaybackQueueRequestProtobuf.encode(t.request, e.uint32(82).fork()).ldelim(),
           t.playbackStateTimestamp != null &&
             Object.hasOwnProperty.call(t, "playbackStateTimestamp") &&
             e.uint32(89).double(t.playbackStateTimestamp),
@@ -16682,22 +17094,22 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetStateMessageProtobuf();
+          r = new l.SetStateMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.nowPlayingInfo = $root$2.NowPlayingInfoProtobuf.decode(t, t.uint32());
+              r.nowPlayingInfo = l.NowPlayingInfoProtobuf.decode(t, t.uint32());
               break;
             }
             case 2: {
-              r.supportedCommands = $root$2.SupportedCommandsProtobuf.decode(t, t.uint32());
+              r.supportedCommands = l.SupportedCommandsProtobuf.decode(t, t.uint32());
               break;
             }
             case 3: {
-              r.playbackQueue = $root$2.PlaybackQueueProtobuf.decode(t, t.uint32());
+              r.playbackQueue = l.PlaybackQueueProtobuf.decode(t, t.uint32());
               break;
             }
             case 4: {
@@ -16713,15 +17125,15 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 8: {
-              r.playbackQueueCapabilities = $root$2.PlaybackQueueCapabilitiesProtobuf.decode(t, t.uint32());
+              r.playbackQueueCapabilities = l.PlaybackQueueCapabilitiesProtobuf.decode(t, t.uint32());
               break;
             }
             case 9: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             case 10: {
-              r.request = $root$2.PlaybackQueueRequestProtobuf.decode(t, t.uint32());
+              r.request = l.PlaybackQueueRequestProtobuf.decode(t, t.uint32());
               break;
             }
             case 11: {
@@ -16729,32 +17141,32 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.nowPlayingInfo != null && t.hasOwnProperty("nowPlayingInfo")) {
-          let e = $root$2.NowPlayingInfoProtobuf.verify(t.nowPlayingInfo);
+          let e = l.NowPlayingInfoProtobuf.verify(t.nowPlayingInfo);
           if (e) return "nowPlayingInfo." + e;
         }
         if (t.supportedCommands != null && t.hasOwnProperty("supportedCommands")) {
-          let e = $root$2.SupportedCommandsProtobuf.verify(t.supportedCommands);
+          let e = l.SupportedCommandsProtobuf.verify(t.supportedCommands);
           if (e) return "supportedCommands." + e;
         }
         if (t.playbackQueue != null && t.hasOwnProperty("playbackQueue")) {
-          let e = $root$2.PlaybackQueueProtobuf.verify(t.playbackQueue);
+          let e = l.PlaybackQueueProtobuf.verify(t.playbackQueue);
           if (e) return "playbackQueue." + e;
         }
-        if (t.displayID != null && t.hasOwnProperty("displayID") && !$util$2.isString(t.displayID))
+        if (t.displayID != null && t.hasOwnProperty("displayID") && !a.isString(t.displayID))
           return "displayID: string expected";
-        if (t.displayName != null && t.hasOwnProperty("displayName") && !$util$2.isString(t.displayName))
+        if (t.displayName != null && t.hasOwnProperty("displayName") && !a.isString(t.displayName))
           return "displayName: string expected";
         if (t.playbackState != null && t.hasOwnProperty("playbackState"))
           switch (t.playbackState) {
@@ -16769,15 +17181,15 @@ const $Reader$2 = minimalExports.Reader,
               break;
           }
         if (t.playbackQueueCapabilities != null && t.hasOwnProperty("playbackQueueCapabilities")) {
-          let e = $root$2.PlaybackQueueCapabilitiesProtobuf.verify(t.playbackQueueCapabilities);
+          let e = l.PlaybackQueueCapabilitiesProtobuf.verify(t.playbackQueueCapabilities);
           if (e) return "playbackQueueCapabilities." + e;
         }
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         if (t.request != null && t.hasOwnProperty("request")) {
-          let e = $root$2.PlaybackQueueRequestProtobuf.verify(t.request);
+          let e = l.PlaybackQueueRequestProtobuf.verify(t.request);
           if (e) return "request." + e;
         }
         return t.playbackStateTimestamp != null &&
@@ -16787,22 +17199,22 @@ const $Reader$2 = minimalExports.Reader,
           : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SetStateMessageProtobuf) return t;
-        let e = new $root$2.SetStateMessageProtobuf();
+        if (t instanceof l.SetStateMessageProtobuf) return t;
+        let e = new l.SetStateMessageProtobuf();
         if (t.nowPlayingInfo != null) {
           if (typeof t.nowPlayingInfo != "object")
             throw TypeError(".SetStateMessageProtobuf.nowPlayingInfo: object expected");
-          e.nowPlayingInfo = $root$2.NowPlayingInfoProtobuf.fromObject(t.nowPlayingInfo);
+          e.nowPlayingInfo = l.NowPlayingInfoProtobuf.fromObject(t.nowPlayingInfo);
         }
         if (t.supportedCommands != null) {
           if (typeof t.supportedCommands != "object")
             throw TypeError(".SetStateMessageProtobuf.supportedCommands: object expected");
-          e.supportedCommands = $root$2.SupportedCommandsProtobuf.fromObject(t.supportedCommands);
+          e.supportedCommands = l.SupportedCommandsProtobuf.fromObject(t.supportedCommands);
         }
         if (t.playbackQueue != null) {
           if (typeof t.playbackQueue != "object")
             throw TypeError(".SetStateMessageProtobuf.playbackQueue: object expected");
-          e.playbackQueue = $root$2.PlaybackQueueProtobuf.fromObject(t.playbackQueue);
+          e.playbackQueue = l.PlaybackQueueProtobuf.fromObject(t.playbackQueue);
         }
         switch (
           (t.displayID != null && (e.displayID = String(t.displayID)),
@@ -16843,17 +17255,15 @@ const $Reader$2 = minimalExports.Reader,
         if (t.playbackQueueCapabilities != null) {
           if (typeof t.playbackQueueCapabilities != "object")
             throw TypeError(".SetStateMessageProtobuf.playbackQueueCapabilities: object expected");
-          e.playbackQueueCapabilities = $root$2.PlaybackQueueCapabilitiesProtobuf.fromObject(
-            t.playbackQueueCapabilities,
-          );
+          e.playbackQueueCapabilities = l.PlaybackQueueCapabilitiesProtobuf.fromObject(t.playbackQueueCapabilities);
         }
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object") throw TypeError(".SetStateMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         if (t.request != null) {
           if (typeof t.request != "object") throw TypeError(".SetStateMessageProtobuf.request: object expected");
-          e.request = $root$2.PlaybackQueueRequestProtobuf.fromObject(t.request);
+          e.request = l.PlaybackQueueRequestProtobuf.fromObject(t.request);
         }
         return (t.playbackStateTimestamp != null && (e.playbackStateTimestamp = Number(t.playbackStateTimestamp)), e);
       }),
@@ -16874,35 +17284,35 @@ const $Reader$2 = minimalExports.Reader,
             (n.playbackStateTimestamp = 0)),
           t.nowPlayingInfo != null &&
             t.hasOwnProperty("nowPlayingInfo") &&
-            (n.nowPlayingInfo = $root$2.NowPlayingInfoProtobuf.toObject(t.nowPlayingInfo, e)),
+            (n.nowPlayingInfo = l.NowPlayingInfoProtobuf.toObject(t.nowPlayingInfo, e)),
           t.supportedCommands != null &&
             t.hasOwnProperty("supportedCommands") &&
-            (n.supportedCommands = $root$2.SupportedCommandsProtobuf.toObject(t.supportedCommands, e)),
+            (n.supportedCommands = l.SupportedCommandsProtobuf.toObject(t.supportedCommands, e)),
           t.playbackQueue != null &&
             t.hasOwnProperty("playbackQueue") &&
-            (n.playbackQueue = $root$2.PlaybackQueueProtobuf.toObject(t.playbackQueue, e)),
+            (n.playbackQueue = l.PlaybackQueueProtobuf.toObject(t.playbackQueue, e)),
           t.displayID != null && t.hasOwnProperty("displayID") && (n.displayID = t.displayID),
           t.displayName != null && t.hasOwnProperty("displayName") && (n.displayName = t.displayName),
           t.playbackState != null &&
             t.hasOwnProperty("playbackState") &&
             (n.playbackState =
               e.enums === String
-                ? $root$2.PlaybackStateProtobuf[t.playbackState] === void 0
+                ? l.PlaybackStateProtobuf[t.playbackState] === void 0
                   ? t.playbackState
-                  : $root$2.PlaybackStateProtobuf[t.playbackState]
+                  : l.PlaybackStateProtobuf[t.playbackState]
                 : t.playbackState),
           t.playbackQueueCapabilities != null &&
             t.hasOwnProperty("playbackQueueCapabilities") &&
-            (n.playbackQueueCapabilities = $root$2.PlaybackQueueCapabilitiesProtobuf.toObject(
+            (n.playbackQueueCapabilities = l.PlaybackQueueCapabilitiesProtobuf.toObject(
               t.playbackQueueCapabilities,
               e,
             )),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           t.request != null &&
             t.hasOwnProperty("request") &&
-            (n.request = $root$2.PlaybackQueueRequestProtobuf.toObject(t.request, e)),
+            (n.request = l.PlaybackQueueRequestProtobuf.toObject(t.request, e)),
           t.playbackStateTimestamp != null &&
             t.hasOwnProperty("playbackStateTimestamp") &&
             (n.playbackStateTimestamp =
@@ -16913,7 +17323,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetStateMessageProtobuf");
@@ -16921,18 +17331,18 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SetArtworkMessageProtobuf = ($root$2.SetArtworkMessageProtobuf = (() => {
+  gn = (l.SetArtworkMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
-      (o.prototype.jpegData = $util$2.newBuffer([])),
+      (o.prototype.jpegData = a.newBuffer([])),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.jpegData != null && Object.hasOwnProperty.call(t, "jpegData") && e.uint32(10).bytes(t.jpegData),
           e
         );
@@ -16941,46 +17351,42 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetArtworkMessageProtobuf();
+          r = new l.SetArtworkMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.jpegData = t.bytes();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
           : t.jpegData != null &&
               t.hasOwnProperty("jpegData") &&
-              !((t.jpegData && typeof t.jpegData.length == "number") || $util$2.isString(t.jpegData))
+              !((t.jpegData && typeof t.jpegData.length == "number") || a.isString(t.jpegData))
             ? "jpegData: buffer expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SetArtworkMessageProtobuf) return t;
-        let e = new $root$2.SetArtworkMessageProtobuf();
+        if (t instanceof l.SetArtworkMessageProtobuf) return t;
+        let e = new l.SetArtworkMessageProtobuf();
         return (
           t.jpegData != null &&
             (typeof t.jpegData == "string"
-              ? $util$2.base64.decode(
-                  t.jpegData,
-                  (e.jpegData = $util$2.newBuffer($util$2.base64.length(t.jpegData))),
-                  0,
-                )
+              ? a.base64.decode(t.jpegData, (e.jpegData = a.newBuffer(a.base64.length(t.jpegData))), 0)
               : t.jpegData.length >= 0 && (e.jpegData = t.jpegData)),
           e
         );
@@ -16992,12 +17398,12 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults &&
             (e.bytes === String
               ? (n.jpegData = "")
-              : ((n.jpegData = []), e.bytes !== Array && (n.jpegData = $util$2.newBuffer(n.jpegData)))),
+              : ((n.jpegData = []), e.bytes !== Array && (n.jpegData = a.newBuffer(n.jpegData)))),
           t.jpegData != null &&
             t.hasOwnProperty("jpegData") &&
             (n.jpegData =
               e.bytes === String
-                ? $util$2.base64.encode(t.jpegData, 0, t.jpegData.length)
+                ? a.base64.encode(t.jpegData, 0, t.jpegData.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.jpegData)
                   : t.jpegData),
@@ -17005,7 +17411,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetArtworkMessageProtobuf");
@@ -17013,7 +17419,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SetReadyStateMessageProtobuf = ($root$2.SetReadyStateMessageProtobuf = (() => {
+  Ln = (l.SetReadyStateMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17022,39 +17428,39 @@ const $Reader$2 = minimalExports.Reader,
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        return (e || (e = $Writer$2.create()), e);
+        return (e || (e = w.create()), e);
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetReadyStateMessageProtobuf();
+          r = new l.SetReadyStateMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null ? "object expected" : null;
       }),
       (o.fromObject = function (t) {
-        return t instanceof $root$2.SetReadyStateMessageProtobuf ? t : new $root$2.SetReadyStateMessageProtobuf();
+        return t instanceof l.SetReadyStateMessageProtobuf ? t : new l.SetReadyStateMessageProtobuf();
       }),
       (o.toObject = function () {
         return {};
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetReadyStateMessageProtobuf");
@@ -17062,7 +17468,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  ConnectionStateProtobuf = ($root$2.ConnectionStateProtobuf = (() => {
+  xn = (l.ConnectionStateProtobuf = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -17073,7 +17479,7 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  SetConnectionStateMessageProtobuf = ($root$2.SetConnectionStateMessageProtobuf = (() => {
+  Un = (l.SetConnectionStateMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17084,7 +17490,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.state != null && Object.hasOwnProperty.call(t, "state") && e.uint32(8).int32(t.state),
           e
         );
@@ -17093,25 +17499,25 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetConnectionStateMessageProtobuf();
+          r = new l.SetConnectionStateMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.state = t.int32();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -17128,8 +17534,8 @@ const $Reader$2 = minimalExports.Reader,
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SetConnectionStateMessageProtobuf) return t;
-        let e = new $root$2.SetConnectionStateMessageProtobuf();
+        if (t instanceof l.SetConnectionStateMessageProtobuf) return t;
+        let e = new l.SetConnectionStateMessageProtobuf();
         switch (t.state) {
           default:
             if (typeof t.state == "number") {
@@ -17165,15 +17571,15 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("state") &&
             (n.state =
               e.enums === String
-                ? $root$2.ConnectionStateProtobuf[t.state] === void 0
+                ? l.ConnectionStateProtobuf[t.state] === void 0
                   ? t.state
-                  : $root$2.ConnectionStateProtobuf[t.state]
+                  : l.ConnectionStateProtobuf[t.state]
                 : t.state),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetConnectionStateMessageProtobuf");
@@ -17181,7 +17587,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SetHiliteModeMessageProtobuf = ($root$2.SetHiliteModeMessageProtobuf = (() => {
+  En = (l.SetHiliteModeMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17192,7 +17598,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.hiliteMode != null && Object.hasOwnProperty.call(t, "hiliteMode") && e.uint32(8).bool(t.hiliteMode),
           e
         );
@@ -17201,25 +17607,25 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetHiliteModeMessageProtobuf();
+          r = new l.SetHiliteModeMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.hiliteMode = t.bool();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
@@ -17229,8 +17635,8 @@ const $Reader$2 = minimalExports.Reader,
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SetHiliteModeMessageProtobuf) return t;
-        let e = new $root$2.SetHiliteModeMessageProtobuf();
+        if (t instanceof l.SetHiliteModeMessageProtobuf) return t;
+        let e = new l.SetHiliteModeMessageProtobuf();
         return (t.hiliteMode != null && (e.hiliteMode = !!t.hiliteMode), e);
       }),
       (o.toObject = function (t, e) {
@@ -17243,7 +17649,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetHiliteModeMessageProtobuf");
@@ -17251,7 +17657,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  WakeDeviceMessageProtobuf = ($root$2.WakeDeviceMessageProtobuf = (() => {
+  Qn = (l.WakeDeviceMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17260,39 +17666,39 @@ const $Reader$2 = minimalExports.Reader,
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        return (e || (e = $Writer$2.create()), e);
+        return (e || (e = w.create()), e);
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.WakeDeviceMessageProtobuf();
+          r = new l.WakeDeviceMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null ? "object expected" : null;
       }),
       (o.fromObject = function (t) {
-        return t instanceof $root$2.WakeDeviceMessageProtobuf ? t : new $root$2.WakeDeviceMessageProtobuf();
+        return t instanceof l.WakeDeviceMessageProtobuf ? t : new l.WakeDeviceMessageProtobuf();
       }),
       (o.toObject = function () {
         return {};
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/WakeDeviceMessageProtobuf");
@@ -17300,7 +17706,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SetNowPlayingClientMessageProtobuf = ($root$2.SetNowPlayingClientMessageProtobuf = (() => {
+  _n = (l.SetNowPlayingClientMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17311,10 +17717,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.client != null &&
             Object.hasOwnProperty.call(t, "client") &&
-            $root$2.NowPlayingClientProtobuf.encode(t.client, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingClientProtobuf.encode(t.client, e.uint32(10).fork()).ldelim(),
           e
         );
       }),
@@ -17322,41 +17728,41 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetNowPlayingClientMessageProtobuf();
+          r = new l.SetNowPlayingClientMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.client = $root$2.NowPlayingClientProtobuf.decode(t, t.uint32());
+              r.client = l.NowPlayingClientProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.client != null && t.hasOwnProperty("client")) {
-          let e = $root$2.NowPlayingClientProtobuf.verify(t.client);
+          let e = l.NowPlayingClientProtobuf.verify(t.client);
           if (e) return "client." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SetNowPlayingClientMessageProtobuf) return t;
-        let e = new $root$2.SetNowPlayingClientMessageProtobuf();
+        if (t instanceof l.SetNowPlayingClientMessageProtobuf) return t;
+        let e = new l.SetNowPlayingClientMessageProtobuf();
         if (t.client != null) {
           if (typeof t.client != "object")
             throw TypeError(".SetNowPlayingClientMessageProtobuf.client: object expected");
-          e.client = $root$2.NowPlayingClientProtobuf.fromObject(t.client);
+          e.client = l.NowPlayingClientProtobuf.fromObject(t.client);
         }
         return e;
       }),
@@ -17367,12 +17773,12 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && (n.client = null),
           t.client != null &&
             t.hasOwnProperty("client") &&
-            (n.client = $root$2.NowPlayingClientProtobuf.toObject(t.client, e)),
+            (n.client = l.NowPlayingClientProtobuf.toObject(t.client, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetNowPlayingClientMessageProtobuf");
@@ -17380,7 +17786,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SetNowPlayingPlayerMessageProtobuf = ($root$2.SetNowPlayingPlayerMessageProtobuf = (() => {
+  qn = (l.SetNowPlayingPlayerMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17391,10 +17797,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
           e
         );
       }),
@@ -17402,41 +17808,41 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SetNowPlayingPlayerMessageProtobuf();
+          r = new l.SetNowPlayingPlayerMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SetNowPlayingPlayerMessageProtobuf) return t;
-        let e = new $root$2.SetNowPlayingPlayerMessageProtobuf();
+        if (t instanceof l.SetNowPlayingPlayerMessageProtobuf) return t;
+        let e = new l.SetNowPlayingPlayerMessageProtobuf();
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".SetNowPlayingPlayerMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         return e;
       }),
@@ -17447,12 +17853,12 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && (n.playerPath = null),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SetNowPlayingPlayerMessageProtobuf");
@@ -17460,7 +17866,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  RemoveClientMessageProtobuf = ($root$2.RemoveClientMessageProtobuf = (() => {
+  Bn = (l.RemoveClientMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17471,10 +17877,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.client != null &&
             Object.hasOwnProperty.call(t, "client") &&
-            $root$2.NowPlayingClientProtobuf.encode(t.client, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingClientProtobuf.encode(t.client, e.uint32(10).fork()).ldelim(),
           e
         );
       }),
@@ -17482,40 +17888,40 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.RemoveClientMessageProtobuf();
+          r = new l.RemoveClientMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.client = $root$2.NowPlayingClientProtobuf.decode(t, t.uint32());
+              r.client = l.NowPlayingClientProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.client != null && t.hasOwnProperty("client")) {
-          let e = $root$2.NowPlayingClientProtobuf.verify(t.client);
+          let e = l.NowPlayingClientProtobuf.verify(t.client);
           if (e) return "client." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.RemoveClientMessageProtobuf) return t;
-        let e = new $root$2.RemoveClientMessageProtobuf();
+        if (t instanceof l.RemoveClientMessageProtobuf) return t;
+        let e = new l.RemoveClientMessageProtobuf();
         if (t.client != null) {
           if (typeof t.client != "object") throw TypeError(".RemoveClientMessageProtobuf.client: object expected");
-          e.client = $root$2.NowPlayingClientProtobuf.fromObject(t.client);
+          e.client = l.NowPlayingClientProtobuf.fromObject(t.client);
         }
         return e;
       }),
@@ -17526,12 +17932,12 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && (n.client = null),
           t.client != null &&
             t.hasOwnProperty("client") &&
-            (n.client = $root$2.NowPlayingClientProtobuf.toObject(t.client, e)),
+            (n.client = l.NowPlayingClientProtobuf.toObject(t.client, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/RemoveClientMessageProtobuf");
@@ -17539,7 +17945,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  RemovePlayerMessageProtobuf = ($root$2.RemovePlayerMessageProtobuf = (() => {
+  Fn = (l.RemovePlayerMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17550,10 +17956,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
           e
         );
       }),
@@ -17561,41 +17967,41 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.RemovePlayerMessageProtobuf();
+          r = new l.RemovePlayerMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.RemovePlayerMessageProtobuf) return t;
-        let e = new $root$2.RemovePlayerMessageProtobuf();
+        if (t instanceof l.RemovePlayerMessageProtobuf) return t;
+        let e = new l.RemovePlayerMessageProtobuf();
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".RemovePlayerMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         return e;
       }),
@@ -17606,12 +18012,12 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && (n.playerPath = null),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/RemovePlayerMessageProtobuf");
@@ -17619,7 +18025,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  UpdateClientMessageProtobuf = ($root$2.UpdateClientMessageProtobuf = (() => {
+  Gn = (l.UpdateClientMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17630,10 +18036,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.client != null &&
             Object.hasOwnProperty.call(t, "client") &&
-            $root$2.NowPlayingClientProtobuf.encode(t.client, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingClientProtobuf.encode(t.client, e.uint32(10).fork()).ldelim(),
           e
         );
       }),
@@ -17641,40 +18047,40 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.UpdateClientMessageProtobuf();
+          r = new l.UpdateClientMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.client = $root$2.NowPlayingClientProtobuf.decode(t, t.uint32());
+              r.client = l.NowPlayingClientProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.client != null && t.hasOwnProperty("client")) {
-          let e = $root$2.NowPlayingClientProtobuf.verify(t.client);
+          let e = l.NowPlayingClientProtobuf.verify(t.client);
           if (e) return "client." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.UpdateClientMessageProtobuf) return t;
-        let e = new $root$2.UpdateClientMessageProtobuf();
+        if (t instanceof l.UpdateClientMessageProtobuf) return t;
+        let e = new l.UpdateClientMessageProtobuf();
         if (t.client != null) {
           if (typeof t.client != "object") throw TypeError(".UpdateClientMessageProtobuf.client: object expected");
-          e.client = $root$2.NowPlayingClientProtobuf.fromObject(t.client);
+          e.client = l.NowPlayingClientProtobuf.fromObject(t.client);
         }
         return e;
       }),
@@ -17685,12 +18091,12 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && (n.client = null),
           t.client != null &&
             t.hasOwnProperty("client") &&
-            (n.client = $root$2.NowPlayingClientProtobuf.toObject(t.client, e)),
+            (n.client = l.NowPlayingClientProtobuf.toObject(t.client, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/UpdateClientMessageProtobuf");
@@ -17698,7 +18104,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  UpdatePlayerMessageProtobuf = ($root$2.UpdatePlayerMessageProtobuf = (() => {
+  Vn = (l.UpdatePlayerMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -17709,10 +18115,10 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(10).fork()).ldelim(),
           e
         );
       }),
@@ -17720,41 +18126,41 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.UpdatePlayerMessageProtobuf();
+          r = new l.UpdatePlayerMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.UpdatePlayerMessageProtobuf) return t;
-        let e = new $root$2.UpdatePlayerMessageProtobuf();
+        if (t instanceof l.UpdatePlayerMessageProtobuf) return t;
+        let e = new l.UpdatePlayerMessageProtobuf();
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".UpdatePlayerMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         return e;
       }),
@@ -17765,12 +18171,12 @@ const $Reader$2 = minimalExports.Reader,
           e.defaults && (n.playerPath = null),
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/UpdatePlayerMessageProtobuf");
@@ -17778,25 +18184,25 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  UpdateContentItemMessageProtobuf = ($root$2.UpdateContentItemMessageProtobuf = (() => {
+  zn = (l.UpdateContentItemMessageProtobuf = (() => {
     function o(i) {
       if (((this.contentItems = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
-      (o.prototype.contentItems = $util$2.emptyArray),
+      (o.prototype.contentItems = a.emptyArray),
       (o.prototype.playerPath = null),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        if ((e || (e = $Writer$2.create()), t.contentItems != null && t.contentItems.length))
+        if ((e || (e = w.create()), t.contentItems != null && t.contentItems.length))
           for (let n = 0; n < t.contentItems.length; ++n)
-            $root$2.ContentItemProtobuf.encode(t.contentItems[n], e.uint32(10).fork()).ldelim();
+            l.ContentItemProtobuf.encode(t.contentItems[n], e.uint32(10).fork()).ldelim();
         return (
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(18).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(18).fork()).ldelim(),
           e
         );
       }),
@@ -17804,49 +18210,49 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.UpdateContentItemMessageProtobuf();
+          r = new l.UpdateContentItemMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               ((r.contentItems && r.contentItems.length) || (r.contentItems = []),
-                r.contentItems.push($root$2.ContentItemProtobuf.decode(t, t.uint32())));
+                r.contentItems.push(l.ContentItemProtobuf.decode(t, t.uint32())));
               break;
             }
             case 2: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.contentItems != null && t.hasOwnProperty("contentItems")) {
           if (!Array.isArray(t.contentItems)) return "contentItems: array expected";
           for (let e = 0; e < t.contentItems.length; ++e) {
-            let n = $root$2.ContentItemProtobuf.verify(t.contentItems[e]);
+            let n = l.ContentItemProtobuf.verify(t.contentItems[e]);
             if (n) return "contentItems." + n;
           }
         }
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.UpdateContentItemMessageProtobuf) return t;
-        let e = new $root$2.UpdateContentItemMessageProtobuf();
+        if (t instanceof l.UpdateContentItemMessageProtobuf) return t;
+        let e = new l.UpdateContentItemMessageProtobuf();
         if (t.contentItems) {
           if (!Array.isArray(t.contentItems))
             throw TypeError(".UpdateContentItemMessageProtobuf.contentItems: array expected");
@@ -17854,13 +18260,13 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.contentItems.length; ++n) {
             if (typeof t.contentItems[n] != "object")
               throw TypeError(".UpdateContentItemMessageProtobuf.contentItems: object expected");
-            e.contentItems[n] = $root$2.ContentItemProtobuf.fromObject(t.contentItems[n]);
+            e.contentItems[n] = l.ContentItemProtobuf.fromObject(t.contentItems[n]);
           }
         }
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".UpdateContentItemMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         return e;
       }),
@@ -17874,17 +18280,17 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.contentItems = [];
           for (let r = 0; r < t.contentItems.length; ++r)
-            n.contentItems[r] = $root$2.ContentItemProtobuf.toObject(t.contentItems[r], e);
+            n.contentItems[r] = l.ContentItemProtobuf.toObject(t.contentItems[r], e);
         }
         return (
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/UpdateContentItemMessageProtobuf");
@@ -17892,25 +18298,25 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  UpdateContentItemArtworkMessageProtobuf = ($root$2.UpdateContentItemArtworkMessageProtobuf = (() => {
+  Jn = (l.UpdateContentItemArtworkMessageProtobuf = (() => {
     function o(i) {
       if (((this.contentItems = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
-      (o.prototype.contentItems = $util$2.emptyArray),
+      (o.prototype.contentItems = a.emptyArray),
       (o.prototype.playerPath = null),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        if ((e || (e = $Writer$2.create()), t.contentItems != null && t.contentItems.length))
+        if ((e || (e = w.create()), t.contentItems != null && t.contentItems.length))
           for (let n = 0; n < t.contentItems.length; ++n)
-            $root$2.ContentItemProtobuf.encode(t.contentItems[n], e.uint32(10).fork()).ldelim();
+            l.ContentItemProtobuf.encode(t.contentItems[n], e.uint32(10).fork()).ldelim();
         return (
           t.playerPath != null &&
             Object.hasOwnProperty.call(t, "playerPath") &&
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(18).fork()).ldelim(),
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath, e.uint32(18).fork()).ldelim(),
           e
         );
       }),
@@ -17918,49 +18324,49 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.UpdateContentItemArtworkMessageProtobuf();
+          r = new l.UpdateContentItemArtworkMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               ((r.contentItems && r.contentItems.length) || (r.contentItems = []),
-                r.contentItems.push($root$2.ContentItemProtobuf.decode(t, t.uint32())));
+                r.contentItems.push(l.ContentItemProtobuf.decode(t, t.uint32())));
               break;
             }
             case 2: {
-              r.playerPath = $root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
+              r.playerPath = l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.contentItems != null && t.hasOwnProperty("contentItems")) {
           if (!Array.isArray(t.contentItems)) return "contentItems: array expected";
           for (let e = 0; e < t.contentItems.length; ++e) {
-            let n = $root$2.ContentItemProtobuf.verify(t.contentItems[e]);
+            let n = l.ContentItemProtobuf.verify(t.contentItems[e]);
             if (n) return "contentItems." + n;
           }
         }
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
-          let e = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
+          let e = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath);
           if (e) return "playerPath." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.UpdateContentItemArtworkMessageProtobuf) return t;
-        let e = new $root$2.UpdateContentItemArtworkMessageProtobuf();
+        if (t instanceof l.UpdateContentItemArtworkMessageProtobuf) return t;
+        let e = new l.UpdateContentItemArtworkMessageProtobuf();
         if (t.contentItems) {
           if (!Array.isArray(t.contentItems))
             throw TypeError(".UpdateContentItemArtworkMessageProtobuf.contentItems: array expected");
@@ -17968,13 +18374,13 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.contentItems.length; ++n) {
             if (typeof t.contentItems[n] != "object")
               throw TypeError(".UpdateContentItemArtworkMessageProtobuf.contentItems: object expected");
-            e.contentItems[n] = $root$2.ContentItemProtobuf.fromObject(t.contentItems[n]);
+            e.contentItems[n] = l.ContentItemProtobuf.fromObject(t.contentItems[n]);
           }
         }
         if (t.playerPath != null) {
           if (typeof t.playerPath != "object")
             throw TypeError(".UpdateContentItemArtworkMessageProtobuf.playerPath: object expected");
-          e.playerPath = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
+          e.playerPath = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath);
         }
         return e;
       }),
@@ -17988,17 +18394,17 @@ const $Reader$2 = minimalExports.Reader,
         ) {
           n.contentItems = [];
           for (let r = 0; r < t.contentItems.length; ++r)
-            n.contentItems[r] = $root$2.ContentItemProtobuf.toObject(t.contentItems[r], e);
+            n.contentItems[r] = l.ContentItemProtobuf.toObject(t.contentItems[r], e);
         }
         return (
           t.playerPath != null &&
             t.hasOwnProperty("playerPath") &&
-            (n.playerPath = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
+            (n.playerPath = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/UpdateContentItemArtworkMessageProtobuf");
@@ -18006,61 +18412,61 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  SupportedCommandsProtobuf = ($root$2.SupportedCommandsProtobuf = (() => {
+  Hn = (l.SupportedCommandsProtobuf = (() => {
     function o(i) {
       if (((this.supportedCommand = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
-      (o.prototype.supportedCommand = $util$2.emptyArray),
+      (o.prototype.supportedCommand = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        if ((e || (e = $Writer$2.create()), t.supportedCommand != null && t.supportedCommand.length))
+        if ((e || (e = w.create()), t.supportedCommand != null && t.supportedCommand.length))
           for (let n = 0; n < t.supportedCommand.length; ++n)
-            $root$2.CommandInfoProtobuf.encode(t.supportedCommand[n], e.uint32(10).fork()).ldelim();
+            l.CommandInfoProtobuf.encode(t.supportedCommand[n], e.uint32(10).fork()).ldelim();
         return e;
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.SupportedCommandsProtobuf();
+          r = new l.SupportedCommandsProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               ((r.supportedCommand && r.supportedCommand.length) || (r.supportedCommand = []),
-                r.supportedCommand.push($root$2.CommandInfoProtobuf.decode(t, t.uint32())));
+                r.supportedCommand.push(l.CommandInfoProtobuf.decode(t, t.uint32())));
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.supportedCommand != null && t.hasOwnProperty("supportedCommand")) {
           if (!Array.isArray(t.supportedCommand)) return "supportedCommand: array expected";
           for (let e = 0; e < t.supportedCommand.length; ++e) {
-            let n = $root$2.CommandInfoProtobuf.verify(t.supportedCommand[e]);
+            let n = l.CommandInfoProtobuf.verify(t.supportedCommand[e]);
             if (n) return "supportedCommand." + n;
           }
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.SupportedCommandsProtobuf) return t;
-        let e = new $root$2.SupportedCommandsProtobuf();
+        if (t instanceof l.SupportedCommandsProtobuf) return t;
+        let e = new l.SupportedCommandsProtobuf();
         if (t.supportedCommand) {
           if (!Array.isArray(t.supportedCommand))
             throw TypeError(".SupportedCommandsProtobuf.supportedCommand: array expected");
@@ -18068,7 +18474,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.supportedCommand.length; ++n) {
             if (typeof t.supportedCommand[n] != "object")
               throw TypeError(".SupportedCommandsProtobuf.supportedCommand: object expected");
-            e.supportedCommand[n] = $root$2.CommandInfoProtobuf.fromObject(t.supportedCommand[n]);
+            e.supportedCommand[n] = l.CommandInfoProtobuf.fromObject(t.supportedCommand[n]);
           }
         }
         return e;
@@ -18079,12 +18485,12 @@ const $Reader$2 = minimalExports.Reader,
         if (((e.arrays || e.defaults) && (n.supportedCommand = []), t.supportedCommand && t.supportedCommand.length)) {
           n.supportedCommand = [];
           for (let r = 0; r < t.supportedCommand.length; ++r)
-            n.supportedCommand[r] = $root$2.CommandInfoProtobuf.toObject(t.supportedCommand[r], e);
+            n.supportedCommand[r] = l.CommandInfoProtobuf.toObject(t.supportedCommand[r], e);
         }
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/SupportedCommandsProtobuf");
@@ -18092,7 +18498,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  CommandInfoProtobuf = ($root$2.CommandInfoProtobuf = (() => {
+  Wn = (l.CommandInfoProtobuf = (() => {
     function o(i) {
       if (
         ((this.preferredInterval = []),
@@ -18112,12 +18518,12 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.command = 0),
       (o.prototype.enabled = !1),
       (o.prototype.active = !1),
-      (o.prototype.preferredInterval = $util$2.emptyArray),
+      (o.prototype.preferredInterval = a.emptyArray),
       (o.prototype.localizedTitle = ""),
       (o.prototype.localizedShortTitle = ""),
       (o.prototype.minimumRating = 0),
       (o.prototype.maximumRating = 0),
-      (o.prototype.supportedRate = $util$2.emptyArray),
+      (o.prototype.supportedRate = a.emptyArray),
       (o.prototype.repeatMode = 0),
       (o.prototype.shuffleMode = 0),
       (o.prototype.presentationStyle = 0),
@@ -18125,19 +18531,19 @@ const $Reader$2 = minimalExports.Reader,
       (o.prototype.numAvailableSkips = 0),
       (o.prototype.skipFrequency = 0),
       (o.prototype.canScrub = 0),
-      (o.prototype.supportedPlaybackQueueTypes = $util$2.emptyArray),
-      (o.prototype.supportedCustomQueueIdentifier = $util$2.emptyArray),
-      (o.prototype.supportedInsertionPositions = $util$2.emptyArray),
+      (o.prototype.supportedPlaybackQueueTypes = a.emptyArray),
+      (o.prototype.supportedCustomQueueIdentifier = a.emptyArray),
+      (o.prototype.supportedInsertionPositions = a.emptyArray),
       (o.prototype.supportsSharedQueue = !1),
       (o.prototype.upNextItemCount = 0),
       (o.prototype.preferredPlaybackRate = 0),
-      (o.prototype.supportedPlaybackSessionTypes = $util$2.emptyArray),
-      (o.prototype.currentPlaybackSessionTypes = $util$2.emptyArray),
+      (o.prototype.supportedPlaybackSessionTypes = a.emptyArray),
+      (o.prototype.currentPlaybackSessionTypes = a.emptyArray),
       (o.prototype.playbackSessionIdentifier = ""),
       (o.prototype.currentQueueEndAction = 0),
-      (o.prototype.supportedQueueEndActions = $util$2.emptyArray),
+      (o.prototype.supportedQueueEndActions = a.emptyArray),
       (o.prototype.disabledReason = 0),
-      (o.prototype.supportedPlaybackSessionIdentifiers = $util$2.emptyArray),
+      (o.prototype.supportedPlaybackSessionIdentifiers = a.emptyArray),
       (o.prototype.proactiveCommandOptions = null),
       (o.prototype.vocalsControlActive = !1),
       (o.prototype.vocalsControlLevel = 0),
@@ -18149,7 +18555,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         if (
-          (e || (e = $Writer$2.create()),
+          (e || (e = w.create()),
           t.command != null && Object.hasOwnProperty.call(t, "command") && e.uint32(8).int32(t.command),
           t.enabled != null && Object.hasOwnProperty.call(t, "enabled") && e.uint32(16).bool(t.enabled),
           t.active != null && Object.hasOwnProperty.call(t, "active") && e.uint32(24).bool(t.active),
@@ -18233,14 +18639,14 @@ const $Reader$2 = minimalExports.Reader,
           t.supportedPlaybackSessionIdentifiers != null && t.supportedPlaybackSessionIdentifiers.length)
         )
           for (let n = 0; n < t.supportedPlaybackSessionIdentifiers.length; ++n)
-            $root$2.PreloadedPlaybackSessionInfo.encode(
+            l.PreloadedPlaybackSessionInfo.encode(
               t.supportedPlaybackSessionIdentifiers[n],
               e.uint32(234).fork(),
             ).ldelim();
         return (
           t.proactiveCommandOptions != null &&
             Object.hasOwnProperty.call(t, "proactiveCommandOptions") &&
-            $root$2.CommandOptionsProtobuf.encode(t.proactiveCommandOptions, e.uint32(242).fork()).ldelim(),
+            l.CommandOptionsProtobuf.encode(t.proactiveCommandOptions, e.uint32(242).fork()).ldelim(),
           t.vocalsControlActive != null &&
             Object.hasOwnProperty.call(t, "vocalsControlActive") &&
             e.uint32(248).bool(t.vocalsControlActive),
@@ -18263,12 +18669,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.CommandInfoProtobuf();
+          r = new l.CommandInfoProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.command = t.int32();
               break;
@@ -18282,9 +18688,9 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 4: {
-              if (((r.preferredInterval && r.preferredInterval.length) || (r.preferredInterval = []), (l & 7) === 2)) {
-                let a = t.uint32() + t.pos;
-                for (; t.pos < a;) r.preferredInterval.push(t.double());
+              if (((r.preferredInterval && r.preferredInterval.length) || (r.preferredInterval = []), (u & 7) === 2)) {
+                let d = t.uint32() + t.pos;
+                for (; t.pos < d;) r.preferredInterval.push(t.double());
               } else r.preferredInterval.push(t.double());
               break;
             }
@@ -18305,9 +18711,9 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             case 8: {
-              if (((r.supportedRate && r.supportedRate.length) || (r.supportedRate = []), (l & 7) === 2)) {
-                let a = t.uint32() + t.pos;
-                for (; t.pos < a;) r.supportedRate.push(t.float());
+              if (((r.supportedRate && r.supportedRate.length) || (r.supportedRate = []), (u & 7) === 2)) {
+                let d = t.uint32() + t.pos;
+                for (; t.pos < d;) r.supportedRate.push(t.float());
               } else r.supportedRate.push(t.float());
               break;
             }
@@ -18343,10 +18749,10 @@ const $Reader$2 = minimalExports.Reader,
               if (
                 ((r.supportedPlaybackQueueTypes && r.supportedPlaybackQueueTypes.length) ||
                   (r.supportedPlaybackQueueTypes = []),
-                (l & 7) === 2)
+                (u & 7) === 2)
               ) {
-                let a = t.uint32() + t.pos;
-                for (; t.pos < a;) r.supportedPlaybackQueueTypes.push(t.int32());
+                let d = t.uint32() + t.pos;
+                for (; t.pos < d;) r.supportedPlaybackQueueTypes.push(t.int32());
               } else r.supportedPlaybackQueueTypes.push(t.int32());
               break;
             }
@@ -18360,10 +18766,10 @@ const $Reader$2 = minimalExports.Reader,
               if (
                 ((r.supportedInsertionPositions && r.supportedInsertionPositions.length) ||
                   (r.supportedInsertionPositions = []),
-                (l & 7) === 2)
+                (u & 7) === 2)
               ) {
-                let a = t.uint32() + t.pos;
-                for (; t.pos < a;) r.supportedInsertionPositions.push(t.int32());
+                let d = t.uint32() + t.pos;
+                for (; t.pos < d;) r.supportedInsertionPositions.push(t.int32());
               } else r.supportedInsertionPositions.push(t.int32());
               break;
             }
@@ -18402,10 +18808,10 @@ const $Reader$2 = minimalExports.Reader,
             case 27: {
               if (
                 ((r.supportedQueueEndActions && r.supportedQueueEndActions.length) || (r.supportedQueueEndActions = []),
-                (l & 7) === 2)
+                (u & 7) === 2)
               ) {
-                let a = t.uint32() + t.pos;
-                for (; t.pos < a;) r.supportedQueueEndActions.push(t.int32());
+                let d = t.uint32() + t.pos;
+                for (; t.pos < d;) r.supportedQueueEndActions.push(t.int32());
               } else r.supportedQueueEndActions.push(t.int32());
               break;
             }
@@ -18416,11 +18822,11 @@ const $Reader$2 = minimalExports.Reader,
             case 29: {
               ((r.supportedPlaybackSessionIdentifiers && r.supportedPlaybackSessionIdentifiers.length) ||
                 (r.supportedPlaybackSessionIdentifiers = []),
-                r.supportedPlaybackSessionIdentifiers.push($root$2.PreloadedPlaybackSessionInfo.decode(t, t.uint32())));
+                r.supportedPlaybackSessionIdentifiers.push(l.PreloadedPlaybackSessionInfo.decode(t, t.uint32())));
               break;
             }
             case 30: {
-              r.proactiveCommandOptions = $root$2.CommandOptionsProtobuf.decode(t, t.uint32());
+              r.proactiveCommandOptions = l.CommandOptionsProtobuf.decode(t, t.uint32());
               break;
             }
             case 31: {
@@ -18444,14 +18850,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -18530,12 +18936,12 @@ const $Reader$2 = minimalExports.Reader,
           for (let e = 0; e < t.preferredInterval.length; ++e)
             if (typeof t.preferredInterval[e] != "number") return "preferredInterval: number[] expected";
         }
-        if (t.localizedTitle != null && t.hasOwnProperty("localizedTitle") && !$util$2.isString(t.localizedTitle))
+        if (t.localizedTitle != null && t.hasOwnProperty("localizedTitle") && !a.isString(t.localizedTitle))
           return "localizedTitle: string expected";
         if (
           t.localizedShortTitle != null &&
           t.hasOwnProperty("localizedShortTitle") &&
-          !$util$2.isString(t.localizedShortTitle)
+          !a.isString(t.localizedShortTitle)
         )
           return "localizedShortTitle: string expected";
         if (t.minimumRating != null && t.hasOwnProperty("minimumRating") && typeof t.minimumRating != "number")
@@ -18567,40 +18973,32 @@ const $Reader$2 = minimalExports.Reader,
             case 3:
               break;
           }
-        if (
-          t.presentationStyle != null &&
-          t.hasOwnProperty("presentationStyle") &&
-          !$util$2.isInteger(t.presentationStyle)
-        )
+        if (t.presentationStyle != null && t.hasOwnProperty("presentationStyle") && !a.isInteger(t.presentationStyle))
           return "presentationStyle: integer expected";
-        if (t.skipInterval != null && t.hasOwnProperty("skipInterval") && !$util$2.isInteger(t.skipInterval))
+        if (t.skipInterval != null && t.hasOwnProperty("skipInterval") && !a.isInteger(t.skipInterval))
           return "skipInterval: integer expected";
-        if (
-          t.numAvailableSkips != null &&
-          t.hasOwnProperty("numAvailableSkips") &&
-          !$util$2.isInteger(t.numAvailableSkips)
-        )
+        if (t.numAvailableSkips != null && t.hasOwnProperty("numAvailableSkips") && !a.isInteger(t.numAvailableSkips))
           return "numAvailableSkips: integer expected";
-        if (t.skipFrequency != null && t.hasOwnProperty("skipFrequency") && !$util$2.isInteger(t.skipFrequency))
+        if (t.skipFrequency != null && t.hasOwnProperty("skipFrequency") && !a.isInteger(t.skipFrequency))
           return "skipFrequency: integer expected";
-        if (t.canScrub != null && t.hasOwnProperty("canScrub") && !$util$2.isInteger(t.canScrub))
+        if (t.canScrub != null && t.hasOwnProperty("canScrub") && !a.isInteger(t.canScrub))
           return "canScrub: integer expected";
         if (t.supportedPlaybackQueueTypes != null && t.hasOwnProperty("supportedPlaybackQueueTypes")) {
           if (!Array.isArray(t.supportedPlaybackQueueTypes)) return "supportedPlaybackQueueTypes: array expected";
           for (let e = 0; e < t.supportedPlaybackQueueTypes.length; ++e)
-            if (!$util$2.isInteger(t.supportedPlaybackQueueTypes[e]))
+            if (!a.isInteger(t.supportedPlaybackQueueTypes[e]))
               return "supportedPlaybackQueueTypes: integer[] expected";
         }
         if (t.supportedCustomQueueIdentifier != null && t.hasOwnProperty("supportedCustomQueueIdentifier")) {
           if (!Array.isArray(t.supportedCustomQueueIdentifier)) return "supportedCustomQueueIdentifier: array expected";
           for (let e = 0; e < t.supportedCustomQueueIdentifier.length; ++e)
-            if (!$util$2.isString(t.supportedCustomQueueIdentifier[e]))
+            if (!a.isString(t.supportedCustomQueueIdentifier[e]))
               return "supportedCustomQueueIdentifier: string[] expected";
         }
         if (t.supportedInsertionPositions != null && t.hasOwnProperty("supportedInsertionPositions")) {
           if (!Array.isArray(t.supportedInsertionPositions)) return "supportedInsertionPositions: array expected";
           for (let e = 0; e < t.supportedInsertionPositions.length; ++e)
-            if (!$util$2.isInteger(t.supportedInsertionPositions[e]))
+            if (!a.isInteger(t.supportedInsertionPositions[e]))
               return "supportedInsertionPositions: integer[] expected";
         }
         if (
@@ -18609,7 +19007,7 @@ const $Reader$2 = minimalExports.Reader,
           typeof t.supportsSharedQueue != "boolean"
         )
           return "supportsSharedQueue: boolean expected";
-        if (t.upNextItemCount != null && t.hasOwnProperty("upNextItemCount") && !$util$2.isInteger(t.upNextItemCount))
+        if (t.upNextItemCount != null && t.hasOwnProperty("upNextItemCount") && !a.isInteger(t.upNextItemCount))
           return "upNextItemCount: integer expected";
         if (
           t.preferredPlaybackRate != null &&
@@ -18620,19 +19018,18 @@ const $Reader$2 = minimalExports.Reader,
         if (t.supportedPlaybackSessionTypes != null && t.hasOwnProperty("supportedPlaybackSessionTypes")) {
           if (!Array.isArray(t.supportedPlaybackSessionTypes)) return "supportedPlaybackSessionTypes: array expected";
           for (let e = 0; e < t.supportedPlaybackSessionTypes.length; ++e)
-            if (!$util$2.isString(t.supportedPlaybackSessionTypes[e]))
+            if (!a.isString(t.supportedPlaybackSessionTypes[e]))
               return "supportedPlaybackSessionTypes: string[] expected";
         }
         if (t.currentPlaybackSessionTypes != null && t.hasOwnProperty("currentPlaybackSessionTypes")) {
           if (!Array.isArray(t.currentPlaybackSessionTypes)) return "currentPlaybackSessionTypes: array expected";
           for (let e = 0; e < t.currentPlaybackSessionTypes.length; ++e)
-            if (!$util$2.isString(t.currentPlaybackSessionTypes[e]))
-              return "currentPlaybackSessionTypes: string[] expected";
+            if (!a.isString(t.currentPlaybackSessionTypes[e])) return "currentPlaybackSessionTypes: string[] expected";
         }
         if (
           t.playbackSessionIdentifier != null &&
           t.hasOwnProperty("playbackSessionIdentifier") &&
-          !$util$2.isString(t.playbackSessionIdentifier)
+          !a.isString(t.playbackSessionIdentifier)
         )
           return "playbackSessionIdentifier: string expected";
         if (t.currentQueueEndAction != null && t.hasOwnProperty("currentQueueEndAction"))
@@ -18672,12 +19069,12 @@ const $Reader$2 = minimalExports.Reader,
           if (!Array.isArray(t.supportedPlaybackSessionIdentifiers))
             return "supportedPlaybackSessionIdentifiers: array expected";
           for (let e = 0; e < t.supportedPlaybackSessionIdentifiers.length; ++e) {
-            let n = $root$2.PreloadedPlaybackSessionInfo.verify(t.supportedPlaybackSessionIdentifiers[e]);
+            let n = l.PreloadedPlaybackSessionInfo.verify(t.supportedPlaybackSessionIdentifiers[e]);
             if (n) return "supportedPlaybackSessionIdentifiers." + n;
           }
         }
         if (t.proactiveCommandOptions != null && t.hasOwnProperty("proactiveCommandOptions")) {
-          let e = $root$2.CommandOptionsProtobuf.verify(t.proactiveCommandOptions);
+          let e = l.CommandOptionsProtobuf.verify(t.proactiveCommandOptions);
           if (e) return "proactiveCommandOptions." + e;
         }
         return t.vocalsControlActive != null &&
@@ -18703,8 +19100,8 @@ const $Reader$2 = minimalExports.Reader,
                   : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.CommandInfoProtobuf) return t;
-        let e = new $root$2.CommandInfoProtobuf();
+        if (t instanceof l.CommandInfoProtobuf) return t;
+        let e = new l.CommandInfoProtobuf();
         switch (t.command) {
           default:
             if (typeof t.command == "number") {
@@ -19156,7 +19553,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.supportedPlaybackSessionIdentifiers.length; ++n) {
             if (typeof t.supportedPlaybackSessionIdentifiers[n] != "object")
               throw TypeError(".CommandInfoProtobuf.supportedPlaybackSessionIdentifiers: object expected");
-            e.supportedPlaybackSessionIdentifiers[n] = $root$2.PreloadedPlaybackSessionInfo.fromObject(
+            e.supportedPlaybackSessionIdentifiers[n] = l.PreloadedPlaybackSessionInfo.fromObject(
               t.supportedPlaybackSessionIdentifiers[n],
             );
           }
@@ -19164,7 +19561,7 @@ const $Reader$2 = minimalExports.Reader,
         if (t.proactiveCommandOptions != null) {
           if (typeof t.proactiveCommandOptions != "object")
             throw TypeError(".CommandInfoProtobuf.proactiveCommandOptions: object expected");
-          e.proactiveCommandOptions = $root$2.CommandOptionsProtobuf.fromObject(t.proactiveCommandOptions);
+          e.proactiveCommandOptions = l.CommandOptionsProtobuf.fromObject(t.proactiveCommandOptions);
         }
         return (
           t.vocalsControlActive != null && (e.vocalsControlActive = !!t.vocalsControlActive),
@@ -19220,9 +19617,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("command") &&
             (n.command =
               e.enums === String
-                ? $root$2.CommandProtobuf[t.command] === void 0
+                ? l.CommandProtobuf[t.command] === void 0
                   ? t.command
-                  : $root$2.CommandProtobuf[t.command]
+                  : l.CommandProtobuf[t.command]
                 : t.command),
           t.enabled != null && t.hasOwnProperty("enabled") && (n.enabled = t.enabled),
           t.active != null && t.hasOwnProperty("active") && (n.active = t.active),
@@ -19256,17 +19653,17 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("repeatMode") &&
             (n.repeatMode =
               e.enums === String
-                ? $root$2.RepeatModeProtobuf[t.repeatMode] === void 0
+                ? l.RepeatModeProtobuf[t.repeatMode] === void 0
                   ? t.repeatMode
-                  : $root$2.RepeatModeProtobuf[t.repeatMode]
+                  : l.RepeatModeProtobuf[t.repeatMode]
                 : t.repeatMode),
           t.shuffleMode != null &&
             t.hasOwnProperty("shuffleMode") &&
             (n.shuffleMode =
               e.enums === String
-                ? $root$2.ShuffleModeProtobuf[t.shuffleMode] === void 0
+                ? l.ShuffleModeProtobuf[t.shuffleMode] === void 0
                   ? t.shuffleMode
-                  : $root$2.ShuffleModeProtobuf[t.shuffleMode]
+                  : l.ShuffleModeProtobuf[t.shuffleMode]
                 : t.shuffleMode),
           t.presentationStyle != null &&
             t.hasOwnProperty("presentationStyle") &&
@@ -19321,9 +19718,9 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("currentQueueEndAction") &&
             (n.currentQueueEndAction =
               e.enums === String
-                ? $root$2.QueueEndActionProtobuf[t.currentQueueEndAction] === void 0
+                ? l.QueueEndActionProtobuf[t.currentQueueEndAction] === void 0
                   ? t.currentQueueEndAction
-                  : $root$2.QueueEndActionProtobuf[t.currentQueueEndAction]
+                  : l.QueueEndActionProtobuf[t.currentQueueEndAction]
                 : t.currentQueueEndAction),
           t.supportedQueueEndActions && t.supportedQueueEndActions.length)
         ) {
@@ -19331,9 +19728,9 @@ const $Reader$2 = minimalExports.Reader,
           for (let r = 0; r < t.supportedQueueEndActions.length; ++r)
             n.supportedQueueEndActions[r] =
               e.enums === String
-                ? $root$2.QueueEndActionProtobuf[t.supportedQueueEndActions[r]] === void 0
+                ? l.QueueEndActionProtobuf[t.supportedQueueEndActions[r]] === void 0
                   ? t.supportedQueueEndActions[r]
-                  : $root$2.QueueEndActionProtobuf[t.supportedQueueEndActions[r]]
+                  : l.QueueEndActionProtobuf[t.supportedQueueEndActions[r]]
                 : t.supportedQueueEndActions[r];
         }
         if (
@@ -19341,15 +19738,15 @@ const $Reader$2 = minimalExports.Reader,
             t.hasOwnProperty("disabledReason") &&
             (n.disabledReason =
               e.enums === String
-                ? $root$2.DisabledReasonProtobuf[t.disabledReason] === void 0
+                ? l.DisabledReasonProtobuf[t.disabledReason] === void 0
                   ? t.disabledReason
-                  : $root$2.DisabledReasonProtobuf[t.disabledReason]
+                  : l.DisabledReasonProtobuf[t.disabledReason]
                 : t.disabledReason),
           t.supportedPlaybackSessionIdentifiers && t.supportedPlaybackSessionIdentifiers.length)
         ) {
           n.supportedPlaybackSessionIdentifiers = [];
           for (let r = 0; r < t.supportedPlaybackSessionIdentifiers.length; ++r)
-            n.supportedPlaybackSessionIdentifiers[r] = $root$2.PreloadedPlaybackSessionInfo.toObject(
+            n.supportedPlaybackSessionIdentifiers[r] = l.PreloadedPlaybackSessionInfo.toObject(
               t.supportedPlaybackSessionIdentifiers[r],
               e,
             );
@@ -19357,7 +19754,7 @@ const $Reader$2 = minimalExports.Reader,
         return (
           t.proactiveCommandOptions != null &&
             t.hasOwnProperty("proactiveCommandOptions") &&
-            (n.proactiveCommandOptions = $root$2.CommandOptionsProtobuf.toObject(t.proactiveCommandOptions, e)),
+            (n.proactiveCommandOptions = l.CommandOptionsProtobuf.toObject(t.proactiveCommandOptions, e)),
           t.vocalsControlActive != null &&
             t.hasOwnProperty("vocalsControlActive") &&
             (n.vocalsControlActive = t.vocalsControlActive),
@@ -19380,7 +19777,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/CommandInfoProtobuf");
@@ -19388,7 +19785,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  DisabledReasonProtobuf = ($root$2.DisabledReasonProtobuf = (() => {
+  jn = (l.DisabledReasonProtobuf = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -19399,7 +19796,7 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  PreloadedPlaybackSessionInfo = ($root$2.PreloadedPlaybackSessionInfo = (() => {
+  Kn = (l.PreloadedPlaybackSessionInfo = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -19412,7 +19809,7 @@ const $Reader$2 = minimalExports.Reader,
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer$2.create()),
+          e || (e = w.create()),
           t.playbackSessionIdentifier != null &&
             Object.hasOwnProperty.call(t, "playbackSessionIdentifier") &&
             e.uint32(10).string(t.playbackSessionIdentifier),
@@ -19429,12 +19826,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.PreloadedPlaybackSessionInfo();
+          r = new l.PreloadedPlaybackSessionInfo();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.playbackSessionIdentifier = t.string();
               break;
@@ -19448,35 +19845,35 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
           : t.playbackSessionIdentifier != null &&
               t.hasOwnProperty("playbackSessionIdentifier") &&
-              !$util$2.isString(t.playbackSessionIdentifier)
+              !a.isString(t.playbackSessionIdentifier)
             ? "playbackSessionIdentifier: string expected"
             : t.playbackSessionRevision != null &&
                 t.hasOwnProperty("playbackSessionRevision") &&
-                !$util$2.isString(t.playbackSessionRevision)
+                !a.isString(t.playbackSessionRevision)
               ? "playbackSessionRevision: string expected"
               : t.playbackSessionPriority != null &&
                   t.hasOwnProperty("playbackSessionPriority") &&
-                  !$util$2.isInteger(t.playbackSessionPriority)
+                  !a.isInteger(t.playbackSessionPriority)
                 ? "playbackSessionPriority: integer expected"
                 : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.PreloadedPlaybackSessionInfo) return t;
-        let e = new $root$2.PreloadedPlaybackSessionInfo();
+        if (t instanceof l.PreloadedPlaybackSessionInfo) return t;
+        let e = new l.PreloadedPlaybackSessionInfo();
         return (
           t.playbackSessionIdentifier != null && (e.playbackSessionIdentifier = String(t.playbackSessionIdentifier)),
           t.playbackSessionRevision != null && (e.playbackSessionRevision = String(t.playbackSessionRevision)),
@@ -19503,7 +19900,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/PreloadedPlaybackSessionInfo");
@@ -19511,38 +19908,38 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  NotificationMessageProtobuf = ($root$2.NotificationMessageProtobuf = (() => {
+  Zn = (l.NotificationMessageProtobuf = (() => {
     function o(i) {
       if (((this.notification = []), (this.userInfo = []), (this.playerPath = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
-      (o.prototype.notification = $util$2.emptyArray),
-      (o.prototype.userInfo = $util$2.emptyArray),
-      (o.prototype.playerPath = $util$2.emptyArray),
+      (o.prototype.notification = a.emptyArray),
+      (o.prototype.userInfo = a.emptyArray),
+      (o.prototype.playerPath = a.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        if ((e || (e = $Writer$2.create()), t.notification != null && t.notification.length))
+        if ((e || (e = w.create()), t.notification != null && t.notification.length))
           for (let n = 0; n < t.notification.length; ++n) e.uint32(10).string(t.notification[n]);
         if (t.userInfo != null && t.userInfo.length)
           for (let n = 0; n < t.userInfo.length; ++n) e.uint32(18).bytes(t.userInfo[n]);
         if (t.playerPath != null && t.playerPath.length)
           for (let n = 0; n < t.playerPath.length; ++n)
-            $root$2.NowPlayingPlayerPathProtobuf.encode(t.playerPath[n], e.uint32(26).fork()).ldelim();
+            l.NowPlayingPlayerPathProtobuf.encode(t.playerPath[n], e.uint32(26).fork()).ldelim();
         return e;
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.NotificationMessageProtobuf();
+          r = new l.NotificationMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               ((r.notification && r.notification.length) || (r.notification = []), r.notification.push(t.string()));
               break;
@@ -19553,44 +19950,44 @@ const $Reader$2 = minimalExports.Reader,
             }
             case 3: {
               ((r.playerPath && r.playerPath.length) || (r.playerPath = []),
-                r.playerPath.push($root$2.NowPlayingPlayerPathProtobuf.decode(t, t.uint32())));
+                r.playerPath.push(l.NowPlayingPlayerPathProtobuf.decode(t, t.uint32())));
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.notification != null && t.hasOwnProperty("notification")) {
           if (!Array.isArray(t.notification)) return "notification: array expected";
           for (let e = 0; e < t.notification.length; ++e)
-            if (!$util$2.isString(t.notification[e])) return "notification: string[] expected";
+            if (!a.isString(t.notification[e])) return "notification: string[] expected";
         }
         if (t.userInfo != null && t.hasOwnProperty("userInfo")) {
           if (!Array.isArray(t.userInfo)) return "userInfo: array expected";
           for (let e = 0; e < t.userInfo.length; ++e)
-            if (!((t.userInfo[e] && typeof t.userInfo[e].length == "number") || $util$2.isString(t.userInfo[e])))
+            if (!((t.userInfo[e] && typeof t.userInfo[e].length == "number") || a.isString(t.userInfo[e])))
               return "userInfo: buffer[] expected";
         }
         if (t.playerPath != null && t.hasOwnProperty("playerPath")) {
           if (!Array.isArray(t.playerPath)) return "playerPath: array expected";
           for (let e = 0; e < t.playerPath.length; ++e) {
-            let n = $root$2.NowPlayingPlayerPathProtobuf.verify(t.playerPath[e]);
+            let n = l.NowPlayingPlayerPathProtobuf.verify(t.playerPath[e]);
             if (n) return "playerPath." + n;
           }
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root$2.NotificationMessageProtobuf) return t;
-        let e = new $root$2.NotificationMessageProtobuf();
+        if (t instanceof l.NotificationMessageProtobuf) return t;
+        let e = new l.NotificationMessageProtobuf();
         if (t.notification) {
           if (!Array.isArray(t.notification))
             throw TypeError(".NotificationMessageProtobuf.notification: array expected");
@@ -19602,11 +19999,7 @@ const $Reader$2 = minimalExports.Reader,
           e.userInfo = [];
           for (let n = 0; n < t.userInfo.length; ++n)
             typeof t.userInfo[n] == "string"
-              ? $util$2.base64.decode(
-                  t.userInfo[n],
-                  (e.userInfo[n] = $util$2.newBuffer($util$2.base64.length(t.userInfo[n]))),
-                  0,
-                )
+              ? a.base64.decode(t.userInfo[n], (e.userInfo[n] = a.newBuffer(a.base64.length(t.userInfo[n]))), 0)
               : t.userInfo[n].length >= 0 && (e.userInfo[n] = t.userInfo[n]);
         }
         if (t.playerPath) {
@@ -19615,7 +20008,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let n = 0; n < t.playerPath.length; ++n) {
             if (typeof t.playerPath[n] != "object")
               throw TypeError(".NotificationMessageProtobuf.playerPath: object expected");
-            e.playerPath[n] = $root$2.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath[n]);
+            e.playerPath[n] = l.NowPlayingPlayerPathProtobuf.fromObject(t.playerPath[n]);
           }
         }
         return e;
@@ -19635,7 +20028,7 @@ const $Reader$2 = minimalExports.Reader,
           for (let r = 0; r < t.userInfo.length; ++r)
             n.userInfo[r] =
               e.bytes === String
-                ? $util$2.base64.encode(t.userInfo[r], 0, t.userInfo[r].length)
+                ? a.base64.encode(t.userInfo[r], 0, t.userInfo[r].length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.userInfo[r])
                   : t.userInfo[r];
@@ -19643,12 +20036,12 @@ const $Reader$2 = minimalExports.Reader,
         if (t.playerPath && t.playerPath.length) {
           n.playerPath = [];
           for (let r = 0; r < t.playerPath.length; ++r)
-            n.playerPath[r] = $root$2.NowPlayingPlayerPathProtobuf.toObject(t.playerPath[r], e);
+            n.playerPath[r] = l.NowPlayingPlayerPathProtobuf.toObject(t.playerPath[r], e);
         }
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/NotificationMessageProtobuf");
@@ -19656,7 +20049,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  GetStateMessageProtobuf = ($root$2.GetStateMessageProtobuf = (() => {
+  $n = (l.GetStateMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -19665,39 +20058,39 @@ const $Reader$2 = minimalExports.Reader,
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        return (e || (e = $Writer$2.create()), e);
+        return (e || (e = w.create()), e);
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader$2 || (t = $Reader$2.create(t));
+        t instanceof c || (t = c.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root$2.GetStateMessageProtobuf();
+          r = new l.GetStateMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader$2 || (t = new $Reader$2(t)), this.decode(t, t.uint32()));
+        return (t instanceof c || (t = new c(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null ? "object expected" : null;
       }),
       (o.fromObject = function (t) {
-        return t instanceof $root$2.GetStateMessageProtobuf ? t : new $root$2.GetStateMessageProtobuf();
+        return t instanceof l.GetStateMessageProtobuf ? t : new l.GetStateMessageProtobuf();
       }),
       (o.toObject = function () {
         return {};
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GetStateMessageProtobuf");
@@ -19705,11 +20098,11 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  $Reader$1 = minimalExports.Reader,
-  $Writer$1 = minimalExports.Writer,
-  $util$1 = minimalExports.util,
-  $root$1 = minimalExports.roots.default || (minimalExports.roots.default = {}),
-  PlaybackQueue = ($root$1.PlaybackQueue = (() => {
+  T = b.Reader,
+  z = b.Writer,
+  f = b.util,
+  h = b.roots.default || (b.roots.default = {}),
+  Yn = (h.PlaybackQueue = (() => {
     const o = {};
     return (
       (o.DelegateInfo = (function () {
@@ -19718,8 +20111,8 @@ const $Reader$2 = minimalExports.Reader,
             for (let e = Object.keys(t), n = 0; n < e.length; ++n) t[e[n]] != null && (this[e[n]] = t[e[n]]);
         }
         return (
-          (i.prototype.delegateInfoID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-          (i.prototype.accountID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !0) : 0),
+          (i.prototype.delegateInfoID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.accountID = f.Long ? f.Long.fromBits(0, 0, !0) : 0),
           (i.prototype.uuid = ""),
           (i.prototype.deviceGUID = ""),
           (i.prototype.deviceName = ""),
@@ -19727,13 +20120,13 @@ const $Reader$2 = minimalExports.Reader,
           (i.prototype.requestUserAgent = ""),
           (i.prototype.timeZoneName = ""),
           (i.prototype.privateListeningEnabled = !1),
-          (i.prototype.accountCapabilities = $util$1.emptyArray),
+          (i.prototype.accountCapabilities = f.emptyArray),
           (i.create = function (e) {
             return new i(e);
           }),
           (i.encode = function (e, n) {
             if (
-              (n || (n = $Writer$1.create()),
+              (n || (n = z.create()),
               e.delegateInfoID != null &&
                 Object.hasOwnProperty.call(e, "delegateInfoID") &&
                 n.uint32(8).int64(e.delegateInfoID),
@@ -19762,88 +20155,88 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$1 || (e = $Reader$1.create(e));
+            e instanceof T || (e = T.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$1.PlaybackQueue.DelegateInfo();
+              u = new h.PlaybackQueue.DelegateInfo();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.delegateInfoID = e.int64();
+                  u.delegateInfoID = e.int64();
                   break;
                 }
                 case 2: {
-                  l.accountID = e.uint64();
+                  u.accountID = e.uint64();
                   break;
                 }
                 case 3: {
-                  l.uuid = e.string();
+                  u.uuid = e.string();
                   break;
                 }
                 case 4: {
-                  l.deviceGUID = e.string();
+                  u.deviceGUID = e.string();
                   break;
                 }
                 case 5: {
-                  l.deviceName = e.string();
+                  u.deviceName = e.string();
                   break;
                 }
                 case 6: {
-                  l.systemReleaseType = e.int32();
+                  u.systemReleaseType = e.int32();
                   break;
                 }
                 case 7: {
-                  l.requestUserAgent = e.string();
+                  u.requestUserAgent = e.string();
                   break;
                 }
                 case 8: {
-                  l.timeZoneName = e.string();
+                  u.timeZoneName = e.string();
                   break;
                 }
                 case 9: {
-                  l.privateListeningEnabled = e.bool();
+                  u.privateListeningEnabled = e.bool();
                   break;
                 }
                 case 10: {
                   if (
-                    ((l.accountCapabilities && l.accountCapabilities.length) || (l.accountCapabilities = []),
-                    (a & 7) === 2)
+                    ((u.accountCapabilities && u.accountCapabilities.length) || (u.accountCapabilities = []),
+                    (d & 7) === 2)
                   ) {
-                    let u = e.uint32() + e.pos;
-                    for (; e.pos < u;) l.accountCapabilities.push(e.int32());
-                  } else l.accountCapabilities.push(e.int32());
+                    let y = e.uint32() + e.pos;
+                    for (; e.pos < y;) u.accountCapabilities.push(e.int32());
+                  } else u.accountCapabilities.push(e.int32());
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$1 || (e = new $Reader$1(e)), this.decode(e, e.uint32()));
+            return (e instanceof T || (e = new T(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             if (typeof e != "object" || e === null) return "object expected";
             if (
               e.delegateInfoID != null &&
               e.hasOwnProperty("delegateInfoID") &&
-              !$util$1.isInteger(e.delegateInfoID) &&
-              !(e.delegateInfoID && $util$1.isInteger(e.delegateInfoID.low) && $util$1.isInteger(e.delegateInfoID.high))
+              !f.isInteger(e.delegateInfoID) &&
+              !(e.delegateInfoID && f.isInteger(e.delegateInfoID.low) && f.isInteger(e.delegateInfoID.high))
             )
               return "delegateInfoID: integer|Long expected";
             if (
               e.accountID != null &&
               e.hasOwnProperty("accountID") &&
-              !$util$1.isInteger(e.accountID) &&
-              !(e.accountID && $util$1.isInteger(e.accountID.low) && $util$1.isInteger(e.accountID.high))
+              !f.isInteger(e.accountID) &&
+              !(e.accountID && f.isInteger(e.accountID.low) && f.isInteger(e.accountID.high))
             )
               return "accountID: integer|Long expected";
-            if (e.uuid != null && e.hasOwnProperty("uuid") && !$util$1.isString(e.uuid)) return "uuid: string expected";
-            if (e.deviceGUID != null && e.hasOwnProperty("deviceGUID") && !$util$1.isString(e.deviceGUID))
+            if (e.uuid != null && e.hasOwnProperty("uuid") && !f.isString(e.uuid)) return "uuid: string expected";
+            if (e.deviceGUID != null && e.hasOwnProperty("deviceGUID") && !f.isString(e.deviceGUID))
               return "deviceGUID: string expected";
-            if (e.deviceName != null && e.hasOwnProperty("deviceName") && !$util$1.isString(e.deviceName))
+            if (e.deviceName != null && e.hasOwnProperty("deviceName") && !f.isString(e.deviceName))
               return "deviceName: string expected";
             if (e.systemReleaseType != null && e.hasOwnProperty("systemReleaseType"))
               switch (e.systemReleaseType) {
@@ -19856,13 +20249,9 @@ const $Reader$2 = minimalExports.Reader,
                 case 4:
                   break;
               }
-            if (
-              e.requestUserAgent != null &&
-              e.hasOwnProperty("requestUserAgent") &&
-              !$util$1.isString(e.requestUserAgent)
-            )
+            if (e.requestUserAgent != null && e.hasOwnProperty("requestUserAgent") && !f.isString(e.requestUserAgent))
               return "requestUserAgent: string expected";
-            if (e.timeZoneName != null && e.hasOwnProperty("timeZoneName") && !$util$1.isString(e.timeZoneName))
+            if (e.timeZoneName != null && e.hasOwnProperty("timeZoneName") && !f.isString(e.timeZoneName))
               return "timeZoneName: string expected";
             if (
               e.privateListeningEnabled != null &&
@@ -19885,32 +20274,30 @@ const $Reader$2 = minimalExports.Reader,
             return null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$1.PlaybackQueue.DelegateInfo) return e;
-            let n = new $root$1.PlaybackQueue.DelegateInfo();
+            if (e instanceof h.PlaybackQueue.DelegateInfo) return e;
+            let n = new h.PlaybackQueue.DelegateInfo();
             switch (
               (e.delegateInfoID != null &&
-                ($util$1.Long
-                  ? ((n.delegateInfoID = $util$1.Long.fromValue(e.delegateInfoID)).unsigned = !1)
+                (f.Long
+                  ? ((n.delegateInfoID = f.Long.fromValue(e.delegateInfoID)).unsigned = !1)
                   : typeof e.delegateInfoID == "string"
                     ? (n.delegateInfoID = parseInt(e.delegateInfoID, 10))
                     : typeof e.delegateInfoID == "number"
                       ? (n.delegateInfoID = e.delegateInfoID)
                       : typeof e.delegateInfoID == "object" &&
-                        (n.delegateInfoID = new $util$1.LongBits(
+                        (n.delegateInfoID = new f.LongBits(
                           e.delegateInfoID.low >>> 0,
                           e.delegateInfoID.high >>> 0,
                         ).toNumber())),
               e.accountID != null &&
-                ($util$1.Long
-                  ? ((n.accountID = $util$1.Long.fromValue(e.accountID)).unsigned = !0)
+                (f.Long
+                  ? ((n.accountID = f.Long.fromValue(e.accountID)).unsigned = !0)
                   : typeof e.accountID == "string"
                     ? (n.accountID = parseInt(e.accountID, 10))
                     : typeof e.accountID == "number"
                       ? (n.accountID = e.accountID)
                       : typeof e.accountID == "object" &&
-                        (n.accountID = new $util$1.LongBits(e.accountID.low >>> 0, e.accountID.high >>> 0).toNumber(
-                          !0,
-                        ))),
+                        (n.accountID = new f.LongBits(e.accountID.low >>> 0, e.accountID.high >>> 0).toNumber(!0))),
               e.uuid != null && (n.uuid = String(e.uuid)),
               e.deviceGUID != null && (n.deviceGUID = String(e.deviceGUID)),
               e.deviceName != null && (n.deviceName = String(e.deviceName)),
@@ -19979,13 +20366,13 @@ const $Reader$2 = minimalExports.Reader,
             n || (n = {});
             let r = {};
             if (((n.arrays || n.defaults) && (r.accountCapabilities = []), n.defaults)) {
-              if ($util$1.Long) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.delegateInfoID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (f.Long) {
+                let u = new f.Long(0, 0, !1);
+                r.delegateInfoID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.delegateInfoID = n.longs === String ? "0" : 0;
-              if ($util$1.Long) {
-                let l = new $util$1.Long(0, 0, !0);
-                r.accountID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (f.Long) {
+                let u = new f.Long(0, 0, !0);
+                r.accountID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.accountID = n.longs === String ? "0" : 0;
               ((r.uuid = ""),
                 (r.deviceGUID = ""),
@@ -20002,9 +20389,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.delegateInfoID = n.longs === String ? String(e.delegateInfoID) : e.delegateInfoID)
                   : (r.delegateInfoID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.delegateInfoID)
+                        ? f.Long.prototype.toString.call(e.delegateInfoID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(e.delegateInfoID.low >>> 0, e.delegateInfoID.high >>> 0).toNumber()
+                          ? new f.LongBits(e.delegateInfoID.low >>> 0, e.delegateInfoID.high >>> 0).toNumber()
                           : e.delegateInfoID)),
               e.accountID != null &&
                 e.hasOwnProperty("accountID") &&
@@ -20012,9 +20399,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.accountID = n.longs === String ? String(e.accountID) : e.accountID)
                   : (r.accountID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.accountID)
+                        ? f.Long.prototype.toString.call(e.accountID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(e.accountID.low >>> 0, e.accountID.high >>> 0).toNumber(!0)
+                          ? new f.LongBits(e.accountID.low >>> 0, e.accountID.high >>> 0).toNumber(!0)
                           : e.accountID)),
               e.uuid != null && e.hasOwnProperty("uuid") && (r.uuid = e.uuid),
               e.deviceGUID != null && e.hasOwnProperty("deviceGUID") && (r.deviceGUID = e.deviceGUID),
@@ -20023,9 +20410,9 @@ const $Reader$2 = minimalExports.Reader,
                 e.hasOwnProperty("systemReleaseType") &&
                 (r.systemReleaseType =
                   n.enums === String
-                    ? $root$1.PlaybackQueue.DelegateInfo.SystemReleaseType[e.systemReleaseType] === void 0
+                    ? h.PlaybackQueue.DelegateInfo.SystemReleaseType[e.systemReleaseType] === void 0
                       ? e.systemReleaseType
-                      : $root$1.PlaybackQueue.DelegateInfo.SystemReleaseType[e.systemReleaseType]
+                      : h.PlaybackQueue.DelegateInfo.SystemReleaseType[e.systemReleaseType]
                     : e.systemReleaseType),
               e.requestUserAgent != null &&
                 e.hasOwnProperty("requestUserAgent") &&
@@ -20037,18 +20424,18 @@ const $Reader$2 = minimalExports.Reader,
               e.accountCapabilities && e.accountCapabilities.length)
             ) {
               r.accountCapabilities = [];
-              for (let l = 0; l < e.accountCapabilities.length; ++l)
-                r.accountCapabilities[l] =
+              for (let u = 0; u < e.accountCapabilities.length; ++u)
+                r.accountCapabilities[u] =
                   n.enums === String
-                    ? $root$1.PlaybackQueue.DelegateInfo.AccountCapabilities[e.accountCapabilities[l]] === void 0
-                      ? e.accountCapabilities[l]
-                      : $root$1.PlaybackQueue.DelegateInfo.AccountCapabilities[e.accountCapabilities[l]]
-                    : e.accountCapabilities[l];
+                    ? h.PlaybackQueue.DelegateInfo.AccountCapabilities[e.accountCapabilities[u]] === void 0
+                      ? e.accountCapabilities[u]
+                      : h.PlaybackQueue.DelegateInfo.AccountCapabilities[e.accountCapabilities[u]]
+                    : e.accountCapabilities[u];
             }
             return r;
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (e === void 0 && (e = "type.googleapis.com"), e + "/PlaybackQueue.DelegateInfo");
@@ -20078,12 +20465,12 @@ const $Reader$2 = minimalExports.Reader,
           if (t) for (let e = Object.keys(t), n = 0; n < e.length; ++n) t[e[n]] != null && (this[e[n]] = t[e[n]]);
         }
         return (
-          (i.prototype.delegateInfoID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.delegateInfoID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
           (i.prototype.contentItemID = ""),
-          (i.prototype.storeAdamID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-          (i.prototype.storeSubscriptionAdamID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-          (i.prototype.cloudID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-          (i.prototype.purchaseHistoryID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.storeAdamID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.storeSubscriptionAdamID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.cloudID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.purchaseHistoryID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
           (i.prototype.cloudUniversalLibraryID = ""),
           (i.prototype.playbackAuthorizationToken = ""),
           (i.create = function (e) {
@@ -20091,7 +20478,7 @@ const $Reader$2 = minimalExports.Reader,
           }),
           (i.encode = function (e, n) {
             return (
-              n || (n = $Writer$1.create()),
+              n || (n = z.create()),
               e.delegateInfoID != null &&
                 Object.hasOwnProperty.call(e, "delegateInfoID") &&
                 n.uint32(8).int64(e.delegateInfoID),
@@ -20121,165 +20508,158 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$1 || (e = $Reader$1.create(e));
+            e instanceof T || (e = T.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$1.PlaybackQueue.ItemIdentifierSet();
+              u = new h.PlaybackQueue.ItemIdentifierSet();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.delegateInfoID = e.int64();
+                  u.delegateInfoID = e.int64();
                   break;
                 }
                 case 2: {
-                  l.contentItemID = e.string();
+                  u.contentItemID = e.string();
                   break;
                 }
                 case 3: {
-                  l.storeAdamID = e.int64();
+                  u.storeAdamID = e.int64();
                   break;
                 }
                 case 4: {
-                  l.storeSubscriptionAdamID = e.int64();
+                  u.storeSubscriptionAdamID = e.int64();
                   break;
                 }
                 case 5: {
-                  l.cloudID = e.int64();
+                  u.cloudID = e.int64();
                   break;
                 }
                 case 6: {
-                  l.purchaseHistoryID = e.int64();
+                  u.purchaseHistoryID = e.int64();
                   break;
                 }
                 case 7: {
-                  l.cloudUniversalLibraryID = e.string();
+                  u.cloudUniversalLibraryID = e.string();
                   break;
                 }
                 case 8: {
-                  l.playbackAuthorizationToken = e.string();
+                  u.playbackAuthorizationToken = e.string();
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$1 || (e = new $Reader$1(e)), this.decode(e, e.uint32()));
+            return (e instanceof T || (e = new T(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             return typeof e != "object" || e === null
               ? "object expected"
               : e.delegateInfoID != null &&
                   e.hasOwnProperty("delegateInfoID") &&
-                  !$util$1.isInteger(e.delegateInfoID) &&
-                  !(
-                    e.delegateInfoID &&
-                    $util$1.isInteger(e.delegateInfoID.low) &&
-                    $util$1.isInteger(e.delegateInfoID.high)
-                  )
+                  !f.isInteger(e.delegateInfoID) &&
+                  !(e.delegateInfoID && f.isInteger(e.delegateInfoID.low) && f.isInteger(e.delegateInfoID.high))
                 ? "delegateInfoID: integer|Long expected"
-                : e.contentItemID != null && e.hasOwnProperty("contentItemID") && !$util$1.isString(e.contentItemID)
+                : e.contentItemID != null && e.hasOwnProperty("contentItemID") && !f.isString(e.contentItemID)
                   ? "contentItemID: string expected"
                   : e.storeAdamID != null &&
                       e.hasOwnProperty("storeAdamID") &&
-                      !$util$1.isInteger(e.storeAdamID) &&
-                      !(e.storeAdamID && $util$1.isInteger(e.storeAdamID.low) && $util$1.isInteger(e.storeAdamID.high))
+                      !f.isInteger(e.storeAdamID) &&
+                      !(e.storeAdamID && f.isInteger(e.storeAdamID.low) && f.isInteger(e.storeAdamID.high))
                     ? "storeAdamID: integer|Long expected"
                     : e.storeSubscriptionAdamID != null &&
                         e.hasOwnProperty("storeSubscriptionAdamID") &&
-                        !$util$1.isInteger(e.storeSubscriptionAdamID) &&
+                        !f.isInteger(e.storeSubscriptionAdamID) &&
                         !(
                           e.storeSubscriptionAdamID &&
-                          $util$1.isInteger(e.storeSubscriptionAdamID.low) &&
-                          $util$1.isInteger(e.storeSubscriptionAdamID.high)
+                          f.isInteger(e.storeSubscriptionAdamID.low) &&
+                          f.isInteger(e.storeSubscriptionAdamID.high)
                         )
                       ? "storeSubscriptionAdamID: integer|Long expected"
                       : e.cloudID != null &&
                           e.hasOwnProperty("cloudID") &&
-                          !$util$1.isInteger(e.cloudID) &&
-                          !(e.cloudID && $util$1.isInteger(e.cloudID.low) && $util$1.isInteger(e.cloudID.high))
+                          !f.isInteger(e.cloudID) &&
+                          !(e.cloudID && f.isInteger(e.cloudID.low) && f.isInteger(e.cloudID.high))
                         ? "cloudID: integer|Long expected"
                         : e.purchaseHistoryID != null &&
                             e.hasOwnProperty("purchaseHistoryID") &&
-                            !$util$1.isInteger(e.purchaseHistoryID) &&
+                            !f.isInteger(e.purchaseHistoryID) &&
                             !(
                               e.purchaseHistoryID &&
-                              $util$1.isInteger(e.purchaseHistoryID.low) &&
-                              $util$1.isInteger(e.purchaseHistoryID.high)
+                              f.isInteger(e.purchaseHistoryID.low) &&
+                              f.isInteger(e.purchaseHistoryID.high)
                             )
                           ? "purchaseHistoryID: integer|Long expected"
                           : e.cloudUniversalLibraryID != null &&
                               e.hasOwnProperty("cloudUniversalLibraryID") &&
-                              !$util$1.isString(e.cloudUniversalLibraryID)
+                              !f.isString(e.cloudUniversalLibraryID)
                             ? "cloudUniversalLibraryID: string expected"
                             : e.playbackAuthorizationToken != null &&
                                 e.hasOwnProperty("playbackAuthorizationToken") &&
-                                !$util$1.isString(e.playbackAuthorizationToken)
+                                !f.isString(e.playbackAuthorizationToken)
                               ? "playbackAuthorizationToken: string expected"
                               : null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$1.PlaybackQueue.ItemIdentifierSet) return e;
-            let n = new $root$1.PlaybackQueue.ItemIdentifierSet();
+            if (e instanceof h.PlaybackQueue.ItemIdentifierSet) return e;
+            let n = new h.PlaybackQueue.ItemIdentifierSet();
             return (
               e.delegateInfoID != null &&
-                ($util$1.Long
-                  ? ((n.delegateInfoID = $util$1.Long.fromValue(e.delegateInfoID)).unsigned = !1)
+                (f.Long
+                  ? ((n.delegateInfoID = f.Long.fromValue(e.delegateInfoID)).unsigned = !1)
                   : typeof e.delegateInfoID == "string"
                     ? (n.delegateInfoID = parseInt(e.delegateInfoID, 10))
                     : typeof e.delegateInfoID == "number"
                       ? (n.delegateInfoID = e.delegateInfoID)
                       : typeof e.delegateInfoID == "object" &&
-                        (n.delegateInfoID = new $util$1.LongBits(
+                        (n.delegateInfoID = new f.LongBits(
                           e.delegateInfoID.low >>> 0,
                           e.delegateInfoID.high >>> 0,
                         ).toNumber())),
               e.contentItemID != null && (n.contentItemID = String(e.contentItemID)),
               e.storeAdamID != null &&
-                ($util$1.Long
-                  ? ((n.storeAdamID = $util$1.Long.fromValue(e.storeAdamID)).unsigned = !1)
+                (f.Long
+                  ? ((n.storeAdamID = f.Long.fromValue(e.storeAdamID)).unsigned = !1)
                   : typeof e.storeAdamID == "string"
                     ? (n.storeAdamID = parseInt(e.storeAdamID, 10))
                     : typeof e.storeAdamID == "number"
                       ? (n.storeAdamID = e.storeAdamID)
                       : typeof e.storeAdamID == "object" &&
-                        (n.storeAdamID = new $util$1.LongBits(
-                          e.storeAdamID.low >>> 0,
-                          e.storeAdamID.high >>> 0,
-                        ).toNumber())),
+                        (n.storeAdamID = new f.LongBits(e.storeAdamID.low >>> 0, e.storeAdamID.high >>> 0).toNumber())),
               e.storeSubscriptionAdamID != null &&
-                ($util$1.Long
-                  ? ((n.storeSubscriptionAdamID = $util$1.Long.fromValue(e.storeSubscriptionAdamID)).unsigned = !1)
+                (f.Long
+                  ? ((n.storeSubscriptionAdamID = f.Long.fromValue(e.storeSubscriptionAdamID)).unsigned = !1)
                   : typeof e.storeSubscriptionAdamID == "string"
                     ? (n.storeSubscriptionAdamID = parseInt(e.storeSubscriptionAdamID, 10))
                     : typeof e.storeSubscriptionAdamID == "number"
                       ? (n.storeSubscriptionAdamID = e.storeSubscriptionAdamID)
                       : typeof e.storeSubscriptionAdamID == "object" &&
-                        (n.storeSubscriptionAdamID = new $util$1.LongBits(
+                        (n.storeSubscriptionAdamID = new f.LongBits(
                           e.storeSubscriptionAdamID.low >>> 0,
                           e.storeSubscriptionAdamID.high >>> 0,
                         ).toNumber())),
               e.cloudID != null &&
-                ($util$1.Long
-                  ? ((n.cloudID = $util$1.Long.fromValue(e.cloudID)).unsigned = !1)
+                (f.Long
+                  ? ((n.cloudID = f.Long.fromValue(e.cloudID)).unsigned = !1)
                   : typeof e.cloudID == "string"
                     ? (n.cloudID = parseInt(e.cloudID, 10))
                     : typeof e.cloudID == "number"
                       ? (n.cloudID = e.cloudID)
                       : typeof e.cloudID == "object" &&
-                        (n.cloudID = new $util$1.LongBits(e.cloudID.low >>> 0, e.cloudID.high >>> 0).toNumber())),
+                        (n.cloudID = new f.LongBits(e.cloudID.low >>> 0, e.cloudID.high >>> 0).toNumber())),
               e.purchaseHistoryID != null &&
-                ($util$1.Long
-                  ? ((n.purchaseHistoryID = $util$1.Long.fromValue(e.purchaseHistoryID)).unsigned = !1)
+                (f.Long
+                  ? ((n.purchaseHistoryID = f.Long.fromValue(e.purchaseHistoryID)).unsigned = !1)
                   : typeof e.purchaseHistoryID == "string"
                     ? (n.purchaseHistoryID = parseInt(e.purchaseHistoryID, 10))
                     : typeof e.purchaseHistoryID == "number"
                       ? (n.purchaseHistoryID = e.purchaseHistoryID)
                       : typeof e.purchaseHistoryID == "object" &&
-                        (n.purchaseHistoryID = new $util$1.LongBits(
+                        (n.purchaseHistoryID = new f.LongBits(
                           e.purchaseHistoryID.low >>> 0,
                           e.purchaseHistoryID.high >>> 0,
                         ).toNumber())),
@@ -20293,25 +20673,25 @@ const $Reader$2 = minimalExports.Reader,
             n || (n = {});
             let r = {};
             if (n.defaults) {
-              if ($util$1.Long) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.delegateInfoID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (f.Long) {
+                let u = new f.Long(0, 0, !1);
+                r.delegateInfoID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.delegateInfoID = n.longs === String ? "0" : 0;
-              if (((r.contentItemID = ""), $util$1.Long)) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.storeAdamID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (((r.contentItemID = ""), f.Long)) {
+                let u = new f.Long(0, 0, !1);
+                r.storeAdamID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.storeAdamID = n.longs === String ? "0" : 0;
-              if ($util$1.Long) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.storeSubscriptionAdamID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (f.Long) {
+                let u = new f.Long(0, 0, !1);
+                r.storeSubscriptionAdamID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.storeSubscriptionAdamID = n.longs === String ? "0" : 0;
-              if ($util$1.Long) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.cloudID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (f.Long) {
+                let u = new f.Long(0, 0, !1);
+                r.cloudID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.cloudID = n.longs === String ? "0" : 0;
-              if ($util$1.Long) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.purchaseHistoryID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (f.Long) {
+                let u = new f.Long(0, 0, !1);
+                r.purchaseHistoryID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.purchaseHistoryID = n.longs === String ? "0" : 0;
               ((r.cloudUniversalLibraryID = ""), (r.playbackAuthorizationToken = ""));
             }
@@ -20322,9 +20702,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.delegateInfoID = n.longs === String ? String(e.delegateInfoID) : e.delegateInfoID)
                   : (r.delegateInfoID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.delegateInfoID)
+                        ? f.Long.prototype.toString.call(e.delegateInfoID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(e.delegateInfoID.low >>> 0, e.delegateInfoID.high >>> 0).toNumber()
+                          ? new f.LongBits(e.delegateInfoID.low >>> 0, e.delegateInfoID.high >>> 0).toNumber()
                           : e.delegateInfoID)),
               e.contentItemID != null && e.hasOwnProperty("contentItemID") && (r.contentItemID = e.contentItemID),
               e.storeAdamID != null &&
@@ -20333,9 +20713,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.storeAdamID = n.longs === String ? String(e.storeAdamID) : e.storeAdamID)
                   : (r.storeAdamID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.storeAdamID)
+                        ? f.Long.prototype.toString.call(e.storeAdamID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(e.storeAdamID.low >>> 0, e.storeAdamID.high >>> 0).toNumber()
+                          ? new f.LongBits(e.storeAdamID.low >>> 0, e.storeAdamID.high >>> 0).toNumber()
                           : e.storeAdamID)),
               e.storeSubscriptionAdamID != null &&
                 e.hasOwnProperty("storeSubscriptionAdamID") &&
@@ -20344,9 +20724,9 @@ const $Reader$2 = minimalExports.Reader,
                       n.longs === String ? String(e.storeSubscriptionAdamID) : e.storeSubscriptionAdamID)
                   : (r.storeSubscriptionAdamID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.storeSubscriptionAdamID)
+                        ? f.Long.prototype.toString.call(e.storeSubscriptionAdamID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(
+                          ? new f.LongBits(
                               e.storeSubscriptionAdamID.low >>> 0,
                               e.storeSubscriptionAdamID.high >>> 0,
                             ).toNumber()
@@ -20357,9 +20737,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.cloudID = n.longs === String ? String(e.cloudID) : e.cloudID)
                   : (r.cloudID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.cloudID)
+                        ? f.Long.prototype.toString.call(e.cloudID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(e.cloudID.low >>> 0, e.cloudID.high >>> 0).toNumber()
+                          ? new f.LongBits(e.cloudID.low >>> 0, e.cloudID.high >>> 0).toNumber()
                           : e.cloudID)),
               e.purchaseHistoryID != null &&
                 e.hasOwnProperty("purchaseHistoryID") &&
@@ -20367,12 +20747,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.purchaseHistoryID = n.longs === String ? String(e.purchaseHistoryID) : e.purchaseHistoryID)
                   : (r.purchaseHistoryID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.purchaseHistoryID)
+                        ? f.Long.prototype.toString.call(e.purchaseHistoryID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(
-                              e.purchaseHistoryID.low >>> 0,
-                              e.purchaseHistoryID.high >>> 0,
-                            ).toNumber()
+                          ? new f.LongBits(e.purchaseHistoryID.low >>> 0, e.purchaseHistoryID.high >>> 0).toNumber()
                           : e.purchaseHistoryID)),
               e.cloudUniversalLibraryID != null &&
                 e.hasOwnProperty("cloudUniversalLibraryID") &&
@@ -20384,7 +20761,7 @@ const $Reader$2 = minimalExports.Reader,
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (e === void 0 && (e = "type.googleapis.com"), e + "/PlaybackQueue.ItemIdentifierSet");
@@ -20405,11 +20782,11 @@ const $Reader$2 = minimalExports.Reader,
           }),
           (i.encode = function (e, n) {
             return (
-              n || (n = $Writer$1.create()),
+              n || (n = z.create()),
               e.mediaType != null && Object.hasOwnProperty.call(e, "mediaType") && n.uint32(8).int32(e.mediaType),
               e.identifierSet != null &&
                 Object.hasOwnProperty.call(e, "identifierSet") &&
-                $root$1.PlaybackQueue.ItemIdentifierSet.encode(e.identifierSet, n.uint32(18).fork()).ldelim(),
+                h.PlaybackQueue.ItemIdentifierSet.encode(e.identifierSet, n.uint32(18).fork()).ldelim(),
               e.excludeFromShuffle != null &&
                 Object.hasOwnProperty.call(e, "excludeFromShuffle") &&
                 n.uint32(24).bool(e.excludeFromShuffle),
@@ -20420,33 +20797,33 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$1 || (e = $Reader$1.create(e));
+            e instanceof T || (e = T.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$1.PlaybackQueue.Item();
+              u = new h.PlaybackQueue.Item();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.mediaType = e.int32();
+                  u.mediaType = e.int32();
                   break;
                 }
                 case 2: {
-                  l.identifierSet = $root$1.PlaybackQueue.ItemIdentifierSet.decode(e, e.uint32());
+                  u.identifierSet = h.PlaybackQueue.ItemIdentifierSet.decode(e, e.uint32());
                   break;
                 }
                 case 3: {
-                  l.excludeFromShuffle = e.bool();
+                  u.excludeFromShuffle = e.bool();
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$1 || (e = new $Reader$1(e)), this.decode(e, e.uint32()));
+            return (e instanceof T || (e = new T(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             if (typeof e != "object" || e === null) return "object expected";
@@ -20465,7 +20842,7 @@ const $Reader$2 = minimalExports.Reader,
                   break;
               }
             if (e.identifierSet != null && e.hasOwnProperty("identifierSet")) {
-              let n = $root$1.PlaybackQueue.ItemIdentifierSet.verify(e.identifierSet);
+              let n = h.PlaybackQueue.ItemIdentifierSet.verify(e.identifierSet);
               if (n) return "identifierSet." + n;
             }
             return e.excludeFromShuffle != null &&
@@ -20475,8 +20852,8 @@ const $Reader$2 = minimalExports.Reader,
               : null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$1.PlaybackQueue.Item) return e;
-            let n = new $root$1.PlaybackQueue.Item();
+            if (e instanceof h.PlaybackQueue.Item) return e;
+            let n = new h.PlaybackQueue.Item();
             switch (e.mediaType) {
               default:
                 if (typeof e.mediaType == "number") {
@@ -20520,7 +20897,7 @@ const $Reader$2 = minimalExports.Reader,
             if (e.identifierSet != null) {
               if (typeof e.identifierSet != "object")
                 throw TypeError(".PlaybackQueue.Item.identifierSet: object expected");
-              n.identifierSet = $root$1.PlaybackQueue.ItemIdentifierSet.fromObject(e.identifierSet);
+              n.identifierSet = h.PlaybackQueue.ItemIdentifierSet.fromObject(e.identifierSet);
             }
             return (e.excludeFromShuffle != null && (n.excludeFromShuffle = !!e.excludeFromShuffle), n);
           }),
@@ -20536,13 +20913,13 @@ const $Reader$2 = minimalExports.Reader,
                 e.hasOwnProperty("mediaType") &&
                 (r.mediaType =
                   n.enums === String
-                    ? $root$1.PlaybackQueue.Item.MediaType[e.mediaType] === void 0
+                    ? h.PlaybackQueue.Item.MediaType[e.mediaType] === void 0
                       ? e.mediaType
-                      : $root$1.PlaybackQueue.Item.MediaType[e.mediaType]
+                      : h.PlaybackQueue.Item.MediaType[e.mediaType]
                     : e.mediaType),
               e.identifierSet != null &&
                 e.hasOwnProperty("identifierSet") &&
-                (r.identifierSet = $root$1.PlaybackQueue.ItemIdentifierSet.toObject(e.identifierSet, n)),
+                (r.identifierSet = h.PlaybackQueue.ItemIdentifierSet.toObject(e.identifierSet, n)),
               e.excludeFromShuffle != null &&
                 e.hasOwnProperty("excludeFromShuffle") &&
                 (r.excludeFromShuffle = e.excludeFromShuffle),
@@ -20550,7 +20927,7 @@ const $Reader$2 = minimalExports.Reader,
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (e === void 0 && (e = "type.googleapis.com"), e + "/PlaybackQueue.Item");
@@ -20578,11 +20955,11 @@ const $Reader$2 = minimalExports.Reader,
           if (t) for (let e = Object.keys(t), n = 0; n < e.length; ++n) t[e[n]] != null && (this[e[n]] = t[e[n]]);
         }
         return (
-          (i.prototype.delegateInfoID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-          (i.prototype.storeAdamID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.delegateInfoID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.storeAdamID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
           (i.prototype.storePlaylistGlobalID = ""),
           (i.prototype.storePlaylistVersionHash = ""),
-          (i.prototype.cloudID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+          (i.prototype.cloudID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
           (i.prototype.cloudCollectionID = ""),
           (i.prototype.radioStationID = ""),
           (i.prototype.cloudUniversalLibraryID = ""),
@@ -20592,7 +20969,7 @@ const $Reader$2 = minimalExports.Reader,
           }),
           (i.encode = function (e, n) {
             return (
-              n || (n = $Writer$1.create()),
+              n || (n = z.create()),
               e.delegateInfoID != null &&
                 Object.hasOwnProperty.call(e, "delegateInfoID") &&
                 n.uint32(8).int64(e.delegateInfoID),
@@ -20625,145 +21002,138 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$1 || (e = $Reader$1.create(e));
+            e instanceof T || (e = T.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$1.PlaybackQueue.ContainerIdentifierSet();
+              u = new h.PlaybackQueue.ContainerIdentifierSet();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.delegateInfoID = e.int64();
+                  u.delegateInfoID = e.int64();
                   break;
                 }
                 case 2: {
-                  l.storeAdamID = e.int64();
+                  u.storeAdamID = e.int64();
                   break;
                 }
                 case 3: {
-                  l.storePlaylistGlobalID = e.string();
+                  u.storePlaylistGlobalID = e.string();
                   break;
                 }
                 case 4: {
-                  l.storePlaylistVersionHash = e.string();
+                  u.storePlaylistVersionHash = e.string();
                   break;
                 }
                 case 5: {
-                  l.cloudID = e.int64();
+                  u.cloudID = e.int64();
                   break;
                 }
                 case 6: {
-                  l.cloudCollectionID = e.string();
+                  u.cloudCollectionID = e.string();
                   break;
                 }
                 case 7: {
-                  l.radioStationID = e.string();
+                  u.radioStationID = e.string();
                   break;
                 }
                 case 8: {
-                  l.cloudUniversalLibraryID = e.string();
+                  u.cloudUniversalLibraryID = e.string();
                   break;
                 }
                 case 9: {
-                  l.playbackAuthorizationToken = e.string();
+                  u.playbackAuthorizationToken = e.string();
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$1 || (e = new $Reader$1(e)), this.decode(e, e.uint32()));
+            return (e instanceof T || (e = new T(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             return typeof e != "object" || e === null
               ? "object expected"
               : e.delegateInfoID != null &&
                   e.hasOwnProperty("delegateInfoID") &&
-                  !$util$1.isInteger(e.delegateInfoID) &&
-                  !(
-                    e.delegateInfoID &&
-                    $util$1.isInteger(e.delegateInfoID.low) &&
-                    $util$1.isInteger(e.delegateInfoID.high)
-                  )
+                  !f.isInteger(e.delegateInfoID) &&
+                  !(e.delegateInfoID && f.isInteger(e.delegateInfoID.low) && f.isInteger(e.delegateInfoID.high))
                 ? "delegateInfoID: integer|Long expected"
                 : e.storeAdamID != null &&
                     e.hasOwnProperty("storeAdamID") &&
-                    !$util$1.isInteger(e.storeAdamID) &&
-                    !(e.storeAdamID && $util$1.isInteger(e.storeAdamID.low) && $util$1.isInteger(e.storeAdamID.high))
+                    !f.isInteger(e.storeAdamID) &&
+                    !(e.storeAdamID && f.isInteger(e.storeAdamID.low) && f.isInteger(e.storeAdamID.high))
                   ? "storeAdamID: integer|Long expected"
                   : e.storePlaylistGlobalID != null &&
                       e.hasOwnProperty("storePlaylistGlobalID") &&
-                      !$util$1.isString(e.storePlaylistGlobalID)
+                      !f.isString(e.storePlaylistGlobalID)
                     ? "storePlaylistGlobalID: string expected"
                     : e.storePlaylistVersionHash != null &&
                         e.hasOwnProperty("storePlaylistVersionHash") &&
-                        !$util$1.isString(e.storePlaylistVersionHash)
+                        !f.isString(e.storePlaylistVersionHash)
                       ? "storePlaylistVersionHash: string expected"
                       : e.cloudID != null &&
                           e.hasOwnProperty("cloudID") &&
-                          !$util$1.isInteger(e.cloudID) &&
-                          !(e.cloudID && $util$1.isInteger(e.cloudID.low) && $util$1.isInteger(e.cloudID.high))
+                          !f.isInteger(e.cloudID) &&
+                          !(e.cloudID && f.isInteger(e.cloudID.low) && f.isInteger(e.cloudID.high))
                         ? "cloudID: integer|Long expected"
                         : e.cloudCollectionID != null &&
                             e.hasOwnProperty("cloudCollectionID") &&
-                            !$util$1.isString(e.cloudCollectionID)
+                            !f.isString(e.cloudCollectionID)
                           ? "cloudCollectionID: string expected"
                           : e.radioStationID != null &&
                               e.hasOwnProperty("radioStationID") &&
-                              !$util$1.isString(e.radioStationID)
+                              !f.isString(e.radioStationID)
                             ? "radioStationID: string expected"
                             : e.cloudUniversalLibraryID != null &&
                                 e.hasOwnProperty("cloudUniversalLibraryID") &&
-                                !$util$1.isString(e.cloudUniversalLibraryID)
+                                !f.isString(e.cloudUniversalLibraryID)
                               ? "cloudUniversalLibraryID: string expected"
                               : e.playbackAuthorizationToken != null &&
                                   e.hasOwnProperty("playbackAuthorizationToken") &&
-                                  !$util$1.isString(e.playbackAuthorizationToken)
+                                  !f.isString(e.playbackAuthorizationToken)
                                 ? "playbackAuthorizationToken: string expected"
                                 : null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$1.PlaybackQueue.ContainerIdentifierSet) return e;
-            let n = new $root$1.PlaybackQueue.ContainerIdentifierSet();
+            if (e instanceof h.PlaybackQueue.ContainerIdentifierSet) return e;
+            let n = new h.PlaybackQueue.ContainerIdentifierSet();
             return (
               e.delegateInfoID != null &&
-                ($util$1.Long
-                  ? ((n.delegateInfoID = $util$1.Long.fromValue(e.delegateInfoID)).unsigned = !1)
+                (f.Long
+                  ? ((n.delegateInfoID = f.Long.fromValue(e.delegateInfoID)).unsigned = !1)
                   : typeof e.delegateInfoID == "string"
                     ? (n.delegateInfoID = parseInt(e.delegateInfoID, 10))
                     : typeof e.delegateInfoID == "number"
                       ? (n.delegateInfoID = e.delegateInfoID)
                       : typeof e.delegateInfoID == "object" &&
-                        (n.delegateInfoID = new $util$1.LongBits(
+                        (n.delegateInfoID = new f.LongBits(
                           e.delegateInfoID.low >>> 0,
                           e.delegateInfoID.high >>> 0,
                         ).toNumber())),
               e.storeAdamID != null &&
-                ($util$1.Long
-                  ? ((n.storeAdamID = $util$1.Long.fromValue(e.storeAdamID)).unsigned = !1)
+                (f.Long
+                  ? ((n.storeAdamID = f.Long.fromValue(e.storeAdamID)).unsigned = !1)
                   : typeof e.storeAdamID == "string"
                     ? (n.storeAdamID = parseInt(e.storeAdamID, 10))
                     : typeof e.storeAdamID == "number"
                       ? (n.storeAdamID = e.storeAdamID)
                       : typeof e.storeAdamID == "object" &&
-                        (n.storeAdamID = new $util$1.LongBits(
-                          e.storeAdamID.low >>> 0,
-                          e.storeAdamID.high >>> 0,
-                        ).toNumber())),
+                        (n.storeAdamID = new f.LongBits(e.storeAdamID.low >>> 0, e.storeAdamID.high >>> 0).toNumber())),
               e.storePlaylistGlobalID != null && (n.storePlaylistGlobalID = String(e.storePlaylistGlobalID)),
               e.storePlaylistVersionHash != null && (n.storePlaylistVersionHash = String(e.storePlaylistVersionHash)),
               e.cloudID != null &&
-                ($util$1.Long
-                  ? ((n.cloudID = $util$1.Long.fromValue(e.cloudID)).unsigned = !1)
+                (f.Long
+                  ? ((n.cloudID = f.Long.fromValue(e.cloudID)).unsigned = !1)
                   : typeof e.cloudID == "string"
                     ? (n.cloudID = parseInt(e.cloudID, 10))
                     : typeof e.cloudID == "number"
                       ? (n.cloudID = e.cloudID)
                       : typeof e.cloudID == "object" &&
-                        (n.cloudID = new $util$1.LongBits(e.cloudID.low >>> 0, e.cloudID.high >>> 0).toNumber())),
+                        (n.cloudID = new f.LongBits(e.cloudID.low >>> 0, e.cloudID.high >>> 0).toNumber())),
               e.cloudCollectionID != null && (n.cloudCollectionID = String(e.cloudCollectionID)),
               e.radioStationID != null && (n.radioStationID = String(e.radioStationID)),
               e.cloudUniversalLibraryID != null && (n.cloudUniversalLibraryID = String(e.cloudUniversalLibraryID)),
@@ -20776,17 +21146,17 @@ const $Reader$2 = minimalExports.Reader,
             n || (n = {});
             let r = {};
             if (n.defaults) {
-              if ($util$1.Long) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.delegateInfoID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (f.Long) {
+                let u = new f.Long(0, 0, !1);
+                r.delegateInfoID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.delegateInfoID = n.longs === String ? "0" : 0;
-              if ($util$1.Long) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.storeAdamID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (f.Long) {
+                let u = new f.Long(0, 0, !1);
+                r.storeAdamID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.storeAdamID = n.longs === String ? "0" : 0;
-              if (((r.storePlaylistGlobalID = ""), (r.storePlaylistVersionHash = ""), $util$1.Long)) {
-                let l = new $util$1.Long(0, 0, !1);
-                r.cloudID = n.longs === String ? l.toString() : n.longs === Number ? l.toNumber() : l;
+              if (((r.storePlaylistGlobalID = ""), (r.storePlaylistVersionHash = ""), f.Long)) {
+                let u = new f.Long(0, 0, !1);
+                r.cloudID = n.longs === String ? u.toString() : n.longs === Number ? u.toNumber() : u;
               } else r.cloudID = n.longs === String ? "0" : 0;
               ((r.cloudCollectionID = ""),
                 (r.radioStationID = ""),
@@ -20800,9 +21170,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.delegateInfoID = n.longs === String ? String(e.delegateInfoID) : e.delegateInfoID)
                   : (r.delegateInfoID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.delegateInfoID)
+                        ? f.Long.prototype.toString.call(e.delegateInfoID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(e.delegateInfoID.low >>> 0, e.delegateInfoID.high >>> 0).toNumber()
+                          ? new f.LongBits(e.delegateInfoID.low >>> 0, e.delegateInfoID.high >>> 0).toNumber()
                           : e.delegateInfoID)),
               e.storeAdamID != null &&
                 e.hasOwnProperty("storeAdamID") &&
@@ -20810,9 +21180,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.storeAdamID = n.longs === String ? String(e.storeAdamID) : e.storeAdamID)
                   : (r.storeAdamID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.storeAdamID)
+                        ? f.Long.prototype.toString.call(e.storeAdamID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(e.storeAdamID.low >>> 0, e.storeAdamID.high >>> 0).toNumber()
+                          ? new f.LongBits(e.storeAdamID.low >>> 0, e.storeAdamID.high >>> 0).toNumber()
                           : e.storeAdamID)),
               e.storePlaylistGlobalID != null &&
                 e.hasOwnProperty("storePlaylistGlobalID") &&
@@ -20826,9 +21196,9 @@ const $Reader$2 = minimalExports.Reader,
                   ? (r.cloudID = n.longs === String ? String(e.cloudID) : e.cloudID)
                   : (r.cloudID =
                       n.longs === String
-                        ? $util$1.Long.prototype.toString.call(e.cloudID)
+                        ? f.Long.prototype.toString.call(e.cloudID)
                         : n.longs === Number
-                          ? new $util$1.LongBits(e.cloudID.low >>> 0, e.cloudID.high >>> 0).toNumber()
+                          ? new f.LongBits(e.cloudID.low >>> 0, e.cloudID.high >>> 0).toNumber()
                           : e.cloudID)),
               e.cloudCollectionID != null &&
                 e.hasOwnProperty("cloudCollectionID") &&
@@ -20844,7 +21214,7 @@ const $Reader$2 = minimalExports.Reader,
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (e === void 0 && (e = "type.googleapis.com"), e + "/PlaybackQueue.ContainerIdentifierSet");
@@ -20860,7 +21230,7 @@ const $Reader$2 = minimalExports.Reader,
         return (
           (i.prototype.containerType = 0),
           (i.prototype.identifierSet = null),
-          (i.prototype.item = $util$1.emptyArray),
+          (i.prototype.item = f.emptyArray),
           (i.prototype.playActivityFeatureName = ""),
           (i.prototype.playActivityQueueGroupingID = ""),
           (i.create = function (e) {
@@ -20868,17 +21238,17 @@ const $Reader$2 = minimalExports.Reader,
           }),
           (i.encode = function (e, n) {
             if (
-              (n || (n = $Writer$1.create()),
+              (n || (n = z.create()),
               e.containerType != null &&
                 Object.hasOwnProperty.call(e, "containerType") &&
                 n.uint32(8).int32(e.containerType),
               e.identifierSet != null &&
                 Object.hasOwnProperty.call(e, "identifierSet") &&
-                $root$1.PlaybackQueue.ContainerIdentifierSet.encode(e.identifierSet, n.uint32(18).fork()).ldelim(),
+                h.PlaybackQueue.ContainerIdentifierSet.encode(e.identifierSet, n.uint32(18).fork()).ldelim(),
               e.item != null && e.item.length)
             )
               for (let r = 0; r < e.item.length; ++r)
-                $root$1.PlaybackQueue.Item.encode(e.item[r], n.uint32(26).fork()).ldelim();
+                h.PlaybackQueue.Item.encode(e.item[r], n.uint32(26).fork()).ldelim();
             return (
               e.playActivityFeatureName != null &&
                 Object.hasOwnProperty.call(e, "playActivityFeatureName") &&
@@ -20893,42 +21263,41 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$1 || (e = $Reader$1.create(e));
+            e instanceof T || (e = T.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$1.PlaybackQueue.Container();
+              u = new h.PlaybackQueue.Container();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.containerType = e.int32();
+                  u.containerType = e.int32();
                   break;
                 }
                 case 2: {
-                  l.identifierSet = $root$1.PlaybackQueue.ContainerIdentifierSet.decode(e, e.uint32());
+                  u.identifierSet = h.PlaybackQueue.ContainerIdentifierSet.decode(e, e.uint32());
                   break;
                 }
                 case 3: {
-                  ((l.item && l.item.length) || (l.item = []),
-                    l.item.push($root$1.PlaybackQueue.Item.decode(e, e.uint32())));
+                  ((u.item && u.item.length) || (u.item = []), u.item.push(h.PlaybackQueue.Item.decode(e, e.uint32())));
                   break;
                 }
                 case 4: {
-                  l.playActivityFeatureName = e.string();
+                  u.playActivityFeatureName = e.string();
                   break;
                 }
                 case 5: {
-                  l.playActivityQueueGroupingID = e.string();
+                  u.playActivityQueueGroupingID = e.string();
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$1 || (e = new $Reader$1(e)), this.decode(e, e.uint32()));
+            return (e instanceof T || (e = new T(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             if (typeof e != "object" || e === null) return "object expected";
@@ -20948,29 +21317,29 @@ const $Reader$2 = minimalExports.Reader,
                   break;
               }
             if (e.identifierSet != null && e.hasOwnProperty("identifierSet")) {
-              let n = $root$1.PlaybackQueue.ContainerIdentifierSet.verify(e.identifierSet);
+              let n = h.PlaybackQueue.ContainerIdentifierSet.verify(e.identifierSet);
               if (n) return "identifierSet." + n;
             }
             if (e.item != null && e.hasOwnProperty("item")) {
               if (!Array.isArray(e.item)) return "item: array expected";
               for (let n = 0; n < e.item.length; ++n) {
-                let r = $root$1.PlaybackQueue.Item.verify(e.item[n]);
+                let r = h.PlaybackQueue.Item.verify(e.item[n]);
                 if (r) return "item." + r;
               }
             }
             return e.playActivityFeatureName != null &&
               e.hasOwnProperty("playActivityFeatureName") &&
-              !$util$1.isString(e.playActivityFeatureName)
+              !f.isString(e.playActivityFeatureName)
               ? "playActivityFeatureName: string expected"
               : e.playActivityQueueGroupingID != null &&
                   e.hasOwnProperty("playActivityQueueGroupingID") &&
-                  !$util$1.isString(e.playActivityQueueGroupingID)
+                  !f.isString(e.playActivityQueueGroupingID)
                 ? "playActivityQueueGroupingID: string expected"
                 : null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$1.PlaybackQueue.Container) return e;
-            let n = new $root$1.PlaybackQueue.Container();
+            if (e instanceof h.PlaybackQueue.Container) return e;
+            let n = new h.PlaybackQueue.Container();
             switch (e.containerType) {
               default:
                 if (typeof e.containerType == "number") {
@@ -21018,14 +21387,14 @@ const $Reader$2 = minimalExports.Reader,
             if (e.identifierSet != null) {
               if (typeof e.identifierSet != "object")
                 throw TypeError(".PlaybackQueue.Container.identifierSet: object expected");
-              n.identifierSet = $root$1.PlaybackQueue.ContainerIdentifierSet.fromObject(e.identifierSet);
+              n.identifierSet = h.PlaybackQueue.ContainerIdentifierSet.fromObject(e.identifierSet);
             }
             if (e.item) {
               if (!Array.isArray(e.item)) throw TypeError(".PlaybackQueue.Container.item: array expected");
               n.item = [];
               for (let r = 0; r < e.item.length; ++r) {
                 if (typeof e.item[r] != "object") throw TypeError(".PlaybackQueue.Container.item: object expected");
-                n.item[r] = $root$1.PlaybackQueue.Item.fromObject(e.item[r]);
+                n.item[r] = h.PlaybackQueue.Item.fromObject(e.item[r]);
               }
             }
             return (
@@ -21049,17 +21418,17 @@ const $Reader$2 = minimalExports.Reader,
                 e.hasOwnProperty("containerType") &&
                 (r.containerType =
                   n.enums === String
-                    ? $root$1.PlaybackQueue.Container.ContainerType[e.containerType] === void 0
+                    ? h.PlaybackQueue.Container.ContainerType[e.containerType] === void 0
                       ? e.containerType
-                      : $root$1.PlaybackQueue.Container.ContainerType[e.containerType]
+                      : h.PlaybackQueue.Container.ContainerType[e.containerType]
                     : e.containerType),
               e.identifierSet != null &&
                 e.hasOwnProperty("identifierSet") &&
-                (r.identifierSet = $root$1.PlaybackQueue.ContainerIdentifierSet.toObject(e.identifierSet, n)),
+                (r.identifierSet = h.PlaybackQueue.ContainerIdentifierSet.toObject(e.identifierSet, n)),
               e.item && e.item.length)
             ) {
               r.item = [];
-              for (let l = 0; l < e.item.length; ++l) r.item[l] = $root$1.PlaybackQueue.Item.toObject(e.item[l], n);
+              for (let u = 0; u < e.item.length; ++u) r.item[u] = h.PlaybackQueue.Item.toObject(e.item[u], n);
             }
             return (
               e.playActivityFeatureName != null &&
@@ -21072,7 +21441,7 @@ const $Reader$2 = minimalExports.Reader,
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (e === void 0 && (e = "type.googleapis.com"), e + "/PlaybackQueue.Container");
@@ -21102,24 +21471,24 @@ const $Reader$2 = minimalExports.Reader,
             for (let e = Object.keys(t), n = 0; n < e.length; ++n) t[e[n]] != null && (this[e[n]] = t[e[n]]);
         }
         return (
-          (i.prototype.accountInfo = $util$1.emptyArray),
-          (i.prototype.container = $util$1.emptyArray),
+          (i.prototype.accountInfo = f.emptyArray),
+          (i.prototype.container = f.emptyArray),
           (i.prototype.startingItemIndexPath = null),
           (i.prototype.shuffleMode = 0),
           (i.create = function (e) {
             return new i(e);
           }),
           (i.encode = function (e, n) {
-            if ((n || (n = $Writer$1.create()), e.accountInfo != null && e.accountInfo.length))
+            if ((n || (n = z.create()), e.accountInfo != null && e.accountInfo.length))
               for (let r = 0; r < e.accountInfo.length; ++r)
-                $root$1.PlaybackQueue.DelegateInfo.encode(e.accountInfo[r], n.uint32(10).fork()).ldelim();
+                h.PlaybackQueue.DelegateInfo.encode(e.accountInfo[r], n.uint32(10).fork()).ldelim();
             if (e.container != null && e.container.length)
               for (let r = 0; r < e.container.length; ++r)
-                $root$1.PlaybackQueue.Container.encode(e.container[r], n.uint32(18).fork()).ldelim();
+                h.PlaybackQueue.Container.encode(e.container[r], n.uint32(18).fork()).ldelim();
             return (
               e.startingItemIndexPath != null &&
                 Object.hasOwnProperty.call(e, "startingItemIndexPath") &&
-                $root$1.PlaybackQueue.Tracklist.IndexPath.encode(e.startingItemIndexPath, n.uint32(26).fork()).ldelim(),
+                h.PlaybackQueue.Tracklist.IndexPath.encode(e.startingItemIndexPath, n.uint32(26).fork()).ldelim(),
               e.shuffleMode != null &&
                 Object.hasOwnProperty.call(e, "shuffleMode") &&
                 n.uint32(32).int32(e.shuffleMode),
@@ -21130,58 +21499,58 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$1 || (e = $Reader$1.create(e));
+            e instanceof T || (e = T.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$1.PlaybackQueue.Tracklist();
+              u = new h.PlaybackQueue.Tracklist();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  ((l.accountInfo && l.accountInfo.length) || (l.accountInfo = []),
-                    l.accountInfo.push($root$1.PlaybackQueue.DelegateInfo.decode(e, e.uint32())));
+                  ((u.accountInfo && u.accountInfo.length) || (u.accountInfo = []),
+                    u.accountInfo.push(h.PlaybackQueue.DelegateInfo.decode(e, e.uint32())));
                   break;
                 }
                 case 2: {
-                  ((l.container && l.container.length) || (l.container = []),
-                    l.container.push($root$1.PlaybackQueue.Container.decode(e, e.uint32())));
+                  ((u.container && u.container.length) || (u.container = []),
+                    u.container.push(h.PlaybackQueue.Container.decode(e, e.uint32())));
                   break;
                 }
                 case 3: {
-                  l.startingItemIndexPath = $root$1.PlaybackQueue.Tracklist.IndexPath.decode(e, e.uint32());
+                  u.startingItemIndexPath = h.PlaybackQueue.Tracklist.IndexPath.decode(e, e.uint32());
                   break;
                 }
                 case 4: {
-                  l.shuffleMode = e.int32();
+                  u.shuffleMode = e.int32();
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$1 || (e = new $Reader$1(e)), this.decode(e, e.uint32()));
+            return (e instanceof T || (e = new T(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             if (typeof e != "object" || e === null) return "object expected";
             if (e.accountInfo != null && e.hasOwnProperty("accountInfo")) {
               if (!Array.isArray(e.accountInfo)) return "accountInfo: array expected";
               for (let n = 0; n < e.accountInfo.length; ++n) {
-                let r = $root$1.PlaybackQueue.DelegateInfo.verify(e.accountInfo[n]);
+                let r = h.PlaybackQueue.DelegateInfo.verify(e.accountInfo[n]);
                 if (r) return "accountInfo." + r;
               }
             }
             if (e.container != null && e.hasOwnProperty("container")) {
               if (!Array.isArray(e.container)) return "container: array expected";
               for (let n = 0; n < e.container.length; ++n) {
-                let r = $root$1.PlaybackQueue.Container.verify(e.container[n]);
+                let r = h.PlaybackQueue.Container.verify(e.container[n]);
                 if (r) return "container." + r;
               }
             }
             if (e.startingItemIndexPath != null && e.hasOwnProperty("startingItemIndexPath")) {
-              let n = $root$1.PlaybackQueue.Tracklist.IndexPath.verify(e.startingItemIndexPath);
+              let n = h.PlaybackQueue.Tracklist.IndexPath.verify(e.startingItemIndexPath);
               if (n) return "startingItemIndexPath." + n;
             }
             if (e.shuffleMode != null && e.hasOwnProperty("shuffleMode"))
@@ -21195,8 +21564,8 @@ const $Reader$2 = minimalExports.Reader,
             return null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$1.PlaybackQueue.Tracklist) return e;
-            let n = new $root$1.PlaybackQueue.Tracklist();
+            if (e instanceof h.PlaybackQueue.Tracklist) return e;
+            let n = new h.PlaybackQueue.Tracklist();
             if (e.accountInfo) {
               if (!Array.isArray(e.accountInfo))
                 throw TypeError(".PlaybackQueue.Tracklist.accountInfo: array expected");
@@ -21204,7 +21573,7 @@ const $Reader$2 = minimalExports.Reader,
               for (let r = 0; r < e.accountInfo.length; ++r) {
                 if (typeof e.accountInfo[r] != "object")
                   throw TypeError(".PlaybackQueue.Tracklist.accountInfo: object expected");
-                n.accountInfo[r] = $root$1.PlaybackQueue.DelegateInfo.fromObject(e.accountInfo[r]);
+                n.accountInfo[r] = h.PlaybackQueue.DelegateInfo.fromObject(e.accountInfo[r]);
               }
             }
             if (e.container) {
@@ -21213,13 +21582,13 @@ const $Reader$2 = minimalExports.Reader,
               for (let r = 0; r < e.container.length; ++r) {
                 if (typeof e.container[r] != "object")
                   throw TypeError(".PlaybackQueue.Tracklist.container: object expected");
-                n.container[r] = $root$1.PlaybackQueue.Container.fromObject(e.container[r]);
+                n.container[r] = h.PlaybackQueue.Container.fromObject(e.container[r]);
               }
             }
             if (e.startingItemIndexPath != null) {
               if (typeof e.startingItemIndexPath != "object")
                 throw TypeError(".PlaybackQueue.Tracklist.startingItemIndexPath: object expected");
-              n.startingItemIndexPath = $root$1.PlaybackQueue.Tracklist.IndexPath.fromObject(e.startingItemIndexPath);
+              n.startingItemIndexPath = h.PlaybackQueue.Tracklist.IndexPath.fromObject(e.startingItemIndexPath);
             }
             switch (e.shuffleMode) {
               default:
@@ -21248,34 +21617,31 @@ const $Reader$2 = minimalExports.Reader,
               e.accountInfo && e.accountInfo.length)
             ) {
               r.accountInfo = [];
-              for (let l = 0; l < e.accountInfo.length; ++l)
-                r.accountInfo[l] = $root$1.PlaybackQueue.DelegateInfo.toObject(e.accountInfo[l], n);
+              for (let u = 0; u < e.accountInfo.length; ++u)
+                r.accountInfo[u] = h.PlaybackQueue.DelegateInfo.toObject(e.accountInfo[u], n);
             }
             if (e.container && e.container.length) {
               r.container = [];
-              for (let l = 0; l < e.container.length; ++l)
-                r.container[l] = $root$1.PlaybackQueue.Container.toObject(e.container[l], n);
+              for (let u = 0; u < e.container.length; ++u)
+                r.container[u] = h.PlaybackQueue.Container.toObject(e.container[u], n);
             }
             return (
               e.startingItemIndexPath != null &&
                 e.hasOwnProperty("startingItemIndexPath") &&
-                (r.startingItemIndexPath = $root$1.PlaybackQueue.Tracklist.IndexPath.toObject(
-                  e.startingItemIndexPath,
-                  n,
-                )),
+                (r.startingItemIndexPath = h.PlaybackQueue.Tracklist.IndexPath.toObject(e.startingItemIndexPath, n)),
               e.shuffleMode != null &&
                 e.hasOwnProperty("shuffleMode") &&
                 (r.shuffleMode =
                   n.enums === String
-                    ? $root$1.PlaybackQueue.Tracklist.ShuffleMode[e.shuffleMode] === void 0
+                    ? h.PlaybackQueue.Tracklist.ShuffleMode[e.shuffleMode] === void 0
                       ? e.shuffleMode
-                      : $root$1.PlaybackQueue.Tracklist.ShuffleMode[e.shuffleMode]
+                      : h.PlaybackQueue.Tracklist.ShuffleMode[e.shuffleMode]
                     : e.shuffleMode),
               r
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (e === void 0 && (e = "type.googleapis.com"), e + "/PlaybackQueue.Tracklist");
@@ -21290,14 +21656,14 @@ const $Reader$2 = minimalExports.Reader,
               if (e) for (let n = Object.keys(e), r = 0; r < n.length; ++r) e[n[r]] != null && (this[n[r]] = e[n[r]]);
             }
             return (
-              (t.prototype.containerIndex = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-              (t.prototype.itemIndex = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.containerIndex = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.itemIndex = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
               (t.create = function (n) {
                 return new t(n);
               }),
               (t.encode = function (n, r) {
                 return (
-                  r || (r = $Writer$1.create()),
+                  r || (r = z.create()),
                   n.containerIndex != null &&
                     Object.hasOwnProperty.call(n, "containerIndex") &&
                     r.uint32(8).int64(n.containerIndex),
@@ -21309,119 +21675,112 @@ const $Reader$2 = minimalExports.Reader,
                 return this.encode(n, r).ldelim();
               }),
               (t.decode = function (n, r) {
-                n instanceof $Reader$1 || (n = $Reader$1.create(n));
-                let l = r === void 0 ? n.len : n.pos + r,
-                  a = new $root$1.PlaybackQueue.Tracklist.IndexPath();
-                for (; n.pos < l;) {
-                  let u = n.uint32();
-                  switch (u >>> 3) {
+                n instanceof T || (n = T.create(n));
+                let u = r === void 0 ? n.len : n.pos + r,
+                  d = new h.PlaybackQueue.Tracklist.IndexPath();
+                for (; n.pos < u;) {
+                  let y = n.uint32();
+                  switch (y >>> 3) {
                     case 1: {
-                      a.containerIndex = n.int64();
+                      d.containerIndex = n.int64();
                       break;
                     }
                     case 2: {
-                      a.itemIndex = n.int64();
+                      d.itemIndex = n.int64();
                       break;
                     }
                     default:
-                      n.skipType(u & 7);
+                      n.skipType(y & 7);
                       break;
                   }
                 }
-                return a;
+                return d;
               }),
               (t.decodeDelimited = function (n) {
-                return (n instanceof $Reader$1 || (n = new $Reader$1(n)), this.decode(n, n.uint32()));
+                return (n instanceof T || (n = new T(n)), this.decode(n, n.uint32()));
               }),
               (t.verify = function (n) {
                 return typeof n != "object" || n === null
                   ? "object expected"
                   : n.containerIndex != null &&
                       n.hasOwnProperty("containerIndex") &&
-                      !$util$1.isInteger(n.containerIndex) &&
-                      !(
-                        n.containerIndex &&
-                        $util$1.isInteger(n.containerIndex.low) &&
-                        $util$1.isInteger(n.containerIndex.high)
-                      )
+                      !f.isInteger(n.containerIndex) &&
+                      !(n.containerIndex && f.isInteger(n.containerIndex.low) && f.isInteger(n.containerIndex.high))
                     ? "containerIndex: integer|Long expected"
                     : n.itemIndex != null &&
                         n.hasOwnProperty("itemIndex") &&
-                        !$util$1.isInteger(n.itemIndex) &&
-                        !(n.itemIndex && $util$1.isInteger(n.itemIndex.low) && $util$1.isInteger(n.itemIndex.high))
+                        !f.isInteger(n.itemIndex) &&
+                        !(n.itemIndex && f.isInteger(n.itemIndex.low) && f.isInteger(n.itemIndex.high))
                       ? "itemIndex: integer|Long expected"
                       : null;
               }),
               (t.fromObject = function (n) {
-                if (n instanceof $root$1.PlaybackQueue.Tracklist.IndexPath) return n;
-                let r = new $root$1.PlaybackQueue.Tracklist.IndexPath();
+                if (n instanceof h.PlaybackQueue.Tracklist.IndexPath) return n;
+                let r = new h.PlaybackQueue.Tracklist.IndexPath();
                 return (
                   n.containerIndex != null &&
-                    ($util$1.Long
-                      ? ((r.containerIndex = $util$1.Long.fromValue(n.containerIndex)).unsigned = !1)
+                    (f.Long
+                      ? ((r.containerIndex = f.Long.fromValue(n.containerIndex)).unsigned = !1)
                       : typeof n.containerIndex == "string"
                         ? (r.containerIndex = parseInt(n.containerIndex, 10))
                         : typeof n.containerIndex == "number"
                           ? (r.containerIndex = n.containerIndex)
                           : typeof n.containerIndex == "object" &&
-                            (r.containerIndex = new $util$1.LongBits(
+                            (r.containerIndex = new f.LongBits(
                               n.containerIndex.low >>> 0,
                               n.containerIndex.high >>> 0,
                             ).toNumber())),
                   n.itemIndex != null &&
-                    ($util$1.Long
-                      ? ((r.itemIndex = $util$1.Long.fromValue(n.itemIndex)).unsigned = !1)
+                    (f.Long
+                      ? ((r.itemIndex = f.Long.fromValue(n.itemIndex)).unsigned = !1)
                       : typeof n.itemIndex == "string"
                         ? (r.itemIndex = parseInt(n.itemIndex, 10))
                         : typeof n.itemIndex == "number"
                           ? (r.itemIndex = n.itemIndex)
                           : typeof n.itemIndex == "object" &&
-                            (r.itemIndex = new $util$1.LongBits(
-                              n.itemIndex.low >>> 0,
-                              n.itemIndex.high >>> 0,
-                            ).toNumber())),
+                            (r.itemIndex = new f.LongBits(n.itemIndex.low >>> 0, n.itemIndex.high >>> 0).toNumber())),
                   r
                 );
               }),
               (t.toObject = function (n, r) {
                 r || (r = {});
-                let l = {};
+                let u = {};
                 if (r.defaults) {
-                  if ($util$1.Long) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.containerIndex = r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.containerIndex = r.longs === String ? "0" : 0;
-                  if ($util$1.Long) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.itemIndex = r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.itemIndex = r.longs === String ? "0" : 0;
+                  if (f.Long) {
+                    let d = new f.Long(0, 0, !1);
+                    u.containerIndex = r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.containerIndex = r.longs === String ? "0" : 0;
+                  if (f.Long) {
+                    let d = new f.Long(0, 0, !1);
+                    u.itemIndex = r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.itemIndex = r.longs === String ? "0" : 0;
                 }
                 return (
                   n.containerIndex != null &&
                     n.hasOwnProperty("containerIndex") &&
                     (typeof n.containerIndex == "number"
-                      ? (l.containerIndex = r.longs === String ? String(n.containerIndex) : n.containerIndex)
-                      : (l.containerIndex =
+                      ? (u.containerIndex = r.longs === String ? String(n.containerIndex) : n.containerIndex)
+                      : (u.containerIndex =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.containerIndex)
+                            ? f.Long.prototype.toString.call(n.containerIndex)
                             : r.longs === Number
-                              ? new $util$1.LongBits(n.containerIndex.low >>> 0, n.containerIndex.high >>> 0).toNumber()
+                              ? new f.LongBits(n.containerIndex.low >>> 0, n.containerIndex.high >>> 0).toNumber()
                               : n.containerIndex)),
                   n.itemIndex != null &&
                     n.hasOwnProperty("itemIndex") &&
                     (typeof n.itemIndex == "number"
-                      ? (l.itemIndex = r.longs === String ? String(n.itemIndex) : n.itemIndex)
-                      : (l.itemIndex =
+                      ? (u.itemIndex = r.longs === String ? String(n.itemIndex) : n.itemIndex)
+                      : (u.itemIndex =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.itemIndex)
+                            ? f.Long.prototype.toString.call(n.itemIndex)
                             : r.longs === Number
-                              ? new $util$1.LongBits(n.itemIndex.low >>> 0, n.itemIndex.high >>> 0).toNumber()
+                              ? new f.LongBits(n.itemIndex.low >>> 0, n.itemIndex.high >>> 0).toNumber()
                               : n.itemIndex)),
-                  l
+                  u
                 );
               }),
               (t.prototype.toJSON = function () {
-                return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+                return this.constructor.toObject(this, b.util.toJSONOptions);
               }),
               (t.getTypeUrl = function (n) {
                 return (n === void 0 && (n = "type.googleapis.com"), n + "/PlaybackQueue.Tracklist.IndexPath");
@@ -21446,28 +21805,28 @@ const $Reader$2 = minimalExports.Reader,
           }),
           (i.encode = function (e, n) {
             return (
-              n || (n = $Writer$1.create()),
+              n || (n = z.create()),
               e.libraryAlbumContentReference != null &&
                 Object.hasOwnProperty.call(e, "libraryAlbumContentReference") &&
-                $root$1.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.encode(
+                h.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.encode(
                   e.libraryAlbumContentReference,
                   n.uint32(10).fork(),
                 ).ldelim(),
               e.libraryArtistContentReference != null &&
                 Object.hasOwnProperty.call(e, "libraryArtistContentReference") &&
-                $root$1.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.encode(
+                h.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.encode(
                   e.libraryArtistContentReference,
                   n.uint32(18).fork(),
                 ).ldelim(),
               e.libraryItemContentReference != null &&
                 Object.hasOwnProperty.call(e, "libraryItemContentReference") &&
-                $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference.encode(
+                h.PlaybackQueue.RadioContentReference.LibraryItemContentReference.encode(
                   e.libraryItemContentReference,
                   n.uint32(26).fork(),
                 ).ldelim(),
               e.storeContentReference != null &&
                 Object.hasOwnProperty.call(e, "storeContentReference") &&
-                $root$1.PlaybackQueue.RadioContentReference.StoreContentReference.encode(
+                h.PlaybackQueue.RadioContentReference.StoreContentReference.encode(
                   e.storeContentReference,
                   n.uint32(34).fork(),
                 ).ldelim(),
@@ -21478,78 +21837,78 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$1 || (e = $Reader$1.create(e));
+            e instanceof T || (e = T.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$1.PlaybackQueue.RadioContentReference();
+              u = new h.PlaybackQueue.RadioContentReference();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.libraryAlbumContentReference =
-                    $root$1.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.decode(e, e.uint32());
+                  u.libraryAlbumContentReference =
+                    h.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.decode(e, e.uint32());
                   break;
                 }
                 case 2: {
-                  l.libraryArtistContentReference =
-                    $root$1.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.decode(e, e.uint32());
+                  u.libraryArtistContentReference =
+                    h.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.decode(e, e.uint32());
                   break;
                 }
                 case 3: {
-                  l.libraryItemContentReference =
-                    $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference.decode(e, e.uint32());
+                  u.libraryItemContentReference =
+                    h.PlaybackQueue.RadioContentReference.LibraryItemContentReference.decode(e, e.uint32());
                   break;
                 }
                 case 4: {
-                  l.storeContentReference = $root$1.PlaybackQueue.RadioContentReference.StoreContentReference.decode(
+                  u.storeContentReference = h.PlaybackQueue.RadioContentReference.StoreContentReference.decode(
                     e,
                     e.uint32(),
                   );
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$1 || (e = new $Reader$1(e)), this.decode(e, e.uint32()));
+            return (e instanceof T || (e = new T(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             if (typeof e != "object" || e === null) return "object expected";
             if (e.libraryAlbumContentReference != null && e.hasOwnProperty("libraryAlbumContentReference")) {
-              let n = $root$1.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.verify(
+              let n = h.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.verify(
                 e.libraryAlbumContentReference,
               );
               if (n) return "libraryAlbumContentReference." + n;
             }
             if (e.libraryArtistContentReference != null && e.hasOwnProperty("libraryArtistContentReference")) {
-              let n = $root$1.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.verify(
+              let n = h.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.verify(
                 e.libraryArtistContentReference,
               );
               if (n) return "libraryArtistContentReference." + n;
             }
             if (e.libraryItemContentReference != null && e.hasOwnProperty("libraryItemContentReference")) {
-              let n = $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference.verify(
+              let n = h.PlaybackQueue.RadioContentReference.LibraryItemContentReference.verify(
                 e.libraryItemContentReference,
               );
               if (n) return "libraryItemContentReference." + n;
             }
             if (e.storeContentReference != null && e.hasOwnProperty("storeContentReference")) {
-              let n = $root$1.PlaybackQueue.RadioContentReference.StoreContentReference.verify(e.storeContentReference);
+              let n = h.PlaybackQueue.RadioContentReference.StoreContentReference.verify(e.storeContentReference);
               if (n) return "storeContentReference." + n;
             }
             return null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$1.PlaybackQueue.RadioContentReference) return e;
-            let n = new $root$1.PlaybackQueue.RadioContentReference();
+            if (e instanceof h.PlaybackQueue.RadioContentReference) return e;
+            let n = new h.PlaybackQueue.RadioContentReference();
             if (e.libraryAlbumContentReference != null) {
               if (typeof e.libraryAlbumContentReference != "object")
                 throw TypeError(".PlaybackQueue.RadioContentReference.libraryAlbumContentReference: object expected");
               n.libraryAlbumContentReference =
-                $root$1.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.fromObject(
+                h.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.fromObject(
                   e.libraryAlbumContentReference,
                 );
             }
@@ -21557,7 +21916,7 @@ const $Reader$2 = minimalExports.Reader,
               if (typeof e.libraryArtistContentReference != "object")
                 throw TypeError(".PlaybackQueue.RadioContentReference.libraryArtistContentReference: object expected");
               n.libraryArtistContentReference =
-                $root$1.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.fromObject(
+                h.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.fromObject(
                   e.libraryArtistContentReference,
                 );
             }
@@ -21565,14 +21924,14 @@ const $Reader$2 = minimalExports.Reader,
               if (typeof e.libraryItemContentReference != "object")
                 throw TypeError(".PlaybackQueue.RadioContentReference.libraryItemContentReference: object expected");
               n.libraryItemContentReference =
-                $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference.fromObject(
+                h.PlaybackQueue.RadioContentReference.LibraryItemContentReference.fromObject(
                   e.libraryItemContentReference,
                 );
             }
             if (e.storeContentReference != null) {
               if (typeof e.storeContentReference != "object")
                 throw TypeError(".PlaybackQueue.RadioContentReference.storeContentReference: object expected");
-              n.storeContentReference = $root$1.PlaybackQueue.RadioContentReference.StoreContentReference.fromObject(
+              n.storeContentReference = h.PlaybackQueue.RadioContentReference.StoreContentReference.fromObject(
                 e.storeContentReference,
               );
             }
@@ -21590,27 +21949,27 @@ const $Reader$2 = minimalExports.Reader,
               e.libraryAlbumContentReference != null &&
                 e.hasOwnProperty("libraryAlbumContentReference") &&
                 (r.libraryAlbumContentReference =
-                  $root$1.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.toObject(
+                  h.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference.toObject(
                     e.libraryAlbumContentReference,
                     n,
                   )),
               e.libraryArtistContentReference != null &&
                 e.hasOwnProperty("libraryArtistContentReference") &&
                 (r.libraryArtistContentReference =
-                  $root$1.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.toObject(
+                  h.PlaybackQueue.RadioContentReference.LibraryArtistContentReference.toObject(
                     e.libraryArtistContentReference,
                     n,
                   )),
               e.libraryItemContentReference != null &&
                 e.hasOwnProperty("libraryItemContentReference") &&
                 (r.libraryItemContentReference =
-                  $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference.toObject(
+                  h.PlaybackQueue.RadioContentReference.LibraryItemContentReference.toObject(
                     e.libraryItemContentReference,
                     n,
                   )),
               e.storeContentReference != null &&
                 e.hasOwnProperty("storeContentReference") &&
-                (r.storeContentReference = $root$1.PlaybackQueue.RadioContentReference.StoreContentReference.toObject(
+                (r.storeContentReference = h.PlaybackQueue.RadioContentReference.StoreContentReference.toObject(
                   e.storeContentReference,
                   n,
                 )),
@@ -21618,7 +21977,7 @@ const $Reader$2 = minimalExports.Reader,
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (e === void 0 && (e = "type.googleapis.com"), e + "/PlaybackQueue.RadioContentReference");
@@ -21629,15 +21988,15 @@ const $Reader$2 = minimalExports.Reader,
             }
             return (
               (t.prototype.albumName = ""),
-              (t.prototype.representativeItemCloudID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-              (t.prototype.storeAdamID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.representativeItemCloudID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.storeAdamID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
               (t.prototype.playbackAuthorizationToken = ""),
               (t.create = function (n) {
                 return new t(n);
               }),
               (t.encode = function (n, r) {
                 return (
-                  r || (r = $Writer$1.create()),
+                  r || (r = z.create()),
                   n.albumName != null && Object.hasOwnProperty.call(n, "albumName") && r.uint32(10).string(n.albumName),
                   n.representativeItemCloudID != null &&
                     Object.hasOwnProperty.call(n, "representativeItemCloudID") &&
@@ -21655,94 +22014,89 @@ const $Reader$2 = minimalExports.Reader,
                 return this.encode(n, r).ldelim();
               }),
               (t.decode = function (n, r) {
-                n instanceof $Reader$1 || (n = $Reader$1.create(n));
-                let l = r === void 0 ? n.len : n.pos + r,
-                  a = new $root$1.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference();
-                for (; n.pos < l;) {
-                  let u = n.uint32();
-                  switch (u >>> 3) {
+                n instanceof T || (n = T.create(n));
+                let u = r === void 0 ? n.len : n.pos + r,
+                  d = new h.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference();
+                for (; n.pos < u;) {
+                  let y = n.uint32();
+                  switch (y >>> 3) {
                     case 1: {
-                      a.albumName = n.string();
+                      d.albumName = n.string();
                       break;
                     }
                     case 2: {
-                      a.representativeItemCloudID = n.int64();
+                      d.representativeItemCloudID = n.int64();
                       break;
                     }
                     case 3: {
-                      a.storeAdamID = n.int64();
+                      d.storeAdamID = n.int64();
                       break;
                     }
                     case 4: {
-                      a.playbackAuthorizationToken = n.string();
+                      d.playbackAuthorizationToken = n.string();
                       break;
                     }
                     default:
-                      n.skipType(u & 7);
+                      n.skipType(y & 7);
                       break;
                   }
                 }
-                return a;
+                return d;
               }),
               (t.decodeDelimited = function (n) {
-                return (n instanceof $Reader$1 || (n = new $Reader$1(n)), this.decode(n, n.uint32()));
+                return (n instanceof T || (n = new T(n)), this.decode(n, n.uint32()));
               }),
               (t.verify = function (n) {
                 return typeof n != "object" || n === null
                   ? "object expected"
-                  : n.albumName != null && n.hasOwnProperty("albumName") && !$util$1.isString(n.albumName)
+                  : n.albumName != null && n.hasOwnProperty("albumName") && !f.isString(n.albumName)
                     ? "albumName: string expected"
                     : n.representativeItemCloudID != null &&
                         n.hasOwnProperty("representativeItemCloudID") &&
-                        !$util$1.isInteger(n.representativeItemCloudID) &&
+                        !f.isInteger(n.representativeItemCloudID) &&
                         !(
                           n.representativeItemCloudID &&
-                          $util$1.isInteger(n.representativeItemCloudID.low) &&
-                          $util$1.isInteger(n.representativeItemCloudID.high)
+                          f.isInteger(n.representativeItemCloudID.low) &&
+                          f.isInteger(n.representativeItemCloudID.high)
                         )
                       ? "representativeItemCloudID: integer|Long expected"
                       : n.storeAdamID != null &&
                           n.hasOwnProperty("storeAdamID") &&
-                          !$util$1.isInteger(n.storeAdamID) &&
-                          !(
-                            n.storeAdamID &&
-                            $util$1.isInteger(n.storeAdamID.low) &&
-                            $util$1.isInteger(n.storeAdamID.high)
-                          )
+                          !f.isInteger(n.storeAdamID) &&
+                          !(n.storeAdamID && f.isInteger(n.storeAdamID.low) && f.isInteger(n.storeAdamID.high))
                         ? "storeAdamID: integer|Long expected"
                         : n.playbackAuthorizationToken != null &&
                             n.hasOwnProperty("playbackAuthorizationToken") &&
-                            !$util$1.isString(n.playbackAuthorizationToken)
+                            !f.isString(n.playbackAuthorizationToken)
                           ? "playbackAuthorizationToken: string expected"
                           : null;
               }),
               (t.fromObject = function (n) {
-                if (n instanceof $root$1.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference) return n;
-                let r = new $root$1.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference();
+                if (n instanceof h.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference) return n;
+                let r = new h.PlaybackQueue.RadioContentReference.LibraryAlbumContentReference();
                 return (
                   n.albumName != null && (r.albumName = String(n.albumName)),
                   n.representativeItemCloudID != null &&
-                    ($util$1.Long
-                      ? ((r.representativeItemCloudID = $util$1.Long.fromValue(n.representativeItemCloudID)).unsigned =
-                          !1)
+                    (f.Long
+                      ? ((r.representativeItemCloudID = f.Long.fromValue(n.representativeItemCloudID)).unsigned = !1)
                       : typeof n.representativeItemCloudID == "string"
                         ? (r.representativeItemCloudID = parseInt(n.representativeItemCloudID, 10))
                         : typeof n.representativeItemCloudID == "number"
                           ? (r.representativeItemCloudID = n.representativeItemCloudID)
                           : typeof n.representativeItemCloudID == "object" &&
-                            (r.representativeItemCloudID = new $util$1.LongBits(
+                            (r.representativeItemCloudID = new f.LongBits(
                               n.representativeItemCloudID.low >>> 0,
                               n.representativeItemCloudID.high >>> 0,
                             ).toNumber())),
                   n.storeAdamID != null &&
-                    ($util$1.Long
-                      ? ((r.storeAdamID = $util$1.Long.fromValue(n.storeAdamID)).unsigned = !1)
+                    (f.Long
+                      ? ((r.storeAdamID = f.Long.fromValue(n.storeAdamID)).unsigned = !1)
                       : typeof n.storeAdamID == "string"
                         ? (r.storeAdamID = parseInt(n.storeAdamID, 10))
                         : typeof n.storeAdamID == "number"
                           ? (r.storeAdamID = n.storeAdamID)
                           : typeof n.storeAdamID == "object" &&
-                            (r.storeAdamID = new $util$1.LongBits(
+                            (r.storeAdamID = new f.LongBits(
                               n.storeAdamID.low >>> 0,
                               n.storeAdamID.high >>> 0,
                             ).toNumber())),
@@ -21753,31 +22107,31 @@ const $Reader$2 = minimalExports.Reader,
               }),
               (t.toObject = function (n, r) {
                 r || (r = {});
-                let l = {};
+                let u = {};
                 if (r.defaults) {
-                  if (((l.albumName = ""), $util$1.Long)) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.representativeItemCloudID =
-                      r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.representativeItemCloudID = r.longs === String ? "0" : 0;
-                  if ($util$1.Long) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.storeAdamID = r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.storeAdamID = r.longs === String ? "0" : 0;
-                  l.playbackAuthorizationToken = "";
+                  if (((u.albumName = ""), f.Long)) {
+                    let d = new f.Long(0, 0, !1);
+                    u.representativeItemCloudID =
+                      r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.representativeItemCloudID = r.longs === String ? "0" : 0;
+                  if (f.Long) {
+                    let d = new f.Long(0, 0, !1);
+                    u.storeAdamID = r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.storeAdamID = r.longs === String ? "0" : 0;
+                  u.playbackAuthorizationToken = "";
                 }
                 return (
-                  n.albumName != null && n.hasOwnProperty("albumName") && (l.albumName = n.albumName),
+                  n.albumName != null && n.hasOwnProperty("albumName") && (u.albumName = n.albumName),
                   n.representativeItemCloudID != null &&
                     n.hasOwnProperty("representativeItemCloudID") &&
                     (typeof n.representativeItemCloudID == "number"
-                      ? (l.representativeItemCloudID =
+                      ? (u.representativeItemCloudID =
                           r.longs === String ? String(n.representativeItemCloudID) : n.representativeItemCloudID)
-                      : (l.representativeItemCloudID =
+                      : (u.representativeItemCloudID =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.representativeItemCloudID)
+                            ? f.Long.prototype.toString.call(n.representativeItemCloudID)
                             : r.longs === Number
-                              ? new $util$1.LongBits(
+                              ? new f.LongBits(
                                   n.representativeItemCloudID.low >>> 0,
                                   n.representativeItemCloudID.high >>> 0,
                                 ).toNumber()
@@ -21785,21 +22139,21 @@ const $Reader$2 = minimalExports.Reader,
                   n.storeAdamID != null &&
                     n.hasOwnProperty("storeAdamID") &&
                     (typeof n.storeAdamID == "number"
-                      ? (l.storeAdamID = r.longs === String ? String(n.storeAdamID) : n.storeAdamID)
-                      : (l.storeAdamID =
+                      ? (u.storeAdamID = r.longs === String ? String(n.storeAdamID) : n.storeAdamID)
+                      : (u.storeAdamID =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.storeAdamID)
+                            ? f.Long.prototype.toString.call(n.storeAdamID)
                             : r.longs === Number
-                              ? new $util$1.LongBits(n.storeAdamID.low >>> 0, n.storeAdamID.high >>> 0).toNumber()
+                              ? new f.LongBits(n.storeAdamID.low >>> 0, n.storeAdamID.high >>> 0).toNumber()
                               : n.storeAdamID)),
                   n.playbackAuthorizationToken != null &&
                     n.hasOwnProperty("playbackAuthorizationToken") &&
-                    (l.playbackAuthorizationToken = n.playbackAuthorizationToken),
-                  l
+                    (u.playbackAuthorizationToken = n.playbackAuthorizationToken),
+                  u
                 );
               }),
               (t.prototype.toJSON = function () {
-                return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+                return this.constructor.toObject(this, b.util.toJSONOptions);
               }),
               (t.getTypeUrl = function (n) {
                 return (
@@ -21816,15 +22170,15 @@ const $Reader$2 = minimalExports.Reader,
             }
             return (
               (t.prototype.artistName = ""),
-              (t.prototype.representativeItemCloudID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-              (t.prototype.storeAdamID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.representativeItemCloudID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.storeAdamID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
               (t.prototype.playbackAuthorizationToken = ""),
               (t.create = function (n) {
                 return new t(n);
               }),
               (t.encode = function (n, r) {
                 return (
-                  r || (r = $Writer$1.create()),
+                  r || (r = z.create()),
                   n.artistName != null &&
                     Object.hasOwnProperty.call(n, "artistName") &&
                     r.uint32(10).string(n.artistName),
@@ -21844,94 +22198,89 @@ const $Reader$2 = minimalExports.Reader,
                 return this.encode(n, r).ldelim();
               }),
               (t.decode = function (n, r) {
-                n instanceof $Reader$1 || (n = $Reader$1.create(n));
-                let l = r === void 0 ? n.len : n.pos + r,
-                  a = new $root$1.PlaybackQueue.RadioContentReference.LibraryArtistContentReference();
-                for (; n.pos < l;) {
-                  let u = n.uint32();
-                  switch (u >>> 3) {
+                n instanceof T || (n = T.create(n));
+                let u = r === void 0 ? n.len : n.pos + r,
+                  d = new h.PlaybackQueue.RadioContentReference.LibraryArtistContentReference();
+                for (; n.pos < u;) {
+                  let y = n.uint32();
+                  switch (y >>> 3) {
                     case 1: {
-                      a.artistName = n.string();
+                      d.artistName = n.string();
                       break;
                     }
                     case 2: {
-                      a.representativeItemCloudID = n.int64();
+                      d.representativeItemCloudID = n.int64();
                       break;
                     }
                     case 3: {
-                      a.storeAdamID = n.int64();
+                      d.storeAdamID = n.int64();
                       break;
                     }
                     case 4: {
-                      a.playbackAuthorizationToken = n.string();
+                      d.playbackAuthorizationToken = n.string();
                       break;
                     }
                     default:
-                      n.skipType(u & 7);
+                      n.skipType(y & 7);
                       break;
                   }
                 }
-                return a;
+                return d;
               }),
               (t.decodeDelimited = function (n) {
-                return (n instanceof $Reader$1 || (n = new $Reader$1(n)), this.decode(n, n.uint32()));
+                return (n instanceof T || (n = new T(n)), this.decode(n, n.uint32()));
               }),
               (t.verify = function (n) {
                 return typeof n != "object" || n === null
                   ? "object expected"
-                  : n.artistName != null && n.hasOwnProperty("artistName") && !$util$1.isString(n.artistName)
+                  : n.artistName != null && n.hasOwnProperty("artistName") && !f.isString(n.artistName)
                     ? "artistName: string expected"
                     : n.representativeItemCloudID != null &&
                         n.hasOwnProperty("representativeItemCloudID") &&
-                        !$util$1.isInteger(n.representativeItemCloudID) &&
+                        !f.isInteger(n.representativeItemCloudID) &&
                         !(
                           n.representativeItemCloudID &&
-                          $util$1.isInteger(n.representativeItemCloudID.low) &&
-                          $util$1.isInteger(n.representativeItemCloudID.high)
+                          f.isInteger(n.representativeItemCloudID.low) &&
+                          f.isInteger(n.representativeItemCloudID.high)
                         )
                       ? "representativeItemCloudID: integer|Long expected"
                       : n.storeAdamID != null &&
                           n.hasOwnProperty("storeAdamID") &&
-                          !$util$1.isInteger(n.storeAdamID) &&
-                          !(
-                            n.storeAdamID &&
-                            $util$1.isInteger(n.storeAdamID.low) &&
-                            $util$1.isInteger(n.storeAdamID.high)
-                          )
+                          !f.isInteger(n.storeAdamID) &&
+                          !(n.storeAdamID && f.isInteger(n.storeAdamID.low) && f.isInteger(n.storeAdamID.high))
                         ? "storeAdamID: integer|Long expected"
                         : n.playbackAuthorizationToken != null &&
                             n.hasOwnProperty("playbackAuthorizationToken") &&
-                            !$util$1.isString(n.playbackAuthorizationToken)
+                            !f.isString(n.playbackAuthorizationToken)
                           ? "playbackAuthorizationToken: string expected"
                           : null;
               }),
               (t.fromObject = function (n) {
-                if (n instanceof $root$1.PlaybackQueue.RadioContentReference.LibraryArtistContentReference) return n;
-                let r = new $root$1.PlaybackQueue.RadioContentReference.LibraryArtistContentReference();
+                if (n instanceof h.PlaybackQueue.RadioContentReference.LibraryArtistContentReference) return n;
+                let r = new h.PlaybackQueue.RadioContentReference.LibraryArtistContentReference();
                 return (
                   n.artistName != null && (r.artistName = String(n.artistName)),
                   n.representativeItemCloudID != null &&
-                    ($util$1.Long
-                      ? ((r.representativeItemCloudID = $util$1.Long.fromValue(n.representativeItemCloudID)).unsigned =
-                          !1)
+                    (f.Long
+                      ? ((r.representativeItemCloudID = f.Long.fromValue(n.representativeItemCloudID)).unsigned = !1)
                       : typeof n.representativeItemCloudID == "string"
                         ? (r.representativeItemCloudID = parseInt(n.representativeItemCloudID, 10))
                         : typeof n.representativeItemCloudID == "number"
                           ? (r.representativeItemCloudID = n.representativeItemCloudID)
                           : typeof n.representativeItemCloudID == "object" &&
-                            (r.representativeItemCloudID = new $util$1.LongBits(
+                            (r.representativeItemCloudID = new f.LongBits(
                               n.representativeItemCloudID.low >>> 0,
                               n.representativeItemCloudID.high >>> 0,
                             ).toNumber())),
                   n.storeAdamID != null &&
-                    ($util$1.Long
-                      ? ((r.storeAdamID = $util$1.Long.fromValue(n.storeAdamID)).unsigned = !1)
+                    (f.Long
+                      ? ((r.storeAdamID = f.Long.fromValue(n.storeAdamID)).unsigned = !1)
                       : typeof n.storeAdamID == "string"
                         ? (r.storeAdamID = parseInt(n.storeAdamID, 10))
                         : typeof n.storeAdamID == "number"
                           ? (r.storeAdamID = n.storeAdamID)
                           : typeof n.storeAdamID == "object" &&
-                            (r.storeAdamID = new $util$1.LongBits(
+                            (r.storeAdamID = new f.LongBits(
                               n.storeAdamID.low >>> 0,
                               n.storeAdamID.high >>> 0,
                             ).toNumber())),
@@ -21942,31 +22291,31 @@ const $Reader$2 = minimalExports.Reader,
               }),
               (t.toObject = function (n, r) {
                 r || (r = {});
-                let l = {};
+                let u = {};
                 if (r.defaults) {
-                  if (((l.artistName = ""), $util$1.Long)) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.representativeItemCloudID =
-                      r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.representativeItemCloudID = r.longs === String ? "0" : 0;
-                  if ($util$1.Long) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.storeAdamID = r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.storeAdamID = r.longs === String ? "0" : 0;
-                  l.playbackAuthorizationToken = "";
+                  if (((u.artistName = ""), f.Long)) {
+                    let d = new f.Long(0, 0, !1);
+                    u.representativeItemCloudID =
+                      r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.representativeItemCloudID = r.longs === String ? "0" : 0;
+                  if (f.Long) {
+                    let d = new f.Long(0, 0, !1);
+                    u.storeAdamID = r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.storeAdamID = r.longs === String ? "0" : 0;
+                  u.playbackAuthorizationToken = "";
                 }
                 return (
-                  n.artistName != null && n.hasOwnProperty("artistName") && (l.artistName = n.artistName),
+                  n.artistName != null && n.hasOwnProperty("artistName") && (u.artistName = n.artistName),
                   n.representativeItemCloudID != null &&
                     n.hasOwnProperty("representativeItemCloudID") &&
                     (typeof n.representativeItemCloudID == "number"
-                      ? (l.representativeItemCloudID =
+                      ? (u.representativeItemCloudID =
                           r.longs === String ? String(n.representativeItemCloudID) : n.representativeItemCloudID)
-                      : (l.representativeItemCloudID =
+                      : (u.representativeItemCloudID =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.representativeItemCloudID)
+                            ? f.Long.prototype.toString.call(n.representativeItemCloudID)
                             : r.longs === Number
-                              ? new $util$1.LongBits(
+                              ? new f.LongBits(
                                   n.representativeItemCloudID.low >>> 0,
                                   n.representativeItemCloudID.high >>> 0,
                                 ).toNumber()
@@ -21974,21 +22323,21 @@ const $Reader$2 = minimalExports.Reader,
                   n.storeAdamID != null &&
                     n.hasOwnProperty("storeAdamID") &&
                     (typeof n.storeAdamID == "number"
-                      ? (l.storeAdamID = r.longs === String ? String(n.storeAdamID) : n.storeAdamID)
-                      : (l.storeAdamID =
+                      ? (u.storeAdamID = r.longs === String ? String(n.storeAdamID) : n.storeAdamID)
+                      : (u.storeAdamID =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.storeAdamID)
+                            ? f.Long.prototype.toString.call(n.storeAdamID)
                             : r.longs === Number
-                              ? new $util$1.LongBits(n.storeAdamID.low >>> 0, n.storeAdamID.high >>> 0).toNumber()
+                              ? new f.LongBits(n.storeAdamID.low >>> 0, n.storeAdamID.high >>> 0).toNumber()
                               : n.storeAdamID)),
                   n.playbackAuthorizationToken != null &&
                     n.hasOwnProperty("playbackAuthorizationToken") &&
-                    (l.playbackAuthorizationToken = n.playbackAuthorizationToken),
-                  l
+                    (u.playbackAuthorizationToken = n.playbackAuthorizationToken),
+                  u
                 );
               }),
               (t.prototype.toJSON = function () {
-                return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+                return this.constructor.toObject(this, b.util.toJSONOptions);
               }),
               (t.getTypeUrl = function (n) {
                 return (
@@ -22017,8 +22366,8 @@ const $Reader$2 = minimalExports.Reader,
               (t.prototype.isCompilation = !1),
               (t.prototype.duration = 0),
               (t.prototype.title = ""),
-              (t.prototype.storeAdamID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
-              (t.prototype.cloudID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.storeAdamID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.cloudID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
               (t.prototype.albumTrackCount = 0),
               (t.prototype.trackNumber = 0),
               (t.prototype.year = 0),
@@ -22028,7 +22377,7 @@ const $Reader$2 = minimalExports.Reader,
               }),
               (t.encode = function (n, r) {
                 return (
-                  r || (r = $Writer$1.create()),
+                  r || (r = z.create()),
                   n.albumArtistName != null &&
                     Object.hasOwnProperty.call(n, "albumArtistName") &&
                     r.uint32(10).string(n.albumArtistName),
@@ -22079,111 +22428,107 @@ const $Reader$2 = minimalExports.Reader,
                 return this.encode(n, r).ldelim();
               }),
               (t.decode = function (n, r) {
-                n instanceof $Reader$1 || (n = $Reader$1.create(n));
-                let l = r === void 0 ? n.len : n.pos + r,
-                  a = new $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference();
-                for (; n.pos < l;) {
-                  let u = n.uint32();
-                  switch (u >>> 3) {
+                n instanceof T || (n = T.create(n));
+                let u = r === void 0 ? n.len : n.pos + r,
+                  d = new h.PlaybackQueue.RadioContentReference.LibraryItemContentReference();
+                for (; n.pos < u;) {
+                  let y = n.uint32();
+                  switch (y >>> 3) {
                     case 1: {
-                      a.albumArtistName = n.string();
+                      d.albumArtistName = n.string();
                       break;
                     }
                     case 2: {
-                      a.albumName = n.string();
+                      d.albumName = n.string();
                       break;
                     }
                     case 3: {
-                      a.artistName = n.string();
+                      d.artistName = n.string();
                       break;
                     }
                     case 4: {
-                      a.composerName = n.string();
+                      d.composerName = n.string();
                       break;
                     }
                     case 5: {
-                      a.contentType = n.int32();
+                      d.contentType = n.int32();
                       break;
                     }
                     case 6: {
-                      a.copyrightText = n.string();
+                      d.copyrightText = n.string();
                       break;
                     }
                     case 7: {
-                      a.albumDiscCount = n.int32();
+                      d.albumDiscCount = n.int32();
                       break;
                     }
                     case 8: {
-                      a.discNumber = n.int32();
+                      d.discNumber = n.int32();
                       break;
                     }
                     case 9: {
-                      a.fileSize = n.double();
+                      d.fileSize = n.double();
                       break;
                     }
                     case 10: {
-                      a.genreName = n.string();
+                      d.genreName = n.string();
                       break;
                     }
                     case 11: {
-                      a.isCompilation = n.bool();
+                      d.isCompilation = n.bool();
                       break;
                     }
                     case 12: {
-                      a.duration = n.double();
+                      d.duration = n.double();
                       break;
                     }
                     case 13: {
-                      a.title = n.string();
+                      d.title = n.string();
                       break;
                     }
                     case 14: {
-                      a.storeAdamID = n.int64();
+                      d.storeAdamID = n.int64();
                       break;
                     }
                     case 16: {
-                      a.cloudID = n.int64();
+                      d.cloudID = n.int64();
                       break;
                     }
                     case 17: {
-                      a.albumTrackCount = n.int32();
+                      d.albumTrackCount = n.int32();
                       break;
                     }
                     case 18: {
-                      a.trackNumber = n.int32();
+                      d.trackNumber = n.int32();
                       break;
                     }
                     case 19: {
-                      a.year = n.int32();
+                      d.year = n.int32();
                       break;
                     }
                     case 20: {
-                      a.playbackAuthorizationToken = n.string();
+                      d.playbackAuthorizationToken = n.string();
                       break;
                     }
                     default:
-                      n.skipType(u & 7);
+                      n.skipType(y & 7);
                       break;
                   }
                 }
-                return a;
+                return d;
               }),
               (t.decodeDelimited = function (n) {
-                return (n instanceof $Reader$1 || (n = new $Reader$1(n)), this.decode(n, n.uint32()));
+                return (n instanceof T || (n = new T(n)), this.decode(n, n.uint32()));
               }),
               (t.verify = function (n) {
                 if (typeof n != "object" || n === null) return "object expected";
-                if (
-                  n.albumArtistName != null &&
-                  n.hasOwnProperty("albumArtistName") &&
-                  !$util$1.isString(n.albumArtistName)
-                )
+                if (n.albumArtistName != null && n.hasOwnProperty("albumArtistName") && !f.isString(n.albumArtistName))
                   return "albumArtistName: string expected";
-                if (n.albumName != null && n.hasOwnProperty("albumName") && !$util$1.isString(n.albumName))
+                if (n.albumName != null && n.hasOwnProperty("albumName") && !f.isString(n.albumName))
                   return "albumName: string expected";
-                if (n.artistName != null && n.hasOwnProperty("artistName") && !$util$1.isString(n.artistName))
+                if (n.artistName != null && n.hasOwnProperty("artistName") && !f.isString(n.artistName))
                   return "artistName: string expected";
-                if (n.composerName != null && n.hasOwnProperty("composerName") && !$util$1.isString(n.composerName))
+                if (n.composerName != null && n.hasOwnProperty("composerName") && !f.isString(n.composerName))
                   return "composerName: string expected";
                 if (n.contentType != null && n.hasOwnProperty("contentType"))
                   switch (n.contentType) {
@@ -22196,19 +22541,15 @@ const $Reader$2 = minimalExports.Reader,
                     case 4:
                       break;
                   }
-                return n.copyrightText != null &&
-                  n.hasOwnProperty("copyrightText") &&
-                  !$util$1.isString(n.copyrightText)
+                return n.copyrightText != null && n.hasOwnProperty("copyrightText") && !f.isString(n.copyrightText)
                   ? "copyrightText: string expected"
-                  : n.albumDiscCount != null &&
-                      n.hasOwnProperty("albumDiscCount") &&
-                      !$util$1.isInteger(n.albumDiscCount)
+                  : n.albumDiscCount != null && n.hasOwnProperty("albumDiscCount") && !f.isInteger(n.albumDiscCount)
                     ? "albumDiscCount: integer expected"
-                    : n.discNumber != null && n.hasOwnProperty("discNumber") && !$util$1.isInteger(n.discNumber)
+                    : n.discNumber != null && n.hasOwnProperty("discNumber") && !f.isInteger(n.discNumber)
                       ? "discNumber: integer expected"
                       : n.fileSize != null && n.hasOwnProperty("fileSize") && typeof n.fileSize != "number"
                         ? "fileSize: number expected"
-                        : n.genreName != null && n.hasOwnProperty("genreName") && !$util$1.isString(n.genreName)
+                        : n.genreName != null && n.hasOwnProperty("genreName") && !f.isString(n.genreName)
                           ? "genreName: string expected"
                           : n.isCompilation != null &&
                               n.hasOwnProperty("isCompilation") &&
@@ -22216,45 +22557,41 @@ const $Reader$2 = minimalExports.Reader,
                             ? "isCompilation: boolean expected"
                             : n.duration != null && n.hasOwnProperty("duration") && typeof n.duration != "number"
                               ? "duration: number expected"
-                              : n.title != null && n.hasOwnProperty("title") && !$util$1.isString(n.title)
+                              : n.title != null && n.hasOwnProperty("title") && !f.isString(n.title)
                                 ? "title: string expected"
                                 : n.storeAdamID != null &&
                                     n.hasOwnProperty("storeAdamID") &&
-                                    !$util$1.isInteger(n.storeAdamID) &&
+                                    !f.isInteger(n.storeAdamID) &&
                                     !(
                                       n.storeAdamID &&
-                                      $util$1.isInteger(n.storeAdamID.low) &&
-                                      $util$1.isInteger(n.storeAdamID.high)
+                                      f.isInteger(n.storeAdamID.low) &&
+                                      f.isInteger(n.storeAdamID.high)
                                     )
                                   ? "storeAdamID: integer|Long expected"
                                   : n.cloudID != null &&
                                       n.hasOwnProperty("cloudID") &&
-                                      !$util$1.isInteger(n.cloudID) &&
-                                      !(
-                                        n.cloudID &&
-                                        $util$1.isInteger(n.cloudID.low) &&
-                                        $util$1.isInteger(n.cloudID.high)
-                                      )
+                                      !f.isInteger(n.cloudID) &&
+                                      !(n.cloudID && f.isInteger(n.cloudID.low) && f.isInteger(n.cloudID.high))
                                     ? "cloudID: integer|Long expected"
                                     : n.albumTrackCount != null &&
                                         n.hasOwnProperty("albumTrackCount") &&
-                                        !$util$1.isInteger(n.albumTrackCount)
+                                        !f.isInteger(n.albumTrackCount)
                                       ? "albumTrackCount: integer expected"
                                       : n.trackNumber != null &&
                                           n.hasOwnProperty("trackNumber") &&
-                                          !$util$1.isInteger(n.trackNumber)
+                                          !f.isInteger(n.trackNumber)
                                         ? "trackNumber: integer expected"
-                                        : n.year != null && n.hasOwnProperty("year") && !$util$1.isInteger(n.year)
+                                        : n.year != null && n.hasOwnProperty("year") && !f.isInteger(n.year)
                                           ? "year: integer expected"
                                           : n.playbackAuthorizationToken != null &&
                                               n.hasOwnProperty("playbackAuthorizationToken") &&
-                                              !$util$1.isString(n.playbackAuthorizationToken)
+                                              !f.isString(n.playbackAuthorizationToken)
                                             ? "playbackAuthorizationToken: string expected"
                                             : null;
               }),
               (t.fromObject = function (n) {
-                if (n instanceof $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference) return n;
-                let r = new $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference();
+                if (n instanceof h.PlaybackQueue.RadioContentReference.LibraryItemContentReference) return n;
+                let r = new h.PlaybackQueue.RadioContentReference.LibraryItemContentReference();
                 switch (
                   (n.albumArtistName != null && (r.albumArtistName = String(n.albumArtistName)),
                   n.albumName != null && (r.albumName = String(n.albumName)),
@@ -22299,26 +22636,26 @@ const $Reader$2 = minimalExports.Reader,
                   n.duration != null && (r.duration = Number(n.duration)),
                   n.title != null && (r.title = String(n.title)),
                   n.storeAdamID != null &&
-                    ($util$1.Long
-                      ? ((r.storeAdamID = $util$1.Long.fromValue(n.storeAdamID)).unsigned = !1)
+                    (f.Long
+                      ? ((r.storeAdamID = f.Long.fromValue(n.storeAdamID)).unsigned = !1)
                       : typeof n.storeAdamID == "string"
                         ? (r.storeAdamID = parseInt(n.storeAdamID, 10))
                         : typeof n.storeAdamID == "number"
                           ? (r.storeAdamID = n.storeAdamID)
                           : typeof n.storeAdamID == "object" &&
-                            (r.storeAdamID = new $util$1.LongBits(
+                            (r.storeAdamID = new f.LongBits(
                               n.storeAdamID.low >>> 0,
                               n.storeAdamID.high >>> 0,
                             ).toNumber())),
                   n.cloudID != null &&
-                    ($util$1.Long
-                      ? ((r.cloudID = $util$1.Long.fromValue(n.cloudID)).unsigned = !1)
+                    (f.Long
+                      ? ((r.cloudID = f.Long.fromValue(n.cloudID)).unsigned = !1)
                       : typeof n.cloudID == "string"
                         ? (r.cloudID = parseInt(n.cloudID, 10))
                         : typeof n.cloudID == "number"
                           ? (r.cloudID = n.cloudID)
                           : typeof n.cloudID == "object" &&
-                            (r.cloudID = new $util$1.LongBits(n.cloudID.low >>> 0, n.cloudID.high >>> 0).toNumber())),
+                            (r.cloudID = new f.LongBits(n.cloudID.low >>> 0, n.cloudID.high >>> 0).toNumber())),
                   n.albumTrackCount != null && (r.albumTrackCount = n.albumTrackCount | 0),
                   n.trackNumber != null && (r.trackNumber = n.trackNumber | 0),
                   n.year != null && (r.year = n.year | 0),
@@ -22329,99 +22666,97 @@ const $Reader$2 = minimalExports.Reader,
               }),
               (t.toObject = function (n, r) {
                 r || (r = {});
-                let l = {};
+                let u = {};
                 if (r.defaults) {
                   if (
-                    ((l.albumArtistName = ""),
-                    (l.albumName = ""),
-                    (l.artistName = ""),
-                    (l.composerName = ""),
-                    (l.contentType = r.enums === String ? "UNKNOWN" : 0),
-                    (l.copyrightText = ""),
-                    (l.albumDiscCount = 0),
-                    (l.discNumber = 0),
-                    (l.fileSize = 0),
-                    (l.genreName = ""),
-                    (l.isCompilation = !1),
-                    (l.duration = 0),
-                    (l.title = ""),
-                    $util$1.Long)
+                    ((u.albumArtistName = ""),
+                    (u.albumName = ""),
+                    (u.artistName = ""),
+                    (u.composerName = ""),
+                    (u.contentType = r.enums === String ? "UNKNOWN" : 0),
+                    (u.copyrightText = ""),
+                    (u.albumDiscCount = 0),
+                    (u.discNumber = 0),
+                    (u.fileSize = 0),
+                    (u.genreName = ""),
+                    (u.isCompilation = !1),
+                    (u.duration = 0),
+                    (u.title = ""),
+                    f.Long)
                   ) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.storeAdamID = r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.storeAdamID = r.longs === String ? "0" : 0;
-                  if ($util$1.Long) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.cloudID = r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.cloudID = r.longs === String ? "0" : 0;
-                  ((l.albumTrackCount = 0), (l.trackNumber = 0), (l.year = 0), (l.playbackAuthorizationToken = ""));
+                    let d = new f.Long(0, 0, !1);
+                    u.storeAdamID = r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.storeAdamID = r.longs === String ? "0" : 0;
+                  if (f.Long) {
+                    let d = new f.Long(0, 0, !1);
+                    u.cloudID = r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.cloudID = r.longs === String ? "0" : 0;
+                  ((u.albumTrackCount = 0), (u.trackNumber = 0), (u.year = 0), (u.playbackAuthorizationToken = ""));
                 }
                 return (
                   n.albumArtistName != null &&
                     n.hasOwnProperty("albumArtistName") &&
-                    (l.albumArtistName = n.albumArtistName),
-                  n.albumName != null && n.hasOwnProperty("albumName") && (l.albumName = n.albumName),
-                  n.artistName != null && n.hasOwnProperty("artistName") && (l.artistName = n.artistName),
-                  n.composerName != null && n.hasOwnProperty("composerName") && (l.composerName = n.composerName),
+                    (u.albumArtistName = n.albumArtistName),
+                  n.albumName != null && n.hasOwnProperty("albumName") && (u.albumName = n.albumName),
+                  n.artistName != null && n.hasOwnProperty("artistName") && (u.artistName = n.artistName),
+                  n.composerName != null && n.hasOwnProperty("composerName") && (u.composerName = n.composerName),
                   n.contentType != null &&
                     n.hasOwnProperty("contentType") &&
-                    (l.contentType =
+                    (u.contentType =
                       r.enums === String
-                        ? $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference.ContentType[
+                        ? h.PlaybackQueue.RadioContentReference.LibraryItemContentReference.ContentType[
                             n.contentType
                           ] === void 0
                           ? n.contentType
-                          : $root$1.PlaybackQueue.RadioContentReference.LibraryItemContentReference.ContentType[
-                              n.contentType
-                            ]
+                          : h.PlaybackQueue.RadioContentReference.LibraryItemContentReference.ContentType[n.contentType]
                         : n.contentType),
-                  n.copyrightText != null && n.hasOwnProperty("copyrightText") && (l.copyrightText = n.copyrightText),
+                  n.copyrightText != null && n.hasOwnProperty("copyrightText") && (u.copyrightText = n.copyrightText),
                   n.albumDiscCount != null &&
                     n.hasOwnProperty("albumDiscCount") &&
-                    (l.albumDiscCount = n.albumDiscCount),
-                  n.discNumber != null && n.hasOwnProperty("discNumber") && (l.discNumber = n.discNumber),
+                    (u.albumDiscCount = n.albumDiscCount),
+                  n.discNumber != null && n.hasOwnProperty("discNumber") && (u.discNumber = n.discNumber),
                   n.fileSize != null &&
                     n.hasOwnProperty("fileSize") &&
-                    (l.fileSize = r.json && !isFinite(n.fileSize) ? String(n.fileSize) : n.fileSize),
-                  n.genreName != null && n.hasOwnProperty("genreName") && (l.genreName = n.genreName),
-                  n.isCompilation != null && n.hasOwnProperty("isCompilation") && (l.isCompilation = n.isCompilation),
+                    (u.fileSize = r.json && !isFinite(n.fileSize) ? String(n.fileSize) : n.fileSize),
+                  n.genreName != null && n.hasOwnProperty("genreName") && (u.genreName = n.genreName),
+                  n.isCompilation != null && n.hasOwnProperty("isCompilation") && (u.isCompilation = n.isCompilation),
                   n.duration != null &&
                     n.hasOwnProperty("duration") &&
-                    (l.duration = r.json && !isFinite(n.duration) ? String(n.duration) : n.duration),
-                  n.title != null && n.hasOwnProperty("title") && (l.title = n.title),
+                    (u.duration = r.json && !isFinite(n.duration) ? String(n.duration) : n.duration),
+                  n.title != null && n.hasOwnProperty("title") && (u.title = n.title),
                   n.storeAdamID != null &&
                     n.hasOwnProperty("storeAdamID") &&
                     (typeof n.storeAdamID == "number"
-                      ? (l.storeAdamID = r.longs === String ? String(n.storeAdamID) : n.storeAdamID)
-                      : (l.storeAdamID =
+                      ? (u.storeAdamID = r.longs === String ? String(n.storeAdamID) : n.storeAdamID)
+                      : (u.storeAdamID =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.storeAdamID)
+                            ? f.Long.prototype.toString.call(n.storeAdamID)
                             : r.longs === Number
-                              ? new $util$1.LongBits(n.storeAdamID.low >>> 0, n.storeAdamID.high >>> 0).toNumber()
+                              ? new f.LongBits(n.storeAdamID.low >>> 0, n.storeAdamID.high >>> 0).toNumber()
                               : n.storeAdamID)),
                   n.cloudID != null &&
                     n.hasOwnProperty("cloudID") &&
                     (typeof n.cloudID == "number"
-                      ? (l.cloudID = r.longs === String ? String(n.cloudID) : n.cloudID)
-                      : (l.cloudID =
+                      ? (u.cloudID = r.longs === String ? String(n.cloudID) : n.cloudID)
+                      : (u.cloudID =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.cloudID)
+                            ? f.Long.prototype.toString.call(n.cloudID)
                             : r.longs === Number
-                              ? new $util$1.LongBits(n.cloudID.low >>> 0, n.cloudID.high >>> 0).toNumber()
+                              ? new f.LongBits(n.cloudID.low >>> 0, n.cloudID.high >>> 0).toNumber()
                               : n.cloudID)),
                   n.albumTrackCount != null &&
                     n.hasOwnProperty("albumTrackCount") &&
-                    (l.albumTrackCount = n.albumTrackCount),
-                  n.trackNumber != null && n.hasOwnProperty("trackNumber") && (l.trackNumber = n.trackNumber),
-                  n.year != null && n.hasOwnProperty("year") && (l.year = n.year),
+                    (u.albumTrackCount = n.albumTrackCount),
+                  n.trackNumber != null && n.hasOwnProperty("trackNumber") && (u.trackNumber = n.trackNumber),
+                  n.year != null && n.hasOwnProperty("year") && (u.year = n.year),
                   n.playbackAuthorizationToken != null &&
                     n.hasOwnProperty("playbackAuthorizationToken") &&
-                    (l.playbackAuthorizationToken = n.playbackAuthorizationToken),
-                  l
+                    (u.playbackAuthorizationToken = n.playbackAuthorizationToken),
+                  u
                 );
               }),
               (t.prototype.toJSON = function () {
-                return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+                return this.constructor.toObject(this, b.util.toJSONOptions);
               }),
               (t.getTypeUrl = function (n) {
                 return (
@@ -22449,13 +22784,13 @@ const $Reader$2 = minimalExports.Reader,
               if (e) for (let n = Object.keys(e), r = 0; r < n.length; ++r) e[n[r]] != null && (this[n[r]] = e[n[r]]);
             }
             return (
-              (t.prototype.storeAdamID = $util$1.Long ? $util$1.Long.fromBits(0, 0, !1) : 0),
+              (t.prototype.storeAdamID = f.Long ? f.Long.fromBits(0, 0, !1) : 0),
               (t.create = function (n) {
                 return new t(n);
               }),
               (t.encode = function (n, r) {
                 return (
-                  r || (r = $Writer$1.create()),
+                  r || (r = z.create()),
                   n.storeAdamID != null &&
                     Object.hasOwnProperty.call(n, "storeAdamID") &&
                     r.uint32(8).int64(n.storeAdamID),
@@ -22466,49 +22801,49 @@ const $Reader$2 = minimalExports.Reader,
                 return this.encode(n, r).ldelim();
               }),
               (t.decode = function (n, r) {
-                n instanceof $Reader$1 || (n = $Reader$1.create(n));
-                let l = r === void 0 ? n.len : n.pos + r,
-                  a = new $root$1.PlaybackQueue.RadioContentReference.StoreContentReference();
-                for (; n.pos < l;) {
-                  let u = n.uint32();
-                  switch (u >>> 3) {
+                n instanceof T || (n = T.create(n));
+                let u = r === void 0 ? n.len : n.pos + r,
+                  d = new h.PlaybackQueue.RadioContentReference.StoreContentReference();
+                for (; n.pos < u;) {
+                  let y = n.uint32();
+                  switch (y >>> 3) {
                     case 1: {
-                      a.storeAdamID = n.int64();
+                      d.storeAdamID = n.int64();
                       break;
                     }
                     default:
-                      n.skipType(u & 7);
+                      n.skipType(y & 7);
                       break;
                   }
                 }
-                return a;
+                return d;
               }),
               (t.decodeDelimited = function (n) {
-                return (n instanceof $Reader$1 || (n = new $Reader$1(n)), this.decode(n, n.uint32()));
+                return (n instanceof T || (n = new T(n)), this.decode(n, n.uint32()));
               }),
               (t.verify = function (n) {
                 return typeof n != "object" || n === null
                   ? "object expected"
                   : n.storeAdamID != null &&
                       n.hasOwnProperty("storeAdamID") &&
-                      !$util$1.isInteger(n.storeAdamID) &&
-                      !(n.storeAdamID && $util$1.isInteger(n.storeAdamID.low) && $util$1.isInteger(n.storeAdamID.high))
+                      !f.isInteger(n.storeAdamID) &&
+                      !(n.storeAdamID && f.isInteger(n.storeAdamID.low) && f.isInteger(n.storeAdamID.high))
                     ? "storeAdamID: integer|Long expected"
                     : null;
               }),
               (t.fromObject = function (n) {
-                if (n instanceof $root$1.PlaybackQueue.RadioContentReference.StoreContentReference) return n;
-                let r = new $root$1.PlaybackQueue.RadioContentReference.StoreContentReference();
+                if (n instanceof h.PlaybackQueue.RadioContentReference.StoreContentReference) return n;
+                let r = new h.PlaybackQueue.RadioContentReference.StoreContentReference();
                 return (
                   n.storeAdamID != null &&
-                    ($util$1.Long
-                      ? ((r.storeAdamID = $util$1.Long.fromValue(n.storeAdamID)).unsigned = !1)
+                    (f.Long
+                      ? ((r.storeAdamID = f.Long.fromValue(n.storeAdamID)).unsigned = !1)
                       : typeof n.storeAdamID == "string"
                         ? (r.storeAdamID = parseInt(n.storeAdamID, 10))
                         : typeof n.storeAdamID == "number"
                           ? (r.storeAdamID = n.storeAdamID)
                           : typeof n.storeAdamID == "object" &&
-                            (r.storeAdamID = new $util$1.LongBits(
+                            (r.storeAdamID = new f.LongBits(
                               n.storeAdamID.low >>> 0,
                               n.storeAdamID.high >>> 0,
                             ).toNumber())),
@@ -22517,28 +22852,28 @@ const $Reader$2 = minimalExports.Reader,
               }),
               (t.toObject = function (n, r) {
                 r || (r = {});
-                let l = {};
+                let u = {};
                 if (r.defaults)
-                  if ($util$1.Long) {
-                    let a = new $util$1.Long(0, 0, !1);
-                    l.storeAdamID = r.longs === String ? a.toString() : r.longs === Number ? a.toNumber() : a;
-                  } else l.storeAdamID = r.longs === String ? "0" : 0;
+                  if (f.Long) {
+                    let d = new f.Long(0, 0, !1);
+                    u.storeAdamID = r.longs === String ? d.toString() : r.longs === Number ? d.toNumber() : d;
+                  } else u.storeAdamID = r.longs === String ? "0" : 0;
                 return (
                   n.storeAdamID != null &&
                     n.hasOwnProperty("storeAdamID") &&
                     (typeof n.storeAdamID == "number"
-                      ? (l.storeAdamID = r.longs === String ? String(n.storeAdamID) : n.storeAdamID)
-                      : (l.storeAdamID =
+                      ? (u.storeAdamID = r.longs === String ? String(n.storeAdamID) : n.storeAdamID)
+                      : (u.storeAdamID =
                           r.longs === String
-                            ? $util$1.Long.prototype.toString.call(n.storeAdamID)
+                            ? f.Long.prototype.toString.call(n.storeAdamID)
                             : r.longs === Number
-                              ? new $util$1.LongBits(n.storeAdamID.low >>> 0, n.storeAdamID.high >>> 0).toNumber()
+                              ? new f.LongBits(n.storeAdamID.low >>> 0, n.storeAdamID.high >>> 0).toNumber()
                               : n.storeAdamID)),
-                  l
+                  u
                 );
               }),
               (t.prototype.toJSON = function () {
-                return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+                return this.constructor.toObject(this, b.util.toJSONOptions);
               }),
               (t.getTypeUrl = function (n) {
                 return (
@@ -22570,7 +22905,7 @@ const $Reader$2 = minimalExports.Reader,
           }),
           (i.encode = function (e, n) {
             return (
-              n || (n = $Writer$1.create()),
+              n || (n = z.create()),
               e.radioStationID != null &&
                 Object.hasOwnProperty.call(e, "radioStationID") &&
                 n.uint32(10).string(e.radioStationID),
@@ -22579,19 +22914,16 @@ const $Reader$2 = minimalExports.Reader,
                 n.uint32(18).string(e.radioStationURLString),
               e.seedContentReference != null &&
                 Object.hasOwnProperty.call(e, "seedContentReference") &&
-                $root$1.PlaybackQueue.RadioContentReference.encode(
-                  e.seedContentReference,
-                  n.uint32(26).fork(),
-                ).ldelim(),
+                h.PlaybackQueue.RadioContentReference.encode(e.seedContentReference, n.uint32(26).fork()).ldelim(),
               e.nowPlayingContentReference != null &&
                 Object.hasOwnProperty.call(e, "nowPlayingContentReference") &&
-                $root$1.PlaybackQueue.RadioContentReference.encode(
+                h.PlaybackQueue.RadioContentReference.encode(
                   e.nowPlayingContentReference,
                   n.uint32(34).fork(),
                 ).ldelim(),
               e.accountInfo != null &&
                 Object.hasOwnProperty.call(e, "accountInfo") &&
-                $root$1.PlaybackQueue.DelegateInfo.encode(e.accountInfo, n.uint32(42).fork()).ldelim(),
+                h.PlaybackQueue.DelegateInfo.encode(e.accountInfo, n.uint32(42).fork()).ldelim(),
               e.playActivityFeatureName != null &&
                 Object.hasOwnProperty.call(e, "playActivityFeatureName") &&
                 n.uint32(50).string(e.playActivityFeatureName),
@@ -22608,93 +22940,93 @@ const $Reader$2 = minimalExports.Reader,
             return this.encode(e, n).ldelim();
           }),
           (i.decode = function (e, n) {
-            e instanceof $Reader$1 || (e = $Reader$1.create(e));
+            e instanceof T || (e = T.create(e));
             let r = n === void 0 ? e.len : e.pos + n,
-              l = new $root$1.PlaybackQueue.RadioCreationProperties();
+              u = new h.PlaybackQueue.RadioCreationProperties();
             for (; e.pos < r;) {
-              let a = e.uint32();
-              switch (a >>> 3) {
+              let d = e.uint32();
+              switch (d >>> 3) {
                 case 1: {
-                  l.radioStationID = e.string();
+                  u.radioStationID = e.string();
                   break;
                 }
                 case 2: {
-                  l.radioStationURLString = e.string();
+                  u.radioStationURLString = e.string();
                   break;
                 }
                 case 3: {
-                  l.seedContentReference = $root$1.PlaybackQueue.RadioContentReference.decode(e, e.uint32());
+                  u.seedContentReference = h.PlaybackQueue.RadioContentReference.decode(e, e.uint32());
                   break;
                 }
                 case 4: {
-                  l.nowPlayingContentReference = $root$1.PlaybackQueue.RadioContentReference.decode(e, e.uint32());
+                  u.nowPlayingContentReference = h.PlaybackQueue.RadioContentReference.decode(e, e.uint32());
                   break;
                 }
                 case 5: {
-                  l.accountInfo = $root$1.PlaybackQueue.DelegateInfo.decode(e, e.uint32());
+                  u.accountInfo = h.PlaybackQueue.DelegateInfo.decode(e, e.uint32());
                   break;
                 }
                 case 6: {
-                  l.playActivityFeatureName = e.string();
+                  u.playActivityFeatureName = e.string();
                   break;
                 }
                 case 7: {
-                  l.playActivityQueueGroupingID = e.string();
+                  u.playActivityQueueGroupingID = e.string();
                   break;
                 }
                 case 8: {
-                  l.playbackAuthorizationToken = e.string();
+                  u.playbackAuthorizationToken = e.string();
                   break;
                 }
                 default:
-                  e.skipType(a & 7);
+                  e.skipType(d & 7);
                   break;
               }
             }
-            return l;
+            return u;
           }),
           (i.decodeDelimited = function (e) {
-            return (e instanceof $Reader$1 || (e = new $Reader$1(e)), this.decode(e, e.uint32()));
+            return (e instanceof T || (e = new T(e)), this.decode(e, e.uint32()));
           }),
           (i.verify = function (e) {
             if (typeof e != "object" || e === null) return "object expected";
-            if (e.radioStationID != null && e.hasOwnProperty("radioStationID") && !$util$1.isString(e.radioStationID))
+            if (e.radioStationID != null && e.hasOwnProperty("radioStationID") && !f.isString(e.radioStationID))
               return "radioStationID: string expected";
             if (
               e.radioStationURLString != null &&
               e.hasOwnProperty("radioStationURLString") &&
-              !$util$1.isString(e.radioStationURLString)
+              !f.isString(e.radioStationURLString)
             )
               return "radioStationURLString: string expected";
             if (e.seedContentReference != null && e.hasOwnProperty("seedContentReference")) {
-              let n = $root$1.PlaybackQueue.RadioContentReference.verify(e.seedContentReference);
+              let n = h.PlaybackQueue.RadioContentReference.verify(e.seedContentReference);
               if (n) return "seedContentReference." + n;
             }
             if (e.nowPlayingContentReference != null && e.hasOwnProperty("nowPlayingContentReference")) {
-              let n = $root$1.PlaybackQueue.RadioContentReference.verify(e.nowPlayingContentReference);
+              let n = h.PlaybackQueue.RadioContentReference.verify(e.nowPlayingContentReference);
               if (n) return "nowPlayingContentReference." + n;
             }
             if (e.accountInfo != null && e.hasOwnProperty("accountInfo")) {
-              let n = $root$1.PlaybackQueue.DelegateInfo.verify(e.accountInfo);
+              let n = h.PlaybackQueue.DelegateInfo.verify(e.accountInfo);
               if (n) return "accountInfo." + n;
             }
             return e.playActivityFeatureName != null &&
               e.hasOwnProperty("playActivityFeatureName") &&
-              !$util$1.isString(e.playActivityFeatureName)
+              !f.isString(e.playActivityFeatureName)
               ? "playActivityFeatureName: string expected"
               : e.playActivityQueueGroupingID != null &&
                   e.hasOwnProperty("playActivityQueueGroupingID") &&
-                  !$util$1.isString(e.playActivityQueueGroupingID)
+                  !f.isString(e.playActivityQueueGroupingID)
                 ? "playActivityQueueGroupingID: string expected"
                 : e.playbackAuthorizationToken != null &&
                     e.hasOwnProperty("playbackAuthorizationToken") &&
-                    !$util$1.isString(e.playbackAuthorizationToken)
+                    !f.isString(e.playbackAuthorizationToken)
                   ? "playbackAuthorizationToken: string expected"
                   : null;
           }),
           (i.fromObject = function (e) {
-            if (e instanceof $root$1.PlaybackQueue.RadioCreationProperties) return e;
-            let n = new $root$1.PlaybackQueue.RadioCreationProperties();
+            if (e instanceof h.PlaybackQueue.RadioCreationProperties) return e;
+            let n = new h.PlaybackQueue.RadioCreationProperties();
             if (
               (e.radioStationID != null && (n.radioStationID = String(e.radioStationID)),
               e.radioStationURLString != null && (n.radioStationURLString = String(e.radioStationURLString)),
@@ -22702,19 +23034,19 @@ const $Reader$2 = minimalExports.Reader,
             ) {
               if (typeof e.seedContentReference != "object")
                 throw TypeError(".PlaybackQueue.RadioCreationProperties.seedContentReference: object expected");
-              n.seedContentReference = $root$1.PlaybackQueue.RadioContentReference.fromObject(e.seedContentReference);
+              n.seedContentReference = h.PlaybackQueue.RadioContentReference.fromObject(e.seedContentReference);
             }
             if (e.nowPlayingContentReference != null) {
               if (typeof e.nowPlayingContentReference != "object")
                 throw TypeError(".PlaybackQueue.RadioCreationProperties.nowPlayingContentReference: object expected");
-              n.nowPlayingContentReference = $root$1.PlaybackQueue.RadioContentReference.fromObject(
+              n.nowPlayingContentReference = h.PlaybackQueue.RadioContentReference.fromObject(
                 e.nowPlayingContentReference,
               );
             }
             if (e.accountInfo != null) {
               if (typeof e.accountInfo != "object")
                 throw TypeError(".PlaybackQueue.RadioCreationProperties.accountInfo: object expected");
-              n.accountInfo = $root$1.PlaybackQueue.DelegateInfo.fromObject(e.accountInfo);
+              n.accountInfo = h.PlaybackQueue.DelegateInfo.fromObject(e.accountInfo);
             }
             return (
               e.playActivityFeatureName != null && (n.playActivityFeatureName = String(e.playActivityFeatureName)),
@@ -22744,19 +23076,16 @@ const $Reader$2 = minimalExports.Reader,
                 (r.radioStationURLString = e.radioStationURLString),
               e.seedContentReference != null &&
                 e.hasOwnProperty("seedContentReference") &&
-                (r.seedContentReference = $root$1.PlaybackQueue.RadioContentReference.toObject(
-                  e.seedContentReference,
-                  n,
-                )),
+                (r.seedContentReference = h.PlaybackQueue.RadioContentReference.toObject(e.seedContentReference, n)),
               e.nowPlayingContentReference != null &&
                 e.hasOwnProperty("nowPlayingContentReference") &&
-                (r.nowPlayingContentReference = $root$1.PlaybackQueue.RadioContentReference.toObject(
+                (r.nowPlayingContentReference = h.PlaybackQueue.RadioContentReference.toObject(
                   e.nowPlayingContentReference,
                   n,
                 )),
               e.accountInfo != null &&
                 e.hasOwnProperty("accountInfo") &&
-                (r.accountInfo = $root$1.PlaybackQueue.DelegateInfo.toObject(e.accountInfo, n)),
+                (r.accountInfo = h.PlaybackQueue.DelegateInfo.toObject(e.accountInfo, n)),
               e.playActivityFeatureName != null &&
                 e.hasOwnProperty("playActivityFeatureName") &&
                 (r.playActivityFeatureName = e.playActivityFeatureName),
@@ -22770,7 +23099,7 @@ const $Reader$2 = minimalExports.Reader,
             );
           }),
           (i.prototype.toJSON = function () {
-            return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+            return this.constructor.toObject(this, b.util.toJSONOptions);
           }),
           (i.getTypeUrl = function (e) {
             return (e === void 0 && (e = "type.googleapis.com"), e + "/PlaybackQueue.RadioCreationProperties");
@@ -22781,11 +23110,11 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })()),
-  $Reader = minimalExports.Reader,
-  $Writer = minimalExports.Writer,
-  $util = minimalExports.util,
-  $root = minimalExports.roots.default || (minimalExports.roots.default = {}),
-  GroupSessionRouteType = ($root.GroupSessionRouteType = (() => {
+  C = b.Reader,
+  G = b.Writer,
+  v = b.util,
+  P = b.roots.default || (b.roots.default = {}),
+  Xn = (P.GroupSessionRouteType = (() => {
     const o = {},
       i = Object.create(o);
     return (
@@ -22799,19 +23128,19 @@ const $Reader$2 = minimalExports.Reader,
       i
     );
   })()),
-  GroupSessionFastSyncMessageProtobuf = ($root.GroupSessionFastSyncMessageProtobuf = (() => {
+  ti = (P.GroupSessionFastSyncMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
       (o.prototype.messageType = 0),
-      (o.prototype.payload = $util.newBuffer([])),
+      (o.prototype.payload = v.newBuffer([])),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer.create()),
+          e || (e = G.create()),
           t.messageType != null && Object.hasOwnProperty.call(t, "messageType") && e.uint32(8).int32(t.messageType),
           t.payload != null && Object.hasOwnProperty.call(t, "payload") && e.uint32(18).bytes(t.payload),
           e
@@ -22821,12 +23150,12 @@ const $Reader$2 = minimalExports.Reader,
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader || (t = $Reader.create(t));
+        t instanceof C || (t = C.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root.GroupSessionFastSyncMessageProtobuf();
+          r = new P.GroupSessionFastSyncMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.messageType = t.int32();
               break;
@@ -22836,14 +23165,14 @@ const $Reader$2 = minimalExports.Reader,
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+        return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
@@ -22866,13 +23195,13 @@ const $Reader$2 = minimalExports.Reader,
           }
         return t.payload != null &&
           t.hasOwnProperty("payload") &&
-          !((t.payload && typeof t.payload.length == "number") || $util.isString(t.payload))
+          !((t.payload && typeof t.payload.length == "number") || v.isString(t.payload))
           ? "payload: buffer expected"
           : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root.GroupSessionFastSyncMessageProtobuf) return t;
-        let e = new $root.GroupSessionFastSyncMessageProtobuf();
+        if (t instanceof P.GroupSessionFastSyncMessageProtobuf) return t;
+        let e = new P.GroupSessionFastSyncMessageProtobuf();
         switch (t.messageType) {
           default:
             if (typeof t.messageType == "number") {
@@ -22928,7 +23257,7 @@ const $Reader$2 = minimalExports.Reader,
         return (
           t.payload != null &&
             (typeof t.payload == "string"
-              ? $util.base64.decode(t.payload, (e.payload = $util.newBuffer($util.base64.length(t.payload))), 0)
+              ? v.base64.decode(t.payload, (e.payload = v.newBuffer(v.base64.length(t.payload))), 0)
               : t.payload.length >= 0 && (e.payload = t.payload)),
           e
         );
@@ -22941,20 +23270,20 @@ const $Reader$2 = minimalExports.Reader,
             ((n.messageType = e.enums === String ? "LeaderDiscovery" : 0),
             e.bytes === String
               ? (n.payload = "")
-              : ((n.payload = []), e.bytes !== Array && (n.payload = $util.newBuffer(n.payload)))),
+              : ((n.payload = []), e.bytes !== Array && (n.payload = v.newBuffer(n.payload)))),
           t.messageType != null &&
             t.hasOwnProperty("messageType") &&
             (n.messageType =
               e.enums === String
-                ? $root.GroupSessionFastSyncMessageProtobuf.GroupSessionFastSyncMessageType[t.messageType] === void 0
+                ? P.GroupSessionFastSyncMessageProtobuf.GroupSessionFastSyncMessageType[t.messageType] === void 0
                   ? t.messageType
-                  : $root.GroupSessionFastSyncMessageProtobuf.GroupSessionFastSyncMessageType[t.messageType]
+                  : P.GroupSessionFastSyncMessageProtobuf.GroupSessionFastSyncMessageType[t.messageType]
                 : t.messageType),
           t.payload != null &&
             t.hasOwnProperty("payload") &&
             (n.payload =
               e.bytes === String
-                ? $util.base64.encode(t.payload, 0, t.payload.length)
+                ? v.base64.encode(t.payload, 0, t.payload.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.payload)
                   : t.payload),
@@ -22962,7 +23291,7 @@ const $Reader$2 = minimalExports.Reader,
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionFastSyncMessageProtobuf");
@@ -22988,7 +23317,7 @@ const $Reader$2 = minimalExports.Reader,
       o
     );
   })());
-$root.GroupSessionParticipantProtobuf = (() => {
+P.GroupSessionParticipantProtobuf = (() => {
   function o(i) {
     if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
   }
@@ -23003,11 +23332,11 @@ $root.GroupSessionParticipantProtobuf = (() => {
     }),
     (o.encode = function (t, e) {
       return (
-        e || (e = $Writer.create()),
+        e || (e = G.create()),
         t.identifier != null && Object.hasOwnProperty.call(t, "identifier") && e.uint32(10).string(t.identifier),
         t.identity != null &&
           Object.hasOwnProperty.call(t, "identity") &&
-          $root.UserIdentityProtobuf.encode(t.identity, e.uint32(18).fork()).ldelim(),
+          P.UserIdentityProtobuf.encode(t.identity, e.uint32(18).fork()).ldelim(),
         t.connected != null && Object.hasOwnProperty.call(t, "connected") && e.uint32(24).bool(t.connected),
         t.guest != null && Object.hasOwnProperty.call(t, "guest") && e.uint32(32).bool(t.guest),
         t.hidden != null && Object.hasOwnProperty.call(t, "hidden") && e.uint32(40).bool(t.hidden),
@@ -23018,18 +23347,18 @@ $root.GroupSessionParticipantProtobuf = (() => {
       return this.encode(t, e).ldelim();
     }),
     (o.decode = function (t, e) {
-      t instanceof $Reader || (t = $Reader.create(t));
+      t instanceof C || (t = C.create(t));
       let n = e === void 0 ? t.len : t.pos + e,
-        r = new $root.GroupSessionParticipantProtobuf();
+        r = new P.GroupSessionParticipantProtobuf();
       for (; t.pos < n;) {
-        let l = t.uint32();
-        switch (l >>> 3) {
+        let u = t.uint32();
+        switch (u >>> 3) {
           case 1: {
             r.identifier = t.string();
             break;
           }
           case 2: {
-            r.identity = $root.UserIdentityProtobuf.decode(t, t.uint32());
+            r.identity = P.UserIdentityProtobuf.decode(t, t.uint32());
             break;
           }
           case 3: {
@@ -23045,21 +23374,21 @@ $root.GroupSessionParticipantProtobuf = (() => {
             break;
           }
           default:
-            t.skipType(l & 7);
+            t.skipType(u & 7);
             break;
         }
       }
       return r;
     }),
     (o.decodeDelimited = function (t) {
-      return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+      return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
     }),
     (o.verify = function (t) {
       if (typeof t != "object" || t === null) return "object expected";
-      if (t.identifier != null && t.hasOwnProperty("identifier") && !$util.isString(t.identifier))
+      if (t.identifier != null && t.hasOwnProperty("identifier") && !v.isString(t.identifier))
         return "identifier: string expected";
       if (t.identity != null && t.hasOwnProperty("identity")) {
-        let e = $root.UserIdentityProtobuf.verify(t.identity);
+        let e = P.UserIdentityProtobuf.verify(t.identity);
         if (e) return "identity." + e;
       }
       return t.connected != null && t.hasOwnProperty("connected") && typeof t.connected != "boolean"
@@ -23071,12 +23400,12 @@ $root.GroupSessionParticipantProtobuf = (() => {
             : null;
     }),
     (o.fromObject = function (t) {
-      if (t instanceof $root.GroupSessionParticipantProtobuf) return t;
-      let e = new $root.GroupSessionParticipantProtobuf();
+      if (t instanceof P.GroupSessionParticipantProtobuf) return t;
+      let e = new P.GroupSessionParticipantProtobuf();
       if ((t.identifier != null && (e.identifier = String(t.identifier)), t.identity != null)) {
         if (typeof t.identity != "object")
           throw TypeError(".GroupSessionParticipantProtobuf.identity: object expected");
-        e.identity = $root.UserIdentityProtobuf.fromObject(t.identity);
+        e.identity = P.UserIdentityProtobuf.fromObject(t.identity);
       }
       return (
         t.connected != null && (e.connected = !!t.connected),
@@ -23093,7 +23422,7 @@ $root.GroupSessionParticipantProtobuf = (() => {
         t.identifier != null && t.hasOwnProperty("identifier") && (n.identifier = t.identifier),
         t.identity != null &&
           t.hasOwnProperty("identity") &&
-          (n.identity = $root.UserIdentityProtobuf.toObject(t.identity, e)),
+          (n.identity = P.UserIdentityProtobuf.toObject(t.identity, e)),
         t.connected != null && t.hasOwnProperty("connected") && (n.connected = t.connected),
         t.guest != null && t.hasOwnProperty("guest") && (n.guest = t.guest),
         t.hidden != null && t.hasOwnProperty("hidden") && (n.hidden = t.hidden),
@@ -23101,7 +23430,7 @@ $root.GroupSessionParticipantProtobuf = (() => {
       );
     }),
     (o.prototype.toJSON = function () {
-      return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+      return this.constructor.toObject(this, b.util.toJSONOptions);
     }),
     (o.getTypeUrl = function (t) {
       return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionParticipantProtobuf");
@@ -23109,7 +23438,7 @@ $root.GroupSessionParticipantProtobuf = (() => {
     o
   );
 })();
-const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseMessageProtobuf = (() => {
+const ei = (P.GroupSessionJoinResponseMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -23120,20 +23449,18 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        return (
-          e || (e = $Writer.create()), e.uint32(10).string(t.participantIdentifier), e.uint32(16).bool(t.approved), e
-        );
+        return (e || (e = G.create()), e.uint32(10).string(t.participantIdentifier), e.uint32(16).bool(t.approved), e);
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader || (t = $Reader.create(t));
+        t instanceof C || (t = C.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root.GroupSessionJoinResponseMessageProtobuf();
+          r = new P.GroupSessionJoinResponseMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.participantIdentifier = t.string();
               break;
@@ -23143,30 +23470,30 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         if (!r.hasOwnProperty("participantIdentifier"))
-          throw $util.ProtocolError("missing required 'participantIdentifier'", { instance: r });
-        if (!r.hasOwnProperty("approved")) throw $util.ProtocolError("missing required 'approved'", { instance: r });
+          throw v.ProtocolError("missing required 'participantIdentifier'", { instance: r });
+        if (!r.hasOwnProperty("approved")) throw v.ProtocolError("missing required 'approved'", { instance: r });
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+        return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : $util.isString(t.participantIdentifier)
+          : v.isString(t.participantIdentifier)
             ? typeof t.approved != "boolean"
               ? "approved: boolean expected"
               : null
             : "participantIdentifier: string expected";
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root.GroupSessionJoinResponseMessageProtobuf) return t;
-        let e = new $root.GroupSessionJoinResponseMessageProtobuf();
+        if (t instanceof P.GroupSessionJoinResponseMessageProtobuf) return t;
+        let e = new P.GroupSessionJoinResponseMessageProtobuf();
         return (
           t.participantIdentifier != null && (e.participantIdentifier = String(t.participantIdentifier)),
           t.approved != null && (e.approved = !!t.approved),
@@ -23186,7 +23513,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionJoinResponseMessageProtobuf");
@@ -23194,7 +23521,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
       o
     );
   })()),
-  GroupSessionRemoveRequestProtobuf = ($root.GroupSessionRemoveRequestProtobuf = (() => {
+  ni = (P.GroupSessionRemoveRequestProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -23204,44 +23531,44 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        return (e || (e = $Writer.create()), e.uint32(10).string(t.participantIdentifier), e);
+        return (e || (e = G.create()), e.uint32(10).string(t.participantIdentifier), e);
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader || (t = $Reader.create(t));
+        t instanceof C || (t = C.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root.GroupSessionRemoveRequestProtobuf();
+          r = new P.GroupSessionRemoveRequestProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.participantIdentifier = t.string();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         if (!r.hasOwnProperty("participantIdentifier"))
-          throw $util.ProtocolError("missing required 'participantIdentifier'", { instance: r });
+          throw v.ProtocolError("missing required 'participantIdentifier'", { instance: r });
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+        return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
-          : $util.isString(t.participantIdentifier)
+          : v.isString(t.participantIdentifier)
             ? null
             : "participantIdentifier: string expected";
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root.GroupSessionRemoveRequestProtobuf) return t;
-        let e = new $root.GroupSessionRemoveRequestProtobuf();
+        if (t instanceof P.GroupSessionRemoveRequestProtobuf) return t;
+        let e = new P.GroupSessionRemoveRequestProtobuf();
         return (t.participantIdentifier != null && (e.participantIdentifier = String(t.participantIdentifier)), e);
       }),
       (o.toObject = function (t, e) {
@@ -23256,7 +23583,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionRemoveRequestProtobuf");
@@ -23264,18 +23591,18 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
       o
     );
   })()),
-  GroupSessionLeaderDiscoveryMessageProtobuf = ($root.GroupSessionLeaderDiscoveryMessageProtobuf = (() => {
+  ii = (P.GroupSessionLeaderDiscoveryMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
-      (o.prototype.signature = $util.newBuffer([])),
+      (o.prototype.signature = v.newBuffer([])),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer.create()),
+          e || (e = G.create()),
           t.signature != null && Object.hasOwnProperty.call(t, "signature") && e.uint32(10).bytes(t.signature),
           e
         );
@@ -23284,42 +23611,42 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader || (t = $Reader.create(t));
+        t instanceof C || (t = C.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root.GroupSessionLeaderDiscoveryMessageProtobuf();
+          r = new P.GroupSessionLeaderDiscoveryMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               r.signature = t.bytes();
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+        return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         return typeof t != "object" || t === null
           ? "object expected"
           : t.signature != null &&
               t.hasOwnProperty("signature") &&
-              !((t.signature && typeof t.signature.length == "number") || $util.isString(t.signature))
+              !((t.signature && typeof t.signature.length == "number") || v.isString(t.signature))
             ? "signature: buffer expected"
             : null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root.GroupSessionLeaderDiscoveryMessageProtobuf) return t;
-        let e = new $root.GroupSessionLeaderDiscoveryMessageProtobuf();
+        if (t instanceof P.GroupSessionLeaderDiscoveryMessageProtobuf) return t;
+        let e = new P.GroupSessionLeaderDiscoveryMessageProtobuf();
         return (
           t.signature != null &&
             (typeof t.signature == "string"
-              ? $util.base64.decode(t.signature, (e.signature = $util.newBuffer($util.base64.length(t.signature))), 0)
+              ? v.base64.decode(t.signature, (e.signature = v.newBuffer(v.base64.length(t.signature))), 0)
               : t.signature.length >= 0 && (e.signature = t.signature)),
           e
         );
@@ -23331,12 +23658,12 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
           e.defaults &&
             (e.bytes === String
               ? (n.signature = "")
-              : ((n.signature = []), e.bytes !== Array && (n.signature = $util.newBuffer(n.signature)))),
+              : ((n.signature = []), e.bytes !== Array && (n.signature = v.newBuffer(n.signature)))),
           t.signature != null &&
             t.hasOwnProperty("signature") &&
             (n.signature =
               e.bytes === String
-                ? $util.base64.encode(t.signature, 0, t.signature.length)
+                ? v.base64.encode(t.signature, 0, t.signature.length)
                 : e.bytes === Array
                   ? Array.prototype.slice.call(t.signature)
                   : t.signature),
@@ -23344,7 +23671,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionLeaderDiscoveryMessageProtobuf");
@@ -23352,93 +23679,93 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
       o
     );
   })()),
-  GroupSessionMemberSyncMessageProtobuf = ($root.GroupSessionMemberSyncMessageProtobuf = (() => {
+  oi = (P.GroupSessionMemberSyncMessageProtobuf = (() => {
     function o(i) {
       if (((this.participants = []), (this.members = []), (this.pendingParticipants = []), i))
         for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
     return (
-      (o.prototype.participants = $util.emptyArray),
-      (o.prototype.members = $util.emptyArray),
-      (o.prototype.pendingParticipants = $util.emptyArray),
+      (o.prototype.participants = v.emptyArray),
+      (o.prototype.members = v.emptyArray),
+      (o.prototype.pendingParticipants = v.emptyArray),
       (o.create = function (t) {
         return new o(t);
       }),
       (o.encode = function (t, e) {
-        if ((e || (e = $Writer.create()), t.participants != null && t.participants.length))
+        if ((e || (e = G.create()), t.participants != null && t.participants.length))
           for (let n = 0; n < t.participants.length; ++n)
-            $root.GroupSessionParticipantProtobuf.encode(t.participants[n], e.uint32(10).fork()).ldelim();
+            P.GroupSessionParticipantProtobuf.encode(t.participants[n], e.uint32(10).fork()).ldelim();
         if (t.members != null && t.members.length)
           for (let n = 0; n < t.members.length; ++n)
-            $root.UserIdentityProtobuf.encode(t.members[n], e.uint32(18).fork()).ldelim();
+            P.UserIdentityProtobuf.encode(t.members[n], e.uint32(18).fork()).ldelim();
         if (t.pendingParticipants != null && t.pendingParticipants.length)
           for (let n = 0; n < t.pendingParticipants.length; ++n)
-            $root.GroupSessionParticipantProtobuf.encode(t.pendingParticipants[n], e.uint32(26).fork()).ldelim();
+            P.GroupSessionParticipantProtobuf.encode(t.pendingParticipants[n], e.uint32(26).fork()).ldelim();
         return e;
       }),
       (o.encodeDelimited = function (t, e) {
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader || (t = $Reader.create(t));
+        t instanceof C || (t = C.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root.GroupSessionMemberSyncMessageProtobuf();
+          r = new P.GroupSessionMemberSyncMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
               ((r.participants && r.participants.length) || (r.participants = []),
-                r.participants.push($root.GroupSessionParticipantProtobuf.decode(t, t.uint32())));
+                r.participants.push(P.GroupSessionParticipantProtobuf.decode(t, t.uint32())));
               break;
             }
             case 2: {
               ((r.members && r.members.length) || (r.members = []),
-                r.members.push($root.UserIdentityProtobuf.decode(t, t.uint32())));
+                r.members.push(P.UserIdentityProtobuf.decode(t, t.uint32())));
               break;
             }
             case 3: {
               ((r.pendingParticipants && r.pendingParticipants.length) || (r.pendingParticipants = []),
-                r.pendingParticipants.push($root.GroupSessionParticipantProtobuf.decode(t, t.uint32())));
+                r.pendingParticipants.push(P.GroupSessionParticipantProtobuf.decode(t, t.uint32())));
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+        return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.participants != null && t.hasOwnProperty("participants")) {
           if (!Array.isArray(t.participants)) return "participants: array expected";
           for (let e = 0; e < t.participants.length; ++e) {
-            let n = $root.GroupSessionParticipantProtobuf.verify(t.participants[e]);
+            let n = P.GroupSessionParticipantProtobuf.verify(t.participants[e]);
             if (n) return "participants." + n;
           }
         }
         if (t.members != null && t.hasOwnProperty("members")) {
           if (!Array.isArray(t.members)) return "members: array expected";
           for (let e = 0; e < t.members.length; ++e) {
-            let n = $root.UserIdentityProtobuf.verify(t.members[e]);
+            let n = P.UserIdentityProtobuf.verify(t.members[e]);
             if (n) return "members." + n;
           }
         }
         if (t.pendingParticipants != null && t.hasOwnProperty("pendingParticipants")) {
           if (!Array.isArray(t.pendingParticipants)) return "pendingParticipants: array expected";
           for (let e = 0; e < t.pendingParticipants.length; ++e) {
-            let n = $root.GroupSessionParticipantProtobuf.verify(t.pendingParticipants[e]);
+            let n = P.GroupSessionParticipantProtobuf.verify(t.pendingParticipants[e]);
             if (n) return "pendingParticipants." + n;
           }
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root.GroupSessionMemberSyncMessageProtobuf) return t;
-        let e = new $root.GroupSessionMemberSyncMessageProtobuf();
+        if (t instanceof P.GroupSessionMemberSyncMessageProtobuf) return t;
+        let e = new P.GroupSessionMemberSyncMessageProtobuf();
         if (t.participants) {
           if (!Array.isArray(t.participants))
             throw TypeError(".GroupSessionMemberSyncMessageProtobuf.participants: array expected");
@@ -23446,7 +23773,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
           for (let n = 0; n < t.participants.length; ++n) {
             if (typeof t.participants[n] != "object")
               throw TypeError(".GroupSessionMemberSyncMessageProtobuf.participants: object expected");
-            e.participants[n] = $root.GroupSessionParticipantProtobuf.fromObject(t.participants[n]);
+            e.participants[n] = P.GroupSessionParticipantProtobuf.fromObject(t.participants[n]);
           }
         }
         if (t.members) {
@@ -23456,7 +23783,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
           for (let n = 0; n < t.members.length; ++n) {
             if (typeof t.members[n] != "object")
               throw TypeError(".GroupSessionMemberSyncMessageProtobuf.members: object expected");
-            e.members[n] = $root.UserIdentityProtobuf.fromObject(t.members[n]);
+            e.members[n] = P.UserIdentityProtobuf.fromObject(t.members[n]);
           }
         }
         if (t.pendingParticipants) {
@@ -23466,7 +23793,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
           for (let n = 0; n < t.pendingParticipants.length; ++n) {
             if (typeof t.pendingParticipants[n] != "object")
               throw TypeError(".GroupSessionMemberSyncMessageProtobuf.pendingParticipants: object expected");
-            e.pendingParticipants[n] = $root.GroupSessionParticipantProtobuf.fromObject(t.pendingParticipants[n]);
+            e.pendingParticipants[n] = P.GroupSessionParticipantProtobuf.fromObject(t.pendingParticipants[n]);
           }
         }
         return e;
@@ -23480,22 +23807,21 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         ) {
           n.participants = [];
           for (let r = 0; r < t.participants.length; ++r)
-            n.participants[r] = $root.GroupSessionParticipantProtobuf.toObject(t.participants[r], e);
+            n.participants[r] = P.GroupSessionParticipantProtobuf.toObject(t.participants[r], e);
         }
         if (t.members && t.members.length) {
           n.members = [];
-          for (let r = 0; r < t.members.length; ++r)
-            n.members[r] = $root.UserIdentityProtobuf.toObject(t.members[r], e);
+          for (let r = 0; r < t.members.length; ++r) n.members[r] = P.UserIdentityProtobuf.toObject(t.members[r], e);
         }
         if (t.pendingParticipants && t.pendingParticipants.length) {
           n.pendingParticipants = [];
           for (let r = 0; r < t.pendingParticipants.length; ++r)
-            n.pendingParticipants[r] = $root.GroupSessionParticipantProtobuf.toObject(t.pendingParticipants[r], e);
+            n.pendingParticipants[r] = P.GroupSessionParticipantProtobuf.toObject(t.pendingParticipants[r], e);
         }
         return n;
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionMemberSyncMessageProtobuf");
@@ -23503,7 +23829,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
       o
     );
   })()),
-  GroupSessionIdentityShareMessageProtobuf = ($root.GroupSessionIdentityShareMessageProtobuf = (() => {
+  ri = (P.GroupSessionIdentityShareMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -23514,10 +23840,10 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer.create()),
+          e || (e = G.create()),
           t.identity != null &&
             Object.hasOwnProperty.call(t, "identity") &&
-            $root.UserIdentityProtobuf.encode(t.identity, e.uint32(10).fork()).ldelim(),
+            P.UserIdentityProtobuf.encode(t.identity, e.uint32(10).fork()).ldelim(),
           e
         );
       }),
@@ -23525,41 +23851,41 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader || (t = $Reader.create(t));
+        t instanceof C || (t = C.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root.GroupSessionIdentityShareMessageProtobuf();
+          r = new P.GroupSessionIdentityShareMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.identity = $root.UserIdentityProtobuf.decode(t, t.uint32());
+              r.identity = P.UserIdentityProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+        return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.identity != null && t.hasOwnProperty("identity")) {
-          let e = $root.UserIdentityProtobuf.verify(t.identity);
+          let e = P.UserIdentityProtobuf.verify(t.identity);
           if (e) return "identity." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root.GroupSessionIdentityShareMessageProtobuf) return t;
-        let e = new $root.GroupSessionIdentityShareMessageProtobuf();
+        if (t instanceof P.GroupSessionIdentityShareMessageProtobuf) return t;
+        let e = new P.GroupSessionIdentityShareMessageProtobuf();
         if (t.identity != null) {
           if (typeof t.identity != "object")
             throw TypeError(".GroupSessionIdentityShareMessageProtobuf.identity: object expected");
-          e.identity = $root.UserIdentityProtobuf.fromObject(t.identity);
+          e.identity = P.UserIdentityProtobuf.fromObject(t.identity);
         }
         return e;
       }),
@@ -23570,12 +23896,12 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
           e.defaults && (n.identity = null),
           t.identity != null &&
             t.hasOwnProperty("identity") &&
-            (n.identity = $root.UserIdentityProtobuf.toObject(t.identity, e)),
+            (n.identity = P.UserIdentityProtobuf.toObject(t.identity, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionIdentityShareMessageProtobuf");
@@ -23583,7 +23909,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
       o
     );
   })()),
-  GroupSessionIdentityShareReplyMessageProtobuf = ($root.GroupSessionIdentityShareReplyMessageProtobuf = (() => {
+  li = (P.GroupSessionIdentityShareReplyMessageProtobuf = (() => {
     function o(i) {
       if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
     }
@@ -23595,13 +23921,13 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
       }),
       (o.encode = function (t, e) {
         return (
-          e || (e = $Writer.create()),
+          e || (e = G.create()),
           t.localParticipant != null &&
             Object.hasOwnProperty.call(t, "localParticipant") &&
-            $root.GroupSessionParticipantProtobuf.encode(t.localParticipant, e.uint32(10).fork()).ldelim(),
+            P.GroupSessionParticipantProtobuf.encode(t.localParticipant, e.uint32(10).fork()).ldelim(),
           t.leaderParticipant != null &&
             Object.hasOwnProperty.call(t, "leaderParticipant") &&
-            $root.GroupSessionParticipantProtobuf.encode(t.leaderParticipant, e.uint32(18).fork()).ldelim(),
+            P.GroupSessionParticipantProtobuf.encode(t.leaderParticipant, e.uint32(18).fork()).ldelim(),
           e
         );
       }),
@@ -23609,54 +23935,54 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
         return this.encode(t, e).ldelim();
       }),
       (o.decode = function (t, e) {
-        t instanceof $Reader || (t = $Reader.create(t));
+        t instanceof C || (t = C.create(t));
         let n = e === void 0 ? t.len : t.pos + e,
-          r = new $root.GroupSessionIdentityShareReplyMessageProtobuf();
+          r = new P.GroupSessionIdentityShareReplyMessageProtobuf();
         for (; t.pos < n;) {
-          let l = t.uint32();
-          switch (l >>> 3) {
+          let u = t.uint32();
+          switch (u >>> 3) {
             case 1: {
-              r.localParticipant = $root.GroupSessionParticipantProtobuf.decode(t, t.uint32());
+              r.localParticipant = P.GroupSessionParticipantProtobuf.decode(t, t.uint32());
               break;
             }
             case 2: {
-              r.leaderParticipant = $root.GroupSessionParticipantProtobuf.decode(t, t.uint32());
+              r.leaderParticipant = P.GroupSessionParticipantProtobuf.decode(t, t.uint32());
               break;
             }
             default:
-              t.skipType(l & 7);
+              t.skipType(u & 7);
               break;
           }
         }
         return r;
       }),
       (o.decodeDelimited = function (t) {
-        return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+        return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
       }),
       (o.verify = function (t) {
         if (typeof t != "object" || t === null) return "object expected";
         if (t.localParticipant != null && t.hasOwnProperty("localParticipant")) {
-          let e = $root.GroupSessionParticipantProtobuf.verify(t.localParticipant);
+          let e = P.GroupSessionParticipantProtobuf.verify(t.localParticipant);
           if (e) return "localParticipant." + e;
         }
         if (t.leaderParticipant != null && t.hasOwnProperty("leaderParticipant")) {
-          let e = $root.GroupSessionParticipantProtobuf.verify(t.leaderParticipant);
+          let e = P.GroupSessionParticipantProtobuf.verify(t.leaderParticipant);
           if (e) return "leaderParticipant." + e;
         }
         return null;
       }),
       (o.fromObject = function (t) {
-        if (t instanceof $root.GroupSessionIdentityShareReplyMessageProtobuf) return t;
-        let e = new $root.GroupSessionIdentityShareReplyMessageProtobuf();
+        if (t instanceof P.GroupSessionIdentityShareReplyMessageProtobuf) return t;
+        let e = new P.GroupSessionIdentityShareReplyMessageProtobuf();
         if (t.localParticipant != null) {
           if (typeof t.localParticipant != "object")
             throw TypeError(".GroupSessionIdentityShareReplyMessageProtobuf.localParticipant: object expected");
-          e.localParticipant = $root.GroupSessionParticipantProtobuf.fromObject(t.localParticipant);
+          e.localParticipant = P.GroupSessionParticipantProtobuf.fromObject(t.localParticipant);
         }
         if (t.leaderParticipant != null) {
           if (typeof t.leaderParticipant != "object")
             throw TypeError(".GroupSessionIdentityShareReplyMessageProtobuf.leaderParticipant: object expected");
-          e.leaderParticipant = $root.GroupSessionParticipantProtobuf.fromObject(t.leaderParticipant);
+          e.leaderParticipant = P.GroupSessionParticipantProtobuf.fromObject(t.leaderParticipant);
         }
         return e;
       }),
@@ -23667,15 +23993,15 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
           e.defaults && ((n.localParticipant = null), (n.leaderParticipant = null)),
           t.localParticipant != null &&
             t.hasOwnProperty("localParticipant") &&
-            (n.localParticipant = $root.GroupSessionParticipantProtobuf.toObject(t.localParticipant, e)),
+            (n.localParticipant = P.GroupSessionParticipantProtobuf.toObject(t.localParticipant, e)),
           t.leaderParticipant != null &&
             t.hasOwnProperty("leaderParticipant") &&
-            (n.leaderParticipant = $root.GroupSessionParticipantProtobuf.toObject(t.leaderParticipant, e)),
+            (n.leaderParticipant = P.GroupSessionParticipantProtobuf.toObject(t.leaderParticipant, e)),
           n
         );
       }),
       (o.prototype.toJSON = function () {
-        return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+        return this.constructor.toObject(this, b.util.toJSONOptions);
       }),
       (o.getTypeUrl = function (t) {
         return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionIdentityShareReplyMessageProtobuf");
@@ -23683,7 +24009,7 @@ const GroupSessionJoinResponseMessageProtobuf = ($root.GroupSessionJoinResponseM
       o
     );
   })());
-$root.GroupSessionErrorReplyMessageProtobuf = (() => {
+P.GroupSessionErrorReplyMessageProtobuf = (() => {
   function o(i) {
     if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
   }
@@ -23694,7 +24020,7 @@ $root.GroupSessionErrorReplyMessageProtobuf = (() => {
     }),
     (o.encode = function (t, e) {
       return (
-        e || (e = $Writer.create()),
+        e || (e = G.create()),
         t.errorMessage != null && Object.hasOwnProperty.call(t, "errorMessage") && e.uint32(10).string(t.errorMessage),
         e
       );
@@ -23703,36 +24029,36 @@ $root.GroupSessionErrorReplyMessageProtobuf = (() => {
       return this.encode(t, e).ldelim();
     }),
     (o.decode = function (t, e) {
-      t instanceof $Reader || (t = $Reader.create(t));
+      t instanceof C || (t = C.create(t));
       let n = e === void 0 ? t.len : t.pos + e,
-        r = new $root.GroupSessionErrorReplyMessageProtobuf();
+        r = new P.GroupSessionErrorReplyMessageProtobuf();
       for (; t.pos < n;) {
-        let l = t.uint32();
-        switch (l >>> 3) {
+        let u = t.uint32();
+        switch (u >>> 3) {
           case 1: {
             r.errorMessage = t.string();
             break;
           }
           default:
-            t.skipType(l & 7);
+            t.skipType(u & 7);
             break;
         }
       }
       return r;
     }),
     (o.decodeDelimited = function (t) {
-      return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+      return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
     }),
     (o.verify = function (t) {
       return typeof t != "object" || t === null
         ? "object expected"
-        : t.errorMessage != null && t.hasOwnProperty("errorMessage") && !$util.isString(t.errorMessage)
+        : t.errorMessage != null && t.hasOwnProperty("errorMessage") && !v.isString(t.errorMessage)
           ? "errorMessage: string expected"
           : null;
     }),
     (o.fromObject = function (t) {
-      if (t instanceof $root.GroupSessionErrorReplyMessageProtobuf) return t;
-      let e = new $root.GroupSessionErrorReplyMessageProtobuf();
+      if (t instanceof P.GroupSessionErrorReplyMessageProtobuf) return t;
+      let e = new P.GroupSessionErrorReplyMessageProtobuf();
       return (t.errorMessage != null && (e.errorMessage = String(t.errorMessage)), e);
     }),
     (o.toObject = function (t, e) {
@@ -23745,7 +24071,7 @@ $root.GroupSessionErrorReplyMessageProtobuf = (() => {
       );
     }),
     (o.prototype.toJSON = function () {
-      return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+      return this.constructor.toObject(this, b.util.toJSONOptions);
     }),
     (o.getTypeUrl = function (t) {
       return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionErrorReplyMessageProtobuf");
@@ -23753,24 +24079,24 @@ $root.GroupSessionErrorReplyMessageProtobuf = (() => {
     o
   );
 })();
-const GroupSessionJoinRequestProtobuf = ($root.GroupSessionJoinRequestProtobuf = (() => {
+const ai = (P.GroupSessionJoinRequestProtobuf = (() => {
   function o(i) {
     if (((this.oobKeys = []), i))
       for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
   }
   return (
     (o.prototype.identity = null),
-    (o.prototype.oobKeys = $util.emptyArray),
+    (o.prototype.oobKeys = v.emptyArray),
     (o.prototype.identifier = ""),
     (o.create = function (t) {
       return new o(t);
     }),
     (o.encode = function (t, e) {
       if (
-        (e || (e = $Writer.create()),
+        (e || (e = G.create()),
         t.identity != null &&
           Object.hasOwnProperty.call(t, "identity") &&
-          $root.UserIdentityProtobuf.encode(t.identity, e.uint32(10).fork()).ldelim(),
+          P.UserIdentityProtobuf.encode(t.identity, e.uint32(10).fork()).ldelim(),
         t.oobKeys != null && t.oobKeys.length)
       )
         for (let n = 0; n < t.oobKeys.length; ++n) e.uint32(18).string(t.oobKeys[n]);
@@ -23782,14 +24108,14 @@ const GroupSessionJoinRequestProtobuf = ($root.GroupSessionJoinRequestProtobuf =
       return this.encode(t, e).ldelim();
     }),
     (o.decode = function (t, e) {
-      t instanceof $Reader || (t = $Reader.create(t));
+      t instanceof C || (t = C.create(t));
       let n = e === void 0 ? t.len : t.pos + e,
-        r = new $root.GroupSessionJoinRequestProtobuf();
+        r = new P.GroupSessionJoinRequestProtobuf();
       for (; t.pos < n;) {
-        let l = t.uint32();
-        switch (l >>> 3) {
+        let u = t.uint32();
+        switch (u >>> 3) {
           case 1: {
-            r.identity = $root.UserIdentityProtobuf.decode(t, t.uint32());
+            r.identity = P.UserIdentityProtobuf.decode(t, t.uint32());
             break;
           }
           case 2: {
@@ -23801,37 +24127,36 @@ const GroupSessionJoinRequestProtobuf = ($root.GroupSessionJoinRequestProtobuf =
             break;
           }
           default:
-            t.skipType(l & 7);
+            t.skipType(u & 7);
             break;
         }
       }
       return r;
     }),
     (o.decodeDelimited = function (t) {
-      return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+      return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
     }),
     (o.verify = function (t) {
       if (typeof t != "object" || t === null) return "object expected";
       if (t.identity != null && t.hasOwnProperty("identity")) {
-        let e = $root.UserIdentityProtobuf.verify(t.identity);
+        let e = P.UserIdentityProtobuf.verify(t.identity);
         if (e) return "identity." + e;
       }
       if (t.oobKeys != null && t.hasOwnProperty("oobKeys")) {
         if (!Array.isArray(t.oobKeys)) return "oobKeys: array expected";
-        for (let e = 0; e < t.oobKeys.length; ++e)
-          if (!$util.isString(t.oobKeys[e])) return "oobKeys: string[] expected";
+        for (let e = 0; e < t.oobKeys.length; ++e) if (!v.isString(t.oobKeys[e])) return "oobKeys: string[] expected";
       }
-      return t.identifier != null && t.hasOwnProperty("identifier") && !$util.isString(t.identifier)
+      return t.identifier != null && t.hasOwnProperty("identifier") && !v.isString(t.identifier)
         ? "identifier: string expected"
         : null;
     }),
     (o.fromObject = function (t) {
-      if (t instanceof $root.GroupSessionJoinRequestProtobuf) return t;
-      let e = new $root.GroupSessionJoinRequestProtobuf();
+      if (t instanceof P.GroupSessionJoinRequestProtobuf) return t;
+      let e = new P.GroupSessionJoinRequestProtobuf();
       if (t.identity != null) {
         if (typeof t.identity != "object")
           throw TypeError(".GroupSessionJoinRequestProtobuf.identity: object expected");
-        e.identity = $root.UserIdentityProtobuf.fromObject(t.identity);
+        e.identity = P.UserIdentityProtobuf.fromObject(t.identity);
       }
       if (t.oobKeys) {
         if (!Array.isArray(t.oobKeys)) throw TypeError(".GroupSessionJoinRequestProtobuf.oobKeys: array expected");
@@ -23848,7 +24173,7 @@ const GroupSessionJoinRequestProtobuf = ($root.GroupSessionJoinRequestProtobuf =
         e.defaults && ((n.identity = null), (n.identifier = "")),
         t.identity != null &&
           t.hasOwnProperty("identity") &&
-          (n.identity = $root.UserIdentityProtobuf.toObject(t.identity, e)),
+          (n.identity = P.UserIdentityProtobuf.toObject(t.identity, e)),
         t.oobKeys && t.oobKeys.length)
       ) {
         n.oobKeys = [];
@@ -23857,7 +24182,7 @@ const GroupSessionJoinRequestProtobuf = ($root.GroupSessionJoinRequestProtobuf =
       return (t.identifier != null && t.hasOwnProperty("identifier") && (n.identifier = t.identifier), n);
     }),
     (o.prototype.toJSON = function () {
-      return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+      return this.constructor.toObject(this, b.util.toJSONOptions);
     }),
     (o.getTypeUrl = function (t) {
       return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionJoinRequestProtobuf");
@@ -23865,18 +24190,18 @@ const GroupSessionJoinRequestProtobuf = ($root.GroupSessionJoinRequestProtobuf =
     o
   );
 })());
-$root.GroupSessionJoinResponseProtobuf = (() => {
+P.GroupSessionJoinResponseProtobuf = (() => {
   function o(i) {
     if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
   }
   return (
-    (o.prototype.publicSigningKeyData = $util.newBuffer([])),
+    (o.prototype.publicSigningKeyData = v.newBuffer([])),
     (o.create = function (t) {
       return new o(t);
     }),
     (o.encode = function (t, e) {
       return (
-        e || (e = $Writer.create()),
+        e || (e = G.create()),
         t.publicSigningKeyData != null &&
           Object.hasOwnProperty.call(t, "publicSigningKeyData") &&
           e.uint32(10).bytes(t.publicSigningKeyData),
@@ -23887,25 +24212,25 @@ $root.GroupSessionJoinResponseProtobuf = (() => {
       return this.encode(t, e).ldelim();
     }),
     (o.decode = function (t, e) {
-      t instanceof $Reader || (t = $Reader.create(t));
+      t instanceof C || (t = C.create(t));
       let n = e === void 0 ? t.len : t.pos + e,
-        r = new $root.GroupSessionJoinResponseProtobuf();
+        r = new P.GroupSessionJoinResponseProtobuf();
       for (; t.pos < n;) {
-        let l = t.uint32();
-        switch (l >>> 3) {
+        let u = t.uint32();
+        switch (u >>> 3) {
           case 1: {
             r.publicSigningKeyData = t.bytes();
             break;
           }
           default:
-            t.skipType(l & 7);
+            t.skipType(u & 7);
             break;
         }
       }
       return r;
     }),
     (o.decodeDelimited = function (t) {
-      return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+      return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
     }),
     (o.verify = function (t) {
       return typeof t != "object" || t === null
@@ -23914,20 +24239,20 @@ $root.GroupSessionJoinResponseProtobuf = (() => {
             t.hasOwnProperty("publicSigningKeyData") &&
             !(
               (t.publicSigningKeyData && typeof t.publicSigningKeyData.length == "number") ||
-              $util.isString(t.publicSigningKeyData)
+              v.isString(t.publicSigningKeyData)
             )
           ? "publicSigningKeyData: buffer expected"
           : null;
     }),
     (o.fromObject = function (t) {
-      if (t instanceof $root.GroupSessionJoinResponseProtobuf) return t;
-      let e = new $root.GroupSessionJoinResponseProtobuf();
+      if (t instanceof P.GroupSessionJoinResponseProtobuf) return t;
+      let e = new P.GroupSessionJoinResponseProtobuf();
       return (
         t.publicSigningKeyData != null &&
           (typeof t.publicSigningKeyData == "string"
-            ? $util.base64.decode(
+            ? v.base64.decode(
                 t.publicSigningKeyData,
-                (e.publicSigningKeyData = $util.newBuffer($util.base64.length(t.publicSigningKeyData))),
+                (e.publicSigningKeyData = v.newBuffer(v.base64.length(t.publicSigningKeyData))),
                 0,
               )
             : t.publicSigningKeyData.length >= 0 && (e.publicSigningKeyData = t.publicSigningKeyData)),
@@ -23942,12 +24267,12 @@ $root.GroupSessionJoinResponseProtobuf = (() => {
           (e.bytes === String
             ? (n.publicSigningKeyData = "")
             : ((n.publicSigningKeyData = []),
-              e.bytes !== Array && (n.publicSigningKeyData = $util.newBuffer(n.publicSigningKeyData)))),
+              e.bytes !== Array && (n.publicSigningKeyData = v.newBuffer(n.publicSigningKeyData)))),
         t.publicSigningKeyData != null &&
           t.hasOwnProperty("publicSigningKeyData") &&
           (n.publicSigningKeyData =
             e.bytes === String
-              ? $util.base64.encode(t.publicSigningKeyData, 0, t.publicSigningKeyData.length)
+              ? v.base64.encode(t.publicSigningKeyData, 0, t.publicSigningKeyData.length)
               : e.bytes === Array
                 ? Array.prototype.slice.call(t.publicSigningKeyData)
                 : t.publicSigningKeyData),
@@ -23955,7 +24280,7 @@ $root.GroupSessionJoinResponseProtobuf = (() => {
       );
     }),
     (o.prototype.toJSON = function () {
-      return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+      return this.constructor.toObject(this, b.util.toJSONOptions);
     }),
     (o.getTypeUrl = function (t) {
       return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionJoinResponseProtobuf");
@@ -23963,7 +24288,7 @@ $root.GroupSessionJoinResponseProtobuf = (() => {
     o
   );
 })();
-$root.GroupSessionInfoProtobuf = (() => {
+P.GroupSessionInfoProtobuf = (() => {
   function o(i) {
     if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
   }
@@ -23978,7 +24303,7 @@ $root.GroupSessionInfoProtobuf = (() => {
     }),
     (o.encode = function (t, e) {
       return (
-        e || (e = $Writer.create()),
+        e || (e = G.create()),
         e.uint32(10).string(t.identifier),
         e.uint32(18).string(t.hostDisplayName),
         e.uint32(24).int32(t.routeType),
@@ -23993,12 +24318,12 @@ $root.GroupSessionInfoProtobuf = (() => {
       return this.encode(t, e).ldelim();
     }),
     (o.decode = function (t, e) {
-      t instanceof $Reader || (t = $Reader.create(t));
+      t instanceof C || (t = C.create(t));
       let n = e === void 0 ? t.len : t.pos + e,
-        r = new $root.GroupSessionInfoProtobuf();
+        r = new P.GroupSessionInfoProtobuf();
       for (; t.pos < n;) {
-        let l = t.uint32();
-        switch (l >>> 3) {
+        let u = t.uint32();
+        switch (u >>> 3) {
           case 1: {
             r.identifier = t.string();
             break;
@@ -24020,24 +24345,24 @@ $root.GroupSessionInfoProtobuf = (() => {
             break;
           }
           default:
-            t.skipType(l & 7);
+            t.skipType(u & 7);
             break;
         }
       }
-      if (!r.hasOwnProperty("identifier")) throw $util.ProtocolError("missing required 'identifier'", { instance: r });
+      if (!r.hasOwnProperty("identifier")) throw v.ProtocolError("missing required 'identifier'", { instance: r });
       if (!r.hasOwnProperty("hostDisplayName"))
-        throw $util.ProtocolError("missing required 'hostDisplayName'", { instance: r });
-      if (!r.hasOwnProperty("routeType")) throw $util.ProtocolError("missing required 'routeType'", { instance: r });
-      if (!r.hasOwnProperty("hosted")) throw $util.ProtocolError("missing required 'hosted'", { instance: r });
+        throw v.ProtocolError("missing required 'hostDisplayName'", { instance: r });
+      if (!r.hasOwnProperty("routeType")) throw v.ProtocolError("missing required 'routeType'", { instance: r });
+      if (!r.hasOwnProperty("hosted")) throw v.ProtocolError("missing required 'hosted'", { instance: r });
       return r;
     }),
     (o.decodeDelimited = function (t) {
-      return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+      return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
     }),
     (o.verify = function (t) {
       if (typeof t != "object" || t === null) return "object expected";
-      if (!$util.isString(t.identifier)) return "identifier: string expected";
-      if (!$util.isString(t.hostDisplayName)) return "hostDisplayName: string expected";
+      if (!v.isString(t.identifier)) return "identifier: string expected";
+      if (!v.isString(t.hostDisplayName)) return "hostDisplayName: string expected";
       switch (t.routeType) {
         default:
           return "routeType: enum value expected";
@@ -24054,13 +24379,13 @@ $root.GroupSessionInfoProtobuf = (() => {
         ? "hosted: boolean expected"
         : t.equivalentMediaIdentifier != null &&
             t.hasOwnProperty("equivalentMediaIdentifier") &&
-            !$util.isString(t.equivalentMediaIdentifier)
+            !v.isString(t.equivalentMediaIdentifier)
           ? "equivalentMediaIdentifier: string expected"
           : null;
     }),
     (o.fromObject = function (t) {
-      if (t instanceof $root.GroupSessionInfoProtobuf) return t;
-      let e = new $root.GroupSessionInfoProtobuf();
+      if (t instanceof P.GroupSessionInfoProtobuf) return t;
+      let e = new P.GroupSessionInfoProtobuf();
       switch (
         (t.identifier != null && (e.identifier = String(t.identifier)),
         t.hostDisplayName != null && (e.hostDisplayName = String(t.hostDisplayName)),
@@ -24123,9 +24448,9 @@ $root.GroupSessionInfoProtobuf = (() => {
           t.hasOwnProperty("routeType") &&
           (n.routeType =
             e.enums === String
-              ? $root.GroupSessionRouteType[t.routeType] === void 0
+              ? P.GroupSessionRouteType[t.routeType] === void 0
                 ? t.routeType
-                : $root.GroupSessionRouteType[t.routeType]
+                : P.GroupSessionRouteType[t.routeType]
               : t.routeType),
         t.hosted != null && t.hasOwnProperty("hosted") && (n.hosted = t.hosted),
         t.equivalentMediaIdentifier != null &&
@@ -24135,7 +24460,7 @@ $root.GroupSessionInfoProtobuf = (() => {
       );
     }),
     (o.prototype.toJSON = function () {
-      return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+      return this.constructor.toObject(this, b.util.toJSONOptions);
     }),
     (o.getTypeUrl = function (t) {
       return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionInfoProtobuf");
@@ -24143,12 +24468,12 @@ $root.GroupSessionInfoProtobuf = (() => {
     o
   );
 })();
-$root.GroupSessionTokenProtobuf = (() => {
+P.GroupSessionTokenProtobuf = (() => {
   function o(i) {
     if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
   }
   return (
-    (o.prototype.invitationData = $util.newBuffer([])),
+    (o.prototype.invitationData = v.newBuffer([])),
     (o.prototype.routeType = 0),
     (o.prototype.displayName = ""),
     (o.prototype.sessionIdentifier = ""),
@@ -24160,7 +24485,7 @@ $root.GroupSessionTokenProtobuf = (() => {
     }),
     (o.encode = function (t, e) {
       return (
-        e || (e = $Writer.create()),
+        e || (e = G.create()),
         e.uint32(10).bytes(t.invitationData),
         e.uint32(16).int32(t.routeType),
         t.displayName != null && Object.hasOwnProperty.call(t, "displayName") && e.uint32(26).string(t.displayName),
@@ -24179,12 +24504,12 @@ $root.GroupSessionTokenProtobuf = (() => {
       return this.encode(t, e).ldelim();
     }),
     (o.decode = function (t, e) {
-      t instanceof $Reader || (t = $Reader.create(t));
+      t instanceof C || (t = C.create(t));
       let n = e === void 0 ? t.len : t.pos + e,
-        r = new $root.GroupSessionTokenProtobuf();
+        r = new P.GroupSessionTokenProtobuf();
       for (; t.pos < n;) {
-        let l = t.uint32();
-        switch (l >>> 3) {
+        let u = t.uint32();
+        switch (u >>> 3) {
           case 1: {
             r.invitationData = t.bytes();
             break;
@@ -24214,21 +24539,21 @@ $root.GroupSessionTokenProtobuf = (() => {
             break;
           }
           default:
-            t.skipType(l & 7);
+            t.skipType(u & 7);
             break;
         }
       }
       if (!r.hasOwnProperty("invitationData"))
-        throw $util.ProtocolError("missing required 'invitationData'", { instance: r });
-      if (!r.hasOwnProperty("routeType")) throw $util.ProtocolError("missing required 'routeType'", { instance: r });
+        throw v.ProtocolError("missing required 'invitationData'", { instance: r });
+      if (!r.hasOwnProperty("routeType")) throw v.ProtocolError("missing required 'routeType'", { instance: r });
       return r;
     }),
     (o.decodeDelimited = function (t) {
-      return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+      return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
     }),
     (o.verify = function (t) {
       if (typeof t != "object" || t === null) return "object expected";
-      if (!((t.invitationData && typeof t.invitationData.length == "number") || $util.isString(t.invitationData)))
+      if (!((t.invitationData && typeof t.invitationData.length == "number") || v.isString(t.invitationData)))
         return "invitationData: buffer expected";
       switch (t.routeType) {
         default:
@@ -24242,31 +24567,27 @@ $root.GroupSessionTokenProtobuf = (() => {
         case 11:
           break;
       }
-      return t.displayName != null && t.hasOwnProperty("displayName") && !$util.isString(t.displayName)
+      return t.displayName != null && t.hasOwnProperty("displayName") && !v.isString(t.displayName)
         ? "displayName: string expected"
-        : t.sessionIdentifier != null && t.hasOwnProperty("sessionIdentifier") && !$util.isString(t.sessionIdentifier)
+        : t.sessionIdentifier != null && t.hasOwnProperty("sessionIdentifier") && !v.isString(t.sessionIdentifier)
           ? "sessionIdentifier: string expected"
-          : t.sharedSecret != null && t.hasOwnProperty("sharedSecret") && !$util.isString(t.sharedSecret)
+          : t.sharedSecret != null && t.hasOwnProperty("sharedSecret") && !v.isString(t.sharedSecret)
             ? "sharedSecret: string expected"
             : t.equivalentMediaIdentifier != null &&
                 t.hasOwnProperty("equivalentMediaIdentifier") &&
-                !$util.isString(t.equivalentMediaIdentifier)
+                !v.isString(t.equivalentMediaIdentifier)
               ? "equivalentMediaIdentifier: string expected"
-              : t.version != null && t.hasOwnProperty("version") && !$util.isInteger(t.version)
+              : t.version != null && t.hasOwnProperty("version") && !v.isInteger(t.version)
                 ? "version: integer expected"
                 : null;
     }),
     (o.fromObject = function (t) {
-      if (t instanceof $root.GroupSessionTokenProtobuf) return t;
-      let e = new $root.GroupSessionTokenProtobuf();
+      if (t instanceof P.GroupSessionTokenProtobuf) return t;
+      let e = new P.GroupSessionTokenProtobuf();
       switch (
         (t.invitationData != null &&
           (typeof t.invitationData == "string"
-            ? $util.base64.decode(
-                t.invitationData,
-                (e.invitationData = $util.newBuffer($util.base64.length(t.invitationData))),
-                0,
-              )
+            ? v.base64.decode(t.invitationData, (e.invitationData = v.newBuffer(v.base64.length(t.invitationData))), 0)
             : t.invitationData.length >= 0 && (e.invitationData = t.invitationData)),
         t.routeType)
       ) {
@@ -24321,7 +24642,7 @@ $root.GroupSessionTokenProtobuf = (() => {
         e.defaults &&
           (e.bytes === String
             ? (n.invitationData = "")
-            : ((n.invitationData = []), e.bytes !== Array && (n.invitationData = $util.newBuffer(n.invitationData))),
+            : ((n.invitationData = []), e.bytes !== Array && (n.invitationData = v.newBuffer(n.invitationData))),
           (n.routeType = e.enums === String ? "GroupSessionRouteTypeUnknown" : 0),
           (n.displayName = ""),
           (n.sessionIdentifier = ""),
@@ -24332,7 +24653,7 @@ $root.GroupSessionTokenProtobuf = (() => {
           t.hasOwnProperty("invitationData") &&
           (n.invitationData =
             e.bytes === String
-              ? $util.base64.encode(t.invitationData, 0, t.invitationData.length)
+              ? v.base64.encode(t.invitationData, 0, t.invitationData.length)
               : e.bytes === Array
                 ? Array.prototype.slice.call(t.invitationData)
                 : t.invitationData),
@@ -24340,9 +24661,9 @@ $root.GroupSessionTokenProtobuf = (() => {
           t.hasOwnProperty("routeType") &&
           (n.routeType =
             e.enums === String
-              ? $root.GroupSessionRouteType[t.routeType] === void 0
+              ? P.GroupSessionRouteType[t.routeType] === void 0
                 ? t.routeType
-                : $root.GroupSessionRouteType[t.routeType]
+                : P.GroupSessionRouteType[t.routeType]
               : t.routeType),
         t.displayName != null && t.hasOwnProperty("displayName") && (n.displayName = t.displayName),
         t.sessionIdentifier != null &&
@@ -24357,7 +24678,7 @@ $root.GroupSessionTokenProtobuf = (() => {
       );
     }),
     (o.prototype.toJSON = function () {
-      return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+      return this.constructor.toObject(this, b.util.toJSONOptions);
     }),
     (o.getTypeUrl = function (t) {
       return (t === void 0 && (t = "type.googleapis.com"), t + "/GroupSessionTokenProtobuf");
@@ -24365,7 +24686,7 @@ $root.GroupSessionTokenProtobuf = (() => {
     o
   );
 })();
-const UserIdentityProtobuf = ($root.UserIdentityProtobuf = (() => {
+const ui = (P.UserIdentityProtobuf = (() => {
   function o(i) {
     if (i) for (let t = Object.keys(i), e = 0; e < t.length; ++e) i[t[e]] != null && (this[t[e]] = i[t[e]]);
   }
@@ -24378,7 +24699,7 @@ const UserIdentityProtobuf = ($root.UserIdentityProtobuf = (() => {
     }),
     (o.encode = function (t, e) {
       return (
-        e || (e = $Writer.create()),
+        e || (e = G.create()),
         t.identifier != null && Object.hasOwnProperty.call(t, "identifier") && e.uint32(10).string(t.identifier),
         t.displayName != null && Object.hasOwnProperty.call(t, "displayName") && e.uint32(18).string(t.displayName),
         t.type != null && Object.hasOwnProperty.call(t, "type") && e.uint32(24).int32(t.type),
@@ -24389,12 +24710,12 @@ const UserIdentityProtobuf = ($root.UserIdentityProtobuf = (() => {
       return this.encode(t, e).ldelim();
     }),
     (o.decode = function (t, e) {
-      t instanceof $Reader || (t = $Reader.create(t));
+      t instanceof C || (t = C.create(t));
       let n = e === void 0 ? t.len : t.pos + e,
-        r = new $root.UserIdentityProtobuf();
+        r = new P.UserIdentityProtobuf();
       for (; t.pos < n;) {
-        let l = t.uint32();
-        switch (l >>> 3) {
+        let u = t.uint32();
+        switch (u >>> 3) {
           case 1: {
             r.identifier = t.string();
             break;
@@ -24408,20 +24729,20 @@ const UserIdentityProtobuf = ($root.UserIdentityProtobuf = (() => {
             break;
           }
           default:
-            t.skipType(l & 7);
+            t.skipType(u & 7);
             break;
         }
       }
       return r;
     }),
     (o.decodeDelimited = function (t) {
-      return (t instanceof $Reader || (t = new $Reader(t)), this.decode(t, t.uint32()));
+      return (t instanceof C || (t = new C(t)), this.decode(t, t.uint32()));
     }),
     (o.verify = function (t) {
       if (typeof t != "object" || t === null) return "object expected";
-      if (t.identifier != null && t.hasOwnProperty("identifier") && !$util.isString(t.identifier))
+      if (t.identifier != null && t.hasOwnProperty("identifier") && !v.isString(t.identifier))
         return "identifier: string expected";
-      if (t.displayName != null && t.hasOwnProperty("displayName") && !$util.isString(t.displayName))
+      if (t.displayName != null && t.hasOwnProperty("displayName") && !v.isString(t.displayName))
         return "displayName: string expected";
       if (t.type != null && t.hasOwnProperty("type"))
         switch (t.type) {
@@ -24434,8 +24755,8 @@ const UserIdentityProtobuf = ($root.UserIdentityProtobuf = (() => {
       return null;
     }),
     (o.fromObject = function (t) {
-      if (t instanceof $root.UserIdentityProtobuf) return t;
-      let e = new $root.UserIdentityProtobuf();
+      if (t instanceof P.UserIdentityProtobuf) return t;
+      let e = new P.UserIdentityProtobuf();
       switch (
         (t.identifier != null && (e.identifier = String(t.identifier)),
         t.displayName != null && (e.displayName = String(t.displayName)),
@@ -24469,15 +24790,15 @@ const UserIdentityProtobuf = ($root.UserIdentityProtobuf = (() => {
           t.hasOwnProperty("type") &&
           (n.type =
             e.enums === String
-              ? $root.UserIdentityProtobuf.UserIdentityType[t.type] === void 0
+              ? P.UserIdentityProtobuf.UserIdentityType[t.type] === void 0
                 ? t.type
-                : $root.UserIdentityProtobuf.UserIdentityType[t.type]
+                : P.UserIdentityProtobuf.UserIdentityType[t.type]
               : t.type),
         n
       );
     }),
     (o.prototype.toJSON = function () {
-      return this.constructor.toObject(this, minimalExports.util.toJSONOptions);
+      return this.constructor.toObject(this, b.util.toJSONOptions);
     }),
     (o.getTypeUrl = function (t) {
       return (t === void 0 && (t = "type.googleapis.com"), t + "/UserIdentityProtobuf");
@@ -24491,99 +24812,99 @@ const UserIdentityProtobuf = ($root.UserIdentityProtobuf = (() => {
   );
 })());
 export {
-  RemoteArtworkProtobuf as $,
-  ShuffleModeProtobuf as A,
-  PlaybackQueueContextProtobuf as B,
-  ConnectionStateProtobuf as C,
-  DeviceInfoMessageProtobuf as D,
-  ErrorProtobuf as E,
-  PlaybackQueueProtobuf as F,
-  GetVolumeMessageProtobuf as G,
-  PlaybackQueueCapabilitiesProtobuf as H,
-  ContentItemProtobuf as I,
-  LyricsItemProtobuf as J,
-  LyricsEventProtobuf as K,
-  LyricsTokenProtobuf as L,
-  MediaRemoteMessageType as M,
-  NowPlayingPlayerPathProtobuf as N,
-  OriginType as O,
-  PlaybackQueue as P,
-  QueueEndActionProtobuf as Q,
-  RepeatModeProtobuf as R,
-  SetConnectionStateMessageProtobuf as S,
-  SendLyricsEventMessageProtobuf as T,
-  UserIdentityProtobuf$1 as U,
-  LanguageOptionProtobuf as V,
-  LanguageOptionGroupProtobuf as W,
-  AudioFormatProtobuf as X,
-  AudioRouteProtobuf as Y,
-  NowPlayingInfoProtobuf as Z,
-  DataArtworkProtobuf as _,
-  ClientUpdatesConfigurationProtobuf as a,
-  PlaybackQueueParticipantProtobuf as a0,
-  PlayerClientParticipantsUpdateMessageProtobuf as a1,
-  SendCommandResultProtobuf as a2,
-  SendCommandResultStatusProtobuf as a3,
-  SendCommandResultHandlerDialogActionProtobuf as a4,
-  SendCommandResultHandlerDialogProtobuf as a5,
-  PlayerClientPropertiesMessageProtobuf as a6,
-  OriginClientPropertiesMessageProtobuf as a7,
-  GetVolumeControlCapabilitiesMessageProtobuf as a8,
-  GetVolumeControlCapabilitiesResultMessageProtobuf as a9,
-  CommandInfoProtobuf as aA,
-  DisabledReasonProtobuf as aB,
-  PreloadedPlaybackSessionInfo as aC,
-  NotificationMessageProtobuf as aD,
-  GetStateMessageProtobuf as aE,
-  VolumeControlCapabilitiesDidChangeMessageProtobuf as aa,
-  VolumeControlAvailabilityProtobuf as ab,
-  GetVolumeResultMessageProtobuf as ac,
-  VolumeDidChangeMessageProtobuf as ad,
-  AdjustVolumeMessageProtobuf as ae,
-  GetVolumeMutedMessageProtobuf as af,
-  GetVolumeMutedResultMessageProtobuf as ag,
-  SetVolumeMutedMessageProtobuf as ah,
-  VolumeMutedDidChangeMessageProtobuf as ai,
-  RequestDetailsProtobuf as aj,
-  GroupTopologyModificationRequestProtobuf as ak,
-  PlaybackStateProtobuf as al,
-  SetStateMessageProtobuf as am,
-  SetArtworkMessageProtobuf as an,
-  SetReadyStateMessageProtobuf as ao,
-  SetHiliteModeMessageProtobuf as ap,
-  WakeDeviceMessageProtobuf as aq,
-  SetNowPlayingClientMessageProtobuf as ar,
-  SetNowPlayingPlayerMessageProtobuf as as,
-  RemoveClientMessageProtobuf as at,
-  RemovePlayerMessageProtobuf as au,
-  UpdateClientMessageProtobuf as av,
-  UpdatePlayerMessageProtobuf as aw,
-  UpdateContentItemMessageProtobuf as ax,
-  UpdateContentItemArtworkMessageProtobuf as ay,
-  SupportedCommandsProtobuf as az,
-  CommandProtobuf as b,
-  CommandOptionsProtobuf as c,
-  SetVolumeMessageProtobuf as d,
-  SystemPlaybackQueueProtobuf as e,
-  PlaybackQueueRequestProtobuf as f,
-  ContentItemMetadataProtobuf as g,
-  MediaRemoteMessageProtobuf as h,
-  SendCommandMessageProtobuf as i,
-  SendCommandResultMessageProtobuf as j,
-  GroupSessionJoinResponseMessageProtobuf as k,
-  GroupSessionFastSyncMessageProtobuf as l,
-  minimalExports as m,
-  GroupSessionRemoveRequestProtobuf as n,
-  GroupSessionMemberSyncMessageProtobuf as o,
-  GroupSessionIdentityShareReplyMessageProtobuf as p,
-  UserIdentityProtobuf as q,
-  GroupSessionLeaderDiscoveryMessageProtobuf as r,
-  GroupSessionJoinRequestProtobuf as s,
-  GroupSessionIdentityShareMessageProtobuf as t,
-  GroupSessionRouteType as u,
-  NowPlayingClientVisibility as v,
-  OriginProtobuf as w,
-  NowPlayingClientProtobuf as x,
-  NowPlayingPlayerProtobuf as y,
-  ColorProtobuf as z,
+  on as $,
+  _e as A,
+  Be as B,
+  xn as C,
+  ge as D,
+  Le as E,
+  Fe as F,
+  kn as G,
+  Ve as H,
+  Je as I,
+  je as J,
+  Ke as K,
+  We as L,
+  De as M,
+  Re as N,
+  Ce as O,
+  Yn as P,
+  qe as Q,
+  Qe as R,
+  Un as S,
+  Ze as T,
+  an as U,
+  $e as V,
+  Ye as W,
+  Xe as X,
+  tn as Y,
+  en as Z,
+  nn as _,
+  ve as a,
+  rn as a0,
+  ln as a1,
+  cn as a2,
+  fn as a3,
+  pn as a4,
+  dn as a5,
+  yn as a6,
+  sn as a7,
+  bn as a8,
+  hn as a9,
+  Wn as aA,
+  jn as aB,
+  Kn as aC,
+  Zn as aD,
+  $n as aE,
+  Pn as aa,
+  In as ab,
+  Sn as ac,
+  Dn as ad,
+  wn as ae,
+  vn as af,
+  Cn as ag,
+  Tn as ah,
+  An as ai,
+  Mn as aj,
+  mn as ak,
+  Rn as al,
+  Nn as am,
+  gn as an,
+  Ln as ao,
+  En as ap,
+  Qn as aq,
+  _n as ar,
+  qn as as,
+  Bn as at,
+  Fn as au,
+  Gn as av,
+  Vn as aw,
+  zn as ax,
+  Jn as ay,
+  Hn as az,
+  Ue as b,
+  Ee as c,
+  On as d,
+  ze as e,
+  Ge as f,
+  He as g,
+  we as h,
+  xe as i,
+  un as j,
+  ei as k,
+  ti as l,
+  b as m,
+  ni as n,
+  oi as o,
+  li as p,
+  ui as q,
+  ii as r,
+  ai as s,
+  ri as t,
+  Xn as u,
+  Te as v,
+  Ae as w,
+  Me as x,
+  me as y,
+  Ne as z,
 };

@@ -1,32 +1,32 @@
-import { br as f, Z as l } from "./main.js";
-function s(n, a) {
+import { bA as f, Z as l } from "./main.js";
+function s(r, a) {
   for (var t = 0; t < a.length; t++) {
     const e = a[t];
     if (typeof e != "string" && !Array.isArray(e)) {
-      for (const r in e)
-        if (r !== "default" && !(r in n)) {
-          const o = Object.getOwnPropertyDescriptor(e, r);
-          o && Object.defineProperty(n, r, o.get ? o : { enumerable: !0, get: () => e[r] });
+      for (const n in e)
+        if (n !== "default" && !(n in r)) {
+          const o = Object.getOwnPropertyDescriptor(e, n);
+          o && Object.defineProperty(r, n, o.get ? o : { enumerable: !0, get: () => e[n] });
         }
     }
   }
-  return Object.freeze(Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }));
+  return Object.freeze(Object.defineProperty(r, Symbol.toStringTag, { value: "Module" }));
 }
 var i = {},
   d = {
     get exports() {
       return i;
     },
-    set exports(n) {
-      i = n;
+    set exports(r) {
+      i = r;
     },
   };
-(function (n, a) {
+(function (r, a) {
   (function (t, e) {
     e(a);
   })(l, function (t) {
     var e = typeof window < "u" && window.flatpickr !== void 0 ? window.flatpickr : { l10ns: {} },
-      r = {
+      n = {
         weekdays: {
           shorthand: ["रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"],
           longhand: ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"],
@@ -49,9 +49,9 @@ var i = {},
           ],
         },
       };
-    e.l10ns.hi = r;
+    e.l10ns.hi = n;
     var o = e.l10ns;
-    ((t.Hindi = r), (t.default = o), Object.defineProperty(t, "__esModule", { value: !0 }));
+    ((t.Hindi = n), (t.default = o), Object.defineProperty(t, "__esModule", { value: !0 }));
   });
 })(d, i);
 const u = f(i),

@@ -65,7 +65,7 @@ var C = {},
           return a[0];
         }
         return i.target;
-      } catch (e) {
+      } catch {
         return i.target;
       }
     }
