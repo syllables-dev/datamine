@@ -2,10 +2,10 @@
 
 Tracks Apple Music web player builds and posts the changes to Discord.
 
-| Site | Host |
-| --- | --- |
-| `main` | music.apple.com |
-| `beta` | beta.music.apple.com |
+| Site        | Host                      |
+| ----------- | ------------------------- |
+| `main`      | music.apple.com           |
+| `beta`      | beta.music.apple.com      |
 | `classical` | classical.music.apple.com |
 
 Snapshots are saved to `datamine/<host>/`.

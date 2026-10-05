@@ -9,14 +9,6 @@ on:
         description: Re-crawl even if the build has not changed
         type: boolean
         default: false
-      target:
-        description: Only crawl this target (main, beta, classical)
-        type: string
-        required: false
-
-concurrency:
-  group: datamine
-  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -25,13 +17,20 @@ jobs:
   datamine:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [main, beta, classical]
+    concurrency:
+      group: datamine-${{ matrix.target }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v5
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
-      - run: bun run datamine ${{ inputs.force && '--force' || '' }} ${{ inputs.target && format('--target={0}', inputs.target) || '' }}
+      - run: bun run datamine --target=${{ matrix.target }} ${{ inputs.force && '--force' || '' }}
       - id: commit
         run: |
           git add --all
@@ -42,7 +41,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit --file .datamine/commit.txt
-          git push
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase && git push && break
+            sleep $((attempt * 3))
+          done
+          git diff --quiet "@{upstream}" HEAD
           echo "changed=true" >> "$GITHUB_OUTPUT"
           echo "url=${{ github.server_url }}/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - if: steps.commit.outputs.changed == 'true'
