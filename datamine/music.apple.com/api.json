@@ -1,0 +1,1657 @@
+{
+  "endpoints": {
+    "{apiBase}/me/storefront": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [
+        "Authorization",
+        "Media-User-Token"
+      ],
+      "methods": [],
+      "params": {}
+    },
+    "{iTunesBuyBase}/account/web/info": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [
+        "Authorization",
+        "Media-User-Token"
+      ],
+      "methods": [],
+      "params": {}
+    },
+    "{iTunesBuyBase}/account/web/infoRefresh": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [
+        "Authorization",
+        "Media-User-Token"
+      ],
+      "methods": [],
+      "params": {}
+    },
+    "{iTunesBuyBase}/account/web/logout": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "{iTunesBuyBase}/commerce/web/subscription/offers/music": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [
+        "Authorization",
+        "Music-User-Token",
+        "X-Apple-Store-Front"
+      ],
+      "methods": [],
+      "params": {}
+    },
+    "{metricsUrl}/{}/{}": {
+      "chunks": [
+        "mt-metricskit-delegates-web.esm.js",
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "{playBase}/renewMusicToken": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [
+        "Accept",
+        "Authorization",
+        "Content-Type",
+        "X-Apple-Music-User-Token"
+      ],
+      "methods": [
+        "POST"
+      ],
+      "params": {}
+    },
+    "{url}/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields": "url,name",
+        "omit[resource]": "autos"
+      }
+    },
+    "{webCourierUrlBase}/v2/{}": {
+      "chunks": [
+        "index-1.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "l": null,
+        "omit[resource]": "autos",
+        "platform": "web",
+        "relate": "library"
+      }
+    },
+    "/v1/{}/{}": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/catalog/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "art[music-videos:url]": null,
+        "art[url]": "f",
+        "extend[apple-curators]": "playlistCount",
+        "extend[curators]": "playlistCount",
+        "fields": "artwork,artistName,url,name,playParams,inLibrary,contentRating,requiresSubscription,kind,editorialArtwork,postUrl,movieClips",
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url",
+        "fields[artists]": "name,url",
+        "fields[editorial-items]": "editorialNotes",
+        "fields[library-albums]": "name",
+        "fields[library-artists]": "name",
+        "fields[library-songs]": "name",
+        "fields[songs]": "name,url,hasLyrics",
+        "ids[apple-curators]": null,
+        "ids[curators]": null,
+        "include": "grouping,playlists",
+        "include[albums]": "tracks",
+        "include[editorial-items]": "contents",
+        "include[library-albums]": "tracks",
+        "include[library-songs]": "albums,artists",
+        "include[songs]": "albums,artists",
+        "omit[resource]": "autos",
+        "platform": "web",
+        "relate[songs]": "albums"
+      }
+    },
+    "/v1/catalog/{}/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend": "credits",
+        "fields": "inflectionPoints,airTime,supportsAirTimeUpdates",
+        "fields[tv-episodes]": "name,artwork,previews,url,description,episodeNumber,episodeSubNumber,episodeSeasonNumber,kind,offers,releaseDate",
+        "ids": null,
+        "include": "episodes",
+        "meta[stations]": "inflectionPoints",
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/catalog/{}/{}/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields[{}]": "contentRating",
+        "omit[resource]": "autos",
+        "platform": "web"
+      }
+    },
+    "/v1/catalog/{}/{}/{}/tracks": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields[artists]": "name",
+        "include[songs]": "artists",
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/catalog/{}/{}s": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "ids": null
+      }
+    },
+    "/v1/catalog/{}/artists/{}": {
+      "chunks": [
+        "ArtistBiographyPageIntentController.js",
+        "ArtistDetailPage2IntentController.js",
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend[canvas-shelves-header]": "badge",
+        "extend[concerts]": "tickets",
+        "fields": "url,name",
+        "filter[canvas-shelves-collection.contents.type]": null,
+        "geoHashLocation": null,
+        "include": "artist-biography-canvas",
+        "include[canvas-shelves-collection]": "contents",
+        "include[canvas-shelves-group]": "children",
+        "include[concerts]": "artists,venues",
+        "include[songs]": "albums",
+        "limit[canvas-shelves-collection:contents]": "12",
+        "limit[canvas-shelves-collection:contents{displayStyle}]": "{ArtistFeaturedTrackLockup}:24",
+        "omit[resource]": "autos",
+        "relate[canvas-shelves-collection]": "see-all"
+      }
+    },
+    "/v1/catalog/{}/artists/{}/view/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "include[albums]": "artists,composers",
+        "include[music-videos]": "artists,composers",
+        "include[songs]": "artists,composers",
+        "limit": "20",
+        "with": "attributes"
+      }
+    },
+    "/v1/catalog/{}/charts": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend": "artistUrl",
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url",
+        "fields[artists]": "name",
+        "fields[playlists]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url,curatorName",
+        "genre": null,
+        "include": "tracks",
+        "include[albums]": "artists",
+        "include[music-videos]": "artists",
+        "include[songs]": "artists",
+        "limit": "50",
+        "omit[resource]": "autos",
+        "relate[songs]": "albums",
+        "types": "albums,songs,music-videos,playlists",
+        "with": "cityCharts,dailyGlobalTopCharts"
+      }
+    },
+    "/v1/catalog/{}/concerns": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {}
+    },
+    "/v1/catalog/{}/contents": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "filter[post]": null,
+        "ids": null,
+        "include": "artists,curator"
+      }
+    },
+    "/v1/catalog/{}/genres": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "ids[l]": null,
+        "ids[platform]": "mac"
+      }
+    },
+    "/v1/catalog/{}/playlists": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/catalog/{}/playlists/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "associate[playlists:tracks]": "collaborators,reactions",
+        "extend": "followState",
+        "fields[collaborators]": "name,handle,artwork,socialProfileUrl,role",
+        "fields[playlists]": "tracks",
+        "include[playlists]": "tracks",
+        "include[reactions]": "social-profile",
+        "limit[collaborators]": "100",
+        "omit[resource]": "autos",
+        "platform": "web",
+        "relate[playlists]": "tracks",
+        "with": "lightProfiles"
+      }
+    },
+    "/v1/catalog/{}/playlists/{}/tracks": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields[artists]": "name,url",
+        "fields[library-songs]": "id,artwork,url",
+        "include[songs]": "artists,composers",
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/catalog/{}/search": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "GET"
+      ],
+      "params": {
+        "art[music-videos:url]": null,
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,editorialNotes,name,playParams,releaseDate,url,trackCount",
+        "fields[artists]": "url,name,artwork",
+        "include[albums]": "artists",
+        "include[music-videos]": "artists",
+        "include[songs]": "artists",
+        "include[stations]": "radio-show",
+        "limit": "21",
+        "omit[resource]": "autos",
+        "relate[albums]": "artists",
+        "relate[songs]": "albums",
+        "term": null
+      }
+    },
+    "/v1/catalog/{}/search/suggestions": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "GET"
+      ],
+      "params": {
+        "art[url]": "c,f",
+        "fields[albums]": "artistName,artwork,contentRating,name,playParams,url",
+        "fields[artists]": "url,name,artwork",
+        "kinds": "terms,topResults",
+        "l": null,
+        "limit[results:terms]": "5",
+        "limit[results:topResults]": "10",
+        "omit[resource]": "autos",
+        "platform": "web",
+        "term": null
+      }
+    },
+    "/v1/catalog/{}/songs/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend": "lyricsExcerpt,offers",
+        "fields[albums]": "artistName,artistUrl,artwork,name,url",
+        "fields[artists]": "name,url",
+        "include": "albums,artists,credits,lyrics,music-videos"
+      }
+    },
+    "/v1/catalog/{}/songs/{}/albums": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "limit": "1"
+      }
+    },
+    "/v1/catalog/{}/stations": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "art[url]": "f",
+        "extend": "editorialArtwork",
+        "filter[identity]": null
+      }
+    },
+    "/v1/catalog/{}/stations/{}": {
+      "chunks": [
+        "main.js",
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {
+        "art[url]": "f",
+        "extend": "editorialArtwork",
+        "include": "radio-show"
+      }
+    },
+    "/v1/concerts/{}/hub": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "art[artists:url]": "c",
+        "containers": null,
+        "filter[date]": "{}..{}",
+        "filter[genre]": null,
+        "geoHashLocation": null,
+        "include[concerts]": "venues,artists",
+        "limit[{ConcertsNextWeek}]": null,
+        "limit[{ConcertsThisWeek}]": null,
+        "limit[{PopularConcerts}]": "6",
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/editorial/{}/groupings": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend[station-events]": "editorialVideo",
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,plainEditorialNotes,name,playParams,releaseDate,url,trackCount",
+        "fields[artists]": "name,url,artwork,editorialArtwork,genreNames,plainEditorialNotes",
+        "include[albums]": "artists",
+        "include[music-videos]": "artists",
+        "include[songs]": "artists",
+        "include[stations]": "events,radio-show",
+        "name": null,
+        "omit[resource:artists]": "autos",
+        "relate[songs]": "albums",
+        "tabs": null
+      }
+    },
+    "/v1/editorial/{}/groupings/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields[albums]": "name,url,artwork,editorialArtwork,genreNames,artistName,trackCount,contentRating,plainEditorialNotes",
+        "fields[artists]": "name,url,artwork,editorialArtwork,genreNames,plainEditorialNotes",
+        "include[albums]": "artists",
+        "include[groupings]": "curator",
+        "include[music-videos]": "artists",
+        "include[songs]": "artists,albums",
+        "omit[resource:artists]": "autos",
+        "tabs": null
+      }
+    },
+    "/v1/editorial/{}/multiplex/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/editorial/{}/multirooms/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/editorial/{}/rooms/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend[albums]": "artistUrl",
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,editorialNotes,name,playParams,releaseDate,url,trackCount",
+        "include[albums]": "artists,composers",
+        "include[songs]": "artists,composers",
+        "omit[resource:artists]": "autos",
+        "relate[songs]": "albums"
+      }
+    },
+    "/v1/engagement/{}/upsell": {
+      "chunks": [
+        "index-8.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/engagement/{}/upsell/marketing-items": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "limit": null,
+        "placement": null,
+        "serviceType": "music"
+      }
+    },
+    "/v1/hls/anonymous/streaming-key-delivery": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/hls/streaming-key-delivery": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/lyrics/{}/snippet/songs/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "l": null,
+        "omit[resource]": "autos",
+        "platform": "web",
+        "te": null,
+        "tk": null,
+        "ts": null
+      }
+    },
+    "/v1/me/account": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "PATCH"
+      ],
+      "params": {
+        "challenge[subscriptionCapabilities]": "voice,premium",
+        "meta": "subscription"
+      }
+    },
+    "/v1/me/favorites": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE",
+        "POST"
+      ],
+      "params": {
+        "ids[{type}]": null
+      }
+    },
+    "/v1/me/library": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {
+        "fields": "artwork,artistName,url,name,playParams,inLibrary,contentRating,requiresSubscription,kind,editorialArtwork,postUrl,movieClips",
+        "fields[albums]": "name,url,editorialVideo",
+        "fields[artists]": "name,url",
+        "fields[editorial-items]": "editorialNotes",
+        "fields[library-albums]": "name",
+        "fields[library-artists]": "name",
+        "fields[library-songs]": "name",
+        "fields[songs]": "name,url,hasLyrics",
+        "include": "artists,curator",
+        "include[editorial-items]": "contents",
+        "include[library-songs]": "albums,artists",
+        "include[songs]": "albums,artists",
+        "omit[resource]": "autos",
+        "platform": "web",
+        "relate[songs]": "albums",
+        "representation": "ids"
+      }
+    },
+    "/v1/me/library/{}/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE"
+      ],
+      "params": {}
+    },
+    "/v1/me/library/{}/{}/tracks": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/me/library/{}s/": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "ids": null
+      }
+    },
+    "/v1/me/library/{}s/{}": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "ids": null
+      }
+    },
+    "/v1/me/library/albums": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url"
+      }
+    },
+    "/v1/me/library/albums/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend[albums]": null,
+        "fields[artists]": "name,url",
+        "include[albums]": "artists,tracks",
+        "include[library-albums]": "artists,tracks",
+        "include[music-videos]": "catalog,artists,tracks",
+        "includeOnly": "catalog,artists,tracks",
+        "platform": "web"
+      }
+    },
+    "/v1/me/library/artists": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "include": "catalog",
+        "limit": "{}",
+        "meta": "sorts",
+        "offset": "{}",
+        "platform": "web",
+        "sort": null
+      }
+    },
+    "/v1/me/library/artists/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields[library-artists]": "classicalUrl,name,url",
+        "include[library-albums]": "catalog",
+        "include[library-artists]": "albums,catalog",
+        "omit[resource]": "autos",
+        "platform": "web"
+      }
+    },
+    "/v1/me/library/import/jobs/{}/progress": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/me/library/music-videos": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "include[library-music-videos]": "catalog",
+        "limit": "{}",
+        "meta": "sorts",
+        "offset": "{}",
+        "platform": "web",
+        "sort": null
+      }
+    },
+    "/v1/me/library/pins": {
+      "chunks": [
+        "libraryPinsAPI.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields[artists]": "artwork",
+        "include[library-artists]": "catalog",
+        "include[library-music-videos]": "albums,playlists,artists",
+        "include[library-songs]": "albums,playlists,artists",
+        "limit": null,
+        "meta": "libraryPin"
+      }
+    },
+    "/v1/me/library/pins/{}": {
+      "chunks": [
+        "libraryPinsAPI.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/me/library/playlist-folders/{}/children": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend": "hasCollaboration",
+        "extend[library-playlists]": "tags",
+        "offset": "{}",
+        "omit[resource]": "autos",
+        "platform": "web"
+      }
+    },
+    "/v1/me/library/playlist-folders/p.playlistsroot/children": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "extend": "hasCollaboration",
+        "extend[library-playlists]": "tags",
+        "fields[playlists]": "curatorName",
+        "include": "catalog",
+        "offset": "{}",
+        "omit[resource]": "autos",
+        "platform": "web"
+      }
+    },
+    "/v1/me/library/playlists": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {
+        "fields[library-playlists]": "artwork,dateAdded,name,playParams",
+        "fields[playlists]": "lastModifiedDate",
+        "filter[featured]": "made-for-you",
+        "filter[library-mix]": null,
+        "include[library-playlists]": "catalog",
+        "omit[resource]": "autos",
+        "platform": "web",
+        "sort": null,
+        "with": "shared"
+      }
+    },
+    "/v1/me/library/playlists/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "PATCH"
+      ],
+      "params": {
+        "art[library-music-videos:url]": "c,f",
+        "extend": "hasCollaboration,isCollaborativeHost",
+        "extend[library-playlists]": "tags",
+        "extend[playlists]": "editorialArtwork,editorialVideo,extendedAssetUrls",
+        "fields[music-videos]": "artistUrl,artwork,durationInMillis,url",
+        "fields[songs]": "artistUrl,artwork,contentRating,durationInMillis,url",
+        "include": "catalog,artists,tracks",
+        "include[library-playlists]": "catalog,tracks,playlists",
+        "include[playlists]": "curator",
+        "include[songs]": "artists",
+        "omit[resource]": "autos",
+        "platform": "web",
+        "relate": "catalog",
+        "sort": null,
+        "with": "shared"
+      }
+    },
+    "/v1/me/library/playlists/{}/catalog": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {}
+    },
+    "/v1/me/library/playlists/{}/parent": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "PUT"
+      ],
+      "params": {}
+    },
+    "/v1/me/library/playlists/{}/tracks": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE",
+        "POST",
+        "PUT"
+      ],
+      "params": {
+        "fields[artists]": "name,url",
+        "fields[library-songs]": "id,artwork,url",
+        "ids[library-songs]": "{}",
+        "include[songs]": "artists,composers",
+        "mode": "all",
+        "omit[resource]": "autos",
+        "representation": "resources"
+      }
+    },
+    "/v1/me/library/recently-added": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url"
+      }
+    },
+    "/v1/me/library/search": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "GET"
+      ],
+      "params": {
+        "fields[library-artists]": "url,name,artwork",
+        "include[library-artists]": "catalog",
+        "include[library-songs]": "catalog",
+        "l": null,
+        "limit": "21",
+        "platform": "web",
+        "term": null
+      }
+    },
+    "/v1/me/library/songs": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "include[library-songs]": "catalog",
+        "limit": "{}",
+        "meta": "sorts",
+        "offset": "{}",
+        "platform": "web",
+        "sort": null
+      }
+    },
+    "/v1/me/ratings/{}/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE",
+        "PUT"
+      ],
+      "params": {}
+    },
+    "/v1/me/recent/radio-stations": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "include[stations]": "radio-show",
+        "limit": "30",
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/me/recommendations": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "displayFilter[kind]": "musicSuperHero",
+        "extend[playlists]": "artistNames",
+        "extend[stations]": "airTime,supportsAirTimeUpdates",
+        "fields[artists]": "name,artwork,url",
+        "geoHashLocation": null,
+        "include[albums]": "artists",
+        "include[concerts]": "venues,artists",
+        "include[library-playlists]": "catalog",
+        "include[personal-recommendation]": "primary-content",
+        "include[stations]": "radio-show",
+        "meta": "vacToken",
+        "meta[stations]": "inflectionPoints",
+        "name": "listen-now",
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/me/recommendations/{}/view/see-all": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "action": "refresh",
+        "extend": "artistUrl",
+        "geoHashLocation": null,
+        "include[concerts]": "venues,artists",
+        "include[library-playlists]": "catalog",
+        "include[personal-recommendation]": "contents",
+        "limit[contents]": "100",
+        "name": "listen-now",
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/me/recommendations/suggested": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {
+        "action": "save",
+        "contexts": "playlist-suggested-songs",
+        "fields[songs]": "artwork,name,url,artistName,albumName,previews",
+        "include[songs]": "artists",
+        "limit": "20",
+        "meta": "source",
+        "omit[resource]": "autos",
+        "platform": "web",
+        "types": "songs"
+      }
+    },
+    "/v1/me/social/profile": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "PATCH"
+      ],
+      "params": {
+        "extend": "followState",
+        "filter[handle]": null,
+        "ids": null,
+        "include": "followers,followees,pending-followers,shared-playlists,listening-to",
+        "with": "nonSubscribers"
+      }
+    },
+    "/v1/me/social/profile/blocked-profiles": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE",
+        "POST"
+      ],
+      "params": {}
+    },
+    "/v1/me/social/profile/followees": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE",
+        "POST"
+      ],
+      "params": {}
+    },
+    "/v1/me/social/profile/followers": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE",
+        "POST"
+      ],
+      "params": {}
+    },
+    "/v1/me/social/profile/pending-followees": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE"
+      ],
+      "params": {}
+    },
+    "/v1/me/social/profile/pending-followers": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE",
+        "POST"
+      ],
+      "params": {}
+    },
+    "/v1/me/social/profile/shared-playlists": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "PUT"
+      ],
+      "params": {}
+    },
+    "/v1/me/social/suggested-handles": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/me/stations/continuous": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {
+        "limit[results:tracks]": null,
+        "with": null
+      }
+    },
+    "/v1/me/stations/next-tracks/{}": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {}
+    },
+    "/v1/me/taste/taste-preferences": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "POST"
+      ],
+      "params": {}
+    },
+    "/v1/play/assets": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "hlsEncryption": null,
+        "includeLicenseUrls": null,
+        "keyFormat": "web"
+      }
+    },
+    "/v1/radio/streaming-key-delivery": {
+      "chunks": [
+        "musickit.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/recommendations/{}": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "name": "search-landing",
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/social/{}/onboarding-upsell": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "/v1/social/{}/search": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "GET"
+      ],
+      "params": {
+        "art[social-profiles:url]": "c",
+        "limit": "21",
+        "term": null
+      }
+    },
+    "/v1/social/{}/social-profiles": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "filter[handle]": null,
+        "ids": null,
+        "include": "followers,followees,pending-followers,shared-playlists,listening-to"
+      }
+    },
+    "/v1/social/badging-map": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "GET"
+      ],
+      "params": {
+        "omit[resource]": "autos"
+      }
+    },
+    "/v1/social/recommended-friends": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [
+        "DELETE"
+      ],
+      "params": {}
+    },
+    "/v1/social/us/social-profiles": {
+      "chunks": [
+        "main.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {
+        "filter[handle]": null
+      }
+    }
+  },
+  "requestHeaders": {
+    "Accept": [
+      {
+        "chunk": "musickit.js",
+        "in": "_fetchMZPlayWebAsset",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{URL}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit._webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.renewUserToken",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{playBase}/renewMusicToken"
+        ]
+      }
+    ],
+    "Authorization": [
+      {
+        "chunk": "main.js",
+        "in": "headers"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "_fetchMZPlayWebAsset",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{URL}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "_fetchStorefronts"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "MKManifestManager.fetchForCache"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "PlayActivitySender.headers"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "Reflector.makeRequests",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit._webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.infoRefresh",
+        "targets": [
+          "{iTunesBuyBase}/account/web/infoRefresh"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.musicSubscriptionOffers",
+        "targets": [
+          "{iTunesBuyBase}/commerce/web/subscription/offers/music"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.renewUserToken",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{playBase}/renewMusicToken"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.requestStorefrontCountryCode",
+        "targets": [
+          "{apiBase}/me/storefront"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "targets": [
+          "{iTunesBuyBase}/account/web/info"
+        ]
+      }
+    ],
+    "Content-Type": [
+      {
+        "chunk": "index-1.js",
+        "in": "queryOnce"
+      },
+      {
+        "chunk": "index-1.js"
+      },
+      {
+        "chunk": "index-6.js",
+        "targets": [
+          "{ingestUrl}"
+        ]
+      },
+      {
+        "chunk": "main.js",
+        "in": "generateOAuthCode",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "chunk": "main.js",
+        "in": "headers"
+      },
+      {
+        "chunk": "main.js",
+        "in": "perform",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "chunk": "mt-metricskit-delegates-web.esm.js",
+        "in": "sendEventsViaFetch",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{metricsUrl}"
+        ]
+      },
+      {
+        "chunk": "mt-metricskit-utils-private.esm.js"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "_fetchMZPlayWebAsset",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{URL}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "makeAjaxRequest"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "MediaAPIRequest.constructor"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "PlayActivitySender.headers"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "sendEventsViaFetch",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{metricsUrl}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit._webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.renewUserToken",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{playBase}/renewMusicToken"
+        ]
+      }
+    ],
+    "Data-Trace-Tag": [
+      {
+        "chunk": "main.js",
+        "in": "headers"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "PlayActivitySender.headers"
+      }
+    ],
+    "Media-User-Token": [
+      {
+        "chunk": "musickit.js",
+        "in": "createRequest",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "MKManifestManager.fetchForCache"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit._webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.infoRefresh",
+        "targets": [
+          "{iTunesBuyBase}/account/web/infoRefresh"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.requestStorefrontCountryCode",
+        "targets": [
+          "{apiBase}/me/storefront"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "targets": [
+          "{iTunesBuyBase}/account/web/info"
+        ]
+      }
+    ],
+    "Music-User-Token": [
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.musicSubscriptionOffers",
+        "targets": [
+          "{iTunesBuyBase}/commerce/web/subscription/offers/music"
+        ]
+      }
+    ],
+    "Range": [
+      {
+        "chunk": "musickit.js",
+        "in": "ByteRangeSegment.load"
+      }
+    ],
+    "Retry-After": [
+      {
+        "chunk": "index-2.js"
+      },
+      {
+        "chunk": "index-6.js"
+      }
+    ],
+    "sentry-trace": [
+      {
+        "chunk": "index-2.js"
+      }
+    ],
+    "X-Apple-Media-User-Token": [
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit._webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
+      }
+    ],
+    "X-Apple-Music-User-Token": [
+      {
+        "chunk": "musickit.js",
+        "in": "_fetchMZPlayWebAsset",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{URL}"
+        ]
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.renewUserToken",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{playBase}/renewMusicToken"
+        ]
+      }
+    ],
+    "X-Apple-Renewal": [
+      {
+        "chunk": "musickit.js",
+        "in": "BaseLicenseManager.createChallengeHeaders"
+      },
+      {
+        "chunk": "musickit.js",
+        "in": "License.fetch"
+      }
+    ],
+    "X-Apple-Store-Front": [
+      {
+        "chunk": "musickit.js",
+        "in": "StoreKit.musicSubscriptionOffers",
+        "targets": [
+          "{iTunesBuyBase}/commerce/web/subscription/offers/music"
+        ]
+      }
+    ],
+    "x-protocol-version": [
+      {
+        "chunk": "index-1.js",
+        "in": "queryOnce"
+      },
+      {
+        "chunk": "index-1.js"
+      }
+    ],
+    "X-Sentry-Rate-Limits": [
+      {
+        "chunk": "index-2.js"
+      },
+      {
+        "chunk": "index-6.js"
+      }
+    ]
+  },
+  "responseHeaders": {
+    "Content-Type": [
+      "musickit.js"
+    ],
+    "Retry-After": [
+      "index-2.js",
+      "index-6.js"
+    ],
+    "X-Sentry-Rate-Limits": [
+      "index-2.js",
+      "index-6.js"
+    ]
+  },
+  "urls": [
+    "https://amp-api-edge.media.apple.com",
+    "https://amp-api.music.apple.com/v1",
+    "https://amp.apple.com",
+    "https://amsui.apple.com/dynamic/marketing",
+    "https://api.music.apple.com/v1",
+    "https://auth.music.apple.com",
+    "https://authorize.music.apple.com",
+    "https://authorize.music.apple.com/upsell?{}",
+    "https://buy.music.apple.com/account/v1/affiliation/association",
+    "https://cdn.apple-mapkit.com/mk/%version%/mapkit.core.js",
+    "https://embed.music.apple.com",
+    "https://embed.podcasts.apple.com",
+    "https://finance-app.itunes.apple.com/deeplink?{}",
+    "https://finance-app.itunes.apple.com/subscribe",
+    "https://gatewayws.icloud.com/identity/WebObjects/TDIdentityService.woa/wa/webregister",
+    "https://gatewayws.icloud.com/query/WebObjects/QueryService.woa/wa/webquery",
+    "https://is1-ssl.mzstatic.com/image/thumb/gen/{w}x{h}{c}.{f}",
+    "https://is1-ssl.mzstatic.com/image/thumb/{}/{w}x{h}bb.jpg",
+    "https://itunes.apple.com/WebObjects/MZStoreServices.woa/wa/processRedirectUrl",
+    "https://itunes.apple.com/deeplink?{}",
+    "https://linear.tv.apple.com/",
+    "https://maps.apple.com/place",
+    "https://mediaservices.cdn-apple.com/store_bags/ft/v1/rtc_storebag.json",
+    "https://mediaservices.cdn-apple.com/store_bags/hlsjs/amuw/rtc_storebag.json",
+    "https://music.apple.com",
+    "https://music.apple.com/",
+    "https://music.apple.com/WebObjects/MZStore.woa/wa/viewGrouping?cc={}&id={}",
+    "https://music.apple.com/replay",
+    "https://music.apple.com/{}/concerts/artist/{id}{}",
+    "https://music.apple.com/{}/library/artists/{id}",
+    "https://music.apple.com/{}/new/top-charts",
+    "https://music.apple.com/{}/new/top-charts/{}",
+    "https://music.apple.com/{}/new/top-charts/{}/{}",
+    "https://music.apple.com/{}/onboarding/labels",
+    "https://music.apple.com/{}/replay",
+    "https://musicstatus.music.apple.com/v1/web/status",
+    "https://play-edge.itunes.apple.com",
+    "https://play.itunes.apple.com/",
+    "https://play.itunes.apple.com/WebObjects/MZPlay.woa/podcast/hls/license/streaming/start",
+    "https://play.itunes.apple.com/WebObjects/MZPlay.woa/wa/acquireWebPlaybackLicense",
+    "https://play.itunes.apple.com/WebObjects/MZPlay.woa/wa/revokeMusicSDKAuthorizationSrv",
+    "https://play.itunes.apple.com/WebObjects/MZPlay.woa/wa/widevineCert",
+    "https://s.mzstatic.com/skdtool_2021_certbundle.bin",
+    "https://support.apple.com/118249?cid=mc-ols-AppleMusic-article_118249-musicapp-04242025",
+    "https://universal-activity-service.itunes.apple.com",
+    "https://universal-activity-service.itunes.apple.com/play",
+    "https://universal-activity-service.itunes.apple.com/qa/play",
+    "https://www.apple.com/apple-music",
+    "https://www.apple.com/{}/apple-music",
+    "https://xp-qa.apple.com",
+    "https://xp.apple.com",
+    "https://xp.apple.com/config/1/report",
+    "https://xp.apple.com/register"
+  ]
+}
