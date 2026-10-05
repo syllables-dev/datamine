@@ -22,7 +22,7 @@ export const config = {
       page: "/us/new",
     },
     {
-      color: 0xff_9f_0a,
+      color: 0xfb_5c_74,
       enabled: true,
       host: "beta.music.apple.com",
       id: "beta",
