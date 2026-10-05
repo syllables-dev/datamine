@@ -1,0 +1,4 @@
+node_modules
+.datamine
+.env
+.DS_Store
