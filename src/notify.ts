@@ -158,35 +158,24 @@ const label = (version: string | undefined, build: string | undefined) =>
   version ? `**${shortVersion(version)}** (\`${build}\`)` : `\`${build}\``;
 
 const headerEmbed = (report: Report, color: number): Embed => {
-  const fields = report.initial
-    ? [
-        { inline: true, name: "Strings", value: String(report.totals.strings) },
-        {
-          inline: true,
-          name: "Endpoints",
-          value: String(report.totals.endpoints),
-        },
-        { inline: true, name: "Headers", value: String(report.totals.headers) },
-        { inline: true, name: "Chunks", value: String(report.totals.chunks) },
-      ]
-    : [
-        ...sectionNames
-          .filter((name) => !isEmpty(report.sections[name]))
-          .map((name) => ({
-            inline: true,
-            name: titles[name],
-            value: `\`${counts(report.sections[name])}\``,
-          })),
-        ...(report.modifiedChunks.length > 0
-          ? [
-              {
-                inline: false,
-                name: `Modified chunks (${report.modifiedChunks.length})`,
-                value: modifiedList(report.modifiedChunks),
-              },
-            ]
-          : []),
-      ];
+  const fields = [
+    ...sectionNames
+      .filter((name) => !isEmpty(report.sections[name]))
+      .map((name) => ({
+        inline: true,
+        name: titles[name],
+        value: `\`${counts(report.sections[name])}\``,
+      })),
+    ...(report.modifiedChunks.length > 0
+      ? [
+          {
+            inline: false,
+            name: `Modified chunks (${report.modifiedChunks.length})`,
+            value: modifiedList(report.modifiedChunks),
+          },
+        ]
+      : []),
+  ];
   return {
     author: {
       icon_url: icon,
@@ -194,13 +183,11 @@ const headerEmbed = (report: Report, color: number): Embed => {
       url: `https://${report.host}`,
     },
     color,
-    description: report.initial
-      ? `Initial snapshot of ${label(report.version.to, report.build)}`
-      : `${label(report.version.from, report.previousBuild)} → ${label(report.version.to, report.build)}`,
+    description: `${label(report.version.from, report.previousBuild)} → ${label(report.version.to, report.build)}`,
     fields: [...fields, ...musickitField(report)],
     footer: { text: username },
     timestamp: new Date().toISOString(),
-    title: `${report.initial ? "Initial snapshot" : "New build"}${
+    title: `New build${
       report.version.to ? ` ${shortVersion(report.version.to)}` : ""
     }`,
     ...(commitUrl && { url: commitUrl }),
@@ -216,9 +203,6 @@ const targetEmbeds = (report: Report) => {
   const color =
     config.targets.find((target) => target.id === report.target)?.color ?? 0;
   const embeds = [headerEmbed(report, color)];
-  if (report.initial) {
-    return embeds;
-  }
   const details = sectionNames.flatMap((name) =>
     isEmpty(report.sections[name])
       ? []
@@ -258,7 +242,7 @@ const batches = (embeds: Embed[]) => {
 const reports = (await Bun.file(
   `${config.paths.reports}/reports.json`
 ).json()) as Report[];
-for (const report of reports) {
+for (const report of reports.filter((item) => !item.initial)) {
   for (const message of batches(targetEmbeds(report))) {
     await send(message);
   }
