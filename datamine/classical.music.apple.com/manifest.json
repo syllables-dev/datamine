@@ -1,0 +1,31 @@
+{
+  "chunks": {
+    "ae-client-kit-core.esm.js": "ae-client-kit-core.esm~74a417500a.js",
+    "cwc-music-upsell-banner-web.js": "cwc-music-upsell-banner-web~38daacf567.js",
+    "dev.js": "dev~8da62580ea.js",
+    "dialog-polyfill.esm.js": "dialog-polyfill.esm~29d91b4f71.js",
+    "impressionsObserver.esm.js": "impressionsObserver.esm~b7293b6773.js",
+    "index-1.js": "index~0386f6d23e.js",
+    "index-2.js": "index~4769b0f31a.js",
+    "index-3.js": "index~392637ff2c.js",
+    "index-4.js": "index~e990256211.js",
+    "index.css": "index~9715d1a266.css",
+    "main.js": "index~f2972c443d.js",
+    "mt-client-logger-core.esm.js": "mt-client-logger-core.esm~62f4bb1ef7.js",
+    "mt-metricskit-delegates-web.esm.js": "mt-metricskit-delegates-web.esm~50e8e53a5c.js",
+    "mt-metricskit-processor-clickstream.esm.js": "mt-metricskit-processor-clickstream.esm~255b4ed8f3.js",
+    "mt-metricskit-processor-performance.esm.js": "mt-metricskit-processor-performance.esm~cb56c92ad4.js",
+    "mt-metricskit-utils-private.esm.js": "mt-metricskit-utils-private.esm~0ce82e320a.js",
+    "musickit.js": "musickit~42aedab9bb.js",
+    "scene.js": "scene~45933cd468.js",
+    "setup-global.js": "setup-global~68059be4df.js",
+    "version.js": "version~0abb7ed5f5.js"
+  },
+  "entry": "index~f2972c443d.js",
+  "fetchedAt": "2026-10-05T07:36:16.522Z",
+  "roots": [
+    "index~9715d1a266.css",
+    "index~f2972c443d.js"
+  ],
+  "version": "2634.3.0-external"
+}
