@@ -1,0 +1,542 @@
+@charset "UTF-8";
+.banner.svelte-1ozlay5.svelte-1ozlay5 {
+  align-items: center;
+  background-color: var(--keyColorBG);
+  box-shadow:
+    0 1px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 30px;
+  width: 100%;
+}
+.banner__close-button.svelte-1ozlay5.svelte-1ozlay5 {
+  box-sizing: content-box;
+  height: 10px;
+  inset-inline-end: 0;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 10px;
+}
+.banner__close-button.svelte-1ozlay5 svg {
+  height: inherit;
+  width: inherit;
+  fill: #fff;
+}
+.banner--collapsed.svelte-1ozlay5 .banner__close-button.svelte-1ozlay5 {
+  display: none;
+}
+@media (min-width: 484px) {
+  .banner__close-button.svelte-1ozlay5.svelte-1ozlay5 {
+    display: none;
+  }
+}
+.banner__text-container.svelte-1ozlay5.svelte-1ozlay5 {
+  flex: 1;
+}
+@media (max-width: 483px) {
+  .banner__text-container.svelte-1ozlay5.svelte-1ozlay5 {
+    text-align: center;
+  }
+  .banner--collapsed.svelte-1ozlay5 .banner__text-container.svelte-1ozlay5 {
+    padding-bottom: 7px;
+    padding-top: 7px;
+  }
+}
+@media (min-width: 484px) {
+  .banner__text-container.svelte-1ozlay5.svelte-1ozlay5 {
+    -webkit-margin-end: 16px;
+    -moz-margin-end: 16px;
+    margin-inline-end: 16px;
+  }
+}
+.banner__cta-button.svelte-1ozlay5.svelte-1ozlay5,
+.text__description.svelte-1ozlay5.svelte-1ozlay5,
+.text__title.svelte-1ozlay5.svelte-1ozlay5 {
+  font-family: unset !important;
+}
+.text__title.svelte-1ozlay5.svelte-1ozlay5 {
+  color: #fff;
+}
+@media (max-width: 999px) {
+  .text__title.svelte-1ozlay5.svelte-1ozlay5 {
+    font-family:
+      SF Pro Text,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.28;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ar) {
+    font-family:
+      SF Pro AR,
+      SF Pro AR Text,
+      SF Pro Text,
+      SF Pro Gulf,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ja) {
+    font-family:
+      SF Pro JP,
+      SF Pro Text,
+      SF Pro Icons,
+      Hiragino Kaku Gothic Pro,
+      ヒラギノ角ゴ Pro W3,
+      メイリオ,
+      Meiryo,
+      ＭＳ Ｐゴシック,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ko) {
+    font-family:
+      SF Pro KR,
+      SF Pro Text,
+      SF Pro Icons,
+      Apple Gothic,
+      HY Gulim,
+      MalgunGothic,
+      HY Dotum,
+      Lexi Gulim,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(th) {
+    font-family:
+      SF Pro TH,
+      SF Pro Text,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-CN) {
+    font-family:
+      SF Pro SC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang SC,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-HK) {
+    font-family:
+      SF Pro HK,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang HK,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-MO) {
+    font-family:
+      SF Pro HK,
+      SF Pro TC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang HK,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-TW) {
+    font-family:
+      SF Pro TC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang TC,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+}
+@media (min-width: 1000px) {
+  .text__title.svelte-1ozlay5.svelte-1ozlay5 {
+    font-family:
+      SF Pro Display,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.23;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ar) {
+    font-family:
+      SF Pro AR,
+      SF Pro AR Display,
+      SF Pro Display,
+      SF Pro Gulf,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ja) {
+    font-family:
+      SF Pro JP,
+      SF Pro Display,
+      SF Pro Icons,
+      Hiragino Kaku Gothic Pro,
+      ヒラギノ角ゴ Pro W3,
+      メイリオ,
+      Meiryo,
+      ＭＳ Ｐゴシック,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(ko) {
+    font-family:
+      SF Pro KR,
+      SF Pro Display,
+      SF Pro Icons,
+      Apple Gothic,
+      HY Gulim,
+      MalgunGothic,
+      HY Dotum,
+      Lexi Gulim,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(th) {
+    font-family:
+      SF Pro TH,
+      SF Pro Display,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-CN) {
+    font-family:
+      SF Pro SC,
+      SF Pro Display,
+      SF Pro Icons,
+      PingFang SC,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-HK) {
+    font-family:
+      SF Pro HK,
+      SF Pro Display,
+      SF Pro Icons,
+      PingFang HK,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-MO) {
+    font-family:
+      SF Pro HK,
+      SF Pro TC,
+      SF Pro Display,
+      SF Pro Icons,
+      PingFang HK,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__title.svelte-1ozlay5.svelte-1ozlay5:lang(zh-TW) {
+    font-family:
+      SF Pro TC,
+      SF Pro Display,
+      SF Pro Icons,
+      PingFang TC,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+}
+@media (min-width: 484px) {
+  .text__title.svelte-1ozlay5.svelte-1ozlay5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+.text__description.svelte-1ozlay5.svelte-1ozlay5 {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 8px;
+  white-space: pre-line;
+}
+@media (max-width: 999px) {
+  .text__description.svelte-1ozlay5.svelte-1ozlay5 {
+    font-family:
+      SF Pro Text,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.23;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ar) {
+    font-family:
+      SF Pro AR,
+      SF Pro AR Text,
+      SF Pro Text,
+      SF Pro Gulf,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ja) {
+    font-family:
+      SF Pro JP,
+      SF Pro Text,
+      SF Pro Icons,
+      Hiragino Kaku Gothic Pro,
+      ヒラギノ角ゴ Pro W3,
+      メイリオ,
+      Meiryo,
+      ＭＳ Ｐゴシック,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ko) {
+    font-family:
+      SF Pro KR,
+      SF Pro Text,
+      SF Pro Icons,
+      Apple Gothic,
+      HY Gulim,
+      MalgunGothic,
+      HY Dotum,
+      Lexi Gulim,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(th) {
+    font-family:
+      SF Pro TH,
+      SF Pro Text,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-CN) {
+    font-family:
+      SF Pro SC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang SC,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-HK) {
+    font-family:
+      SF Pro HK,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang HK,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-MO) {
+    font-family:
+      SF Pro HK,
+      SF Pro TC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang HK,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-TW) {
+    font-family:
+      SF Pro TC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang TC,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+}
+@media (min-width: 1000px) {
+  .text__description.svelte-1ozlay5.svelte-1ozlay5 {
+    font-family:
+      SF Pro Text,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.2307742857;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ar) {
+    font-family:
+      SF Pro AR,
+      SF Pro AR Text,
+      SF Pro Text,
+      SF Pro Gulf,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ja) {
+    font-family:
+      SF Pro JP,
+      SF Pro Text,
+      SF Pro Icons,
+      Hiragino Kaku Gothic Pro,
+      ヒラギノ角ゴ Pro W3,
+      メイリオ,
+      Meiryo,
+      ＭＳ Ｐゴシック,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(ko) {
+    font-family:
+      SF Pro KR,
+      SF Pro Text,
+      SF Pro Icons,
+      Apple Gothic,
+      HY Gulim,
+      MalgunGothic,
+      HY Dotum,
+      Lexi Gulim,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(th) {
+    font-family:
+      SF Pro TH,
+      SF Pro Text,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-CN) {
+    font-family:
+      SF Pro SC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang SC,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-HK) {
+    font-family:
+      SF Pro HK,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang HK,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-MO) {
+    font-family:
+      SF Pro HK,
+      SF Pro TC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang HK,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+  .text__description.svelte-1ozlay5.svelte-1ozlay5:lang(zh-TW) {
+    font-family:
+      SF Pro TC,
+      SF Pro Text,
+      SF Pro Icons,
+      PingFang TC,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+}
+@media (max-width: 483px) {
+  .banner--collapsed.svelte-1ozlay5 .text__description.svelte-1ozlay5 {
+    display: none;
+  }
+}
+.banner__cta-button.svelte-1ozlay5.svelte-1ozlay5 {
+  --buttonTextColor: #000;
+  --buttonBackgroundColor: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+  height: 32px;
+  min-width: 125px;
+}
+@media (max-width: 483px) {
+  .banner__cta-button.svelte-1ozlay5.svelte-1ozlay5 {
+    display: none;
+  }
+}
