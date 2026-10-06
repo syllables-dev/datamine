@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "datamine": "bun src/datamine.ts",
-    "notify": "bun src/notify.ts",
+    "notify": "bun src/notify/index.ts",
     "check": "ultracite check",
     "fix": "ultracite fix",
     "tsc": "tsc --noEmit"
