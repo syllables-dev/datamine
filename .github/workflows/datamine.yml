@@ -48,9 +48,12 @@ jobs:
           git diff --quiet "@{upstream}" HEAD
           echo "changed=true" >> "$GITHUB_OUTPUT"
           echo "url=${{ github.server_url }}/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - if: steps.commit.outputs.changed == 'true'
         run: bun run notify
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ vars.DISCORD_CHANNEL_ID }}
+          COMMIT_SHA: ${{ steps.commit.outputs.sha }}
           COMMIT_URL: ${{ steps.commit.outputs.url }}
+          GITHUB_TOKEN: ${{ github.token }}
