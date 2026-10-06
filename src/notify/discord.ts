@@ -23,15 +23,6 @@ const colorOf = (report: Report) =>
 const label = (version: string | undefined, build: string | undefined) =>
   version ? `**${shortVersion(version)}** (\`${build}\`)` : `\`${build}\``;
 
-const musickitField = (report: Report) => {
-  const { from, to } = report.musickit;
-  if (!to) {
-    return [];
-  }
-  const value = from && from !== to ? `\`${from}\` → \`${to}\`` : `\`${to}\``;
-  return [{ inline: true, name: "MusicKit", value }];
-};
-
 export const threadName = (report: Report) =>
   `${report.version.to ? shortVersion(report.version.to) : report.build} · ${report.host}`;
 
@@ -49,16 +40,13 @@ export const summaryMessage = (
     },
     color: colorOf(report),
     description: noise ? `${versions}\nNo UI changes` : versions,
-    fields: [
-      ...sectionNames
-        .filter((name) => !isEmpty(report.sections[name]))
-        .map((name) => ({
-          inline: true,
-          name: titles[name],
-          value: `\`${counts(report.sections[name])}\``,
-        })),
-      ...musickitField(report),
-    ],
+    fields: sectionNames
+      .filter((name) => !isEmpty(report.sections[name]))
+      .map((name) => ({
+        inline: true,
+        name: titles[name],
+        value: `\`${counts(report.sections[name])}\``,
+      })),
     footer: { text: username },
     timestamp: new Date().toISOString(),
     title: noise

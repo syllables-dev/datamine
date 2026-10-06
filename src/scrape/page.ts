@@ -1,9 +1,8 @@
-import { required, requiredMatch, warn } from "@/lib/expect";
+import { required, requiredMatch } from "@/lib/expect";
 
 import { isSkippedAsset } from "./assets";
 
 const assetPath = /^\/assets\/(?<file>[^/?#]+\.(?:js|css))$/u;
-const musickitPath = /\/musickit\/v3\/amp\/musickit\.js$/u;
 const headContent = /<head[^>]*>(?<head>[\s\S]*?)<\/head>/u;
 const svelteHeadBlock =
   /<!-- HEAD_svelte-\w+_START -->[\s\S]*?<!-- HEAD_svelte-\w+_END -->/gu;
@@ -11,7 +10,6 @@ const svelteHeadBlock =
 export interface Page {
   entry: string;
   head: string;
-  musickit?: string;
   roots: string[];
 }
 
@@ -33,19 +31,15 @@ const stripHead = (head: string) =>
 export const readPage = (html: string, source: string): Page => {
   const roots = new Set<string>();
   const modules: string[] = [];
-  const musickit: string[] = [];
   new HTMLRewriter()
     .on("script[src]", {
       element(element) {
-        const src = element.getAttribute("src");
-        const file = assetFile(src);
+        const file = assetFile(element.getAttribute("src"));
         if (file) {
           roots.add(file);
           if (element.getAttribute("type") === "module") {
             modules.push(file);
           }
-        } else if (src && musickitPath.test(src)) {
-          musickit.push(src);
         }
       },
     })
@@ -58,9 +52,6 @@ export const readPage = (html: string, source: string): Page => {
       },
     })
     .transform(html);
-  if (musickit.length === 0) {
-    warn("MusicKit script", `no script matching ${musickitPath} in ${source}`);
-  }
   return {
     entry: required(
       modules.find((file) => file.endsWith(".js")),
@@ -71,7 +62,6 @@ export const readPage = (html: string, source: string): Page => {
     head: stripHead(
       requiredMatch(headContent, html, "page head", source).head ?? ""
     ),
-    musickit: musickit[0],
     roots: [...roots].toSorted(),
   };
 };

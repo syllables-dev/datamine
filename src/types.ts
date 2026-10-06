@@ -45,7 +45,6 @@ export interface Manifest {
   chunks: Record<string, string>;
   entry: string;
   fetchedAt: string;
-  musickit?: { hash: string; version: string };
   roots: string[];
   version?: string;
 }
@@ -80,7 +79,6 @@ export interface Report {
   initial: boolean;
   modifiedChunks: string[];
   movedStrings: [string, string][];
-  musickit: { from?: string; to?: string };
   previousBuild?: string;
   sections: Record<SectionName, Section>;
   target: string;

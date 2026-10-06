@@ -20,7 +20,6 @@ export const snapshotPaths = (dir: string) => ({
   head: `${dir}/index.html`,
   literals: `${dir}/literals.txt`,
   manifest: `${dir}/manifest.json`,
-  musickit: `${dir}/musickit/musickit.js`,
   strings: `${dir}/strings/${config.locale}.json`,
   tokens: `${dir}/tokens.json`,
 });
@@ -98,14 +97,11 @@ export const writeSnapshot = async (
   dir: string,
   snapshot: Snapshot,
   sources: Map<string, string>,
-  page: { head: string; musickit?: string }
+  head: string
 ) => {
   const paths = snapshotPaths(dir);
   const modified = await writeAssets(paths.assets, sources);
-  if (page.musickit !== undefined) {
-    await Bun.write(paths.musickit, await pretty(page.musickit, "musickit.js"));
-  }
-  await Bun.write(paths.head, page.head);
+  await Bun.write(paths.head, head);
   await Bun.write(paths.strings, json(snapshot.strings));
   await Bun.write(paths.api, json(snapshot.api));
   await Bun.write(paths.literals, jsonLines(snapshot.literals));

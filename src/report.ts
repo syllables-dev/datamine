@@ -198,10 +198,6 @@ export const compare = (
     initial: previous === undefined,
     modifiedChunks,
     movedStrings: strings.moved,
-    musickit: {
-      from: previous?.manifest.musickit?.version,
-      to: next.manifest.musickit?.version,
-    },
     previousBuild: previous && buildId(previous.manifest.entry),
     sections: {
       chunks: set(Object.keys(oldChunks), Object.keys(newChunks)),
@@ -251,11 +247,6 @@ export const commitMessage = (reports: Report[]) => {
     ...sectionNames
       .filter((name) => !isEmpty(report.sections[name]))
       .map((name) => `  ${name}: ${counts(report.sections[name])}`),
-    ...(report.musickit.from === report.musickit.to
-      ? []
-      : [
-          `  musickit: ${report.musickit.from ?? "none"} -> ${report.musickit.to ?? "none"}`,
-        ]),
   ]);
   return [`Build ${title}`, ...body].join("\n");
 };

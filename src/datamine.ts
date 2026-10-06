@@ -7,7 +7,6 @@ import { json } from "@/lib/files";
 import { get } from "@/lib/http";
 import { commitMessage, compare } from "@/report";
 import { crawl } from "@/scrape/crawl";
-import { musickitVersion } from "@/scrape/musickit";
 import { assignNames } from "@/scrape/names";
 import { readPage } from "@/scrape/page";
 import { localeKey, translationFiles } from "@/scrape/translations";
@@ -32,16 +31,10 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
   const previous = await readSnapshot(dir);
   const pageUrl = `${origin}${target.page}`;
   const page = readPage(await get(pageUrl), pageUrl);
-  const musickit = page.musickit
-    ? await get(`${origin}${page.musickit}`)
-    : undefined;
-  const musickitHash =
-    musickit === undefined ? undefined : Bun.hash(musickit).toString(16);
   if (
     !force &&
     previous &&
-    previous.manifest.roots.join(",") === page.roots.join(",") &&
-    previous.manifest.musickit?.hash === musickitHash
+    previous.manifest.roots.join(",") === page.roots.join(",")
   ) {
     console.log(`${target.host}: no changes (${page.entry})`);
     return;
@@ -64,25 +57,14 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
     (name) => readAsset(dir, name)
   );
   const sources = stableSources(files, chunks, translations);
-  const analyzed = new Map(sources);
-  if (musickit !== undefined) {
-    analyzed.set("musickit.js", musickit);
-  }
-  const { literals, tokens, version } = extractLiterals(analyzed, origin);
+  const { literals, tokens, version } = extractLiterals(sources, origin);
   const snapshot: Snapshot = {
-    api: extractApi(analyzed, origin),
+    api: extractApi(sources, origin),
     literals,
     manifest: {
       chunks,
       entry: page.entry,
       fetchedAt: new Date().toISOString(),
-      ...(musickit !== undefined &&
-        musickitHash && {
-          musickit: {
-            hash: musickitHash,
-            version: musickitVersion(musickit) ?? "unknown",
-          },
-        }),
       roots: page.roots,
       ...(version && { version }),
     },
@@ -92,10 +74,7 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
     ),
     tokens,
   };
-  const modified = await writeSnapshot(dir, snapshot, sources, {
-    head: page.head,
-    musickit,
-  });
+  const modified = await writeSnapshot(dir, snapshot, sources, page.head);
   return compare(target, previous, snapshot, modified);
 };
 
