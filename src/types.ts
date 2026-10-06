@@ -79,6 +79,7 @@ export interface Report {
   host: string;
   initial: boolean;
   modifiedChunks: string[];
+  movedStrings: [string, string][];
   musickit: { from?: string; to?: string };
   previousBuild?: string;
   sections: Record<SectionName, Section>;

@@ -48,13 +48,89 @@ const set = (from: string[], to: string[]) =>
     new Map(to.map((item) => [item, item]))
   );
 
-const stringLines = (strings: Record<string, string>) =>
-  new Map(
-    Object.entries(strings).map(([key, value]) => [
-      key,
-      `${key}: ${JSON.stringify(value)}`,
-    ])
+const stringLine = (key: string, value: string) =>
+  `${key}: ${JSON.stringify(value)}`;
+
+const linesOf = (keys: Set<string>, record: Record<string, string>) =>
+  new Set([...keys].map((key) => stringLine(key, record[key] ?? "")));
+
+const placeholder = /^\*\*.+\*\*$/u;
+
+const segmentsOf = (key: string) => key.split(".");
+
+const sameTail = (a: string, b: string) => {
+  const left = segmentsOf(a);
+  const right = segmentsOf(b);
+  const length = Math.max(1, Math.min(left.length, right.length) - 1);
+  return left.slice(-length).join(".") === right.slice(-length).join(".");
+};
+
+const indexByLastSegment = (strings: Record<string, string>) => {
+  const index = new Map<string, string[]>();
+  for (const key of Object.keys(strings)) {
+    const last = segmentsOf(key).at(-1) ?? key;
+    index.set(last, [...(index.get(last) ?? []), key]);
+  }
+  return index;
+};
+
+const matching = (index: Map<string, string[]>, key: string) =>
+  (index.get(segmentsOf(key).at(-1) ?? key) ?? []).filter((other) =>
+    sameTail(key, other)
   );
+
+const stringSection = (
+  from: Record<string, string>,
+  to: Record<string, string>
+) => {
+  const section = keyed(
+    new Map(Object.entries(from).map(([k, v]) => [k, stringLine(k, v)])),
+    new Map(Object.entries(to).map(([k, v]) => [k, stringLine(k, v)]))
+  );
+  const fromIndex = indexByLastSegment(from);
+  const toIndex = indexByLastSegment(to);
+  const moved: [string, string][] = [];
+  const movedFrom = new Set<string>();
+  const movedTo = new Set<string>();
+  for (const key of Object.keys(from)) {
+    if (key in to) {
+      continue;
+    }
+    const value = from[key] ?? "";
+    const target = matching(toIndex, key).find(
+      (other) => to[other] === value || placeholder.test(value)
+    );
+    if (target !== undefined) {
+      movedFrom.add(key);
+      if (to[target] === value) {
+        moved.push([key, target]);
+        movedTo.add(target);
+      }
+    }
+  }
+  for (const key of Object.keys(to)) {
+    if (key in from || movedTo.has(key)) {
+      continue;
+    }
+    const source = matching(fromIndex, key).find(
+      (other) => from[other] === to[key]
+    );
+    if (source !== undefined) {
+      moved.push([source, key]);
+      movedTo.add(key);
+    }
+  }
+  const removedLines = linesOf(movedFrom, from);
+  const addedLines = linesOf(movedTo, to);
+  return {
+    moved: moved.toSorted(([a], [b]) => a.localeCompare(b)),
+    section: {
+      added: section.added.filter((line) => !addedLines.has(line)),
+      removed: section.removed.filter((line) => !removedLines.has(line)),
+      updated: section.updated,
+    },
+  };
+};
 
 const endpointLines = (api: Api | undefined) =>
   new Map(
@@ -115,11 +191,13 @@ export const compare = (
 ): Report => {
   const oldChunks = previous?.manifest.chunks ?? {};
   const newChunks = next.manifest.chunks;
+  const strings = stringSection(previous?.strings ?? {}, next.strings);
   return {
     build: buildId(next.manifest.entry),
     host: target.host,
     initial: previous === undefined,
     modifiedChunks,
+    movedStrings: strings.moved,
     musickit: {
       from: previous?.manifest.musickit?.version,
       to: next.manifest.musickit?.version,
@@ -131,10 +209,7 @@ export const compare = (
       endpoints: keyed(endpointLines(previous?.api), endpointLines(next.api)),
       headers: set(headerLines(previous?.api), headerLines(next.api)),
       params: keyed(paramLines(previous?.api), paramLines(next.api)),
-      strings: keyed(
-        stringLines(previous?.strings ?? {}),
-        stringLines(next.strings)
-      ),
+      strings: strings.section,
       tokens: keyed(
         tokenLines(previous?.tokens ?? []),
         tokenLines(next.tokens)
