@@ -10,10 +10,6 @@ Tracks Apple Music web player builds and posts the changes to Discord.
 
 Snapshots are saved to `datamine/<host>/`.
 
-## Setup
-
-Add the bot token as the `DISCORD_BOT_TOKEN` repo secret and the channel id as the `DISCORD_CHANNEL_ID` repo variable. The bot needs Send Messages and Embed Links in that channel.
-
 ## Usage
 
 ```sh
