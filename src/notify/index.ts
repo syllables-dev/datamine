@@ -1,8 +1,8 @@
 import { config } from "@/config";
-import { batchEmbeds, createClient } from "@/discord";
+import { createClient } from "@/discord";
 import { warn } from "@/lib/expect";
 import { isNoise } from "@/notify/diff";
-import { summaryMessage, threadEmbeds, threadName } from "@/notify/discord";
+import { summaryMessage, threadMessages, threadName } from "@/notify/discord";
 import { commentBody, postComment } from "@/notify/github";
 
 import type { DiscordClient, MessagePayload } from "@/discord";
@@ -40,7 +40,7 @@ const notify = async (
     summary.id,
     threadName(report)
   );
-  for (const embeds of batchEmbeds(threadEmbeds(report, link))) {
+  for (const embeds of threadMessages(report, link)) {
     await discord.send(thread.id, { embeds });
   }
 };
@@ -50,7 +50,7 @@ const print = (report: Report, link: string) => {
     summaryMessage(report, link),
     ...(isNoise(report)
       ? []
-      : batchEmbeds(threadEmbeds(report, link)).map((embeds) => ({ embeds }))),
+      : threadMessages(report, link).map((embeds) => ({ embeds }))),
   ];
   console.log(JSON.stringify(messages, null, 2));
 };

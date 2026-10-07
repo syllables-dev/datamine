@@ -1,5 +1,5 @@
 import { config } from "@/config";
-import { codeBlock, linkButton } from "@/discord";
+import { batchEmbeds, codeBlock, linkButton } from "@/discord";
 import {
   chunkLines,
   diffLines,
@@ -15,7 +15,7 @@ import type { Report } from "@/types";
 
 const { icon, username } = config.discord;
 const blockSize = 3900;
-const maxThreadEmbeds = 30;
+const maxSectionBlocks = 10;
 
 const colorOf = (report: Report) =>
   config.targets.find((target) => target.id === report.target)?.color ?? 0;
@@ -57,27 +57,28 @@ export const summaryMessage = (
   return { components: [linkButton("View on GitHub", link)], embeds: [embed] };
 };
 
-export const threadEmbeds = (report: Report, link: string): Embed[] => {
+export const threadMessages = (report: Report, link: string): Embed[][] => {
   const color = colorOf(report);
-  const embeds = notableSections
+  return notableSections
     .filter((name) => !isEmpty(report.sections[name]))
-    .flatMap((name) =>
-      chunkLines(diffLines(report.sections[name]), blockSize).map(
-        (lines, index): Embed => ({
+    .flatMap((name) => {
+      const blocks = chunkLines(diffLines(report.sections[name]), blockSize);
+      const shown =
+        blocks.length > maxSectionBlocks
+          ? blocks.slice(0, maxSectionBlocks - 1)
+          : blocks;
+      const embeds = shown.map((lines, index): Embed => ({
+        color,
+        description: `## ${titles[name]}${index > 0 ? " (continued)" : ""}
+${codeBlock("diff", lines)}`,
+      }));
+      const hidden = blocks.length - shown.length;
+      if (hidden > 0) {
+        embeds.push({
           color,
-          description: `## ${titles[name]}${index > 0 ? " (continued)" : ""}\n${codeBlock("diff", lines)}`,
-        })
-      )
-    );
-  if (embeds.length <= maxThreadEmbeds) {
-    return embeds;
-  }
-  const hidden = embeds.length - (maxThreadEmbeds - 1);
-  return [
-    ...embeds.slice(0, maxThreadEmbeds - 1),
-    {
-      color,
-      description: `${hidden} more ${hidden === 1 ? "block" : "blocks"} not shown. [See the full diff](${link})`,
-    },
-  ];
+          description: `${hidden} more ${hidden === 1 ? "block" : "blocks"} not shown. [See the full diff](${link})`,
+        });
+      }
+      return batchEmbeds(embeds);
+    });
 };
