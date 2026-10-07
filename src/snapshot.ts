@@ -12,11 +12,12 @@ import {
 } from "@/lib/files";
 import { anyOf } from "@/lib/utils";
 
-import type { Api, Manifest, Snapshot, Token } from "@/types";
+import type { Api, Flags, Manifest, Snapshot, Token } from "@/types";
 
 export const snapshotPaths = (dir: string) => ({
   api: `${dir}/api.json`,
   assets: `${dir}/assets`,
+  flags: `${dir}/flags.json`,
   head: `${dir}/index.html`,
   literals: `${dir}/literals.txt`,
   manifest: `${dir}/manifest.json`,
@@ -39,6 +40,7 @@ export const readSnapshot = async (
   }
   return {
     api: (await readJson<Api>(paths.api)) ?? emptyApi(),
+    flags: await readJson<Flags>(paths.flags),
     literals: await readJsonLines<string>(paths.literals),
     manifest,
     strings: (await readJson<Record<string, string>>(paths.strings)) ?? {},
@@ -104,6 +106,9 @@ export const writeSnapshot = async (
   await Bun.write(paths.head, head);
   await Bun.write(paths.strings, json(snapshot.strings));
   await Bun.write(paths.api, json(snapshot.api));
+  if (snapshot.flags) {
+    await Bun.write(paths.flags, json(snapshot.flags));
+  }
   await Bun.write(paths.literals, jsonLines(snapshot.literals));
   await Bun.write(paths.tokens, json(snapshot.tokens));
   await Bun.write(paths.manifest, json(snapshot.manifest));

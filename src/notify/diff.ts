@@ -6,7 +6,9 @@ export const titles: Record<SectionName, string> = {
   chunks: "Chunks",
   code: "Code strings",
   endpoints: "Endpoints",
+  features: "Feature Flags",
   headers: "Headers",
+  overrides: "Override Toggles",
   params: "Params",
   strings: "Strings",
   tokens: "Tokens",
@@ -15,6 +17,8 @@ export const titles: Record<SectionName, string> = {
 
 export const notableSections: SectionName[] = [
   "strings",
+  "features",
+  "overrides",
   "endpoints",
   "tokens",
 ];

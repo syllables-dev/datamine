@@ -2,6 +2,7 @@ import { hashOf } from "@/scrape/assets";
 
 import type {
   Api,
+  Flags,
   HeaderUsage,
   Report,
   Section,
@@ -13,6 +14,8 @@ import type {
 
 export const sectionNames: SectionName[] = [
   "strings",
+  "features",
+  "overrides",
   "endpoints",
   "params",
   "headers",
@@ -21,6 +24,8 @@ export const sectionNames: SectionName[] = [
   "urls",
   "chunks",
 ];
+
+const emptyFlags: Flags = { features: {}, overrides: [] };
 
 export const buildId = (entry: string) => hashOf(entry) ?? entry;
 
@@ -171,6 +176,15 @@ const headerLines = (api: Api | undefined) => [
   ),
 ];
 
+// Keyed by flag name, so turning a flag on or off shows as an update.
+const featureLines = (flags: Flags) =>
+  new Map(
+    Object.entries(flags.features).map(([key, value]) => [
+      key,
+      `${key}: ${value}`,
+    ])
+  );
+
 const day = (iso: string | undefined) => iso?.slice(0, 10) ?? "?";
 
 const tokenLines = (tokens: Token[]) =>
@@ -192,6 +206,10 @@ export const compare = (
   const oldChunks = previous?.manifest.chunks ?? {};
   const newChunks = next.manifest.chunks;
   const strings = stringSection(previous?.strings ?? {}, next.strings);
+  // Older snapshots have no flags; compare against the new build so the first
+  // run after upgrading does not report every flag as added.
+  const oldFlags = previous?.flags ?? next.flags ?? emptyFlags;
+  const newFlags = next.flags ?? emptyFlags;
   return {
     build: buildId(next.manifest.entry),
     host: target.host,
@@ -203,7 +221,9 @@ export const compare = (
       chunks: set(Object.keys(oldChunks), Object.keys(newChunks)),
       code: set(previous?.literals ?? [], next.literals),
       endpoints: keyed(endpointLines(previous?.api), endpointLines(next.api)),
+      features: keyed(featureLines(oldFlags), featureLines(newFlags)),
       headers: set(headerLines(previous?.api), headerLines(next.api)),
+      overrides: set(oldFlags.overrides, newFlags.overrides),
       params: keyed(paramLines(previous?.api), paramLines(next.api)),
       strings: strings.section,
       tokens: keyed(

@@ -1,5 +1,6 @@
 import { config } from "@/config";
 import { extractApi } from "@/extract/api";
+import { extractFlags } from "@/extract/flags";
 import { extractLiterals } from "@/extract/literals";
 import { extractStrings } from "@/extract/strings";
 import { required } from "@/lib/expect";
@@ -60,6 +61,7 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
   const { literals, tokens, version } = extractLiterals(sources, origin);
   const snapshot: Snapshot = {
     api: extractApi(sources, origin),
+    flags: extractFlags(sources),
     literals,
     manifest: {
       chunks,

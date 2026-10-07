@@ -41,6 +41,11 @@ export interface Literals {
   version?: string;
 }
 
+export interface Flags {
+  features: Record<string, boolean>;
+  overrides: string[];
+}
+
 export interface Manifest {
   chunks: Record<string, string>;
   entry: string;
@@ -51,6 +56,8 @@ export interface Manifest {
 
 export interface Snapshot {
   api: Api;
+  /** Missing in snapshots written before flags were tracked. */
+  flags?: Flags;
   literals: string[];
   manifest: Manifest;
   strings: Record<string, string>;
@@ -61,7 +68,9 @@ export type SectionName =
   | "chunks"
   | "code"
   | "endpoints"
+  | "features"
   | "headers"
+  | "overrides"
   | "params"
   | "strings"
   | "tokens"
