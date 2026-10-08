@@ -21,7 +21,6 @@ import {
 import type { Report, Snapshot, Target } from "@/types";
 
 const args = Bun.argv.slice(2);
-const force = args.includes("--force");
 const only = args
   .filter((arg) => arg.startsWith("--target="))
   .map((arg) => arg.slice("--target=".length));
@@ -32,14 +31,6 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
   const previous = await readSnapshot(dir);
   const pageUrl = `${origin}${target.page}`;
   const page = readPage(await get(pageUrl), pageUrl);
-  if (
-    !force &&
-    previous &&
-    previous.manifest.roots.join(",") === page.roots.join(",")
-  ) {
-    console.log(`${target.host}: no changes (${page.entry})`);
-    return;
-  }
   const files = await crawl(origin, page.roots);
   const translations = translationFiles(
     page.entry,
@@ -76,7 +67,17 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
     ),
     tokens,
   };
-  const modified = await writeSnapshot(dir, snapshot, sources, page.head);
+  const { changed, modified } = await writeSnapshot(
+    dir,
+    snapshot,
+    sources,
+    page.head,
+    previous?.manifest
+  );
+  if (!changed) {
+    console.log(`${target.host}: no changes (${page.entry})`);
+    return;
+  }
   return compare(target, previous, snapshot, modified);
 };
 

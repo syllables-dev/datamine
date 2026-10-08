@@ -15,7 +15,6 @@ Snapshots are saved to `datamine/<host>/`.
 ```sh
 bun install
 bun run datamine
-bun run datamine --force
 bun run datamine --target=beta
 bun run notify
 ```

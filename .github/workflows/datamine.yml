@@ -4,11 +4,6 @@ on:
   schedule:
     - cron: "0 * * * *"
   workflow_dispatch:
-    inputs:
-      force:
-        description: Re-crawl even if the build has not changed
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -30,7 +25,7 @@ jobs:
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
-      - run: bun run datamine --target=${{ matrix.target }} ${{ inputs.force && '--force' || '' }}
+      - run: bun run datamine --target=${{ matrix.target }}
       - id: commit
         run: |
           git add --all

@@ -26,9 +26,12 @@ export const readText = async (path: string) => {
 };
 
 export const removeStale = async (dir: string, keep: Set<string>) => {
+  const removed: string[] = [];
   for await (const name of new Bun.Glob("*").scan({ cwd: dir })) {
     if (!keep.has(name)) {
       await Bun.file(`${dir}/${name}`).delete();
+      removed.push(name);
     }
   }
+  return removed;
 };

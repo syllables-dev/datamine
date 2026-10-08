@@ -78,9 +78,17 @@ export const stableSources = (
   );
 };
 
+const writeText = async (path: string, text: string) => {
+  if ((await readText(path)) === text) {
+    return false;
+  }
+  await Bun.write(path, text);
+  return true;
+};
+
 const writeAssets = async (dir: string, sources: Map<string, string>) => {
   const modified: string[] = [];
-  await Promise.all(
+  const written = await Promise.all(
     [...sources].map(async ([name, source]) => {
       const path = `${dir}/${name}`;
       const text = await pretty(source, name);
@@ -88,29 +96,47 @@ const writeAssets = async (dir: string, sources: Map<string, string>) => {
       if (old !== undefined && old !== text) {
         modified.push(name);
       }
-      await Bun.write(path, text);
+      return await writeText(path, text);
     })
   );
-  await removeStale(dir, new Set(sources.keys()));
-  return modified.toSorted();
+  const removed = await removeStale(dir, new Set(sources.keys()));
+  return {
+    changed: written.includes(true) || removed.length > 0,
+    modified: modified.toSorted(),
+  };
 };
+
+const timeless = (manifest: Manifest | undefined) =>
+  manifest && json({ ...manifest, fetchedAt: undefined });
 
 export const writeSnapshot = async (
   dir: string,
   snapshot: Snapshot,
   sources: Map<string, string>,
-  head: string
+  head: string,
+  previous: Manifest | undefined
 ) => {
   const paths = snapshotPaths(dir);
-  const modified = await writeAssets(paths.assets, sources);
-  await Bun.write(paths.head, head);
-  await Bun.write(paths.strings, json(snapshot.strings));
-  await Bun.write(paths.api, json(snapshot.api));
-  if (snapshot.flags) {
-    await Bun.write(paths.flags, json(snapshot.flags));
-  }
-  await Bun.write(paths.literals, jsonLines(snapshot.literals));
-  await Bun.write(paths.tokens, json(snapshot.tokens));
-  await Bun.write(paths.manifest, json(snapshot.manifest));
-  return modified;
+  const assets = await writeAssets(paths.assets, sources);
+  const written = await Promise.all([
+    writeText(paths.head, head),
+    writeText(paths.strings, json(snapshot.strings)),
+    writeText(paths.api, json(snapshot.api)),
+    snapshot.flags && writeText(paths.flags, json(snapshot.flags)),
+    writeText(paths.literals, jsonLines(snapshot.literals)),
+    writeText(paths.tokens, json(snapshot.tokens)),
+  ]);
+  const changed =
+    assets.changed ||
+    written.includes(true) ||
+    timeless(previous) !== timeless(snapshot.manifest);
+  await writeText(
+    paths.manifest,
+    json(
+      changed || !previous
+        ? snapshot.manifest
+        : { ...snapshot.manifest, fetchedAt: previous.fetchedAt }
+    )
+  );
+  return { changed, modified: assets.modified };
 };
