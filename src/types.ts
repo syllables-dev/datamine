@@ -7,6 +7,7 @@ export interface Target {
 }
 
 export interface Endpoint {
+  body?: string[];
   chunks: string[];
   headers: string[];
   methods: string[];

@@ -149,12 +149,18 @@ const endpointLines = (api: Api | undefined) =>
 
 const paramLines = (api: Api | undefined) =>
   new Map(
-    Object.entries(api?.endpoints ?? {}).flatMap(([path, endpoint]) =>
-      Object.entries(endpoint.params).map(([name, value]): [string, string] => [
-        `${path}?${name}`,
-        `${path} ${name}${value === null ? "" : `=${value}`}`,
-      ])
-    )
+    Object.entries(api?.endpoints ?? {}).flatMap(([path, endpoint]) => [
+      ...Object.entries(endpoint.params).map(
+        ([name, value]): [string, string] => [
+          `${path}?${name}`,
+          `${path} ${name}${value === null ? "" : `=${value}`}`,
+        ]
+      ),
+      ...(endpoint.body ?? []).map((field): [string, string] => [
+        `${path}#${field}`,
+        `${path} body.${field}`,
+      ]),
+    ])
   );
 
 const usageLine = (header: string, usage: HeaderUsage) =>

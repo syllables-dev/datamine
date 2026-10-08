@@ -4,18 +4,21 @@ import { sortedSet } from "@/lib/utils";
 
 import type { HeaderUsage } from "@/types";
 
-import type { Entry } from "./nodes";
+import type { Constants, Entry } from "./nodes";
 
 export interface Scope {
+  body: Set<string>;
   headers: Set<string>;
   label?: string;
   methods: Set<string>;
   params: Map<string, string | null>;
   paths: Set<string>;
+  root?: boolean;
   targets: Set<string>;
 }
 
 interface EndpointEntry {
+  body: Set<string>;
   chunks: Set<string>;
   headers: Set<string>;
   methods: Set<string>;
@@ -33,6 +36,7 @@ export interface State {
 export interface Context {
   chunk: string;
   classes: (string | undefined)[];
+  constants: Constants;
   consumed: WeakSet<Node>;
   scopes: Scope[];
   state: State;
@@ -47,6 +51,7 @@ export const newState = (): State => ({
 });
 
 export const newScope = (label?: string): Scope => ({
+  body: new Set(),
   headers: new Set(),
   label,
   methods: new Set(),
@@ -56,6 +61,7 @@ export const newScope = (label?: string): Scope => ({
 });
 
 const newEndpoint = (): EndpointEntry => ({
+  body: new Set(),
   chunks: new Set(),
   headers: new Set(),
   methods: new Set(),
@@ -96,6 +102,9 @@ const mergeEndpoint = (endpoint: EndpointEntry, scope: Scope) => {
   for (const header of scope.headers) {
     endpoint.headers.add(header);
   }
+  for (const field of scope.body) {
+    endpoint.body.add(field);
+  }
   for (const [key, value] of scope.params) {
     if ((endpoint.params.get(key) ?? null) === null) {
       endpoint.params.set(key, value);
@@ -112,7 +121,7 @@ const flushPaths = (context: Context, scope: Scope) => {
       const [key = "", value] = pair.split("=", 2);
       endpoint.params.set(key, value ?? null);
     }
-    if (scope.paths.size <= 3) {
+    if (!scope.root && scope.paths.size <= 3) {
       mergeEndpoint(endpoint, scope);
     }
     context.state.endpoints.set(path, endpoint);

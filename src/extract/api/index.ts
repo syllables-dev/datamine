@@ -10,12 +10,14 @@ import type { Api, HeaderUsage } from "@/types";
 
 import {
   calleeName,
+  constantsOf,
   functionLabel,
   isClass,
   isFunction,
   keyOf,
   objectEntries,
   readable,
+  resolve,
   stringOf,
 } from "./nodes";
 import {
@@ -23,6 +25,7 @@ import {
   appleUrl,
   basePath,
   bracketParam,
+  hostPath,
   httpMethods,
   isHeader,
   leadingHole,
@@ -47,6 +50,9 @@ import {
 import type { Context, Scope, State } from "./state";
 
 const asPath = (text: string) => {
+  if (hostPath.test(text)) {
+    return text.replaceAll(namedHole, "{}");
+  }
   if (!apiPath.test(text) && !basePath.test(text)) {
     return;
   }
@@ -54,15 +60,50 @@ const asPath = (text: string) => {
   return lead + text.slice(lead.length).replaceAll(namedHole, "{}");
 };
 
+const headerNames = (
+  context: Context,
+  node: Node | null | undefined
+): string[] => {
+  if (node?.type === "CallExpression") {
+    return node.arguments.flatMap((argument) => headerNames(context, argument));
+  }
+  if (node?.type !== "ObjectExpression") {
+    return [];
+  }
+  return node.properties.flatMap((property) => {
+    if (property.type === "SpreadElement") {
+      return headerNames(context, property.argument);
+    }
+    const name = property.computed
+      ? resolve(property.key, context.constants)
+      : keyOf(property);
+    return name === undefined ? [] : [name];
+  });
+};
+
 const headerEntries = (context: Context, node: Node | null | undefined) => {
-  for (const [name] of objectEntries(node)) {
+  for (const name of headerNames(context, node)) {
     if (isHeader(name)) {
       requestHeader(context, name);
     }
   }
 };
 
-const onString = (context: Context, node: Node, text: string) => {
+const bodyFields = (context: Context, node: Node | null | undefined) =>
+  node?.type === "NewExpression"
+    ? node.arguments.flatMap((argument) =>
+        objectEntries(argument, context.constants)
+      )
+    : objectEntries(node, context.constants);
+
+const comparisons = new Set(["!=", "!==", "==", "==="]);
+
+const onString = (
+  context: Context,
+  node: Node,
+  parent: Node | null,
+  text: string
+) => {
   if (node.type === "BinaryExpression" || node.type === "TemplateLiteral") {
     walk(node, {
       enter(child) {
@@ -73,7 +114,10 @@ const onString = (context: Context, node: Node, text: string) => {
   const path = asPath(text);
   if (path) {
     current(context).paths.add(path);
-  } else if (httpMethods.has(text)) {
+  } else if (
+    httpMethods.has(text) &&
+    !(parent?.type === "BinaryExpression" && comparisons.has(parent.operator))
+  ) {
     current(context).methods.add(text);
   } else if (appleUrl.test(text)) {
     context.state.urls.add(text);
@@ -87,8 +131,12 @@ const onProperty = (context: Context, node: Node) => {
   const key = keyOf(node);
   if (key === "headers") {
     headerEntries(context, node.value);
+  } else if (key === "body") {
+    for (const [field] of bodyFields(context, node.value)) {
+      current(context).body.add(field);
+    }
   } else if (key && paramObjects.has(key)) {
-    addParams(context, objectEntries(node.value));
+    addParams(context, objectEntries(node.value, context.constants));
   } else if (key && bracketParam.test(key)) {
     current(context).params.set(key, stringOf(node.value) ?? null);
   }
@@ -101,20 +149,21 @@ const onCall = (context: Context, node: Node) => {
   const call = calleeName(node) ?? "";
   const [first, second] = node.arguments;
   const name = stringOf(first);
+  const header = resolve(first, context.constants) ?? name;
   if (paramCalls.has(call)) {
     addParams(
       context,
       name === undefined
-        ? objectEntries(first)
+        ? objectEntries(first, context.constants)
         : [[name, stringOf(second) ?? null]]
     );
   } else if (
-    name &&
-    isHeader(name) &&
+    header &&
+    isHeader(header) &&
     requestHeaderCalls.has(call) &&
     node.arguments.length === 2
   ) {
-    requestHeader(context, name);
+    requestHeader(context, header);
   } else if (
     name &&
     titleCaseHeader.test(name) &&
@@ -125,8 +174,23 @@ const onCall = (context: Context, node: Node) => {
   }
 };
 
-const onNode = (context: Context, node: Node) => {
-  if (node.type === "Property") {
+const isReference = (node: Node, parent: Node | null) =>
+  !(
+    (parent?.type === "MemberExpression" &&
+      !parent.computed &&
+      parent.property === node) ||
+    (parent?.type === "Property" && !parent.computed && parent.key === node) ||
+    (parent?.type === "VariableDeclarator" && parent.id === node)
+  );
+
+const onNode = (context: Context, node: Node, parent: Node | null) => {
+  if (node.type === "Identifier") {
+    const value = context.constants.strings.get(node.name);
+    const path = value === undefined ? undefined : asPath(value);
+    if (path && isReference(node, parent)) {
+      current(context).paths.add(path);
+    }
+  } else if (node.type === "Property") {
     onProperty(context, node);
   } else if (node.type === "CallExpression") {
     onCall(context, node);
@@ -141,7 +205,7 @@ const onNode = (context: Context, node: Node) => {
     node.left.type === "MemberExpression" &&
     node.left.computed
   ) {
-    const name = stringOf(node.left.property);
+    const name = resolve(node.left.property, context.constants);
     if (name && titleCaseHeader.test(name)) {
       requestHeader(context, name);
     }
@@ -168,9 +232,9 @@ const enter = (context: Context, node: Node, parent: Node | null) => {
   } else if (!context.consumed.has(node)) {
     const text = stringOf(node);
     if (text === undefined) {
-      onNode(context, node);
+      onNode(context, node, parent);
     } else {
-      onString(context, node, text);
+      onString(context, node, parent, text);
     }
   }
 };
@@ -184,14 +248,16 @@ const leave = (context: Context, node: Node) => {
 };
 
 const scan = (state: State, chunk: string, source: string) => {
+  const { program } = parseSync(chunk, source);
   const context: Context = {
     chunk,
     classes: [],
+    constants: constantsOf(program),
     consumed: new WeakSet(),
-    scopes: [newScope()],
+    scopes: [{ ...newScope(), root: true }],
     state,
   };
-  walk(parseSync(chunk, source).program, {
+  walk(program, {
     enter(node, parent) {
       enter(context, node, parent);
     },
@@ -233,6 +299,7 @@ export const extractApi = (
       [...state.endpoints].map(([path, endpoint]) => [
         path,
         {
+          ...(endpoint.body.size > 0 && { body: sortedSet(endpoint.body) }),
           chunks: sortedSet(endpoint.chunks),
           headers: sortedSet([...endpoint.headers].map(display)),
           methods: sortedSet(endpoint.methods),
