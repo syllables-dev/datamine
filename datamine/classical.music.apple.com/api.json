@@ -5,7 +5,8 @@
         "dev.js"
       ],
       "headers": [
-        "Authorization"
+        "Authorization",
+        "Media-User-Token"
       ],
       "methods": [],
       "params": {}
@@ -15,7 +16,8 @@
         "dev.js"
       ],
       "headers": [
-        "Authorization"
+        "Authorization",
+        "Media-User-Token"
       ],
       "methods": [],
       "params": {}
@@ -25,7 +27,8 @@
         "dev.js"
       ],
       "headers": [
-        "Authorization"
+        "Authorization",
+        "Media-User-Token"
       ],
       "methods": [],
       "params": {}
@@ -147,6 +150,9 @@
       }
     },
     "/v1/me/stations/continuous": {
+      "body": [
+        "data"
+      ],
       "chunks": [
         "dev.js"
       ],
@@ -188,6 +194,39 @@
       "headers": [],
       "methods": [],
       "params": {}
+    },
+    "https://{}/commerce/account/authenticateMusicKitRequest": {
+      "chunks": [
+        "dev.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "https://{}/config/1/report": {
+      "chunks": [
+        "dev.js",
+        "mt-metricskit-delegates-web.esm.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "https://{}/WebObjects/MZPlay.woa/wa": {
+      "chunks": [
+        "dev.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "https://{}/WebObjects/MZPlay.woa/wa/webPlayback": {
+      "chunks": [
+        "dev.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
     }
   },
   "requestHeaders": {
@@ -220,6 +259,11 @@
         "targets": [
           "{URL}"
         ]
+      }
+    ],
+    "amp-web-unique-id": [
+      {
+        "chunk": "main.js"
       }
     ],
     "auth-storefront": [
@@ -390,6 +434,16 @@
     "Media-User-Token": [
       {
         "chunk": "dev.js",
+        "in": "_webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
+      },
+      {
+        "chunk": "dev.js",
         "in": "createRequest",
         "methods": [
           "GET"
@@ -398,6 +452,26 @@
       {
         "chunk": "dev.js",
         "in": "fetchForCache"
+      },
+      {
+        "chunk": "dev.js",
+        "in": "infoRefresh",
+        "targets": [
+          "{iTunesBuyBase}/account/web/infoRefresh"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "in": "requestStorefrontCountryCode",
+        "targets": [
+          "{apiBase}/me/storefront"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "targets": [
+          "{iTunesBuyBase}/account/web/info"
+        ]
       }
     ],
     "Music-User-Token": [
@@ -407,6 +481,11 @@
         "targets": [
           "{iTunesBuyBase}/commerce/web/subscription/offers/music"
         ]
+      }
+    ],
+    "Perfkit-context": [
+      {
+        "chunk": "main.js"
       }
     ],
     "Range": [
@@ -432,6 +511,18 @@
       {
         "chunk": "main.js",
         "in": "getRequestAdditions"
+      }
+    ],
+    "X-Apple-Media-User-Token": [
+      {
+        "chunk": "dev.js",
+        "in": "_webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
       }
     ],
     "X-Apple-Music-User-Token": [
