@@ -195,14 +195,6 @@
       "methods": [],
       "params": {}
     },
-    "https://{}/commerce/account/authenticateMusicKitRequest": {
-      "chunks": [
-        "dev.js"
-      ],
-      "headers": [],
-      "methods": [],
-      "params": {}
-    },
     "https://{}/config/1/report": {
       "chunks": [
         "dev.js",
@@ -212,7 +204,7 @@
       "methods": [],
       "params": {}
     },
-    "https://{}/WebObjects/MZPlay.woa/wa": {
+    "https://{buy}/commerce/account/authenticateMusicKitRequest": {
       "chunks": [
         "dev.js"
       ],
@@ -220,7 +212,15 @@
       "methods": [],
       "params": {}
     },
-    "https://{}/WebObjects/MZPlay.woa/wa/webPlayback": {
+    "https://{play}/WebObjects/MZPlay.woa/wa": {
+      "chunks": [
+        "dev.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "https://{play}/WebObjects/MZPlay.woa/wa/webPlayback": {
       "chunks": [
         "dev.js"
       ],
