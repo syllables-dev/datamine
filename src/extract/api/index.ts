@@ -50,8 +50,9 @@ import {
 import type { Context, Scope, State } from "./state";
 
 const asPath = (text: string) => {
-  if (hostPath.test(text)) {
-    return text.replaceAll(namedHole, "{}");
+  const { host, rest } = text.match(hostPath)?.groups ?? {};
+  if (host && rest) {
+    return host + rest.replaceAll(namedHole, "{}");
   }
   if (!apiPath.test(text) && !basePath.test(text)) {
     return;

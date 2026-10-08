@@ -1,7 +1,8 @@
 export const apiPath = /^\/v\d+\//u;
 export const basePath =
   /^\{\w*(?:base|url|host|domain|origin)\}\/[\w/{}.:-]*$/iu;
-export const hostPath = /^https?:\/\/\{\w*\}\/[\w/{}.:-]+$/u;
+export const hostPath =
+  /^(?<host>https?:\/\/\{[\w-]*\})(?<rest>\/[\w/{}.:-]+)$/u;
 export const urlMember = /^\w*(?:Url|URL)$/u;
 export const namedHole = /\{\w+\}/gu;
 export const leadingHole = /^\{\w+\}/u;

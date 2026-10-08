@@ -16,12 +16,28 @@ export const isClass = (node: Node) =>
 export const readable = (name: string | undefined) =>
   name && name.length >= 4 ? name : undefined;
 
-export const hole = (node: Node) =>
-  node.type === "MemberExpression" &&
-  !node.computed &&
-  node.property.type === "Identifier"
-    ? `{${node.property.name}}`
-    : "{}";
+const holeName = /^[a-z][\w-]*$/u;
+
+export const hole = (node: Node) => {
+  if (
+    node.type === "MemberExpression" &&
+    !node.computed &&
+    node.property.type === "Identifier"
+  ) {
+    return `{${node.property.name}}`;
+  }
+  if (node.type === "CallExpression" && node.arguments.length === 1) {
+    const [argument] = node.arguments;
+    if (
+      argument?.type === "Literal" &&
+      typeof argument.value === "string" &&
+      holeName.test(argument.value)
+    ) {
+      return `{${argument.value}}`;
+    }
+  }
+  return "{}";
+};
 
 export const stringOf = (node: Node | null | undefined): string | undefined => {
   if (node?.type === "Literal" && typeof node.value === "string") {
