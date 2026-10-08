@@ -587,3 +587,4 @@ function Ce(e) {
 var Pe = { createSentryConfig: Ce },
   Oe = Pe;
 export { Pe as SentryKit, Ce as createSentryConfig, Oe as default };
+//# sourceMappingURL=index-3.js.map
