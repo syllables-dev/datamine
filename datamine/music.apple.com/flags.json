@@ -1,0 +1,28 @@
+{
+  "features": {
+    "bookmarking": false,
+    "enhanced-hls": false,
+    "fetch-container-pages": false,
+    "isWeb": true,
+    "seamless-audio-transitions": true,
+    "xtrick": true
+  },
+  "overrides": [
+    "mk-bag-features-overrides",
+    "mk-broadcast-radio-playback",
+    "mk-console-logging",
+    "mk-force-audio-mse",
+    "mk-force-native-safari-video-player",
+    "mk-hlsjs-config-overrides",
+    "mk-hlsjs-interstitial-playback",
+    "mk-hlsjs-item-preloading",
+    "mk-hlsjs-log-level",
+    "mk-hlsjs-song-playback",
+    "mk-hlsjs-version",
+    "mk-load-manifest-once",
+    "mk-logging-levels",
+    "mk-offers-key-urls",
+    "mk-safari-modern-eme",
+    "mk-use-paf-qa-endpoint"
+  ]
+}

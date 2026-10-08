@@ -5,7 +5,8 @@
         "dev.js"
       ],
       "headers": [
-        "Authorization"
+        "Authorization",
+        "Media-User-Token"
       ],
       "methods": [],
       "params": {}
@@ -15,7 +16,8 @@
         "dev.js"
       ],
       "headers": [
-        "Authorization"
+        "Authorization",
+        "Media-User-Token"
       ],
       "methods": [],
       "params": {}
@@ -25,7 +27,8 @@
         "dev.js"
       ],
       "headers": [
-        "Authorization"
+        "Authorization",
+        "Media-User-Token"
       ],
       "methods": [],
       "params": {}
@@ -670,7 +673,16 @@
       "headers": [],
       "methods": [],
       "params": {
-        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url"
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url",
+        "fields[artists]": "name,url",
+        "include[albums]": "artists",
+        "include[library-albums]": "artists",
+        "includeOnly": "catalog,artists",
+        "limit": "{}",
+        "meta": "sorts",
+        "offset": "{}",
+        "platform": "web",
+        "sort": null
       }
     },
     "/v1/me/library/albums/{}": {
@@ -711,6 +723,7 @@
       "headers": [],
       "methods": [],
       "params": {
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url",
         "fields[library-artists]": "classicalUrl,name,url",
         "include[library-albums]": "catalog",
         "include[library-artists]": "albums,catalog",
@@ -861,6 +874,9 @@
       "params": {}
     },
     "/v1/me/library/playlists/{}/tracks": {
+      "body": [
+        "data"
+      ],
       "chunks": [
         "main.js"
       ],
@@ -887,7 +903,14 @@
       "headers": [],
       "methods": [],
       "params": {
-        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url"
+        "fields[albums]": "artistName,artistUrl,artwork,contentRating,editorialArtwork,name,playParams,releaseDate,url",
+        "fields[artists]": "name,url",
+        "include[library-albums]": "artists",
+        "include[library-artists]": "catalog",
+        "includeOnly": "catalog,artists",
+        "limit": "25",
+        "omit[resource]": "autos",
+        "platform": "web"
       }
     },
     "/v1/me/library/search": {
@@ -1096,6 +1119,9 @@
       "params": {}
     },
     "/v1/me/stations/continuous": {
+      "body": [
+        "data"
+      ],
       "chunks": [
         "dev.js"
       ],
@@ -1119,6 +1145,9 @@
       "params": {}
     },
     "/v1/me/taste/taste-preferences": {
+      "body": [
+        "data"
+      ],
       "chunks": [
         "main.js"
       ],
@@ -1224,6 +1253,39 @@
       "params": {
         "filter[handle]": null
       }
+    },
+    "https://{}/commerce/account/authenticateMusicKitRequest": {
+      "chunks": [
+        "dev.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "https://{}/config/1/report": {
+      "chunks": [
+        "dev.js",
+        "mt-metricskit-delegates-web.esm.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "https://{}/WebObjects/MZPlay.woa/wa": {
+      "chunks": [
+        "dev.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
+    },
+    "https://{}/WebObjects/MZPlay.woa/wa/webPlayback": {
+      "chunks": [
+        "dev.js"
+      ],
+      "headers": [],
+      "methods": [],
+      "params": {}
     }
   },
   "requestHeaders": {
@@ -1256,6 +1318,11 @@
         "targets": [
           "{URL}"
         ]
+      }
+    ],
+    "amp-web-unique-id": [
+      {
+        "chunk": "main.js"
       }
     ],
     "Authorization": [
@@ -1447,6 +1514,16 @@
     "Media-User-Token": [
       {
         "chunk": "dev.js",
+        "in": "_webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
+      },
+      {
+        "chunk": "dev.js",
         "in": "createRequest",
         "methods": [
           "GET"
@@ -1455,6 +1532,26 @@
       {
         "chunk": "dev.js",
         "in": "fetchForCache"
+      },
+      {
+        "chunk": "dev.js",
+        "in": "infoRefresh",
+        "targets": [
+          "{iTunesBuyBase}/account/web/infoRefresh"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "in": "requestStorefrontCountryCode",
+        "targets": [
+          "{apiBase}/me/storefront"
+        ]
+      },
+      {
+        "chunk": "dev.js",
+        "targets": [
+          "{iTunesBuyBase}/account/web/info"
+        ]
       }
     ],
     "Music-User-Token": [
@@ -1464,6 +1561,11 @@
         "targets": [
           "{iTunesBuyBase}/commerce/web/subscription/offers/music"
         ]
+      }
+    ],
+    "Perfkit-context": [
+      {
+        "chunk": "main.js"
       }
     ],
     "Range": [
@@ -1483,6 +1585,24 @@
     "sentry-trace": [
       {
         "chunk": "index-2.js"
+      }
+    ],
+    "social-badging": [
+      {
+        "chunk": "main.js",
+        "in": "setup"
+      }
+    ],
+    "X-Apple-Media-User-Token": [
+      {
+        "chunk": "dev.js",
+        "in": "_webPlayerLogout",
+        "methods": [
+          "POST"
+        ],
+        "targets": [
+          "{logoutURL}"
+        ]
       }
     ],
     "X-Apple-Music-User-Token": [
