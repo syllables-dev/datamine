@@ -13,6 +13,7 @@ import type {
 } from "@/types";
 
 export const sectionNames: SectionName[] = [
+  "sourcemaps",
   "strings",
   "features",
   "overrides",
@@ -207,7 +208,8 @@ export const compare = (
   target: Target,
   previous: Snapshot | undefined,
   next: Snapshot,
-  modifiedChunks: string[]
+  modifiedChunks: string[],
+  leakedMaps: string[]
 ): Report => {
   const oldChunks = previous?.manifest.chunks ?? {};
   const newChunks = next.manifest.chunks;
@@ -231,6 +233,7 @@ export const compare = (
       headers: set(headerLines(previous?.api), headerLines(next.api)),
       overrides: set(oldFlags.overrides, newFlags.overrides),
       params: keyed(paramLines(previous?.api), paramLines(next.api)),
+      sourcemaps: { added: leakedMaps, removed: [], updated: [] },
       strings: strings.section,
       tokens: keyed(
         tokenLines(previous?.tokens ?? []),

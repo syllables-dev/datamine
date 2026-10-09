@@ -12,7 +12,7 @@ import {
 } from "@/lib/files";
 import { anyOf } from "@/lib/utils";
 
-import type { Api, Flags, Manifest, Snapshot, Token } from "@/types";
+import type { Api, Flags, Manifest, Snapshot, SourceMap, Token } from "@/types";
 
 export const snapshotPaths = (dir: string) => ({
   api: `${dir}/api.json`,
@@ -21,6 +21,8 @@ export const snapshotPaths = (dir: string) => ({
   head: `${dir}/index.html`,
   literals: `${dir}/literals.txt`,
   manifest: `${dir}/manifest.json`,
+  sourceMaps: `${dir}/sourcemaps`,
+  sources: `${dir}/sources`,
   strings: `${dir}/strings/${config.locale}.json`,
   tokens: `${dir}/tokens.json`,
 });
@@ -106,6 +108,51 @@ const writeAssets = async (dir: string, sources: Map<string, string>) => {
   };
 };
 
+const urlScheme = /^[a-z][\w+.-]*:\/*/iu;
+const pathSeparator = /[\\/]/u;
+
+const sourcePath = (source: string) =>
+  source
+    .replace(urlScheme, "")
+    .split(pathSeparator)
+    .filter((segment) => segment && segment !== "." && segment !== "..")
+    .join("/") || "unknown";
+
+const writeSourceMaps = async (
+  dir: string,
+  maps: SourceMap[],
+  chunks: Record<string, string>
+) => {
+  const paths = snapshotPaths(dir);
+  const names = new Map(
+    Object.entries(chunks).map(([name, file]) => [file, name])
+  );
+  const leaked: string[] = [];
+  for (const map of maps) {
+    const name = names.get(map.file) ?? map.file;
+    const written = await Promise.all([
+      writeText(`${paths.sourceMaps}/${name}.map`, map.text),
+      ...map.sources.flatMap(([source, content]) =>
+        content === null
+          ? []
+          : [
+              writeText(
+                `${paths.sources}/${name}/${sourcePath(source)}`,
+                content
+              ),
+            ]
+      ),
+    ]);
+    if (written.includes(true)) {
+      const embedded = map.sources.filter(([, content]) => content !== null);
+      leaked.push(
+        `${name}.map ${map.url} (${map.sources.length} sources, ${embedded.length} with content)`
+      );
+    }
+  }
+  return leaked.toSorted();
+};
+
 const timeless = (manifest: Manifest | undefined) =>
   manifest && json({ ...manifest, fetchedAt: undefined });
 
@@ -113,11 +160,13 @@ export const writeSnapshot = async (
   dir: string,
   snapshot: Snapshot,
   sources: Map<string, string>,
+  maps: SourceMap[],
   head: string,
   previous: Manifest | undefined
 ) => {
   const paths = snapshotPaths(dir);
   const assets = await writeAssets(paths.assets, sources);
+  const leakedMaps = await writeSourceMaps(dir, maps, snapshot.manifest.chunks);
   const written = await Promise.all([
     writeText(paths.head, head),
     writeText(paths.strings, json(snapshot.strings)),
@@ -128,6 +177,7 @@ export const writeSnapshot = async (
   ]);
   const changed =
     assets.changed ||
+    leakedMaps.length > 0 ||
     written.includes(true) ||
     timeless(previous) !== timeless(snapshot.manifest);
   await writeText(
@@ -138,5 +188,5 @@ export const writeSnapshot = async (
         : { ...snapshot.manifest, fetchedAt: previous.fetchedAt }
     )
   );
-  return { changed, modified: assets.modified };
+  return { changed, leakedMaps, modified: assets.modified };
 };

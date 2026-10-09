@@ -55,6 +55,13 @@ export interface Manifest {
   version?: string;
 }
 
+export interface SourceMap {
+  file: string;
+  sources: [string, string | null][];
+  text: string;
+  url: string;
+}
+
 export interface Snapshot {
   api: Api;
   /** Missing in snapshots written before flags were tracked. */
@@ -73,6 +80,7 @@ export type SectionName =
   | "headers"
   | "overrides"
   | "params"
+  | "sourcemaps"
   | "strings"
   | "tokens"
   | "urls";

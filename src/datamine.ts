@@ -10,6 +10,7 @@ import { commitMessage, compare } from "@/report";
 import { crawl } from "@/scrape/crawl";
 import { assignNames } from "@/scrape/names";
 import { readPage } from "@/scrape/page";
+import { findSourceMaps } from "@/scrape/sourcemaps";
 import { localeKey, translationFiles } from "@/scrape/translations";
 import {
   readAsset,
@@ -31,7 +32,10 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
   const previous = await readSnapshot(dir);
   const pageUrl = `${origin}${target.page}`;
   const page = readPage(await get(pageUrl), pageUrl);
-  const files = await crawl(origin, page.roots);
+  const { files, maps } = await findSourceMaps(
+    origin,
+    await crawl(origin, page.roots)
+  );
   const translations = translationFiles(
     page.entry,
     files.get(page.entry) ?? ""
@@ -67,10 +71,11 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
     ),
     tokens,
   };
-  const { changed, modified } = await writeSnapshot(
+  const { changed, leakedMaps, modified } = await writeSnapshot(
     dir,
     snapshot,
     sources,
+    maps,
     page.head,
     previous?.manifest
   );
@@ -78,7 +83,7 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
     console.log(`${target.host}: no changes (${page.entry})`);
     return;
   }
-  return compare(target, previous, snapshot, modified);
+  return compare(target, previous, snapshot, modified, leakedMaps);
 };
 
 const targets = config.targets.filter((target) =>

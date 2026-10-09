@@ -10,12 +10,14 @@ export const titles: Record<SectionName, string> = {
   headers: "Headers",
   overrides: "Override Toggles",
   params: "Params",
+  sourcemaps: "Source Maps",
   strings: "Strings",
   tokens: "Tokens",
   urls: "URLs",
 };
 
 export const notableSections: SectionName[] = [
+  "sourcemaps",
   "strings",
   "features",
   "overrides",

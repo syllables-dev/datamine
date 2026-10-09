@@ -21,3 +21,14 @@ export const get = async (url: string, attempts = 4): Promise<string> => {
     await Bun.sleep(1000 * attempt);
   }
 };
+
+export const probe = async (url: string) => {
+  try {
+    const response = await fetch(url, {
+      headers: { "user-agent": userAgent },
+    });
+    return response.ok ? await response.text() : null;
+  } catch {
+    return null;
+  }
+};
