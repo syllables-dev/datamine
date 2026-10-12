@@ -996,7 +996,7 @@ l.prototype.parentPageUrl = function () {
   if (r !== e)
     try {
       n = r.location.href;
-    } catch (o) {
+    } catch {
       n = this._document().referrer;
     }
   return n;

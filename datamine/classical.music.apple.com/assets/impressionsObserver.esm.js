@@ -251,7 +251,7 @@ h.prototype.extractImpressionInfo = function (e) {
   if (e)
     try {
       ((t = e.getAttribute(this._impressionInfoAttribute)), (t = JSON.parse(t)));
-    } catch (s) {
+    } catch {
       (this._logger.error("Unable to parse the impression data: " + t), (t = null));
     }
   return t;

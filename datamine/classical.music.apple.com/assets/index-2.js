@@ -254,10 +254,10 @@ const se = (e, t, ...n) => {
             try {
               if (e.tagName.includes("-")) e[t] = s;
               else {
-                const a = s == null ? "" : s;
+                const a = s ?? "";
                 t === "list" ? (o = !1) : (n == null || e[t] != a) && (e[t] = a);
               }
-            } catch (a) {}
+            } catch {}
           let $ = !1;
           (c !== (c = c.replace(/^xlink\:?/, "")) && ((t = c), ($ = !0)),
             s == null || s === !1
@@ -638,14 +638,13 @@ const se = (e, t, ...n) => {
               if (i.hasOwnProperty(a) && typeof this[a] == "number" && this[a] == $) return;
               if (a == null) {
                 const f = E(this),
-                  d = f == null ? void 0 : f.$flags$;
+                  d = f?.$flags$;
                 if (!(d & 8) && d & 128 && $ !== r) {
                   const v = this,
                     S = t.$watchers$[c];
-                  S == null ||
-                    S.forEach((w) => {
-                      v[w] != null && v[w].call(v, $, r, c);
-                    });
+                  S?.forEach((w) => {
+                    v[w] != null && v[w].call(v, $, r, c);
+                  });
                 }
                 return;
               }
@@ -694,9 +693,9 @@ const se = (e, t, ...n) => {
         s = m("connectedCallback", n.$tagName$);
       (t.$flags$ & 1
         ? (de(e, t, n.$listeners$),
-          t != null && t.$lazyInstance$
+          t?.$lazyInstance$
             ? J(t.$lazyInstance$)
-            : t != null && t.$onReadyPromise$ && t.$onReadyPromise$.then(() => J(t.$lazyInstance$)))
+            : t?.$onReadyPromise$ && t.$onReadyPromise$.then(() => J(t.$lazyInstance$)))
         : ((t.$flags$ |= 1),
           n.$flags$ & 12 && ze(e),
           n.$members$ &&
@@ -798,14 +797,14 @@ const se = (e, t, ...n) => {
           },
         }),
       );
-    } catch (t) {}
+    } catch {}
     return e;
   })(),
   Ze = (e) => Promise.resolve(e),
   Ve = (() => {
     try {
       return (new CSSStyleSheet(), typeof new CSSStyleSheet().replaceSync == "function");
-    } catch (e) {}
+    } catch {}
     return !1;
   })(),
   Z = [],

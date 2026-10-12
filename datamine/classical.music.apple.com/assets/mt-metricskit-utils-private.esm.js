@@ -690,7 +690,7 @@ function qe(e, t, r) {
   if (r)
     try {
       (e.setItem(t, JSON.stringify(r)), (n = r));
-    } catch (a) {}
+    } catch {}
   else n = e.removeItem(t);
   return n;
 }
@@ -700,7 +700,7 @@ function He(e, t) {
   if (n)
     try {
       r = JSON.parse(n);
-    } catch (a) {
+    } catch {
       r = void 0;
     }
   return r;

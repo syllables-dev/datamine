@@ -217,7 +217,7 @@ var ue = G(function (n, e) {
             p = m[1];
           return ((u[decodeURIComponent(g)] = decodeURIComponent(p)), u);
         }, {});
-      } catch (u) {
+      } catch {
         return {};
       }
       return o;
@@ -250,7 +250,7 @@ var ue = G(function (n, e) {
             })
             .join("&");
         return o + "?" + g;
-      } catch (p) {
+      } catch {
         return t;
       }
     }
@@ -370,7 +370,7 @@ const we = async (n = D) => {
   Te = async (n) => he(n),
   ke = (n, e) => {
     const i = new RegExp("[?&]" + e + "=([^&#]*)", "i").exec(n);
-    return i != null && i[1] ? decodeURI(i[1]) : void 0;
+    return i?.[1] ? decodeURI(i[1]) : void 0;
   },
   Ae = (n) => [].concat(Ie(n), Ee(n), ze(), Le()).filter((i) => !!i),
   ze = () => {
@@ -391,7 +391,7 @@ const we = async (n = D) => {
   },
   Le = () => {
     const n = ue.getLanguages();
-    return n == null ? void 0 : n.map((e) => e.toLocaleLowerCase());
+    return n?.map((e) => e.toLocaleLowerCase());
   },
   Ue = async (n, e) => {
     try {
@@ -604,7 +604,7 @@ const U = new Map(),
           const i = await fetch(N(`icons/${e}.svg`));
           if (i.ok) ((this.iconContent = await i.text()), U.set(e, this.iconContent));
           else throw ((this.iconContent = ""), new Error("Icon not found"));
-        } catch (i) {
+        } catch {
           (console.warn("Cannot load icon", this.name), (this.iconContent = ""));
         }
       }
