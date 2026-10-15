@@ -1,7 +1,7 @@
 var yd = Object.defineProperty;
 var md = (i, e, t) => (e in i ? yd(i, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : (i[e] = t));
 var Ra = (i, e, t) => (md(i, typeof e != "symbol" ? e + "" : e, t), t);
-import { bk as p, bj as m, bn as _n, bo as gd, bp as vd, bq as Ca, br as bc } from "./main.js";
+import { aB as p, aA as m, aE as _n, aF as gd, aG as vd, aH as Ca, aI as bc } from "./main.js";
 function pi(i) {
   return i
     .replace(/([A-Z])/g, "-$1")
@@ -611,7 +611,7 @@ function es(i) {
 function Vt(i) {
   return typeof i == "string";
 }
-function H(i, e) {
+function j(i, e) {
   return Vt(i) ? (e?.trim !== !1 ? i.trim() : i).length === 0 : e?.strict === !1;
 }
 function oh(i) {
@@ -624,7 +624,7 @@ function ch(i) {
         return !i(...e);
       };
 }
-const Cs = ch(H);
+const Cs = ch(j);
 function Os(i, e) {
   const t = e.path.map((r, s) => (s === 0 ? e.encode(r) : `[${e.encode(r)}]`)).join("");
   return i === null ? t : `${t}=${e.encode(i)}`;
@@ -673,7 +673,7 @@ function ph(i, e) {
   return !!(
     (i === void 0 && e?.skipUndefined !== !1) ||
     (i === null && e?.skipNull !== !1) ||
-    (H(i) && e?.skipEmptyString !== !1)
+    (j(i) && e?.skipEmptyString !== !1)
   );
 }
 function fh(i, e) {
@@ -2869,13 +2869,13 @@ var V = ((i) => (
     (i.USER_TOKEN = "media-user-token"),
     i
   ))(V || {}),
-  re = ((i) => ((i[(i.MUSIC = 0)] = "MUSIC"), (i[(i.PODCAST = 1)] = "PODCAST"), (i[(i.TV = 2)] = "TV"), i))(re || {});
+  ne = ((i) => ((i[(i.MUSIC = 0)] = "MUSIC"), (i[(i.PODCAST = 1)] = "PODCAST"), (i[(i.TV = 2)] = "TV"), i))(ne || {});
 const wp = {
-    [re.TV]: "com.apple.onboarding.tvappweb",
-    [re.MUSIC]: "com.apple.onboarding.musicappweb",
-    [re.PODCAST]: "com.apple.onboarding.podcastsweb",
+    [ne.TV]: "com.apple.onboarding.tvappweb",
+    [ne.MUSIC]: "com.apple.onboarding.musicappweb",
+    [ne.PODCAST]: "com.apple.onboarding.podcastsweb",
   },
-  as = { [re.TV]: "pltvcid", [re.MUSIC]: "pldfltcid", [re.PODCAST]: "pldfltcid" },
+  as = { [ne.TV]: "pltvcid", [ne.MUSIC]: "pldfltcid", [ne.PODCAST]: "pldfltcid" },
   Rp = {
     "com.apple.onboarding.tvappweb": 1,
     "com.apple.onboarding.musicappweb": 1,
@@ -2947,14 +2947,14 @@ class qa {
         : (He(e.data, "result") || e.data.error) && this.handleResponse(e.data));
   };
 }
-var ne = ((i) => (
+var se = ((i) => (
   (i[(i.UNAVAILABLE = -1)] = "UNAVAILABLE"),
   (i[(i.NOT_DETERMINED = 0)] = "NOT_DETERMINED"),
   (i[(i.DENIED = 1)] = "DENIED"),
   (i[(i.RESTRICTED = 2)] = "RESTRICTED"),
   (i[(i.AUTHORIZED = 3)] = "AUTHORIZED"),
   i
-))(ne || {});
+))(se || {});
 function Hs(i) {
   return typeof i == "string" && i.length > 0;
 }
@@ -3331,12 +3331,12 @@ class Bc extends Ct {
   persist = "localstorage";
   playBase = $p;
   prefix = "music";
-  realm = re.MUSIC;
+  realm = ne.MUSIC;
   storage = $e();
   storagePrefix;
   whenAuthCompleted;
   fetch;
-  _authorizationStatus = ne.NOT_DETERMINED;
+  _authorizationStatus = se.NOT_DETERMINED;
   _developerToken;
   _disableLogoutURL = !1;
   _dispatchedSubscribeView = !1;
@@ -3395,7 +3395,7 @@ class Bc extends Ct {
     return (!this.hasAuthorized || (this.hasAuthorized && !e)) && !this._dispatchedSubscribeView;
   }
   get hasAuthorized() {
-    return this.authorizationStatus > ne.DENIED;
+    return this.authorizationStatus > se.DENIED;
   }
   get logoutURL() {
     if (!this._disableLogoutURL)
@@ -3407,9 +3407,9 @@ class Bc extends Ct {
   set parentalControls(e) {
     ((this._parentalControls = e),
       e &&
-        (this.realm === re.MUSIC || this.realm === re.PODCAST
+        (this.realm === ne.MUSIC || this.realm === ne.PODCAST
           ? (this.restrictedEnabled = e.musicParentalControlsEnabled)
-          : this.realm === re.TV && e.videoContentRestrictions && (this.authorizationStatus = ne.RESTRICTED)));
+          : this.realm === ne.TV && e.videoContentRestrictions && (this.authorizationStatus = se.RESTRICTED)));
   }
   get isU13() {
     return !!this._isU13;
@@ -3454,7 +3454,7 @@ class Bc extends Ct {
     this._restrictedEnabledOverridden ||
       (this.userToken && e !== void 0 && this._setStorageItem(V.RESTRICTIONS_ENABLED, e ? "1" : "0"),
       (this._restrictedEnabled = e),
-      e && (this.authorizationStatus = ne.RESTRICTED));
+      e && (this.authorizationStatus = se.RESTRICTED));
   }
   overrideRestrictEnabled(e) {
     ((this._restrictedEnabledOverridden = !1), (this.restrictedEnabled = e), (this._restrictedEnabledOverridden = !0));
@@ -3484,8 +3484,8 @@ class Bc extends Ct {
   runTokenValidations(e, t = !0) {
     e && Hs(e)
       ? (t && this._setStorageItem(V.USER_TOKEN, e),
-        (this.authorizationStatus = this.restrictedEnabled ? ne.RESTRICTED : ne.AUTHORIZED))
-      : (this._removeStorageItem(V.USER_TOKEN), (this.authorizationStatus = ne.NOT_DETERMINED));
+        (this.authorizationStatus = this.restrictedEnabled ? se.RESTRICTED : se.AUTHORIZED))
+      : (this._removeStorageItem(V.USER_TOKEN), (this.authorizationStatus = se.NOT_DETERMINED));
   }
   wrapDynamicUserTokenForChanges(e, t = Hi(e)) {
     if (typeof e != "function") return e;
@@ -3551,7 +3551,7 @@ class Bc extends Ct {
     return (r["music-token"] && (this.userToken = r["music-token"]), this.userToken);
   }
   async requestStorefrontCountryCode() {
-    if (this.authorizationStatus <= ne.DENIED) return Promise.reject(`Not authorized: ${this.authorizationStatus}`);
+    if (this.authorizationStatus <= se.DENIED) return Promise.reject(`Not authorized: ${this.authorizationStatus}`);
     const e = new Headers({ Authorization: `Bearer ${this.developerToken}`, [vt]: this.userToken || "" }),
       t = await this.fetch(`${this.apiBase}/me/storefront`, { headers: e });
     if (t && !t.ok)
@@ -3588,7 +3588,7 @@ class Bc extends Ct {
     } catch {}
     (this.dispatchEvent("authorizationStatusWillChange", {
       authorizationStatus: this.authorizationStatus,
-      newAuthorizationStatus: ne.NOT_DETERMINED,
+      newAuthorizationStatus: se.NOT_DETERMINED,
     }),
       this._reset(),
       this.dispatchEvent("authorizationStatusDidChange", { authorizationStatus: this.authorizationStatus }),
@@ -3609,7 +3609,7 @@ class Bc extends Ct {
     return this.hasAuthorized ? this._getIsActiveSubscription() : !1;
   }
   async _getIsActiveSubscription() {
-    return this.realm === re.PODCAST ? !0 : !!(await this.me()).subscription?.active;
+    return this.realm === ne.PODCAST ? !0 : !!(await this.me()).subscription?.active;
   }
   resetSubscribeViewEligibility() {
     this._dispatchedSubscribeView = !1;
@@ -3630,7 +3630,7 @@ class Bc extends Ct {
     }
   }
   async infoRefresh() {
-    if (this.authorizationStatus <= ne.DENIED) return Promise.reject(`Not authorized: ${this.authorizationStatus}`);
+    if (this.authorizationStatus <= se.DENIED) return Promise.reject(`Not authorized: ${this.authorizationStatus}`);
     const e = new Headers({ Authorization: `Bearer ${this.developerToken}`, [vt]: this.userToken || "" });
     try {
       const r = await (
@@ -3640,7 +3640,7 @@ class Bc extends Ct {
     } catch {}
   }
   me() {
-    return this.authorizationStatus <= ne.DENIED
+    return this.authorizationStatus <= se.DENIED
       ? Promise.reject(`Not authorized: ${this.authorizationStatus}`)
       : (this._me ||
           (this._me = new Promise(async (e, t) => {
@@ -3654,7 +3654,7 @@ class Bc extends Ct {
             }
             if (n && !n.ok)
               return (
-                this.realm !== re.TV && (n.status === 401 || n.status === 403) && this._reset(), t("Account error.")
+                this.realm !== ne.TV && (n.status === 401 || n.status === 403) && this._reset(), t("Account error.")
               );
             let a = await n.json();
             if (a.errors) return t(a.errors);
@@ -3747,7 +3747,7 @@ class Bc extends Ct {
         (s.shift(), ue.debug("Calling removeCookie", e, t, a), Rs(e, t, a));
       }
   }
-  _reset(e = ne.NOT_DETERMINED) {
+  _reset(e = se.NOT_DETERMINED) {
     ((this._authorizationStatus = e),
       (this._cids = {}),
       (this._dispatchedSubscribeView = !1),
@@ -3841,9 +3841,9 @@ function fr(i) {
   let r = "";
   const s = t.name || t.title;
   return (
-    H(s) || (r += s),
-    H(t.albumName) || (r += " - " + t.albumName),
-    H(t.artistName) || (r += " - " + t.artistName),
+    j(s) || (r += s),
+    j(t.albumName) || (r += " - " + t.albumName),
+    j(t.artistName) || (r += " - " + t.artistName),
     r !== "" && (e += ` (${r})`),
     e
   );
@@ -4064,13 +4064,13 @@ class Ei extends Ct {
     return this.state === B.playing;
   }
   get isPreparedToPlay() {
-    const e = Vt(this.catalogId) && !H(this.catalogId),
-      t = Vt(this.assetURL) && !H(this.assetURL),
+    const e = Vt(this.catalogId) && !j(this.catalogId),
+      t = Vt(this.assetURL) && !j(this.assetURL),
       r = !!(
         this.keyURLs &&
-        !H(this.keyURLs["hls-key-cert-url"]) &&
-        !H(this.keyURLs["hls-key-server-url"]) &&
-        !H(this.keyURLs["widevine-cert-url"])
+        !j(this.keyURLs["hls-key-cert-url"]) &&
+        !j(this.keyURLs["hls-key-server-url"]) &&
+        !j(this.keyURLs["widevine-cert-url"])
       );
     return this.type === "song"
       ? e && t && r
@@ -4107,7 +4107,7 @@ class Ei extends Ct {
     return e?.find((r) => !!r.hlsUrl?.length)?.hlsUrl;
   }
   get hasOffersHlsUrl() {
-    return Vt(this.offersHlsUrl) && !H(this.offersHlsUrl);
+    return Vt(this.offersHlsUrl) && !j(this.offersHlsUrl);
   }
   get rawAssetUrl() {
     return this.attributes.assetUrl;
@@ -5030,7 +5030,7 @@ class Ur {
 }
 uf([_()], Ur.prototype, "onPlaybackError", 1);
 function Di(i, e) {
-  if (i.type === "Preview" && !H(i.previewURL, { trim: !0 })) return i.previewURL;
+  if (i.type === "Preview" && !j(i.previewURL, { trim: !0 })) return i.previewURL;
   if (!i.assetURL) throw new Error("Cannot generate asset URL");
   const t = {};
   return (
@@ -10192,7 +10192,7 @@ class Pg {
   }
 }
 const Ro = Il(),
-  j = {
+  H = {
     app: {},
     autoplay: { maxQueueSizeForAutoplay: 50, maxQueueSizeInRequest: 10, maxUpcomingTracksToMaintain: 10 },
     features: {
@@ -10212,8 +10212,8 @@ const Ro = Il(),
   },
   Co = Nr.register("mk-offers-key-urls").get();
 Co
-  ? (j.urls.hlsOffersKeyUrls = Co)
-  : (j.urls.hlsOffersKeyUrls = {
+  ? (H.urls.hlsOffersKeyUrls = Co)
+  : (H.urls.hlsOffersKeyUrls = {
       "hls-key-cert-url": "https://s.mzstatic.com/skdtool_2021_certbundle.bin",
       "hls-key-server-url": "https://play.itunes.apple.com/WebObjects/MZPlay.woa/podcast/hls/license/streaming/start",
       "widevine-cert-url": "https://play.itunes.apple.com/WebObjects/MZPlay.woa/wa/widevineCert",
@@ -10241,20 +10241,20 @@ class wg {
       ("affiliateToken" in t || "campaignToken" in t) &&
         (t.linkParameters = { ...(t.linkParameters || {}), at: t.affiliateToken, ct: t.campaignToken }),
       (this.storekit = new Bc(e, {
-        apiBase: j.urls.mediaApi,
-        authenticateMethod: j.features["legacy-authenticate-method"] ? "POST" : "GET",
+        apiBase: H.urls.mediaApi,
+        authenticateMethod: H.features["legacy-authenticate-method"] ? "POST" : "GET",
         deeplink: t.linkParameters,
         disableAuthBridge: t.disableAuthBridge,
-        iconURL: j.app.icon,
+        iconURL: H.app.icon,
         meParameters: t.meParameters,
         persist: t.persist,
-        realm: t.realm || re.MUSIC,
+        realm: t.realm || ne.MUSIC,
         fetch: t?.services?.request?.fetch,
         disableLogoutURL: t.disableLogoutURL,
       })),
       this.storekit.addEventListener(b.authorizationStatusDidChange, (s) => {
         const { authorizationStatus: n } = s;
-        this._hasAuthorized = [ne.AUTHORIZED, ne.RESTRICTED].includes(n);
+        this._hasAuthorized = [se.AUTHORIZED, se.RESTRICTED].includes(n);
       }));
   }
   get authorizationStatus() {
@@ -10273,7 +10273,7 @@ class wg {
     return this.storekit.hasAuthorized;
   }
   get isRestricted() {
-    return this.storekit.authorizationStatus === ne.RESTRICTED;
+    return this.storekit.authorizationStatus === se.RESTRICTED;
   }
   get isU13() {
     return this.storekit.isU13;
@@ -10428,7 +10428,7 @@ const Dg = { condition: () => !0, toOptions: (i, e, t) => [{ ...i, context: t }]
       i.includes(e),
   Ml = (i) => {
     if (i === void 0 || i === "") return;
-    const { prefix: e } = j;
+    const { prefix: e } = H;
     return e ? `${e}:${i}` : i;
   },
   xg = (i, e) => e ?? i?.container?.name ?? Tt.SONG,
@@ -11161,7 +11161,7 @@ class Jn {
       (e.addEventListener(
         ze.authorizationStatusWillChange,
         async ({ authorizationStatus: t, newAuthorizationStatus: r }) => {
-          t > ne.DENIED && r < ne.RESTRICTED
+          t > se.DENIED && r < se.RESTRICTED
             ? await this.stop({ endReasonType: P.PLAYBACK_SUSPENDED, userInitiated: !1 })
             : await this.stop({ userInitiated: !1 });
         },
@@ -11746,7 +11746,7 @@ class Av extends Ni {
   constructor(e) {
     (super(e),
       (this.watchers = [new ta(this.dispatcher, this.handlePlaybackThreshold, 0.3)]),
-      (this.isSeamlessAudioTransitionsEnabled = j.features["seamless-audio-transitions"]));
+      (this.isSeamlessAudioTransitionsEnabled = H.features["seamless-audio-transitions"]));
   }
   async handlePlaybackThreshold() {
     await this.playbackController.prepareToPlayNextItem();
@@ -12970,8 +12970,8 @@ class zl {
   }
   handleEvent(e, t, r) {}
   async loadScript() {
-    if (!j.urls.rtc) throw new Error("bag.urls.rtc is not configured");
-    await $r(j.urls.rtc);
+    if (!H.urls.rtc) throw new Error("bag.urls.rtc is not configured");
+    await $r(H.urls.rtc);
   }
   prepareReportingAgent(e) {
     const {
@@ -13036,7 +13036,7 @@ class zl {
   }
   generateStoreBag(e) {
     const { storeBagURL: t, clientName: r, applicationName: s, browserName: n } = this.options,
-      a = `${j.app.name}-${j.app.build}`,
+      a = `${H.app.name}-${H.app.build}`,
       o = this.instance?.version,
       l = { iTunesAppVersion: `${a}/${o}` },
       h = new window.rtc.RTCStorebag.RTCReportingStoreBag(t, r, e, s, n, l);
@@ -13543,8 +13543,8 @@ class gb extends yb {
     return { storefront: this.storefrontId, storefrontId: this.storefrontId, storefrontID: this.storefrontId };
   }
   constructor(e) {
-    if (H(e.host)) throw new m("mk-114", m.Reason.CONFIGURATION_ERROR, "Invalid API Host for MediaAPIClient");
-    if (H(e.developerToken))
+    if (j(e.host)) throw new m("mk-114", m.Reason.CONFIGURATION_ERROR, "Invalid API Host for MediaAPIClient");
+    if (j(e.developerToken))
       throw new m("mk-115", m.Reason.CONFIGURATION_ERROR, "Invalid developerToken for MediaAPIClient");
     (super({ host: e.host, developerToken: e.developerToken, mediaUserToken: e.mediaUserToken }),
       (this.services = e.services),
@@ -13759,11 +13759,11 @@ async function Eb(i, e) {
 }
 function Sb(i) {
   const e = i["hls-playlist-url"];
-  return e !== void 0 && !H(e);
+  return e !== void 0 && !j(e);
 }
 function kb(i) {
   const e = i.assets[0];
-  return i.assets.length === 1 && e !== void 0 && e.flavor === void 0 && !H(e.URL);
+  return i.assets.length === 1 && e !== void 0 && e.flavor === void 0 && !j(e.URL);
 }
 const Ib = /^(?:#EXT-X-SESSION-DATA:?)DATA-ID="([^"]+)".+VALUE="([^"]+)".*$/,
   Pb = /^com\.apple\.hls\./i;
@@ -13828,7 +13828,7 @@ class Cb {
       const r = await this.resolvePreviewAsset(e, t);
       return (X.debug(`Resolved preview asset for ${e}`, r), r);
     }
-    if (!H(e.rawAssetUrl ?? "")) {
+    if (!j(e.rawAssetUrl ?? "")) {
       X.debug(`Resolving direct asset for ${e}`, e, t);
       const r = await this.resolveDirectURLAsset(e, t);
       return (X.debug(`Resolved direct asset for ${e}`, r), r);
@@ -13869,7 +13869,7 @@ class Cb {
     });
   }
   async resolvePreviewAsset(e, t) {
-    if ((X.debug(`Resolving preview asset for ${e}`, e, t), e.previewURL === void 0 || H(e.previewURL)))
+    if ((X.debug(`Resolving preview asset for ${e}`, e, t), e.previewURL === void 0 || j(e.previewURL)))
       throw new m("mk-150", m.Reason.INVALID_ARGUMENTS, { description: "Missing previewURL for MediaItem", data: e });
     return {
       id: e.catalogId ?? e.id,
@@ -13881,7 +13881,7 @@ class Cb {
     };
   }
   async resolveDirectURLAsset(e, t) {
-    if (H(e.rawAssetUrl ?? ""))
+    if (j(e.rawAssetUrl ?? ""))
       throw new m("mk-151", m.Reason.INVALID_ARGUMENTS, { description: "Missing rawAssetURL for MediaItem", data: e });
     return {
       id: e.catalogId ?? e.id,
@@ -14051,7 +14051,7 @@ class Cb {
           ? !0
           : ["song", "musicVideo", "musicMovie"].includes(e.type)
             ? e.playParams !== void 0
-            : !H(e.rawAssetUrl ?? "") || !H(e.previewURL ?? "")
+            : !j(e.rawAssetUrl ?? "") || !j(e.previewURL ?? "")
         : !1;
   }
   async shouldPlayPreview(e, t) {
@@ -14065,12 +14065,12 @@ class Cb {
       ? !1
       : t?.previewOnly === !0 || !(await this.isPlayable(e))
         ? !0
-        : H(e.rawAssetUrl ?? "")
+        : j(e.rawAssetUrl ?? "")
           ? t?.subscription !== !0
             ? !0
             : e.playParams?.hasDrm === !1
               ? !1
-              : !this.services.runtime.isDRMAvailable && !H(e.previewURL ?? "")
+              : !this.services.runtime.isDRMAvailable && !j(e.previewURL ?? "")
           : !1;
   }
   async assertSubscription(e, t) {
@@ -14118,13 +14118,13 @@ class ca {
     return (this.services.runtime.preferredKeySystem === "widevine" && (s["X-Apple-Renewal"] = !0), new Headers(s));
   }
   assertDeveloperToken() {
-    if (this.developerToken === void 0 || H(this.developerToken))
+    if (this.developerToken === void 0 || j(this.developerToken))
       throw new m("mk-175", m.Reason.CONTENT_RESTRICTED, {
         description: "No developer token configured for resolving playback licenses",
       });
   }
   assertUserToken() {
-    if (this.mediaUserToken === void 0 || H(this.mediaUserToken))
+    if (this.mediaUserToken === void 0 || j(this.mediaUserToken))
       throw new m("mk-176", m.Reason.CONTENT_RESTRICTED, {
         description: "No user token configured for resolving playback licenses",
       });
@@ -14469,7 +14469,7 @@ class Lt {
   }
   playbackActions;
   guid;
-  _bag = j;
+  _bag = H;
   playbackControllers = {};
   _playbackController;
   get playbackController() {
@@ -14483,16 +14483,16 @@ class Lt {
     const { developerToken: t } = e;
     if (typeof t != "string" || t.trim() === "")
       throw new p(p.Reason.CONFIGURATION_ERROR, "Missing or empty developer token");
-    Object.assign(j.features, nh(e.features));
+    Object.assign(H.features, nh(e.features));
     const r = Bb.get();
-    (r && (D.warn("Overriding bag.features with", r), (j.features = { ...j.features, ...r })),
-      Object.assign(j.autoplay, e.autoplay),
-      Object.assign(j.app, e.app),
-      Object.assign(j.urls, e.urls),
-      D.debug("Instance Configuration: ", j));
+    (r && (D.warn("Overriding bag.features with", r), (H.features = { ...H.features, ...r })),
+      Object.assign(H.autoplay, e.autoplay),
+      Object.assign(H.app, e.app),
+      Object.assign(H.urls, e.urls),
+      D.debug("Instance Configuration: ", H));
     const s = ["playbackActions", "guid", "playbackMode", "privateEnabled", "siriInitiated", "sourceType"];
     for (const l of s) l in e && (He(this, `_${l}`) ? (this[`_${l}`] = e[l]) : (this[l] = e[l]));
-    ("prefix" in e && /^(?:web|preview)$/.test(e.prefix || "") && (this.prefix = j.prefix = e.prefix),
+    ("prefix" in e && /^(?:web|preview)$/.test(e.prefix || "") && (this.prefix = H.prefix = e.prefix),
       this.configureLogger(e));
     const n = Ag(t, e);
     let a = "amp-api.music.apple.com",
@@ -14501,7 +14501,7 @@ class Lt {
         "hls-key-server-url": "https://play.itunes.apple.com/WebObjects/MZPlay.woa/wa/acquireWebPlaybackLicense",
         "widevine-cert-url": "https://play.itunes.apple.com/WebObjects/MZPlay.woa/wa/widevineCert",
       };
-    this.realm === re.PODCAST &&
+    this.realm === ne.PODCAST &&
       ((a = "amp-api.podcasts.apple.com"),
       (o = {
         "hls-key-cert-url": "https://s.mzstatic.com/skdtool_2021_certbundle.bin",
@@ -14510,7 +14510,7 @@ class Lt {
       }));
     let c = !1;
     if (
-      (this.realm === re.TV && (c = !0),
+      (this.realm === ne.TV && (c = !0),
       (this.services = Ub({
         services: { ...e.services, store: n },
         configurations: {
@@ -14520,7 +14520,7 @@ class Lt {
             mediaUserToken: n.musicUserToken,
             storefrontId: this.storefrontId,
           },
-          itemLoader: { storefrontId: n?.storefrontId, fetchContainerPages: this.realm === re.MUSIC },
+          itemLoader: { storefrontId: n?.storefrontId, fetchContainerPages: !!H.features["fetch-container-pages"] },
           manifestManager: { developerToken: t, mediaUserToken: n.musicUserToken, personalizedManifests: c },
           licenseManager: { developerToken: t, mediaUserToken: n.musicUserToken },
           assetResolver: {
@@ -14530,7 +14530,7 @@ class Lt {
           bitrateCalculator: { bitrate: e.bitrate },
           playActivity: { trackers: e.playActivityAPI },
           mediaItemPlayback: {
-            bag: j,
+            bag: H,
             tokens: I,
             context: this.context,
             autoplayEnabled: this.autoplayEnabled,
@@ -14545,7 +14545,7 @@ class Lt {
       D.info(`MusicKit JS Version: ${this.version}`),
       D.info("InstanceId", this.id),
       D.debug("Link Parameters", e.linkParameters),
-      j.app && D.debug("App", j.app),
+      H.app && D.debug("App", H.app),
       e.userToken)
     ) {
       const { userToken: l } = e;
@@ -14578,7 +14578,7 @@ class Lt {
     return this.services.runtime.isDRMAvailable;
   }
   get cid() {
-    return this.realm === re.TV || this.sourceType !== $s.MUSICKIT ? I.cid : !1;
+    return this.realm === ne.TV || this.sourceType !== $s.MUSICKIT ? I.cid : !1;
   }
   get continuous() {
     return this._playbackController?.continuous ?? !1;
@@ -14590,7 +14590,7 @@ class Lt {
     return this._autoplayEnabled;
   }
   set autoplayEnabled(e) {
-    (this.realm !== re.MUSIC && (e = !1),
+    (this.realm !== ne.MUSIC && (e = !1),
       e !== this.autoplayEnabled &&
         ((this._autoplayEnabled = e),
         this.services.dispatcher.publish(b.autoplayEnabledDidChange, this.autoplayEnabled)));
@@ -15626,7 +15626,7 @@ function cu(i) {
 function lu(i) {
   return qr(i) && Object.keys(i).length === 0;
 }
-function se(i) {
+function re(i) {
   return typeof i == "function";
 }
 function Pi(i) {
@@ -15651,13 +15651,13 @@ function hT(i) {
   var e = [];
   for (var t in i) {
     var r = i[t];
-    i.hasOwnProperty(t) && !se(r) && e.push(r);
+    i.hasOwnProperty(t) && !re(r) && e.push(r);
   }
   return e;
 }
 function pT(i) {
   var e = [];
-  for (var t in i) i.hasOwnProperty(t) && !se(i[t]) && e.push(t);
+  for (var t in i) i.hasOwnProperty(t) && !re(i[t]) && e.push(t);
   return e;
 }
 function fT(i) {
@@ -15667,19 +15667,19 @@ function yT(i) {
   for (var e in i) if (i.hasOwnProperty(e) && i[e]) return !0;
 }
 function hu(i) {
-  return qr(i) && se(i.__lookupGetter__) && se(i.__lookupSetter__) && se(i.__defineGetter__) && se(i.__defineSetter__);
+  return qr(i) && re(i.__lookupGetter__) && re(i.__lookupSetter__) && re(i.__defineGetter__) && re(i.__defineSetter__);
 }
 function mT(i) {
   var e = [];
   for (var t in i) {
     var r = i[t];
-    i.hasOwnProperty(t) && se(r) && e.push(r);
+    i.hasOwnProperty(t) && re(r) && e.push(r);
   }
   return e;
 }
 function gT(i) {
   var e = {};
-  for (var t in i) i.hasOwnProperty(t) && !se(i[t]) && (e[i[t]] = t);
+  for (var t in i) i.hasOwnProperty(t) && !re(i[t]) && (e[i[t]] = t);
   return e;
 }
 function pu(i) {
@@ -15726,9 +15726,9 @@ function fu(i, e, t, r) {
       return (y && (ee.origFunction = y), (ee.attachedMethod = !0), ee);
     };
     for (var a in e)
-      if (!(a in r) && e[a] && se(e[a])) {
+      if (!(a in r) && e[a] && re(e[a])) {
         var o = i[a],
-          c = o && se(o),
+          c = o && re(o),
           l = null;
         (c && (o.attachedMethod === !0 ? (l = o) : (l = o.bind(i))), (i[a] = n(t, l, e, i, a)), (s = !0));
       }
@@ -15738,7 +15738,7 @@ function fu(i, e, t, r) {
 function yu(i) {
   var e = !1;
   for (var t in i)
-    if (se(i[t]) && i[t].attachedMethod === !0) {
+    if (re(i[t]) && i[t].attachedMethod === !0) {
       var r = i[t].origFunction;
       if (r) for (; i[t].origFunction;) ((i[t] = i[t].origFunction), (e = !0));
       else delete i[t];
@@ -15749,7 +15749,7 @@ function TT(i, e) {
   var t = {};
   for (var r in i)
     e[r] &&
-      se(i[r].setDelegate) &&
+      re(i[r].setDelegate) &&
       (t[r] = i[r].setDelegate.apply(i[r], [e[r]].concat(Array.prototype.slice.call(arguments, 2))));
   return t;
 }
@@ -15757,7 +15757,7 @@ var _T = function (e) {
   var t = !1;
   for (var r in e) {
     var s = e[r];
-    s && typeof s == "object" && se(s.setDelegate) && (t |= yu(s));
+    s && typeof s == "object" && re(s.setDelegate) && (t |= yu(s));
   }
   return !!t;
 };
@@ -15766,7 +15766,7 @@ function ET(i, e) {
   if (i && e && e.setDelegate) {
     var r = {},
       s;
-    for (s in i) se(i[s]) && i[s].origFunction && (r[s] = i[s]);
+    for (s in i) re(i[s]) && i[s].origFunction && (r[s] = i[s]);
     t = e.setDelegate(r);
   }
   return t;
@@ -15790,7 +15790,7 @@ var d = Object.freeze({
     isEmptyString: ou,
     isEmptyArray: cu,
     isEmptyObject: lu,
-    isFunction: se,
+    isFunction: re,
     isNumber: Pi,
     isInteger: uu,
     isString: du,
@@ -16076,7 +16076,7 @@ function $T(i, e, t, r) {
       for (var o = 0; o < e.length; o++) {
         var c = e[o],
           l = i[c];
-        se(l) && (a[c] = l.call(i, s));
+        re(l) && (a[c] = l.call(i, s));
       }
     n = pn(n, a);
   }
@@ -16104,7 +16104,7 @@ function HT(i, e, t, r) {
       t || h.push("fieldsMap"),
       (a = "metrics: missing argument(s): " + h.join(",") + " not provided to applyFieldsMap"));
   }
-  return (a && se(r) && r(a), n);
+  return (a && re(r) && r(a), n);
 }
 var Wr = Object.freeze({ __proto__: null, mergeAndCleanEventFields: pn, processMetricsData: $T, applyFieldsMap: HT });
 function jT(i, e, t) {
@@ -16112,7 +16112,7 @@ function jT(i, e, t) {
 }
 function ku(i, e, t, r, s, n) {
   var a = new XMLHttpRequest();
-  ((t = t || void 0), (n = n || {}), (r = se(r) ? r : function () {}), (s = se(s) ? s : function () {}));
+  ((t = t || void 0), (n = n || {}), (r = re(r) ? r : function () {}), (s = re(s) ? s : function () {}));
   var o = n.async !== !1;
   (n.timeout && o && (a.timeout = n.timeout),
     (a.onload = function () {
@@ -20275,7 +20275,7 @@ class ot {
             return r;
           },
           resourceRevNum() {
-            return j.app.build;
+            return H.app.build;
           },
           storeFrontCountryCode() {
             return t?.configuration?.userProps?.country ?? "";
@@ -20923,7 +20923,7 @@ export {
   Lt as a,
   Rg as a0,
   $E as a1,
-  j as a2,
+  H as a2,
   I as a3,
   Wh as a4,
   Yh as a5,
@@ -20966,7 +20966,7 @@ export {
   Fd as e,
   jm as f,
   Rl as g,
-  re as h,
+  ne as h,
   Zb as i,
   zE as j,
   YE as k,

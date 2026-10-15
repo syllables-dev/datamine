@@ -1,4 +1,4 @@
-import { Z as commonjsGlobal, _ as generateUuid } from "./main.js";
+import { Y as commonjsGlobal, Z as generateUuid } from "./main.js";
 import { b as binToJSON, a as binToNumber, c as binToHex } from "./binary-array.js";
 function decodeBase64String(w) {
   const p = w.replace(/_/g, "/").replace(/-/g, "+"),
@@ -54529,6 +54529,7 @@ const PUSH_HOSTS_MAP = {
 class WebPush extends EventTarget {
   topics;
   host;
+  environment;
   log;
   socket;
   serverTimestamp;
@@ -54557,7 +54558,8 @@ class WebPush extends EventTarget {
     (super(),
       (this.log = c),
       (this.topics = new Set(p?.allowedTopics ?? [])),
-      (this.host = PUSH_HOSTS_MAP[p?.environment ?? "sandbox"]));
+      (this.host = PUSH_HOSTS_MAP[p?.environment ?? "sandbox"]),
+      (this.environment = p?.environment ?? "sandbox"));
   }
   async connect(p) {
     if (this._state === "disconnected") {
@@ -54651,7 +54653,7 @@ class WebPush extends EventTarget {
     );
   }
   async savePushConnection(p) {
-    const c = `${WEB_PUSH_LOCAL_STORAGE_KEY}-${p}`;
+    const c = this.pushConnectionStorageKey(p);
     try {
       const a = new Date().getTime() + TOKEN_EXPIRY,
         u = await crypto.subtle.exportKey("jwk", this.connectionKeys.privateKey),
@@ -54853,7 +54855,7 @@ class WebPush extends EventTarget {
   }
   async getSavedPushConnection(p) {
     if (p) {
-      const c = `${WEB_PUSH_LOCAL_STORAGE_KEY}-${p}`;
+      const c = this.pushConnectionStorageKey(p);
       let a;
       try {
         a = window.localStorage.getItem(c);
@@ -54883,8 +54885,11 @@ class WebPush extends EventTarget {
     }
     return null;
   }
+  pushConnectionStorageKey(p) {
+    return `${WEB_PUSH_LOCAL_STORAGE_KEY}-${this.environment}-${p}`;
+  }
   clearPushConnection(p) {
-    const c = `${WEB_PUSH_LOCAL_STORAGE_KEY}-${p}`;
+    const c = this.pushConnectionStorageKey(p);
     try {
       window.localStorage.removeItem(c);
     } catch (a) {

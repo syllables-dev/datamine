@@ -1,22 +1,22 @@
 import {
   M as u,
-  a as P,
+  a as b,
   e as p,
   P as f,
   Q as h,
   g as y,
   b as m,
   c as I,
-  d as k,
-  f as M,
-  V as g,
+  d as M,
+  f as g,
+  V as k,
   S as v,
   h as T,
   i as K,
   j as U,
-  k as R,
-  E as A,
-  l as C,
+  k as A,
+  E as C,
+  l as R,
   m as E,
   n as S,
   o as _,
@@ -26,9 +26,9 @@ import {
   s as x,
   t as G,
 } from "./dev.js";
-import { bj as o, bk as O, bl as L } from "./main.js";
+import { aA as o, aB as O, aC as B } from "./main.js";
 var d = ((e) => ((e.MEDIA_API = "media-api"), (e.UTS_CLIENT = "uts-client"), e))(d || {});
-function N(e, s) {
+function L(e, s) {
   if (!s.assets || e.type === "Preview") {
     e.attributes.assetUrl = s.hlsUrl || s.assets?.hlsUrl;
     return;
@@ -46,9 +46,9 @@ function N(e, s) {
 function c(e) {
   const { id: s, type: t, contentType: i, ...r } = e,
     a = { id: s, type: t, contentType: i, attributes: r, playables: [e] };
-  return (N(a, e), new u(a));
+  return (L(a, e), new u(a));
 }
-class V extends P {
+class N extends b {
   get api() {
     const s = this.services.utsAPIClient;
     if (s === void 0)
@@ -79,53 +79,53 @@ class V extends P {
     return n;
   }
 }
-function b() {
+function P() {
   return {
     getInstance: K,
     getInstances: U,
-    enableMultipleInstances: R,
-    Events: A,
+    enableMultipleInstances: A,
+    Events: C,
     MKError: O,
-    PlaybackBitrate: C,
+    PlaybackBitrate: R,
     PlaybackStates: E,
     PlaybackMode: S,
     PresentationMode: _,
     PlaybackType: w,
-    formattedMediaURL: L,
+    formattedMediaURL: B,
     getPlayerType: q,
     getHlsJsCdnConfig: Q,
     __dev: x,
     __log: G,
   };
 }
-function B() {
+function V() {
   return {
-    ...b(),
+    ...P(),
     get version() {
       return y();
     },
     PlayActivityEndReasonType: m,
     PlayerShuffleMode: I,
-    PlayerRepeatMode: k,
-    PlaybackActions: M,
+    PlayerRepeatMode: M,
+    PlaybackActions: g,
     MediaItem: u,
   };
 }
 function F() {
   return {
-    ...b(),
+    ...P(),
     get version() {
       return y();
     },
-    PlayActivityEndReasonType: g,
+    PlayActivityEndReasonType: k,
     SeekReasonType: v,
     SKRealm: T,
     SupportedAPIs: d,
-    MediaKitInstance: V,
+    MediaKitInstance: N,
   };
 }
 function H() {
-  globalThis.MusicKit || (globalThis.MusicKit = B());
+  globalThis.MusicKit || (globalThis.MusicKit = V());
 }
 function J() {
   globalThis.MusicKit || (globalThis.MusicKit = F());

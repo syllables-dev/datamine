@@ -209,8 +209,6 @@
     },
     "/v1/catalog/{}/artists/{}": {
       "chunks": [
-        "ArtistBiographyPageIntentController.js",
-        "ArtistDetailPage2IntentController.js",
         "main.js"
       ],
       "headers": [],
@@ -219,7 +217,7 @@
         "extend[canvas-shelves-header]": "badge",
         "extend[concerts]": "tickets",
         "fields": "url,name",
-        "filter[canvas-shelves-collection.contents.type]": null,
+        "filter[canvas-shelves-collection:contents{type}]": null,
         "geoHashLocation": null,
         "include": "artist-biography-canvas",
         "include[canvas-shelves-collection]": "contents",
@@ -1705,7 +1703,6 @@
     "https://music.apple.com/",
     "https://music.apple.com/WebObjects/MZStore.woa/wa/viewGrouping?cc={}&id={}",
     "https://music.apple.com/replay",
-    "https://music.apple.com/{}/concerts/artist/{id}{}",
     "https://music.apple.com/{}/library/artists/{id}",
     "https://music.apple.com/{}/new/top-charts",
     "https://music.apple.com/{}/new/top-charts/{}",

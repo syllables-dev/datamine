@@ -1,32 +1,32 @@
-import { bA as i, Z as s } from "./main.js";
-function f(a, l) {
+import { aV as i, Y as s } from "./main.js";
+function f(t, l) {
   for (var r = 0; r < l.length; r++) {
     const e = l[r];
     if (typeof e != "string" && !Array.isArray(e)) {
-      for (const t in e)
-        if (t !== "default" && !(t in a)) {
-          const n = Object.getOwnPropertyDescriptor(e, t);
-          n && Object.defineProperty(a, t, n.get ? n : { enumerable: !0, get: () => e[t] });
+      for (const a in e)
+        if (a !== "default" && !(a in t)) {
+          const n = Object.getOwnPropertyDescriptor(e, a);
+          n && Object.defineProperty(t, a, n.get ? n : { enumerable: !0, get: () => e[a] });
         }
     }
   }
-  return Object.freeze(Object.defineProperty(a, Symbol.toStringTag, { value: "Module" }));
+  return Object.freeze(Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }));
 }
 var o = {},
   u = {
     get exports() {
       return o;
     },
-    set exports(a) {
-      o = a;
+    set exports(t) {
+      o = t;
     },
   };
-(function (a, l) {
+(function (t, l) {
   (function (r, e) {
     e(l);
   })(s, function (r) {
     var e = typeof window < "u" && window.flatpickr !== void 0 ? window.flatpickr : { l10ns: {} },
-      t = {
+      a = {
         weekdays: {
           shorthand: ["日", "月", "火", "水", "木", "金", "土"],
           longhand: ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
@@ -43,9 +43,9 @@ var o = {},
         hourAriaLabel: "時間",
         minuteAriaLabel: "分",
       };
-    e.l10ns.ja = t;
+    e.l10ns.ja = a;
     var n = e.l10ns;
-    ((r.Japanese = t), (r.default = n), Object.defineProperty(r, "__esModule", { value: !0 }));
+    ((r.Japanese = a), (r.default = n), Object.defineProperty(r, "__esModule", { value: !0 }));
   });
 })(u, o);
 const d = i(o),

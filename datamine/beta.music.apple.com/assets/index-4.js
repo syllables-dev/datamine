@@ -2,7 +2,7 @@ var L = Object.defineProperty;
 var Q = (i, e, t) => (e in i ? L(i, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : (i[e] = t));
 var p = (i, e, t) => (Q(i, typeof e != "symbol" ? e + "" : e, t), t);
 import { b as G } from "./binary-array.js";
-import { $ as N, a0 as q, a1 as O } from "./main.js";
+import { _ as N, $ as q, a0 as O } from "./main.js";
 import {
   m as V,
   U as y,
@@ -56,8 +56,8 @@ import {
   V as Ee,
   K as De,
   J as Ae,
-  L as Ue,
-  aD as _e,
+  L as _e,
+  aD as Ue,
   x as Le,
   v as Qe,
   Z as Ge,
@@ -146,7 +146,7 @@ class T {
 (p(T, "buffer", new Uint8Array(0)), p(T, "isProcessing", !1));
 const X = 1,
   Z = 50,
-  U = 7e3,
+  _ = 7e3,
   ee = 2e3;
 class re extends z {
   replyMap = new Map();
@@ -205,7 +205,7 @@ class re extends z {
     }
     const a = setTimeout(() => {
       this.dispatchEvent(new Event("end"));
-    }, U);
+    }, _);
     this.participantIdentity = t;
     const s = w.create({
       protocolVersion: X,
@@ -678,7 +678,7 @@ class ce extends Y {
     };
   }
 }
-function _(i) {
+function U(i) {
   return f.create({
     identifier: i.identifier ?? window.crypto.randomUUID(),
     displayName: i.displayName,
@@ -687,14 +687,14 @@ function _(i) {
 }
 class R {
   static setup(e, t, a) {
-    ((this.groupSession = e), (this.logger = a), (this.identity = _(t)));
+    ((this.groupSession = e), (this.logger = a), (this.identity = U(t)));
     let s;
     (this.groupSession.addEventListener(
       "leaderDiscovery",
       O(() => {
         ((s = setTimeout(() => {
           this.groupSession.dispatchEvent(new Event("sessionEnd"));
-        }, U)),
+        }, _)),
           this.sendIDS(this.identity));
       }, 1e3),
     ),
@@ -727,7 +727,7 @@ class R {
 class te {
   static start(e, t) {
     this.groupSession = e;
-    const a = _(t);
+    const a = U(t);
     (this.groupSession.setLocalParticipant(a),
       this.groupSession.setLeaderParticipant(e.localParticipant),
       (this.groupSession.inSession = !0),
@@ -797,13 +797,13 @@ export {
   Ee as LanguageOptionProtobuf,
   De as LyricsEventProtobuf,
   Ae as LyricsItemProtobuf,
-  Ue as LyricsTokenProtobuf,
+  _e as LyricsTokenProtobuf,
   re as MediaRemote,
   z as MediaRemoteEventTarget,
   g as MediaRemoteMessageProtobuf,
   c as MediaRemoteMessageType,
   k as MediaRemotePlaybackQueueInsertionPosition,
-  _e as NotificationMessageProtobuf,
+  Ue as NotificationMessageProtobuf,
   Le as NowPlayingClientProtobuf,
   Qe as NowPlayingClientVisibility,
   Ge as NowPlayingInfoProtobuf,

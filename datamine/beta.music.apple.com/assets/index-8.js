@@ -1,6 +1,6 @@
-import { bs as h, bt as k, bu as v, bv as y } from "./main.js";
-const b = ["tv-plus", "arcade", "bundle", "icloud", "music", "news-plus", "fitness-plus"],
-  w = [
+import { aJ as h, aK as k, aL as y, aM as v } from "./main.js";
+const w = ["tv-plus", "arcade", "bundle", "icloud", "music", "news-plus", "fitness-plus"],
+  b = [
     "us",
     "ca",
     "gb",
@@ -268,13 +268,13 @@ const b = ["tv-plus", "arcade", "bundle", "icloud", "music", "news-plus", "fitne
         typeof t?.storefront == "string" &&
         typeof t?.token == "string" &&
         typeof t?.fetch == "function",
-  E = (t) => b.includes(t),
-  P = (t) => w.includes(t);
+  E = (t) => w.includes(t),
+  P = (t) => b.includes(t);
 class l extends Error {
   value;
   type;
-  constructor(e, s) {
-    (super(`${e} is not a supported ${s}`), (this.value = e), (this.type = s));
+  constructor(e, r) {
+    (super(`${e} is not a supported ${r}`), (this.value = e), (this.type = r));
   }
 }
 class z extends Error {
@@ -282,33 +282,33 @@ class z extends Error {
   payload;
   meta;
   errors;
-  constructor({ status: e }, s) {
-    (super(`HTTP Error ${e}: ${s.errors[0].title}: ${s.errors[0].detail}`),
+  constructor({ status: e }, r) {
+    (super(`HTTP Error ${e}: ${r.errors[0].title}: ${r.errors[0].detail}`),
       (this.status = e),
-      (this.payload = s),
-      (this.meta = s.meta),
-      (this.errors = s.errors));
+      (this.payload = r),
+      (this.meta = r.meta),
+      (this.errors = r.errors));
   }
 }
-const p = async (t, e, s, o, i) => {
-    const r = new URL(t, e.baseUrl),
+const p = async (t, e, r, o, i) => {
+    const s = new URL(t, e.baseUrl),
       n = {
         Authorization: `Bearer ${e.token}`,
         "Content-type": "application/json",
         ...(e.musicUserToken && { "media-user-token": e.musicUserToken }),
       },
-      c = { ...{ l: e.language, platform: "web" }, ...s },
+      c = { ...{ l: e.language, platform: "web" }, ...r },
       g = { ...o, headers: n, credentials: "include" };
-    for (const [d, f] of Object.entries(c)) r.searchParams.append(d, f);
-    const a = await e.fetch(r, g),
+    for (const [d, f] of Object.entries(c)) s.searchParams.append(d, f);
+    const a = await e.fetch(s, g),
       m = await a.json();
     if (a.ok) return (i.info(`Successfully fetched URL ${t}`), m);
     throw new z(a, m);
   },
   R = typeof process < "u" && process.env?.npm_package_version ? {}.npm_package_version : "unknown",
   x = "marketingkit",
-  T = (t) => (t.environment ? t.environment : (console.warn("no config environment found, setting to dev"), "dev")),
-  U = (t) => ({ project: x, environment: T(t), release: R });
+  L = (t) => (t.environment ? t.environment : (console.warn("no config environment found, setting to dev"), "dev")),
+  T = (t) => ({ project: x, environment: L(t), release: R });
 class $ {
   config;
   consoleLogger;
@@ -320,8 +320,8 @@ class $ {
     if (
       ((this.config = e),
       (this.consoleLogger = new h()),
-      (this.errorKit = k(U(this.config), this.consoleLogger)),
-      (this.logger = new v([this.consoleLogger, new y(this.errorKit)])),
+      (this.errorKit = k(T(this.config), this.consoleLogger)),
+      (this.logger = new y([this.consoleLogger, new v(this.errorKit)])),
       (this.log = this.logger.loggerFor("marketingkit")),
       !q(this.config))
     )
@@ -333,44 +333,44 @@ class $ {
     }
     if (!P(this.config.storefront)) throw new l(this.config.storefront, "storefront");
   }
-  assertRequired(e, s) {
-    if (!e) throw new Error(`Missing required params: ${s} must be provided.`);
+  assertRequired(e, r) {
+    if (!e) throw new Error(`Missing required params: ${r} must be provided.`);
   }
-  buildPostRequest(e, { shouldIncludeMessageItems: s = !1 } = {}) {
+  buildPostRequest(e, { shouldIncludeMessageItems: r = !1 } = {}) {
     const o = { messagePlatform: "Web", items: e },
       i = {
         include: "contents",
         "meta[marketing-items]": "metrics",
-        types: s ? "marketing-items,message-items" : "marketing-items",
+        types: r ? "marketing-items,message-items" : "marketing-items",
       },
-      r = { method: "POST", body: JSON.stringify(o) };
-    return { queryParams: i, requestOptions: r };
+      s = { method: "POST", body: JSON.stringify(o) };
+    return { queryParams: i, requestOptions: s };
   }
-  async getMarketingItemsPlacement(e, s) {
-    return this.getMarketingItemsV1Placement(e, s);
+  async getMarketingItemsPlacement(e, r) {
+    return this.getMarketingItemsV1Placement(e, r);
   }
-  async getMarketingItemsV1Placement(e, s, o) {
+  async getMarketingItemsV1Placement(e, r, o) {
     const i = `/v1/engagement/${this.config.storefront}/upsell`,
-      r = { ...(e && { placement: e }), ...s },
-      { serviceType: n, placement: u, linkCode: c } = r;
+      s = { ...(e && { placement: e }), ...r },
+      { serviceType: n, placement: u, linkCode: c } = s;
     if (n !== void 0 && !E(n)) throw new l(n, "serviceType");
     if (n === void 0 && c === void 0)
       throw new Error("Missing required params: serviceType or linkCode must be provided.");
     if (n !== void 0 && !c && !u)
       throw new Error("Missing required params: placement or linkCode must be provided when providing serviceType.");
-    const g = { ...this.baseContextItemParams, contextVersion: "V1", contextV1Parameters: r },
+    const g = { ...this.baseContextItemParams, contextVersion: "V1", contextV1Parameters: s },
       { queryParams: a, requestOptions: m } = this.buildPostRequest([g], o);
     return p(i, this.config, a, m, this.log);
   }
-  async getMarketingItemsV2Placement(e, s) {
+  async getMarketingItemsV2Placement(e, r) {
     (this.assertRequired(e, "params"),
       this.assertRequired(e.customerEngagementId, "customerEngagementId"),
       this.assertRequired(e.placement, "placement"),
       this.assertRequired(e.placement.kind, "placement.kind"));
     const o = `/v1/engagement/${this.config.storefront}/upsell`,
       i = { ...this.baseContextItemParams, contextVersion: "V2", ...e },
-      { queryParams: r, requestOptions: n } = this.buildPostRequest([i], s);
-    return p(o, this.config, r, n, this.log);
+      { queryParams: s, requestOptions: n } = this.buildPostRequest([i], r);
+    return p(o, this.config, s, n, this.log);
   }
 }
 export { $ as MarketingKit };

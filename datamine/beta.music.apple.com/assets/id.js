@@ -1,4 +1,4 @@
-import { bA as u, Z as s } from "./main.js";
+import { aV as u, Y as s } from "./main.js";
 function d(t, i) {
   for (var r = 0; r < i.length; r++) {
     const e = i[r];
@@ -61,5 +61,5 @@ var o = {},
   });
 })(l, o);
 const f = u(o),
-  b = d({ __proto__: null, default: f }, [o]);
-export { b as i };
+  c = d({ __proto__: null, default: f }, [o]);
+export { c as i };

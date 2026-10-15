@@ -1,4 +1,24 @@
 @charset "UTF-8";
+.tour-badge__icon.svelte-1nwwbu9 {
+  align-items: center;
+  display: flex;
+  height: 18px;
+  justify-content: center;
+  width: 14px;
+}
+.tour-badge__icon.svelte-1nwwbu9 svg {
+  height: 10px;
+  position: relative;
+  top: -0.5px;
+}
+.tour-badge__description.svelte-1nwwbu9 {
+  white-space: nowrap;
+}
+.tour-badge__link.svelte-1nwwbu9 {
+  border-radius: inherit;
+  inset: 0;
+  position: absolute;
+}
 .artist-expression-header__artwork-tint.svelte-xqfvb5.svelte-xqfvb5,
 .artist-expression-header__blur-frame.svelte-xqfvb5.svelte-xqfvb5 {
   height: 300%;
