@@ -40,17 +40,17 @@ import {
   L as ie,
   M as Fe,
   N as Me,
-  T as He,
-  O as Ke,
+  O as He,
   P as Q,
   Q as se,
-  R as Le,
-  U as ce,
+  R as Ke,
+  T as ce,
+  U as Le,
   V as Re,
   W as We,
-  X as Xe,
-  Y as fe,
+  X as fe,
 } from "./main.js";
+import { T as Xe } from "./TitleBadge.js";
 function ue(n, l, a) {
   const t = n.slice();
   return ((t[16] = l[a]), t);
@@ -591,7 +591,7 @@ function ll(n) {
 function ge(n) {
   let l, a;
   return (
-    (l = new He({ props: { theme: Ke.Dark, $$slots: { default: [ll] }, $$scope: { ctx: n } } })),
+    (l = new Xe({ props: { theme: He.Dark, $$slots: { default: [ll] }, $$scope: { ctx: n } } })),
     {
       c() {
         U(l.$$.fragment);
@@ -1023,7 +1023,7 @@ function Te(n) {
       $$scope: { ctx: n },
     };
   return (
-    (l = new Xe({ props: t })),
+    (l = new We({ props: t })),
     n[12](l),
     l.$on("close", n[8]),
     {
@@ -1135,8 +1135,8 @@ function sl(n) {
 const cl = 300;
 function fl(n, l, a) {
   let t, e, r, o, s;
-  (Q(n, se, (p) => a(1, (e = p))), Q(n, Le, (p) => a(4, (r = p))), Q(n, ce, (p) => a(5, (o = p))));
-  const i = Re();
+  (Q(n, se, (p) => a(1, (e = p))), Q(n, Ke, (p) => a(4, (r = p))), Q(n, ce, (p) => a(5, (o = p))));
+  const i = Le();
   Q(n, i, (p) => a(6, (s = p)));
   let c,
     u,
@@ -1155,7 +1155,7 @@ function fl(n, l, a) {
         (c?.close(), ce.set(null), se.set(null), (C = null));
       }, cl)));
   }
-  We(() => {
+  Re(() => {
     clearTimeout(C);
   });
   const _ = (p) => s.t(p);
@@ -1177,9 +1177,9 @@ function fl(n, l, a) {
     [c, e, u, t, r, o, s, i, I, b, _, d, S]
   );
 }
-class _l extends qe {
+class dl extends qe {
   constructor(l) {
     (super(), Ce(this, l, fl, sl, Ie, {}));
   }
 }
-export { _l as default };
+export { dl as default };

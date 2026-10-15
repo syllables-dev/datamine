@@ -1,4 +1,4 @@
-import { Z as A } from "./main.js";
+import { Y as A } from "./main.js";
 function T(d, b) {
   for (var l = 0; l < b.length; l++) {
     const s = b[l];

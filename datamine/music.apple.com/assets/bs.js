@@ -1,27 +1,27 @@
-import { bA as i, Z as u } from "./main.js";
-function l(o, s) {
+import { aV as i, Y as u } from "./main.js";
+function l(a, s) {
   for (var t = 0; t < s.length; t++) {
     const e = s[t];
     if (typeof e != "string" && !Array.isArray(e)) {
       for (const r in e)
-        if (r !== "default" && !(r in o)) {
-          const a = Object.getOwnPropertyDescriptor(e, r);
-          a && Object.defineProperty(o, r, a.get ? a : { enumerable: !0, get: () => e[r] });
+        if (r !== "default" && !(r in a)) {
+          const o = Object.getOwnPropertyDescriptor(e, r);
+          o && Object.defineProperty(a, r, o.get ? o : { enumerable: !0, get: () => e[r] });
         }
     }
   }
-  return Object.freeze(Object.defineProperty(o, Symbol.toStringTag, { value: "Module" }));
+  return Object.freeze(Object.defineProperty(a, Symbol.toStringTag, { value: "Module" }));
 }
 var n = {},
   f = {
     get exports() {
       return n;
     },
-    set exports(o) {
-      n = o;
+    set exports(a) {
+      n = a;
     },
   };
-(function (o, s) {
+(function (a, s) {
   (function (t, e) {
     e(s);
   })(u, function (t) {
@@ -52,8 +52,8 @@ var n = {},
         time_24hr: !0,
       };
     e.l10ns.bs = r;
-    var a = e.l10ns;
-    ((t.Bosnian = r), (t.default = a), Object.defineProperty(t, "__esModule", { value: !0 }));
+    var o = e.l10ns;
+    ((t.Bosnian = r), (t.default = o), Object.defineProperty(t, "__esModule", { value: !0 }));
   });
 })(f, n);
 const d = i(n),

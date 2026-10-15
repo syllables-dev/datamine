@@ -1,4 +1,4 @@
-import { Z as Es } from "./main.js";
+import { Y as Es } from "./main.js";
 var ee = ((e) => (
     (e[(e.WEBGL_LEGACY = 0)] = "WEBGL_LEGACY"),
     (e[(e.WEBGL = 1)] = "WEBGL"),

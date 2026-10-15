@@ -1,24 +1,24 @@
-import { bA as i, Z as d } from "./main.js";
+import { aV as i, Y as d } from "./main.js";
 function l(n, s) {
   for (var r = 0; r < s.length; r++) {
     const e = s[r];
     if (typeof e != "string" && !Array.isArray(e)) {
       for (const t in e)
         if (t !== "default" && !(t in n)) {
-          const o = Object.getOwnPropertyDescriptor(e, t);
-          o && Object.defineProperty(n, t, o.get ? o : { enumerable: !0, get: () => e[t] });
+          const a = Object.getOwnPropertyDescriptor(e, t);
+          a && Object.defineProperty(n, t, a.get ? a : { enumerable: !0, get: () => e[t] });
         }
     }
   }
   return Object.freeze(Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }));
 }
-var a = {},
+var o = {},
   u = {
     get exports() {
-      return a;
+      return o;
     },
     set exports(n) {
-      a = n;
+      o = n;
     },
   };
 (function (n, s) {
@@ -57,10 +57,10 @@ var a = {},
         },
       };
     e.l10ns.sv = t;
-    var o = e.l10ns;
-    ((r.Swedish = t), (r.default = o), Object.defineProperty(r, "__esModule", { value: !0 }));
+    var a = e.l10ns;
+    ((r.Swedish = t), (r.default = a), Object.defineProperty(r, "__esModule", { value: !0 }));
   });
-})(u, a);
-const f = i(a),
-  c = l({ __proto__: null, default: f }, [a]);
+})(u, o);
+const f = i(o),
+  c = l({ __proto__: null, default: f }, [o]);
 export { c as s };

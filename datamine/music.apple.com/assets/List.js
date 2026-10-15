@@ -1,158 +1,158 @@
 import {
   S as Fe,
   i as Ve,
-  n as je,
+  n as He,
   I as ze,
   e as I,
-  s as J,
+  s as Z,
   a as S,
   b as v,
   g as d,
-  d as Y,
+  d as J,
   h as f,
-  t as $,
-  j as Be,
+  t as V,
+  j as Oe,
   k as P,
   l as b,
   o as Me,
-  bC as Hi,
+  aX as Hi,
   p as et,
   u as ce,
-  bE as si,
-  bF as ji,
+  aZ as si,
+  a_ as ji,
   w as ue,
-  bQ as Ye,
+  b5 as Qe,
   r as _,
   v as h,
   y as dt,
   z as Et,
-  bG as mt,
-  bB as yt,
-  bD as li,
-  Y as Ut,
-  H as se,
-  bI as ni,
-  bJ as oi,
-  bK as ai,
-  bL as ci,
-  bR as At,
-  bS as qe,
-  bT as Ke,
-  bU as Ge,
-  bV as Xe,
-  bW as Ct,
-  bX as xe,
-  c as j,
-  f as z,
-  m as B,
-  x as O,
-  by as Bi,
-  bx as lr,
-  bY as Oi,
-  bZ as ct,
-  W as ut,
-  b_ as at,
-  E as pe,
-  F as be,
-  G as ve,
-  b$ as Dt,
-  a2 as It,
-  c0 as zi,
-  c1 as qi,
-  P as Ce,
-  c2 as Wi,
-  c3 as Tt,
-  V as Ze,
-  bN as Pt,
-  c4 as tt,
-  c5 as _t,
-  c6 as Ui,
-  bH as St,
-  c7 as wt,
-  J as He,
-  c8 as Ki,
-  c9 as Kt,
-  ca as Gi,
-  cb as Zi,
-  cc as Ji,
-  cd as ui,
+  a$ as mt,
+  aW as yt,
+  aY as li,
+  X as Ut,
+  H as le,
+  aN as ni,
+  aO as oi,
+  aP as ai,
+  aQ as ci,
+  b6 as At,
+  b7 as qe,
+  b8 as Ke,
+  b9 as Ge,
+  ba as Xe,
+  bb as Ct,
+  bc as xe,
+  c as B,
+  f as q,
+  m as O,
+  x as z,
+  aT as Bi,
+  aS as lr,
+  bd as Oi,
+  be as ct,
+  V as ut,
+  bf as at,
+  E as ve,
+  F as ke,
+  G as we,
+  bg as Dt,
+  a1 as It,
+  bh as zi,
+  bi as qi,
+  P as De,
+  bj as Wi,
+  bk as Tt,
+  U as Ze,
+  b2 as Pt,
+  bl as tt,
+  bm as _t,
+  bn as Ui,
+  b0 as St,
+  bo as wt,
+  J as Ne,
+  bp as Ki,
+  bq as Kt,
+  br as Gi,
+  bs as Zi,
+  bt as Ji,
+  bu as ui,
   D as fi,
-  ce as Lt,
-  cf as di,
-  cg as Mt,
-  ch as Gt,
-  ci as Zt,
-  cj as mi,
-  ck as _i,
-  cl as Jt,
-  cm as hi,
-  cn as Yi,
-  co as Qi,
-  cp as qt,
-  bO as nr,
-  cq as Xi,
-  cr as gi,
-  cs as pi,
-  ct as xi,
-  cu as es,
-  cv as rt,
-  cw as Je,
-  a7 as bi,
-  cx as ts,
-  cy as rs,
-  cz as ft,
-  cA as is,
-  cB as ss,
-  cC as ls,
-  cD as vi,
-  cE as ns,
-  cF as os,
-  cG as as,
-  aE as cs,
-  aY as us,
-  cH as fs,
-  cI as ki,
-  cJ as ds,
-  cK as kt,
-  cL as ms,
-  cM as _s,
-  cN as or,
-  cO as hs,
-  cP as gs,
-  cQ as Wt,
+  bv as Lt,
+  bw as di,
+  bx as Mt,
+  by as Gt,
+  bz as Zt,
+  bA as mi,
+  bB as _i,
+  bC as Jt,
+  bD as hi,
+  bE as Qi,
+  bF as Yi,
+  bG as qt,
+  b3 as nr,
+  bH as Xi,
+  bI as gi,
+  bJ as pi,
+  bK as xi,
+  bL as es,
+  bM as rt,
+  bN as Je,
+  a6 as bi,
+  bO as ts,
+  bP as rs,
+  bQ as ft,
+  bR as is,
+  bS as ss,
+  bT as ls,
+  bU as vi,
+  bV as ns,
+  bW as os,
+  bX as as,
+  aj as cs,
+  al as us,
+  bY as fs,
+  bZ as ki,
+  b_ as ds,
+  b$ as kt,
+  c0 as ms,
+  c1 as _s,
+  c2 as or,
+  c3 as hs,
+  c4 as gs,
+  c5 as Wt,
   K as Ft,
-  cR as ps,
-  cS as bs,
-  cT as vs,
-  cU as ks,
-  cV as wi,
-  cW as ws,
-  cX as ys,
-  cY as Is,
-  b4 as Ot,
-  cZ as Ss,
-  c_ as Es,
-  c$ as As,
-  d0 as Cs,
-  d1 as Ds,
-  bz as yi,
-  d2 as Ts,
-  d3 as ar,
-  a6 as Ps,
-  X as Ls,
-  d4 as cr,
-  d5 as Ms,
-  d6 as Fs,
-  d7 as Vs,
-  d8 as $s,
-  d9 as Rs,
-  da as Ns,
-  db as Qe,
-  dc as Hs,
-  dd as js,
-  de as Bs,
-  df as Os,
-  dg as ur,
+  c6 as ps,
+  c7 as bs,
+  c8 as vs,
+  c9 as ks,
+  ca as wi,
+  cb as ws,
+  cc as ys,
+  cd as Is,
+  ai as Ot,
+  ce as Ss,
+  cf as Es,
+  cg as As,
+  ch as Cs,
+  ci as Ds,
+  aU as yi,
+  cj as Ts,
+  ck as ar,
+  a5 as Ps,
+  W as Ls,
+  cl as cr,
+  cm as Ms,
+  cn as Fs,
+  co as Vs,
+  cp as $s,
+  cq as Rs,
+  cr as Ns,
+  cs as Ye,
+  ct as Hs,
+  cu as js,
+  cv as Bs,
+  cw as Os,
+  cx as ur,
 } from "./main.js";
 import { s as zs } from "./splitIntoChunks.js";
 function qs(s, e) {
@@ -208,7 +208,7 @@ const Ws = (s) => ({
   Us = (s) => ({ itemIdx: s[0] & 2304 }),
   mr = (s) => ({ itemIdx: s[54] });
 function Ks(s) {
-  return { c: se, l: se, m: se, p: se, i: se, o: se, d: se };
+  return { c: le, l: le, m: le, p: le, i: le, o: le, d: le };
 }
 function Gs(s) {
   let e;
@@ -291,20 +291,20 @@ function _r(s, e) {
       key: s,
       first: null,
       c() {
-        ((t = I("div")), c.block.c(), (i = J()), this.h());
+        ((t = I("div")), c.block.c(), (i = Z()), this.h());
       },
       l(u) {
         t = S(u, "DIV", { class: !0, "data-testid": !0, role: !0 });
         var m = v(t);
-        (c.block.l(m), (i = Y(m)), m.forEach(d), this.h());
+        (c.block.l(m), (i = J(m)), m.forEach(d), this.h());
       },
       h() {
         (f(t, "class", "virtual-row svelte-zsv6m4"),
           f(t, "data-testid", "virtual-row"),
           f(t, "role", (l = e[7] ? "rowgroup" : null)),
-          Be(t, "contain", "strict"),
-          Be(t, "top", n),
-          Be(t, "min-height", a),
+          Oe(t, "contain", "strict"),
+          Oe(t, "top", n),
+          Oe(t, "min-height", a),
           (this.first = t));
       },
       m(u, m) {
@@ -315,8 +315,8 @@ function _r(s, e) {
           (c.ctx = e),
           (m[0] & 2048 && r !== (r = e[53]) && yt(r, c)) || li(c, e, m),
           (!o || (m[0] & 128 && l !== (l = e[7] ? "rowgroup" : null))) && f(t, "role", l),
-          m[0] & 2308 && n !== (n = `${e[55]}px`) && Be(t, "top", n),
-          m[0] & 4 && a !== (a = `${e[2]}px`) && Be(t, "min-height", a));
+          m[0] & 2308 && n !== (n = `${e[55]}px`) && Oe(t, "top", n),
+          m[0] & 4 && a !== (a = `${e[2]}px`) && Oe(t, "min-height", a));
       },
       i(u) {
         o || (_(c.block), (o = !0));
@@ -354,28 +354,28 @@ function Js(s) {
   const A = (y) => y[53];
   for (let y = 0; y < w.length; y += 1) {
     let p = fr(s, w, y),
-      F = A(p);
-    l.set(F, (i[y] = _r(F, p)));
+      L = A(p);
+    l.set(L, (i[y] = _r(L, p)));
   }
   return {
     c() {
       ((e = I("div")), (t = I("div")), (r = I("div")));
       for (let y = 0; y < i.length; y += 1) i[y].c();
-      ((u = J()), (m = I("div")), this.h());
+      ((u = Z()), (m = I("div")), this.h());
     },
     l(y) {
       e = S(y, "DIV", { class: !0, "data-testid": !0, tabindex: !0 });
       var p = v(e);
       t = S(p, "DIV", { class: !0, id: !0 });
-      var F = v(t);
-      r = S(F, "DIV", { class: !0, "data-testid": !0, role: !0, "aria-rowcount": !0 });
+      var L = v(t);
+      r = S(L, "DIV", { class: !0, "data-testid": !0, role: !0, "aria-rowcount": !0 });
       var te = v(r);
-      for (let N = 0; N < i.length; N += 1) i[N].l(te);
+      for (let H = 0; H < i.length; H += 1) i[H].l(te);
       (te.forEach(d),
-        (u = Y(F)),
-        (m = S(F, "DIV", { class: !0 })),
+        (u = J(L)),
+        (m = S(L, "DIV", { class: !0 })),
         v(m).forEach(d),
-        F.forEach(d),
+        L.forEach(d),
         p.forEach(d),
         this.h());
     },
@@ -384,23 +384,23 @@ function Js(s) {
         f(r, "data-testid", "virtual-rows"),
         f(r, "role", (n = s[7] ? "grid" : null)),
         f(r, "aria-rowcount", (a = s[7] ? s[1] : null)),
-        $(r, "row-zebra-striping", s[5]),
-        Be(r, "min-height", o),
-        Be(r, "--rowHeight", c),
+        V(r, "row-zebra-striping", s[5]),
+        Oe(r, "min-height", o),
+        Oe(r, "--rowHeight", c),
         f(m, "class", "svelte-zsv6m4"),
-        $(m, "bottom-spacer-hidden", s[3]),
-        Be(m, "height", "10px"),
+        V(m, "bottom-spacer-hidden", s[3]),
+        Oe(m, "height", "10px"),
         f(t, "class", "scrollable-container svelte-zsv6m4"),
         f(t, "id", "scrollable-page-override"),
-        Be(t, "contain", "layout"),
+        Oe(t, "contain", "layout"),
         f(e, "class", "container svelte-zsv6m4"),
         f(e, "data-testid", "container"),
         f(e, "tabindex", "0"),
-        $(e, "scrollable-container-constrained-width", s[4]));
+        V(e, "scrollable-container-constrained-width", s[4]));
     },
     m(y, p) {
       (P(y, e, p), b(e, t), b(t, r));
-      for (let F = 0; F < i.length; F += 1) i[F] && i[F].m(r, null);
+      for (let L = 0; L < i.length; L += 1) i[L] && i[L].m(r, null);
       (b(t, u),
         b(t, m),
         s[39](t),
@@ -421,12 +421,12 @@ function Js(s) {
         ((w = ze(y[11])), ce(), (i = si(i, p, A, 1, y, w, l, r, ji, _r, null, fr)), ue()),
         (!E || (p[0] & 128 && n !== (n = y[7] ? "grid" : null))) && f(r, "role", n),
         (!E || (p[0] & 130 && a !== (a = y[7] ? y[1] : null))) && f(r, "aria-rowcount", a),
-        (!E || p[0] & 32) && $(r, "row-zebra-striping", y[5]),
-        p[0] & 512 && o !== (o = `${y[9]}px`) && Be(r, "min-height", o),
-        p[0] & 4 && c !== (c = `${y[2]}px`) && Be(r, "--rowHeight", c),
-        (!E || p[0] & 8) && $(m, "bottom-spacer-hidden", y[3]),
-        k && Ye(k.update) && p[0] & 64 && k.update.call(null, y[6]),
-        (!E || p[0] & 16) && $(e, "scrollable-container-constrained-width", y[4]));
+        (!E || p[0] & 32) && V(r, "row-zebra-striping", y[5]),
+        p[0] & 512 && o !== (o = `${y[9]}px`) && Oe(r, "min-height", o),
+        p[0] & 4 && c !== (c = `${y[2]}px`) && Oe(r, "--rowHeight", c),
+        (!E || p[0] & 8) && V(m, "bottom-spacer-hidden", y[3]),
+        k && Qe(k.update) && p[0] & 64 && k.update.call(null, y[6]),
+        (!E || p[0] & 16) && V(e, "scrollable-container-constrained-width", y[4]));
     },
     i(y) {
       if (!E) {
@@ -456,7 +456,7 @@ const zt =
         })
       : null,
   hr = 500;
-function Ys(s, e, t) {
+function Qs(s, e, t) {
   let r,
     i,
     l,
@@ -473,79 +473,79 @@ function Ys(s, e, t) {
   let { items: A } = e,
     { itemCount: y } = e,
     { itemHeight: p } = e,
-    { amountToFetch: F } = e,
+    { amountToFetch: L } = e,
     { bottomSpacerHidden: te = !1 } = e,
-    { bufferHeight: N } = e,
-    { fetchIntentFn: Z } = e,
-    { selectedItemId: q = null } = e,
-    { log: K } = e,
-    { jet: ie } = e,
-    { overrideKeydown: ne = null } = e,
-    { restrainContainerWidth: X = !1 } = e,
+    { bufferHeight: H } = e,
+    { fetchIntentFn: K } = e,
+    { selectedItemId: j = null } = e,
+    { log: Q } = e,
+    { jet: x } = e,
+    { overrideKeydown: he = null } = e,
+    { restrainContainerWidth: Y = !1 } = e,
     { rowZebraStriping: fe = !1 } = e,
-    { use: ke = [] } = e,
-    { allowCountUpdates: x = !1 } = e,
-    { useManualPagination: G = !0 } = e,
+    { use: ye = [] } = e,
+    { allowCountUpdates: R = !1 } = e,
+    { useManualPagination: ne = !0 } = e,
     { pageMetadata: _e = null } = e,
-    { setAriaAttributes: Pe = !1 } = e,
-    H = 0,
-    le,
-    W = 0,
-    Q = 0,
-    V;
-  const De = (C, re, ae) => C.slice(re, ae).map((ye) => A[ye] ?? de(ye)),
-    ge = (C, re, ae) => {
+    { setAriaAttributes: oe = !1 } = e,
+    X = 0,
+    ie,
+    G = 0,
+    $ = 0,
+    W;
+  const Ie = (C, re, pe) => C.slice(re, pe).map((Se) => A[Se] ?? be(Se)),
+    Ae = (C, re, pe) => {
       re > 0 &&
-        ae > 0 &&
-        (C.slice(re, o).forEach((ye) => {
-          A[ye] || de(ye);
+        pe > 0 &&
+        (C.slice(re, o).forEach((Se) => {
+          A[Se] || be(Se);
         }),
-        C.slice(c, ae).forEach((ye) => {
-          A[ye] || de(ye);
+        C.slice(c, pe).forEach((Se) => {
+          A[Se] || be(Se);
         }));
     },
-    Te = (C, re, ae) => (C === "top" ? Math.floor : Math.ceil)(re / ae),
-    de = async (C) => {
-      const re = Math.floor(C / F),
-        ae = C % F;
-      if (!V[re]) {
-        const ye = re * F;
-        V[re] = (async () => {
-          await V?.[re - 1];
-          const { items: Ne } = await Ie(ye);
-          return Ne;
+    se = (C, re, pe) => (C === "top" ? Math.floor : Math.ceil)(re / pe),
+    be = async (C) => {
+      const re = Math.floor(C / L),
+        pe = C % L;
+      if (!W[re]) {
+        const Se = re * L;
+        W[re] = (async () => {
+          await W?.[re - 1];
+          const { items: Re } = await ge(Se);
+          return Re;
         })();
       }
       try {
-        const Ne = (await V[re])[ae];
-        return (Ne && t(18, (A[C] = Ne), A), Ne);
+        const Re = (await W[re])[pe];
+        return (Re && t(18, (A[C] = Re), A), Re);
       } catch {
-        return (delete V[re], null);
+        return (delete W[re], null);
       }
     },
-    Ie = async (C) => {
-      if (G)
+    ge = async (C) => {
+      if (ne)
         try {
-          const re = Z({ offset: C, limit: F }),
-            { items: ae, next: ye, total: Ne } = await ie.dispatch(re);
-          return (w("fetchComplete", { items: ae, offset: C }), { items: ae, next: ye, total: Ne });
+          const re = K({ offset: C, limit: L }),
+            { items: pe, next: Se, total: Re } = await x.dispatch(re);
+          return (w("fetchComplete", { items: pe, offset: C }), { items: pe, next: Se, total: Re });
         } catch (re) {
-          return (K.error("Loading Paginated Items Failed", re), {});
+          return (Q.error("Loading Paginated Items Failed", re), {});
         }
       else if (r) {
-        const re = Z({ path: r, limit: F });
+        const re = K({ path: r, limit: L });
         try {
-          const ae = await ie.dispatch(re);
-          r = ae.next;
-          const { items: ye } = ae;
-          return (w("fetchComplete", { items: ye, offset: C }), { items: ye, next: r });
-        } catch (ae) {
-          return (K.error("Loading Paginated Items Failed", ae), {});
+          const pe = await x.dispatch(re);
+          r = pe.next;
+          const { items: Se } = pe;
+          return (w("fetchComplete", { items: Se, offset: C }), { items: Se, next: r });
+        } catch (pe) {
+          return (Q.error("Loading Paginated Items Failed", pe), {});
         }
       } else
-        x && (K.warn("No more pages to fetch, updating scroll list total count."), w("updateItemsCount", A.length));
+        R && (Q.warn("No more pages to fetch, updating scroll list total count."), w("updateItemsCount", A.length));
     },
-    oe = (C) => {
+    ae = (C) => {
       if (zt)
         return (
           zt.observe(C, { box: "border-box" }),
@@ -556,60 +556,60 @@ function Ys(s, e, t) {
           }
         );
     },
-    me = (C) => {
+    de = (C) => {
       const { height: re } = C.detail;
-      t(28, (W = re));
+      t(28, (G = re));
     },
     U = () => {
-      t(29, (Q = le?.scrollTop));
+      t(29, ($ = ie?.scrollTop));
     };
-  function we(C, re) {
-    const { item: ae } = C.detail,
-      { id: ye } = ae;
-    (t(0, (q = ye)), (H = re), w("select", { id: q, scrollTop: le.scrollTop }));
+  function D(C, re) {
+    const { item: pe } = C.detail,
+      { id: Se } = pe;
+    (t(0, (j = Se)), (X = re), w("select", { id: j, scrollTop: ie.scrollTop }));
   }
-  const D = (C) => (re) => we(re, C),
-    L = { shift: !1, tab: !1 },
-    Se = (C, re) => {
-      C === "Shift" ? (L.shift = re) : C === "Tab" && (L.tab = re);
+  const F = (C) => (re) => D(re, C),
+    Le = { shift: !1, tab: !1 },
+    Ce = (C, re) => {
+      C === "Shift" ? (Le.shift = re) : C === "Tab" && (Le.tab = re);
     },
-    $e = () => L.shift && L.tab;
-  function Ae(C) {
-    (C.key === "Tab" || C.key === "Shift") && (C.preventDefault(), Se(C.key, !1));
+    Pe = () => Le.shift && Le.tab;
+  function Te(C) {
+    (C.key === "Tab" || C.key === "Shift") && (C.preventDefault(), Ce(C.key, !1));
   }
-  function Le(C) {
-    if (ne) {
-      ne(C);
+  function je(C) {
+    if (he) {
+      he(C);
       return;
     }
     (C.key === "ArrowUp" || C.key === "ArrowDown") && C.preventDefault();
-    const re = C.key === "Tab" && C.shiftKey && H === 0,
-      ae = C.key === "Tab" && !C.shiftKey && H === A.length - 1,
-      ye = re || ae;
-    switch ((C.key === "Tab" && !ye && C.preventDefault(), Se(C.key, !0), C.key)) {
+    const re = C.key === "Tab" && C.shiftKey && X === 0,
+      pe = C.key === "Tab" && !C.shiftKey && X === A.length - 1,
+      Se = re || pe;
+    switch ((C.key === "Tab" && !Se && C.preventDefault(), Ce(C.key, !0), C.key)) {
       case "ArrowUp":
-        H = Math.max(H - 1, 0);
+        X = Math.max(X - 1, 0);
         break;
       case "ArrowDown":
-        H = Math.min(H + 1, A.length - 1);
+        X = Math.min(X + 1, A.length - 1);
         break;
       case "Tab":
-        $e() ? (H = Math.max(H - 1, 0)) : (H = Math.min(H + 1, A.length - 1));
+        Pe() ? (X = Math.max(X - 1, 0)) : (X = Math.min(X + 1, A.length - 1));
         break;
     }
-    A[H]?.id && (t(0, (q = A[H].id)), w("select", { id: q, scrollTop: le.scrollTop }));
+    A[X]?.id && (t(0, (j = A[X].id)), w("select", { id: j, scrollTop: ie.scrollTop }));
   }
   mt(() => {
-    const C = F;
+    const C = L;
     if (!(y <= C))
-      if (G && y <= hr) {
+      if (ne && y <= hr) {
         const re = Math.min(y, hr);
-        for (let ae = C; ae < re; ae++) de(ae);
-      } else de(C);
+        for (let pe = C; pe < re; pe++) be(pe);
+      } else be(C);
   });
-  function Oe(C) {
+  function Be(C) {
     Ut[C ? "unshift" : "push"](() => {
-      ((le = C), t(10, le));
+      ((ie = C), t(10, ie));
     });
   }
   return (
@@ -617,73 +617,73 @@ function Ys(s, e, t) {
       ("items" in C && t(18, (A = C.items)),
         "itemCount" in C && t(1, (y = C.itemCount)),
         "itemHeight" in C && t(2, (p = C.itemHeight)),
-        "amountToFetch" in C && t(19, (F = C.amountToFetch)),
+        "amountToFetch" in C && t(19, (L = C.amountToFetch)),
         "bottomSpacerHidden" in C && t(3, (te = C.bottomSpacerHidden)),
-        "bufferHeight" in C && t(20, (N = C.bufferHeight)),
-        "fetchIntentFn" in C && t(21, (Z = C.fetchIntentFn)),
-        "selectedItemId" in C && t(0, (q = C.selectedItemId)),
-        "log" in C && t(22, (K = C.log)),
-        "jet" in C && t(23, (ie = C.jet)),
-        "overrideKeydown" in C && t(24, (ne = C.overrideKeydown)),
-        "restrainContainerWidth" in C && t(4, (X = C.restrainContainerWidth)),
+        "bufferHeight" in C && t(20, (H = C.bufferHeight)),
+        "fetchIntentFn" in C && t(21, (K = C.fetchIntentFn)),
+        "selectedItemId" in C && t(0, (j = C.selectedItemId)),
+        "log" in C && t(22, (Q = C.log)),
+        "jet" in C && t(23, (x = C.jet)),
+        "overrideKeydown" in C && t(24, (he = C.overrideKeydown)),
+        "restrainContainerWidth" in C && t(4, (Y = C.restrainContainerWidth)),
         "rowZebraStriping" in C && t(5, (fe = C.rowZebraStriping)),
-        "use" in C && t(6, (ke = C.use)),
-        "allowCountUpdates" in C && t(25, (x = C.allowCountUpdates)),
-        "useManualPagination" in C && t(26, (G = C.useManualPagination)),
+        "use" in C && t(6, (ye = C.use)),
+        "allowCountUpdates" in C && t(25, (R = C.allowCountUpdates)),
+        "useManualPagination" in C && t(26, (ne = C.useManualPagination)),
         "pageMetadata" in C && t(27, (_e = C.pageMetadata)),
-        "setAriaAttributes" in C && t(7, (Pe = C.setAriaAttributes)),
+        "setAriaAttributes" in C && t(7, (oe = C.setAriaAttributes)),
         "$$scope" in C && t(37, (T = C.$$scope)));
     }),
     (s.$$.update = () => {
       (s.$$.dirty[0] & 134217728 && (r = _e?.next),
         s.$$.dirty[0] & 786434 &&
-          (V = zs(A, F).map((C, re) => {
-            const ye = (re + 1) * F ? F : y % F;
-            if (!(C.length < ye)) return new Promise((Ne) => Ne(C));
+          (W = zs(A, L).map((C, re) => {
+            const Se = (re + 1) * L ? L : y % L;
+            if (!(C.length < Se)) return new Promise((Re) => Re(C));
           })),
         s.$$.dirty[0] & 2 && t(33, (i = [...Array(y).keys()])),
         (s.$$.dirty[0] & 4) | (s.$$.dirty[1] & 4) && t(9, (l = p * i.length)),
-        s.$$.dirty[0] & 537919488 && t(36, (n = Math.max(0, Q - N))),
-        s.$$.dirty[0] & 806355456 && t(35, (a = Math.min(Q + W + N, l))),
-        (s.$$.dirty[0] & 4) | (s.$$.dirty[1] & 32) && t(8, (o = Te("top", n, p))),
-        (s.$$.dirty[0] & 4) | (s.$$.dirty[1] & 16) && t(30, (c = Te("bottom", a, p))),
-        (s.$$.dirty[0] & 1073742080) | (s.$$.dirty[1] & 4) && t(11, (u = De(i, o, c))),
-        s.$$.dirty[0] & 269484032 && t(34, (m = W + 2 * N)),
-        (s.$$.dirty[0] & 4) | (s.$$.dirty[1] & 40) && t(32, (k = Te("top", Math.max(0, n - m), p))),
-        (s.$$.dirty[0] & 516) | (s.$$.dirty[1] & 24) && t(31, (E = Te("bottom", Math.min(a + m, l), p))),
-        s.$$.dirty[1] & 7 && ge(i, k, E));
+        s.$$.dirty[0] & 537919488 && t(36, (n = Math.max(0, $ - H))),
+        s.$$.dirty[0] & 806355456 && t(35, (a = Math.min($ + G + H, l))),
+        (s.$$.dirty[0] & 4) | (s.$$.dirty[1] & 32) && t(8, (o = se("top", n, p))),
+        (s.$$.dirty[0] & 4) | (s.$$.dirty[1] & 16) && t(30, (c = se("bottom", a, p))),
+        (s.$$.dirty[0] & 1073742080) | (s.$$.dirty[1] & 4) && t(11, (u = Ie(i, o, c))),
+        s.$$.dirty[0] & 269484032 && t(34, (m = G + 2 * H)),
+        (s.$$.dirty[0] & 4) | (s.$$.dirty[1] & 40) && t(32, (k = se("top", Math.max(0, n - m), p))),
+        (s.$$.dirty[0] & 516) | (s.$$.dirty[1] & 24) && t(31, (E = se("bottom", Math.min(a + m, l), p))),
+        s.$$.dirty[1] & 7 && Ae(i, k, E));
     }),
     [
-      q,
+      j,
       y,
       p,
       te,
-      X,
+      Y,
       fe,
-      ke,
-      Pe,
+      ye,
+      oe,
       o,
       l,
-      le,
-      u,
-      oe,
-      me,
-      U,
-      D,
-      Ae,
-      Le,
-      A,
-      F,
-      N,
-      Z,
-      K,
       ie,
-      ne,
-      x,
-      G,
-      _e,
-      W,
+      u,
+      ae,
+      de,
+      U,
+      F,
+      Te,
+      je,
+      A,
+      L,
+      H,
+      K,
       Q,
+      x,
+      he,
+      R,
+      ne,
+      _e,
+      G,
+      $,
       c,
       E,
       k,
@@ -693,7 +693,7 @@ function Ys(s, e, t) {
       n,
       T,
       g,
-      Oe,
+      Be,
     ]
   );
 }
@@ -703,9 +703,9 @@ class Ii extends Fe {
       Ve(
         this,
         e,
-        Ys,
+        Qs,
         Js,
-        je,
+        He,
         {
           items: 18,
           itemCount: 1,
@@ -734,7 +734,7 @@ class Ii extends Fe {
 function gr(s, e) {
   e && s.focus({ preventScroll: !0 });
 }
-function Qs(s, e) {
+function Ys(s, e) {
   return (
     gr(s, e),
     {
@@ -795,8 +795,8 @@ function Xs(s) {
         ])),
       );
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(a) {
       a && d(e);
     },
@@ -822,15 +822,15 @@ function tl(s) {
     (e = new el({ props: { "data-testid": "library-general-artist-icon", class: "general-artist-icon" } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
-      p: se,
+      p: le,
       i(r) {
         t || (_(e.$$.fragment, r), (t = !0));
       },
@@ -838,7 +838,7 @@ function tl(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -847,13 +847,13 @@ function rl(s) {
   let e, t, r, i, l, n;
   return {
     c() {
-      ((e = I("picture")), (t = I("source")), (i = J()), (l = I("img")), this.h());
+      ((e = I("picture")), (t = I("source")), (i = Z()), (l = I("img")), this.h());
     },
     l(a) {
       e = S(a, "PICTURE", {});
       var o = v(e);
       ((t = S(o, "SOURCE", { srcset: !0, type: !0 })),
-        (i = Y(o)),
+        (i = J(o)),
         (l = S(o, "IMG", { "data-testid": !0, class: !0, role: !0, src: !0, alt: !0 })),
         o.forEach(d),
         this.h());
@@ -873,8 +873,8 @@ function rl(s) {
     p(a, o) {
       (o & 4 && r !== (r = a[2]) && f(t, "srcset", r), o & 2 && !lr(l.src, (n = a[1])) && f(l, "src", n));
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(a) {
       a && d(e);
     },
@@ -902,7 +902,7 @@ function il(s) {
       h() {
         (f(e, "data-testid", "library-artist-icon"),
           f(e, "class", "artist-icon svelte-1ehefgf"),
-          $(e, "is-selected", s[0]));
+          V(e, "is-selected", s[0]));
       },
       m(o, c) {
         (P(o, e, c), n[t].m(e, null), (i = !0));
@@ -921,7 +921,7 @@ function il(s) {
               r ? r.p(o, c) : ((r = n[t] = l[t](o)), r.c()),
               _(r, 1),
               r.m(e, null)),
-          (!i || c & 1) && $(e, "is-selected", o[0]));
+          (!i || c & 1) && V(e, "is-selected", o[0]));
       },
       i(o) {
         i || (_(r), (i = !0));
@@ -962,19 +962,19 @@ function sl(s, e, t) {
 }
 class Si extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, sl, il, je, { artwork: 3, isSelected: 0 }));
+    (super(), Ve(this, e, sl, il, He, { artwork: 3, isSelected: 0 }));
   }
 }
 function br(s) {
   let e, t;
   return {
     c() {
-      ((e = I("span")), (t = pe(s[4])), this.h());
+      ((e = I("span")), (t = ve(s[4])), this.h());
     },
     l(r) {
       e = S(r, "SPAN", { class: !0 });
       var i = v(e);
-      ((t = be(i, s[4])), i.forEach(d), this.h());
+      ((t = ke(i, s[4])), i.forEach(d), this.h());
     },
     h() {
       f(e, "class", "artist-name svelte-yegxkw");
@@ -983,7 +983,7 @@ function br(s) {
       (P(r, e, i), b(e, t));
     },
     p(r, i) {
-      i & 16 && ve(t, r[4]);
+      i & 16 && we(t, r[4]);
     },
     d(r) {
       r && d(e);
@@ -998,12 +998,12 @@ function ll(s) {
     (l = new Oi({ props: { inFavorites: s[2] } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), (r = J()), u && u.c(), (i = J()), j(l.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), (r = Z()), u && u.c(), (i = Z()), B(l.$$.fragment), this.h());
       },
       l(m) {
         e = S(m, "DIV", { "data-testid": !0, "aria-selected": !0, role: !0, tabindex: !0, class: !0 });
         var k = v(e);
-        (z(t.$$.fragment, k), (r = Y(k)), u && u.l(k), (i = Y(k)), z(l.$$.fragment, k), k.forEach(d), this.h());
+        (q(t.$$.fragment, k), (r = J(k)), u && u.l(k), (i = J(k)), q(l.$$.fragment, k), k.forEach(d), this.h());
       },
       h() {
         (f(e, "data-testid", "library-artists-component"),
@@ -1011,17 +1011,17 @@ function ll(s) {
           f(e, "role", "option"),
           f(e, "tabindex", "0"),
           f(e, "class", "svelte-yegxkw"),
-          $(e, "is-selected", s[0]));
+          V(e, "is-selected", s[0]));
       },
       m(m, k) {
         (P(m, e, k),
-          B(t, e, null),
+          O(t, e, null),
           b(e, r),
           u && u.m(e, null),
           b(e, i),
-          B(l, e, null),
+          O(l, e, null),
           (a = !0),
-          o || ((c = [et((n = Qs.call(null, e, s[0]))), Me(e, "click", s[10])]), (o = !0)));
+          o || ((c = [et((n = Ys.call(null, e, s[0]))), Me(e, "click", s[10])]), (o = !0)));
       },
       p(m, [k]) {
         const E = {};
@@ -1033,8 +1033,8 @@ function ll(s) {
         (k & 4 && (g.inFavorites = m[2]),
           l.$set(g),
           (!a || k & 1) && f(e, "aria-selected", m[0]),
-          n && Ye(n.update) && k & 1 && n.update.call(null, m[0]),
-          (!a || k & 1) && $(e, "is-selected", m[0]));
+          n && Qe(n.update) && k & 1 && n.update.call(null, m[0]),
+          (!a || k & 1) && V(e, "is-selected", m[0]));
       },
       i(m) {
         a || (_(t.$$.fragment, m), _(l.$$.fragment, m), (a = !0));
@@ -1043,7 +1043,7 @@ function ll(s) {
         (h(t.$$.fragment, m), h(l.$$.fragment, m), (a = !1));
       },
       d(m) {
-        (m && d(e), O(t), u && u.d(), O(l), (o = !1), dt(c));
+        (m && d(e), z(t), u && u.d(), z(l), (o = !1), dt(c));
       },
     }
   );
@@ -1055,7 +1055,7 @@ function nl(s, e, t) {
     n,
     a,
     o,
-    c = se,
+    c = le,
     u = () => (c(), (c = Dt(n, (A) => t(9, (o = A)))), n);
   s.$$.on_destroy.push(() => c());
   var m;
@@ -1084,7 +1084,7 @@ function nl(s, e, t) {
 }
 class ol extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, nl, ll, je, { isSelected: 0, item: 1 }));
+    (super(), Ve(this, e, nl, ll, He, { isSelected: 0, item: 1 }));
   }
 }
 function al(s) {
@@ -1111,8 +1111,8 @@ function al(s) {
     p(l, [n]) {
       Xe(e, (i = Ct(r, [{ xmlns: "http://www.w3.org/2000/svg" }, { viewBox: "0 0 13 29" }, n & 1 && l[0]])));
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(l) {
       l && d(e);
     },
@@ -1138,17 +1138,17 @@ function fl(s) {
   return (
     (e = new ol({ props: { item: s[28], isSelected: s[29] } })),
     e.$on("itemClicked", function () {
-      Ye(s[30]) && s[30].apply(this, arguments);
+      Qe(s[30]) && s[30].apply(this, arguments);
     }),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         s = r;
@@ -1162,7 +1162,7 @@ function fl(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -1173,20 +1173,20 @@ function dl(s) {
     (t = new Si({ props: { artwork: null } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0, slot: !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "artist-placeholder svelte-1rh5vsj"), f(e, "slot", "placeholder"));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
-      p: se,
+      p: le,
       i(i) {
         r || (_(t.$$.fragment, i), (r = !0));
       },
@@ -1194,7 +1194,7 @@ function dl(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -1218,10 +1218,10 @@ function kr(s) {
     yt((t = s[10](s[1])), i),
     {
       c() {
-        ((e = He()), i.block.c());
+        ((e = Ne()), i.block.c());
       },
       l(l) {
-        ((e = He()), i.block.l(l));
+        ((e = Ne()), i.block.l(l));
       },
       m(l, n) {
         (P(l, e, n), i.block.m(l, (i.anchor = n)), (i.mount = () => e.parentNode), (i.anchor = e), (r = !0));
@@ -1246,7 +1246,7 @@ function kr(s) {
   );
 }
 function ml(s) {
-  return { c: se, l: se, m: se, p: se, i: se, o: se, d: se };
+  return { c: le, l: le, m: le, p: le, i: le, o: le, d: le };
 }
 function _l(s) {
   let e,
@@ -1270,12 +1270,12 @@ function _l(s) {
         ((e = I("article")),
           (t = I("div")),
           (r = I("button")),
-          j(i.$$.fragment),
-          (l = J()),
+          B(i.$$.fragment),
+          (l = Z()),
           (n = I("span")),
-          (o = pe(a)),
-          (c = J()),
-          j(u.$$.fragment),
+          (o = ve(a)),
+          (c = Z()),
+          B(u.$$.fragment),
           this.h());
       },
       l(g) {
@@ -1285,14 +1285,14 @@ function _l(s) {
         var w = v(t);
         r = S(w, "BUTTON", { class: !0, "data-testid": !0 });
         var A = v(r);
-        (z(i.$$.fragment, A), (l = Y(A)), (n = S(A, "SPAN", {})));
+        (q(i.$$.fragment, A), (l = J(A)), (n = S(A, "SPAN", {})));
         var y = v(n);
-        ((o = be(y, a)),
+        ((o = ke(y, a)),
           y.forEach(d),
           A.forEach(d),
           w.forEach(d),
-          (c = Y(T)),
-          z(u.$$.fragment, T),
+          (c = J(T)),
+          q(u.$$.fragment, T),
           T.forEach(d),
           this.h());
       },
@@ -1309,17 +1309,17 @@ function _l(s) {
         (P(g, e, T),
           b(e, t),
           b(t, r),
-          B(i, r, null),
+          O(i, r, null),
           b(r, l),
           b(r, n),
           b(n, o),
           b(e, c),
-          B(u, e, null),
+          O(u, e, null),
           (m = !0),
           k || ((E = Me(r, "click", s[11])), (k = !0)));
       },
       p(g, T) {
-        (!m || T[0] & 32) && a !== (a = g[5].t("ASE.Web.Music.SideBar.Artists") + "") && ve(o, a);
+        (!m || T[0] & 32) && a !== (a = g[5].t("ASE.Web.Music.SideBar.Artists") + "") && we(o, a);
         const w = {};
         (T[0] & 2 && (w.section = g[0]), u.$set(w), (!m || T[0] & 8) && f(e, "aria-label", g[3]));
       },
@@ -1330,7 +1330,7 @@ function _l(s) {
         (h(i.$$.fragment, g), h(u.$$.fragment, g), (m = !1));
       },
       d(g) {
-        (g && d(e), O(i), O(u), (k = !1), E());
+        (g && d(e), z(i), z(u), (k = !1), E());
       },
     }
   );
@@ -1341,15 +1341,15 @@ function hl(s) {
     (e = new Zi({ props: { delay: 500 } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
-      p: se,
+      p: le,
       i(r) {
         t || (_(e.$$.fragment, r), (t = !0));
       },
@@ -1357,7 +1357,7 @@ function hl(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -1396,14 +1396,14 @@ function gl(s) {
   let n = s[1] && kr(s);
   return {
     c() {
-      ((e = I("div")), (t = I("div")), j(r.$$.fragment), (i = J()), n && n.c(), this.h());
+      ((e = I("div")), (t = I("div")), B(r.$$.fragment), (i = Z()), n && n.c(), this.h());
     },
     l(a) {
       e = S(a, "DIV", { class: !0, "data-testid": !0 });
       var o = v(e);
       t = S(o, "DIV", { class: !0, "data-testid": !0 });
       var c = v(t);
-      (z(r.$$.fragment, c), c.forEach(d), (i = Y(o)), n && n.l(o), o.forEach(d), this.h());
+      (q(r.$$.fragment, c), c.forEach(d), (i = J(o)), n && n.l(o), o.forEach(d), this.h());
     },
     h() {
       (f(t, "class", "artist-list-container svelte-1rh5vsj"),
@@ -1412,7 +1412,7 @@ function gl(s) {
         f(e, "data-testid", "library-artists-component"));
     },
     m(a, o) {
-      (P(a, e, o), b(e, t), B(r, t, null), b(e, i), n && n.m(e, null), (l = !0));
+      (P(a, e, o), b(e, t), O(r, t, null), b(e, i), n && n.m(e, null), (l = !0));
     },
     p(a, o) {
       const c = {};
@@ -1439,7 +1439,7 @@ function gl(s) {
       (h(r.$$.fragment, a), h(n), (l = !1));
     },
     d(a) {
-      (a && d(e), O(r), n && n.d());
+      (a && d(e), z(r), n && n.d());
     },
   };
 }
@@ -1448,30 +1448,30 @@ const pl = 54,
   vl = 100;
 function kl(s, e, t) {
   let r, i, l, n, a, o, c, u, m;
-  (Ce(s, vr, (x) => t(23, (c = x))), Ce(s, Wi, (x) => t(24, (u = x))));
+  (De(s, vr, (R) => t(23, (c = R))), De(s, Wi, (R) => t(24, (u = R))));
   var k, E, g, T;
   let { section: w } = e;
   const A = Tt(),
     y = Ze();
-  Ce(s, y, (x) => t(5, (m = x)));
+  De(s, y, (R) => t(5, (m = R)));
   const p = Pt("<Artists>"),
-    F = ct(),
+    L = ct(),
     te = tt(),
-    { state: N } = _t();
-  Ce(s, N, (x) => t(22, (o = x)));
-  let Z = {},
-    q,
-    K;
+    { state: H } = _t();
+  De(s, H, (R) => t(22, (o = R)));
+  let K = {},
+    j,
+    Q;
   (Ui(() => {
-    K && q && (K.scrollTop = q);
+    Q && j && (Q.scrollTop = j);
   }),
     mt(() => {
-      ((K = document.getElementById("scrollable-page-override")),
+      ((Q = document.getElementById("scrollable-page-override")),
         St.set(!0),
-        ne(r, 0),
+        he(r, 0),
         !(u === "xsmall" || u === "small") &&
           !l &&
-          ((q = 0),
+          ((j = 0),
           A.perform(
             wt({ kind: "selectedArtistIdChanged", metadata: { id: r[0].id, historyOperation: "replaceState" } }),
           )));
@@ -1479,36 +1479,36 @@ function kl(s, e, t) {
     ut(() => {
       St.set(!1);
     }));
-  async function ie(x) {
-    if (!x) return { items: [] };
-    const G = Ki({ id: x });
-    return A.dispatch(G);
+  async function x(R) {
+    if (!R) return { items: [] };
+    const ne = Ki({ id: R });
+    return A.dispatch(ne);
   }
-  function ne(x, G) {
-    (x.forEach((_e, Pe) => {
-      const { id: H } = _e;
-      typeof Z[H] > "u" && t(18, (Z[H] = { index: Pe + G, artist: _e }), Z);
+  function he(R, ne) {
+    (R.forEach((_e, oe) => {
+      const { id: X } = _e;
+      typeof K[X] > "u" && t(18, (K[X] = { index: oe + ne, artist: _e }), K);
     }),
-      t(18, (Z = Object.assign({}, Z))));
+      t(18, (K = Object.assign({}, K))));
   }
-  function X() {
+  function Y() {
     A.perform(wt({ kind: "selectedArtistIdChanged", metadata: { id: null, historyOperation: "pushState" } }));
   }
-  function fe(x) {
-    const { id: G, scrollTop: _e } = x.detail;
+  function fe(R) {
+    const { id: ne, scrollTop: _e } = R.detail;
     (vr.set(_e),
-      (q = c),
-      A.perform(wt({ kind: "selectedArtistIdChanged", metadata: { id: G, historyOperation: "pushState" } })));
+      (j = c),
+      A.perform(wt({ kind: "selectedArtistIdChanged", metadata: { id: ne, historyOperation: "pushState" } })));
   }
-  async function ke(x) {
-    var G;
-    const { items: _e, offset: Pe } = x.detail;
-    (ne(_e, Pe),
-      await Kt([{ items: _e }], (G = o.user) === null || G === void 0 ? void 0 : G.subscriberType, A, p, te, F));
+  async function ye(R) {
+    var ne;
+    const { items: _e, offset: oe } = R.detail;
+    (he(_e, oe),
+      await Kt([{ items: _e }], (ne = o.user) === null || ne === void 0 ? void 0 : ne.subscriberType, A, p, te, L));
   }
   return (
-    (s.$$set = (x) => {
-      "section" in x && t(0, (w = x.section));
+    (s.$$set = (R) => {
+      "section" in R && t(0, (w = R.section));
     }),
     (s.$$.update = () => {
       (s.$$.dirty[0] & 1 && t(2, (r = w?.items)),
@@ -1519,18 +1519,18 @@ function kl(s, e, t) {
           t(
             19,
             (n =
-              t(17, (T = t(16, (g = Z[l])) === null || g === void 0 ? void 0 : g.artist)) !== null && T !== void 0
+              t(17, (T = t(16, (g = K[l])) === null || g === void 0 ? void 0 : g.artist)) !== null && T !== void 0
                 ? T
                 : null),
           ),
         s.$$.dirty[0] & 524288 && t(3, (a = n?.name || null)));
     }),
-    [w, l, r, a, i, m, A, y, p, N, ie, X, fe, ke, k, E, g, T, Z, n]
+    [w, l, r, a, i, m, A, y, p, H, x, Y, fe, ye, k, E, g, T, K, n]
   );
 }
 class wl extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, kl, gl, je, { section: 0 }, null, [-1, -1]));
+    (super(), Ve(this, e, kl, gl, He, { section: 0 }, null, [-1, -1]));
   }
 }
 function wr(s, e, t) {
@@ -1547,14 +1547,14 @@ function yr(s, e) {
     key: s,
     first: null,
     c() {
-      ((t = I("div")), (r = I("span")), (l = pe(i)), (n = J()), this.h());
+      ((t = I("div")), (r = I("span")), (l = ve(i)), (n = Z()), this.h());
     },
     l(a) {
       t = S(a, "DIV", { role: !0, class: !0 });
       var o = v(t);
       r = S(o, "SPAN", { class: !0, "data-testid": !0 });
       var c = v(r);
-      ((l = be(c, i)), c.forEach(d), (n = Y(o)), o.forEach(d), this.h());
+      ((l = ke(c, i)), c.forEach(d), (n = J(o)), o.forEach(d), this.h());
     },
     h() {
       (f(r, "class", "library-track__" + e[3].id + "-text svelte-1w5wkc6"),
@@ -1567,7 +1567,7 @@ function yr(s, e) {
       (P(a, t, o), b(t, r), b(r, l), b(t, n));
     },
     p(a, o) {
-      ((e = a), o & 1 && i !== (i = (e[3].labelKey ? e[0].t(e[3].labelKey) : "Favorited") + "") && ve(l, i));
+      ((e = a), o & 1 && i !== (i = (e[3].labelKey ? e[0].t(e[3].labelKey) : "Favorited") + "") && we(l, i));
     },
     d(a) {
       a && d(t);
@@ -1613,8 +1613,8 @@ function yl(s) {
     p(a, [o]) {
       o & 5 && ((l = ze(a[2])), (r = si(r, o, n, 1, a, l, i, t, Ji, yr, null, wr)));
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(a) {
       a && d(e);
       for (let o = 0; o < r.length; o += 1) r[o].d();
@@ -1625,7 +1625,7 @@ function Il(s, e, t) {
   let r;
   const i = Ze();
   return (
-    Ce(s, i, (n) => t(0, (r = n))),
+    De(s, i, (n) => t(0, (r = n))),
     [
       r,
       i,
@@ -1641,19 +1641,19 @@ function Il(s, e, t) {
 }
 class Sl extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, Il, yl, je, {}));
+    (super(), Ve(this, e, Il, yl, He, {}));
   }
 }
 function El(s) {
   let e, t;
   return {
     c() {
-      ((e = I("span")), (t = pe(s[14])), this.h());
+      ((e = I("span")), (t = ve(s[14])), this.h());
     },
     l(r) {
       e = S(r, "SPAN", { class: !0 });
       var i = v(e);
-      ((t = be(i, s[14])), i.forEach(d), this.h());
+      ((t = ke(i, s[14])), i.forEach(d), this.h());
     },
     h() {
       f(e, "class", "library-track-name__text svelte-1cq9ch0");
@@ -1662,10 +1662,10 @@ function El(s) {
       (P(r, e, i), b(e, t));
     },
     p(r, i) {
-      i[0] & 16384 && ve(t, r[14]);
+      i[0] & 16384 && we(t, r[14]);
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(r) {
       r && d(e);
     },
@@ -1674,19 +1674,19 @@ function El(s) {
 function Al(s) {
   let e, t, r, i, l, n, a;
   return (
-    (n = new Yi({ props: { explicitAriaText: s[17].t("ASE.Web.Music.Explicit") } })),
+    (n = new Qi({ props: { explicitAriaText: s[17].t("ASE.Web.Music.Explicit") } })),
     {
       c() {
-        ((e = I("span")), (t = I("span")), (r = pe(s[14])), (i = J()), (l = I("span")), j(n.$$.fragment), this.h());
+        ((e = I("span")), (t = I("span")), (r = ve(s[14])), (i = Z()), (l = I("span")), B(n.$$.fragment), this.h());
       },
       l(o) {
         e = S(o, "SPAN", { class: !0 });
         var c = v(e);
         t = S(c, "SPAN", { class: !0 });
         var u = v(t);
-        ((r = be(u, s[14])), u.forEach(d), (i = Y(c)), (l = S(c, "SPAN", { class: !0 })));
+        ((r = ke(u, s[14])), u.forEach(d), (i = J(c)), (l = S(c, "SPAN", { class: !0 })));
         var m = v(l);
-        (z(n.$$.fragment, m), m.forEach(d), c.forEach(d), this.h());
+        (q(n.$$.fragment, m), m.forEach(d), c.forEach(d), this.h());
       },
       h() {
         (f(t, "class", "library-track-name__text svelte-1cq9ch0"),
@@ -1694,10 +1694,10 @@ function Al(s) {
           f(e, "class", "library-track-name__explicit-wrapper svelte-1cq9ch0"));
       },
       m(o, c) {
-        (P(o, e, c), b(e, t), b(t, r), b(e, i), b(e, l), B(n, l, null), (a = !0));
+        (P(o, e, c), b(e, t), b(t, r), b(e, i), b(e, l), O(n, l, null), (a = !0));
       },
       p(o, c) {
-        (!a || c[0] & 16384) && ve(r, o[14]);
+        (!a || c[0] & 16384) && we(r, o[14]);
         const u = {};
         (c[0] & 131072 && (u.explicitAriaText = o[17].t("ASE.Web.Music.Explicit")), n.$set(u));
       },
@@ -1708,7 +1708,7 @@ function Al(s) {
         (h(n.$$.fragment, o), (a = !1));
       },
       d(o) {
-        (o && d(e), O(n));
+        (o && d(e), z(n));
       },
     }
   );
@@ -1719,19 +1719,19 @@ function Ir(s) {
     (t = new _i({ props: { item: s[4], isExplicit: s[2] } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0, "data-testid": !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "library-track-name__play-button-wrapper artwork-overlay svelte-1cq9ch0"),
           f(e, "data-testid", "track-play-button"));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -1744,7 +1744,7 @@ function Ir(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -1762,13 +1762,13 @@ function Sr(s) {
     })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -1789,107 +1789,107 @@ function Sr(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
 }
 function Cl(s) {
-  let e, t, r, i, l, n, a, o, c, u, m, k, E, g, T, w, A, y, p, F, te, N, Z, q, K, ie, ne, X, fe, ke, x;
+  let e, t, r, i, l, n, a, o, c, u, m, k, E, g, T, w, A, y, p, L, te, H, K, j, Q, x, he, Y, fe, ye, R;
   ((r = new ui({
     props: { isFavorited: s[6], platter: !1, enabled: !0, title: s[17].t("ASE.Web.Music.VO.FavoriteHelpText") },
   })),
     r.$on("toggle", s[23]));
-  const G = [Al, El],
+  const ne = [Al, El],
     _e = [];
-  function Pe(W, Q) {
-    return W[2] ? 0 : 1;
+  function oe(G, $) {
+    return G[2] ? 0 : 1;
   }
-  ((a = Pe(s)),
-    (o = _e[a] = G[a](s)),
+  ((a = oe(s)),
+    (o = _e[a] = ne[a](s)),
     (m = new fi({ props: { artwork: s[15], forceFullWidth: !1, profile: "track-list" } })));
-  let H = s[5] && Ir(s),
-    le = s[0].contentDescriptor && Sr(s);
+  let X = s[5] && Ir(s),
+    ie = s[0].contentDescriptor && Sr(s);
   return {
     c() {
       ((e = I("div")),
         (t = I("div")),
-        j(r.$$.fragment),
-        (i = J()),
+        B(r.$$.fragment),
+        (i = Z()),
         (l = I("div")),
         (n = I("div")),
         o.c(),
-        (c = J()),
+        (c = Z()),
         (u = I("div")),
         (k = I("div")),
-        j(m.$$.fragment),
-        (E = J()),
-        H && H.c(),
-        (g = J()),
+        B(m.$$.fragment),
+        (E = Z()),
+        X && X.c(),
+        (g = Z()),
         (T = I("div")),
-        le && le.c(),
-        (w = J()),
+        ie && ie.c(),
+        (w = Z()),
         (A = I("div")),
         (y = I("div")),
-        (p = pe(s[13])),
-        (F = J()),
+        (p = ve(s[13])),
+        (L = Z()),
         (te = I("div")),
-        (N = I("div")),
-        (Z = pe(s[12])),
-        (q = J()),
-        (K = I("div")),
-        (ie = I("div")),
-        (ne = pe(s[11])),
+        (H = I("div")),
+        (K = ve(s[12])),
+        (j = Z()),
+        (Q = I("div")),
+        (x = I("div")),
+        (he = ve(s[11])),
         this.h());
     },
-    l(W) {
-      e = S(W, "DIV", { "data-testid": !0, class: !0, "data-current-mouse-target": !0 });
-      var Q = v(e);
-      t = S(Q, "DIV", { role: !0, class: !0, "data-testid": !0 });
-      var V = v(t);
-      (z(r.$$.fragment, V), V.forEach(d), (i = Y(Q)), (l = S(Q, "DIV", { role: !0, class: !0, "data-testid": !0 })));
-      var De = v(l);
-      n = S(De, "DIV", { class: !0 });
-      var ge = v(n);
-      (o.l(ge), (c = Y(ge)), (u = S(ge, "DIV", { class: !0 })));
-      var Te = v(u);
-      k = S(Te, "DIV", { style: !0 });
-      var de = v(k);
-      (z(m.$$.fragment, de), (E = Y(Te)), H && H.l(Te), Te.forEach(d), (g = Y(ge)), (T = S(ge, "DIV", { class: !0 })));
-      var Ie = v(T);
-      (le && le.l(Ie),
-        Ie.forEach(d),
+    l(G) {
+      e = S(G, "DIV", { "data-testid": !0, class: !0, "data-current-mouse-target": !0 });
+      var $ = v(e);
+      t = S($, "DIV", { role: !0, class: !0, "data-testid": !0 });
+      var W = v(t);
+      (q(r.$$.fragment, W), W.forEach(d), (i = J($)), (l = S($, "DIV", { role: !0, class: !0, "data-testid": !0 })));
+      var Ie = v(l);
+      n = S(Ie, "DIV", { class: !0 });
+      var Ae = v(n);
+      (o.l(Ae), (c = J(Ae)), (u = S(Ae, "DIV", { class: !0 })));
+      var se = v(u);
+      k = S(se, "DIV", { style: !0 });
+      var be = v(k);
+      (q(m.$$.fragment, be), (E = J(se)), X && X.l(se), se.forEach(d), (g = J(Ae)), (T = S(Ae, "DIV", { class: !0 })));
+      var ge = v(T);
+      (ie && ie.l(ge),
         ge.forEach(d),
-        De.forEach(d),
-        (w = Y(Q)),
-        (A = S(Q, "DIV", { role: !0, class: !0, "data-testid": !0 })));
-      var oe = v(A);
-      y = S(oe, "DIV", { class: !0 });
-      var me = v(y);
-      ((p = be(me, s[13])),
-        me.forEach(d),
-        oe.forEach(d),
-        (F = Y(Q)),
-        (te = S(Q, "DIV", { role: !0, class: !0, "data-testid": !0 })));
+        Ae.forEach(d),
+        Ie.forEach(d),
+        (w = J($)),
+        (A = S($, "DIV", { role: !0, class: !0, "data-testid": !0 })));
+      var ae = v(A);
+      y = S(ae, "DIV", { class: !0 });
+      var de = v(y);
+      ((p = ke(de, s[13])),
+        de.forEach(d),
+        ae.forEach(d),
+        (L = J($)),
+        (te = S($, "DIV", { role: !0, class: !0, "data-testid": !0 })));
       var U = v(te);
-      N = S(U, "DIV", { class: !0 });
-      var we = v(N);
-      ((Z = be(we, s[12])),
-        we.forEach(d),
+      H = S(U, "DIV", { class: !0 });
+      var D = v(H);
+      ((K = ke(D, s[12])),
+        D.forEach(d),
         U.forEach(d),
-        (q = Y(Q)),
-        (K = S(Q, "DIV", { role: !0, class: !0, "data-testid": !0 })));
-      var D = v(K);
-      ie = S(D, "DIV", { class: !0 });
-      var L = v(ie);
-      ((ne = be(L, s[11])), L.forEach(d), D.forEach(d), Q.forEach(d), this.h());
+        (j = J($)),
+        (Q = S($, "DIV", { role: !0, class: !0, "data-testid": !0 })));
+      var F = v(Q);
+      x = S(F, "DIV", { class: !0 });
+      var Le = v(x);
+      ((he = ke(Le, s[11])), Le.forEach(d), F.forEach(d), $.forEach(d), this.h());
     },
     h() {
       (f(t, "role", "cell"),
         f(t, "class", "library-track__badge svelte-1cq9ch0"),
         f(t, "data-testid", "library-track__badge"),
-        Be(k, "display", "contents"),
-        Be(k, "--override-placeholder-bg-color", "var(--genericJoeColor)"),
+        Oe(k, "display", "contents"),
+        Oe(k, "--override-placeholder-bg-color", "var(--genericJoeColor)"),
         f(u, "class", "library-track-name__artwork svelte-1cq9ch0"),
         f(T, "class", "action-menu svelte-1cq9ch0"),
         f(n, "class", "library-track-name svelte-1cq9ch0"),
@@ -1900,27 +1900,27 @@ function Cl(s) {
         f(A, "role", "cell"),
         f(A, "class", "library-track__artist svelte-1cq9ch0"),
         f(A, "data-testid", "library-track__artist"),
-        f(N, "class", "svelte-1cq9ch0"),
+        f(H, "class", "svelte-1cq9ch0"),
         f(te, "role", "cell"),
         f(te, "class", "library-track__album svelte-1cq9ch0"),
         f(te, "data-testid", "library-track__album"),
-        f(ie, "class", "svelte-1cq9ch0"),
-        f(K, "role", "cell"),
-        f(K, "class", "library-track__time svelte-1cq9ch0"),
-        f(K, "data-testid", "library-track__time"),
+        f(x, "class", "svelte-1cq9ch0"),
+        f(Q, "role", "cell"),
+        f(Q, "class", "library-track__time svelte-1cq9ch0"),
+        f(Q, "data-testid", "library-track__time"),
         f(e, "data-testid", "library-track"),
         f(e, "class", "library-track svelte-1cq9ch0"),
-        f(e, "data-current-mouse-target", (X = s[3].currentMouseTarget === s[0])),
-        $(e, "selected", s[16]),
-        $(e, "library-track--disabled", s[1]),
-        $(e, "is-playing", s[9]),
-        $(e, "is-paused", s[8]),
-        $(e, "is-loading", s[10]));
+        f(e, "data-current-mouse-target", (Y = s[3].currentMouseTarget === s[0])),
+        V(e, "selected", s[16]),
+        V(e, "library-track--disabled", s[1]),
+        V(e, "is-playing", s[9]),
+        V(e, "is-paused", s[8]),
+        V(e, "is-loading", s[10]));
     },
-    m(W, Q) {
-      (P(W, e, Q),
+    m(G, $) {
+      (P(G, e, $),
         b(e, t),
-        B(r, t, null),
+        O(r, t, null),
         b(e, i),
         b(e, l),
         b(l, n),
@@ -1928,86 +1928,86 @@ function Cl(s) {
         b(n, c),
         b(n, u),
         b(u, k),
-        B(m, k, null),
+        O(m, k, null),
         b(u, E),
-        H && H.m(u, null),
+        X && X.m(u, null),
         b(n, g),
         b(n, T),
-        le && le.m(T, null),
+        ie && ie.m(T, null),
         b(e, w),
         b(e, A),
         b(A, y),
         b(y, p),
-        b(e, F),
+        b(e, L),
         b(e, te),
-        b(te, N),
-        b(N, Z),
-        b(e, q),
-        b(e, K),
-        b(K, ie),
-        b(ie, ne),
+        b(te, H),
+        b(H, K),
+        b(e, j),
+        b(e, Q),
+        b(Q, x),
+        b(x, he),
         (fe = !0),
-        ke || ((x = [Me(e, "mousedown", s[37]), Me(e, "click", s[22]), Me(e, "dblclick", s[21])]), (ke = !0)));
+        ye || ((R = [Me(e, "mousedown", s[37]), Me(e, "click", s[22]), Me(e, "dblclick", s[21])]), (ye = !0)));
     },
-    p(W, Q) {
-      const V = {};
-      (Q[0] & 64 && (V.isFavorited = W[6]),
-        Q[0] & 131072 && (V.title = W[17].t("ASE.Web.Music.VO.FavoriteHelpText")),
-        r.$set(V));
-      let De = a;
-      ((a = Pe(W)),
-        a === De
-          ? _e[a].p(W, Q)
+    p(G, $) {
+      const W = {};
+      ($[0] & 64 && (W.isFavorited = G[6]),
+        $[0] & 131072 && (W.title = G[17].t("ASE.Web.Music.VO.FavoriteHelpText")),
+        r.$set(W));
+      let Ie = a;
+      ((a = oe(G)),
+        a === Ie
+          ? _e[a].p(G, $)
           : (ce(),
-            h(_e[De], 1, 1, () => {
-              _e[De] = null;
+            h(_e[Ie], 1, 1, () => {
+              _e[Ie] = null;
             }),
             ue(),
             (o = _e[a]),
-            o ? o.p(W, Q) : ((o = _e[a] = G[a](W)), o.c()),
+            o ? o.p(G, $) : ((o = _e[a] = ne[a](G)), o.c()),
             _(o, 1),
             o.m(n, c)));
-      const ge = {};
-      (Q[0] & 32768 && (ge.artwork = W[15]),
-        m.$set(ge),
-        W[5]
-          ? H
-            ? (H.p(W, Q), Q[0] & 32 && _(H, 1))
-            : ((H = Ir(W)), H.c(), _(H, 1), H.m(u, null))
-          : H &&
+      const Ae = {};
+      ($[0] & 32768 && (Ae.artwork = G[15]),
+        m.$set(Ae),
+        G[5]
+          ? X
+            ? (X.p(G, $), $[0] & 32 && _(X, 1))
+            : ((X = Ir(G)), X.c(), _(X, 1), X.m(u, null))
+          : X &&
             (ce(),
-            h(H, 1, 1, () => {
-              H = null;
+            h(X, 1, 1, () => {
+              X = null;
             }),
             ue()),
-        W[0].contentDescriptor
-          ? le
-            ? (le.p(W, Q), Q[0] & 1 && _(le, 1))
-            : ((le = Sr(W)), le.c(), _(le, 1), le.m(T, null))
-          : le &&
+        G[0].contentDescriptor
+          ? ie
+            ? (ie.p(G, $), $[0] & 1 && _(ie, 1))
+            : ((ie = Sr(G)), ie.c(), _(ie, 1), ie.m(T, null))
+          : ie &&
             (ce(),
-            h(le, 1, 1, () => {
-              le = null;
+            h(ie, 1, 1, () => {
+              ie = null;
             }),
             ue()),
-        (!fe || Q[0] & 8192) && ve(p, W[13]),
-        (!fe || Q[0] & 4096) && ve(Z, W[12]),
-        (!fe || Q[0] & 2048) && ve(ne, W[11]),
-        (!fe || (Q[0] & 9 && X !== (X = W[3].currentMouseTarget === W[0]))) && f(e, "data-current-mouse-target", X),
-        (!fe || Q[0] & 65536) && $(e, "selected", W[16]),
-        (!fe || Q[0] & 2) && $(e, "library-track--disabled", W[1]),
-        (!fe || Q[0] & 512) && $(e, "is-playing", W[9]),
-        (!fe || Q[0] & 256) && $(e, "is-paused", W[8]),
-        (!fe || Q[0] & 1024) && $(e, "is-loading", W[10]));
+        (!fe || $[0] & 8192) && we(p, G[13]),
+        (!fe || $[0] & 4096) && we(K, G[12]),
+        (!fe || $[0] & 2048) && we(he, G[11]),
+        (!fe || ($[0] & 9 && Y !== (Y = G[3].currentMouseTarget === G[0]))) && f(e, "data-current-mouse-target", Y),
+        (!fe || $[0] & 65536) && V(e, "selected", G[16]),
+        (!fe || $[0] & 2) && V(e, "library-track--disabled", G[1]),
+        (!fe || $[0] & 512) && V(e, "is-playing", G[9]),
+        (!fe || $[0] & 256) && V(e, "is-paused", G[8]),
+        (!fe || $[0] & 1024) && V(e, "is-loading", G[10]));
     },
-    i(W) {
-      fe || (_(r.$$.fragment, W), _(o), _(m.$$.fragment, W), _(H), _(le), (fe = !0));
+    i(G) {
+      fe || (_(r.$$.fragment, G), _(o), _(m.$$.fragment, G), _(X), _(ie), (fe = !0));
     },
-    o(W) {
-      (h(r.$$.fragment, W), h(o), h(m.$$.fragment, W), h(H), h(le), (fe = !1));
+    o(G) {
+      (h(r.$$.fragment, G), h(o), h(m.$$.fragment, G), h(X), h(ie), (fe = !1));
     },
-    d(W) {
-      (W && d(e), O(r), _e[a].d(), O(m), H && H.d(), le && le.d(), (ke = !1), dt(x));
+    d(G) {
+      (G && d(e), z(r), _e[a].d(), z(m), X && X.d(), ie && ie.d(), (ye = !1), dt(R));
     },
   };
 }
@@ -2029,94 +2029,94 @@ function Dl(s, e, t) {
     A,
     y,
     p,
-    F,
+    L,
     te,
-    N,
-    Z,
-    q,
+    H,
     K,
-    ie = se,
-    ne = () => (ie(), (ie = Dt(te, (U) => t(35, (K = U)))), te),
-    X,
+    j,
+    Q,
+    x = le,
+    he = () => (x(), (x = Dt(te, (U) => t(35, (Q = U)))), te),
+    Y,
     fe,
-    ke;
-  s.$$.on_destroy.push(() => ie());
-  var x;
-  const G = Ze();
-  Ce(s, G, (U) => t(17, (ke = U)));
+    ye;
+  s.$$.on_destroy.push(() => x());
+  var R;
+  const ne = Ze();
+  De(s, ne, (U) => t(17, (ye = U)));
   const _e = tt(),
-    Pe = Lt(),
-    { queue: H, isRestricted: le } = di();
-  Ce(s, H, (U) => t(36, (X = U)));
-  const W = Mt();
-  Ce(s, W, (U) => t(3, (fe = U)));
-  const Q = ct();
-  let { item: V } = e,
-    { items: De = [] } = e,
-    ge = !1,
-    Te = [];
+    oe = Lt(),
+    { queue: X, isRestricted: ie } = di();
+  De(s, X, (U) => t(36, (Y = U)));
+  const G = Mt();
+  De(s, G, (U) => t(3, (fe = U)));
+  const $ = ct();
+  let { item: W } = e,
+    { items: Ie = [] } = e,
+    Ae = !1,
+    se = [];
   mt(async () => {
     try {
-      const U = await le?.();
-      t(26, (ge = U));
+      const U = await ie?.();
+      t(26, (Ae = U));
     } catch {}
   });
-  function de() {
-    u && Pe(q.playAction);
+  function be() {
+    u && oe(j.playAction);
   }
-  function Ie(U) {
-    W.handleClick(V, U);
+  function ge(U) {
+    G.handleClick(W, U);
   }
-  const oe = (U) => {
-    hi(E, T, g, !U.detail, Q, !1, !0, Pe);
+  const ae = (U) => {
+    hi(E, T, g, !U.detail, $, !1, !0, oe);
   };
   ut(() => {
-    Q.unsubscribeFromUpdates(E);
+    $.unsubscribeFromUpdates(E);
   });
-  const me = () => W.setCurrentMouseTarget(V);
+  const de = () => G.setCurrentMouseTarget(W);
   return (
     (s.$$set = (U) => {
-      ("item" in U && t(0, (V = U.item)), "items" in U && t(24, (De = U.items)));
+      ("item" in U && t(0, (W = U.item)), "items" in U && t(24, (Ie = U.items)));
     }),
     (s.$$.update = () => {
-      (s.$$.dirty[0] & 9 && t(16, (r = V.id && fe.selectedItems.some((U) => U.id === V.id))),
-        s.$$.dirty[0] & 1 && t(15, (i = V?.artwork || null)),
-        s.$$.dirty[0] & 1 && t(14, (l = V?.name || "")),
-        s.$$.dirty[0] & 1 && t(13, (n = V?.artistName || "")),
-        s.$$.dirty[0] & 1 && t(12, (a = V?.albumName || "")),
-        s.$$.dirty[0] & 1 && t(34, (o = Math.trunc(V?.durationInMillis / 1e3) || null)),
+      (s.$$.dirty[0] & 9 && t(16, (r = W.id && fe.selectedItems.some((U) => U.id === W.id))),
+        s.$$.dirty[0] & 1 && t(15, (i = W?.artwork || null)),
+        s.$$.dirty[0] & 1 && t(14, (l = W?.name || "")),
+        s.$$.dirty[0] & 1 && t(13, (n = W?.artistName || "")),
+        s.$$.dirty[0] & 1 && t(12, (a = W?.albumName || "")),
+        s.$$.dirty[0] & 1 && t(34, (o = Math.trunc(W?.durationInMillis / 1e3) || null)),
         s.$$.dirty[1] & 8 && t(11, (c = Gt(o, _e.language) || "")),
-        s.$$.dirty[0] & 1 && t(5, (u = V?.playAction || null)),
-        s.$$.dirty[0] & 1 && t(2, (m = V?.contentRating === "explicit")),
-        s.$$.dirty[0] & 1 && t(33, (k = at(V))),
-        s.$$.dirty[0] & 1 && t(28, (E = Zt(V))),
-        s.$$.dirty[0] & 1 && t(29, (g = V?.contentDescriptor)),
+        s.$$.dirty[0] & 1 && t(5, (u = W?.playAction || null)),
+        s.$$.dirty[0] & 1 && t(2, (m = W?.contentRating === "explicit")),
+        s.$$.dirty[0] & 1 && t(33, (k = at(W))),
+        s.$$.dirty[0] & 1 && t(28, (E = Zt(W))),
+        s.$$.dirty[0] & 1 && t(29, (g = W?.contentDescriptor)),
         s.$$.dirty[0] & 536870912 && t(30, (T = g?.kind)),
-        s.$$.dirty[1] & 36 && t(32, (w = k && X.nowPlayingItemId === k)),
-        s.$$.dirty[1] & 34 && t(10, (A = w && X.derivedStates.isLoading)),
-        s.$$.dirty[1] & 34 && t(9, (y = w && X.derivedStates.isPlaying)),
-        s.$$.dirty[1] & 34 && t(8, (p = w && X.derivedStates.isPaused)),
-        s.$$.dirty[0] & 67108869 && t(1, (F = V?.isDisabled || (m && ge))),
-        s.$$.dirty[0] & 268435456 && ne(t(7, (te = Q.subscribeToUpdates(E)))),
+        s.$$.dirty[1] & 36 && t(32, (w = k && Y.nowPlayingItemId === k)),
+        s.$$.dirty[1] & 34 && t(10, (A = w && Y.derivedStates.isLoading)),
+        s.$$.dirty[1] & 34 && t(9, (y = w && Y.derivedStates.isPlaying)),
+        s.$$.dirty[1] & 34 && t(8, (p = w && Y.derivedStates.isPaused)),
+        s.$$.dirty[0] & 67108869 && t(1, (L = W?.isDisabled || (m && Ae))),
+        s.$$.dirty[0] & 268435456 && he(t(7, (te = $.subscribeToUpdates(E)))),
         (s.$$.dirty[0] & 1375731712) | (s.$$.dirty[1] & 16) &&
-          t(6, (N = K && (t(25, (x = Q.get(E, T))) === null || x === void 0 ? void 0 : x.inFavorites))),
-        s.$$.dirty[0] & 16777216 && Promise.all(De).then((U) => t(27, (Te = U))),
-        s.$$.dirty[0] & 134217728 && t(31, (Z = Te.map((U) => U.contentDescriptor))),
+          t(6, (H = Q && (t(25, (R = $.get(E, T))) === null || R === void 0 ? void 0 : R.inFavorites))),
+        s.$$.dirty[0] & 16777216 && Promise.all(Ie).then((U) => t(27, (se = U))),
+        s.$$.dirty[0] & 134217728 && t(31, (K = se.map((U) => U.contentDescriptor))),
         (s.$$.dirty[0] & 3) | (s.$$.dirty[1] & 1) &&
           t(
             4,
-            (q = (() =>
-              Object.assign(Object.assign({}, V), { playAction: !F && V.playAction && mi(V.playAction, Z) }))()),
+            (j = (() =>
+              Object.assign(Object.assign({}, W), { playAction: !L && W.playAction && mi(W.playAction, K) }))()),
           ));
     }),
     [
-      V,
-      F,
+      W,
+      L,
       m,
       fe,
-      q,
+      j,
       u,
-      N,
+      H,
       te,
       p,
       y,
@@ -2127,33 +2127,33 @@ function Dl(s, e, t) {
       l,
       i,
       r,
-      ke,
+      ye,
+      ne,
+      X,
       G,
-      H,
-      W,
-      de,
-      Ie,
-      oe,
-      De,
-      x,
+      be,
       ge,
-      Te,
+      ae,
+      Ie,
+      R,
+      Ae,
+      se,
       E,
       g,
       T,
-      Z,
+      K,
       w,
       k,
       o,
-      K,
-      X,
-      me,
+      Q,
+      Y,
+      de,
     ]
   );
 }
 class Tl extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, Dl, Cl, je, { item: 0, items: 24 }, null, [-1, -1]));
+    (super(), Ve(this, e, Dl, Cl, He, { item: 0, items: 24 }, null, [-1, -1]));
   }
 }
 function Pl(s) {
@@ -2163,18 +2163,18 @@ function Pl(s) {
     (i = new Xi({})),
     {
       c() {
-        (j(e.$$.fragment), (t = J()), (r = I("div")), j(i.$$.fragment), this.h());
+        (B(e.$$.fragment), (t = Z()), (r = I("div")), B(i.$$.fragment), this.h());
       },
       l(n) {
-        (z(e.$$.fragment, n), (t = Y(n)), (r = S(n, "DIV", { class: !0, slot: !0 })));
+        (q(e.$$.fragment, n), (t = J(n)), (r = S(n, "DIV", { class: !0, slot: !0 })));
         var a = v(r);
-        (z(i.$$.fragment, a), a.forEach(d), this.h());
+        (q(i.$$.fragment, a), a.forEach(d), this.h());
       },
       h() {
         (f(r, "class", "song-placeholder svelte-7p26k2"), f(r, "slot", "placeholder"));
       },
       m(n, a) {
-        (B(e, n, a), P(n, t, a), P(n, r, a), B(i, r, null), (l = !0));
+        (O(e, n, a), P(n, t, a), P(n, r, a), O(i, r, null), (l = !0));
       },
       p(n, a) {
         const o = {};
@@ -2187,7 +2187,7 @@ function Pl(s) {
         (h(e.$$.fragment, n), h(i.$$.fragment, n), (l = !1));
       },
       d(n) {
-        (n && (d(t), d(r)), O(e, n), O(i));
+        (n && (d(t), d(r)), z(e, n), z(i));
       },
     }
   );
@@ -2203,7 +2203,7 @@ function Ll(s) {
         amountToFetch: Ml,
         itemHeight: Fl,
         bufferHeight: Vl,
-        fetchIntentFn: Qi,
+        fetchIntentFn: Yi,
         bottomSpacerHidden: !1,
         restrainContainerWidth: !1,
         rowZebraStriping: !0,
@@ -2233,18 +2233,18 @@ function Ll(s) {
     i.$on("fetchComplete", s[7]),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), (r = J()), j(i.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), (r = Z()), B(i.$$.fragment), this.h());
       },
       l(n) {
         e = S(n, "DIV", { class: !0, "data-testid": !0 });
         var a = v(e);
-        (z(t.$$.fragment, a), (r = Y(a)), z(i.$$.fragment, a), a.forEach(d), this.h());
+        (q(t.$$.fragment, a), (r = J(a)), q(i.$$.fragment, a), a.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "songs-container svelte-7p26k2"), f(e, "data-testid", "library-songs-component"));
       },
       m(n, a) {
-        (P(n, e, a), B(t, e, null), b(e, r), B(i, e, null), (l = !0));
+        (P(n, e, a), O(t, e, null), b(e, r), O(i, e, null), (l = !0));
       },
       p(n, [a]) {
         const o = {};
@@ -2271,7 +2271,7 @@ function Ll(s) {
         (h(t.$$.fragment, n), h(i.$$.fragment, n), (l = !1));
       },
       d(n) {
-        (n && d(e), O(t), O(i));
+        (n && d(e), z(t), z(i));
       },
     }
   );
@@ -2286,18 +2286,18 @@ function $l(s, e, t) {
     m = Pt("<Songs>"),
     k = Tt(),
     E = Mt();
-  Ce(s, E, (p) => t(11, (o = p)));
+  De(s, E, (p) => t(11, (o = p)));
   const g = ct(),
     T = tt(),
     { state: w } = _t();
-  Ce(s, w, (p) => t(12, (a = p)));
+  De(s, w, (p) => t(12, (a = p)));
   let { section: A } = e;
   async function y(p) {
-    var F;
+    var L;
     if (p.detail) {
       const { items: te } = p.detail;
       (E.addItems(u, te),
-        await Kt([{ items: te }], (F = a.user) === null || F === void 0 ? void 0 : F.subscriberType, k, m, T, g));
+        await Kt([{ items: te }], (L = a.user) === null || L === void 0 ? void 0 : L.subscriberType, k, m, T, g));
     }
   }
   return (
@@ -2323,7 +2323,7 @@ function $l(s, e, t) {
 }
 class Rl extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, $l, Ll, je, { section: 8 }));
+    (super(), Ve(this, e, $l, Ll, He, { section: 8 }));
   }
 }
 const Nl = "‪",
@@ -2339,13 +2339,13 @@ function Cr(s) {
     (e = new es({ props: { playAction: s[0], playButtonStyle: "non-platter", isStandAlone: !0, isFilled: !1 } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -2358,7 +2358,7 @@ function Cr(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -2371,12 +2371,12 @@ function Dr(s) {
     l = s[1] && s[1].length && Pr(s);
   return {
     c() {
-      ((e = I("div")), i && i.c(), (t = J()), l && l.c(), this.h());
+      ((e = I("div")), i && i.c(), (t = Z()), l && l.c(), this.h());
     },
     l(n) {
       e = S(n, "DIV", { class: !0, "data-testid": !0 });
       var a = v(e);
-      (i && i.l(a), (t = Y(a)), l && l.l(a), a.forEach(d), this.h());
+      (i && i.l(a), (t = J(a)), l && l.l(a), a.forEach(d), this.h());
     },
     h() {
       (f(e, "class", "songs-list-row__by-line songs-list-row__by-line--work svelte-1wqzc4z"),
@@ -2436,21 +2436,21 @@ function Tr(s) {
     })),
     {
       c() {
-        ((e = I("span")), (r = pe(t)), (i = J()), j(l.$$.fragment), this.h());
+        ((e = I("span")), (r = ve(t)), (i = Z()), B(l.$$.fragment), this.h());
       },
       l(a) {
         e = S(a, "SPAN", { class: !0 });
         var o = v(e);
-        ((r = be(o, t)), (i = Y(o)), z(l.$$.fragment, o), o.forEach(d), this.h());
+        ((r = ke(o, t)), (i = J(o)), q(l.$$.fragment, o), o.forEach(d), this.h());
       },
       h() {
         f(e, "class", "svelte-1wqzc4z");
       },
       m(a, o) {
-        (P(a, e, o), b(e, r), b(e, i), B(l, e, null), (n = !0));
+        (P(a, e, o), b(e, r), b(e, i), O(l, e, null), (n = !0));
       },
       p(a, o) {
-        (!n || o & 512) && t !== (t = a[9].t("ASE.Web.Music.SongsList.ComposerBy") + "") && ve(r, t);
+        (!n || o & 512) && t !== (t = a[9].t("ASE.Web.Music.SongsList.ComposerBy") + "") && we(r, t);
         const c = {};
         (o & 4 && (c.items = a[2]),
           o & 512 && (c.translateFn = a[9].t),
@@ -2464,7 +2464,7 @@ function Tr(s) {
         (h(l.$$.fragment, a), (n = !1));
       },
       d(a) {
-        (a && d(e), O(l));
+        (a && d(e), z(l));
       },
     }
   );
@@ -2474,16 +2474,16 @@ function Hl(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i & 262144 && e !== (e = r[18].title + "") && ve(t, e);
+      i & 262144 && e !== (e = r[18].title + "") && we(t, e);
     },
     d(r) {
       r && d(t);
@@ -2496,15 +2496,15 @@ function jl(s) {
     (t = new Je({ props: { action: s[18].segue, $$slots: { default: [Hl] }, $$scope: { ctx: s } } })),
     {
       c() {
-        ((e = I("span")), j(t.$$.fragment));
+        ((e = I("span")), B(t.$$.fragment));
       },
       l(i) {
         e = S(i, "SPAN", {});
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d));
+        (q(t.$$.fragment, l), l.forEach(d));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -2517,7 +2517,7 @@ function jl(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -2535,18 +2535,18 @@ function Pr(s) {
     })),
     {
       c() {
-        ((e = I("span")), j(t.$$.fragment), this.h());
+        ((e = I("span")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "SPAN", { class: !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         f(e, "class", "svelte-1wqzc4z");
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -2562,7 +2562,7 @@ function Pr(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -2572,16 +2572,16 @@ function Bl(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i & 131072 && e !== (e = r[17].title + "") && ve(t, e);
+      i & 131072 && e !== (e = r[17].title + "") && we(t, e);
     },
     d(r) {
       r && d(t);
@@ -2594,15 +2594,15 @@ function Ol(s) {
     (t = new Je({ props: { action: s[17].segue, $$slots: { default: [Bl] }, $$scope: { ctx: s } } })),
     {
       c() {
-        ((e = I("span")), j(t.$$.fragment));
+        ((e = I("span")), B(t.$$.fragment));
       },
       l(i) {
         e = S(i, "SPAN", {});
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d));
+        (q(t.$$.fragment, l), l.forEach(d));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -2615,7 +2615,7 @@ function Ol(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -2640,10 +2640,10 @@ function zl(s) {
     A,
     y,
     p,
-    F,
+    L,
     te,
-    N = s[0] && Cr(s),
-    Z = s[7] && Dr(s);
+    H = s[0] && Cr(s),
+    K = s[7] && Dr(s);
   return (
     (y = new Jt({
       props: {
@@ -2658,52 +2658,52 @@ function zl(s) {
       c() {
         ((e = I("div")),
           (t = I("div")),
-          N && N.c(),
-          (r = J()),
+          H && H.c(),
+          (r = Z()),
           (i = I("div")),
           (l = I("span")),
-          (a = pe(n)),
-          (o = J()),
-          Z && Z.c(),
-          (c = J()),
+          (a = ve(n)),
+          (o = Z()),
+          K && K.c(),
+          (c = Z()),
           (u = I("div")),
           (m = I("div")),
           (k = I("div")),
-          (E = J()),
+          (E = Z()),
           (g = I("time")),
-          (T = pe(s[5])),
-          (w = J()),
+          (T = ve(s[5])),
+          (w = Z()),
           (A = I("div")),
-          j(y.$$.fragment),
+          B(y.$$.fragment),
           this.h());
       },
-      l(q) {
-        e = S(q, "DIV", { class: !0, "data-testid": !0 });
-        var K = v(e);
-        t = S(K, "DIV", { class: !0 });
-        var ie = v(t);
-        (N && N.l(ie), ie.forEach(d), (r = Y(K)), (i = S(K, "DIV", { role: !0, class: !0 })));
-        var ne = v(i);
-        l = S(ne, "SPAN", { class: !0, "data-testid": !0 });
-        var X = v(l);
-        ((a = be(X, n)),
-          X.forEach(d),
-          (o = Y(ne)),
-          Z && Z.l(ne),
-          ne.forEach(d),
-          (c = Y(K)),
-          (u = S(K, "DIV", { role: !0, class: !0 })));
+      l(j) {
+        e = S(j, "DIV", { class: !0, "data-testid": !0 });
+        var Q = v(e);
+        t = S(Q, "DIV", { class: !0 });
+        var x = v(t);
+        (H && H.l(x), x.forEach(d), (r = J(Q)), (i = S(Q, "DIV", { role: !0, class: !0 })));
+        var he = v(i);
+        l = S(he, "SPAN", { class: !0, "data-testid": !0 });
+        var Y = v(l);
+        ((a = ke(Y, n)),
+          Y.forEach(d),
+          (o = J(he)),
+          K && K.l(he),
+          he.forEach(d),
+          (c = J(Q)),
+          (u = S(Q, "DIV", { role: !0, class: !0 })));
         var fe = v(u);
         m = S(fe, "DIV", { class: !0 });
-        var ke = v(m);
-        ((k = S(ke, "DIV", { class: !0 })),
+        var ye = v(m);
+        ((k = S(ye, "DIV", { class: !0 })),
           v(k).forEach(d),
-          (E = Y(ke)),
-          (g = S(ke, "TIME", { datetime: !0, class: !0, "data-testid": !0 })));
-        var x = v(g);
-        ((T = be(x, s[5])), x.forEach(d), (w = Y(ke)), (A = S(ke, "DIV", { class: !0 })));
-        var G = v(A);
-        (z(y.$$.fragment, G), G.forEach(d), ke.forEach(d), fe.forEach(d), K.forEach(d), this.h());
+          (E = J(ye)),
+          (g = S(ye, "TIME", { datetime: !0, class: !0, "data-testid": !0 })));
+        var R = v(g);
+        ((T = ke(R, s[5])), R.forEach(d), (w = J(ye)), (A = S(ye, "DIV", { class: !0 })));
+        var ne = v(A);
+        (q(y.$$.fragment, ne), ne.forEach(d), ye.forEach(d), fe.forEach(d), Q.forEach(d), this.h());
       },
       h() {
         (f(t, "class", "songs-list__col songs-list__col--shim svelte-1wqzc4z"),
@@ -2726,16 +2726,16 @@ function zl(s) {
           f(e, "class", "composer-header songs-list-row songs-list-row--works-list-header svelte-1wqzc4z"),
           f(e, "data-testid", "composer-header"));
       },
-      m(q, K) {
-        (P(q, e, K),
+      m(j, Q) {
+        (P(j, e, Q),
           b(e, t),
-          N && N.m(t, null),
+          H && H.m(t, null),
           b(e, r),
           b(e, i),
           b(i, l),
           b(l, a),
           b(i, o),
-          Z && Z.m(i, null),
+          K && K.m(i, null),
           b(e, c),
           b(e, u),
           b(u, m),
@@ -2745,48 +2745,48 @@ function zl(s) {
           b(g, T),
           b(m, w),
           b(m, A),
-          B(y, A, null),
+          O(y, A, null),
           (p = !0),
-          F || ((te = Me(e, "dblclick", s[15])), (F = !0)));
+          L || ((te = Me(e, "dblclick", s[15])), (L = !0)));
       },
-      p(q, [K]) {
-        (q[0]
-          ? N
-            ? (N.p(q, K), K & 1 && _(N, 1))
-            : ((N = Cr(q)), N.c(), _(N, 1), N.m(t, null))
-          : N &&
+      p(j, [Q]) {
+        (j[0]
+          ? H
+            ? (H.p(j, Q), Q & 1 && _(H, 1))
+            : ((H = Cr(j)), H.c(), _(H, 1), H.m(t, null))
+          : H &&
             (ce(),
-            h(N, 1, 1, () => {
-              N = null;
+            h(H, 1, 1, () => {
+              H = null;
             }),
             ue()),
-          (!p || K & 256) && n !== (n = Ar(q[8]) + "") && ve(a, n),
-          q[7]
-            ? Z
-              ? (Z.p(q, K), K & 128 && _(Z, 1))
-              : ((Z = Dr(q)), Z.c(), _(Z, 1), Z.m(i, null))
-            : Z &&
+          (!p || Q & 256) && n !== (n = Ar(j[8]) + "") && we(a, n),
+          j[7]
+            ? K
+              ? (K.p(j, Q), Q & 128 && _(K, 1))
+              : ((K = Dr(j)), K.c(), _(K, 1), K.m(i, null))
+            : K &&
               (ce(),
-              h(Z, 1, 1, () => {
-                Z = null;
+              h(K, 1, 1, () => {
+                K = null;
               }),
               ue()),
-          (!p || K & 32) && ve(T, q[5]),
-          (!p || K & 16) && f(g, "datetime", q[4]));
-        const ie = {};
-        (K & 8 && (ie.attachedTo = q[3]),
-          K & 64 && (ie.isPlayable = q[6]),
-          K & 262 && (ie.itemProperties = { subtitleLinks: [...q[2], ...q[1]], title: q[8] }),
-          y.$set(ie));
+          (!p || Q & 32) && we(T, j[5]),
+          (!p || Q & 16) && f(g, "datetime", j[4]));
+        const x = {};
+        (Q & 8 && (x.attachedTo = j[3]),
+          Q & 64 && (x.isPlayable = j[6]),
+          Q & 262 && (x.itemProperties = { subtitleLinks: [...j[2], ...j[1]], title: j[8] }),
+          y.$set(x));
       },
-      i(q) {
-        p || (_(N), _(Z), _(y.$$.fragment, q), (p = !0));
+      i(j) {
+        p || (_(H), _(K), _(y.$$.fragment, j), (p = !0));
       },
-      o(q) {
-        (h(N), h(Z), h(y.$$.fragment, q), (p = !1));
+      o(j) {
+        (h(H), h(K), h(y.$$.fragment, j), (p = !1));
       },
-      d(q) {
-        (q && d(e), N && N.d(), Z && Z.d(), O(y), (F = !1), te());
+      d(j) {
+        (j && d(e), H && H.d(), K && K.d(), z(y), (L = !1), te());
       },
     }
   );
@@ -2795,14 +2795,14 @@ function ql(s, e, t) {
   let r, i, l, n, a, o, c, u, m, k, E;
   var g;
   const T = Ze();
-  Ce(s, T, (F) => t(9, (E = F)));
+  De(s, T, (L) => t(9, (E = L)));
   const w = tt(),
     A = Lt();
   let { header: y } = e;
   const p = () => A(a);
   return (
-    (s.$$set = (F) => {
-      "header" in F && t(12, (y = F.header));
+    (s.$$set = (L) => {
+      "header" in L && t(12, (y = L.header));
     }),
     (s.$$.update = () => {
       (s.$$.dirty & 4096 && t(8, (r = y.firstRowText || "")),
@@ -2821,7 +2821,7 @@ function ql(s, e, t) {
 }
 class Wl extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, ql, zl, je, { header: 12 }));
+    (super(), Ve(this, e, ql, zl, He, { header: 12 }));
   }
 }
 function Ul(s) {
@@ -2862,8 +2862,8 @@ function Ul(s) {
         ])),
       );
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(l) {
       l && d(e);
     },
@@ -2889,12 +2889,12 @@ function Lr(s) {
     (t = new Gl({})),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(l) {
         e = S(l, "DIV", { class: !0, role: !0, "aria-label": !0, "data-testid": !0 });
         var n = v(e);
-        (z(t.$$.fragment, n), n.forEach(d), this.h());
+        (q(t.$$.fragment, n), n.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "popular svelte-taox9z"),
@@ -2903,7 +2903,7 @@ function Lr(s) {
           f(e, "data-testid", "popular-glyph"));
       },
       m(l, n) {
-        (P(l, e, n), B(t, e, null), (i = !0));
+        (P(l, e, n), O(t, e, null), (i = !0));
       },
       p(l, n) {
         (!i || (n & 8 && r !== (r = l[3].t("ASE.Web.Music.PopularTrack")))) && f(e, "aria-label", r);
@@ -2915,7 +2915,7 @@ function Lr(s) {
         (h(t.$$.fragment, l), (i = !1));
       },
       d(l) {
-        (l && d(e), O(t));
+        (l && d(e), z(t));
       },
     }
   );
@@ -2929,25 +2929,25 @@ function Mr(s) {
     t.$on("toggle", s[5]),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
-        (f(e, "class", "favorite svelte-taox9z"), $(e, "is-favorited", s[1]));
+        (f(e, "class", "favorite svelte-taox9z"), V(e, "is-favorited", s[1]));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
         (l & 2 && (n.isFavorited = i[1]),
           l & 8 && (n.title = i[3].t("ASE.Web.Music.VO.FavoriteHelpText")),
           t.$set(n),
-          (!r || l & 2) && $(e, "is-favorited", i[1]));
+          (!r || l & 2) && V(e, "is-favorited", i[1]));
       },
       i(i) {
         r || (_(t.$$.fragment, i), (r = !0));
@@ -2956,7 +2956,7 @@ function Mr(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -2969,12 +2969,12 @@ function Zl(s) {
     l = s[2] && Mr(s);
   return {
     c() {
-      ((e = I("div")), i && i.c(), (t = J()), l && l.c(), this.h());
+      ((e = I("div")), i && i.c(), (t = Z()), l && l.c(), this.h());
     },
     l(n) {
       e = S(n, "DIV", { class: !0 });
       var a = v(e);
-      (i && i.l(a), (t = Y(a)), l && l.l(a), a.forEach(d), this.h());
+      (i && i.l(a), (t = J(a)), l && l.l(a), a.forEach(d), this.h());
     },
     h() {
       f(e, "class", "favorite-or-popular svelte-taox9z");
@@ -3018,7 +3018,7 @@ function Zl(s) {
 function Jl(s, e, t) {
   let r;
   const i = Ze();
-  Ce(s, i, (c) => t(3, (r = c)));
+  De(s, i, (c) => t(3, (r = c)));
   let { isPopular: l = !1 } = e,
     { inFavorites: n = !1 } = e,
     { showFavoriteButton: a = !0 } = e;
@@ -3034,12 +3034,12 @@ function Jl(s, e, t) {
     [l, n, a, r, i, o]
   );
 }
-class Yl extends Fe {
+class Ql extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, Jl, Zl, je, { isPopular: 0, inFavorites: 1, showFavoriteButton: 2 }));
+    (super(), Ve(this, e, Jl, Zl, He, { isPopular: 0, inFavorites: 1, showFavoriteButton: 2 }));
   }
 }
-function Ql(s) {
+function Yl(s) {
   let e,
     t,
     r = [
@@ -3101,8 +3101,8 @@ function Ql(s) {
         ])),
       );
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(l) {
       l && d(e);
     },
@@ -3119,7 +3119,7 @@ function Xl(s, e, t) {
 }
 class xl extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, Xl, Ql, At, {}));
+    (super(), Ve(this, e, Xl, Yl, At, {}));
   }
 }
 function Fr(s) {
@@ -3128,18 +3128,18 @@ function Fr(s) {
     (t = new xl({})),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         f(e, "class", "songs-list-row__video-glyph svelte-ejraru");
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       i(i) {
         r || (_(t.$$.fragment, i), (r = !0));
@@ -3148,7 +3148,7 @@ function Fr(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -3157,12 +3157,12 @@ function en(s) {
   let e, t;
   return {
     c() {
-      ((e = I("div")), (t = pe(s[45])), this.h());
+      ((e = I("div")), (t = ve(s[45])), this.h());
     },
     l(r) {
       e = S(r, "DIV", { class: !0, "data-testid": !0 });
       var i = v(e);
-      ((t = be(i, s[45])), i.forEach(d), this.h());
+      ((t = ke(i, s[45])), i.forEach(d), this.h());
     },
     h() {
       (f(e, "class", "songs-list-row__column-data svelte-ejraru"), f(e, "data-testid", "track-number"));
@@ -3171,10 +3171,10 @@ function en(s) {
       (P(r, e, i), b(e, t));
     },
     p(r, i) {
-      i[1] & 16384 && ve(t, r[45]);
+      i[1] & 16384 && we(t, r[45]);
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(r) {
       r && d(e);
     },
@@ -3192,10 +3192,10 @@ function tn(s) {
     (t = n[e] = l[e](s)),
     {
       c() {
-        (t.c(), (r = He()));
+        (t.c(), (r = Ne()));
       },
       l(o) {
-        (t.l(o), (r = He()));
+        (t.l(o), (r = Ne()));
       },
       m(o, c) {
         (n[e].m(o, c), P(o, r, c), (i = !0));
@@ -3240,13 +3240,13 @@ function rn(s) {
     })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -3263,7 +3263,7 @@ function rn(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -3282,20 +3282,20 @@ function sn(s) {
     (l = new Wt({ props: { artwork: s[21], artworkProfile: s[43](), badgeArtwork: void 0, badgeName: void 0 } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), (r = J()), (i = I("div")), j(l.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), (r = Z()), (i = I("div")), B(l.$$.fragment), this.h());
       },
       l(a) {
         e = S(a, "DIV", { class: !0 });
         var o = v(e);
-        (z(t.$$.fragment, o), o.forEach(d), (r = Y(a)), (i = S(a, "DIV", { class: !0 })));
+        (q(t.$$.fragment, o), o.forEach(d), (r = J(a)), (i = S(a, "DIV", { class: !0 })));
         var c = v(i);
-        (z(l.$$.fragment, c), c.forEach(d), this.h());
+        (q(l.$$.fragment, c), c.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "is-viewport-small"), f(i, "class", "is-viewport-large"));
       },
       m(a, o) {
-        (P(a, e, o), B(t, e, null), P(a, r, o), P(a, i, o), B(l, i, null), (n = !0));
+        (P(a, e, o), O(t, e, null), P(a, r, o), P(a, i, o), O(l, i, null), (n = !0));
       },
       p(a, o) {
         const c = {};
@@ -3314,7 +3314,7 @@ function sn(s) {
         (h(t.$$.fragment, a), h(l.$$.fragment, a), (n = !1));
       },
       d(a) {
-        (a && (d(e), d(r), d(i)), O(t), O(l));
+        (a && (d(e), d(r), d(i)), z(t), z(l));
       },
     }
   );
@@ -3334,18 +3334,18 @@ function Vr(s) {
     })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0, "data-testid": !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "songs-list-row__play-button-wrapper svelte-ejraru"), f(e, "data-testid", "track-play-button"));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -3365,7 +3365,7 @@ function Vr(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -3376,13 +3376,13 @@ function ln(s) {
     (e = new Je({ props: { action: s[40], $$slots: { default: [on] }, $$scope: { ctx: s } } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -3397,7 +3397,7 @@ function ln(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -3409,14 +3409,14 @@ function nn(s) {
     (l = new fs({})),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), (r = J()), (i = I("span")), j(l.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), (r = Z()), (i = I("span")), B(l.$$.fragment), this.h());
       },
       l(a) {
         e = S(a, "DIV", { class: !0, dir: !0 });
         var o = v(e);
-        (z(t.$$.fragment, o), (r = Y(o)), (i = S(o, "SPAN", { class: !0 })));
+        (q(t.$$.fragment, o), (r = J(o)), (i = S(o, "SPAN", { class: !0 })));
         var c = v(i);
-        (z(l.$$.fragment, c), c.forEach(d), o.forEach(d), this.h());
+        (q(l.$$.fragment, c), c.forEach(d), o.forEach(d), this.h());
       },
       h() {
         (f(i, "class", "songs-list-row__badge songs-list-row__badge--explicit svelte-ejraru"),
@@ -3424,7 +3424,7 @@ function nn(s) {
           f(e, "dir", "auto"));
       },
       m(a, o) {
-        (P(a, e, o), B(t, e, null), b(e, r), b(e, i), B(l, i, null), (n = !0));
+        (P(a, e, o), O(t, e, null), b(e, r), b(e, i), O(l, i, null), (n = !0));
       },
       p(a, o) {
         const c = {};
@@ -3439,7 +3439,7 @@ function nn(s) {
         (h(t.$$.fragment, a), h(l.$$.fragment, a), (n = !1));
       },
       d(a) {
-        (a && d(e), O(t), O(l));
+        (a && d(e), z(t), z(l));
       },
     }
   );
@@ -3448,12 +3448,12 @@ function on(s) {
   let e, t;
   return {
     c() {
-      ((e = I("div")), (t = pe(s[13])), this.h());
+      ((e = I("div")), (t = ve(s[13])), this.h());
     },
     l(r) {
       e = S(r, "DIV", { class: !0, "aria-label": !0, tabindex: !0, role: !0, dir: !0, "data-testid": !0 });
       var i = v(e);
-      ((t = be(i, s[13])), i.forEach(d), this.h());
+      ((t = ke(i, s[13])), i.forEach(d), this.h());
     },
     h() {
       (f(e, "class", "songs-list-row__song-name svelte-ejraru"),
@@ -3467,7 +3467,7 @@ function on(s) {
       (P(r, e, i), b(e, t));
     },
     p(r, i) {
-      (i[0] & 8192 && ve(t, r[13]), i[0] & 8192 && f(e, "aria-label", r[13]));
+      (i[0] & 8192 && we(t, r[13]), i[0] & 8192 && f(e, "aria-label", r[13]));
     },
     d(r) {
       r && d(e);
@@ -3478,12 +3478,12 @@ function an(s) {
   let e, t;
   return {
     c() {
-      ((e = I("div")), (t = pe(s[13])), this.h());
+      ((e = I("div")), (t = ve(s[13])), this.h());
     },
     l(r) {
       e = S(r, "DIV", { class: !0, "aria-label": !0, tabindex: !0, role: !0, dir: !0, "data-testid": !0 });
       var i = v(e);
-      ((t = be(i, s[13])), i.forEach(d), this.h());
+      ((t = ke(i, s[13])), i.forEach(d), this.h());
     },
     h() {
       (f(e, "class", "songs-list-row__song-name svelte-ejraru"),
@@ -3497,7 +3497,7 @@ function an(s) {
       (P(r, e, i), b(e, t));
     },
     p(r, i) {
-      (i[0] & 8192 && ve(t, r[13]), i[0] & 8192 && f(e, "aria-label", r[13]));
+      (i[0] & 8192 && we(t, r[13]), i[0] & 8192 && f(e, "aria-label", r[13]));
     },
     d(r) {
       r && d(e);
@@ -3517,24 +3517,24 @@ function $r(s) {
     })),
     {
       c() {
-        ((e = I("div")), (t = I("span")), j(r.$$.fragment), this.h());
+        ((e = I("div")), (t = I("span")), B(r.$$.fragment), this.h());
       },
       l(l) {
         e = S(l, "DIV", { class: !0, "data-testid": !0, dir: !0 });
         var n = v(e);
         t = S(n, "SPAN", { class: !0 });
         var a = v(t);
-        (z(r.$$.fragment, a), a.forEach(d), n.forEach(d), this.h());
+        (q(r.$$.fragment, a), a.forEach(d), n.forEach(d), this.h());
       },
       h() {
         (f(t, "class", "svelte-ejraru"),
           f(e, "class", "songs-list-row__by-line svelte-ejraru"),
           f(e, "data-testid", "track-title-by-line"),
           f(e, "dir", "auto"),
-          $(e, "songs-list-row__by-line__mobile", !s[6] || s[24]));
+          V(e, "songs-list-row__by-line__mobile", !s[6] || s[24]));
       },
       m(l, n) {
-        (P(l, e, n), b(e, t), B(r, t, null), (i = !0));
+        (P(l, e, n), b(e, t), O(r, t, null), (i = !0));
       },
       p(l, n) {
         const a = {};
@@ -3542,7 +3542,7 @@ function $r(s) {
           n[0] & 33554432 && (a.translateFn = l[25].t),
           n[3] & 3072 && (a.$$scope = { dirty: n, ctx: l }),
           r.$set(a),
-          (!i || n[0] & 16777280) && $(e, "songs-list-row__by-line__mobile", !l[6] || l[24]));
+          (!i || n[0] & 16777280) && V(e, "songs-list-row__by-line__mobile", !l[6] || l[24]));
       },
       i(l) {
         i || (_(r.$$.fragment, l), (i = !0));
@@ -3551,7 +3551,7 @@ function $r(s) {
         (h(r.$$.fragment, l), (i = !1));
       },
       d(l) {
-        (l && d(e), O(r));
+        (l && d(e), z(r));
       },
     }
   );
@@ -3561,16 +3561,16 @@ function cn(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i[3] & 1024 && e !== (e = r[103].title + "") && ve(t, e);
+      i[3] & 1024 && e !== (e = r[103].title + "") && we(t, e);
     },
     d(r) {
       r && d(t);
@@ -3583,13 +3583,13 @@ function un(s) {
     (e = new Je({ props: { action: s[103].segue, $$slots: { default: [cn] }, $$scope: { ctx: s } } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -3602,7 +3602,7 @@ function un(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -3611,12 +3611,12 @@ function Rr(s) {
   let e, t;
   return {
     c() {
-      ((e = I("div")), (t = pe(s[44])), this.h());
+      ((e = I("div")), (t = ve(s[44])), this.h());
     },
     l(r) {
       e = S(r, "DIV", { class: !0, "data-testid": !0 });
       var i = v(e);
-      ((t = be(i, s[44])), i.forEach(d), this.h());
+      ((t = ke(i, s[44])), i.forEach(d), this.h());
     },
     h() {
       (f(e, "class", "songs-list-row__rank svelte-ejraru"), f(e, "data-testid", "track-ranking"));
@@ -3625,7 +3625,7 @@ function Rr(s) {
       (P(r, e, i), b(e, t));
     },
     p(r, i) {
-      i[1] & 8192 && ve(t, r[44]);
+      i[1] & 8192 && we(t, r[44]);
     },
     d(r) {
       r && d(e);
@@ -3702,13 +3702,13 @@ function fn(s) {
     })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -3724,7 +3724,7 @@ function fn(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -3742,13 +3742,13 @@ function dn(s) {
     })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -3764,7 +3764,7 @@ function dn(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -3774,16 +3774,16 @@ function mn(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i[3] & 1024 && e !== (e = r[103].title + "") && ve(t, e);
+      i[3] & 1024 && e !== (e = r[103].title + "") && we(t, e);
     },
     d(r) {
       r && d(t);
@@ -3796,15 +3796,15 @@ function _n(s) {
     (t = new Je({ props: { action: s[103].segue, $$slots: { default: [mn] }, $$scope: { ctx: s } } })),
     {
       c() {
-        ((e = I("span")), j(t.$$.fragment));
+        ((e = I("span")), B(t.$$.fragment));
       },
       l(i) {
         e = S(i, "SPAN", {});
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d));
+        (q(t.$$.fragment, l), l.forEach(d));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -3817,7 +3817,7 @@ function _n(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -3827,16 +3827,16 @@ function hn(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i[3] & 512 && e !== (e = r[102].title + "") && ve(t, e);
+      i[3] & 512 && e !== (e = r[102].title + "") && we(t, e);
     },
     d(r) {
       r && d(t);
@@ -3849,15 +3849,15 @@ function gn(s) {
     (t = new Je({ props: { action: s[102].segue, $$slots: { default: [hn] }, $$scope: { ctx: s } } })),
     {
       c() {
-        ((e = I("span")), j(t.$$.fragment));
+        ((e = I("span")), B(t.$$.fragment));
       },
       l(i) {
         e = S(i, "SPAN", {});
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d));
+        (q(t.$$.fragment, l), l.forEach(d));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -3870,7 +3870,7 @@ function gn(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -3946,13 +3946,13 @@ function pn(s) {
     })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -3968,7 +3968,7 @@ function pn(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -3979,10 +3979,10 @@ function bn(s) {
     r = s[18] && jr(s);
   return {
     c() {
-      (r && r.c(), (e = He()));
+      (r && r.c(), (e = Ne()));
     },
     l(i) {
-      (r && r.l(i), (e = He()));
+      (r && r.l(i), (e = Ne()));
     },
     m(i, l) {
       (r && r.m(i, l), P(i, e, l), (t = !0));
@@ -4015,16 +4015,16 @@ function vn(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i[3] & 512 && e !== (e = r[102].title + "") && ve(t, e);
+      i[3] & 512 && e !== (e = r[102].title + "") && we(t, e);
     },
     d(r) {
       r && d(t);
@@ -4037,15 +4037,15 @@ function kn(s) {
     (t = new Je({ props: { action: s[102].segue, $$slots: { default: [vn] }, $$scope: { ctx: s } } })),
     {
       c() {
-        ((e = I("span")), j(t.$$.fragment));
+        ((e = I("span")), B(t.$$.fragment));
       },
       l(i) {
         e = S(i, "SPAN", {});
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d));
+        (q(t.$$.fragment, l), l.forEach(d));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -4058,7 +4058,7 @@ function kn(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -4075,28 +4075,28 @@ function jr(s) {
     (t = new ki({ props: { artwork: s[18]?.attributes.artwork, name: s[18]?.attributes.name } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), (r = J()), (i = I("span")), (n = pe(l)), this.h());
+        ((e = I("div")), B(t.$$.fragment), (r = Z()), (i = I("span")), (n = ve(l)), this.h());
       },
       l(o) {
         e = S(o, "DIV", { class: !0 });
         var c = v(e);
-        (z(t.$$.fragment, c), (r = Y(c)), (i = S(c, "SPAN", { class: !0 })));
+        (q(t.$$.fragment, c), (r = J(c)), (i = S(c, "SPAN", { class: !0 })));
         var u = v(i);
-        ((n = be(u, l)), u.forEach(d), c.forEach(d), this.h());
+        ((n = ke(u, l)), u.forEach(d), c.forEach(d), this.h());
       },
       h() {
         (f(i, "class", "songs-list-row__badge-name"),
           f(e, "class", "songs-list-row__badge__contributor-wrapper svelte-ejraru"));
       },
       m(o, c) {
-        (P(o, e, c), B(t, e, null), b(e, r), b(e, i), b(i, n), (a = !0));
+        (P(o, e, c), O(t, e, null), b(e, r), b(e, i), b(i, n), (a = !0));
       },
       p(o, c) {
         const u = {};
         (c[0] & 262144 && (u.artwork = o[18]?.attributes.artwork),
           c[0] & 262144 && (u.name = o[18]?.attributes.name),
           t.$set(u),
-          (!a || c[0] & 262144) && l !== (l = o[18]?.attributes.name + "") && ve(n, l));
+          (!a || c[0] & 262144) && l !== (l = o[18]?.attributes.name + "") && we(n, l));
       },
       i(o) {
         a || (_(t.$$.fragment, o), (a = !0));
@@ -4105,7 +4105,7 @@ function jr(s) {
         (h(t.$$.fragment, o), (a = !1));
       },
       d(o) {
-        (o && d(e), O(t));
+        (o && d(e), z(t));
       },
     }
   );
@@ -4135,7 +4135,7 @@ function Br(s) {
           f(t, "dir", (l = s[23] ? "auto" : void 0)),
           f(e, "class", "songs-list__col songs-list__col--quaternary svelte-ejraru"),
           f(e, "data-testid", "track-column-quaternary"),
-          $(e, "songs-list__reactions", s[7]));
+          V(e, "songs-list__reactions", s[7]));
       },
       m(u, m) {
         (P(u, e, m), b(e, t), ~r && o[r].m(t, null), (n = !0));
@@ -4153,7 +4153,7 @@ function Br(s) {
                 ue()),
               ~r ? ((i = o[r]), i ? i.p(u, m) : ((i = o[r] = a[r](u)), i.c()), _(i, 1), i.m(t, null)) : (i = null)),
           (!n || (m[0] & 8388608 && l !== (l = u[23] ? "auto" : void 0))) && f(t, "dir", l),
-          (!n || m[0] & 128) && $(e, "songs-list__reactions", u[7]));
+          (!n || m[0] & 128) && V(e, "songs-list__reactions", u[7]));
       },
       i(u) {
         n || (_(i), (n = !0));
@@ -4179,28 +4179,28 @@ function wn(s) {
     (t = new ki({ props: { artwork: s[18]?.attributes.artwork, name: s[18]?.attributes.name } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), (r = J()), (i = I("span")), (n = pe(l)), this.h());
+        ((e = I("div")), B(t.$$.fragment), (r = Z()), (i = I("span")), (n = ve(l)), this.h());
       },
       l(o) {
         e = S(o, "DIV", { class: !0 });
         var c = v(e);
-        (z(t.$$.fragment, c), (r = Y(c)), (i = S(c, "SPAN", { class: !0 })));
+        (q(t.$$.fragment, c), (r = J(c)), (i = S(c, "SPAN", { class: !0 })));
         var u = v(i);
-        ((n = be(u, l)), u.forEach(d), c.forEach(d), this.h());
+        ((n = ke(u, l)), u.forEach(d), c.forEach(d), this.h());
       },
       h() {
         (f(i, "class", "songs-list-row__badge-name"),
           f(e, "class", "songs-list-row__badge__contributor-wrapper svelte-ejraru"));
       },
       m(o, c) {
-        (P(o, e, c), B(t, e, null), b(e, r), b(e, i), b(i, n), (a = !0));
+        (P(o, e, c), O(t, e, null), b(e, r), b(e, i), b(i, n), (a = !0));
       },
       p(o, c) {
         const u = {};
         (c[0] & 262144 && (u.artwork = o[18]?.attributes.artwork),
           c[0] & 262144 && (u.name = o[18]?.attributes.name),
           t.$set(u),
-          (!a || c[0] & 262144) && l !== (l = o[18]?.attributes.name + "") && ve(n, l));
+          (!a || c[0] & 262144) && l !== (l = o[18]?.attributes.name + "") && we(n, l));
       },
       i(o) {
         a || (_(t.$$.fragment, o), (a = !0));
@@ -4209,7 +4209,7 @@ function wn(s) {
         (h(t.$$.fragment, o), (a = !1));
       },
       d(o) {
-        (o && d(e), O(t));
+        (o && d(e), z(t));
       },
     }
   );
@@ -4221,20 +4221,20 @@ function yn(s) {
     (l = new ms({ props: { trackId: s[14] } })),
     {
       c() {
-        ((e = I("span")), j(t.$$.fragment), (r = J()), (i = I("span")), j(l.$$.fragment), this.h());
+        ((e = I("span")), B(t.$$.fragment), (r = Z()), (i = I("span")), B(l.$$.fragment), this.h());
       },
       l(a) {
         e = S(a, "SPAN", { class: !0 });
         var o = v(e);
-        (z(t.$$.fragment, o), o.forEach(d), (r = Y(a)), (i = S(a, "SPAN", { class: !0 })));
+        (q(t.$$.fragment, o), o.forEach(d), (r = J(a)), (i = S(a, "SPAN", { class: !0 })));
         var c = v(i);
-        (z(l.$$.fragment, c), c.forEach(d), this.h());
+        (q(l.$$.fragment, c), c.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "is-viewport-large"), f(i, "class", "is-viewport-small"));
       },
       m(a, o) {
-        (P(a, e, o), B(t, e, null), P(a, r, o), P(a, i, o), B(l, i, null), (n = !0));
+        (P(a, e, o), O(t, e, null), P(a, r, o), P(a, i, o), O(l, i, null), (n = !0));
       },
       p(a, o) {
         const c = {};
@@ -4251,7 +4251,7 @@ function yn(s) {
         (h(t.$$.fragment, a), h(l.$$.fragment, a), (n = !1));
       },
       d(a) {
-        (a && (d(e), d(r), d(i)), O(t), O(l));
+        (a && (d(e), d(r), d(i)), z(t), z(l));
       },
     }
   );
@@ -4262,18 +4262,18 @@ function Or(s) {
     (t = new Je({ props: { action: s[0].playAction, $$slots: { default: [In] }, $$scope: { ctx: s } } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0, "data-testid": !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "songs-list-row__preview-button svelte-ejraru"), f(e, "data-testid", "track-preview"));
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -4288,7 +4288,7 @@ function Or(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -4298,16 +4298,16 @@ function In(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i[0] & 33554432 && e !== (e = r[25].t("ASE.Web.Music.Preview.AllCaps") + "") && ve(t, e);
+      i[0] & 33554432 && e !== (e = r[25].t("ASE.Web.Music.Preview.AllCaps") + "") && we(t, e);
     },
     d(r) {
       r && d(t);
@@ -4320,18 +4320,18 @@ function zr(s) {
     (t = new _s({ props: { contentDescriptor: s[0].contentDescriptor, iconOnly: !0 } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         f(e, "class", "songs-list-row__add-to-library svelte-ejraru");
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         const n = {};
@@ -4344,7 +4344,7 @@ function zr(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -4353,12 +4353,12 @@ function qr(s) {
   let e, t;
   return {
     c() {
-      ((e = I("time")), (t = pe(s[38])), this.h());
+      ((e = I("time")), (t = ve(s[38])), this.h());
     },
     l(r) {
       e = S(r, "TIME", { datetime: !0, class: !0, "data-testid": !0 });
       var i = v(e);
-      ((t = be(i, s[38])), i.forEach(d), this.h());
+      ((t = ke(i, s[38])), i.forEach(d), this.h());
     },
     h() {
       (f(e, "datetime", s[37]),
@@ -4369,7 +4369,7 @@ function qr(s) {
       (P(r, e, i), b(e, t));
     },
     p(r, i) {
-      (i[1] & 128 && ve(t, r[38]), i[1] & 64 && f(e, "datetime", r[37]));
+      (i[1] & 128 && we(t, r[38]), i[1] & 64 && f(e, "datetime", r[37]));
     },
     d(r) {
       r && d(e);
@@ -4399,22 +4399,22 @@ function Wr(s) {
       },
     })),
     t.$on("actionComplete", function () {
-      Ye(s[101]) && s[101].apply(this, arguments);
+      Qe(s[101]) && s[101].apply(this, arguments);
     }),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         f(e, "class", "songs-list-row__context-menu svelte-ejraru");
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       p(i, l) {
         s = i;
@@ -4443,7 +4443,7 @@ function Wr(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -4459,10 +4459,10 @@ function Sn(s) {
     o = r && Wr(s);
   return {
     c() {
-      (n && n.c(), (e = J()), a && a.c(), (t = J()), o && o.c(), (i = He()));
+      (n && n.c(), (e = Z()), a && a.c(), (t = Z()), o && o.c(), (i = Ne()));
     },
     l(c) {
-      (n && n.l(c), (e = Y(c)), a && a.l(c), (t = Y(c)), o && o.l(c), (i = He()));
+      (n && n.l(c), (e = J(c)), a && a.l(c), (t = J(c)), o && o.l(c), (i = Ne()));
     },
     m(c, u) {
       (n && n.m(c, u), P(c, e, u), a && a.m(c, u), P(c, t, u), o && o.m(c, u), P(c, i, u), (l = !0));
@@ -4503,31 +4503,31 @@ function Sn(s) {
   };
 }
 function En(s) {
-  let e, t, r, i, l, n, a, o, c, u, m, k, E, g, T, w, A, y, p, F, te, N, Z, q, K, ie, ne, X, fe, ke, x, G, _e, Pe;
-  ((r = new Yl({ props: { isPopular: s[0].showPopularityIndicator, inFavorites: s[29], showFavoriteButton: s[41] } })),
+  let e, t, r, i, l, n, a, o, c, u, m, k, E, g, T, w, A, y, p, L, te, H, K, j, Q, x, he, Y, fe, ye, R, ne, _e;
+  ((r = new Ql({ props: { isPopular: s[0].showPopularityIndicator, inFavorites: s[29], showFavoriteButton: s[41] } })),
     r.$on("toggle", s[61]));
-  let H = s[15] && !s[42] && Fr();
-  const le = [tn, en],
-    W = [];
-  function Q(D, L) {
+  let oe = s[15] && !s[42] && Fr();
+  const X = [tn, en],
+    ie = [];
+  function G(D, F) {
     return D[42] ? 0 : D[45] || D[45] === 0 ? 1 : -1;
   }
-  ~(c = Q(s)) && (u = W[c] = le[c](s));
-  let V = s[0].playAction && !s[16] && Vr(s);
-  const De = [nn, ln],
-    ge = [];
-  function Te(D, L) {
+  ~(c = G(s)) && (u = ie[c] = X[c](s));
+  let $ = s[0].playAction && !s[16] && Vr(s);
+  const W = [nn, ln],
+    Ie = [];
+  function Ae(D, F) {
     return D[11] ? 0 : 1;
   }
-  ((T = Te(s)), (w = ge[T] = De[T](s)));
-  let de = s[12].length && $r(s),
-    Ie = s[44] && Rr(s),
-    oe = s[4] && s[20] !== "albumTrackList" && Nr(s),
-    me = s[5] && Hr(s),
-    U = s[6] && Br(s),
-    we = s[47] && Or(s);
+  ((T = Ae(s)), (w = Ie[T] = W[T](s)));
+  let se = s[12].length && $r(s),
+    be = s[44] && Rr(s),
+    ge = s[4] && s[20] !== "albumTrackList" && Nr(s),
+    ae = s[5] && Hr(s),
+    de = s[6] && Br(s),
+    U = s[47] && Or(s);
   return (
-    (ne = new ts({
+    (x = new ts({
       props: {
         contentDescriptor: s[0].contentDescriptor,
         isPlayable: s[30].playAction !== null,
@@ -4541,42 +4541,41 @@ function En(s) {
         $$scope: { ctx: s },
       },
     })),
-    ne.$on("contextMenuActionComplete", s[90]),
+    x.$on("contextMenuActionComplete", s[90]),
     {
       c() {
         ((e = I("div")),
           (t = I("div")),
-          j(r.$$.fragment),
-          (i = J()),
+          B(r.$$.fragment),
+          (i = Z()),
           (l = I("div")),
           (n = I("div")),
-          H && H.c(),
-          (a = J()),
+          oe && oe.c(),
+          (a = Z()),
           (o = I("div")),
           u && u.c(),
-          (m = J()),
-          V && V.c(),
-          (k = J()),
+          (m = Z()),
+          $ && $.c(),
+          (k = Z()),
           (E = I("div")),
           (g = I("div")),
           w.c(),
-          (A = J()),
+          (A = Z()),
+          se && se.c(),
+          (y = Z()),
+          be && be.c(),
+          (p = Z()),
+          ge && ge.c(),
+          (L = Z()),
+          ae && ae.c(),
+          (te = Z()),
           de && de.c(),
-          (y = J()),
-          (p = J()),
-          Ie && Ie.c(),
-          (F = J()),
-          oe && oe.c(),
-          (te = J()),
-          me && me.c(),
-          (N = J()),
-          U && U.c(),
-          (Z = J()),
-          (q = I("div")),
+          (H = Z()),
           (K = I("div")),
-          we && we.c(),
-          (ie = J()),
-          j(ne.$$.fragment),
+          (j = I("div")),
+          U && U.c(),
+          (Q = Z()),
+          B(x.$$.fragment),
           this.h());
       },
       l(D) {
@@ -4589,299 +4588,297 @@ function En(s) {
           "data-testid": !0,
           "aria-label": !0,
         });
-        var L = v(e);
-        t = S(L, "DIV", { class: !0, "data-testid": !0 });
-        var Se = v(t);
-        (z(r.$$.fragment, Se), Se.forEach(d), (i = Y(L)), (l = S(L, "DIV", { class: !0, "data-testid": !0 })));
-        var $e = v(l);
-        n = S($e, "DIV", { class: !0 });
-        var Ae = v(n);
-        (H && H.l(Ae), (a = Y(Ae)), (o = S(Ae, "DIV", { class: !0 })));
-        var Le = v(o);
-        (u && u.l(Le), (m = Y(Le)), V && V.l(Le), Le.forEach(d), (k = Y(Ae)), (E = S(Ae, "DIV", { class: !0 })));
-        var Oe = v(E);
-        g = S(Oe, "DIV", { class: !0, "data-testid": !0 });
-        var C = v(g);
-        (w.l(C),
-          (A = Y(C)),
-          de && de.l(C),
-          C.forEach(d),
-          (y = Y(Oe)),
-          Oe.forEach(d),
-          (p = Y(Ae)),
-          Ie && Ie.l(Ae),
-          Ae.forEach(d),
-          $e.forEach(d),
-          (F = Y(L)),
-          oe && oe.l(L),
-          (te = Y(L)),
-          me && me.l(L),
-          (N = Y(L)),
-          U && U.l(L),
-          (Z = Y(L)),
-          (q = S(L, "DIV", { class: !0, "data-testid": !0 })));
-        var re = v(q);
-        K = S(re, "DIV", { class: !0 });
-        var ae = v(K);
-        (we && we.l(ae), (ie = Y(ae)), z(ne.$$.fragment, ae), ae.forEach(d), re.forEach(d), L.forEach(d), this.h());
+        var F = v(e);
+        t = S(F, "DIV", { class: !0, "data-testid": !0 });
+        var Le = v(t);
+        (q(r.$$.fragment, Le), Le.forEach(d), (i = J(F)), (l = S(F, "DIV", { class: !0, "data-testid": !0 })));
+        var Ce = v(l);
+        n = S(Ce, "DIV", { class: !0 });
+        var Pe = v(n);
+        (oe && oe.l(Pe), (a = J(Pe)), (o = S(Pe, "DIV", { class: !0 })));
+        var Te = v(o);
+        (u && u.l(Te), (m = J(Te)), $ && $.l(Te), Te.forEach(d), (k = J(Pe)), (E = S(Pe, "DIV", { class: !0 })));
+        var je = v(E);
+        g = S(je, "DIV", { class: !0, "data-testid": !0 });
+        var Be = v(g);
+        (w.l(Be),
+          (A = J(Be)),
+          se && se.l(Be),
+          Be.forEach(d),
+          je.forEach(d),
+          (y = J(Pe)),
+          be && be.l(Pe),
+          Pe.forEach(d),
+          Ce.forEach(d),
+          (p = J(F)),
+          ge && ge.l(F),
+          (L = J(F)),
+          ae && ae.l(F),
+          (te = J(F)),
+          de && de.l(F),
+          (H = J(F)),
+          (K = S(F, "DIV", { class: !0, "data-testid": !0 })));
+        var C = v(K);
+        j = S(C, "DIV", { class: !0 });
+        var re = v(j);
+        (U && U.l(re), (Q = J(re)), q(x.$$.fragment, re), re.forEach(d), C.forEach(d), F.forEach(d), this.h());
       },
       h() {
         (f(t, "class", "songs-list__col songs-list__col--favorite-or-popular svelte-ejraru"),
           f(t, "data-testid", "track-column-favorite-or-popular"),
           f(o, "class", "songs-list-row__song-index svelte-ejraru"),
-          $(o, "songs-list-row__song-index--ranking", s[44]),
-          $(o, "songs-list-row--with-collaborators", !s[17]),
+          V(o, "songs-list-row__song-index--ranking", s[44]),
+          V(o, "songs-list-row--with-collaborators", !s[17]),
           f(g, "class", "songs-list-row__song-name-wrapper svelte-ejraru"),
           f(g, "data-testid", "song-name-wrapper"),
-          $(g, "songs-list-row__song-name-wrapper--explicit", s[11]),
+          V(g, "songs-list-row__song-name-wrapper--explicit", s[11]),
           f(E, "class", "songs-list-row__song-wrapper svelte-ejraru"),
           f(n, "class", "songs-list-row__song-container svelte-ejraru"),
           f(l, "class", "songs-list__col songs-list__col--song svelte-ejraru"),
           f(l, "data-testid", "track-column-song"),
-          f(K, "class", "songs-list-row__controls svelte-ejraru"),
-          f(q, "class", "songs-list__col songs-list__col--time svelte-ejraru"),
-          f(q, "data-testid", "track-column-controls"),
+          f(j, "class", "songs-list-row__controls svelte-ejraru"),
+          f(K, "class", "songs-list__col songs-list__col--time svelte-ejraru"),
+          f(K, "data-testid", "track-column-controls"),
           f(e, "class", "songs-list-row drop-reset svelte-ejraru"),
           f(e, "role", "row"),
           f(e, "tabindex", "0"),
           f(e, "data-row", s[1]),
-          f(e, "data-current-mouse-target", (X = s[49].currentMouseTarget === s[0])),
+          f(e, "data-current-mouse-target", (he = s[49].currentMouseTarget === s[0])),
           f(e, "data-testid", "track-list-item"),
           f(e, "aria-label", s[28]),
-          $(e, "is-loading", s[36]),
-          $(e, "is-playing", s[35]),
-          $(e, "is-paused", s[34]),
-          $(e, "songs-list-row--disabled", s[16]),
-          $(e, "songs-list-row--artwork", s[42]),
-          $(e, "songs-list-row--no-artwork", !s[42]),
-          $(e, "songs-list-row--decorated", s[42] && s[22]),
-          $(e, "songs-list-row--two-lines", s[12].length),
-          $(e, "songs-list-row--album", s[20] === "albumTrackList"),
-          $(e, "songs-list-row--playlist", s[20] === "playlistTrackList"),
-          $(e, "songs-list-row--compilation", s[20] === "compilationTrackList"),
-          $(e, "songs-list-row--selected", s[2]),
-          $(e, "songs-list-row--preview", s[47]),
-          $(e, "disabled", s[16]));
+          V(e, "is-loading", s[36]),
+          V(e, "is-playing", s[35]),
+          V(e, "is-paused", s[34]),
+          V(e, "songs-list-row--disabled", s[16]),
+          V(e, "songs-list-row--artwork", s[42]),
+          V(e, "songs-list-row--no-artwork", !s[42]),
+          V(e, "songs-list-row--decorated", s[42] && s[22]),
+          V(e, "songs-list-row--two-lines", s[12].length),
+          V(e, "songs-list-row--album", s[20] === "albumTrackList"),
+          V(e, "songs-list-row--playlist", s[20] === "playlistTrackList"),
+          V(e, "songs-list-row--compilation", s[20] === "compilationTrackList"),
+          V(e, "songs-list-row--selected", s[2]),
+          V(e, "songs-list-row--preview", s[47]),
+          V(e, "disabled", s[16]));
       },
-      m(D, L) {
-        (P(D, e, L),
+      m(D, F) {
+        (P(D, e, F),
           b(e, t),
-          B(r, t, null),
+          O(r, t, null),
           b(e, i),
           b(e, l),
           b(l, n),
-          H && H.m(n, null),
+          oe && oe.m(n, null),
           b(n, a),
           b(n, o),
-          ~c && W[c].m(o, null),
+          ~c && ie[c].m(o, null),
           b(o, m),
-          V && V.m(o, null),
+          $ && $.m(o, null),
           b(n, k),
           b(n, E),
           b(E, g),
-          ge[T].m(g, null),
+          Ie[T].m(g, null),
           b(g, A),
-          de && de.m(g, null),
-          b(E, y),
-          b(n, p),
-          Ie && Ie.m(n, null),
-          b(e, F),
-          oe && oe.m(e, null),
+          se && se.m(g, null),
+          b(n, y),
+          be && be.m(n, null),
+          b(e, p),
+          ge && ge.m(e, null),
+          b(e, L),
+          ae && ae.m(e, null),
           b(e, te),
-          me && me.m(e, null),
-          b(e, N),
-          U && U.m(e, null),
-          b(e, Z),
-          b(e, q),
-          b(q, K),
-          we && we.m(K, null),
-          b(K, ie),
-          B(ne, K, null),
+          de && de.m(e, null),
+          b(e, H),
+          b(e, K),
+          b(K, j),
+          U && U.m(j, null),
+          b(j, Q),
+          O(x, j, null),
           s[91](e),
-          (G = !0),
-          _e ||
-            ((Pe = [
+          (R = !0),
+          ne ||
+            ((_e = [
               Me(e, "dblclick", s[92]),
               Me(e, "mousedown", s[93]),
               Me(e, "mousedown", s[57]),
               Me(e, "click", s[59]),
               Me(e, "keydown", s[58]),
               Me(e, "focusin", s[60]),
-              et((fe = An.call(null, e, s[3]))),
-              et((ke = rs.call(null, e, s[8] && { targets: [ft.Top, ft.Bottom], onDrop: s[94] }))),
-              et((x = s[56].call(null, e, { impressionMetrics: s[32], location: s[31] }))),
+              et((Y = An.call(null, e, s[3]))),
+              et((fe = rs.call(null, e, s[8] && { targets: [ft.Top, ft.Bottom], onDrop: s[94] }))),
+              et((ye = s[56].call(null, e, { impressionMetrics: s[32], location: s[31] }))),
             ]),
-            (_e = !0)));
+            (ne = !0)));
       },
-      p(D, L) {
-        const Se = {};
-        (L[0] & 1 && (Se.isPopular = D[0].showPopularityIndicator),
-          L[0] & 536870912 && (Se.inFavorites = D[29]),
-          L[1] & 1024 && (Se.showFavoriteButton = D[41]),
-          r.$set(Se),
+      p(D, F) {
+        const Le = {};
+        (F[0] & 1 && (Le.isPopular = D[0].showPopularityIndicator),
+          F[0] & 536870912 && (Le.inFavorites = D[29]),
+          F[1] & 1024 && (Le.showFavoriteButton = D[41]),
+          r.$set(Le),
           D[15] && !D[42]
-            ? H
-              ? (L[0] & 32768) | (L[1] & 2048) && _(H, 1)
-              : ((H = Fr()), H.c(), _(H, 1), H.m(n, a))
-            : H &&
+            ? oe
+              ? (F[0] & 32768) | (F[1] & 2048) && _(oe, 1)
+              : ((oe = Fr()), oe.c(), _(oe, 1), oe.m(n, a))
+            : oe &&
               (ce(),
-              h(H, 1, 1, () => {
-                H = null;
+              h(oe, 1, 1, () => {
+                oe = null;
               }),
               ue()));
-        let $e = c;
-        ((c = Q(D)),
-          c === $e
-            ? ~c && W[c].p(D, L)
+        let Ce = c;
+        ((c = G(D)),
+          c === Ce
+            ? ~c && ie[c].p(D, F)
             : (u &&
                 (ce(),
-                h(W[$e], 1, 1, () => {
-                  W[$e] = null;
+                h(ie[Ce], 1, 1, () => {
+                  ie[Ce] = null;
                 }),
                 ue()),
-              ~c ? ((u = W[c]), u ? u.p(D, L) : ((u = W[c] = le[c](D)), u.c()), _(u, 1), u.m(o, m)) : (u = null)),
+              ~c ? ((u = ie[c]), u ? u.p(D, F) : ((u = ie[c] = X[c](D)), u.c()), _(u, 1), u.m(o, m)) : (u = null)),
           D[0].playAction && !D[16]
-            ? V
-              ? (V.p(D, L), L[0] & 65537 && _(V, 1))
-              : ((V = Vr(D)), V.c(), _(V, 1), V.m(o, null))
-            : V &&
+            ? $
+              ? ($.p(D, F), F[0] & 65537 && _($, 1))
+              : (($ = Vr(D)), $.c(), _($, 1), $.m(o, null))
+            : $ &&
               (ce(),
-              h(V, 1, 1, () => {
-                V = null;
+              h($, 1, 1, () => {
+                $ = null;
               }),
               ue()),
-          (!G || L[1] & 8192) && $(o, "songs-list-row__song-index--ranking", D[44]),
-          (!G || L[0] & 131072) && $(o, "songs-list-row--with-collaborators", !D[17]));
-        let Ae = T;
-        ((T = Te(D)),
-          T === Ae
-            ? ge[T].p(D, L)
+          (!R || F[1] & 8192) && V(o, "songs-list-row__song-index--ranking", D[44]),
+          (!R || F[0] & 131072) && V(o, "songs-list-row--with-collaborators", !D[17]));
+        let Pe = T;
+        ((T = Ae(D)),
+          T === Pe
+            ? Ie[T].p(D, F)
             : (ce(),
-              h(ge[Ae], 1, 1, () => {
-                ge[Ae] = null;
+              h(Ie[Pe], 1, 1, () => {
+                Ie[Pe] = null;
               }),
               ue(),
-              (w = ge[T]),
-              w ? w.p(D, L) : ((w = ge[T] = De[T](D)), w.c()),
+              (w = Ie[T]),
+              w ? w.p(D, F) : ((w = Ie[T] = W[T](D)), w.c()),
               _(w, 1),
               w.m(g, A)),
           D[12].length
+            ? se
+              ? (se.p(D, F), F[0] & 4096 && _(se, 1))
+              : ((se = $r(D)), se.c(), _(se, 1), se.m(g, null))
+            : se &&
+              (ce(),
+              h(se, 1, 1, () => {
+                se = null;
+              }),
+              ue()),
+          (!R || F[0] & 2048) && V(g, "songs-list-row__song-name-wrapper--explicit", D[11]),
+          D[44] ? (be ? be.p(D, F) : ((be = Rr(D)), be.c(), be.m(n, null))) : be && (be.d(1), (be = null)),
+          D[4] && D[20] !== "albumTrackList"
+            ? ge
+              ? (ge.p(D, F), F[0] & 1048592 && _(ge, 1))
+              : ((ge = Nr(D)), ge.c(), _(ge, 1), ge.m(e, L))
+            : ge &&
+              (ce(),
+              h(ge, 1, 1, () => {
+                ge = null;
+              }),
+              ue()),
+          D[5]
+            ? ae
+              ? (ae.p(D, F), F[0] & 32 && _(ae, 1))
+              : ((ae = Hr(D)), ae.c(), _(ae, 1), ae.m(e, te))
+            : ae &&
+              (ce(),
+              h(ae, 1, 1, () => {
+                ae = null;
+              }),
+              ue()),
+          D[6]
             ? de
-              ? (de.p(D, L), L[0] & 4096 && _(de, 1))
-              : ((de = $r(D)), de.c(), _(de, 1), de.m(g, null))
+              ? (de.p(D, F), F[0] & 64 && _(de, 1))
+              : ((de = Br(D)), de.c(), _(de, 1), de.m(e, H))
             : de &&
               (ce(),
               h(de, 1, 1, () => {
                 de = null;
               }),
               ue()),
-          (!G || L[0] & 2048) && $(g, "songs-list-row__song-name-wrapper--explicit", D[11]),
-          D[44] ? (Ie ? Ie.p(D, L) : ((Ie = Rr(D)), Ie.c(), Ie.m(n, null))) : Ie && (Ie.d(1), (Ie = null)),
-          D[4] && D[20] !== "albumTrackList"
-            ? oe
-              ? (oe.p(D, L), L[0] & 1048592 && _(oe, 1))
-              : ((oe = Nr(D)), oe.c(), _(oe, 1), oe.m(e, te))
-            : oe &&
-              (ce(),
-              h(oe, 1, 1, () => {
-                oe = null;
-              }),
-              ue()),
-          D[5]
-            ? me
-              ? (me.p(D, L), L[0] & 32 && _(me, 1))
-              : ((me = Hr(D)), me.c(), _(me, 1), me.m(e, N))
-            : me &&
-              (ce(),
-              h(me, 1, 1, () => {
-                me = null;
-              }),
-              ue()),
-          D[6]
+          D[47]
             ? U
-              ? (U.p(D, L), L[0] & 64 && _(U, 1))
-              : ((U = Br(D)), U.c(), _(U, 1), U.m(e, Z))
+              ? (U.p(D, F), F[1] & 65536 && _(U, 1))
+              : ((U = Or(D)), U.c(), _(U, 1), U.m(j, Q))
             : U &&
               (ce(),
               h(U, 1, 1, () => {
                 U = null;
               }),
-              ue()),
-          D[47]
-            ? we
-              ? (we.p(D, L), L[1] & 65536 && _(we, 1))
-              : ((we = Or(D)), we.c(), _(we, 1), we.m(K, ie))
-            : we &&
-              (ce(),
-              h(we, 1, 1, () => {
-                we = null;
-              }),
               ue()));
-        const Le = {};
-        (L[0] & 1 && (Le.contentDescriptor = D[0].contentDescriptor),
-          L[0] & 1073741824 && (Le.isPlayable = D[30].playAction !== null),
-          (L[0] & 34153985) | (L[1] & 98496) | (L[3] & 2304) && (Le.$$scope = { dirty: L, ctx: D }),
-          ne.$set(Le),
-          (!G || L[0] & 2) && f(e, "data-row", D[1]),
-          (!G || ((L[0] & 1) | (L[1] & 262144) && X !== (X = D[49].currentMouseTarget === D[0]))) &&
-            f(e, "data-current-mouse-target", X),
-          (!G || L[0] & 268435456) && f(e, "aria-label", D[28]),
-          fe && Ye(fe.update) && L[0] & 8 && fe.update.call(null, D[3]),
-          ke &&
-            Ye(ke.update) &&
-            L[0] & 256 &&
-            ke.update.call(null, D[8] && { targets: [ft.Top, ft.Bottom], onDrop: D[94] }),
-          x && Ye(x.update) && L[1] & 3 && x.update.call(null, { impressionMetrics: D[32], location: D[31] }),
-          (!G || L[1] & 32) && $(e, "is-loading", D[36]),
-          (!G || L[1] & 16) && $(e, "is-playing", D[35]),
-          (!G || L[1] & 8) && $(e, "is-paused", D[34]),
-          (!G || L[0] & 65536) && $(e, "songs-list-row--disabled", D[16]),
-          (!G || L[1] & 2048) && $(e, "songs-list-row--artwork", D[42]),
-          (!G || L[1] & 2048) && $(e, "songs-list-row--no-artwork", !D[42]),
-          (!G || (L[0] & 4194304) | (L[1] & 2048)) && $(e, "songs-list-row--decorated", D[42] && D[22]),
-          (!G || L[0] & 4096) && $(e, "songs-list-row--two-lines", D[12].length),
-          (!G || L[0] & 1048576) && $(e, "songs-list-row--album", D[20] === "albumTrackList"),
-          (!G || L[0] & 1048576) && $(e, "songs-list-row--playlist", D[20] === "playlistTrackList"),
-          (!G || L[0] & 1048576) && $(e, "songs-list-row--compilation", D[20] === "compilationTrackList"),
-          (!G || L[0] & 4) && $(e, "songs-list-row--selected", D[2]),
-          (!G || L[1] & 65536) && $(e, "songs-list-row--preview", D[47]),
-          (!G || L[0] & 65536) && $(e, "disabled", D[16]));
+        const Te = {};
+        (F[0] & 1 && (Te.contentDescriptor = D[0].contentDescriptor),
+          F[0] & 1073741824 && (Te.isPlayable = D[30].playAction !== null),
+          (F[0] & 34153985) | (F[1] & 98496) | (F[3] & 2304) && (Te.$$scope = { dirty: F, ctx: D }),
+          x.$set(Te),
+          (!R || F[0] & 2) && f(e, "data-row", D[1]),
+          (!R || ((F[0] & 1) | (F[1] & 262144) && he !== (he = D[49].currentMouseTarget === D[0]))) &&
+            f(e, "data-current-mouse-target", he),
+          (!R || F[0] & 268435456) && f(e, "aria-label", D[28]),
+          Y && Qe(Y.update) && F[0] & 8 && Y.update.call(null, D[3]),
+          fe &&
+            Qe(fe.update) &&
+            F[0] & 256 &&
+            fe.update.call(null, D[8] && { targets: [ft.Top, ft.Bottom], onDrop: D[94] }),
+          ye && Qe(ye.update) && F[1] & 3 && ye.update.call(null, { impressionMetrics: D[32], location: D[31] }),
+          (!R || F[1] & 32) && V(e, "is-loading", D[36]),
+          (!R || F[1] & 16) && V(e, "is-playing", D[35]),
+          (!R || F[1] & 8) && V(e, "is-paused", D[34]),
+          (!R || F[0] & 65536) && V(e, "songs-list-row--disabled", D[16]),
+          (!R || F[1] & 2048) && V(e, "songs-list-row--artwork", D[42]),
+          (!R || F[1] & 2048) && V(e, "songs-list-row--no-artwork", !D[42]),
+          (!R || (F[0] & 4194304) | (F[1] & 2048)) && V(e, "songs-list-row--decorated", D[42] && D[22]),
+          (!R || F[0] & 4096) && V(e, "songs-list-row--two-lines", D[12].length),
+          (!R || F[0] & 1048576) && V(e, "songs-list-row--album", D[20] === "albumTrackList"),
+          (!R || F[0] & 1048576) && V(e, "songs-list-row--playlist", D[20] === "playlistTrackList"),
+          (!R || F[0] & 1048576) && V(e, "songs-list-row--compilation", D[20] === "compilationTrackList"),
+          (!R || F[0] & 4) && V(e, "songs-list-row--selected", D[2]),
+          (!R || F[1] & 65536) && V(e, "songs-list-row--preview", D[47]),
+          (!R || F[0] & 65536) && V(e, "disabled", D[16]));
       },
       i(D) {
-        G ||
+        R ||
           (_(r.$$.fragment, D),
-          _(H),
-          _(u),
-          _(V),
-          _(w),
-          _(de),
           _(oe),
-          _(me),
+          _(u),
+          _($),
+          _(w),
+          _(se),
+          _(ge),
+          _(ae),
+          _(de),
           _(U),
-          _(we),
-          _(ne.$$.fragment, D),
-          (G = !0));
+          _(x.$$.fragment, D),
+          (R = !0));
       },
       o(D) {
-        (h(r.$$.fragment, D), h(H), h(u), h(V), h(w), h(de), h(oe), h(me), h(U), h(we), h(ne.$$.fragment, D), (G = !1));
+        (h(r.$$.fragment, D), h(oe), h(u), h($), h(w), h(se), h(ge), h(ae), h(de), h(U), h(x.$$.fragment, D), (R = !1));
       },
       d(D) {
         (D && d(e),
-          O(r),
-          H && H.d(),
-          ~c && W[c].d(),
-          V && V.d(),
-          ge[T].d(),
-          de && de.d(),
-          Ie && Ie.d(),
+          z(r),
           oe && oe.d(),
-          me && me.d(),
+          ~c && ie[c].d(),
+          $ && $.d(),
+          Ie[T].d(),
+          se && se.d(),
+          be && be.d(),
+          ge && ge.d(),
+          ae && ae.d(),
+          de && de.d(),
           U && U.d(),
-          we && we.d(),
-          O(ne),
+          z(x),
           s[91](null),
-          (_e = !1),
-          dt(Pe));
+          (ne = !1),
+          dt(_e));
       },
     }
   );
@@ -4914,69 +4911,69 @@ function Cn(s, e, t) {
     A,
     y,
     p,
-    F,
+    L,
     te,
-    N,
-    Z,
-    q,
-    K,
-    ie,
-    ne,
-    X,
-    fe,
-    ke,
-    x,
-    G,
-    _e,
-    Pe,
     H,
-    le,
-    W,
+    K,
+    j,
     Q,
-    V,
-    De,
-    ge,
-    Te,
-    de,
-    Ie,
+    x,
+    he,
+    Y,
+    fe,
+    ye,
+    R,
+    ne,
+    _e,
     oe,
-    me,
-    U,
-    we,
-    D,
-    L = se,
-    Se = () => (L(), (L = Dt(De, (M) => t(85, (D = M)))), De),
-    $e,
+    X,
+    ie,
+    G,
+    $,
+    W,
+    Ie,
     Ae,
-    Le;
-  (Ce(s, is, (M) => t(96, (U = M))), Ce(s, ss, (M) => t(86, ($e = M))), s.$$.on_destroy.push(() => L()));
-  var Oe, C, re, ae, ye, Ne, it, st, lt, nt;
-  const R = ct(),
+    se,
+    be,
+    ge,
+    ae,
+    de,
+    U,
+    D,
+    F,
+    Le = le,
+    Ce = () => (Le(), (Le = Dt(Ie, (M) => t(85, (F = M)))), Ie),
+    Pe,
+    Te,
+    je;
+  (De(s, is, (M) => t(96, (U = M))), De(s, ss, (M) => t(86, (Pe = M))), s.$$.on_destroy.push(() => Le()));
+  var Be, C, re, pe, Se, Re, it, st, lt, nt;
+  const N = ct(),
     ee = Ze();
-  Ce(s, ee, (M) => t(25, (me = M)));
+  De(s, ee, (M) => t(25, (de = M)));
   const Ee = Mt();
-  Ce(s, Ee, (M) => t(49, (we = M)));
-  const Re = tt(),
+  De(s, Ee, (M) => t(49, (D = M)));
+  const $e = tt(),
     We = Lt(),
     { queue: ht, isRestricted: Vt } = di();
-  Ce(s, ht, (M) => t(87, (Ae = M)));
-  const { state: Yt } = _t();
-  Ce(s, Yt, (M) => t(88, (Le = M)));
+  De(s, ht, (M) => t(87, (Te = M)));
+  const { state: Qt } = _t();
+  De(s, Qt, (M) => t(88, (je = M)));
   const $t = Et(),
     { captureImpressions: Ei } = ls();
   let Rt = !1,
-    Qt = !1;
+    Yt = !1;
   (mt(async () => {
     try {
       const M = await Vt?.();
       t(76, (Rt = M));
     } catch {}
-    t(26, (Qt = document.dir === gi.RTL));
+    t(26, (Yt = document.dir === gi.RTL));
   }),
     ut(() => {
-      R.unsubscribeFromUpdates(m);
+      N.unsubscribeFromUpdates(m);
     }));
-  let { item: he } = e,
+  let { item: me } = e,
     { containerItemDescriptors: Nt = [] } = e,
     { rowIndex: Xt } = e,
     { isFirst: gt } = e,
@@ -5004,7 +5001,7 @@ function Cn(s, e, t) {
               includingFields: ["pageFields", "languages", "impressionsSnapshot", "clickLocation"],
               shouldFlush: !1,
               fields: {
-                targetId: ie?.identifiers.storeAdamID,
+                targetId: x?.identifiers.storeAdamID,
                 actionType: "credits",
                 targetType: "button",
                 actionContext: "track",
@@ -5021,27 +5018,27 @@ function Cn(s, e, t) {
     M.metaKey && (Bt = !0);
   }
   function Di(M) {
-    if (M.key === "Enter" && M.target === ot) We(V.playAction);
+    if (M.key === "Enter" && M.target === ot) We(W.playAction);
     else if (M.key === "Tab")
       if (M.shiftKey)
-        document.activeElement === ot && (gt ? Ee.clearSelection() : (Ee.selectPreviousItem(he), M.preventDefault()));
+        document.activeElement === ot && (gt ? Ee.clearSelection() : (Ee.selectPreviousItem(me), M.preventDefault()));
       else {
         const Ue = ot.querySelectorAll(
           'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])',
         );
         document.activeElement === Ue[Ue.length - 1] &&
-          (pt ? Ee.clearSelection() : (Ee.selectNextItem(he), M.preventDefault()));
+          (pt ? Ee.clearSelection() : (Ee.selectNextItem(me), M.preventDefault()));
       }
   }
   function Ti(M) {
-    Ee.handleClick(he, M);
+    Ee.handleClick(me, M);
   }
   function Pi() {
-    const M = we.selectedItems.length;
-    (!Bt && M <= 1 && (gt || pt) && Ee.selectItem(he), (Bt = !1));
+    const M = D.selectedItems.length;
+    (!Bt && M <= 1 && (gt || pt) && Ee.selectItem(me), (Bt = !1));
   }
   const Li = () => {
-      hi(m, ge, he.contentDescriptor, Te, R, U, !0, We);
+      hi(m, Ae, me.contentDescriptor, se, N, U, !0, We);
     },
     Mi = () => {
       $t("removeFromPlaylist", { itemId: u });
@@ -5054,14 +5051,14 @@ function Cn(s, e, t) {
       ((ot = M), t(27, ot));
     });
   }
-  const $i = () => We(V.playAction),
+  const $i = () => We(W.playAction),
     Ri = (M) => {
-      M.metaKey || Ee.setCurrentMouseTarget(he);
+      M.metaKey || Ee.setCurrentMouseTarget(me);
     },
     Ni = (...M) => $t("drop", ...M);
   return (
     (s.$$set = (M) => {
-      ("item" in M && t(0, (he = M.item)),
+      ("item" in M && t(0, (me = M.item)),
         "containerItemDescriptors" in M && t(62, (Nt = M.containerItemDescriptors)),
         "rowIndex" in M && t(1, (Xt = M.rowIndex)),
         "isFirst" in M && t(63, (gt = M.isFirst)),
@@ -5082,7 +5079,7 @@ function Cn(s, e, t) {
         t(
           20,
           (r = (() => {
-            const M = he.layoutStyle;
+            const M = me.layoutStyle;
             return typeof M == "string" ? M : M?.kind;
           })()),
         ),
@@ -5091,67 +5088,67 @@ function Cn(s, e, t) {
         s.$$.dirty[0] & 25165824 && t(17, (n = !i && !l)),
         s.$$.dirty[0] & 25165824 && t(48, (a = l || i)),
         s.$$.dirty[2] & 67108880 &&
-          t(83, (o = vi(t(66, (Oe = Le?.user)) === null || Oe === void 0 ? void 0 : Oe.subscriberType))),
+          t(83, (o = vi(t(66, (Be = je?.user)) === null || Be === void 0 ? void 0 : Be.subscriberType))),
         (s.$$.dirty[0] & 1) | (s.$$.dirty[2] & 32) &&
-          t(84, (c = t(67, (C = he.contentDescriptor)) === null || C === void 0 ? void 0 : C.kind)),
-        s.$$.dirty[0] & 1 && t(19, (u = at(he))),
-        s.$$.dirty[0] & 1 && t(14, (m = Zt(he))),
+          t(84, (c = t(67, (C = me.contentDescriptor)) === null || C === void 0 ? void 0 : C.kind)),
+        s.$$.dirty[0] & 1 && t(19, (u = at(me))),
+        s.$$.dirty[0] & 1 && t(14, (m = Zt(me))),
         s.$$.dirty[2] & 4194304 && t(15, (k = ns.includes(c))),
-        s.$$.dirty[0] & 1 && t(47, (E = he.isPreviewMode)),
-        s.$$.dirty[0] & 1 && t(11, (g = he.showExplicitBadge)),
-        (s.$$.dirty[0] & 2049) | (s.$$.dirty[2] & 16384) && t(16, (T = he.isDisabled || (g && Rt))),
-        s.$$.dirty[0] & 65537 && t(46, (w = T && !!he.isPrerelease)),
+        s.$$.dirty[0] & 1 && t(47, (E = me.isPreviewMode)),
+        s.$$.dirty[0] & 1 && t(11, (g = me.showExplicitBadge)),
+        (s.$$.dirty[0] & 2049) | (s.$$.dirty[2] & 16384) && t(16, (T = me.isDisabled || (g && Rt))),
+        s.$$.dirty[0] & 65537 && t(46, (w = T && !!me.isPrerelease)),
         (s.$$.dirty[0] & 1) | (s.$$.dirty[2] & 384) &&
           t(
             79,
-            (W =
+            (G =
               t(
                 70,
-                (ye =
-                  t(69, (ae = he.socialProfileContentDescriptor)) === null || ae === void 0 ? void 0 : ae.identifiers),
-              ) === null || ye === void 0
+                (Se =
+                  t(69, (pe = me.socialProfileContentDescriptor)) === null || pe === void 0 ? void 0 : pe.identifiers),
+              ) === null || Se === void 0
                 ? void 0
-                : ye.socialProfileID),
+                : Se.socialProfileID),
           ),
-        (s.$$.dirty[0] & 131072) | (s.$$.dirty[2] & 16908296) && t(18, (Q = n ? jt.get(W) : $e?.get(W))),
-        s.$$.dirty[0] & 262144 && t(22, (A = !!Q)),
-        s.$$.dirty[0] & 1 && t(45, (y = he.trackNumber)),
-        s.$$.dirty[0] & 1 && t(13, (p = he.title)),
-        s.$$.dirty[0] & 1 && t(44, (F = he.rankingText)),
-        s.$$.dirty[0] & 1 && t(21, (te = he.artwork)),
+        (s.$$.dirty[0] & 131072) | (s.$$.dirty[2] & 16908296) && t(18, ($ = n ? jt.get(G) : Pe?.get(G))),
+        s.$$.dirty[0] & 262144 && t(22, (A = !!$)),
+        s.$$.dirty[0] & 1 && t(45, (y = me.trackNumber)),
+        s.$$.dirty[0] & 1 && t(13, (p = me.title)),
+        s.$$.dirty[0] & 1 && t(44, (L = me.rankingText)),
+        s.$$.dirty[0] & 1 && t(21, (te = me.artwork)),
         s.$$.dirty[0] & 4227072 &&
-          t(43, (N = () => (k ? "music-video-tracklist" : A ? "track-list-decorated" : "track-list"))),
-        s.$$.dirty[0] & 3145728 && t(42, (Z = !!te || r === "playlistTrackList")),
-        (s.$$.dirty[0] & 65536) | (s.$$.dirty[2] & 2097152) && t(41, (q = o && !T)),
+          t(43, (H = () => (k ? "music-video-tracklist" : A ? "track-list-decorated" : "track-list"))),
+        s.$$.dirty[0] & 3145728 && t(42, (K = !!te || r === "playlistTrackList")),
+        (s.$$.dirty[0] & 65536) | (s.$$.dirty[2] & 2097152) && t(41, (j = o && !T)),
         (s.$$.dirty[0] & 1) | (s.$$.dirty[2] & 64) &&
-          t(82, (K = t(68, (re = he.contentDescriptor)) === null || re === void 0 ? void 0 : re.url)),
+          t(82, (Q = t(68, (re = me.contentDescriptor)) === null || re === void 0 ? void 0 : re.url)),
         (s.$$.dirty[0] & 1) | (s.$$.dirty[2] & 1048576) &&
-          t(78, (ie = Object.assign(Object.assign({}, he.contentDescriptor), { url: os(K) }))),
-        (s.$$.dirty[0] & 65536) | (s.$$.dirty[2] & 65536) && t(40, (ne = !!ie && !T && Ai(ie))),
-        s.$$.dirty[0] & 1 && t(12, (X = he.subtitleLinks || [])),
-        s.$$.dirty[0] & 1 && t(39, (fe = he.tertiaryLinks || [])),
-        s.$$.dirty[0] & 1 && t(81, (ke = Math.trunc(he.duration / 1e3))),
-        s.$$.dirty[2] & 524288 && t(38, (x = Gt(ke, Re.language))),
-        s.$$.dirty[2] & 524288 && t(37, (G = pi(ke))),
-        (s.$$.dirty[0] & 524288) | (s.$$.dirty[2] & 33554432) && t(80, (_e = u && Ae.nowPlayingItemId === u)),
-        s.$$.dirty[2] & 33816576 && t(36, (Pe = _e && Ae.derivedStates.isLoading)),
-        s.$$.dirty[2] & 33816576 && t(35, (H = _e && Ae.derivedStates.isPlaying)),
-        s.$$.dirty[2] & 33816576 && t(34, (le = _e && Ae.derivedStates.isPaused)),
+          t(78, (x = Object.assign(Object.assign({}, me.contentDescriptor), { url: os(Q) }))),
+        (s.$$.dirty[0] & 65536) | (s.$$.dirty[2] & 65536) && t(40, (he = !!x && !T && Ai(x))),
+        s.$$.dirty[0] & 1 && t(12, (Y = me.subtitleLinks || [])),
+        s.$$.dirty[0] & 1 && t(39, (fe = me.tertiaryLinks || [])),
+        s.$$.dirty[0] & 1 && t(81, (ye = Math.trunc(me.duration / 1e3))),
+        s.$$.dirty[2] & 524288 && t(38, (R = Gt(ye, $e.language))),
+        s.$$.dirty[2] & 524288 && t(37, (ne = pi(ye))),
+        (s.$$.dirty[0] & 524288) | (s.$$.dirty[2] & 33554432) && t(80, (_e = u && Te.nowPlayingItemId === u)),
+        s.$$.dirty[2] & 33816576 && t(36, (oe = _e && Te.derivedStates.isLoading)),
+        s.$$.dirty[2] & 33816576 && t(35, (X = _e && Te.derivedStates.isPlaying)),
+        s.$$.dirty[2] & 33816576 && t(34, (ie = _e && Te.derivedStates.isPaused)),
         (s.$$.dirty[0] & 65537) | (s.$$.dirty[2] & 1) &&
           t(
             30,
-            (V = (() =>
-              Object.assign(Object.assign({}, he), { playAction: !T && he.playAction && mi(he.playAction, Nt) }))()),
+            (W = (() =>
+              Object.assign(Object.assign({}, me), { playAction: !T && me.playAction && mi(me.playAction, Nt) }))()),
           ),
-        s.$$.dirty[0] & 16384 && Se(t(33, (De = R.subscribeToUpdates(m)))),
-        s.$$.dirty[0] & 32768 && t(77, (ge = k ? It.MusicVideo : It.Song)),
+        s.$$.dirty[0] & 16384 && Ce(t(33, (Ie = N.subscribeToUpdates(m)))),
+        s.$$.dirty[0] & 32768 && t(77, (Ae = k ? It.MusicVideo : It.Song)),
         (s.$$.dirty[0] & 16384) | (s.$$.dirty[2] & 8421888) &&
-          t(29, (Te = D && (t(71, (Ne = R.get(m, ge))) === null || Ne === void 0 ? void 0 : Ne.inFavorites))),
+          t(29, (se = F && (t(71, (Re = N.get(m, Ae))) === null || Re === void 0 ? void 0 : Re.inFavorites))),
         (s.$$.dirty[0] & 1) | (s.$$.dirty[2] & 3072) &&
           t(
             32,
-            (de =
-              t(73, (st = t(72, (it = he?.impressionMetrics)) === null || it === void 0 ? void 0 : it.fields)) !==
+            (be =
+              t(73, (st = t(72, (it = me?.impressionMetrics)) === null || it === void 0 ? void 0 : it.fields)) !==
                 null && st !== void 0
                 ? st
                 : {}),
@@ -5159,10 +5156,10 @@ function Cn(s, e, t) {
         (s.$$.dirty[0] & 1) | (s.$$.dirty[2] & 12288) &&
           t(
             31,
-            (Ie =
+            (ge =
               t(
                 75,
-                (nt = t(74, (lt = he?.impressionMetrics)) === null || lt === void 0 ? void 0 : lt.clickLocationFields),
+                (nt = t(74, (lt = me?.impressionMetrics)) === null || lt === void 0 ? void 0 : lt.clickLocationFields),
               ) !== null && nt !== void 0
                 ? nt
                 : {}),
@@ -5170,21 +5167,21 @@ function Cn(s, e, t) {
         s.$$.dirty[0] & 33568784 &&
           t(
             28,
-            (oe = (() => {
+            (ae = (() => {
               let M = p;
               return (
                 Ht &&
-                  (M = me.t("ASE.Web.Music.ContentA.Comma.ContentB", {
+                  (M = de.t("ASE.Web.Music.ContentA.Comma.ContentB", {
                     contentA: M,
                     contentB: as(
-                      X.map((Ue) => Ue.title),
-                      Re.language,
-                      me.t,
+                      Y.map((Ue) => Ue.title),
+                      $e.language,
+                      de.t,
                     ),
                   })),
                 g &&
-                  (M = me.t("ASE.Web.Music.ContentA.Comma.ContentB", {
-                    contentA: me.t("ASE.Web.Music.Explicit"),
+                  (M = de.t("ASE.Web.Music.ContentA.Comma.ContentB", {
+                    contentA: de.t("ASE.Web.Music.Explicit"),
                     contentB: M,
                   })),
                 M
@@ -5193,7 +5190,7 @@ function Cn(s, e, t) {
           ));
     }),
     [
-      he,
+      me,
       Xt,
       xt,
       er,
@@ -5205,49 +5202,49 @@ function Cn(s, e, t) {
       ir,
       sr,
       g,
-      X,
+      Y,
       p,
       m,
       k,
       T,
       n,
-      Q,
+      $,
       u,
       r,
       te,
       A,
       i,
       l,
-      me,
-      Qt,
-      ot,
-      oe,
-      Te,
-      V,
-      Ie,
       de,
-      De,
-      le,
-      H,
-      Pe,
-      G,
-      x,
-      fe,
+      Yt,
+      ot,
+      ae,
+      se,
+      W,
+      ge,
+      be,
+      Ie,
+      ie,
+      X,
+      oe,
       ne,
-      q,
-      Z,
-      N,
-      F,
+      R,
+      fe,
+      he,
+      j,
+      K,
+      H,
+      L,
       y,
       w,
       E,
       a,
-      we,
+      D,
       ee,
       Ee,
       We,
       ht,
-      Yt,
+      Qt,
       $t,
       Ei,
       Ci,
@@ -5259,29 +5256,29 @@ function Cn(s, e, t) {
       gt,
       pt,
       jt,
-      Oe,
+      Be,
       C,
       re,
-      ae,
-      ye,
-      Ne,
+      pe,
+      Se,
+      Re,
       it,
       st,
       lt,
       nt,
       Rt,
-      ge,
-      ie,
-      W,
+      Ae,
+      x,
+      G,
       _e,
-      ke,
-      K,
+      ye,
+      Q,
       o,
       c,
-      D,
-      $e,
-      Ae,
-      Le,
+      F,
+      Pe,
+      Te,
+      je,
       Mi,
       Fi,
       Vi,
@@ -5299,7 +5296,7 @@ class Dn extends Fe {
         e,
         Cn,
         En,
-        je,
+        He,
         {
           item: 0,
           containerItemDescriptors: 62,
@@ -5353,7 +5350,7 @@ function Pn(s) {
         f(e, "aria-hidden", "true"),
         f(e, "role", "row"),
         f(e, "data-testid", "tracklist-column-header"),
-        $(e, "songs-list__header--is-visible", s[8]));
+        V(e, "songs-list__header--is-visible", s[8]));
     },
     m(i, l) {
       P(i, e, l);
@@ -5370,10 +5367,10 @@ function Pn(s) {
         for (; n < r.length; n += 1) r[n].d(1);
         r.length = t.length;
       }
-      l[0] & 256 && $(e, "songs-list__header--is-visible", i[8]);
+      l[0] & 256 && V(e, "songs-list__header--is-visible", i[8]);
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(i) {
       (i && d(e), Ft(r, i));
     },
@@ -5385,13 +5382,13 @@ function Ln(s) {
     (e = new Wl({ props: { header: s[0].header.item } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -5404,7 +5401,7 @@ function Ln(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -5420,14 +5417,14 @@ function Gr(s) {
     o;
   return {
     c() {
-      ((e = I("div")), (t = I("div")), (i = pe(r)), (n = J()), this.h());
+      ((e = I("div")), (t = I("div")), (i = ve(r)), (n = Z()), this.h());
     },
     l(c) {
       e = S(c, "DIV", { class: !0, role: !0, "data-testid": !0 });
       var u = v(e);
       t = S(u, "DIV", { class: !0 });
       var m = v(t);
-      ((i = be(m, r)), m.forEach(d), (n = Y(u)), u.forEach(d), this.h());
+      ((i = ke(m, r)), m.forEach(d), (n = J(u)), u.forEach(d), this.h());
     },
     h() {
       (f(
@@ -5447,13 +5444,13 @@ function Gr(s) {
         ),
         f(e, "role", "columnheader"),
         f(e, "data-testid", (o = "tracklist-column-header-" + s[63].key)),
-        $(e, "songs-list__reactions", s[63].key === "quaternary" && s[4]));
+        V(e, "songs-list__reactions", s[63].key === "quaternary" && s[4]));
     },
     m(c, u) {
       (P(c, e, u), b(e, t), b(t, i), b(e, n));
     },
     p(c, u) {
-      (u[0] & 32768 && r !== (r = c[63].headerText + "") && ve(i, r),
+      (u[0] & 32768 && r !== (r = c[63].headerText + "") && we(i, r),
         u[0] & 32768 &&
           l !== (l = "songs-list__header-col-label songs-list__header-col-label--" + c[63].key + " svelte-88ilm8") &&
           f(t, "class", l),
@@ -5467,7 +5464,7 @@ function Gr(s) {
               " svelte-88ilm8") &&
           f(e, "class", a),
         u[0] & 32768 && o !== (o = "tracklist-column-header-" + c[63].key) && f(e, "data-testid", o),
-        u[0] & 32784 && $(e, "songs-list__reactions", c[63].key === "quaternary" && c[4]));
+        u[0] & 32784 && V(e, "songs-list__reactions", c[63].key === "quaternary" && c[4]));
     },
     d(c) {
       c && d(e);
@@ -5514,7 +5511,7 @@ function Jr(s) {
     },
   };
 }
-function Yr(s) {
+function Qr(s) {
   let e,
     t,
     r,
@@ -5549,13 +5546,13 @@ function Yr(s) {
   let o = s[11] && s[1] === s[62] && Jr();
   return {
     c() {
-      (n && n.c(), (e = J()), j(t.$$.fragment), (r = J()), o && o.c(), (i = He()));
+      (n && n.c(), (e = Z()), B(t.$$.fragment), (r = Z()), o && o.c(), (i = Ne()));
     },
     l(c) {
-      (n && n.l(c), (e = Y(c)), z(t.$$.fragment, c), (r = Y(c)), o && o.l(c), (i = He()));
+      (n && n.l(c), (e = J(c)), q(t.$$.fragment, c), (r = J(c)), o && o.l(c), (i = Ne()));
     },
     m(c, u) {
-      (n && n.m(c, u), P(c, e, u), B(t, c, u), P(c, r, u), o && o.m(c, u), P(c, i, u), (l = !0));
+      (n && n.m(c, u), P(c, e, u), O(t, c, u), P(c, r, u), o && o.m(c, u), P(c, i, u), (l = !0));
     },
     p(c, u) {
       ((s = c),
@@ -5586,7 +5583,7 @@ function Yr(s) {
       (h(t.$$.fragment, c), (l = !1));
     },
     d(c) {
-      (c && (d(e), d(r), d(i)), n && n.d(c), O(t, c), o && o.d(c));
+      (c && (d(e), d(r), d(i)), n && n.d(c), z(t, c), o && o.d(c));
     },
   };
 }
@@ -5600,21 +5597,21 @@ function Mn(s) {
   ((r = k(s, [-1, -1, -1])), (i = m[r] = u[r](s)));
   let E = ze(s[3]),
     g = [];
-  for (let w = 0; w < E.length; w += 1) g[w] = Yr(Ur(s, E, w));
+  for (let w = 0; w < E.length; w += 1) g[w] = Qr(Ur(s, E, w));
   const T = (w) =>
     h(g[w], 1, 1, () => {
       g[w] = null;
     });
   return {
     c() {
-      ((e = I("div")), i.c(), (l = J()));
+      ((e = I("div")), i.c(), (l = Z()));
       for (let w = 0; w < g.length; w += 1) g[w].c();
       this.h();
     },
     l(w) {
       e = S(w, "DIV", { class: !0, role: !0, "data-testid": !0 });
       var A = v(e);
-      (i.l(A), (l = Y(A)));
+      (i.l(A), (l = J(A)));
       for (let y = 0; y < g.length; y += 1) g[y].l(A);
       (A.forEach(d), this.h());
     },
@@ -5622,12 +5619,12 @@ function Mn(s) {
       (f(e, "class", "songs-list svelte-88ilm8"),
         f(e, "role", "grid"),
         f(e, "data-testid", "tracklist"),
-        $(e, "songs-list--header-is-visible", s[8]),
-        $(e, "songs-list--has-composer-header", s[16]),
-        $(e, "songs-list--has-preview", s[23]),
-        $(e, "songs-list--album", s[9]),
-        $(e, "songs-list--playlist", s[10]),
-        $(e, "songs-list--compilation", s[18]));
+        V(e, "songs-list--header-is-visible", s[8]),
+        V(e, "songs-list--has-composer-header", s[16]),
+        V(e, "songs-list--has-preview", s[23]),
+        V(e, "songs-list--album", s[9]),
+        V(e, "songs-list--playlist", s[10]),
+        V(e, "songs-list--compilation", s[18]));
     },
     m(w, A) {
       (P(w, e, A), m[r].m(e, null), b(e, l));
@@ -5667,26 +5664,26 @@ function Mn(s) {
         E = ze(w[3]);
         let p;
         for (p = 0; p < E.length; p += 1) {
-          const F = Ur(w, E, p);
-          g[p] ? (g[p].p(F, A), _(g[p], 1)) : ((g[p] = Yr(F)), g[p].c(), _(g[p], 1), g[p].m(e, null));
+          const L = Ur(w, E, p);
+          g[p] ? (g[p].p(L, A), _(g[p], 1)) : ((g[p] = Qr(L)), g[p].c(), _(g[p], 1), g[p].m(e, null));
         }
         for (ce(), p = E.length; p < g.length; p += 1) T(p);
         ue();
       }
       (n &&
-        Ye(n.update) &&
+        Qe(n.update) &&
         A[0] & 3145732 &&
         n.update.call(null, {
           dragData: { items: w[21], indexedItems: w[20], containerDescriptor: w[2] },
           badgeCount: w[21].length,
           dragImage: '[data-current-mouse-target="true"] .artwork-component picture',
         }),
-        (!a || A[0] & 256) && $(e, "songs-list--header-is-visible", w[8]),
-        (!a || A[0] & 65536) && $(e, "songs-list--has-composer-header", w[16]),
-        (!a || A[0] & 8388608) && $(e, "songs-list--has-preview", w[23]),
-        (!a || A[0] & 512) && $(e, "songs-list--album", w[9]),
-        (!a || A[0] & 1024) && $(e, "songs-list--playlist", w[10]),
-        (!a || A[0] & 262144) && $(e, "songs-list--compilation", w[18]));
+        (!a || A[0] & 256) && V(e, "songs-list--header-is-visible", w[8]),
+        (!a || A[0] & 65536) && V(e, "songs-list--has-composer-header", w[16]),
+        (!a || A[0] & 8388608) && V(e, "songs-list--has-preview", w[23]),
+        (!a || A[0] & 512) && V(e, "songs-list--album", w[9]),
+        (!a || A[0] & 1024) && V(e, "songs-list--playlist", w[10]),
+        (!a || A[0] & 262144) && V(e, "songs-list--compilation", w[18]));
     },
     i(w) {
       if (!a) {
@@ -5723,48 +5720,48 @@ function Fn(s, e, t) {
     A,
     y,
     p,
-    F,
+    L,
     te,
-    N,
-    Z,
-    q,
+    H,
     K,
-    ie,
-    ne,
-    X,
-    fe,
-    ke,
+    j,
+    Q,
     x,
-    G,
+    he,
+    Y,
+    fe,
+    ye,
+    R,
+    ne,
     _e,
-    Pe,
-    H = se,
-    le = () => (H(), (H = Dt(k, (R) => t(44, (Pe = R)))), k);
-  s.$$.on_destroy.push(() => H());
-  var W, Q, V, De;
-  const ge = Symbol(),
-    Te = ct(),
-    { state: de } = _t();
-  Ce(s, de, (R) => t(49, (_e = R)));
-  const Ie = Ze();
-  Ce(s, Ie, (R) => t(43, (x = R)));
-  const oe = Tt(),
-    me = Lt(),
+    oe,
+    X = le,
+    ie = () => (X(), (X = Dt(k, (N) => t(44, (oe = N)))), k);
+  s.$$.on_destroy.push(() => X());
+  var G, $, W, Ie;
+  const Ae = Symbol(),
+    se = ct(),
+    { state: be } = _t();
+  De(s, be, (N) => t(49, (_e = N)));
+  const ge = Ze();
+  De(s, ge, (N) => t(43, (R = N)));
+  const ae = Tt(),
+    de = Lt(),
     U = Mt();
-  Ce(s, U, (R) => t(12, (G = R)));
-  const we = tt(),
-    D = Pt("<TrackList>"),
-    L = ps();
-  let { section: Se } = e;
-  const $e = Et();
-  let Ae = null,
-    Le = null;
-  const Oe = () => {
-    const R = U.getItems(ge),
-      ee = G.selectedItems.map((Ee) => ({ index: R.indexOf(Ee), id: at(Ee) }));
-    if ((U.resetItems(ge), U.clearSelection(), U.addItems(ge, o), ee)) {
+  De(s, U, (N) => t(12, (ne = N)));
+  const D = tt(),
+    F = Pt("<TrackList>"),
+    Le = ps();
+  let { section: Ce } = e;
+  const Pe = Et();
+  let Te = null,
+    je = null;
+  const Be = () => {
+    const N = U.getItems(Ae),
+      ee = ne.selectedItems.map((Ee) => ({ index: N.indexOf(Ee), id: at(Ee) }));
+    if ((U.resetItems(Ae), U.clearSelection(), U.addItems(Ae, o), ee)) {
       const Ee = ee
-        .map(({ index: Re, id: We }) => (at(o[Re]) === We ? o[Re] : o.find((ht) => at(ht) === We)))
+        .map(({ index: $e, id: We }) => (at(o[$e]) === We ? o[$e] : o.find((ht) => at(ht) === We)))
         .filter(Boolean);
       U.selectMultiple(Ee);
     }
@@ -5773,200 +5770,200 @@ function Fn(s, e, t) {
     m === It.Album &&
       o &&
       setTimeout(() => {
-        var R;
-        Kt([Se], (R = _e.user) === null || R === void 0 ? void 0 : R.subscriberType, oe, D, we, Te, !0);
+        var N;
+        Kt([Ce], (N = _e.user) === null || N === void 0 ? void 0 : N.subscriberType, ae, F, D, se, !0);
       }, 250);
   }
   let re = new Map();
-  async function ae(R, ee, { detail: Ee }) {
-    if (a && Se.reorderAction && "indexedItems" in Ee.data && Ot(Ee.data.containerDescriptor) === Ot(r)) {
-      let Re = Ee.dropTarget === ft.Top ? ee - 1 : ee;
-      (ye(Re), await me(Ss(Se.reorderAction, Re, Ee.data)), Ne());
+  async function pe(N, ee, { detail: Ee }) {
+    if (a && Ce.reorderAction && "indexedItems" in Ee.data && Ot(Ee.data.containerDescriptor) === Ot(r)) {
+      let $e = Ee.dropTarget === ft.Top ? ee - 1 : ee;
+      (Se($e), await de(Ss(Ce.reorderAction, $e, Ee.data)), Re());
     }
   }
-  function ye(R) {
-    t(1, (Ae = R));
+  function Se(N) {
+    t(1, (Te = N));
   }
-  async function Ne() {
-    (clearTimeout(Le), t(1, (Ae = null)), (Le = null), await Es());
+  async function Re() {
+    (clearTimeout(je), t(1, (Te = null)), (je = null), await Es());
   }
-  const it = (R) => {
-    R.key === "a" && (R.metaKey || R.ctrlKey) && (R.preventDefault(), U.selectAll());
+  const it = (N) => {
+    N.key === "a" && (N.metaKey || N.ctrlKey) && (N.preventDefault(), U.selectAll());
   };
   ut(() => {
-    (U.resetItems(ge), Te.unsubscribeFromUpdates(u), bs());
+    (U.resetItems(Ae), se.unsubscribeFromUpdates(u), bs());
   });
-  const st = (R) => {
-      $e("catalogActionOnTrackListItem", R.detail);
+  const st = (N) => {
+      Pe("catalogActionOnTrackListItem", N.detail);
     },
-    lt = (R, ee, ...Ee) => ae(R, ee, ...Ee),
-    nt = async (R) => {
-      const { itemId: ee } = R.detail,
+    lt = (N, ee, ...Ee) => pe(N, ee, ...Ee),
+    nt = async (N) => {
+      const { itemId: ee } = N.detail,
         Ee = As({ operationType: Cs.RemoveFromPlaylist, id: ee, containerId: Ot(r) });
-      await oe.dispatch(Ee);
-      const Re = Ds(ee);
-      (await oe.perform(Re),
-        await oe.perform(
+      await ae.dispatch(Ee);
+      const $e = Ds(ee);
+      (await ae.perform($e),
+        await ae.perform(
           wt({ kind: "libraryItemsDeleted", metadata: { id: ee, type: "library-songs", isLibraryContentId: !0 } }),
         ));
     };
   return (
-    (s.$$set = (R) => {
-      "section" in R && t(0, (Se = R.section));
+    (s.$$set = (N) => {
+      "section" in N && t(0, (Ce = N.section));
     }),
     (s.$$.update = () => {
       if (
-        (s.$$.dirty[0] & 1 && t(2, (r = Se.containerContentDescriptor)),
-        s.$$.dirty[0] & 1 && t(24, (i = Se.containerArtwork)),
-        s.$$.dirty[0] & 1 && t(38, (l = !!Se.canEdit)),
-        s.$$.dirty[0] & 2 && t(11, (n = Ae != null)),
+        (s.$$.dirty[0] & 1 && t(2, (r = Ce.containerContentDescriptor)),
+        s.$$.dirty[0] & 1 && t(24, (i = Ce.containerArtwork)),
+        s.$$.dirty[0] & 1 && t(38, (l = !!Ce.canEdit)),
+        s.$$.dirty[0] & 2 && t(11, (n = Te != null)),
         (s.$$.dirty[0] & 2049) | (s.$$.dirty[1] & 128) &&
-          t(14, (a = l && oe.isUserInHomeStorefront() && !!Se.reorderAction && !n)),
-        s.$$.dirty[0] & 1 && t(3, (o = Se.items || [])),
-        s.$$.dirty[0] & 8 && t(23, (c = o.some((R) => R.isPreviewMode))),
-        s.$$.dirty[0] & 8 && Oe(),
+          t(14, (a = l && ae.isUserInHomeStorefront() && !!Ce.reorderAction && !n)),
+        s.$$.dirty[0] & 1 && t(3, (o = Ce.items || [])),
+        s.$$.dirty[0] & 8 && t(23, (c = o.some((N) => N.isPreviewMode))),
+        s.$$.dirty[0] & 8 && Be(),
         s.$$.dirty[0] & 4 && t(36, (u = !!r && Zt({ contentDescriptor: r }))),
         s.$$.dirty[0] & 4 && t(41, (m = r?.kind)),
-        s.$$.dirty[1] & 32 && le(t(22, (k = Te.subscribeToUpdates(u)))),
+        s.$$.dirty[1] & 32 && ie(t(22, (k = se.subscribeToUpdates(u)))),
         s.$$.dirty[1] & 9250 &&
-          t(42, (E = Pe && !!m && (t(32, (W = Te.get(u, m))) === null || W === void 0 ? void 0 : W.inLibrary))),
+          t(42, (E = oe && !!m && (t(32, (G = se.get(u, m))) === null || G === void 0 ? void 0 : G.inLibrary))),
         s.$$.dirty[1] & 2048 && C(),
         s.$$.dirty[0] & 4096 &&
           t(
             40,
             (g = (() =>
-              G.currentMouseTarget
-                ? G.selectedItems.includes(G.currentMouseTarget)
-                  ? G.selectedItems
-                  : [G.currentMouseTarget]
+              ne.currentMouseTarget
+                ? ne.selectedItems.includes(ne.currentMouseTarget)
+                  ? ne.selectedItems
+                  : [ne.currentMouseTarget]
                 : [])()),
           ),
-        s.$$.dirty[1] & 512 && t(21, (T = g.map((R) => R?.contentDescriptor))),
+        s.$$.dirty[1] & 512 && t(21, (T = g.map((N) => N?.contentDescriptor))),
         (s.$$.dirty[0] & 8) | (s.$$.dirty[1] & 512) &&
-          t(20, (w = g.map((R) => ({ index: o.indexOf(R), item: R.contentDescriptor })))),
-        s.$$.dirty[0] & 8 && t(19, (A = o.map((R) => R.contentDescriptor))),
+          t(20, (w = g.map((N) => ({ index: o.indexOf(N), item: N.contentDescriptor })))),
+        s.$$.dirty[0] & 8 && t(19, (A = o.map((N) => N.contentDescriptor))),
         (s.$$.dirty[0] & 1) | (s.$$.dirty[1] & 4) &&
-          t(37, (y = t(33, (Q = Se.header)) === null || Q === void 0 ? void 0 : Q.item)),
+          t(37, (y = t(33, ($ = Ce.header)) === null || $ === void 0 ? void 0 : $.item)),
         s.$$.dirty[0] & 8 &&
           t(
             39,
             (p = (() => {
-              var R;
-              const ee = (R = o[0]) === null || R === void 0 ? void 0 : R.layoutStyle;
+              var N;
+              const ee = (N = o[0]) === null || N === void 0 ? void 0 : N.layoutStyle;
               return typeof ee == "string" ? ee : ee?.kind;
             })()),
           ),
-        s.$$.dirty[1] & 256 && t(9, (F = p === "albumTrackList")),
+        s.$$.dirty[1] & 256 && t(9, (L = p === "albumTrackList")),
         s.$$.dirty[1] & 256 && t(18, (te = p === "compilationTrackList")),
-        s.$$.dirty[1] & 256 && t(10, (N = p === "playlistTrackList")),
+        s.$$.dirty[1] & 256 && t(10, (H = p === "playlistTrackList")),
         (s.$$.dirty[0] & 1025) | (s.$$.dirty[1] & 136) &&
           t(
             17,
-            (Z =
-              t(34, (V = vs(Se.containerContentDescriptor) && N && l && oe.isUserInHomeStorefront())) !== null &&
-              V !== void 0
-                ? V
+            (K =
+              t(34, (W = vs(Ce.containerContentDescriptor) && H && l && ae.isUserInHomeStorefront())) !== null &&
+              W !== void 0
+                ? W
                 : !1),
           ),
-        s.$$.dirty[0] & 1 && t(8, (q = ks(Se.header))),
-        s.$$.dirty[0] & 1 && t(16, (K = wi(Se.header))),
+        s.$$.dirty[0] & 1 && t(8, (j = ks(Ce.header))),
+        s.$$.dirty[0] & 1 && t(16, (Q = wi(Ce.header))),
         s.$$.dirty[0] & 520 &&
           t(
             7,
-            (ie =
-              o.some((R) => {
+            (x =
+              o.some((N) => {
                 var ee;
-                return (ee = R.subtitleLinks) === null || ee === void 0 ? void 0 : ee.length;
-              }) && !F),
+                return (ee = N.subtitleLinks) === null || ee === void 0 ? void 0 : ee.length;
+              }) && !L),
           ),
         s.$$.dirty[0] & 8 &&
           t(
             6,
-            (ne = o.some((R) => {
+            (he = o.some((N) => {
               var ee;
-              return (ee = R.tertiaryLinks) === null || ee === void 0 ? void 0 : ee.length;
+              return (ee = N.tertiaryLinks) === null || ee === void 0 ? void 0 : ee.length;
             })),
           ),
-        s.$$.dirty[1] & 64 && t(5, (X = !!y?.fourthColumnText)),
+        s.$$.dirty[1] & 64 && t(5, (Y = !!y?.fourthColumnText)),
         s.$$.dirty[0] & 8 &&
           t(
             4,
-            (fe = o.some((R) => {
+            (fe = o.some((N) => {
               var ee;
-              return (ee = R.reactions) === null || ee === void 0 ? void 0 : ee.length;
+              return (ee = N.reactions) === null || ee === void 0 ? void 0 : ee.length;
             })),
           ),
         (s.$$.dirty[0] & 480) | (s.$$.dirty[1] & 4160) &&
           t(
             15,
-            (ke = (() => {
-              const R = [];
+            (ye = (() => {
+              const N = [];
               let ee;
               return (
-                q && (ee = y),
-                ie &&
-                  R.push({
+                j && (ee = y),
+                x &&
+                  N.push({
                     key: "secondary",
-                    headerText: ee?.secondColumnText || x.t("ASE.Web.Music.SongsListHeaders.artist"),
+                    headerText: ee?.secondColumnText || R.t("ASE.Web.Music.SongsListHeaders.artist"),
                   }),
-                ne &&
-                  R.push({
+                he &&
+                  N.push({
                     key: "tertiary",
-                    headerText: ee?.thirdColumnText || x.t("ASE.Web.Music.SongsListHeaders.album"),
+                    headerText: ee?.thirdColumnText || R.t("ASE.Web.Music.SongsListHeaders.album"),
                   }),
-                X && R.push({ key: "quaternary", headerText: ee?.fourthColumnText }),
+                Y && N.push({ key: "quaternary", headerText: ee?.fourthColumnText }),
                 [
                   { headerText: "", key: "favorite-or-popular" },
-                  { key: "song", headerText: ee?.firstColumnText || x.t("ASE.Web.Music.SongsListHeaders.song") },
-                  ...R,
-                  { headerText: x.t("ASE.Web.Music.SongsListHeaders.time"), key: "time" },
+                  { key: "song", headerText: ee?.firstColumnText || R.t("ASE.Web.Music.SongsListHeaders.song") },
+                  ...N,
+                  { headerText: R.t("ASE.Web.Music.SongsListHeaders.time"), key: "time" },
                 ]
               );
             })()),
           ),
         (s.$$.dirty[0] & 25) | (s.$$.dirty[1] & 16))
       ) {
-        if (!(t(35, (De = Se.collaborators)) === null || De === void 0) && De.length)
-          ws(new Map(Se.collaborators.map((R) => [R.id, R])));
-        else if (L) {
-          let R = o
+        if (!(t(35, (Ie = Ce.collaborators)) === null || Ie === void 0) && Ie.length)
+          ws(new Map(Ce.collaborators.map((N) => [N.id, N])));
+        else if (Le) {
+          let N = o
             .map((Ee) => {
-              var Re, We;
+              var $e, We;
               return (We =
-                (Re = Ee.socialProfileContentDescriptor) === null || Re === void 0 ? void 0 : Re.identifiers) ===
+                ($e = Ee.socialProfileContentDescriptor) === null || $e === void 0 ? void 0 : $e.identifiers) ===
                 null || We === void 0
                 ? void 0
                 : We.socialProfileID;
             })
             .filter((Ee) => Ee != null);
-          const ee = new Set(R);
+          const ee = new Set(N);
           ee.size > 0 &&
-            L.fetchProfilesFromIds(Array.from(ee)).then((Ee) => {
-              t(13, (re = new Map(Ee.map((Re) => [Re.id, Re]))));
+            Le.fetchProfilesFromIds(Array.from(ee)).then((Ee) => {
+              t(13, (re = new Map(Ee.map(($e) => [$e.id, $e]))));
             });
         }
-        fe && o.length && ys(new Map(o.map((R) => [R.contentDescriptor.identifiers.storeAdamID, R.reactions])));
+        fe && o.length && ys(new Map(o.map((N) => [N.contentDescriptor.identifiers.storeAdamID, N.reactions])));
       }
     }),
     [
-      Se,
-      Ae,
+      Ce,
+      Te,
       r,
       o,
       fe,
-      X,
-      ne,
-      ie,
-      q,
-      F,
-      N,
+      Y,
+      he,
+      x,
+      j,
+      L,
+      H,
       n,
-      G,
+      ne,
       re,
       a,
-      ke,
+      ye,
+      Q,
       K,
-      Z,
       te,
       A,
       w,
@@ -5974,17 +5971,17 @@ function Fn(s, e, t) {
       k,
       c,
       i,
-      de,
-      Ie,
-      oe,
-      U,
-      $e,
+      be,
+      ge,
       ae,
+      U,
+      Pe,
+      pe,
       it,
+      G,
+      $,
       W,
-      Q,
-      V,
-      De,
+      Ie,
       u,
       y,
       l,
@@ -5992,8 +5989,8 @@ function Fn(s, e, t) {
       g,
       m,
       E,
-      x,
-      Pe,
+      R,
+      oe,
       st,
       lt,
       nt,
@@ -6002,7 +5999,7 @@ function Fn(s, e, t) {
 }
 class Vn extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, Fn, Mn, je, { section: 0 }, null, [-1, -1, -1]));
+    (super(), Ve(this, e, Fn, Mn, He, { section: 0 }, null, [-1, -1, -1]));
   }
 }
 function $n(s) {
@@ -6011,13 +6008,13 @@ function $n(s) {
     (e = new Ts({ props: { initials: ar(s[0].name) } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -6030,7 +6027,7 @@ function $n(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -6041,13 +6038,13 @@ function Rn(s) {
     (e = new fi({ props: { artwork: s[0].artwork, forceFullWidth: !1, profile: "track-lockup", alt: "" } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -6060,7 +6057,7 @@ function Rn(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -6070,40 +6067,40 @@ function Nn(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i & 1 && e !== (e = r[0] + "") && ve(t, e);
+      i & 1 && e !== (e = r[0] + "") && we(t, e);
     },
     d(r) {
       r && d(t);
     },
   };
 }
-function Qr(s) {
+function Yr(s) {
   let e, t, r;
   return (
     (t = new yi({ props: { class: "chevron", "aria-hidden": "true" } })),
     {
       c() {
-        ((e = I("div")), j(t.$$.fragment), this.h());
+        ((e = I("div")), B(t.$$.fragment), this.h());
       },
       l(i) {
         e = S(i, "DIV", { class: !0 });
         var l = v(e);
-        (z(t.$$.fragment, l), l.forEach(d), this.h());
+        (q(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
         f(e, "class", "chevron-container svelte-16yxrct");
       },
       m(i, l) {
-        (P(i, e, l), B(t, e, null), (r = !0));
+        (P(i, e, l), O(t, e, null), (r = !0));
       },
       i(i) {
         r || (_(t.$$.fragment, i), (r = !0));
@@ -6112,7 +6109,7 @@ function Qr(s) {
         (h(t.$$.fragment, i), (r = !1));
       },
       d(i) {
-        (i && d(e), O(t));
+        (i && d(e), z(t));
       },
     }
   );
@@ -6134,7 +6131,7 @@ function Hn(s) {
     g;
   const T = [Rn, $n],
     w = [];
-  function A(p, F) {
+  function A(p, L) {
     return p[0].artwork ? 0 : 1;
   }
   ((r = A(s)),
@@ -6147,35 +6144,35 @@ function Hn(s) {
         $$scope: { ctx: s },
       },
     })));
-  let y = s[0].segue && Qr();
+  let y = s[0].segue && Yr();
   return {
     c() {
       ((e = I("div")),
         (t = I("div")),
         i.c(),
-        (l = J()),
+        (l = Z()),
         (n = I("div")),
         (a = I("div")),
-        (c = pe(o)),
-        (u = J()),
+        (c = ve(o)),
+        (u = Z()),
         (m = I("div")),
-        j(k.$$.fragment),
-        (E = J()),
+        B(k.$$.fragment),
+        (E = Z()),
         y && y.c(),
         this.h());
     },
     l(p) {
       e = S(p, "DIV", { class: !0 });
-      var F = v(e);
-      t = S(F, "DIV", { class: !0 });
+      var L = v(e);
+      t = S(L, "DIV", { class: !0 });
       var te = v(t);
-      (i.l(te), te.forEach(d), (l = Y(F)), (n = S(F, "DIV", { class: !0 })));
-      var N = v(n);
-      a = S(N, "DIV", { class: !0 });
-      var Z = v(a);
-      ((c = be(Z, o)), Z.forEach(d), (u = Y(N)), (m = S(N, "DIV", { class: !0 })));
-      var q = v(m);
-      (z(k.$$.fragment, q), q.forEach(d), N.forEach(d), (E = Y(F)), y && y.l(F), F.forEach(d), this.h());
+      (i.l(te), te.forEach(d), (l = J(L)), (n = S(L, "DIV", { class: !0 })));
+      var H = v(n);
+      a = S(H, "DIV", { class: !0 });
+      var K = v(a);
+      ((c = ke(K, o)), K.forEach(d), (u = J(H)), (m = S(H, "DIV", { class: !0 })));
+      var j = v(m);
+      (q(k.$$.fragment, j), j.forEach(d), H.forEach(d), (E = J(L)), y && y.l(L), L.forEach(d), this.h());
     },
     h() {
       (f(t, "class", "artist-artwork svelte-16yxrct"),
@@ -6184,8 +6181,8 @@ function Hn(s) {
         f(n, "class", "artist-metadata svelte-16yxrct"),
         f(e, "class", "credit-lockup__container svelte-16yxrct"));
     },
-    m(p, F) {
-      (P(p, e, F),
+    m(p, L) {
+      (P(p, e, L),
         b(e, t),
         w[r].m(t, null),
         b(e, l),
@@ -6194,35 +6191,35 @@ function Hn(s) {
         b(a, c),
         b(n, u),
         b(n, m),
-        B(k, m, null),
+        O(k, m, null),
         b(e, E),
         y && y.m(e, null),
         (g = !0));
     },
-    p(p, F) {
+    p(p, L) {
       let te = r;
       ((r = A(p)),
         r === te
-          ? w[r].p(p, F)
+          ? w[r].p(p, L)
           : (ce(),
             h(w[te], 1, 1, () => {
               w[te] = null;
             }),
             ue(),
             (i = w[r]),
-            i ? i.p(p, F) : ((i = w[r] = T[r](p)), i.c()),
+            i ? i.p(p, L) : ((i = w[r] = T[r](p)), i.c()),
             _(i, 1),
             i.m(t, null)),
-        (!g || F & 1) && o !== (o = p[0].name + "") && ve(c, o));
-      const N = {};
-      (F & 1 && (N.items = p[0].roleNames),
-        F & 2 && (N.translateFn = p[1].t),
-        F & 9 && (N.$$scope = { dirty: F, ctx: p }),
-        k.$set(N),
+        (!g || L & 1) && o !== (o = p[0].name + "") && we(c, o));
+      const H = {};
+      (L & 1 && (H.items = p[0].roleNames),
+        L & 2 && (H.translateFn = p[1].t),
+        L & 9 && (H.$$scope = { dirty: L, ctx: p }),
+        k.$set(H),
         p[0].segue
           ? y
-            ? F & 1 && _(y, 1)
-            : ((y = Qr()), y.c(), _(y, 1), y.m(e, null))
+            ? L & 1 && _(y, 1)
+            : ((y = Yr()), y.c(), _(y, 1), y.m(e, null))
           : y &&
             (ce(),
             h(y, 1, 1, () => {
@@ -6237,7 +6234,7 @@ function Hn(s) {
       (h(i), h(k.$$.fragment, p), h(y), (g = !1));
     },
     d(p) {
-      (p && d(e), w[r].d(), O(k), y && y.d());
+      (p && d(e), w[r].d(), z(k), y && y.d());
     },
   };
 }
@@ -6247,13 +6244,13 @@ function jn(s) {
     (e = new Je({ props: { action: s[0].segue, $$slots: { default: [Hn] }, $$scope: { ctx: s } } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, [i]) {
         const l = {};
@@ -6266,7 +6263,7 @@ function jn(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -6276,7 +6273,7 @@ function Bn(s, e, t) {
     { item: i } = e;
   const l = Ze();
   return (
-    Ce(s, l, (n) => t(1, (r = n))),
+    De(s, l, (n) => t(1, (r = n))),
     (s.$$set = (n) => {
       "item" in n && t(0, (i = n.item));
     }),
@@ -6285,7 +6282,7 @@ function Bn(s, e, t) {
 }
 class On extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, Bn, jn, je, { item: 0 }));
+    (super(), Ve(this, e, Bn, jn, He, { item: 0 }));
   }
 }
 function Xr(s, e, t) {
@@ -6298,12 +6295,12 @@ function xr(s) {
     r;
   return {
     c() {
-      ((e = I("p")), (r = pe(t)), this.h());
+      ((e = I("p")), (r = ve(t)), this.h());
     },
     l(i) {
       e = S(i, "P", { class: !0 });
       var l = v(e);
-      ((r = be(l, t)), l.forEach(d), this.h());
+      ((r = ke(l, t)), l.forEach(d), this.h());
     },
     h() {
       f(e, "class", "credits__lyrics-snippet-line svelte-15ugb9h");
@@ -6312,7 +6309,7 @@ function xr(s) {
       (P(i, e, l), b(e, r));
     },
     p(i, l) {
-      l & 32 && t !== (t = i[25] + "") && ve(r, t);
+      l & 32 && t !== (t = i[25] + "") && we(r, t);
     },
     d(i) {
       i && d(e);
@@ -6330,13 +6327,13 @@ function zn(s) {
     (i = new yi({ props: { class: "chevron", "aria-hidden": "true" } })),
     {
       c() {
-        ((t = pe(e)), (r = J()), j(i.$$.fragment));
+        ((t = ve(e)), (r = Z()), B(i.$$.fragment));
       },
       l(n) {
-        ((t = be(n, e)), (r = Y(n)), z(i.$$.fragment, n));
+        ((t = ke(n, e)), (r = J(n)), q(i.$$.fragment, n));
       },
       m(n, a) {
-        (P(n, t, a), P(n, r, a), B(i, n, a), (l = !0));
+        (P(n, t, a), P(n, r, a), O(i, n, a), (l = !0));
       },
       p(n, a) {
         (!l || a & 18) &&
@@ -6345,7 +6342,7 @@ function zn(s) {
               (n[4]
                 ? n[1].t("ASE.Web.Music.View.Full.Lyrics")
                 : n[1].t("ASE.Web.Music.View.Full.Lyrics.Unsubscribed")) + "") &&
-          ve(t, e);
+          we(t, e);
       },
       i(n) {
         l || (_(i.$$.fragment, n), (l = !0));
@@ -6354,7 +6351,7 @@ function zn(s) {
         (h(i.$$.fragment, n), (l = !1));
       },
       d(n) {
-        (n && (d(t), d(r)), O(i, n));
+        (n && (d(t), d(r)), z(i, n));
       },
     }
   );
@@ -6365,18 +6362,18 @@ function ei(s) {
     (t = new Hs({ props: { maskSvg: js, inverted: s[8], maskWidth: 22, maskHeight: 22 } })),
     {
       c() {
-        ((e = I("button")), j(t.$$.fragment), this.h());
+        ((e = I("button")), B(t.$$.fragment), this.h());
       },
       l(n) {
         e = S(n, "BUTTON", { class: !0 });
         var a = v(e);
-        (z(t.$$.fragment, a), a.forEach(d), this.h());
+        (q(t.$$.fragment, a), a.forEach(d), this.h());
       },
       h() {
         f(e, "class", "lyrics-contextual-button svelte-15ugb9h");
       },
       m(n, a) {
-        (P(n, e, a), B(t, e, null), (r = !0), i || ((l = Me(e, "click", s[18])), (i = !0)));
+        (P(n, e, a), O(t, e, null), (r = !0), i || ((l = Me(e, "click", s[18])), (i = !0)));
       },
       p(n, a) {
         const o = {};
@@ -6389,7 +6386,7 @@ function ei(s) {
         (h(t.$$.fragment, n), (r = !1));
       },
       d(n) {
-        (n && d(e), O(t), (i = !1), l());
+        (n && d(e), z(t), (i = !1), l());
       },
     }
   );
@@ -6458,19 +6455,19 @@ function Wn(s) {
         this.h());
     },
     h() {
-      (Qe(t, "static-lyrics", !0),
-        Qe(t, "catalog-id", (r = s[0].songId)),
-        Qe(t, "show-translation", s[8]),
-        Qe(t, "show-pronunciation", !1),
-        Qe(t, "enable-translations", !0),
-        Qe(t, "class", "svelte-15ugb9h"),
+      (Ye(t, "static-lyrics", !0),
+        Ye(t, "catalog-id", (r = s[0].songId)),
+        Ye(t, "show-translation", s[8]),
+        Ye(t, "show-pronunciation", !1),
+        Ye(t, "enable-translations", !0),
+        Ye(t, "class", "svelte-15ugb9h"),
         f(e, "slot", "content"));
     },
     m(n, a) {
       (P(n, e, a), b(e, t), i || ((l = Me(t, "lyricsReady", s[13])), (i = !0)));
     },
     p(n, a) {
-      (a & 1 && r !== (r = n[0].songId) && Qe(t, "catalog-id", r), a & 256 && Qe(t, "show-translation", n[8]));
+      (a & 1 && r !== (r = n[0].songId) && Ye(t, "catalog-id", r), a & 256 && Ye(t, "show-translation", n[8]));
     },
     d(n) {
       (n && d(e), (i = !1), l());
@@ -6490,17 +6487,17 @@ function Un(s) {
       },
     })),
     e.$on("close", function () {
-      Ye(s[2].close) && s[2].close.apply(this, arguments);
+      Qe(s[2].close) && s[2].close.apply(this, arguments);
     }),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         s = r;
@@ -6518,7 +6515,7 @@ function Un(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -6545,15 +6542,15 @@ function Kn(s) {
       c() {
         e = I("div");
         for (let m = 0; m < c.length; m += 1) c[m].c();
-        ((t = J()), j(r.$$.fragment), (i = J()), (l = I("div")), j(n.$$.fragment), this.h());
+        ((t = Z()), B(r.$$.fragment), (i = Z()), (l = I("div")), B(n.$$.fragment), this.h());
       },
       l(m) {
         e = S(m, "DIV", { class: !0, "data-testid": !0 });
         var k = v(e);
         for (let g = 0; g < c.length; g += 1) c[g].l(k);
-        ((t = Y(k)), z(r.$$.fragment, k), k.forEach(d), (i = Y(m)), (l = S(m, "DIV", { class: !0 })));
+        ((t = J(k)), q(r.$$.fragment, k), k.forEach(d), (i = J(m)), (l = S(m, "DIV", { class: !0 })));
         var E = v(l);
-        (z(n.$$.fragment, E), E.forEach(d), this.h());
+        (q(n.$$.fragment, E), E.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "credits__lyrics-snippet svelte-15ugb9h"),
@@ -6563,7 +6560,7 @@ function Kn(s) {
       m(m, k) {
         P(m, e, k);
         for (let E = 0; E < c.length; E += 1) c[E] && c[E].m(e, null);
-        (b(e, t), B(r, e, null), P(m, i, k), P(m, l, k), B(n, l, null), (a = !0));
+        (b(e, t), O(r, e, null), P(m, i, k), P(m, l, k), O(n, l, null), (a = !0));
       },
       p(m, [k]) {
         if (k & 32) {
@@ -6588,7 +6585,7 @@ function Kn(s) {
         (h(r.$$.fragment, m), h(n.$$.fragment, m), (a = !1));
       },
       d(m) {
-        (m && (d(e), d(i), d(l)), Ft(c, m), O(r), s[19](null), O(n));
+        (m && (d(e), d(i), d(l)), Ft(c, m), z(r), s[19](null), z(n));
       },
     }
   );
@@ -6596,31 +6593,31 @@ function Kn(s) {
 let Gn = null;
 function Zn(s, e, t) {
   let r, i, l, n, a, o, c, u;
-  Ce(s, cr, (X) => t(8, (o = X)));
+  De(s, cr, (Y) => t(8, (o = Y)));
   var m, k;
   let { section: E } = e;
   const g = Ze();
-  Ce(s, g, (X) => t(1, (u = X)));
+  De(s, g, (Y) => t(1, (u = Y)));
   const { state: T } = _t();
-  Ce(s, T, (X) => t(17, (c = X)));
+  De(s, T, (Y) => t(17, (c = Y)));
   const w = Tt(),
     A = tt();
   let y,
     p = null;
-  const F = () => {
-      if (a) (y.showModal(), N(), q && (p = Date.now()));
+  const L = () => {
+      if (a) (y.showModal(), H(), j && (p = Date.now()));
       else {
-        const X = Ms({ type: Fs.Open, activePath: Vs.subscribe });
-        w.perform(X);
+        const Y = Ms({ type: Fs.Open, activePath: Vs.subscribe });
+        w.perform(Y);
       }
     },
     te = () => {
       if (p) {
-        const X = Date.now() - p;
-        (Ns(w, q, A.storefront, o, X), (p = null));
+        const Y = Date.now() - p;
+        (Ns(w, j, A.storefront, o, Y), (p = null));
       }
     },
-    N = () => {
+    H = () => {
       (w.recordCustomMetricsEvent({
         actionType: "navigate",
         targetType: "button",
@@ -6629,21 +6626,21 @@ function Zn(s, e, t) {
       }),
         w.recordCustomMetricsEvent({ eventType: "page", pageDisplayType: "cardView", pageType: "Lyrics" }));
     };
-  let Z = !1,
-    q = null;
-  function K(X) {
-    (t(3, (Z = X.detail.hasTranslations)),
-      (q = { lyricsId: X.detail.lyricsId, language: X.detail.language, catalogId: X.detail.catalogId }));
+  let K = !1,
+    j = null;
+  function Q(Y) {
+    (t(3, (K = Y.detail.hasTranslations)),
+      (j = { lyricsId: Y.detail.lyricsId, language: Y.detail.language, catalogId: Y.detail.catalogId }));
   }
-  const ie = () => $s(cr, (o = !o), o);
-  function ne(X) {
-    Ut[X ? "unshift" : "push"](() => {
-      ((y = X), t(2, y));
+  const x = () => $s(cr, (o = !o), o);
+  function he(Y) {
+    Ut[Y ? "unshift" : "push"](() => {
+      ((y = Y), t(2, y));
     });
   }
   return (
-    (s.$$set = (X) => {
-      "section" in X && t(14, (E = X.section));
+    (s.$$set = (Y) => {
+      "section" in Y && t(14, (E = Y.section));
     }),
     (s.$$.update = () => {
       (s.$$.dirty & 16384 && t(0, (r = E.items[0])),
@@ -6669,27 +6666,27 @@ function Zn(s, e, t) {
         s.$$.dirty & 196608 &&
           t(4, (a = vi(t(16, (k = c?.user)) === null || k === void 0 ? void 0 : k.subscriberType))));
     }),
-    [r, u, y, Z, a, n, l, i, o, g, T, F, te, K, E, m, k, c, ie, ne]
+    [r, u, y, K, a, n, l, i, o, g, T, L, te, Q, E, m, k, c, x, he]
   );
 }
 class Jn extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, Zn, Kn, je, { section: 14 }));
+    (super(), Ve(this, e, Zn, Kn, He, { section: 14 }));
   }
 }
-function Yn(s) {
+function Qn(s) {
   let e, t;
   return (
     (e = new Bs({ props: { itemComponent: s[1], section: s[0] } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -6702,24 +6699,24 @@ function Yn(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
 }
-function Qn(s) {
+function Yn(s) {
   let e, t;
   return (
     (e = new Jn({ props: { section: s[0] } })),
     {
       c() {
-        j(e.$$.fragment);
+        B(e.$$.fragment);
       },
       l(r) {
-        z(e.$$.fragment, r);
+        q(e.$$.fragment, r);
       },
       m(r, i) {
-        (B(e, r, i), (t = !0));
+        (O(e, r, i), (t = !0));
       },
       p(r, i) {
         const l = {};
@@ -6732,7 +6729,7 @@ function Qn(s) {
         (h(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        O(e, r);
+        z(e, r);
       },
     }
   );
@@ -6747,7 +6744,7 @@ function Xn(s) {
     a,
     o,
     c;
-  const u = [Qn, Yn],
+  const u = [Yn, Qn],
     m = [];
   function k(E, g) {
     return E[2] ? 0 : 1;
@@ -6757,14 +6754,14 @@ function Xn(s) {
     (o = m[a] = u[a](s)),
     {
       c() {
-        ((e = I("section")), (t = I("h2")), (i = pe(r)), (l = J()), (n = I("div")), o.c(), this.h());
+        ((e = I("section")), (t = I("h2")), (i = ve(r)), (l = Z()), (n = I("div")), o.c(), this.h());
       },
       l(E) {
         e = S(E, "SECTION", { class: !0, "data-testid": !0 });
         var g = v(e);
         t = S(g, "H2", { class: !0, "data-testid": !0 });
         var T = v(t);
-        ((i = be(T, r)), T.forEach(d), (l = Y(g)), (n = S(g, "DIV", { class: !0 })));
+        ((i = ke(T, r)), T.forEach(d), (l = J(g)), (n = S(g, "DIV", { class: !0 })));
         var w = v(n);
         (o.l(w), w.forEach(d), g.forEach(d), this.h());
       },
@@ -6781,7 +6778,7 @@ function Xn(s) {
       p(E, [g]) {
         (!c || g & 13) &&
           r !== (r = (E[2] ? E[3].t("ASE.Web.Music.MediaComponents.Lyrics.Header") : E[0]?.title) + "") &&
-          ve(i, r);
+          we(i, r);
         let T = a;
         ((a = k(E)),
           a === T
@@ -6816,7 +6813,7 @@ function eo(s, e, t) {
     { section: n } = e;
   const a = Ze();
   return (
-    Ce(s, a, (o) => t(3, (l = o))),
+    De(s, a, (o) => t(3, (l = o))),
     (s.$$set = (o) => {
       "section" in o && t(0, (n = o.section));
     }),
@@ -6829,7 +6826,7 @@ function eo(s, e, t) {
 }
 class to extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, eo, Xn, je, { section: 0 }));
+    (super(), Ve(this, e, eo, Xn, He, { section: 0 }));
   }
 }
 function ti(s, e, t) {
@@ -6900,18 +6897,18 @@ function ii(s) {
     (t = new Os({ props: { item: s[2], badgeTheme: "light" } })),
     {
       c() {
-        ((e = I("li")), j(t.$$.fragment), (r = J()), this.h());
+        ((e = I("li")), B(t.$$.fragment), (r = Z()), this.h());
       },
       l(l) {
         e = S(l, "LI", { class: !0, "data-testid": !0 });
         var n = v(e);
-        (z(t.$$.fragment, n), (r = Y(n)), n.forEach(d), this.h());
+        (q(t.$$.fragment, n), (r = J(n)), n.forEach(d), this.h());
       },
       h() {
         (f(e, "class", "calendar-events-list-item svelte-57psqt"), f(e, "data-testid", "events-list-item"));
       },
       m(l, n) {
-        (P(l, e, n), B(t, e, null), b(e, r), (i = !0));
+        (P(l, e, n), O(t, e, null), b(e, r), (i = !0));
       },
       p(l, n) {
         const a = {};
@@ -6924,7 +6921,7 @@ function ii(s) {
         (h(t.$$.fragment, l), (i = !1));
       },
       d(l) {
-        (l && d(e), O(t));
+        (l && d(e), z(t));
       },
     }
   );
@@ -6935,10 +6932,10 @@ function ro(s) {
     r = s[1].length && ri(s);
   return {
     c() {
-      (r && r.c(), (e = He()));
+      (r && r.c(), (e = Ne()));
     },
     l(i) {
-      (r && r.l(i), (e = He()));
+      (r && r.l(i), (e = Ne()));
     },
     m(i, l) {
       (r && r.m(i, l), P(i, e, l), (t = !0));
@@ -6981,7 +6978,7 @@ function io(s, e, t) {
 }
 class so extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, io, ro, je, { section: 0 }));
+    (super(), Ve(this, e, io, ro, He, { section: 0 }));
   }
 }
 function lo(s) {
@@ -6989,19 +6986,19 @@ function lo(s) {
     t;
   return {
     c() {
-      t = pe(e);
+      t = ve(e);
     },
     l(r) {
-      t = be(r, e);
+      t = ke(r, e);
     },
     m(r, i) {
       P(r, t, i);
     },
     p(r, i) {
-      i & 3 && e !== (e = r[3].warn("unsupported list section:", r[1], r[0]) + "") && ve(t, e);
+      i & 3 && e !== (e = r[3].warn("unsupported list section:", r[1], r[0]) + "") && we(t, e);
     },
-    i: se,
-    o: se,
+    i: le,
+    o: le,
     d(r) {
       r && d(t);
     },
@@ -7017,13 +7014,13 @@ function no(s) {
     i && (e = ur(i, l(s))),
     {
       c() {
-        (e && j(e.$$.fragment), (t = He()));
+        (e && B(e.$$.fragment), (t = Ne()));
       },
       l(n) {
-        (e && z(e.$$.fragment, n), (t = He()));
+        (e && q(e.$$.fragment, n), (t = Ne()));
       },
       m(n, a) {
-        (e && B(e, n, a), P(n, t, a), (r = !0));
+        (e && O(e, n, a), P(n, t, a), (r = !0));
       },
       p(n, a) {
         if (a & 4 && i !== (i = n[2])) {
@@ -7031,11 +7028,11 @@ function no(s) {
             ce();
             const o = e;
             (h(o.$$.fragment, 1, 0, () => {
-              O(o, 1);
+              z(o, 1);
             }),
               ue());
           }
-          i ? ((e = ur(i, l(n))), j(e.$$.fragment), _(e.$$.fragment, 1), B(e, t.parentNode, t)) : (e = null);
+          i ? ((e = ur(i, l(n))), B(e.$$.fragment), _(e.$$.fragment, 1), O(e, t.parentNode, t)) : (e = null);
         } else if (i) {
           const o = {};
           (a & 1 && (o.section = n[0]), e.$set(o));
@@ -7048,7 +7045,7 @@ function no(s) {
         (e && h(e.$$.fragment, n), (r = !1));
       },
       d(n) {
-        (n && d(t), e && O(e, n));
+        (n && d(t), e && z(e, n));
       },
     }
   );
@@ -7065,10 +7062,10 @@ function oo(s) {
     (t = n[e] = l[e](s)),
     {
       c() {
-        (t.c(), (r = He()));
+        (t.c(), (r = Ne()));
       },
       l(o) {
-        (t.l(o), (r = He()));
+        (t.l(o), (r = Ne()));
       },
       m(o, c) {
         (n[e].m(o, c), P(o, r, c), (i = !0));
@@ -7123,7 +7120,7 @@ function ao(s, e, t) {
 }
 class ho extends Fe {
   constructor(e) {
-    (super(), Ve(this, e, ao, oo, je, { section: 0 }));
+    (super(), Ve(this, e, ao, oo, He, { section: 0 }));
   }
 }
 export { ho as default };
