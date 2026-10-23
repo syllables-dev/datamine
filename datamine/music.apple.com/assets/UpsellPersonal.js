@@ -2,9 +2,9 @@ import {
   S as se,
   i as ae,
   n as ie,
-  aR as ne,
+  b6 as ne,
   I as j,
-  e as b,
+  e as E,
   c as x,
   s as S,
   a as C,
@@ -13,13 +13,13 @@ import {
   g as p,
   d as y,
   h as r,
-  aS as re,
+  aN as re,
   k as I,
   l as h,
   m as ee,
-  r as D,
+  r as M,
   u as oe,
-  v as O,
+  v as R,
   w as ce,
   x as te,
   K as ue,
@@ -27,10 +27,10 @@ import {
   E as q,
   F as B,
   G,
-  aT as de,
+  b7 as de,
   H as he,
   o as le,
-  aU as _e,
+  b8 as _e,
 } from "./main.js";
 function J(s, e, t) {
   const l = s.slice();
@@ -40,7 +40,7 @@ function L(s) {
   let e, t;
   return {
     c() {
-      ((e = b("h1")), (t = q(s[0])), this.h());
+      ((e = E("h1")), (t = q(s[0])), this.h());
     },
     l(l) {
       e = C(l, "H1", { class: !0, "data-testid": !0 });
@@ -65,7 +65,7 @@ function Q(s) {
   let e, t;
   return {
     c() {
-      ((e = b("source")), this.h());
+      ((e = E("source")), this.h());
     },
     l(l) {
       ((e = C(l, "SOURCE", { media: !0, srcset: !0, type: !0 })), this.h());
@@ -88,7 +88,7 @@ function X(s) {
   let e, t;
   return {
     c() {
-      ((e = b("p")), (t = q(s[1])), this.h());
+      ((e = E("p")), (t = q(s[1])), this.h());
     },
     l(l) {
       e = C(l, "P", { class: !0, "data-testid": !0 });
@@ -113,7 +113,7 @@ function Y(s) {
   let e, t, l, i;
   return {
     c() {
-      ((e = b("button")), (t = q(s[2])), this.h());
+      ((e = E("button")), (t = q(s[2])), this.h());
     },
     l(o) {
       e = C(o, "BUTTON", { class: !0, "data-testid": !0 });
@@ -140,31 +140,31 @@ function Z(s) {
     (o = new _e({})),
     {
       c() {
-        ((e = b("button")), (t = b("span")), (l = q(s[3])), (i = S()), x(o.$$.fragment), this.h());
+        ((e = E("button")), (t = E("span")), (l = q(s[3])), (i = S()), x(o.$$.fragment), this.h());
       },
       l(c) {
         e = C(c, "BUTTON", { class: !0, "data-testid": !0 });
-        var E = N(e);
-        t = C(E, "SPAN", { class: !0 });
+        var b = N(e);
+        t = C(b, "SPAN", { class: !0 });
         var u = N(t);
-        ((l = B(u, s[3])), (i = y(u)), $(o.$$.fragment, u), u.forEach(p), E.forEach(p), this.h());
+        ((l = B(u, s[3])), (i = y(u)), $(o.$$.fragment, u), u.forEach(p), b.forEach(p), this.h());
       },
       h() {
         (r(t, "class", "link-with-chevron svelte-1o61rav"),
           r(e, "class", "secondary-action svelte-1o61rav"),
           r(e, "data-testid", "upsell-personal-secondary-action"));
       },
-      m(c, E) {
-        (I(c, e, E), h(e, t), h(t, l), h(t, i), ee(o, t, null), (f = !0), k || ((w = le(e, "click", s[6])), (k = !0)));
+      m(c, b) {
+        (I(c, e, b), h(e, t), h(t, l), h(t, i), ee(o, t, null), (f = !0), k || ((w = le(e, "click", s[6])), (k = !0)));
       },
-      p(c, E) {
-        (!f || E & 8) && G(l, c[3]);
+      p(c, b) {
+        (!f || b & 8) && G(l, c[3]);
       },
       i(c) {
-        f || (D(o.$$.fragment, c), (f = !0));
+        f || (M(o.$$.fragment, c), (f = !0));
       },
       o(c) {
-        (O(o.$$.fragment, c), (f = !1));
+        (R(o.$$.fragment, c), (f = !1));
       },
       d(c) {
         (c && p(e), te(o), (k = !1), w());
@@ -173,7 +173,7 @@ function Z(s) {
   );
 }
 function pe(s) {
-  let e, t, l, i, o, f, k, w, c, E, u, z, H, M, P, R;
+  let e, t, l, i, o, f, k, w, c, b, u, z, H, U, P, V;
   i = new ne({});
   let m = s[0] && L(s),
     A = j(s[4]),
@@ -184,18 +184,18 @@ function pe(s) {
     d = s[3] && Z(s);
   return {
     c() {
-      ((e = b("div")),
-        (t = b("div")),
-        (l = b("div")),
+      ((e = E("div")),
+        (t = E("div")),
+        (l = E("div")),
         x(i.$$.fragment),
         (o = S()),
         m && m.c(),
         (f = S()),
-        (k = b("div")),
-        (w = b("div")),
-        (c = b("picture")));
+        (k = E("div")),
+        (w = E("div")),
+        (c = E("picture")));
       for (let a = 0; a < _.length; a += 1) _[a].c();
-      ((E = S()), (u = b("img")), (H = S()), v && v.c(), (M = S()), g && g.c(), (P = S()), d && d.c(), this.h());
+      ((b = S()), (u = E("img")), (H = S()), v && v.c(), (U = S()), g && g.c(), (P = S()), d && d.c(), this.h());
     },
     l(a) {
       e = C(a, "DIV", { class: !0, "data-testid": !0 });
@@ -203,9 +203,9 @@ function pe(s) {
       t = C(T, "DIV", { class: !0 });
       var n = N(t);
       l = C(n, "DIV", { class: !0, "data-testid": !0 });
-      var U = N(l);
-      ($(i.$$.fragment, U),
-        U.forEach(p),
+      var D = N(l);
+      ($(i.$$.fragment, D),
+        D.forEach(p),
         (o = y(n)),
         m && m.l(n),
         (f = y(n)),
@@ -214,16 +214,16 @@ function pe(s) {
       w = C(F, "DIV", { class: !0 });
       var W = N(w);
       c = C(W, "PICTURE", {});
-      var V = N(c);
-      for (let K = 0; K < _.length; K += 1) _[K].l(V);
-      ((E = y(V)),
-        (u = C(V, "IMG", { src: !0, class: !0, alt: !0 })),
-        V.forEach(p),
+      var O = N(c);
+      for (let K = 0; K < _.length; K += 1) _[K].l(O);
+      ((b = y(O)),
+        (u = C(O, "IMG", { src: !0, class: !0, alt: !0 })),
+        O.forEach(p),
         W.forEach(p),
         F.forEach(p),
         (H = y(n)),
         v && v.l(n),
-        (M = y(n)),
+        (U = y(n)),
         g && g.l(n),
         (P = y(n)),
         d && d.l(n),
@@ -248,37 +248,37 @@ function pe(s) {
     m(a, T) {
       (I(a, e, T), h(e, t), h(t, l), ee(i, l, null), h(t, o), m && m.m(t, null), h(t, f), h(t, k), h(k, w), h(w, c));
       for (let n = 0; n < _.length; n += 1) _[n] && _[n].m(c, null);
-      (h(c, E), h(c, u), h(t, H), v && v.m(t, null), h(t, M), g && g.m(t, null), h(t, P), d && d.m(t, null), (R = !0));
+      (h(c, b), h(c, u), h(t, H), v && v.m(t, null), h(t, U), g && g.m(t, null), h(t, P), d && d.m(t, null), (V = !0));
     },
     p(a, [T]) {
       if ((a[0] ? (m ? m.p(a, T) : ((m = L(a)), m.c(), m.m(t, f))) : m && (m.d(1), (m = null)), T & 16)) {
         A = j(a[4]);
         let n;
         for (n = 0; n < A.length; n += 1) {
-          const U = J(a, A, n);
-          _[n] ? _[n].p(U, T) : ((_[n] = Q(U)), _[n].c(), _[n].m(c, E));
+          const D = J(a, A, n);
+          _[n] ? _[n].p(D, T) : ((_[n] = Q(D)), _[n].c(), _[n].m(c, b));
         }
         for (; n < _.length; n += 1) _[n].d(1);
         _.length = A.length;
       }
-      (a[1] ? (v ? v.p(a, T) : ((v = X(a)), v.c(), v.m(t, M))) : v && (v.d(1), (v = null)),
+      (a[1] ? (v ? v.p(a, T) : ((v = X(a)), v.c(), v.m(t, U))) : v && (v.d(1), (v = null)),
         a[2] ? (g ? g.p(a, T) : ((g = Y(a)), g.c(), g.m(t, P))) : g && (g.d(1), (g = null)),
         a[3]
           ? d
-            ? (d.p(a, T), T & 8 && D(d, 1))
-            : ((d = Z(a)), d.c(), D(d, 1), d.m(t, null))
+            ? (d.p(a, T), T & 8 && M(d, 1))
+            : ((d = Z(a)), d.c(), M(d, 1), d.m(t, null))
           : d &&
             (oe(),
-            O(d, 1, 1, () => {
+            R(d, 1, 1, () => {
               d = null;
             }),
             ce()));
     },
     i(a) {
-      R || (D(i.$$.fragment, a), D(d), (R = !0));
+      V || (M(i.$$.fragment, a), M(d), (V = !0));
     },
     o(a) {
-      (O(i.$$.fragment, a), O(d), (R = !1));
+      (R(i.$$.fragment, a), R(d), (V = !1));
     },
     d(a) {
       (a && p(e), te(i), m && m.d(), ue(_, a), v && v.d(), g && g.d(), d && d.d());
@@ -303,7 +303,7 @@ function ve(s, e, t) {
   function c() {
     k("upsellCtaClick");
   }
-  function E() {
+  function b() {
     k("upsellStudentCtaClick");
   }
   return (
@@ -313,7 +313,7 @@ function ve(s, e, t) {
         "ctaText" in u && t(2, (o = u.ctaText)),
         "secondaryCtaText" in u && t(3, (f = u.secondaryCtaText)));
     }),
-    [l, i, o, f, w, c, E]
+    [l, i, o, f, w, c, b]
   );
 }
 class ke extends se {

@@ -1,4 +1,4 @@
-import { aV as l, Y as f } from "./main.js";
+import { b9 as l, Y as f } from "./main.js";
 function s(a, i) {
   for (var r = 0; r < i.length; r++) {
     const e = i[r];
@@ -65,5 +65,5 @@ var n = {},
   });
 })(u, n);
 const c = l(n),
-  g = s({ __proto__: null, default: c }, [n]);
-export { g as a };
+  b = s({ __proto__: null, default: c }, [n]);
+export { b as a };

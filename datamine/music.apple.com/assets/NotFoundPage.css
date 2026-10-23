@@ -1,0 +1,746 @@
+@charset "UTF-8";
+@font-face {
+  font-display: swap;
+  font-family: Adobe Garamond Pro;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/404/ipod/AGaramondPro-Regular.woff2) format("woff2");
+}
+.app-icon.svelte-1ma4y5r.svelte-1ma4y5r {
+  margin-bottom: 18px;
+  width: 80px;
+}
+.ipod-container.svelte-1ma4y5r.svelte-1ma4y5r {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 5px 20px 100px;
+  position: relative;
+  width: 100%;
+}
+.ipod-container.svelte-1ma4y5r web-music-ipod.svelte-1ma4y5r {
+  width: inherit;
+}
+.music-message.svelte-1ma4y5r.svelte-1ma4y5r {
+  padding: 24px 20px 20px;
+  text-align: center;
+  width: 100%;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r,
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r {
+  transform: scaleX(0.86);
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r {
+  color: var(--systemPrimary);
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 54px;
+  font-weight: 400;
+  letter-spacing: -0.028em;
+  line-height: 1.1111711111;
+  margin-bottom: 7px;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ar) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    SF Pro Icons,
+    Segoe UI,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ja) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Hiragino Sans,
+    SF Pro Icons,
+    Hiragino Kaku Gothic Pro,
+    ヒラギノ角ゴ Pro W3,
+    メイリオ,
+    Meiryo,
+    ＭＳ Ｐゴシック,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ko) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Apple SD Gothic Neo,
+    SF Pro Icons,
+    Apple Gothic,
+    HY Gulim,
+    MalgunGothic,
+    HY Dotum,
+    Lexi Gulim,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(zh) {
+  letter-spacing: 0;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(bn) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Bengali,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(gu) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Gujarati,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(he) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Arial Hebrew,
+    SF Pro Icons,
+    Segoe UI,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(hi) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Devanagari,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(kn) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Kannada,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ml) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Malayalam,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(mr) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Devanagari,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(or) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Odia,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(pa) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Gurmukhi,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ta) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Tamil,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(te) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Telugu,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(th) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Thonburi Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ur) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Geeza Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(zh-CN) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang SC,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(zh-HK),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(zh-MO) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang HK,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(zh-TW) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang TC,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ar),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(bn),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(gu),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(he),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(hi),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ja),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(kn),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ko),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ml),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(mr),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(or),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(pa),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ta),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(te),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(th),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(ur),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(vi),
+.music-message.svelte-1ma4y5r h1.svelte-1ma4y5r:lang(zh) {
+  font: var(--large-title-emphasized);
+  letter-spacing: 0;
+  transform: none;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r {
+  color: var(--systemSecondary);
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  letter-spacing: -0.028em;
+  line-height: 1.1111611111;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ar) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    SF Pro Icons,
+    Segoe UI,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ja) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Hiragino Sans,
+    SF Pro Icons,
+    Hiragino Kaku Gothic Pro,
+    ヒラギノ角ゴ Pro W3,
+    メイリオ,
+    Meiryo,
+    ＭＳ Ｐゴシック,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ko) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Apple SD Gothic Neo,
+    SF Pro Icons,
+    Apple Gothic,
+    HY Gulim,
+    MalgunGothic,
+    HY Dotum,
+    Lexi Gulim,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(zh) {
+  letter-spacing: 0;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(bn) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Bengali,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(gu) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Gujarati,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(he) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Arial Hebrew,
+    SF Pro Icons,
+    Segoe UI,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(hi) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Devanagari,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(kn) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Kannada,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ml) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Malayalam,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(mr) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Devanagari,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(or) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Odia,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(pa) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Gurmukhi,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ta) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Tamil,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(te) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Telugu,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(th) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Thonburi Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ur) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Geeza Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(zh-CN) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang SC,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(zh-HK),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(zh-MO) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang HK,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(zh-TW) {
+  font-family:
+    Adobe Garamond Pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang TC,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ar),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(bn),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(gu),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(he),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(hi),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ja),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(kn),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ko),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ml),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(mr),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(or),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(pa),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ta),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(te),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(th),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(ur),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(vi),
+.music-message.svelte-1ma4y5r p.svelte-1ma4y5r:lang(zh) {
+  font: var(--title-1-emphasized);
+  letter-spacing: 0;
+  transform: none;
+}
+.links.svelte-1ma4y5r.svelte-1ma4y5r {
+  display: grid;
+  gap: 30px;
+  grid-auto-flow: column;
+  justify-content: center;
+  margin: 20px 0 10px;
+}
+.link.svelte-1ma4y5r.svelte-1ma4y5r {
+  --linkHoverTextDecoration: none;
+  white-space: nowrap;
+}
+.link.svelte-1ma4y5r:hover .icon-copy.svelte-1ma4y5r {
+  text-decoration: underline;
+}
+.link.svelte-1ma4y5r svg {
+  margin: initial;
+  padding-inline-start: 4px;
+  fill: var(--systemPrimary);
+  height: 9px;
+  vertical-align: inherit;
+  width: 9px;
+}
+html[dir="rtl"] .link.svelte-1ma4y5r svg {
+  transform: scaleX(-1);
+}
+.link.svelte-1ma4y5r .link-box__chevron {
+  margin: initial;
+}
+.icon-copy.svelte-1ma4y5r.svelte-1ma4y5r {
+  font: var(--title-3);
+}
+.loading-container.svelte-1ma4y5r.svelte-1ma4y5r {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 692px;
+  width: 100%;
+}
+.error-page-container.svelte-1ma4y5r.svelte-1ma4y5r {
+  container: not-found-page/inline-size;
+}
+@container not-found-page (min-width: 1000px) {
+  .error-page-content.svelte-1ma4y5r.svelte-1ma4y5r {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 60px;
+    justify-content: center;
+    min-height: calc(100vh - 74px);
+    padding-block: 20px;
+  }
+  .music-message.svelte-1ma4y5r.svelte-1ma4y5r {
+    width: auto;
+  }
+  .ipod-container.svelte-1ma4y5r.svelte-1ma4y5r {
+    flex: none;
+    padding: 0;
+    width: auto;
+  }
+  .ipod-container.svelte-1ma4y5r web-music-ipod.svelte-1ma4y5r,
+  .loading-container.svelte-1ma4y5r.svelte-1ma4y5r {
+    width: 415px;
+  }
+}

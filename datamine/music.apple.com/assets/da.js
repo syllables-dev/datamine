@@ -1,32 +1,32 @@
-import { aV as s, Y as i } from "./main.js";
-function u(t, d) {
+import { b9 as s, Y as i } from "./main.js";
+function u(a, d) {
   for (var r = 0; r < d.length; r++) {
     const e = d[r];
     if (typeof e != "string" && !Array.isArray(e)) {
-      for (const a in e)
-        if (a !== "default" && !(a in t)) {
-          const n = Object.getOwnPropertyDescriptor(e, a);
-          n && Object.defineProperty(t, a, n.get ? n : { enumerable: !0, get: () => e[a] });
+      for (const t in e)
+        if (t !== "default" && !(t in a)) {
+          const n = Object.getOwnPropertyDescriptor(e, t);
+          n && Object.defineProperty(a, t, n.get ? n : { enumerable: !0, get: () => e[t] });
         }
     }
   }
-  return Object.freeze(Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }));
+  return Object.freeze(Object.defineProperty(a, Symbol.toStringTag, { value: "Module" }));
 }
 var o = {},
   f = {
     get exports() {
       return o;
     },
-    set exports(t) {
-      o = t;
+    set exports(a) {
+      o = a;
     },
   };
-(function (t, d) {
+(function (a, d) {
   (function (r, e) {
     e(d);
   })(i, function (r) {
     var e = typeof window < "u" && window.flatpickr !== void 0 ? window.flatpickr : { l10ns: {} },
-      a = {
+      t = {
         weekdays: {
           shorthand: ["søn", "man", "tir", "ons", "tors", "fre", "lør"],
           longhand: ["søndag", "mandag", "tirsdag", "onsdag", "torsdag", "fredag", "lørdag"],
@@ -56,9 +56,9 @@ var o = {},
         weekAbbreviation: "uge",
         time_24hr: !0,
       };
-    e.l10ns.da = a;
+    e.l10ns.da = t;
     var n = e.l10ns;
-    ((r.Danish = a), (r.default = n), Object.defineProperty(r, "__esModule", { value: !0 }));
+    ((r.Danish = t), (r.default = n), Object.defineProperty(r, "__esModule", { value: !0 }));
   });
 })(f, o);
 const l = s(o),

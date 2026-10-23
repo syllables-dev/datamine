@@ -2,18 +2,18 @@ import {
   S as d,
   i as _,
   n as g,
-  aN as m,
-  e as c,
-  a as k,
-  b,
+  b2 as m,
+  e as b,
+  a as c,
+  b as k,
   g as f,
   h,
   t as o,
   O as u,
   k as v,
-  aO as B,
-  aP as p,
-  aQ as C,
+  b3 as B,
+  b4 as p,
+  b5 as C,
   r as D,
   v as T,
 } from "./main.js";
@@ -23,11 +23,11 @@ function L(i) {
     a = m(r, i, i[2], null);
   return {
     c() {
-      ((t = c("div")), a && a.c(), this.h());
+      ((t = b("div")), a && a.c(), this.h());
     },
     l(e) {
-      t = k(e, "DIV", { class: !0, "data-testid": !0 });
-      var l = b(t);
+      t = c(e, "DIV", { class: !0, "data-testid": !0 });
+      var l = k(t);
       (a && a.l(l), l.forEach(f), this.h());
     },
     h() {
@@ -57,7 +57,7 @@ function L(i) {
     },
   };
 }
-function O(i, t, s) {
+function S(i, t, s) {
   let { $$slots: r = {}, $$scope: a } = t,
     { theme: e = null } = t,
     { useBreakpoint: l = !1 } = t;
@@ -70,9 +70,9 @@ function O(i, t, s) {
     [e, l, a, r]
   );
 }
-class q extends d {
+class E extends d {
   constructor(t) {
-    (super(), _(this, t, O, L, g, { theme: 0, useBreakpoint: 1 }));
+    (super(), _(this, t, S, L, g, { theme: 0, useBreakpoint: 1 }));
   }
 }
-export { q as T };
+export { E as T };
