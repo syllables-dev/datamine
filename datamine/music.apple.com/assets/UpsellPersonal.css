@@ -1,13 +1,13 @@
 @charset "UTF-8";
-.upsell-container.svelte-1o61rav {
-  background-image: linear-gradient(119.67deg, #f65677, #f83d59 5%, #fa233b 12%, #e22338 78%, #e3314d 92%, #e33f61 99%);
+.upsell-container.svelte-1genikb {
+  background-image: linear-gradient(119.67deg, #323132, #0d0c0c 16%, #060606 50%, #0d0c0c 84%, #323132);
   color: var(--systemPrimary-onDark);
   display: flex;
   flex-direction: column;
   padding: 40px;
   text-align: center;
 }
-.upsell__content.svelte-1o61rav {
+.upsell__content.svelte-1genikb {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -16,7 +16,7 @@
   margin: auto;
   width: 100%;
 }
-.heading.svelte-1o61rav {
+.heading.svelte-1genikb {
   font-family:
     SF Pro Display,
     SF Pro Icons,
@@ -30,7 +30,7 @@
   line-height: 1.2142857143;
   margin: 0 auto 11px;
 }
-.heading.svelte-1o61rav:lang(ar) {
+.heading.svelte-1genikb:lang(ar) {
   font-family:
     SF Pro AR,
     SF Pro AR Display,
@@ -42,7 +42,7 @@
     Arial,
     sans-serif;
 }
-.heading.svelte-1o61rav:lang(ja) {
+.heading.svelte-1genikb:lang(ja) {
   font-family:
     SF Pro JP,
     SF Pro Display,
@@ -57,7 +57,7 @@
     Arial,
     sans-serif;
 }
-.heading.svelte-1o61rav:lang(ko) {
+.heading.svelte-1genikb:lang(ko) {
   font-family:
     SF Pro KR,
     SF Pro Display,
@@ -72,7 +72,7 @@
     Arial,
     sans-serif;
 }
-.heading.svelte-1o61rav:lang(th) {
+.heading.svelte-1genikb:lang(th) {
   font-family:
     SF Pro TH,
     SF Pro Display,
@@ -82,7 +82,7 @@
     Arial,
     sans-serif;
 }
-.heading.svelte-1o61rav:lang(zh-CN) {
+.heading.svelte-1genikb:lang(zh-CN) {
   font-family:
     SF Pro SC,
     SF Pro Display,
@@ -93,7 +93,7 @@
     Arial,
     sans-serif;
 }
-.heading.svelte-1o61rav:lang(zh-HK) {
+.heading.svelte-1genikb:lang(zh-HK) {
   font-family:
     SF Pro HK,
     SF Pro Display,
@@ -104,7 +104,7 @@
     Arial,
     sans-serif;
 }
-.heading.svelte-1o61rav:lang(zh-MO) {
+.heading.svelte-1genikb:lang(zh-MO) {
   font-family:
     SF Pro HK,
     SF Pro TC,
@@ -116,7 +116,7 @@
     Arial,
     sans-serif;
 }
-.heading.svelte-1o61rav:lang(zh-TW) {
+.heading.svelte-1genikb:lang(zh-TW) {
   font-family:
     SF Pro TC,
     SF Pro Display,
@@ -128,7 +128,7 @@
     sans-serif;
 }
 @media (min-width: 740px) {
-  .heading.svelte-1o61rav {
+  .heading.svelte-1genikb {
     font-family:
       SF Pro Display,
       SF Pro Icons,
@@ -141,7 +141,7 @@
     letter-spacing: 0;
     line-height: 1.1;
   }
-  .heading.svelte-1o61rav:lang(ar) {
+  .heading.svelte-1genikb:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Display,
@@ -153,7 +153,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(ja) {
+  .heading.svelte-1genikb:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Display,
@@ -168,7 +168,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(ko) {
+  .heading.svelte-1genikb:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Display,
@@ -183,7 +183,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(th) {
+  .heading.svelte-1genikb:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Display,
@@ -193,7 +193,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-CN) {
+  .heading.svelte-1genikb:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Display,
@@ -204,7 +204,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-HK) {
+  .heading.svelte-1genikb:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Display,
@@ -215,7 +215,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-MO) {
+  .heading.svelte-1genikb:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -227,7 +227,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-TW) {
+  .heading.svelte-1genikb:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Display,
@@ -240,7 +240,7 @@
   }
 }
 @media (min-width: 1000px) {
-  .heading.svelte-1o61rav {
+  .heading.svelte-1genikb {
     font-family:
       SF Pro Display,
       SF Pro Icons,
@@ -253,7 +253,7 @@
     letter-spacing: -0.003em;
     line-height: 1.0834933333;
   }
-  .heading.svelte-1o61rav:lang(ar) {
+  .heading.svelte-1genikb:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Display,
@@ -266,7 +266,7 @@
       sans-serif;
     letter-spacing: 0;
   }
-  .heading.svelte-1o61rav:lang(ja) {
+  .heading.svelte-1genikb:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Display,
@@ -282,7 +282,7 @@
       sans-serif;
     letter-spacing: 0;
   }
-  .heading.svelte-1o61rav:lang(ko) {
+  .heading.svelte-1genikb:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Display,
@@ -298,10 +298,10 @@
       sans-serif;
     letter-spacing: 0;
   }
-  .heading.svelte-1o61rav:lang(zh) {
+  .heading.svelte-1genikb:lang(zh) {
     letter-spacing: 0;
   }
-  .heading.svelte-1o61rav:lang(th) {
+  .heading.svelte-1genikb:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Display,
@@ -311,7 +311,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-CN) {
+  .heading.svelte-1genikb:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Display,
@@ -322,7 +322,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-HK) {
+  .heading.svelte-1genikb:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Display,
@@ -333,7 +333,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-MO) {
+  .heading.svelte-1genikb:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -345,7 +345,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-TW) {
+  .heading.svelte-1genikb:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Display,
@@ -358,7 +358,7 @@
   }
 }
 @media (min-width: 1320px) {
-  .heading.svelte-1o61rav {
+  .heading.svelte-1genikb {
     font-family:
       SF Pro Display,
       SF Pro Icons,
@@ -371,7 +371,7 @@
     letter-spacing: -0.009em;
     line-height: 1.0625;
   }
-  .heading.svelte-1o61rav:lang(ar) {
+  .heading.svelte-1genikb:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Display,
@@ -384,7 +384,7 @@
       sans-serif;
     letter-spacing: 0;
   }
-  .heading.svelte-1o61rav:lang(ja) {
+  .heading.svelte-1genikb:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Display,
@@ -400,7 +400,7 @@
       sans-serif;
     letter-spacing: 0;
   }
-  .heading.svelte-1o61rav:lang(ko) {
+  .heading.svelte-1genikb:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Display,
@@ -416,10 +416,10 @@
       sans-serif;
     letter-spacing: 0;
   }
-  .heading.svelte-1o61rav:lang(zh) {
+  .heading.svelte-1genikb:lang(zh) {
     letter-spacing: 0;
   }
-  .heading.svelte-1o61rav:lang(th) {
+  .heading.svelte-1genikb:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Display,
@@ -429,7 +429,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-CN) {
+  .heading.svelte-1genikb:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Display,
@@ -440,7 +440,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-HK) {
+  .heading.svelte-1genikb:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Display,
@@ -451,7 +451,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-MO) {
+  .heading.svelte-1genikb:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -463,7 +463,7 @@
       Arial,
       sans-serif;
   }
-  .heading.svelte-1o61rav:lang(zh-TW) {
+  .heading.svelte-1genikb:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Display,
@@ -476,30 +476,30 @@
   }
 }
 @media (min-width: 1000px) {
-  .heading.svelte-1o61rav {
+  .heading.svelte-1genikb {
     margin-bottom: 15px;
     max-width: 440px;
   }
 }
 @media (min-width: 1260px) {
-  .heading.svelte-1o61rav {
+  .heading.svelte-1genikb {
     max-width: 640px;
   }
 }
-.logo.svelte-1o61rav {
+.logo.svelte-1genikb {
   height: 20px;
   margin-bottom: 14px;
   fill: var(--systemPrimary-onDark);
 }
-.logo.svelte-1o61rav svg {
+.logo.svelte-1genikb svg {
   height: inherit;
 }
 @media (max-width: 483px) {
-  .logo.svelte-1o61rav {
+  .logo.svelte-1genikb {
     display: none;
   }
 }
-.message.svelte-1o61rav {
+.message.svelte-1genikb {
   font-family:
     SF Pro Text,
     SF Pro Icons,
@@ -515,20 +515,20 @@
   max-width: 500px;
   white-space: pre-line;
 }
-.message.svelte-1o61rav:lang(bn),
-.message.svelte-1o61rav:lang(gu),
-.message.svelte-1o61rav:lang(hi),
-.message.svelte-1o61rav:lang(kn),
-.message.svelte-1o61rav:lang(ml),
-.message.svelte-1o61rav:lang(mr),
-.message.svelte-1o61rav:lang(or),
-.message.svelte-1o61rav:lang(pa),
-.message.svelte-1o61rav:lang(ta),
-.message.svelte-1o61rav:lang(te),
-.message.svelte-1o61rav:lang(ur) {
+.message.svelte-1genikb:lang(bn),
+.message.svelte-1genikb:lang(gu),
+.message.svelte-1genikb:lang(hi),
+.message.svelte-1genikb:lang(kn),
+.message.svelte-1genikb:lang(ml),
+.message.svelte-1genikb:lang(mr),
+.message.svelte-1genikb:lang(or),
+.message.svelte-1genikb:lang(pa),
+.message.svelte-1genikb:lang(ta),
+.message.svelte-1genikb:lang(te),
+.message.svelte-1genikb:lang(ur) {
   line-height: 2.0769630769;
 }
-.message.svelte-1o61rav:lang(th) {
+.message.svelte-1genikb:lang(th) {
   font-family:
     SF Pro TH,
     SF Pro Text,
@@ -539,7 +539,7 @@
     sans-serif;
   line-height: 1.9384815385;
 }
-.message.svelte-1o61rav:lang(ar) {
+.message.svelte-1genikb:lang(ar) {
   font-family:
     SF Pro AR,
     SF Pro AR Text,
@@ -551,7 +551,7 @@
     Arial,
     sans-serif;
 }
-.message.svelte-1o61rav:lang(ja) {
+.message.svelte-1genikb:lang(ja) {
   font-family:
     SF Pro JP,
     SF Pro Text,
@@ -566,7 +566,7 @@
     Arial,
     sans-serif;
 }
-.message.svelte-1o61rav:lang(ko) {
+.message.svelte-1genikb:lang(ko) {
   font-family:
     SF Pro KR,
     SF Pro Text,
@@ -581,7 +581,7 @@
     Arial,
     sans-serif;
 }
-.message.svelte-1o61rav:lang(zh-CN) {
+.message.svelte-1genikb:lang(zh-CN) {
   font-family:
     SF Pro SC,
     SF Pro Text,
@@ -592,7 +592,7 @@
     Arial,
     sans-serif;
 }
-.message.svelte-1o61rav:lang(zh-HK) {
+.message.svelte-1genikb:lang(zh-HK) {
   font-family:
     SF Pro HK,
     SF Pro Text,
@@ -603,7 +603,7 @@
     Arial,
     sans-serif;
 }
-.message.svelte-1o61rav:lang(zh-MO) {
+.message.svelte-1genikb:lang(zh-MO) {
   font-family:
     SF Pro HK,
     SF Pro TC,
@@ -615,7 +615,7 @@
     Arial,
     sans-serif;
 }
-.message.svelte-1o61rav:lang(zh-TW) {
+.message.svelte-1genikb:lang(zh-TW) {
   font-family:
     SF Pro TC,
     SF Pro Text,
@@ -627,7 +627,7 @@
     sans-serif;
 }
 @media (min-width: 740px) {
-  .message.svelte-1o61rav {
+  .message.svelte-1genikb {
     font-family:
       SF Pro Text,
       SF Pro Icons,
@@ -640,20 +640,20 @@
     letter-spacing: 0;
     line-height: 1.4118447059;
   }
-  .message.svelte-1o61rav:lang(bn),
-  .message.svelte-1o61rav:lang(gu),
-  .message.svelte-1o61rav:lang(hi),
-  .message.svelte-1o61rav:lang(kn),
-  .message.svelte-1o61rav:lang(ml),
-  .message.svelte-1o61rav:lang(mr),
-  .message.svelte-1o61rav:lang(or),
-  .message.svelte-1o61rav:lang(pa),
-  .message.svelte-1o61rav:lang(ta),
-  .message.svelte-1o61rav:lang(te),
-  .message.svelte-1o61rav:lang(ur) {
+  .message.svelte-1genikb:lang(bn),
+  .message.svelte-1genikb:lang(gu),
+  .message.svelte-1genikb:lang(hi),
+  .message.svelte-1genikb:lang(kn),
+  .message.svelte-1genikb:lang(ml),
+  .message.svelte-1genikb:lang(mr),
+  .message.svelte-1genikb:lang(or),
+  .message.svelte-1genikb:lang(pa),
+  .message.svelte-1genikb:lang(ta),
+  .message.svelte-1genikb:lang(te),
+  .message.svelte-1genikb:lang(ur) {
     line-height: 2.1176470588;
   }
-  .message.svelte-1o61rav:lang(th) {
+  .message.svelte-1genikb:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Text,
@@ -664,7 +664,7 @@
       sans-serif;
     line-height: 1.9764805882;
   }
-  .message.svelte-1o61rav:lang(ar) {
+  .message.svelte-1genikb:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Text,
@@ -676,7 +676,7 @@
       Arial,
       sans-serif;
   }
-  .message.svelte-1o61rav:lang(ja) {
+  .message.svelte-1genikb:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Text,
@@ -691,7 +691,7 @@
       Arial,
       sans-serif;
   }
-  .message.svelte-1o61rav:lang(ko) {
+  .message.svelte-1genikb:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Text,
@@ -706,7 +706,7 @@
       Arial,
       sans-serif;
   }
-  .message.svelte-1o61rav:lang(zh-CN) {
+  .message.svelte-1genikb:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Text,
@@ -717,7 +717,7 @@
       Arial,
       sans-serif;
   }
-  .message.svelte-1o61rav:lang(zh-HK) {
+  .message.svelte-1genikb:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Text,
@@ -728,7 +728,7 @@
       Arial,
       sans-serif;
   }
-  .message.svelte-1o61rav:lang(zh-MO) {
+  .message.svelte-1genikb:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -740,7 +740,7 @@
       Arial,
       sans-serif;
   }
-  .message.svelte-1o61rav:lang(zh-TW) {
+  .message.svelte-1genikb:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Text,
@@ -752,13 +752,14 @@
       sans-serif;
   }
 }
-.artwork.svelte-1o61rav {
+.artwork.svelte-1genikb {
   display: flex;
+  margin-bottom: 15px;
   max-height: min(100vw - 80px, 500px);
   overflow: hidden;
   position: relative;
 }
-.artwork__inner.svelte-1o61rav {
+.artwork__inner.svelte-1genikb {
   --iconOffsetV: 500px;
   --iconOffsetH: 250px;
   --iconSize: min(70vw, 440px);
@@ -772,18 +773,18 @@
   width: var(--iconSize);
 }
 @media (min-width: 484px) {
-  .artwork__inner.svelte-1o61rav {
+  .artwork__inner.svelte-1genikb {
     --iconSize: 440px;
     height: min(100vh - var(--iconOffsetV), 100%);
     max-height: var(--iconSize);
     width: calc(100vw - var(--iconOffsetH));
   }
 }
-.artwork__image.svelte-1o61rav {
+.artwork__image.svelte-1genikb {
   max-height: 100%;
   max-width: 100%;
 }
-.cta-btn.svelte-1o61rav {
+.cta-btn.svelte-1genikb {
   background-color: #fff;
   border-radius: 4px;
   color: #000;
@@ -805,7 +806,7 @@
   min-width: 150px;
   padding: 0 1em;
 }
-.cta-btn.svelte-1o61rav:lang(ar) {
+.cta-btn.svelte-1genikb:lang(ar) {
   font-family:
     SF Pro AR,
     SF Pro AR Text,
@@ -817,7 +818,7 @@
     Arial,
     sans-serif;
 }
-.cta-btn.svelte-1o61rav:lang(ja) {
+.cta-btn.svelte-1genikb:lang(ja) {
   font-family:
     SF Pro JP,
     SF Pro Text,
@@ -832,7 +833,7 @@
     Arial,
     sans-serif;
 }
-.cta-btn.svelte-1o61rav:lang(ko) {
+.cta-btn.svelte-1genikb:lang(ko) {
   font-family:
     SF Pro KR,
     SF Pro Text,
@@ -847,7 +848,7 @@
     Arial,
     sans-serif;
 }
-.cta-btn.svelte-1o61rav:lang(th) {
+.cta-btn.svelte-1genikb:lang(th) {
   font-family:
     SF Pro TH,
     SF Pro Text,
@@ -857,7 +858,7 @@
     Arial,
     sans-serif;
 }
-.cta-btn.svelte-1o61rav:lang(zh-CN) {
+.cta-btn.svelte-1genikb:lang(zh-CN) {
   font-family:
     SF Pro SC,
     SF Pro Text,
@@ -868,7 +869,7 @@
     Arial,
     sans-serif;
 }
-.cta-btn.svelte-1o61rav:lang(zh-HK) {
+.cta-btn.svelte-1genikb:lang(zh-HK) {
   font-family:
     SF Pro HK,
     SF Pro Text,
@@ -879,7 +880,7 @@
     Arial,
     sans-serif;
 }
-.cta-btn.svelte-1o61rav:lang(zh-MO) {
+.cta-btn.svelte-1genikb:lang(zh-MO) {
   font-family:
     SF Pro HK,
     SF Pro TC,
@@ -891,7 +892,7 @@
     Arial,
     sans-serif;
 }
-.cta-btn.svelte-1o61rav:lang(zh-TW) {
+.cta-btn.svelte-1genikb:lang(zh-TW) {
   font-family:
     SF Pro TC,
     SF Pro Text,
@@ -903,7 +904,7 @@
     sans-serif;
 }
 @media (min-width: 740px) {
-  .cta-btn.svelte-1o61rav {
+  .cta-btn.svelte-1genikb {
     font-family:
       SF Pro Text,
       SF Pro Icons,
@@ -916,7 +917,7 @@
     letter-spacing: 0;
     line-height: 1.1875;
   }
-  .cta-btn.svelte-1o61rav:lang(ar) {
+  .cta-btn.svelte-1genikb:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Text,
@@ -928,7 +929,7 @@
       Arial,
       sans-serif;
   }
-  .cta-btn.svelte-1o61rav:lang(ja) {
+  .cta-btn.svelte-1genikb:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Text,
@@ -943,7 +944,7 @@
       Arial,
       sans-serif;
   }
-  .cta-btn.svelte-1o61rav:lang(ko) {
+  .cta-btn.svelte-1genikb:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Text,
@@ -958,7 +959,7 @@
       Arial,
       sans-serif;
   }
-  .cta-btn.svelte-1o61rav:lang(th) {
+  .cta-btn.svelte-1genikb:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Text,
@@ -968,7 +969,7 @@
       Arial,
       sans-serif;
   }
-  .cta-btn.svelte-1o61rav:lang(zh-CN) {
+  .cta-btn.svelte-1genikb:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Text,
@@ -979,7 +980,7 @@
       Arial,
       sans-serif;
   }
-  .cta-btn.svelte-1o61rav:lang(zh-HK) {
+  .cta-btn.svelte-1genikb:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Text,
@@ -990,7 +991,7 @@
       Arial,
       sans-serif;
   }
-  .cta-btn.svelte-1o61rav:lang(zh-MO) {
+  .cta-btn.svelte-1genikb:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -1002,7 +1003,7 @@
       Arial,
       sans-serif;
   }
-  .cta-btn.svelte-1o61rav:lang(zh-TW) {
+  .cta-btn.svelte-1genikb:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Text,
@@ -1015,20 +1016,20 @@
   }
 }
 @media (max-width: 999px) {
-  .cta-btn.svelte-1o61rav {
+  .cta-btn.svelte-1genikb {
     height: 32px;
   }
 }
-.secondary-action.svelte-1o61rav {
+.secondary-action.svelte-1genikb {
   margin-top: 21px;
 }
-.link-with-chevron.svelte-1o61rav {
+.link-with-chevron.svelte-1genikb {
   align-items: center;
   display: flex;
   gap: 2px;
   justify-content: center;
 }
-.link-with-chevron.svelte-1o61rav svg {
+.link-with-chevron.svelte-1genikb svg {
   height: 10px;
   position: relative;
   top: 1px;

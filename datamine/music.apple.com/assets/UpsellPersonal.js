@@ -48,7 +48,7 @@ function L(s) {
       ((t = B(i, s[0])), i.forEach(p), this.h());
     },
     h() {
-      (r(e, "class", "heading svelte-1o61rav"), r(e, "data-testid", "upsell-personal-heading"));
+      (r(e, "class", "heading svelte-1genikb"), r(e, "data-testid", "upsell-personal-heading"));
     },
     m(l, i) {
       (I(l, e, i), h(e, t));
@@ -96,7 +96,7 @@ function X(s) {
       ((t = B(i, s[1])), i.forEach(p), this.h());
     },
     h() {
-      (r(e, "class", "message svelte-1o61rav"), r(e, "data-testid", "upsell-personal-message"));
+      (r(e, "class", "message svelte-1genikb"), r(e, "data-testid", "upsell-personal-message"));
     },
     m(l, i) {
       (I(l, e, i), h(e, t));
@@ -121,7 +121,7 @@ function Y(s) {
       ((t = B(f, s[2])), f.forEach(p), this.h());
     },
     h() {
-      (r(e, "class", "cta-btn svelte-1o61rav"), r(e, "data-testid", "upsell-personal-cta"));
+      (r(e, "class", "cta-btn svelte-1genikb"), r(e, "data-testid", "upsell-personal-cta"));
     },
     m(o, f) {
       (I(o, e, f), h(e, t), l || ((i = le(e, "click", s[5])), (l = !0)));
@@ -150,8 +150,8 @@ function Z(s) {
         ((l = B(u, s[3])), (i = y(u)), $(o.$$.fragment, u), u.forEach(p), b.forEach(p), this.h());
       },
       h() {
-        (r(t, "class", "link-with-chevron svelte-1o61rav"),
-          r(e, "class", "secondary-action svelte-1o61rav"),
+        (r(t, "class", "link-with-chevron svelte-1genikb"),
+          r(e, "class", "secondary-action svelte-1genikb"),
           r(e, "data-testid", "upsell-personal-secondary-action"));
       },
       m(c, b) {
@@ -179,8 +179,8 @@ function pe(s) {
     A = j(s[4]),
     _ = [];
   for (let a = 0; a < A.length; a += 1) _[a] = Q(J(s, A, a));
-  let v = s[1] && X(s),
-    g = s[2] && Y(s),
+  let g = s[1] && X(s),
+    v = s[2] && Y(s),
     d = s[3] && Z(s);
   return {
     c() {
@@ -195,7 +195,7 @@ function pe(s) {
         (w = E("div")),
         (c = E("picture")));
       for (let a = 0; a < _.length; a += 1) _[a].c();
-      ((b = S()), (u = E("img")), (H = S()), v && v.c(), (U = S()), g && g.c(), (P = S()), d && d.c(), this.h());
+      ((b = S()), (u = E("img")), (H = S()), g && g.c(), (U = S()), v && v.c(), (P = S()), d && d.c(), this.h());
     },
     l(a) {
       e = C(a, "DIV", { class: !0, "data-testid": !0 });
@@ -222,9 +222,9 @@ function pe(s) {
         W.forEach(p),
         F.forEach(p),
         (H = y(n)),
-        v && v.l(n),
-        (U = y(n)),
         g && g.l(n),
+        (U = y(n)),
+        v && v.l(n),
         (P = y(n)),
         d && d.l(n),
         n.forEach(p),
@@ -232,23 +232,23 @@ function pe(s) {
         this.h());
     },
     h() {
-      (r(l, "class", "logo svelte-1o61rav"),
+      (r(l, "class", "logo svelte-1genikb"),
         r(l, "data-testid", "upsell-personal-logo"),
         re(u.src, (z = "/assets/app-icons/music-note/Apple-Music-Note_250.png")) || r(u, "src", z),
-        r(u, "class", "artwork__image svelte-1o61rav"),
+        r(u, "class", "artwork__image svelte-1genikb"),
         r(u, "alt", ""),
-        r(w, "class", "artwork__inner svelte-1o61rav"),
-        r(k, "class", "artwork svelte-1o61rav"),
+        r(w, "class", "artwork__inner svelte-1genikb"),
+        r(k, "class", "artwork svelte-1genikb"),
         r(k, "aria-hidden", "true"),
         r(k, "data-testid", "upsell-personal-artwork"),
-        r(t, "class", "upsell__content svelte-1o61rav"),
-        r(e, "class", "upsell-container svelte-1o61rav"),
+        r(t, "class", "upsell__content svelte-1genikb"),
+        r(e, "class", "upsell-container svelte-1genikb"),
         r(e, "data-testid", "upsell-personal-container"));
     },
     m(a, T) {
       (I(a, e, T), h(e, t), h(t, l), ee(i, l, null), h(t, o), m && m.m(t, null), h(t, f), h(t, k), h(k, w), h(w, c));
       for (let n = 0; n < _.length; n += 1) _[n] && _[n].m(c, null);
-      (h(c, b), h(c, u), h(t, H), v && v.m(t, null), h(t, U), g && g.m(t, null), h(t, P), d && d.m(t, null), (V = !0));
+      (h(c, b), h(c, u), h(t, H), g && g.m(t, null), h(t, U), v && v.m(t, null), h(t, P), d && d.m(t, null), (V = !0));
     },
     p(a, [T]) {
       if ((a[0] ? (m ? m.p(a, T) : ((m = L(a)), m.c(), m.m(t, f))) : m && (m.d(1), (m = null)), T & 16)) {
@@ -261,8 +261,8 @@ function pe(s) {
         for (; n < _.length; n += 1) _[n].d(1);
         _.length = A.length;
       }
-      (a[1] ? (v ? v.p(a, T) : ((v = X(a)), v.c(), v.m(t, U))) : v && (v.d(1), (v = null)),
-        a[2] ? (g ? g.p(a, T) : ((g = Y(a)), g.c(), g.m(t, P))) : g && (g.d(1), (g = null)),
+      (a[1] ? (g ? g.p(a, T) : ((g = X(a)), g.c(), g.m(t, U))) : g && (g.d(1), (g = null)),
+        a[2] ? (v ? v.p(a, T) : ((v = Y(a)), v.c(), v.m(t, P))) : v && (v.d(1), (v = null)),
         a[3]
           ? d
             ? (d.p(a, T), T & 8 && M(d, 1))
@@ -281,14 +281,14 @@ function pe(s) {
       (R(i.$$.fragment, a), R(d), (V = !1));
     },
     d(a) {
-      (a && p(e), te(i), m && m.d(), ue(_, a), v && v.d(), g && g.d(), d && d.d());
+      (a && p(e), te(i), m && m.d(), ue(_, a), g && g.d(), v && v.d(), d && d.d());
     },
   };
 }
 function me(s, e) {
   return `/assets/app-icons/music-note/${s}.${e} 1x, /assets/app-icons/music-note/${s}@2x.${e} 2x`;
 }
-function ve(s, e, t) {
+function ge(s, e, t) {
   let { title: l = null } = e,
     { description: i = null } = e,
     { ctaText: o = null } = e,
@@ -318,7 +318,7 @@ function ve(s, e, t) {
 }
 class ke extends se {
   constructor(e) {
-    (super(), ae(this, e, ve, pe, ie, { title: 0, description: 1, ctaText: 2, secondaryCtaText: 3 }));
+    (super(), ae(this, e, ge, pe, ie, { title: 0, description: 1, ctaText: 2, secondaryCtaText: 3 }));
   }
 }
 export { ke as default };

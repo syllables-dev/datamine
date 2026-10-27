@@ -220,8 +220,7 @@
         "filter[canvas-shelves-collection:contents{type}]": null,
         "geoHashLocation": null,
         "include": "artist-biography-canvas",
-        "include[canvas-shelves-collection]": "contents",
-        "include[canvas-shelves-group]": "children",
+        "include[canvas-shelves]": "contents,children",
         "include[concerts]": "artists,venues",
         "include[songs]": "albums",
         "limit[canvas-shelves-collection:contents]": "12",
@@ -450,7 +449,7 @@
         "include[concerts]": "venues,artists",
         "limit[{ConcertsNextWeek}]": null,
         "limit[{ConcertsThisWeek}]": null,
-        "limit[{PopularConcerts}]": "6",
+        "limit[{PopularConcerts}]": "15",
         "omit[resource]": "autos"
       }
     },
@@ -1314,7 +1313,8 @@
           "POST"
         ],
         "targets": [
-          "{URL}"
+          "{URL}",
+          "{playRawAssetURL}"
         ]
       }
     ],
@@ -1382,7 +1382,8 @@
           "POST"
         ],
         "targets": [
-          "{URL}"
+          "{URL}",
+          "{playRawAssetURL}"
         ]
       },
       {
@@ -1444,7 +1445,8 @@
           "POST"
         ],
         "targets": [
-          "{URL}"
+          "{URL}",
+          "{playRawAssetURL}"
         ]
       },
       {
@@ -1620,7 +1622,8 @@
           "POST"
         ],
         "targets": [
-          "{URL}"
+          "{URL}",
+          "{playRawAssetURL}"
         ]
       }
     ],
