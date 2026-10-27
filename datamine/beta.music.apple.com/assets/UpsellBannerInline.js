@@ -2,20 +2,20 @@ import {
   S as j,
   i as z,
   n as H,
-  e as k,
+  e as g,
   s as I,
   a as E,
   b as C,
   d as S,
   g as b,
-  h as p,
+  h,
   t as P,
   k as T,
-  l as v,
+  l as k,
   o as y,
   r as m,
   u as U,
-  v as g,
+  v,
   w as M,
   y as J,
   U as L,
@@ -31,36 +31,36 @@ import {
   a5 as Y,
   a6 as V,
 } from "./main.js";
-function W(a) {
-  let e, t, l, s, o, _;
+function W(s) {
+  let e, t, l, a, o, _;
   return (
     (t = new R({})),
     {
       c() {
-        ((e = k("button")), G(t.$$.fragment), this.h());
+        ((e = g("button")), G(t.$$.fragment), this.h());
       },
       l(u) {
         e = E(u, "BUTTON", { type: !0, class: !0, "data-testid": !0, "aria-label": !0 });
-        var h = C(e);
-        (K(t.$$.fragment, h), h.forEach(b), this.h());
+        var p = C(e);
+        (K(t.$$.fragment, p), p.forEach(b), this.h());
       },
       h() {
-        (p(e, "type", "button"),
-          p(e, "class", "banner__close-button svelte-1uspg9f"),
-          p(e, "data-testid", "upsell-banner-close"),
-          p(e, "aria-label", (l = a[4].t("ASE.Web.Music.Shared.AX.Close"))));
+        (h(e, "type", "button"),
+          h(e, "class", "banner__close-button svelte-r5lnk4"),
+          h(e, "data-testid", "upsell-banner-close"),
+          h(e, "aria-label", (l = s[4].t("ASE.Web.Music.Shared.AX.Close"))));
       },
-      m(u, h) {
-        (T(u, e, h), N(t, e, null), (s = !0), o || ((_ = y(e, "click", a[6])), (o = !0)));
+      m(u, p) {
+        (T(u, e, p), N(t, e, null), (a = !0), o || ((_ = y(e, "click", s[6])), (o = !0)));
       },
-      p(u, h) {
-        (!s || (h & 16 && l !== (l = u[4].t("ASE.Web.Music.Shared.AX.Close")))) && p(e, "aria-label", l);
+      p(u, p) {
+        (!a || (p & 16 && l !== (l = u[4].t("ASE.Web.Music.Shared.AX.Close")))) && h(e, "aria-label", l);
       },
       i(u) {
-        s || (m(t.$$.fragment, u), (s = !0));
+        a || (m(t.$$.fragment, u), (a = !0));
       },
       o(u) {
-        (g(t.$$.fragment, u), (s = !1));
+        (v(t.$$.fragment, u), (a = !1));
       },
       d(u) {
         (u && b(e), O(t), (o = !1), _());
@@ -68,100 +68,100 @@ function W(a) {
     }
   );
 }
-function X(a) {
+function X(s) {
   let e, t;
   return {
     c() {
-      ((e = k("p")), (t = B(a[0])), this.h());
+      ((e = g("p")), (t = B(s[0])), this.h());
     },
     l(l) {
       e = E(l, "P", { class: !0, "data-testid": !0 });
-      var s = C(e);
-      ((t = A(s, a[0])), s.forEach(b), this.h());
+      var a = C(e);
+      ((t = A(a, s[0])), a.forEach(b), this.h());
     },
     h() {
-      (p(e, "class", "text__title svelte-1uspg9f"), p(e, "data-testid", "upsell-banner-title"));
+      (h(e, "class", "text__title svelte-r5lnk4"), h(e, "data-testid", "upsell-banner-title"));
     },
-    m(l, s) {
-      (T(l, e, s), v(e, t));
+    m(l, a) {
+      (T(l, e, a), k(e, t));
     },
-    p(l, s) {
-      s & 1 && D(t, l[0]);
+    p(l, a) {
+      a & 1 && D(t, l[0]);
     },
     d(l) {
       l && b(e);
     },
   };
 }
-function q(a) {
+function q(s) {
   let e, t;
   return {
     c() {
-      ((e = k("p")), (t = B(a[1])), this.h());
+      ((e = g("p")), (t = B(s[1])), this.h());
     },
     l(l) {
       e = E(l, "P", { class: !0, "data-testid": !0 });
-      var s = C(e);
-      ((t = A(s, a[1])), s.forEach(b), this.h());
+      var a = C(e);
+      ((t = A(a, s[1])), a.forEach(b), this.h());
     },
     h() {
-      (p(e, "class", "text__description svelte-1uspg9f"), p(e, "data-testid", "upsell-banner-description"));
+      (h(e, "class", "text__description svelte-r5lnk4"), h(e, "data-testid", "upsell-banner-description"));
     },
-    m(l, s) {
-      (T(l, e, s), v(e, t));
+    m(l, a) {
+      (T(l, e, a), k(e, t));
     },
-    p(l, s) {
-      s & 2 && D(t, l[1]);
+    p(l, a) {
+      a & 2 && D(t, l[1]);
     },
     d(l) {
       l && b(e);
     },
   };
 }
-function F(a) {
+function F(s) {
   let e, t, l;
   return (
-    (t = new Y({ props: { $$slots: { default: [Z] }, $$scope: { ctx: a } } })),
-    t.$on("buttonClick", a[9]),
+    (t = new Y({ props: { $$slots: { default: [Z] }, $$scope: { ctx: s } } })),
+    t.$on("buttonClick", s[9]),
     {
       c() {
-        ((e = k("div")), G(t.$$.fragment), this.h());
+        ((e = g("div")), G(t.$$.fragment), this.h());
       },
-      l(s) {
-        e = E(s, "DIV", { class: !0, "data-testid": !0 });
+      l(a) {
+        e = E(a, "DIV", { class: !0, "data-testid": !0 });
         var o = C(e);
         (K(t.$$.fragment, o), o.forEach(b), this.h());
       },
       h() {
-        (p(e, "class", "banner__cta-button svelte-1uspg9f"), p(e, "data-testid", "upsell-banner-cta"));
+        (h(e, "class", "banner__cta-button svelte-r5lnk4"), h(e, "data-testid", "upsell-banner-cta"));
       },
-      m(s, o) {
-        (T(s, e, o), N(t, e, null), (l = !0));
+      m(a, o) {
+        (T(a, e, o), N(t, e, null), (l = !0));
       },
-      p(s, o) {
+      p(a, o) {
         const _ = {};
-        (o & 1028 && (_.$$scope = { dirty: o, ctx: s }), t.$set(_));
+        (o & 1028 && (_.$$scope = { dirty: o, ctx: a }), t.$set(_));
       },
-      i(s) {
-        l || (m(t.$$.fragment, s), (l = !0));
+      i(a) {
+        l || (m(t.$$.fragment, a), (l = !0));
       },
-      o(s) {
-        (g(t.$$.fragment, s), (l = !1));
+      o(a) {
+        (v(t.$$.fragment, a), (l = !1));
       },
-      d(s) {
-        (s && b(e), O(t));
+      d(a) {
+        (a && b(e), O(t));
       },
     }
   );
 }
-function Z(a) {
+function Z(s) {
   let e;
   return {
     c() {
-      e = B(a[2]);
+      e = B(s[2]);
     },
     l(t) {
-      e = A(t, a[2]);
+      e = A(t, s[2]);
     },
     m(t, l) {
       T(t, e, l);
@@ -174,27 +174,27 @@ function Z(a) {
     },
   };
 }
-function $(a) {
+function $(s) {
   let e,
     t,
     l,
-    s,
+    a,
     o,
     _,
     u,
-    h,
-    i = !a[3] && W(a),
-    c = a[0] && X(a),
-    f = a[1] && q(a),
-    r = a[2] && F(a);
+    p,
+    i = !s[3] && W(s),
+    c = s[0] && X(s),
+    f = s[1] && q(s),
+    r = s[2] && F(s);
   return {
     c() {
-      ((e = k("div")),
+      ((e = g("div")),
         i && i.c(),
         (t = I()),
-        (l = k("div")),
+        (l = g("div")),
         c && c.c(),
-        (s = I()),
+        (a = I()),
         f && f.c(),
         (o = I()),
         r && r.c(),
@@ -205,39 +205,39 @@ function $(a) {
       var d = C(e);
       (i && i.l(d), (t = S(d)), (l = E(d, "DIV", { class: !0 })));
       var w = C(l);
-      (c && c.l(w), (s = S(w)), f && f.l(w), w.forEach(b), (o = S(d)), r && r.l(d), d.forEach(b), this.h());
+      (c && c.l(w), (a = S(w)), f && f.l(w), w.forEach(b), (o = S(d)), r && r.l(d), d.forEach(b), this.h());
     },
     h() {
-      (p(l, "class", "banner__text-container svelte-1uspg9f"),
-        p(e, "class", "banner svelte-1uspg9f"),
-        p(e, "data-testid", "upsell-banner-inline"),
-        P(e, "banner--collapsed", a[3]));
+      (h(l, "class", "banner__text-container svelte-r5lnk4"),
+        h(e, "class", "banner svelte-r5lnk4"),
+        h(e, "data-testid", "upsell-banner-inline"),
+        P(e, "banner--collapsed", s[3]));
     },
     m(n, d) {
       (T(n, e, d),
         i && i.m(e, null),
-        v(e, t),
-        v(e, l),
+        k(e, t),
+        k(e, l),
         c && c.m(l, null),
-        v(l, s),
+        k(l, a),
         f && f.m(l, null),
-        v(e, o),
+        k(e, o),
         r && r.m(e, null),
         (_ = !0),
-        u || ((h = [y(e, "click", a[8]), y(e, "keydown", a[7])]), (u = !0)));
+        u || ((p = [y(e, "click", s[8]), y(e, "keydown", s[7])]), (u = !0)));
     },
     p(n, [d]) {
       (n[3]
         ? i &&
           (U(),
-          g(i, 1, 1, () => {
+          v(i, 1, 1, () => {
             i = null;
           }),
           M())
         : i
           ? (i.p(n, d), d & 8 && m(i, 1))
           : ((i = W(n)), i.c(), m(i, 1), i.m(e, t)),
-        n[0] ? (c ? c.p(n, d) : ((c = X(n)), c.c(), c.m(l, s))) : c && (c.d(1), (c = null)),
+        n[0] ? (c ? c.p(n, d) : ((c = X(n)), c.c(), c.m(l, a))) : c && (c.d(1), (c = null)),
         n[1] ? (f ? f.p(n, d) : ((f = q(n)), f.c(), f.m(l, null))) : f && (f.d(1), (f = null)),
         n[2]
           ? r
@@ -245,7 +245,7 @@ function $(a) {
             : ((r = F(n)), r.c(), m(r, 1), r.m(e, null))
           : r &&
             (U(),
-            g(r, 1, 1, () => {
+            v(r, 1, 1, () => {
               r = null;
             }),
             M()),
@@ -255,41 +255,41 @@ function $(a) {
       _ || (m(i), m(r), (_ = !0));
     },
     o(n) {
-      (g(i), g(r), (_ = !1));
+      (v(i), v(r), (_ = !1));
     },
     d(n) {
-      (n && b(e), i && i.d(), c && c.d(), f && f.d(), r && r.d(), (u = !1), J(h));
+      (n && b(e), i && i.d(), c && c.d(), f && f.d(), r && r.d(), (u = !1), J(p));
     },
   };
 }
-function x(a, e, t) {
+function x(s, e, t) {
   let l,
-    { title: s = null } = e,
+    { title: a = null } = e,
     { description: o = null } = e,
     { ctaText: _ = null } = e;
   const u = L();
-  Q(a, u, (n) => t(4, (l = n)));
-  let h = !1;
+  Q(s, u, (n) => t(4, (l = n)));
+  let p = !1;
   const i = (n) => {
-      (n.stopPropagation(), t(3, (h = !0)));
+      (n.stopPropagation(), t(3, (p = !0)));
     },
     c = (n) => {
       (n.key === "Enter" || n.key === " ") &&
         (n.preventDefault(), n.currentTarget.dispatchEvent(new MouseEvent("click", { bubbles: !0 })));
     };
   function f(n) {
-    V.call(this, a, n);
+    V.call(this, s, n);
   }
   function r(n) {
-    V.call(this, a, n);
+    V.call(this, s, n);
   }
   return (
-    (a.$$set = (n) => {
-      ("title" in n && t(0, (s = n.title)),
+    (s.$$set = (n) => {
+      ("title" in n && t(0, (a = n.title)),
         "description" in n && t(1, (o = n.description)),
         "ctaText" in n && t(2, (_ = n.ctaText)));
     }),
-    [s, o, _, h, l, u, i, c, f, r]
+    [a, o, _, p, l, u, i, c, f, r]
   );
 }
 class te extends j {

@@ -1,58 +1,58 @@
 import {
   S as fe,
   i as ue,
-  n as Ce,
+  n as Te,
   J as ie,
-  k as T,
-  r as v,
+  k as S,
+  r as b,
   u as ee,
-  v as g,
+  v as k,
   w as te,
   g as d,
-  cy as ye,
+  cF as Pe,
   O as oe,
   c as H,
   f as L,
-  m as O,
-  x as N,
-  cz as He,
+  m as N,
+  x as O,
+  cG as He,
   e as A,
-  s as z,
-  E as Fe,
-  a as E,
+  s as M,
+  E as Ce,
+  a as y,
   b as w,
-  d as M,
-  F as qe,
+  d as j,
+  F as Fe,
   h as u,
   l as B,
-  G as Ve,
+  G as qe,
   p as Le,
-  cA as Oe,
-  b5 as Ne,
-  b6 as We,
-  b7 as se,
-  b8 as _e,
-  b9 as me,
-  ba as ve,
-  bb as Pe,
-  H as be,
-  bc as ge,
-  ct as ze,
-  cB as Me,
-  t as Q,
-  o as ke,
-  y as je,
-  bv as Je,
-  z as Re,
-  bO as Ue,
-  cC as Ge,
+  cH as Ne,
+  bg as Oe,
+  bh as We,
+  bi as se,
+  bj as _e,
+  bk as me,
+  bl as be,
+  bm as Ve,
+  H as ge,
+  bn as ke,
+  cA as Me,
+  cI as je,
+  t as X,
+  o as ve,
+  y as Je,
+  aQ as ze,
+  z as Ge,
+  bW as Ke,
+  cJ as Re,
   D as ne,
-  bu as Ke,
-  cD as Xe,
-  T as Qe,
+  bD as Ue,
+  cK as Qe,
+  T as Xe,
   X as Ye,
-  cE as we,
-  cF as Ze,
+  cL as we,
+  cM as Ze,
 } from "./main.js";
 import { T as xe } from "./TitleBadge.js";
 function pe(i) {
@@ -67,7 +67,7 @@ function pe(i) {
         L(e.$$.fragment, r);
       },
       m(r, a) {
-        (O(e, r, a), (t = !0));
+        (N(e, r, a), (t = !0));
       },
       p(r, a) {
         const l = {};
@@ -77,13 +77,13 @@ function pe(i) {
           e.$set(l));
       },
       i(r) {
-        t || (v(e.$$.fragment, r), (t = !0));
+        t || (b(e.$$.fragment, r), (t = !0));
       },
       o(r) {
-        (g(e.$$.fragment, r), (t = !1));
+        (k(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        N(e, r);
+        O(e, r);
       },
     }
   );
@@ -95,7 +95,7 @@ function Be(i) {
       ((e = A("a")), this.h());
     },
     l(l) {
-      ((e = E(l, "A", { class: !0, href: !0, "aria-label": !0, "data-testid": !0 })), w(e).forEach(d), this.h());
+      ((e = y(l, "A", { class: !0, href: !0, "aria-label": !0, "data-testid": !0 })), w(e).forEach(d), this.h());
     },
     h() {
       (u(e, "class", "tour-badge__link svelte-1nwwbu9"),
@@ -104,12 +104,12 @@ function Be(i) {
         u(e, "data-testid", "tour-badge-link"));
     },
     m(l, s) {
-      (T(l, e, s), r || ((a = Le((t = Oe.call(null, e, i[1])))), (r = !0)));
+      (S(l, e, s), r || ((a = Le((t = Ne.call(null, e, i[1])))), (r = !0)));
     },
     p(l, s) {
       (s & 1 && u(e, "href", l[0]),
         s & 32 && u(e, "aria-label", l[5]),
-        t && Ne(t.update) && s & 2 && t.update.call(null, l[1]));
+        t && Oe(t.update) && s & 2 && t.update.call(null, l[1]));
     },
     d(l) {
       (l && d(e), (r = !1), a());
@@ -117,27 +117,27 @@ function Be(i) {
   };
 }
 function $e(i) {
-  let e, t, r, a, l, s, b, _;
+  let e, t, r, a, l, s, g, _;
   t = new He({});
   let o = i[4] && Be(i);
   return {
     c() {
       ((e = A("div")),
         H(t.$$.fragment),
-        (r = z()),
+        (r = M()),
         (a = A("p")),
-        (l = Fe(i[5])),
-        (s = z()),
+        (l = Ce(i[5])),
+        (s = M()),
         o && o.c(),
-        (b = ie()),
+        (g = ie()),
         this.h());
     },
     l(c) {
-      e = E(c, "DIV", { class: !0, "aria-hidden": !0 });
+      e = y(c, "DIV", { class: !0, "aria-hidden": !0 });
       var h = w(e);
-      (L(t.$$.fragment, h), h.forEach(d), (r = M(c)), (a = E(c, "P", { class: !0, "data-testid": !0 })));
-      var y = w(a);
-      ((l = qe(y, i[5])), y.forEach(d), (s = M(c)), o && o.l(c), (b = ie()), this.h());
+      (L(t.$$.fragment, h), h.forEach(d), (r = j(c)), (a = y(c, "P", { class: !0, "data-testid": !0 })));
+      var P = w(a);
+      ((l = Fe(P, i[5])), P.forEach(d), (s = j(c)), o && o.l(c), (g = ie()), this.h());
     },
     h() {
       (u(e, "class", "tour-badge__icon svelte-1nwwbu9"),
@@ -146,20 +146,20 @@ function $e(i) {
         u(a, "data-testid", "tour-badge-title"));
     },
     m(c, h) {
-      (T(c, e, h), O(t, e, null), T(c, r, h), T(c, a, h), B(a, l), T(c, s, h), o && o.m(c, h), T(c, b, h), (_ = !0));
+      (S(c, e, h), N(t, e, null), S(c, r, h), S(c, a, h), B(a, l), S(c, s, h), o && o.m(c, h), S(c, g, h), (_ = !0));
     },
     p(c, h) {
-      ((!_ || h & 32) && Ve(l, c[5]),
-        c[4] ? (o ? o.p(c, h) : ((o = Be(c)), o.c(), o.m(b.parentNode, b))) : o && (o.d(1), (o = null)));
+      ((!_ || h & 32) && qe(l, c[5]),
+        c[4] ? (o ? o.p(c, h) : ((o = Be(c)), o.c(), o.m(g.parentNode, g))) : o && (o.d(1), (o = null)));
     },
     i(c) {
-      _ || (v(t.$$.fragment, c), (_ = !0));
+      _ || (b(t.$$.fragment, c), (_ = !0));
     },
     o(c) {
-      (g(t.$$.fragment, c), (_ = !1));
+      (k(t.$$.fragment, c), (_ = !1));
     },
     d(c) {
-      (c && (d(e), d(r), d(a), d(s), d(b)), N(t), o && o.d(c));
+      (c && (d(e), d(r), d(a), d(s), d(g)), O(t), o && o.d(c));
     },
   };
 }
@@ -175,25 +175,25 @@ function et(i) {
       (r && r.l(a), (e = ie()));
     },
     m(a, l) {
-      (r && r.m(a, l), T(a, e, l), (t = !0));
+      (r && r.m(a, l), S(a, e, l), (t = !0));
     },
     p(a, [l]) {
       a[5]
         ? r
-          ? (r.p(a, l), l & 32 && v(r, 1))
-          : ((r = pe(a)), r.c(), v(r, 1), r.m(e.parentNode, e))
+          ? (r.p(a, l), l & 32 && b(r, 1))
+          : ((r = pe(a)), r.c(), b(r, 1), r.m(e.parentNode, e))
         : r &&
           (ee(),
-          g(r, 1, 1, () => {
+          k(r, 1, 1, () => {
             r = null;
           }),
           te());
     },
     i(a) {
-      t || (v(r), (t = !0));
+      t || (b(r), (t = !0));
     },
     o(a) {
-      (g(r), (t = !1));
+      (k(r), (t = !1));
     },
     d(a) {
       (a && d(e), r && r.d(a));
@@ -205,35 +205,35 @@ function tt(i, e, t) {
     a,
     l,
     s,
-    b,
+    g,
     _,
     { link: o } = e,
     { isThemed: c = !1 } = e,
     { artworkColor: h = null } = e,
-    { useBreakpoint: y = !1 } = e,
+    { useBreakpoint: P = !1 } = e,
     { theme: W = null } = e;
   return (
-    (i.$$set = (S) => {
-      ("link" in S && t(6, (o = S.link)),
-        "isThemed" in S && t(7, (c = S.isThemed)),
-        "artworkColor" in S && t(8, (h = S.artworkColor)),
-        "useBreakpoint" in S && t(9, (y = S.useBreakpoint)),
-        "theme" in S && t(10, (W = S.theme)));
+    (i.$$set = (D) => {
+      ("link" in D && t(6, (o = D.link)),
+        "isThemed" in D && t(7, (c = D.isThemed)),
+        "artworkColor" in D && t(8, (h = D.artworkColor)),
+        "useBreakpoint" in D && t(9, (P = D.useBreakpoint)),
+        "theme" in D && t(10, (W = D.theme)));
     }),
     (i.$$.update = () => {
       (i.$$.dirty & 64 && t(5, (r = o.title)),
         i.$$.dirty & 64 && t(1, (a = o.segue)),
         i.$$.dirty & 64 && t(0, (l = o.url)),
         i.$$.dirty & 3 && t(4, (s = !!a && !!l)),
-        i.$$.dirty & 1408 && t(3, (b = W ?? (h && c ? (ye(h) ? oe.Light : oe.Dark) : null))),
-        i.$$.dirty & 1536 && t(2, (_ = y && W === null)));
+        i.$$.dirty & 1408 && t(3, (g = W ?? (h && c ? (Pe(h) ? oe.Light : oe.Dark) : null))),
+        i.$$.dirty & 1536 && t(2, (_ = P && W === null)));
     }),
-    [l, a, _, b, s, r, o, c, h, y, W]
+    [l, a, _, g, s, r, o, c, h, P, W]
   );
 }
 class rt extends fe {
   constructor(e) {
-    (super(), ue(this, e, tt, et, Ce, { link: 6, isThemed: 7, artworkColor: 8, useBreakpoint: 9, theme: 10 }));
+    (super(), ue(this, e, tt, et, Te, { link: 6, isThemed: 7, artworkColor: 8, useBreakpoint: 9, theme: 10 }));
   }
 }
 function at(i) {
@@ -264,15 +264,15 @@ function at(i) {
         "d",
         "M0 70.752c0 1.954 1.709 3.516 3.809 3.516h30.713c2.148 0 3.808-1.562 3.808-3.516 0-1.904-1.66-3.418-3.808-3.418H24.317V30.616c0-2.198-1.661-3.955-3.76-3.955H4.981c-2.198 0-3.858 1.513-3.858 3.369 0 2.002 1.66 3.564 3.858 3.564h11.181v33.74H3.809c-2.1 0-3.809 1.514-3.809 3.418m18.555-57.519a6.565 6.565 0 0 0 6.592-6.592c0-3.662-2.93-6.641-6.592-6.641a6.65 6.65 0 0 0-6.641 6.641c0 3.662 2.979 6.592 6.641 6.592",
       ),
-        ve(e, a));
+        be(e, a));
     },
     m(l, s) {
-      (T(l, e, s), B(e, t));
+      (S(l, e, s), B(e, t));
     },
     p(l, [s]) {
-      ve(
+      be(
         e,
-        (a = Pe(r, [
+        (a = Ve(r, [
           { xmlns: "http://www.w3.org/2000/svg" },
           { "xml:space": "preserve" },
           { width: "39" },
@@ -282,8 +282,8 @@ function at(i) {
         ])),
       );
     },
-    i: be,
-    o: be,
+    i: ge,
+    o: ge,
     d(l) {
       l && d(e);
     },
@@ -292,9 +292,9 @@ function at(i) {
 function lt(i, e, t) {
   return (
     (i.$$set = (r) => {
-      t(0, (e = se(se({}, e), ge(r))));
+      t(0, (e = se(se({}, e), ke(r))));
     }),
-    (e = ge(e)),
+    (e = ke(e)),
     [e]
   );
 }
@@ -310,25 +310,26 @@ function Ae(i) {
       ((e = A("div")), this.h());
     },
     l(t) {
-      ((e = E(t, "DIV", { class: !0, "aria-hidden": !0 })), w(e).forEach(d), this.h());
+      ((e = y(t, "DIV", { class: !0, "aria-hidden": !0 })), w(e).forEach(d), this.h());
     },
     h() {
-      (u(e, "class", "artist-expression-header__scrim-scroll svelte-xqfvb5"), u(e, "aria-hidden", "true"));
+      (u(e, "class", "artist-expression-header__scrim-scroll svelte-1uq4byo"), u(e, "aria-hidden", "true"));
     },
     m(t, r) {
-      T(t, e, r);
+      S(t, e, r);
     },
     d(t) {
       t && d(e);
     },
   };
 }
-function Ee(i) {
+function ye(i) {
   let e, t, r;
   return (
-    (t = new Ue({
+    (t = new Ke({
       props: {
         contentDescriptor: i[14],
+        buttonStyle: "non-platter",
         isPlayable: !!i[8],
         isArtist: !0,
         hideAddToLibrary: !0,
@@ -341,34 +342,34 @@ function Ee(i) {
         ((e = A("div")), H(t.$$.fragment), this.h());
       },
       l(a) {
-        e = E(a, "DIV", { class: !0 });
+        e = y(a, "DIV", { class: !0 });
         var l = w(e);
         (L(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
-        u(e, "class", "artist-expression-header__cloud-buttons svelte-xqfvb5");
+        u(e, "class", "artist-expression-header__cloud-buttons svelte-1uq4byo");
       },
       m(a, l) {
-        (T(a, e, l), O(t, e, null), (r = !0));
+        (S(a, e, l), N(t, e, null), (r = !0));
       },
       p(a, l) {
         const s = {};
         (l[0] & 16384 && (s.contentDescriptor = a[14]), l[0] & 256 && (s.isPlayable = !!a[8]), t.$set(s));
       },
       i(a) {
-        r || (v(t.$$.fragment, a), (r = !0));
+        r || (b(t.$$.fragment, a), (r = !0));
       },
       o(a) {
-        (g(t.$$.fragment, a), (r = !1));
+        (k(t.$$.fragment, a), (r = !1));
       },
       d(a) {
-        (a && d(e), N(t));
+        (a && d(e), O(t));
       },
     }
   );
 }
 function st(i) {
-  let e, t, r, a, l, s, b;
+  let e, t, r, a, l, s, g;
   return (
     (r = new we({
       props: {
@@ -392,24 +393,24 @@ function st(i) {
     })),
     {
       c() {
-        ((e = A("div")), (t = A("div")), H(r.$$.fragment), (a = z()), (l = A("div")), H(s.$$.fragment), this.h());
+        ((e = A("div")), (t = A("div")), H(r.$$.fragment), (a = M()), (l = A("div")), H(s.$$.fragment), this.h());
       },
       l(_) {
-        e = E(_, "DIV", { class: !0 });
+        e = y(_, "DIV", { class: !0 });
         var o = w(e);
-        t = E(o, "DIV", { class: !0 });
+        t = y(o, "DIV", { class: !0 });
         var c = w(t);
-        (L(r.$$.fragment, c), c.forEach(d), (a = M(o)), (l = E(o, "DIV", { class: !0 })));
+        (L(r.$$.fragment, c), c.forEach(d), (a = j(o)), (l = y(o, "DIV", { class: !0 })));
         var h = w(l);
         (L(s.$$.fragment, h), h.forEach(d), o.forEach(d), this.h());
       },
       h() {
-        (u(t, "class", "artist-expression-header__circular-artwork-gradient svelte-xqfvb5"),
-          u(l, "class", "artist-expression-header__circular-artwork svelte-xqfvb5"),
-          u(e, "class", "artist-expression-header__circular-artwork-container svelte-xqfvb5"));
+        (u(t, "class", "artist-expression-header__circular-artwork-gradient svelte-1uq4byo"),
+          u(l, "class", "artist-expression-header__circular-artwork svelte-1uq4byo"),
+          u(e, "class", "artist-expression-header__circular-artwork-container svelte-1uq4byo"));
       },
       m(_, o) {
-        (T(_, e, o), B(e, t), O(r, t, null), B(e, a), B(e, l), O(s, l, null), (b = !0));
+        (S(_, e, o), B(e, t), N(r, t, null), B(e, a), B(e, l), N(s, l, null), (g = !0));
       },
       p(_, o) {
         const c = {};
@@ -418,13 +419,13 @@ function st(i) {
         (o[0] & 1 && (h.alt = _[0]), (o[0] & 33) | (o[1] & 1) && (h.$$scope = { dirty: o, ctx: _ }), s.$set(h));
       },
       i(_) {
-        b || (v(r.$$.fragment, _), v(s.$$.fragment, _), (b = !0));
+        g || (b(r.$$.fragment, _), b(s.$$.fragment, _), (g = !0));
       },
       o(_) {
-        (g(r.$$.fragment, _), g(s.$$.fragment, _), (b = !1));
+        (k(r.$$.fragment, _), k(s.$$.fragment, _), (g = !1));
       },
       d(_) {
-        (_ && d(e), N(r), N(s));
+        (_ && d(e), O(r), O(s));
       },
     }
   );
@@ -440,28 +441,28 @@ function nt(i) {
         ((e = A("div")), H(t.$$.fragment), this.h());
       },
       l(a) {
-        e = E(a, "DIV", { class: !0 });
+        e = y(a, "DIV", { class: !0 });
         var l = w(e);
         (L(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
-        u(e, "class", "artwork-container artist-expression-header__static-artwork svelte-xqfvb5");
+        u(e, "class", "artwork-container artist-expression-header__static-artwork svelte-1uq4byo");
       },
       m(a, l) {
-        (T(a, e, l), O(t, e, null), (r = !0));
+        (S(a, e, l), N(t, e, null), (r = !0));
       },
       p(a, l) {
         const s = {};
         (l[0] & 128 && (s.artwork = a[7]), l[0] & 262144 && (s.profile = a[18]), l[0] & 1 && (s.alt = a[0]), t.$set(s));
       },
       i(a) {
-        r || (v(t.$$.fragment, a), (r = !0));
+        r || (b(t.$$.fragment, a), (r = !0));
       },
       o(a) {
-        (g(t.$$.fragment, a), (r = !1));
+        (k(t.$$.fragment, a), (r = !1));
       },
       d(a) {
-        (a && d(e), N(t));
+        (a && d(e), O(t));
       },
     }
   );
@@ -488,7 +489,7 @@ function ot(i) {
         L(e.$$.fragment, r);
       },
       m(r, a) {
-        (O(e, r, a), (t = !0));
+        (N(e, r, a), (t = !0));
       },
       p(r, a) {
         const l = {};
@@ -498,13 +499,13 @@ function ot(i) {
           e.$set(l));
       },
       i(r) {
-        t || (v(e.$$.fragment, r), (t = !0));
+        t || (b(e.$$.fragment, r), (t = !0));
       },
       o(r) {
-        (g(e.$$.fragment, r), (t = !1));
+        (k(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        N(e, r);
+        O(e, r);
       },
     }
   );
@@ -521,20 +522,20 @@ function ft(i) {
         L(e.$$.fragment, r);
       },
       m(r, a) {
-        (O(e, r, a), (t = !0));
+        (N(e, r, a), (t = !0));
       },
       p(r, a) {
         const l = {};
         (a[0] & 32 && (l.artwork = r[5]), e.$set(l));
       },
       i(r) {
-        t || (v(e.$$.fragment, r), (t = !0));
+        t || (b(e.$$.fragment, r), (t = !0));
       },
       o(r) {
-        (g(e.$$.fragment, r), (t = !1));
+        (k(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        N(e, r);
+        O(e, r);
       },
     }
   );
@@ -551,52 +552,52 @@ function ut(i) {
         L(e.$$.fragment, r);
       },
       m(r, a) {
-        (O(e, r, a), (t = !0));
+        (N(e, r, a), (t = !0));
       },
       p(r, a) {
         const l = {};
         (a[0] & 32 && (l.artwork = r[5]), a[0] & 1 && (l.alt = r[0]), e.$set(l));
       },
       i(r) {
-        t || (v(e.$$.fragment, r), (t = !0));
+        t || (b(e.$$.fragment, r), (t = !0));
       },
       o(r) {
-        (g(e.$$.fragment, r), (t = !1));
+        (k(e.$$.fragment, r), (t = !1));
       },
       d(r) {
-        N(e, r);
+        O(e, r);
       },
     }
   );
 }
-function De(i) {
+function Ee(i) {
   let e, t, r;
   return {
     c() {
-      ((e = A("div")), (t = z()), (r = A("div")), this.h());
+      ((e = A("div")), (t = M()), (r = A("div")), this.h());
     },
     l(a) {
-      ((e = E(a, "DIV", { class: !0 })),
+      ((e = y(a, "DIV", { class: !0 })),
         w(e).forEach(d),
-        (t = M(a)),
-        (r = E(a, "DIV", { class: !0, "aria-hidden": !0 })),
+        (t = j(a)),
+        (r = y(a, "DIV", { class: !0, "aria-hidden": !0 })),
         w(r).forEach(d),
         this.h());
     },
     h() {
-      (u(e, "class", "artist-expression-header__artwork-tint svelte-xqfvb5"),
-        u(r, "class", "artist-expression-header__blur-frame svelte-xqfvb5"),
+      (u(e, "class", "artist-expression-header__artwork-tint svelte-1uq4byo"),
+        u(r, "class", "artist-expression-header__blur-frame svelte-1uq4byo"),
         u(r, "aria-hidden", "true"));
     },
     m(a, l) {
-      (T(a, e, l), T(a, t, l), T(a, r, l));
+      (S(a, e, l), S(a, t, l), S(a, r, l));
     },
     d(a) {
       a && (d(e), d(t), d(r));
     },
   };
 }
-function Se(i) {
+function De(i) {
   let e, t, r;
   const a = [i[9], { theme: oe.Dark }];
   let l = {};
@@ -608,33 +609,33 @@ function Se(i) {
         ((e = A("div")), H(t.$$.fragment), this.h());
       },
       l(s) {
-        e = E(s, "DIV", { class: !0, "data-testid": !0 });
-        var b = w(e);
-        (L(t.$$.fragment, b), b.forEach(d), this.h());
+        e = y(s, "DIV", { class: !0, "data-testid": !0 });
+        var g = w(e);
+        (L(t.$$.fragment, g), g.forEach(d), this.h());
       },
       h() {
-        (u(e, "class", "artist-expression-header__badge svelte-xqfvb5"), u(e, "data-testid", "artist-badge"));
+        (u(e, "class", "artist-expression-header__badge svelte-1uq4byo"), u(e, "data-testid", "artist-badge"));
       },
-      m(s, b) {
-        (T(s, e, b), O(t, e, null), (r = !0));
+      m(s, g) {
+        (S(s, e, g), N(t, e, null), (r = !0));
       },
-      p(s, b) {
-        const _ = b[0] & 512 ? Pe(a, [Ge(s[9]), a[1]]) : {};
+      p(s, g) {
+        const _ = g[0] & 512 ? Ve(a, [Re(s[9]), a[1]]) : {};
         t.$set(_);
       },
       i(s) {
-        r || (v(t.$$.fragment, s), (r = !0));
+        r || (b(t.$$.fragment, s), (r = !0));
       },
       o(s) {
-        (g(t.$$.fragment, s), (r = !1));
+        (k(t.$$.fragment, s), (r = !1));
       },
       d(s) {
-        (s && d(e), N(t));
+        (s && d(e), O(t));
       },
     }
   );
 }
-function Te(i) {
+function Se(i) {
   let e, t, r;
   return (
     (t = new ne({
@@ -652,30 +653,30 @@ function Te(i) {
         ((e = A("div")), H(t.$$.fragment), this.h());
       },
       l(a) {
-        e = E(a, "DIV", { class: !0, "data-testid": !0, "aria-hidden": !0 });
+        e = y(a, "DIV", { class: !0, "data-testid": !0, "aria-hidden": !0 });
         var l = w(e);
         (L(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
-        (u(e, "class", "artist-expression-header__logo svelte-xqfvb5"),
+        (u(e, "class", "artist-expression-header__logo svelte-1uq4byo"),
           u(e, "data-testid", "artist-expression-header-logo"),
           u(e, "aria-hidden", "true"));
       },
       m(a, l) {
-        (T(a, e, l), O(t, e, null), (r = !0));
+        (S(a, e, l), N(t, e, null), (r = !0));
       },
       p(a, l) {
         const s = {};
         (l[0] & 8 && (s.artwork = a[3]), l[0] & 1 && (s.alt = a[0]), t.$set(s));
       },
       i(a) {
-        r || (v(t.$$.fragment, a), (r = !0));
+        r || (b(t.$$.fragment, a), (r = !0));
       },
       o(a) {
-        (g(t.$$.fragment, a), (r = !1));
+        (k(t.$$.fragment, a), (r = !1));
       },
       d(a) {
-        (a && d(e), N(t));
+        (a && d(e), O(t));
       },
     }
   );
@@ -683,35 +684,35 @@ function Te(i) {
 function Ie(i) {
   let e, t, r;
   return (
-    (t = new Ke({ props: { isFavorited: i[11], enabled: i[13], filledFavorited: !0 } })),
+    (t = new Ue({ props: { isFavorited: i[11], enabled: i[13], filledFavorited: !0 } })),
     t.$on("toggle", i[22]),
     {
       c() {
         ((e = A("span")), H(t.$$.fragment), this.h());
       },
       l(a) {
-        e = E(a, "SPAN", { class: !0 });
+        e = y(a, "SPAN", { class: !0 });
         var l = w(e);
         (L(t.$$.fragment, l), l.forEach(d), this.h());
       },
       h() {
-        u(e, "class", "artist-expression-header__favorite-button svelte-xqfvb5");
+        u(e, "class", "artist-expression-header__favorite-button svelte-1uq4byo");
       },
       m(a, l) {
-        (T(a, e, l), O(t, e, null), (r = !0));
+        (S(a, e, l), N(t, e, null), (r = !0));
       },
       p(a, l) {
         const s = {};
         (l[0] & 2048 && (s.isFavorited = a[11]), l[0] & 8192 && (s.enabled = a[13]), t.$set(s));
       },
       i(a) {
-        r || (v(t.$$.fragment, a), (r = !0));
+        r || (b(t.$$.fragment, a), (r = !0));
       },
       o(a) {
-        (g(t.$$.fragment, a), (r = !1));
+        (k(t.$$.fragment, a), (r = !1));
       },
       d(a) {
-        (a && d(e), N(t));
+        (a && d(e), O(t));
       },
     }
   );
@@ -723,308 +724,308 @@ function ct(i) {
     a,
     l,
     s,
-    b,
+    g,
     _,
     o,
     c,
     h,
-    y,
-    W,
-    S,
     P,
+    W,
+    D,
     V,
-    j,
+    q,
     J,
-    G,
-    F,
+    z,
     R,
-    K,
+    C,
+    G,
+    U,
     Y,
     I,
     Z,
     re,
-    C = i[15] && Ae(),
-    k = i[14] && Ee(i);
+    T = i[15] && Ae(),
+    v = i[14] && ye(i);
   const ae = [ot, nt, st],
-    U = [];
+    K = [];
   function le(f, m) {
     return f[6] ? 0 : f[7] ? 1 : f[5] ? 2 : -1;
   }
-  ~(l = le(i)) && (s = U[l] = ae[l](i));
-  let q = (i[7] || i[6]) && De(),
-    p = i[9] && i[9].link && Se(i),
-    n = i[3] && Te(i);
-  ((j = new it({})),
-    (R = new ze({
-      props: { maskSvg: Me, rectWidth: 72, rectHeight: 72, maskWidth: 30, maskHeight: 30, inverted: !0 },
+  ~(l = le(i)) && (s = K[l] = ae[l](i));
+  let F = (i[7] || i[6]) && Ee(),
+    p = i[9] && i[9].link && De(i),
+    n = i[3] && Se(i);
+  ((J = new it({})),
+    (G = new Me({
+      props: { maskSvg: je, rectWidth: 72, rectHeight: 72, maskWidth: 30, maskHeight: 30, inverted: !0 },
     })));
-  let D = i[12] && Ie(i);
+  let E = i[12] && Ie(i);
   return {
     c() {
       ((e = A("div")),
-        C && C.c(),
-        (t = z()),
-        k && k.c(),
-        (r = z()),
+        T && T.c(),
+        (t = M()),
+        v && v.c(),
+        (r = M()),
         (a = A("div")),
         s && s.c(),
-        (b = z()),
-        q && q.c(),
-        (_ = z()),
+        (g = M()),
+        F && F.c(),
+        (_ = M()),
         (o = A("div")),
         p && p.c(),
-        (c = z()),
+        (c = M()),
         (h = A("h1")),
-        (y = Fe(i[0])),
-        (W = z()),
+        (P = Ce(i[0])),
+        (W = M()),
         n && n.c(),
-        (S = z()),
-        (P = A("div")),
-        (V = A("button")),
-        H(j.$$.fragment),
-        (G = z()),
-        (F = A("button")),
-        H(R.$$.fragment),
-        (Y = z()),
-        D && D.c(),
+        (D = M()),
+        (V = A("div")),
+        (q = A("button")),
+        H(J.$$.fragment),
+        (R = M()),
+        (C = A("button")),
+        H(G.$$.fragment),
+        (Y = M()),
+        E && E.c(),
         this.h());
     },
     l(f) {
-      e = E(f, "DIV", { class: !0, style: !0, "data-artwork-color": !0, "data-testid": !0 });
+      e = y(f, "DIV", { class: !0, style: !0, "data-artwork-color": !0, "data-testid": !0 });
       var m = w(e);
-      (C && C.l(m), (t = M(m)), k && k.l(m), (r = M(m)), (a = E(m, "DIV", { class: !0 })));
+      (T && T.l(m), (t = j(m)), v && v.l(m), (r = j(m)), (a = y(m, "DIV", { class: !0 })));
       var x = w(a);
-      (s && s.l(x), x.forEach(d), (b = M(m)), q && q.l(m), (_ = M(m)), (o = E(m, "DIV", { class: !0 })));
-      var X = w(o);
-      (p && p.l(X), (c = M(X)), (h = E(X, "H1", { class: !0, "data-testid": !0 })));
+      (s && s.l(x), x.forEach(d), (g = j(m)), F && F.l(m), (_ = j(m)), (o = y(m, "DIV", { class: !0 })));
+      var Q = w(o);
+      (p && p.l(Q), (c = j(Q)), (h = y(Q, "H1", { class: !0, "data-testid": !0 })));
       var ce = w(h);
-      ((y = qe(ce, i[0])), ce.forEach(d), (W = M(X)), n && n.l(X), (S = M(X)), (P = E(X, "DIV", { class: !0 })));
-      var $ = w(P);
-      V = E($, "BUTTON", { class: !0, "aria-label": !0, "data-testid": !0 });
-      var de = w(V);
-      (L(j.$$.fragment, de),
+      ((P = Fe(ce, i[0])), ce.forEach(d), (W = j(Q)), n && n.l(Q), (D = j(Q)), (V = y(Q, "DIV", { class: !0 })));
+      var $ = w(V);
+      q = y($, "BUTTON", { class: !0, "aria-label": !0, "data-testid": !0 });
+      var de = w(q);
+      (L(J.$$.fragment, de),
         de.forEach(d),
-        (G = M($)),
-        (F = E($, "BUTTON", { class: !0, "aria-label": !0, "data-testid": !0 })));
-      var he = w(F);
-      (L(R.$$.fragment, he),
+        (R = j($)),
+        (C = y($, "BUTTON", { class: !0, "aria-label": !0, "data-testid": !0 })));
+      var he = w(C);
+      (L(G.$$.fragment, he),
         he.forEach(d),
-        (Y = M($)),
-        D && D.l($),
+        (Y = j($)),
+        E && E.l($),
         $.forEach(d),
-        X.forEach(d),
+        Q.forEach(d),
         m.forEach(d),
         this.h());
     },
     h() {
-      (u(a, "class", "artist-expression-header__artwork svelte-xqfvb5"),
-        u(h, "class", "artist-expression-header__name svelte-xqfvb5"),
+      (u(a, "class", "artist-expression-header__artwork svelte-1uq4byo"),
+        u(h, "class", "artist-expression-header__name svelte-1uq4byo"),
         u(h, "data-testid", "artist-expression-header-name"),
-        Q(h, "artist-expression-header__name--visually-hidden", !!i[3]),
-        u(V, "class", "artist-expression-header__info-button svelte-xqfvb5"),
-        u(V, "aria-label", i[2]),
-        u(V, "data-testid", "artist-info-button"),
-        (V.disabled = J = !i[10]),
-        u(F, "class", "artist-expression-header__play-button svelte-xqfvb5"),
-        u(F, "aria-label", i[1]),
-        (F.disabled = K = !i[8]),
-        u(F, "data-testid", "artist-play-button"),
-        u(P, "class", "artist-expression-header__actions-row svelte-xqfvb5"),
-        u(o, "class", "artist-expression-header__name-container svelte-xqfvb5"),
-        u(e, "class", "artist-expression-header svelte-xqfvb5"),
+        X(h, "artist-expression-header__name--visually-hidden", !!i[3]),
+        u(q, "class", "artist-expression-header__info-button svelte-1uq4byo"),
+        u(q, "aria-label", i[2]),
+        u(q, "data-testid", "artist-info-button"),
+        (q.disabled = z = !i[10]),
+        u(C, "class", "artist-expression-header__play-button svelte-1uq4byo"),
+        u(C, "aria-label", i[1]),
+        (C.disabled = U = !i[8]),
+        u(C, "data-testid", "artist-play-button"),
+        u(V, "class", "artist-expression-header__actions-row svelte-1uq4byo"),
+        u(o, "class", "artist-expression-header__name-container svelte-1uq4byo"),
+        u(e, "class", "artist-expression-header svelte-1uq4byo"),
         u(e, "style", i[17]),
         u(e, "data-artwork-color", i[4]),
         u(e, "data-testid", "artist-expression-header"),
-        Q(e, "artist-expression-header--fixed", !!i[7] || !!i[6]),
-        Q(e, "artist-expression-header--video", !!i[6]),
-        Q(e, "artist-expression-header--no-artwork", !i[5] && !i[6] && !i[7]));
+        X(e, "artist-expression-header--fixed", !!i[7] || !!i[6]),
+        X(e, "artist-expression-header--video", !!i[6]),
+        X(e, "artist-expression-header--no-artwork", !i[5] && !i[6] && !i[7]));
     },
     m(f, m) {
-      (T(f, e, m),
-        C && C.m(e, null),
+      (S(f, e, m),
+        T && T.m(e, null),
         B(e, t),
-        k && k.m(e, null),
+        v && v.m(e, null),
         B(e, r),
         B(e, a),
-        ~l && U[l].m(a, null),
-        B(e, b),
-        q && q.m(e, null),
+        ~l && K[l].m(a, null),
+        B(e, g),
+        F && F.m(e, null),
         B(e, _),
         B(e, o),
         p && p.m(o, null),
         B(o, c),
         B(o, h),
-        B(h, y),
+        B(h, P),
         B(o, W),
         n && n.m(o, null),
-        B(o, S),
-        B(o, P),
-        B(P, V),
-        O(j, V, null),
-        i[27](V),
-        B(P, G),
-        B(P, F),
-        O(R, F, null),
-        B(P, Y),
-        D && D.m(P, null),
+        B(o, D),
+        B(o, V),
+        B(V, q),
+        N(J, q, null),
+        i[27](q),
+        B(V, R),
+        B(V, C),
+        N(G, C, null),
+        B(V, Y),
+        E && E.m(V, null),
         (I = !0),
-        Z || ((re = [ke(V, "click", i[21]), ke(F, "click", i[28])]), (Z = !0)));
+        Z || ((re = [ve(q, "click", i[21]), ve(C, "click", i[28])]), (Z = !0)));
     },
     p(f, m) {
-      (f[15] ? C || ((C = Ae()), C.c(), C.m(e, t)) : C && (C.d(1), (C = null)),
+      (f[15] ? T || ((T = Ae()), T.c(), T.m(e, t)) : T && (T.d(1), (T = null)),
         f[14]
-          ? k
-            ? (k.p(f, m), m[0] & 16384 && v(k, 1))
-            : ((k = Ee(f)), k.c(), v(k, 1), k.m(e, r))
-          : k &&
+          ? v
+            ? (v.p(f, m), m[0] & 16384 && b(v, 1))
+            : ((v = ye(f)), v.c(), b(v, 1), v.m(e, r))
+          : v &&
             (ee(),
-            g(k, 1, 1, () => {
-              k = null;
+            k(v, 1, 1, () => {
+              v = null;
             }),
             te()));
       let x = l;
       ((l = le(f)),
         l === x
-          ? ~l && U[l].p(f, m)
+          ? ~l && K[l].p(f, m)
           : (s &&
               (ee(),
-              g(U[x], 1, 1, () => {
-                U[x] = null;
+              k(K[x], 1, 1, () => {
+                K[x] = null;
               }),
               te()),
-            ~l ? ((s = U[l]), s ? s.p(f, m) : ((s = U[l] = ae[l](f)), s.c()), v(s, 1), s.m(a, null)) : (s = null)),
-        f[7] || f[6] ? q || ((q = De()), q.c(), q.m(e, _)) : q && (q.d(1), (q = null)),
+            ~l ? ((s = K[l]), s ? s.p(f, m) : ((s = K[l] = ae[l](f)), s.c()), b(s, 1), s.m(a, null)) : (s = null)),
+        f[7] || f[6] ? F || ((F = Ee()), F.c(), F.m(e, _)) : F && (F.d(1), (F = null)),
         f[9] && f[9].link
           ? p
-            ? (p.p(f, m), m[0] & 512 && v(p, 1))
-            : ((p = Se(f)), p.c(), v(p, 1), p.m(o, c))
+            ? (p.p(f, m), m[0] & 512 && b(p, 1))
+            : ((p = De(f)), p.c(), b(p, 1), p.m(o, c))
           : p &&
             (ee(),
-            g(p, 1, 1, () => {
+            k(p, 1, 1, () => {
               p = null;
             }),
             te()),
-        (!I || m[0] & 1) && Ve(y, f[0]),
-        (!I || m[0] & 8) && Q(h, "artist-expression-header__name--visually-hidden", !!f[3]),
+        (!I || m[0] & 1) && qe(P, f[0]),
+        (!I || m[0] & 8) && X(h, "artist-expression-header__name--visually-hidden", !!f[3]),
         f[3]
           ? n
-            ? (n.p(f, m), m[0] & 8 && v(n, 1))
-            : ((n = Te(f)), n.c(), v(n, 1), n.m(o, S))
+            ? (n.p(f, m), m[0] & 8 && b(n, 1))
+            : ((n = Se(f)), n.c(), b(n, 1), n.m(o, D))
           : n &&
             (ee(),
-            g(n, 1, 1, () => {
+            k(n, 1, 1, () => {
               n = null;
             }),
             te()),
-        (!I || m[0] & 4) && u(V, "aria-label", f[2]),
-        (!I || (m[0] & 1024 && J !== (J = !f[10]))) && (V.disabled = J),
-        (!I || m[0] & 2) && u(F, "aria-label", f[1]),
-        (!I || (m[0] & 256 && K !== (K = !f[8]))) && (F.disabled = K),
+        (!I || m[0] & 4) && u(q, "aria-label", f[2]),
+        (!I || (m[0] & 1024 && z !== (z = !f[10]))) && (q.disabled = z),
+        (!I || m[0] & 2) && u(C, "aria-label", f[1]),
+        (!I || (m[0] & 256 && U !== (U = !f[8]))) && (C.disabled = U),
         f[12]
-          ? D
-            ? (D.p(f, m), m[0] & 4096 && v(D, 1))
-            : ((D = Ie(f)), D.c(), v(D, 1), D.m(P, null))
-          : D &&
+          ? E
+            ? (E.p(f, m), m[0] & 4096 && b(E, 1))
+            : ((E = Ie(f)), E.c(), b(E, 1), E.m(V, null))
+          : E &&
             (ee(),
-            g(D, 1, 1, () => {
-              D = null;
+            k(E, 1, 1, () => {
+              E = null;
             }),
             te()),
         (!I || m[0] & 131072) && u(e, "style", f[17]),
         (!I || m[0] & 16) && u(e, "data-artwork-color", f[4]),
-        (!I || m[0] & 192) && Q(e, "artist-expression-header--fixed", !!f[7] || !!f[6]),
-        (!I || m[0] & 64) && Q(e, "artist-expression-header--video", !!f[6]),
-        (!I || m[0] & 224) && Q(e, "artist-expression-header--no-artwork", !f[5] && !f[6] && !f[7]));
+        (!I || m[0] & 192) && X(e, "artist-expression-header--fixed", !!f[7] || !!f[6]),
+        (!I || m[0] & 64) && X(e, "artist-expression-header--video", !!f[6]),
+        (!I || m[0] & 224) && X(e, "artist-expression-header--no-artwork", !f[5] && !f[6] && !f[7]));
     },
     i(f) {
-      I || (v(k), v(s), v(p), v(n), v(j.$$.fragment, f), v(R.$$.fragment, f), v(D), (I = !0));
+      I || (b(v), b(s), b(p), b(n), b(J.$$.fragment, f), b(G.$$.fragment, f), b(E), (I = !0));
     },
     o(f) {
-      (g(k), g(s), g(p), g(n), g(j.$$.fragment, f), g(R.$$.fragment, f), g(D), (I = !1));
+      (k(v), k(s), k(p), k(n), k(J.$$.fragment, f), k(G.$$.fragment, f), k(E), (I = !1));
     },
     d(f) {
       (f && d(e),
-        C && C.d(),
-        k && k.d(),
-        ~l && U[l].d(),
-        q && q.d(),
+        T && T.d(),
+        v && v.d(),
+        ~l && K[l].d(),
+        F && F.d(),
         p && p.d(),
         n && n.d(),
-        N(j),
+        O(J),
         i[27](null),
-        N(R),
-        D && D.d(),
+        O(G),
+        E && E.d(),
         (Z = !1),
-        je(re));
+        Je(re));
     },
   };
 }
 function dt(i, e, t) {
   let r, a, l;
-  var s, b;
-  const { HD_ASPECT_RATIO: _ } = Xe,
-    o = Je();
+  var s, g;
+  const { HD_ASPECT_RATIO: _ } = Qe,
+    o = ze();
   let { name: c } = e,
     { ariaPlayButtonText: h } = e,
-    { ariaInfoButtonLabel: y } = e,
+    { ariaInfoButtonLabel: P } = e,
     { logo: W = null } = e,
-    { headerStyle: S = void 0 } = e,
-    { fallbackImageStyle: P = void 0 } = e,
-    { artworkColor: V = null } = e,
-    { artwork: j = null } = e,
-    { videoArtwork: J = null } = e,
-    { uberArtwork: G = null } = e,
-    { playAction: F = null } = e,
-    { tourBadge: R = null } = e,
-    { bioAction: K = null } = e,
+    { headerStyle: D = void 0 } = e,
+    { fallbackImageStyle: V = void 0 } = e,
+    { artworkColor: q = null } = e,
+    { artwork: J = null } = e,
+    { videoArtwork: z = null } = e,
+    { uberArtwork: R = null } = e,
+    { playAction: C = null } = e,
+    { tourBadge: G = null } = e,
+    { bioAction: U = null } = e,
     { isFavorited: Y = !1 } = e,
     { showFavoriteButton: I = !1 } = e,
     { enableFavoriteButton: Z = !1 } = e,
     { contentDescriptor: re = null } = e,
-    { useScrollScrim: C = !1 } = e,
-    k;
-  const ae = Re(),
-    U = () => {
-      K && (Qe.set(k), o(K));
+    { useScrollScrim: T = !1 } = e,
+    v;
+  const ae = Ge(),
+    K = () => {
+      U && (Xe.set(v), o(U));
     },
     le = (n) => {
       ae("toggle-favorite", n.detail);
     };
-  function q(n) {
+  function F(n) {
     Ye[n ? "unshift" : "push"](() => {
-      ((k = n), t(16, k));
+      ((v = n), t(16, v));
     });
   }
-  const p = () => F && o(F);
+  const p = () => C && o(C);
   return (
     (i.$$set = (n) => {
       ("name" in n && t(0, (c = n.name)),
         "ariaPlayButtonText" in n && t(1, (h = n.ariaPlayButtonText)),
-        "ariaInfoButtonLabel" in n && t(2, (y = n.ariaInfoButtonLabel)),
+        "ariaInfoButtonLabel" in n && t(2, (P = n.ariaInfoButtonLabel)),
         "logo" in n && t(3, (W = n.logo)),
-        "headerStyle" in n && t(23, (S = n.headerStyle)),
-        "fallbackImageStyle" in n && t(24, (P = n.fallbackImageStyle)),
-        "artworkColor" in n && t(4, (V = n.artworkColor)),
-        "artwork" in n && t(5, (j = n.artwork)),
-        "videoArtwork" in n && t(6, (J = n.videoArtwork)),
-        "uberArtwork" in n && t(7, (G = n.uberArtwork)),
-        "playAction" in n && t(8, (F = n.playAction)),
-        "tourBadge" in n && t(9, (R = n.tourBadge)),
-        "bioAction" in n && t(10, (K = n.bioAction)),
+        "headerStyle" in n && t(23, (D = n.headerStyle)),
+        "fallbackImageStyle" in n && t(24, (V = n.fallbackImageStyle)),
+        "artworkColor" in n && t(4, (q = n.artworkColor)),
+        "artwork" in n && t(5, (J = n.artwork)),
+        "videoArtwork" in n && t(6, (z = n.videoArtwork)),
+        "uberArtwork" in n && t(7, (R = n.uberArtwork)),
+        "playAction" in n && t(8, (C = n.playAction)),
+        "tourBadge" in n && t(9, (G = n.tourBadge)),
+        "bioAction" in n && t(10, (U = n.bioAction)),
         "isFavorited" in n && t(11, (Y = n.isFavorited)),
         "showFavoriteButton" in n && t(12, (I = n.showFavoriteButton)),
         "enableFavoriteButton" in n && t(13, (Z = n.enableFavoriteButton)),
         "contentDescriptor" in n && t(14, (re = n.contentDescriptor)),
-        "useScrollScrim" in n && t(15, (C = n.useScrollScrim)));
+        "useScrollScrim" in n && t(15, (T = n.useScrollScrim)));
     }),
     (i.$$.update = () => {
       (i.$$.dirty[0] & 33554496 &&
-        t(19, (r = [[1200], _, t(25, (s = J?.cropStyle)) !== null && s !== void 0 ? s : "mv"])),
+        t(19, (r = [[1200], _, t(25, (s = z?.cropStyle)) !== null && s !== void 0 ? s : "mv"])),
         i.$$.dirty[0] & 67108992 &&
-          t(18, (a = [[1200], _, t(26, (b = G?.cropStyle)) !== null && b !== void 0 ? b : "mv"])),
-        i.$$.dirty[0] & 25165824 && t(17, (l = [S, P].filter(Boolean).join(" ") || void 0)));
+          t(18, (a = [[1200], _, t(26, (g = R?.cropStyle)) !== null && g !== void 0 ? g : "mv"])),
+        i.$$.dirty[0] & 25165824 && t(17, (l = [D, V].filter(Boolean).join(" ") || void 0)));
     }),
-    [c, h, y, W, V, j, J, G, F, R, K, Y, I, Z, re, C, k, l, a, r, o, U, le, S, P, s, b, q, p]
+    [c, h, P, W, q, J, z, R, C, G, U, Y, I, Z, re, T, v, l, a, r, o, K, le, D, V, s, g, F, p]
   );
 }
 class mt extends fe {
@@ -1035,7 +1036,7 @@ class mt extends fe {
         e,
         dt,
         ct,
-        Ce,
+        Te,
         {
           name: 0,
           ariaPlayButtonText: 1,

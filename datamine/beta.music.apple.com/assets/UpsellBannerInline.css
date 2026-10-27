@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.banner.svelte-1uspg9f.svelte-1uspg9f {
+.banner.svelte-r5lnk4.svelte-r5lnk4 {
   align-items: center;
   background-color: var(--keyColorBG);
   box-shadow:
@@ -12,7 +12,7 @@
   padding: 12px 30px;
   width: 100%;
 }
-.banner__close-button.svelte-1uspg9f.svelte-1uspg9f {
+.banner__close-button.svelte-r5lnk4.svelte-r5lnk4 {
   box-sizing: initial;
   height: 10px;
   inset-inline-end: 0;
@@ -21,46 +21,51 @@
   top: 0;
   width: 10px;
 }
-.banner__close-button.svelte-1uspg9f svg {
+.banner__close-button.svelte-r5lnk4 svg {
   height: inherit;
   width: inherit;
-  fill: #fff;
+  fill: var(--systemPrimary-onDark);
 }
-.banner--collapsed.svelte-1uspg9f .banner__close-button.svelte-1uspg9f {
+@media (prefers-color-scheme: dark) {
+  .banner__close-button.svelte-r5lnk4 svg {
+    fill: var(--systemPrimary-onLight);
+  }
+}
+.banner--collapsed.svelte-r5lnk4 .banner__close-button.svelte-r5lnk4 {
   display: none;
 }
 @media (min-width: 484px) {
-  .banner__close-button.svelte-1uspg9f.svelte-1uspg9f {
+  .banner__close-button.svelte-r5lnk4.svelte-r5lnk4 {
     display: none;
   }
 }
-.banner__text-container.svelte-1uspg9f.svelte-1uspg9f {
+.banner__text-container.svelte-r5lnk4.svelte-r5lnk4 {
   flex: 1;
 }
 @media (max-width: 483px) {
-  .banner__text-container.svelte-1uspg9f.svelte-1uspg9f {
+  .banner__text-container.svelte-r5lnk4.svelte-r5lnk4 {
     text-align: center;
   }
-  .banner--collapsed.svelte-1uspg9f .banner__text-container.svelte-1uspg9f {
+  .banner--collapsed.svelte-r5lnk4 .banner__text-container.svelte-r5lnk4 {
     padding-bottom: 7px;
     padding-top: 7px;
   }
 }
 @media (min-width: 484px) {
-  .banner__text-container.svelte-1uspg9f.svelte-1uspg9f {
+  .banner__text-container.svelte-r5lnk4.svelte-r5lnk4 {
     margin-inline-end: 16px;
   }
 }
-.banner__cta-button.svelte-1uspg9f.svelte-1uspg9f,
-.text__description.svelte-1uspg9f.svelte-1uspg9f,
-.text__title.svelte-1uspg9f.svelte-1uspg9f {
+.banner__cta-button.svelte-r5lnk4.svelte-r5lnk4,
+.text__description.svelte-r5lnk4.svelte-r5lnk4,
+.text__title.svelte-r5lnk4.svelte-r5lnk4 {
   font-family: unset !important;
 }
-.text__title.svelte-1uspg9f.svelte-1uspg9f {
-  color: #fff;
+.text__title.svelte-r5lnk4.svelte-r5lnk4 {
+  color: var(--systemPrimary-onDark);
 }
 @media (max-width: 999px) {
-  .text__title.svelte-1uspg9f.svelte-1uspg9f {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4 {
     font-family:
       SF Pro Text,
       SF Pro Icons,
@@ -73,7 +78,7 @@
     letter-spacing: 0;
     line-height: 1.28;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ar) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Text,
@@ -85,7 +90,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ja) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Text,
@@ -100,7 +105,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ko) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Text,
@@ -115,7 +120,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(th) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Text,
@@ -125,7 +130,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-CN) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Text,
@@ -136,7 +141,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-HK) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Text,
@@ -147,7 +152,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-MO) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -159,7 +164,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-TW) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Text,
@@ -172,7 +177,7 @@
   }
 }
 @media (min-width: 1000px) {
-  .text__title.svelte-1uspg9f.svelte-1uspg9f {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4 {
     font-family:
       SF Pro Display,
       SF Pro Icons,
@@ -185,7 +190,7 @@
     letter-spacing: 0;
     line-height: 1.23;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ar) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Display,
@@ -197,7 +202,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ja) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Display,
@@ -212,7 +217,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(ko) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Display,
@@ -227,7 +232,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(th) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Display,
@@ -237,7 +242,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-CN) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Display,
@@ -248,7 +253,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-HK) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Display,
@@ -259,7 +264,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-MO) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -271,7 +276,7 @@
       Arial,
       sans-serif;
   }
-  .text__title.svelte-1uspg9f.svelte-1uspg9f:lang(zh-TW) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Display,
@@ -283,8 +288,13 @@
       sans-serif;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4 {
+    color: var(--systemPrimary-onLight);
+  }
+}
 @media (min-width: 484px) {
-  .text__title.svelte-1uspg9f.svelte-1uspg9f {
+  .text__title.svelte-r5lnk4.svelte-r5lnk4 {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     line-clamp: 1;
@@ -292,13 +302,13 @@
     overflow: hidden;
   }
 }
-.text__description.svelte-1uspg9f.svelte-1uspg9f {
-  color: #fffc;
+.text__description.svelte-r5lnk4.svelte-r5lnk4 {
+  color: var(--systemSecondary-onDark);
   margin-top: 8px;
   white-space: pre-line;
 }
 @media (max-width: 999px) {
-  .text__description.svelte-1uspg9f.svelte-1uspg9f {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4 {
     font-family:
       SF Pro Text,
       SF Pro Icons,
@@ -311,7 +321,7 @@
     letter-spacing: 0;
     line-height: 1.23;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ar) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Text,
@@ -323,7 +333,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ja) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Text,
@@ -338,7 +348,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ko) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Text,
@@ -353,7 +363,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(th) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Text,
@@ -363,7 +373,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-CN) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Text,
@@ -374,7 +384,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-HK) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Text,
@@ -385,7 +395,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-MO) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -397,7 +407,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-TW) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Text,
@@ -410,7 +420,7 @@
   }
 }
 @media (min-width: 1000px) {
-  .text__description.svelte-1uspg9f.svelte-1uspg9f {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4 {
     font-family:
       SF Pro Text,
       SF Pro Icons,
@@ -423,7 +433,7 @@
     letter-spacing: 0;
     line-height: 1.2307742857;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ar) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(ar) {
     font-family:
       SF Pro AR,
       SF Pro AR Text,
@@ -435,7 +445,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ja) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(ja) {
     font-family:
       SF Pro JP,
       SF Pro Text,
@@ -450,7 +460,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(ko) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(ko) {
     font-family:
       SF Pro KR,
       SF Pro Text,
@@ -465,7 +475,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(th) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(th) {
     font-family:
       SF Pro TH,
       SF Pro Text,
@@ -475,7 +485,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-CN) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(zh-CN) {
     font-family:
       SF Pro SC,
       SF Pro Text,
@@ -486,7 +496,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-HK) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(zh-HK) {
     font-family:
       SF Pro HK,
       SF Pro Text,
@@ -497,7 +507,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-MO) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(zh-MO) {
     font-family:
       SF Pro HK,
       SF Pro TC,
@@ -509,7 +519,7 @@
       Arial,
       sans-serif;
   }
-  .text__description.svelte-1uspg9f.svelte-1uspg9f:lang(zh-TW) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4:lang(zh-TW) {
     font-family:
       SF Pro TC,
       SF Pro Text,
@@ -521,23 +531,28 @@
       sans-serif;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .text__description.svelte-r5lnk4.svelte-r5lnk4 {
+    color: var(--systemSecondary-onLight);
+  }
+}
 @media (max-width: 483px) {
-  .banner--collapsed.svelte-1uspg9f .text__description.svelte-1uspg9f {
+  .banner--collapsed.svelte-r5lnk4 .text__description.svelte-r5lnk4 {
     display: none;
   }
 }
-[lang]:lang(th) .text__title.svelte-1uspg9f.svelte-1uspg9f {
+[lang]:lang(th) .text__title.svelte-r5lnk4.svelte-r5lnk4 {
   line-height: 1.6;
 }
-.banner__cta-button.svelte-1uspg9f.svelte-1uspg9f {
-  --buttonTextColor: #000;
-  --buttonBackgroundColor: #fff;
+.banner__cta-button.svelte-r5lnk4.svelte-r5lnk4 {
+  --buttonTextColor: var(--systemPrimary-onDark);
+  --buttonBackgroundColor: var(--systemBlue);
   box-shadow: 0 0 20px #0000000f;
   height: 32px;
   min-width: 125px;
 }
 @media (max-width: 483px) {
-  .banner__cta-button.svelte-1uspg9f.svelte-1uspg9f {
+  .banner__cta-button.svelte-r5lnk4.svelte-r5lnk4 {
     display: none;
   }
 }
