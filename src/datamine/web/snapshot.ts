@@ -1,7 +1,7 @@
 import { format } from "oxfmt";
 
 import { config } from "@/config";
-import { emptyApi } from "@/extract/api";
+import { emptyApi } from "@/datamine/web/extract/api";
 import {
   json,
   jsonLines,

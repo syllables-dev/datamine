@@ -1,4 +1,4 @@
-import { hashOf } from "@/scrape/assets";
+import { hashOf } from "@/datamine/web/scrape/assets";
 
 import type {
   Api,

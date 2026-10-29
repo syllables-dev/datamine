@@ -1,23 +1,26 @@
 import { config } from "@/config";
-import { extractApi } from "@/extract/api";
-import { extractFlags } from "@/extract/flags";
-import { extractLiterals } from "@/extract/literals";
-import { extractStrings } from "@/extract/strings";
-import { required } from "@/lib/expect";
-import { json } from "@/lib/files";
-import { get } from "@/lib/http";
-import { commitMessage, compare } from "@/report";
-import { crawl } from "@/scrape/crawl";
-import { assignNames } from "@/scrape/names";
-import { readPage } from "@/scrape/page";
-import { findSourceMaps } from "@/scrape/sourcemaps";
-import { localeKey, translationFiles } from "@/scrape/translations";
+import { extractApi } from "@/datamine/web/extract/api";
+import { extractFlags } from "@/datamine/web/extract/flags";
+import { extractLiterals } from "@/datamine/web/extract/literals";
+import { extractStrings } from "@/datamine/web/extract/strings";
+import { crawl } from "@/datamine/web/scrape/crawl";
+import { assignNames } from "@/datamine/web/scrape/names";
+import { readPage } from "@/datamine/web/scrape/page";
+import { findSourceMaps } from "@/datamine/web/scrape/sourcemaps";
+import {
+  localeKey,
+  translationFiles,
+} from "@/datamine/web/scrape/translations";
 import {
   readAsset,
   readSnapshot,
   stableSources,
   writeSnapshot,
-} from "@/snapshot";
+} from "@/datamine/web/snapshot";
+import { required } from "@/lib/expect";
+import { json } from "@/lib/files";
+import { get } from "@/lib/http";
+import { commitMessage, compare } from "@/report";
 
 import type { Report, Snapshot, Target } from "@/types";
 
