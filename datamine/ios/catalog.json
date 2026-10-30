@@ -144,6 +144,22 @@
    "inferredParams": false
   },
   {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "api",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/v1/assistant/query/{x}",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "OmniSearch"
+   ],
+   "inferredParams": false
+  },
+  {
    "methodSource": "set on request",
    "possibleMethods": [],
    "category": "api",
@@ -366,6 +382,38 @@
     "ManagedBackgroundAssetsHelper"
    ],
    "inferredParams": false
+  },
+  {
+   "methodSource": "set on request",
+   "possibleMethods": [],
+   "category": "api",
+   "method": "GET",
+   "scheme": null,
+   "host": "amp-api.music.apple.com",
+   "path": "/v1/catalog/{storefront}/contents",
+   "params": {
+    "ids": [
+     "{x}"
+    ],
+    "include[albums]": [
+     "tracks"
+    ],
+    "include[playlists]": [
+     "tracks"
+    ],
+    "limit[albums:tracks]": [
+     "5"
+    ],
+    "limit[playlists:tracks]": [
+     "5"
+    ]
+   },
+   "headers": {},
+   "body": false,
+   "sources": [
+    "Music"
+   ],
+   "inferredParams": true
   },
   {
    "methodSource": "set in same (async) function",
@@ -874,22 +922,6 @@
    "method": "GET",
    "scheme": null,
    "host": "music.apple.com",
-   "path": "/us/artist/black-sabbath/165907",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "MusicUI"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "api",
-   "method": "GET",
-   "scheme": null,
-   "host": "music.apple.com",
    "path": "/{x}/artist/{x}",
    "params": {},
    "headers": {},
@@ -1172,6 +1204,22 @@
    "inferredParams": false
   },
   {
+   "methodSource": "set in same (async) function",
+   "possibleMethods": [],
+   "category": "api",
+   "method": "POST",
+   "scheme": null,
+   "host": "synclogs.shortcuts.swe.apple.com",
+   "path": "/ingest",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "WorkflowKit"
+   ],
+   "inferredParams": false
+  },
+  {
    "methodSource": "Foundation default",
    "possibleMethods": [],
    "category": "api",
@@ -1216,6 +1264,26 @@
    "body": false,
    "sources": [
     "NewsLiveActivitiesCore"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "api",
+   "method": "GET",
+   "scheme": null,
+   "host": "tv.apple.com",
+   "path": "/search",
+   "params": {
+    "term": [
+     "{x}"
+    ]
+   },
+   "headers": {},
+   "body": false,
+   "sources": [
+    "TVAppServices"
    ],
    "inferredParams": false
   },
@@ -1683,21 +1751,6 @@
     ],
     "with": [
      "serverBubbles",
-     "serverBubblesexclude",
-     "serverBubblesexcludeimmersive",
-     "serverBubblesexcludeimmersivequeryContext",
-     "serverBubblesexcludequeryContext",
-     "serverBubblesimmersive",
-     "serverBubblesimmersivequeryContext",
-     "serverBubblesnaturalLanguage",
-     "serverBubblesnaturalLanguageexclude",
-     "serverBubblesnaturalLanguageexcludeimmersive",
-     "serverBubblesnaturalLanguageexcludeimmersivequeryContext",
-     "serverBubblesnaturalLanguageexcludequeryContext",
-     "serverBubblesnaturalLanguageimmersive",
-     "serverBubblesnaturalLanguageimmersivequeryContext",
-     "serverBubblesnaturalLanguagequeryContext",
-     "serverBubblesqueryContext",
      "topResults"
     ]
    },
@@ -1760,7 +1813,7 @@
    "sources": [
     "MusicKitInternal"
    ],
-   "inferredParams": true
+   "inferredParams": false
   },
   {
    "methodSource": "set in same (async) function",
@@ -2159,7 +2212,7 @@
    "sources": [
     "MusicKitInternal"
    ],
-   "inferredParams": false
+   "inferredParams": true
   },
   {
    "methodSource": "set in same (async) function",
@@ -2295,9 +2348,6 @@
     "offset": [
      "{x}"
     ],
-    "with": [
-     "{x}"
-    ],
     "{x}": [
      ""
     ]
@@ -2382,7 +2432,7 @@
    "sources": [
     "MusicKitInternal"
    ],
-   "inferredParams": false
+   "inferredParams": true
   },
   {
    "methodSource": "Foundation default",
@@ -2495,7 +2545,7 @@
    "sources": [
     "MusicKitInternal"
    ],
-   "inferredParams": false
+   "inferredParams": true
   },
   {
    "methodSource": "set in direct caller or callee",
@@ -2683,6 +2733,18 @@
     "caller": [
      "{x}"
     ],
+    "catalogID": [
+     "{x}"
+    ],
+    "cc": [
+     "{none}"
+    ],
+    "clientId": [
+     "{none}"
+    ],
+    "cloudID": [
+     "{none}"
+    ],
     "commentId": [
      "{x}"
     ],
@@ -2695,8 +2757,14 @@
     "crop": [
      "{x}"
     ],
+    "databaseID": [
+     "{none}"
+    ],
     "deeplink": [
      "{x}"
+    ],
+    "deviceLocalID": [
+     "{none}"
     ],
     "entitledOnly": [
      "false"
@@ -2741,13 +2809,18 @@
      "50400"
     ],
     "itsct": [
+     "concerts_on_device",
      "sharing_ig"
     ],
     "kinds": [
      "{x}"
     ],
     "l": [
+     "{none}",
      "{x}"
+    ],
+    "libraryID": [
+     "{none}"
     ],
     "libraryid": [
      "{x}"
@@ -2783,6 +2856,9 @@
     "request_id": [
      "{x}"
     ],
+    "restrict": [
+     "{x}"
+    ],
     "rid": [
      "{none}"
     ],
@@ -2814,8 +2890,14 @@
     "term": [
      "{x}"
     ],
+    "timezone": [
+     "{none}"
+    ],
     "trampolineMetrics": [
      "{x}"
+    ],
+    "type": [
+     "{none}"
     ],
     "types": [
      "{none}",
@@ -2828,6 +2910,9 @@
      "{x}"
     ],
     "widgetContext": [
+     "{x}"
+    ],
+    "with": [
      "{x}"
     ],
     "{x}": [
@@ -2852,6 +2937,7 @@
     "MusicKitInternal",
     "NanoMediaAPI",
     "NewsLiveActivitiesCore",
+    "OmniSearch",
     "PodcastsFoundation",
     "ProximityReaderDaemon",
     "SafariSharedUI",
@@ -3491,22 +3577,6 @@
    "method": "GET",
    "scheme": null,
    "host": null,
-   "path": "prefs:root=Privacy&path=LOCATION",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "MusicUI"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
    "path": "prefs:root=ROOT",
    "params": {},
    "headers": {},
@@ -3528,6 +3598,7 @@
    "headers": {},
    "body": false,
    "sources": [
+    "MusicUI",
     "VideosUI"
    ],
    "inferredParams": false
@@ -3684,6 +3755,12 @@
     "include[songs]": [
      "raw-genres,flexml-analysis,audio-analysis"
     ],
+    "inflateMetadata": [
+     "false"
+    ],
+    "itsct": [
+     "concerts_on_device"
+    ],
     "l": [
      "{none}",
      "{x}"
@@ -3711,6 +3788,9 @@
     ],
     "with": [
      "personalization"
+    ],
+    "{x}": [
+     "{none}"
     ]
    },
    "headers": {
@@ -3727,6 +3807,7 @@
     "BookFoundation",
     "CoreFoundation",
     "GameServicesCore",
+    "HealthContentDaemon",
     "HealthExperience",
     "MediaPlaybackCore",
     "MediaPlayer",
@@ -3738,6 +3819,7 @@
     "MusicUI",
     "NanoMediaAPI",
     "NewsLiveActivitiesCore",
+    "OmniSearch",
     "PodcastsFoundation",
     "ProximityReaderDaemon",
     "SafariSharedUI",
@@ -3867,6 +3949,38 @@
    "body": false,
    "sources": [
     "ProximityReaderDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/.staging",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/.staging/{x}.movpkg",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
    ],
    "inferredParams": false
   },
@@ -4069,12 +4183,44 @@
    "method": "GET",
    "scheme": null,
    "host": null,
+   "path": "{x}/Info.plist",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
    "path": "{x}/InputStreamTokenStores",
    "params": {},
    "headers": {},
    "body": false,
    "sources": [
     "PhotosGraph"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/IntelligenceFlow/LLM",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "OmniSearch"
    ],
    "inferredParams": false
   },
@@ -4187,6 +4333,118 @@
    "body": false,
    "sources": [
     "PodcastsFoundation"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/LocalizedContent",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/LocalizedContent/Staged",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/LocalizedContent/Staged/{x}_{x}_{x}_{x}_{x}_{x}.zip",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/LocalizedContent/{x}",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/LocalizedContent/{x}/Resources",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/LocalizedContent/{x}/Resources/{x}",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/LocalizedContent/{x}/{x}",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
    ],
    "inferredParams": false
   },
@@ -4472,22 +4730,6 @@
    "method": "GET",
    "scheme": null,
    "host": null,
-   "path": "{x}/PROBLEM_REPORTING",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "HealthExperience"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
    "path": "{x}/Panache_Panache.bundle",
    "params": {},
    "headers": {},
@@ -4595,7 +4837,11 @@
   },
   {
    "methodSource": "Foundation default",
-   "possibleMethods": [],
+   "possibleMethods": [
+    "DELETE",
+    "PATCH",
+    "POST"
+   ],
    "category": "other",
    "method": "GET",
    "scheme": null,
@@ -5625,6 +5871,22 @@
    "method": "GET",
    "scheme": null,
    "host": null,
+   "path": "{x}/message-item-{x}-failed",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "UnifiedMessagingKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
    "path": "{x}/metadata",
    "params": {},
    "headers": {},
@@ -5941,21 +6203,17 @@
   },
   {
    "methodSource": "Foundation default",
-   "possibleMethods": [
-    "DELETE",
-    "PATCH",
-    "POST"
-   ],
+   "possibleMethods": [],
    "category": "other",
    "method": "GET",
    "scheme": null,
    "host": null,
-   "path": "{x}/sportsfavorites.data",
+   "path": "{x}/splashscreen_cached_document",
    "params": {},
    "headers": {},
    "body": false,
    "sources": [
-    "TVAppServices"
+    "VideosUI"
    ],
    "inferredParams": false
   },
@@ -6020,6 +6278,22 @@
    "body": false,
    "sources": [
     "PodcastsFoundation"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/staging",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
    ],
    "inferredParams": false
   },
@@ -6376,12 +6650,14 @@
    "body": false,
    "sources": [
     "AppleMediaServices",
+    "HealthContentDaemon",
     "HealthExperience",
     "MigrationKit",
     "Music",
     "MusicApplication",
     "MusicKitInternal",
     "MusicUI",
+    "OmniSearch",
     "PhotosGraph",
     "PodcastsFoundation",
     "ProximityReaderDaemon",
@@ -6595,6 +6871,42 @@
   },
   {
    "methodSource": "Foundation default",
+   "possibleMethods": [
+    "DELETE",
+    "PATCH",
+    "POST"
+   ],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/{x}.data",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "TVAppServices"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/{x}.movpkg",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
    "possibleMethods": [],
    "category": "other",
    "method": "GET",
@@ -6670,6 +6982,22 @@
    "body": false,
    "sources": [
     "ProximityReaderDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/{x}.{x}",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
    ],
    "inferredParams": false
   },
@@ -6760,6 +7088,38 @@
    "method": "GET",
    "scheme": null,
    "host": null,
+   "path": "{x}/{x}/metadata.pb/{x}",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "MigrationKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/{x}/metadata.pb/{x}/note.md",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "MigrationKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
    "path": "{x}/{x}/note.md",
    "params": {},
    "headers": {},
@@ -6829,6 +7189,23 @@
    "headers": {},
    "body": false,
    "sources": [
+    "MigrationKit",
+    "OmniSearch"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/{x}/{x}-serialized-[{x}].{x}",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
     "MigrationKit"
    ],
    "inferredParams": false
@@ -6846,6 +7223,22 @@
    "body": false,
    "sources": [
     "MigrationKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/{x}:{x}:{x}:{x}",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "HealthContentDaemon"
    ],
    "inferredParams": false
   },
@@ -7002,6 +7395,21 @@
    "host": "album",
    "path": "",
    "params": {
+    "catalogID": [
+     "{x}"
+    ],
+    "cloudID": [
+     "{none}"
+    ],
+    "databaseID": [
+     "{none}"
+    ],
+    "deviceLocalID": [
+     "{none}"
+    ],
+    "libraryID": [
+     "{none}"
+    ],
     "type": [
      "{none}"
     ]
@@ -7734,6 +8142,42 @@
    "category": "other",
    "method": "GET",
    "scheme": null,
+   "host": "paymentrelayservice-recipient-qa3.pci.test.apay.apple.com",
+   "path": "/",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "ProximityReaderDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": "paymentrelayservice-recipient-qa3.pci.test.apay.apple.com",
+   "path": "/{x}/{x}",
+   "params": {
+    "remoteLinkId": [
+     "{x}"
+    ]
+   },
+   "headers": {},
+   "body": false,
+   "sources": [
+    "ProximityReaderDaemon"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
    "host": "play",
    "path": "",
    "params": {
@@ -7879,6 +8323,9 @@
     "albumsCount": [
      "{x}"
     ],
+    "artistsCount": [
+     "{x}"
+    ],
     "sessionID": [
      "{none}"
     ],
@@ -7903,6 +8350,9 @@
    "path": "",
    "params": {
     "albumsCount": [
+     "{x}"
+    ],
+    "artistsCount": [
      "{x}"
     ],
     "sessionID": [
@@ -8326,11 +8776,12 @@
    "body": false,
    "sources": [
     "ManagedBackgroundAssetsHelper",
-    "MigrationKit",
     "Music",
     "MusicApplication",
     "MusicKit",
+    "MusicKitInternal",
     "NanoMediaAPI",
+    "OmniSearch",
     "PodcastsFoundation",
     "SafariSharedUI",
     "VideoSubscriberAccount",
@@ -8436,6 +8887,9 @@
      "apps",
      "apps,channel-apps,subscription-apps"
     ],
+    "inflateMetadata": [
+     "false"
+    ],
     "l": [
      "{x}"
     ],
@@ -8453,6 +8907,9 @@
     ],
     "ts": [
      "{x}"
+    ],
+    "{x}": [
+     "{none}"
     ]
    },
    "headers": {},
@@ -8466,35 +8923,10 @@
     "MusicKitInternal",
     "PodcastsFoundation",
     "ShazamCore",
+    "UnifiedMessagingKit",
     "VideoSubscriberAccount"
    ],
    "inferredParams": true
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": "{x}",
-   "path": "{x}/{x}/apps",
-   "params": {
-    "extend": [
-     "androidMigrationData,contentProviderTeamId"
-    ],
-    "filter": [
-     "androidMigration"
-    ],
-    "platform": [
-     "iphone"
-    ]
-   },
-   "headers": {},
-   "body": false,
-   "sources": [
-    "MigrationKit"
-   ],
-   "inferredParams": false
   },
   {
    "methodSource": "Foundation default",
@@ -8537,6 +8969,8 @@
      "editorialCard",
      "editorialVideo",
      "offers",
+     "plainEditorialCard",
+     "pushNotificationChannelId",
      "trackCount",
      "versionHash"
     ],
@@ -8639,6 +9073,8 @@
      "editorialCard",
      "editorialVideo",
      "offers",
+     "plainEditorialCard",
+     "pushNotificationChannelId",
      "trackCount",
      "versionHash"
     ],
@@ -8849,7 +9285,8 @@
      "editorialArtwork",
      "editorialVideo",
      "hasBonusContent",
-     "hasMusicEvents"
+     "hasMusicEvents",
+     "hero"
     ],
     "views": [
      "all-upcoming-concerts",
@@ -9018,7 +9455,8 @@
      "editorialArtwork",
      "editorialVideo",
      "hasBonusContent",
-     "hasMusicEvents"
+     "hasMusicEvents",
+     "hero"
     ],
     "views": [
      "all-upcoming-concerts",
@@ -9220,6 +9658,7 @@
      "venues"
     ],
     "extend": [
+     "eventDataProviders",
      "tickets"
     ],
     "views": [
@@ -9266,6 +9705,7 @@
      "venues"
     ],
     "extend": [
+     "eventDataProviders",
      "tickets"
     ],
     "views": [
@@ -9378,7 +9818,8 @@
     "extend": [
      "editorialArtwork",
      "editorialCard",
-     "editorialVideo"
+     "editorialVideo",
+     "plainEditorialCard"
     ],
     "format[resources]": [
      "map"
@@ -9401,7 +9842,8 @@
     "extend": [
      "editorialArtwork",
      "editorialCard",
-     "editorialVideo"
+     "editorialVideo",
+     "plainEditorialCard"
     ],
     "format[resources]": [
      "map"
@@ -9437,9 +9879,11 @@
      "artistNamesList",
      "audioTraits",
      "audioVariants",
+     "description",
      "editorialArtwork",
      "editorialCard",
      "editorialVideo",
+     "plainEditorialCard",
      "trackCount",
      "versionHash"
     ],
@@ -9546,9 +9990,11 @@
      "artistNamesList",
      "audioTraits",
      "audioVariants",
+     "description",
      "editorialArtwork",
      "editorialCard",
      "editorialVideo",
+     "plainEditorialCard",
      "trackCount",
      "versionHash"
     ],
@@ -9711,6 +10157,7 @@
      "{ids}"
     ],
     "extend": [
+     "description",
      "editorialArtwork",
      "editorialVideo"
     ],
@@ -9749,6 +10196,7 @@
    "path": "/v1/catalog/{storefront}/record-labels/{id}",
    "params": {
     "extend": [
+     "description",
      "editorialArtwork",
      "editorialVideo"
     ],
@@ -9976,9 +10424,6 @@
     "include": [
      "contents"
     ],
-    "extend": [
-     "canonicalKind"
-    ],
     "limit[personal-recommendation:contents]": [
      "{n}"
     ],
@@ -10005,9 +10450,6 @@
    "params": {
     "include": [
      "contents"
-    ],
-    "extend": [
-     "canonicalKind"
     ],
     "limit[personal-recommendation:contents]": [
      "{n}"
@@ -10318,7 +10760,9 @@
    "params": {
     "extend": [
      "editorialArtwork",
-     "offers"
+     "offers",
+     "pushNotificationChannelId",
+     "versionHash"
     ],
     "filter[equivalents]": [
      "{ids}"
@@ -10328,6 +10772,7 @@
     ],
     "include": [
      "artists",
+     "genres",
      "record-labels",
      "tracks"
     ],
@@ -10517,6 +10962,7 @@
    "other"
   ],
   "MusicKit:MusicKit.Album.LegacyModelAlbumPropertyKey": [
+   "MPModelPropertyAlbumType",
    "MPModelPropertyAlbumArtwork",
    "MPModelPropertyAlbumCleanDownloadedTrackCount",
    "MPModelPropertyAlbumCleanSongCount",
@@ -10536,12 +10982,14 @@
    "MPModelPropertyAlbumLibraryAddEligible",
    "MPModelPropertyAlbumIsPinned",
    "MPModelPropertyAlbumPreorder",
+   "MPModelPropertyAlbumShouldShowCountdownTimer",
    "MPModelPropertyAlbumIsStoreRedownloadable",
    "MPModelPropertyAlbumKeepLocalEnableState",
    "MPModelPropertyAlbumKeepLocalManagedStatus",
    "MPModelPropertyAlbumKeepLocalManagedStatusReason",
    "MPModelPropertyAlbumLastDevicePlaybackDate",
    "MPModelPropertyAlbumLibraryAddedDate",
+   "MPModelPropertyAlbumCloudChannelName",
    "MPModelPropertyAlbumReleaseDateComponents",
    "MPModelPropertyAlbumShortEditorNotes",
    "MPModelPropertyAlbumEditorNotes",
@@ -10748,6 +11196,7 @@
   ],
   "MusicKit:MusicKit.Station.LegacyModelRadioStationPropertyKey": [
    "MPModelPropertyRadioStationArtwork",
+   "MPModelPropertyRadioStationEditorialArtworks",
    "MPModelPropertyRadioStationEditorNotes",
    "MPModelPropertyRadioStationHasExplicitContent",
    "MPModelPropertyRadioStationLive",
@@ -11565,6 +12014,21 @@
    "type",
    "meta"
   ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackPlaylist.Attributes.CodingKeys": [
+   "dateAdded",
+   "dateDownloaded",
+   "datePlayed",
+   "description",
+   "favoritedDate",
+   "isDownloaded",
+   "isEditable",
+   "isOwned",
+   "lastModifiedDate",
+   "likedState",
+   "name",
+   "trackCount",
+   "kind"
+  ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Filter.Operator": [
    "equals",
    "notEquals",
@@ -11625,6 +12089,11 @@
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Source.SourceType": [
    "cloud-library",
    "local-library"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryFieldResolver.JoinPath.JoinType": [
+   "INNER JOIN",
+   "LEFT JOIN",
+   "LEFT OUTER JOIN"
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryResponse.CodingKeys": [
    "data",
@@ -11691,7 +12160,7 @@
    "viewControllerObjectGraphAppIntentDependencyKey",
    "objectGraphAppIntentDependencyKey"
   ],
-  "PodcastsFoundation:PodcastsFoundation.PodcastsEntityIdentifier.PodcastsEntityType": [
+  "PodcastsFoundation:PodcastsFoundation.PodcastsEntityType": [
    "EpisodeEntity",
    "ShowEntity",
    "PodcastCollectionEntity"
@@ -11711,6 +12180,7 @@
    "CloudSync",
    "StoreFeedUpdater",
    "SiriDonation",
+   "SiriSnippets",
    "RSSFeedUpdater",
    "BackgroundTaskManager",
    "Following",
@@ -11755,7 +12225,8 @@
    "PlaybackSettings",
    "FastTermination",
    "Migration",
-   "Welcome"
+   "Welcome",
+   "Accounts"
   ],
   "PodcastsFoundation:PodcastsFoundation.MetricsEngagementThresholdMet": [
    "yes",
@@ -11796,6 +12267,7 @@
    "title",
    "recentlyPlayed",
    "listenNow",
+   "newEpisodes",
    "groupByShows",
    "watchTopLevel"
   ],
@@ -12474,7 +12946,8 @@
    "entityId",
    "rowType",
    "createdAt",
-   "lastFetchedAt"
+   "lastFetchedAt",
+   "cacheTTL"
   ],
   "GameServicesCore:GameServicesCore.AppMetadataPlatform": [
    "ios",
@@ -12486,7 +12959,8 @@
   "GameServicesCore:GameServicesCore.AppMetadataDeviceFamily": [
    "ipad",
    "iphone",
-   "mac"
+   "mac",
+   "appletv"
   ],
   "GameServicesCore:GameServicesCore.AppMetadataGameCenterFeature": [
    "challenges",
@@ -12678,31 +13152,72 @@
   "PhotosGraph:PhotosGraph.MusicKitPersonalPlaylistsResponse.PlaylistResponseMetadata.Filters.CodingKeys": [
    "personal-mix"
   ],
-  "SwiftData:SwiftData.ModelContext.NotificationKey": [
-   "newQueryGeneration",
-   "invalidatedAll",
-   "inserted",
-   "updated",
-   "deleted",
-   "historyTokens"
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataEntity.Column": [
+   "video_adam_id",
+   "video_metadata",
+   "date_last_accessed",
+   "date_fetched",
+   "date_required_keys_recorded"
   ],
-  "SwiftData:SwiftData.Schema.Relationship.DeleteRule": [
-   "noAction",
-   "nullify",
-   "cascade",
-   "deny"
+  "HealthContentDaemon:HealthContentDaemon.ContentTaggingEntry.AudienceRule": [
+   "none",
+   "include",
+   "exclude"
   ],
-  "SwiftData:SwiftData.Schema.Attribute.Option.Coders.CodingKeys": [
-   "coder",
-   "customCoderClassName"
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.VideoOrientation": [
+   "horizontal",
+   "vertical"
   ],
-  "SwiftData:SwiftData.PersistentIdentifierImplementation.Scheme": [
-   "x-swiftdata",
-   "x-coredata",
-   "developer-provided"
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEventKind": [
+   "videoHeading",
+   "healthData",
+   "contributor",
+   "chapterList",
+   "behaviorGoal"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Resources.CodingKeys": [
+   "contributors",
+   "health-videos",
+   "hls-programs",
+   "timed-events"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.HLSProgramRelationships.CodingKeys": [
+   "timed-events"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentQueryOperators.LogicalOperator": [
+   "AND",
+   "OR"
   ],
   "AppleMediaServices:AppleMediaServices.ActionPayloadKey": [
    "actionKind"
+  ],
+  "AppleMediaServices:AppleMediaServices.MediaRestrictionsBagModel.CodingKeys": [
+   "restrictionsSetup",
+   "restrictionsEdit",
+   "restrictionsGet",
+   "restrictionsDisable",
+   "profileLockSetup",
+   "profileLockEdit",
+   "profileLockDelete",
+   "profileLockVerify"
+  ],
+  "AppleMediaServices:AppleMediaServices.MediaRestrictionsQRAuthTaskBagModel.CodingKeys": [
+   "restrictionsQRAuthSetup",
+   "restrictionsQRAuthPolling"
+  ],
+  "AppleMediaServices:AppleMediaServices.extension.CodingKeys": [
+   "ratingSystem",
+   "ratingValue"
+  ],
+  "AppleMediaServices:AppleMediaServices.AgeGroupRelationships.CodingKeys": [
+   "recommended-content-ratings"
+  ],
+  "AppleMediaServices:AppleMediaServices.SuggestedRatingsProviderBagModel.CodingKeys": [
+   "videoAgeGroupContentPoliciesUrlTemplate"
+  ],
+  "AppleMediaServices:AppleMediaServices.DocumentType": [
+   "idCardFront",
+   "idCardBack"
   ],
   "AppleMediaServices:AppleMediaServices.PIAccountKeypair.CodingKeys": [
    "privateKeyData"
@@ -12715,54 +13230,12 @@
    "rotateAccordingToUpdatedSchedule",
    "resetLastRotationDateToNow"
   ],
-  "AppleMediaServices:AppleMediaServices.DocumentType": [
-   "idCardFront",
-   "idCardBack"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfigRotationBehavior": [
-   "now",
-   "updatedSchedule",
-   "lastRotationDate"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModel.CodingKeys": [
-   "privateIdentifiers"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelDeviceSpecificFieldConfig.CodingKeys": [
-   "name",
-   "rotationInterval",
-   "provideU13Identifier"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelAccountSpecificFieldConfig.CodingKeys": [
-   "name",
-   "rotationInterval",
-   "rotationJitter",
-   "disableUserIdentifierFallback",
-   "provideU13Identifier"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfig.CodingKeys": [
-   "deviceSpecificField",
-   "accountSpecificField",
-   "rotationBehavior"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelTopLevel.CodingKeys": [
-   "configsForAutoDecorationTopics",
-   "configsForBagNamespaces",
-   "configs",
-   "configsForOnDemandRotation"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelJitterConfig.CodingKeys": [
-   "min",
-   "max",
-   "fraction"
-  ],
-  "AppleMediaServices:AppleMediaServices.AgeGroupRelationships.CodingKeys": [
-   "recommended-content-ratings"
-  ],
-  "AppleMediaServices:AppleMediaServices.SuggestedRatingsProviderBagModel.CodingKeys": [
-   "videoAgeGroupContentPoliciesUrlTemplate"
-  ],
   "AppleMediaServices:AppleMediaServices.PaymentConfirmationResult.CodingKeys": [
    "paymentConfirmationChoice"
+  ],
+  "AppleMediaServices:AppleMediaServices.ConsumerIDRotateBagModel.CodingKeys": [
+   "generateConsumerId",
+   "resetable-metrics-identifiers-linkable"
   ],
   "AppleMediaServices:AppleMediaServices.AMSURLPattern.Component.CodingKeys": [
    "/",
@@ -12772,9 +13245,11 @@
    "style",
    "subsystem"
   ],
-  "AppleMediaServices:AppleMediaServices.ConsumerIDRotateBagModel.CodingKeys": [
-   "generateConsumerId",
-   "resetable-metrics-identifiers-linkable"
+  "AppleMediaServices:AppleMediaServices.URLSentryBag.CodingKeys": [
+   "trustedDomains",
+   "schemesThatOverrideTrustedDomains",
+   "restrictedUrls",
+   "redirects-explicitly-allowed"
   ],
   "AppleMediaServices:AppleMediaServices.ApplePayBagModel.CodingKeys": [
    "auto-enrollment-percentage",
@@ -12845,16 +13320,16 @@
    "managePaymentsParams",
    "metrics"
   ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Mode": [
+   "basic",
+   "full"
+  ],
   "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.SignedActions.CodingKeys": [
    "mode",
    "criteria",
    "actions",
    "session-duration",
    "session-refresh-percentage"
-  ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Mode": [
-   "basic",
-   "full"
   ],
   "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.CodingKeys": [
    "fpdi-setup",
@@ -12911,24 +13386,6 @@
    "redeemThankYouPage",
    "supportSessionTimeoutInterval"
   ],
-  "AppleMediaServices:AppleMediaServices.MediaRestrictionsBagModel.CodingKeys": [
-   "restrictionsSetup",
-   "restrictionsEdit",
-   "restrictionsGet",
-   "restrictionsDisable",
-   "profileLockSetup",
-   "profileLockEdit",
-   "profileLockDelete",
-   "profileLockVerify"
-  ],
-  "AppleMediaServices:AppleMediaServices.MediaRestrictionsQRAuthTaskBagModel.CodingKeys": [
-   "restrictionsQRAuthSetup",
-   "restrictionsQRAuthPolling"
-  ],
-  "AppleMediaServices:AppleMediaServices.extension.CodingKeys": [
-   "ratingSystem",
-   "ratingValue"
-  ],
   "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageId": [
    "GiftCardNFCInitiation",
    "GiftCardNFCReader",
@@ -12955,7 +13412,8 @@
    "dismiss"
   ],
   "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.TargetType": [
-   "button"
+   "button",
+   "link"
   ],
   "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.TargetId": [
    "Continue",
@@ -12963,7 +13421,8 @@
    "CannotFindCode",
    "Cancel",
    "Done",
-   "SignIn"
+   "SignIn",
+   "TermsAndConditions"
   ],
   "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.ActionContext": [
    "Prompt",
@@ -13012,21 +13471,46 @@
    "merchantId",
    "salesChannel"
   ],
-  "AppleMediaServices:AppleMediaServices.NearFieldSignpostManager.Interval": [
-   "generateKey",
-   "authSetup",
-   "authChallenge",
-   "chipAuth",
-   "fetchRenderInfo",
-   "requestRedeem",
-   "startTagReading",
-   "sendTapEvent",
-   "fetchHandOffSessionInfo",
-   "uploadHandOffData",
-   "fetchSupportSessionInfo",
-   "uploadSupportData",
-   "finishSupportSession",
-   "presentUI"
+  "AppleMediaServices:AppleMediaServices.NearFieldFlow": [
+   "redeem",
+   "handOff",
+   "support"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfigRotationBehavior": [
+   "now",
+   "updatedSchedule",
+   "lastRotationDate"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModel.CodingKeys": [
+   "privateIdentifiers"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelDeviceSpecificFieldConfig.CodingKeys": [
+   "name",
+   "rotationInterval",
+   "provideU13Identifier"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelAccountSpecificFieldConfig.CodingKeys": [
+   "name",
+   "rotationInterval",
+   "rotationJitter",
+   "disableUserIdentifierFallback",
+   "provideU13Identifier"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfig.CodingKeys": [
+   "deviceSpecificField",
+   "accountSpecificField",
+   "rotationBehavior"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelTopLevel.CodingKeys": [
+   "configsForAutoDecorationTopics",
+   "configsForBagNamespaces",
+   "configs",
+   "configsForOnDemandRotation"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelJitterConfig.CodingKeys": [
+   "min",
+   "max",
+   "fraction"
   ],
   "AppleMediaServices:AppleMediaServices.FeatureFlags": [
    "7AEA1493-37F2-4E27-ABB3-B159A6AF7AED",
@@ -13035,6 +13519,15 @@
    "0C4FF871-8ED9-4DE0-A68E-2F63BB18AB9B",
    "solariumAMS",
    "A590F779-F2BD-42E1-A4A4-946D586A44A4"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieAuthenticationMethod": [
+   "faceIDWithPasscodeFallback",
+   "touchIDWithPasscodeFallback",
+   "faceIDBK",
+   "faceID",
+   "touchID",
+   "passcode",
+   "none"
   ],
   "AppleMediaServices:AppleMediaServices.SelfieConfiguration.ScanType": [
    "best",
@@ -13061,10 +13554,28 @@
    "url-patterns",
    "dynamic-url-patterns"
   ],
-  "AppleMediaServices:AppleMediaServices.URLSentryBag.CodingKeys": [
-   "trustedDomains",
-   "schemesThatOverrideTrustedDomains",
-   "restrictedUrls"
+  "SwiftData:SwiftData.ModelContext.NotificationKey": [
+   "newQueryGeneration",
+   "invalidatedAll",
+   "inserted",
+   "updated",
+   "deleted",
+   "historyTokens"
+  ],
+  "SwiftData:SwiftData.Schema.Relationship.DeleteRule": [
+   "noAction",
+   "nullify",
+   "cascade",
+   "deny"
+  ],
+  "SwiftData:SwiftData.Schema.Attribute.Option.Coders.CodingKeys": [
+   "coder",
+   "customCoderClassName"
+  ],
+  "SwiftData:SwiftData.PersistentIdentifierImplementation.Scheme": [
+   "x-swiftdata",
+   "x-coredata",
+   "developer-provided"
   ],
   "BackgroundAssets:BackgroundAssets.AssetPack.AppStoreCodingKeys.AttributesCodingKeys": [
    "latestVersionInfo",
@@ -13081,6 +13592,1096 @@
   ],
   "BackgroundAssets:BackgroundAssets.AssetPackManifest.AppStoreCodingKeys.DataCodingKeys.AttributesCodingKeys": [
    "primaryLocale"
+  ],
+  "OmniSearch:OmniSearch.CardSubType": [
+   "personal",
+   "business"
+  ],
+  "OmniSearch:OmniSearch.Sex": [
+   "none",
+   "female",
+   "male"
+  ],
+  "OmniSearch:OmniSearch.EventSubType": [
+   "flightReservation",
+   "restaurantReservation",
+   "hotelReservation",
+   "vehicleReservation",
+   "shippingOrder",
+   "ticketedTransportation",
+   "ticketedShow",
+   "genericEvent"
+  ],
+  "OmniSearch:OmniSearch.GlobalDomain": [
+   "conversions",
+   "dictionary",
+   "flights",
+   "kg",
+   "maps",
+   "news",
+   "sports",
+   "stocks",
+   "thirdPartyGenAI",
+   "weather",
+   "web",
+   "web_images",
+   "summarizedAnswer",
+   "unknown"
+  ],
+  "OmniSearch:OmniSearch.SearchEntity.CodingKeys": [
+   "source",
+   "card",
+   "searchString",
+   "shouldOpen"
+  ],
+  "OmniSearch:OmniSearch.HydratedEntityType": [
+   "email",
+   "file",
+   "message",
+   "note",
+   "photo"
+  ],
+  "OmniSearch:OmniSearch.HydrationEntityType": [
+   "searchAnswer",
+   "string"
+  ],
+  "OmniSearch:OmniSearch.SearchPropertyType": [
+   "string",
+   "date",
+   "dateComponents",
+   "duration",
+   "person",
+   "number",
+   "media",
+   "navigation",
+   "url",
+   "location"
+  ],
+  "OmniSearch:OmniSearch.SearchPropertyRequest.CodingKeys": [
+   "name",
+   "type",
+   "hydrationContext"
+  ],
+  "OmniSearch:OmniSearch.HydrationContext.CodingKeys": [
+   "appBundleId",
+   "entity"
+  ],
+  "OmniSearch:OmniSearch.HydrationEntity.CodingKeys": [
+   "type",
+   "searchAnswerValue",
+   "stringValue"
+  ],
+  "OmniSearch:OmniSearch.SearchToolClientType": [
+   "montaraWritingTool"
+  ],
+  "OmniSearch:OmniSearch.SearchToolIntentRequest.CodingKeys": [
+   "rawQuery",
+   "rewrittenQuery",
+   "simplifiedQuery",
+   "structuredQuery",
+   "typeIdentifiers",
+   "isFirstToolInvocation",
+   "isOnScreenReference",
+   "isSingleStepSearch",
+   "requestedProperties"
+  ],
+  "OmniSearch:OmniSearch.SearchToolIntentResponse.CodingKeys": [
+   "results"
+  ],
+  "OmniSearch:OmniSearch.ObjectType": [
+   "event",
+   "contact",
+   "card",
+   "eventRestaurant",
+   "eventHotel",
+   "eventFlight",
+   "cardPersonalId",
+   "photo",
+   "calendarEvent",
+   "media"
+  ],
+  "OmniSearch:OmniSearch.SortOrder": [
+   "last",
+   "next",
+   "first"
+  ],
+  "OmniSearch:OmniSearch.TemporalReference": [
+   "future",
+   "past",
+   "unspecified"
+  ],
+  "OmniSearch:OmniSearch.OrderByTime": [
+   "ascending",
+   "descending"
+  ],
+  "OmniSearch:OmniSearch.ContactHandleType": [
+   "phone",
+   "email",
+   "facetime"
+  ],
+  "OmniSearch:OmniSearch.MediaType": [
+   "screenshot",
+   "selfie",
+   "panorama",
+   "slomo",
+   "spatialVideo"
+  ],
+  "OmniSearch:OmniSearch.AppEntityStatus": [
+   "accepted",
+   "archived",
+   "bookmarked",
+   "completed",
+   "created",
+   "declined",
+   "disabled",
+   "draft",
+   "due",
+   "edited",
+   "enabled",
+   "favorited",
+   "firing",
+   "flagged",
+   "forwarded",
+   "junk",
+   "maybe",
+   "missed",
+   "paused",
+   "printed",
+   "read",
+   "received",
+   "replied",
+   "running",
+   "saved",
+   "sent",
+   "shared",
+   "snoozing",
+   "tagged",
+   "trash",
+   "unread"
+  ],
+  "OmniSearch:OmniSearch.AppEntityStatusMode": [
+   "required",
+   "preferred"
+  ],
+  "OmniSearch:OmniSearch.EntityUTType": [
+   "bookmark",
+   "spreadsheet",
+   "presentation",
+   "message",
+   "contact",
+   "calendarEvent",
+   "emailMessage",
+   "image",
+   "audio",
+   "movie",
+   "pdf",
+   "zip"
+  ],
+  "OmniSearch:OmniSearch.ReturnType": [
+   "mail",
+   "calendarEvent",
+   "photo",
+   "photoAlbum",
+   "memory",
+   "note",
+   "noteFolder",
+   "message",
+   "conversation",
+   "reminder",
+   "reminderList",
+   "documentsFile",
+   "documentsFolder",
+   "keynote",
+   "pagesFile",
+   "numbersFile",
+   "voicemail",
+   "phone",
+   "journal",
+   "voiceMemos",
+   "link",
+   "freeform",
+   "contact",
+   "card",
+   "wallet",
+   "song",
+   "artist",
+   "album",
+   "musicAlbum",
+   "playlist",
+   "podcast",
+   "show",
+   "radioStation",
+   "news",
+   "address",
+   "musicVideo",
+   "movie",
+   "hotel",
+   "restaurant",
+   "flight",
+   "ticketShow",
+   "ticketTransport",
+   "rentalCar",
+   "party",
+   "appointment",
+   "screenshot",
+   "selfie",
+   "panorama",
+   "slomo",
+   "spatialVideo"
+  ],
+  "OmniSearch:OmniSearch.FilterType": [
+   "alarm",
+   "album",
+   "app",
+   "artist",
+   "audioBook",
+   "book",
+   "browser",
+   "browserBookmark",
+   "browserHistory",
+   "calendar",
+   "contact",
+   "conversation",
+   "device",
+   "display",
+   "documentsFile",
+   "documentsFolder",
+   "episode",
+   "freeform",
+   "home",
+   "homeDevice",
+   "homeGroup",
+   "announcement",
+   "lightbulb",
+   "lock",
+   "thermostat",
+   "heaterCooler",
+   "fan",
+   "outlet",
+   "blinds",
+   "garageDoor",
+   "camera",
+   "sensor",
+   "airPurifier",
+   "humidifier",
+   "dehumidifier",
+   "sprinkler",
+   "robotVacuumCleaner",
+   "securitySystem",
+   "findMyItem",
+   "findMyPerson",
+   "journal",
+   "keynote",
+   "mail",
+   "mailDraft",
+   "memory",
+   "message",
+   "music",
+   "note",
+   "noteFolder",
+   "notification",
+   "numbersFile",
+   "pagesFile",
+   "pdfFile",
+   "playlist",
+   "podcast",
+   "phone",
+   "photo",
+   "photoAlbum",
+   "readingList",
+   "reminder",
+   "reminderList",
+   "room",
+   "show",
+   "song",
+   "speaker",
+   "tab",
+   "tabGroup",
+   "timer",
+   "video",
+   "voicemail",
+   "voiceMemo",
+   "wallet",
+   "website",
+   "zone",
+   "panorama",
+   "screenshot",
+   "selfie",
+   "slomo",
+   "spatialVideo",
+   "calendarEvent",
+   "link",
+   "movie",
+   "safari",
+   "voiceMemos"
+  ],
+  "OmniSearch:OmniSearch.PreferredType": [
+   "alarm",
+   "app",
+   "book",
+   "contact",
+   "conversation",
+   "documentsFile",
+   "documentsFolder",
+   "freeform",
+   "journal",
+   "keynote",
+   "mail",
+   "media",
+   "memory",
+   "message",
+   "note",
+   "noteFolder",
+   "numbersFile",
+   "pagesFile",
+   "pdfFile",
+   "phone",
+   "photo",
+   "photoAlbum",
+   "reminder",
+   "reminderList",
+   "tab",
+   "tabGroup",
+   "timer",
+   "video",
+   "voicemail",
+   "voiceMemo",
+   "wallet",
+   "website",
+   "appointment",
+   "card",
+   "event",
+   "flight",
+   "hotel",
+   "party",
+   "restaurant",
+   "shippingOrder",
+   "ticketShow",
+   "ticketTransport",
+   "vehicleReservation",
+   "home",
+   "room",
+   "zone",
+   "homeGroup",
+   "homeDevice",
+   "announcement",
+   "address",
+   "album",
+   "artist",
+   "calendarEvent",
+   "genericEvent",
+   "link",
+   "movie",
+   "music_album",
+   "music_video",
+   "news",
+   "playlist",
+   "podcast",
+   "radio_station",
+   "rentalCar",
+   "safari",
+   "show",
+   "song",
+   "voiceMemos"
+  ],
+  "OmniSearch:OmniSearch.SourceType": [
+   "browser",
+   "calendar",
+   "contact",
+   "conversation",
+   "documentsFile",
+   "documentsFolder",
+   "freeform",
+   "journal",
+   "keynote",
+   "mail",
+   "message",
+   "note",
+   "noteFolder",
+   "numbersFile",
+   "pagesFile",
+   "phone",
+   "photo",
+   "photoAlbum",
+   "reminder",
+   "reminderList",
+   "voicemail",
+   "voiceMemo",
+   "wallet",
+   "calendarEvent",
+   "memory",
+   "website"
+  ],
+  "OmniSearch:OmniSearch.ContainsType": [
+   "calendar",
+   "contact",
+   "conversation",
+   "documentsFile",
+   "documentsFolder",
+   "freeform",
+   "journal",
+   "keynote",
+   "media",
+   "memory",
+   "note",
+   "noteFolder",
+   "numbersFile",
+   "pagesFile",
+   "photo",
+   "photoAlbum",
+   "reminder",
+   "video",
+   "voicemail",
+   "voiceMemo",
+   "wallet",
+   "website",
+   "appointment",
+   "card",
+   "event",
+   "flight",
+   "hotel",
+   "party",
+   "restaurant",
+   "shippingOrder",
+   "ticketShow",
+   "ticketTransport",
+   "vehicleReservation",
+   "panorama",
+   "screenshot",
+   "selfie",
+   "slomo",
+   "spatialVideo"
+  ],
+  "OmniSearch:OmniSearch.GlobalSearchType": [
+   "sam",
+   "maps"
+  ],
+  "OmniSearch:OmniSearch.MapsFilterType": [
+   "poi",
+   "address",
+   "physical_feature"
+  ],
+  "OmniSearch:OmniSearch.ExtractedType": [
+   "appointment",
+   "card",
+   "event",
+   "flight",
+   "hotel",
+   "media",
+   "party",
+   "restaurant",
+   "shippingOrder",
+   "ticketShow",
+   "ticketTransport",
+   "vehicleReservation",
+   "website"
+  ],
+  "OmniSearch:OmniSearch.StructuredQueryEntity.CodingKeys": [
+   "isQuestion",
+   "filterType",
+   "preferredType",
+   "temporalReference",
+   "orderByTime",
+   "appEntityStatus",
+   "appEntityStatusMode",
+   "pickOne",
+   "globalSearchParse",
+   "searchTerms",
+   "optionalSearchTerms",
+   "locations",
+   "time",
+   "messageTime",
+   "people",
+   "tagName",
+   "flagColor",
+   "mailCategory",
+   "sourceType",
+   "containsType",
+   "appBundleId",
+   "extractedType"
+  ],
+  "OmniSearch:OmniSearch.LocationQueryEntity.CodingKeys": [
+   "unspecified",
+   "arrival",
+   "departure"
+  ],
+  "OmniSearch:OmniSearch.PersonQueryEntity.CodingKeys": [
+   "unspecified",
+   "sender",
+   "receiver"
+  ],
+  "OmniSearch:OmniSearch.Person.CodingKeys": [
+   "name",
+   "contactHandleType"
+  ],
+  "OmniSearch:OmniSearch.GlobalSearchParseEntity.CodingKeys": [
+   "globalSearchType",
+   "resolvedQuery",
+   "mapsFilterType"
+  ],
+  "OmniSearch:OmniSearch.MCADomain": [
+   "music",
+   "apps",
+   "podcasts",
+   "videos"
+  ],
+  "OmniSearch:OmniSearch.MCARole": [
+   "user",
+   "assistant"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryRequest.CodingKeys": [
+   "responseMode",
+   "context",
+   "input"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryContext.CodingKeys": [
+   "version",
+   "domains",
+   "continue"
+  ],
+  "OmniSearch:OmniSearch.MCAChatRequest.CodingKeys": [
+   "responseMode",
+   "conversation",
+   "messages"
+  ],
+  "OmniSearch:OmniSearch.MCAConversationInit.CodingKeys": [
+   "sharedContext",
+   "version",
+   "domains",
+   "continue"
+  ],
+  "OmniSearch:OmniSearch.MCAConversationContinue.CodingKeys": [
+   "id",
+   "lastMessage"
+  ],
+  "OmniSearch:OmniSearch.MCARequestContent.ContentCodingKeys": [
+   "type",
+   "text"
+  ],
+  "OmniSearch:OmniSearch.MCAEntityReference.Kind": [
+   "songs",
+   "albums",
+   "playlists",
+   "artists",
+   "stations",
+   "videos",
+   "movies",
+   "shows",
+   "episodes",
+   "apps"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseContent.TypeCodingKey": [
+   "type"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseStatus": [
+   "success",
+   "error"
+  ],
+  "OmniSearch:OmniSearch.MCASSEEventType": [
+   "response-start",
+   "message-content",
+   "thought",
+   "content",
+   "response-finish",
+   "failure",
+   "error"
+  ],
+  "OmniSearch:OmniSearch.ConfigKey": [
+   "version",
+   "last_updated",
+   "prompts",
+   "tools",
+   "toolbox",
+   "default_system",
+   "entity_resolution_system",
+   "user_prompt",
+   "general_tools",
+   "entity_mappings",
+   "generic_tools",
+   "name",
+   "usage_description",
+   "parameters",
+   "type",
+   "description"
+  ],
+  "OmniSearch:OmniSearch.ParameterValueType": [
+   "string",
+   "stringOptional",
+   "stringArray",
+   "stringArrayOptional",
+   "bool",
+   "boolOptional",
+   "int",
+   "intOptional"
+  ],
+  "OmniSearch:OmniSearch.StructuredQueryTemplate.CodingKeys": [
+   "filterType",
+   "searchTerms",
+   "optionalSearchTerms",
+   "appEntityStatus",
+   "appEntityStatusMode",
+   "time",
+   "people"
+  ],
+  "OmniSearch:OmniSearch.CerberusParseOverride.MatchCriteria.CodingKeys": [
+   "queryPattern",
+   "requiredEntityTypes",
+   "purpose"
+  ],
+  "OmniSearch:OmniSearch.CerberusParseOverride.CodingKeys": [
+   "matchCriteria",
+   "template"
+  ],
+  "OmniSearch:OmniSearch.SearchEntityTypeIdentifier.CodingKeys": [
+   "bundleId",
+   "typeName",
+   "extraBundleIds"
+  ],
+  "OmniSearch:OmniSearch.HybridSearchQueryInfo.CodingKeys": [
+   "rawQuery",
+   "rewrittenQuery",
+   "simplifiedQuery",
+   "entityTypes",
+   "searchTerms",
+   "pickOne",
+   "aliasMapping"
+  ],
+  "OmniSearch:OmniSearch.WorkoutCollectionSummary.MetricStat.Kind": [
+   "count",
+   "distance",
+   "duration",
+   "pace",
+   "average_heart_rate",
+   "max_heart_rate",
+   "calories",
+   "elevation_gain",
+   "cadence",
+   "power"
+  ],
+  "OmniSearch:OmniSearch.WorkoutDetails.LocationType": [
+   "indoor",
+   "outdoor",
+   "pool",
+   "open_water"
+  ],
+  "OmniSearch:OmniSearch.LangleyDomainDecision": [
+   "targetsVideo",
+   "noMediaOrVideoParse",
+   "nonVideoFilterPresent"
+  ],
+  "OmniSearch:OmniSearch.LangleyMockData.Mode": [
+   "none",
+   "movie",
+   "tvshow",
+   "audio"
+  ],
+  "OmniSearch:OmniSearch.GlobalResponse.CodingKeys": [
+   "id",
+   "results",
+   "dialog",
+   "snippet",
+   "domain",
+   "responseType",
+   "isPqaDeserving",
+   "needsLocation",
+   "safetySignals",
+   "forceBatchFlow",
+   "userDisambiguationType",
+   "appIntentData"
+  ],
+  "OmniSearch:OmniSearch.GlobalEntity.CodingKeys": [
+   "id",
+   "dialog",
+   "domain",
+   "snippet",
+   "result",
+   "resultMetadata",
+   "plannerFacingMetadata",
+   "markdownData"
+  ],
+  "OmniSearch:OmniSearch.MockPegasusResponse.Mode": [
+   "none",
+   "vid-wka",
+   "vid-stdrep",
+   "audio-wka",
+   "audio-stdrep"
+  ],
+  "OmniSearch:OmniSearch.HealthAggregationInterval": [
+   "hourly",
+   "daily",
+   "weekly",
+   "monthly",
+   "yearly"
+  ],
+  "OmniSearch:OmniSearch.HealthEntityBuilder.CardKind": [
+   "health_statistics",
+   "health_sleep",
+   "health_rings",
+   "health_workouts",
+   "health_unavailable"
+  ],
+  "OmniSearch:OmniSearch.SearchHomeScope": [
+   "specific",
+   "everywhere",
+   "here"
+  ],
+  "OmniSearch:OmniSearch.HomeKitSearchService.HomeResolutionType": [
+   "zone",
+   "room",
+   "device",
+   "everywhere"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalSearchSource": [
+   "cascade",
+   "direct"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalSearchMatchStrategy": [
+   "exact",
+   "substring",
+   "fuzzy"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalSearchMatchedField": [
+   "title",
+   "subtitle",
+   "typeDisplayName"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalSearchAliasData.SupportedLanguage": [
+   "en",
+   "es",
+   "fr",
+   "pt",
+   "ja",
+   "ko"
+  ],
+  "OmniSearch:OmniSearch.DirectRouting": [
+   "Notifications"
+  ],
+  "OmniSearch:OmniSearchTypes.PreExtractedCard.Keys": [
+   "type",
+   "sub type",
+   "provider",
+   "under name",
+   "number",
+   "group number",
+   "issue date",
+   "expiration date",
+   "issued by",
+   "region",
+   "country",
+   "birthday",
+   "place of birth",
+   "address",
+   "sex",
+   "height",
+   "eye color",
+   "weight",
+   "category",
+   "restrictions"
+  ],
+  "OmniSearch:OmniSearchTypes.PreExtractedContact.Keys": [
+   "type",
+   "name",
+   "nickname",
+   "email addresses",
+   "numbers",
+   "shared by",
+   "shared date time",
+   "shared app name",
+   "links",
+   "birthday",
+   "home addresses",
+   "work addresses",
+   "relationship",
+   "addresses",
+   "business hours"
+  ],
+  "OmniSearch:OmniSearchTypes.PreExtractedBreadcrumb.Keys": [
+   "extracted dates",
+   "extracted locations",
+   "extracted phone numbers",
+   "extracted phone numbers country codes",
+   "extracted addresses",
+   "extracted flights",
+   "extracted links",
+   "extracted tracking numbers",
+   "extracted currencies",
+   "extracted emails"
+  ],
+  "OmniSearch:OmniSearchTypes.PreExtractedSharedLink.Keys": [
+   "type",
+   "sub type",
+   "name",
+   "url",
+   "url description",
+   "artist",
+   "album",
+   "published date",
+   "release date",
+   "length in seconds",
+   "musical genre",
+   "curator",
+   "episode",
+   "podcast name",
+   "summary"
+  ],
+  "OmniSearch:OmniSearch.MessageAccumulationContext.Subcomponent": [
+   "spotlight",
+   "pegasus",
+   "maps"
+  ],
+  "OmniSearch:OmniSearch.EntityType": [
+   "location",
+   "person",
+   "phoneNumber",
+   "emailAddress",
+   "uri",
+   "appEntity",
+   "place",
+   "timer",
+   "alarm",
+   "notification",
+   "calendarEvent",
+   "reminder",
+   "homeDeviceOrRoom",
+   "dateTime",
+   "mediaItem"
+  ],
+  "OmniSearch:OmniSearch.EntityMatcherType": [
+   "unknown",
+   "siriEntityMatcher"
+  ],
+  "OmniSearch:OmniSearch.MobileGestalt.DeviceClass": [
+   "PHONE",
+   "PAD",
+   "HORSEMAN",
+   "ZEUS",
+   "CAMEO",
+   "WATCH",
+   "CAR",
+   "MARGARITA",
+   "unknown"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchOptions.CodingKeys": [
+   "context",
+   "interactionMode",
+   "assistantLocale",
+   "clientId",
+   "isFirstToolInvocation",
+   "isOnScreenReference",
+   "isExpectingAnswer",
+   "isSingleStepSearch",
+   "alwaysHydrateDocuments",
+   "skipGlobalSearch",
+   "skipLocalSearch",
+   "shouldRunBothLocalAndGlobalSearch",
+   "suppressFlightResolution",
+   "isXpcInvocation",
+   "transcript",
+   "purpose",
+   "entityTypes",
+   "toolParameterTuple",
+   "apps",
+   "unresolvedApps",
+   "isHandoff",
+   "isCarPlay",
+   "offlineMode",
+   "simulatedLocalSearchURL",
+   "resolvedEntities",
+   "searchToolId",
+   "requestIdentifiers",
+   "isParseGeneratedByPlanner",
+   "siriRequestContext",
+   "identifiedUser",
+   "homeMembers",
+   "isPhoneCallActive",
+   "originatingDeviceAccessoryId",
+   "originatingDeviceInfo",
+   "isRemoteRequest",
+   "currentTimeOverride",
+   "agenticSearchInvocations",
+   "speechContent"
+  ],
+  "OmniSearch:OmniSearch.SearchPurpose": [
+   "reading",
+   "use_in_tool",
+   "use_to_inform_user"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchService.LangleyEligibility": [
+   "appleTVRequest",
+   "withoutAppleTV",
+   "ineligible"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.SuccessCodingKeys": [
+   "payload"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.CodingKeys": [
+   "failure",
+   "success"
+  ],
+  "OmniSearch:OmniSearch.RequestedPropertiesMapper.MappingType": [
+   "defaultKeys",
+   "expandedTypes"
+  ],
+  "OmniSearch:OmniSearch.SearchResult.JSONIntermediate.CodingKeys": [
+   "item",
+   "_csAttributes",
+   "likelihood"
+  ],
+  "OmniSearch:OmniSearch.SearchResultKey": [
+   "email",
+   "mobileSMS",
+   "calendar",
+   "photo",
+   "answer",
+   "note",
+   "reminder",
+   "phoneHistory",
+   "voicemailTranscript",
+   "journalEntry",
+   "voiceMemo",
+   "safari",
+   "file",
+   "walletTransaction",
+   "walletPass",
+   "contact",
+   "flightReservation",
+   "hotelReservation",
+   "restaurantReservation",
+   "globalResult",
+   "globalEntitiesResponse",
+   "appEntity",
+   "application",
+   "rentalCarReservation",
+   "shippingOrder",
+   "ticketedTransportation",
+   "ticketedShow",
+   "appointment",
+   "party",
+   "trip",
+   "onScreen",
+   "genericSpotlightItem",
+   "mapsPlaceResponse"
+  ],
+  "OmniSearch:OmniSearch.SearchType": [
+   "unknown",
+   "spotlight",
+   "global",
+   "unifiedContactGeneration",
+   "photo",
+   "maps",
+   "fitness",
+   "health",
+   "conversationMemory",
+   "homeKit",
+   "meCard",
+   "hybridLocal"
+  ],
+  "OmniSearch:OmniSearch.CerberusParses.CodingKeys": [
+   "parses",
+   "preferredTypes",
+   "isQuestion",
+   "persons",
+   "runLoops",
+   "compactFormat",
+   "deferredGenericParses"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.DRM.FairPlayStreaming.KeyServerType": [
+   "simplified",
+   "standard"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.CodingKeys": [
+   "version",
+   "url",
+   "drm"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.MediaAPIType": [
+   "songs",
+   "library-songs",
+   "music-videos",
+   "library-music-videos",
+   "albums",
+   "library-albums",
+   "playlists",
+   "library-playlists",
+   "stations",
+   "genres",
+   "flexml-analysis",
+   "audio-analysis"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.Resource.CodingKeys": [
+   "id",
+   "type",
+   "attributes",
+   "relationships"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.ContentType": [
+   "unknown",
+   "songs",
+   "music-videos",
+   "albums",
+   "playlists",
+   "stations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.MediaAPIContentType": [
+   "songs",
+   "music-videos",
+   "albums",
+   "playlists",
+   "stations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.LibraryContentType": [
+   "song",
+   "musicVideo",
+   "album",
+   "playlist"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.CloudLibraryContentType": [
+   "library-songs",
+   "library-music-videos",
+   "library-albums",
+   "library-playlists"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.PurchasableContentType": [
+   "song",
+   "musicVideo",
+   "album"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationRamp.CodingKeys": [
+   "parameterId",
+   "startTime",
+   "endTime",
+   "startValue",
+   "endValue",
+   "interpolation"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.TimeCodingKeys": [
+   "start",
+   "end"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.CodingKeys": [
+   "placement",
+   "automations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationTime.CodingKeys": [
+   "relative",
+   "offsetInSeconds"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationTime.CodingKeys": [
+   "default"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationValue.CodingKeys": [
+   "parameterName",
+   "default"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.SongScheduleCodingKeys": [
+   "outgoing",
+   "incoming"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.CodingKeys": [
+   "id",
+   "offset",
+   "duration",
+   "instructions"
   ],
   "AdaptiveMusic:AdaptiveMusic.Mood.ID": [
    "productivity",
@@ -13217,104 +14818,6 @@
    "appleevent",
    "festivalsandfairs",
    "nightlife"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.DRM.FairPlayStreaming.KeyServerType": [
-   "simplified",
-   "standard"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.CodingKeys": [
-   "version",
-   "url",
-   "drm"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.MediaAPIType": [
-   "songs",
-   "library-songs",
-   "music-videos",
-   "library-music-videos",
-   "albums",
-   "library-albums",
-   "playlists",
-   "library-playlists",
-   "stations",
-   "genres",
-   "flexml-analysis",
-   "audio-analysis"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.Resource.CodingKeys": [
-   "id",
-   "type",
-   "attributes",
-   "relationships"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.ContentType": [
-   "unknown",
-   "songs",
-   "music-videos",
-   "albums",
-   "playlists",
-   "stations"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.MediaAPIContentType": [
-   "songs",
-   "music-videos",
-   "albums",
-   "playlists",
-   "stations"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.LibraryContentType": [
-   "song",
-   "musicVideo",
-   "album",
-   "playlist"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.CloudLibraryContentType": [
-   "library-songs",
-   "library-music-videos",
-   "library-albums",
-   "library-playlists"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.PurchasableContentType": [
-   "song",
-   "musicVideo",
-   "album"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationRamp.CodingKeys": [
-   "parameterId",
-   "startTime",
-   "endTime",
-   "startValue",
-   "endValue",
-   "interpolation"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.TimeCodingKeys": [
-   "start",
-   "end"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.CodingKeys": [
-   "placement",
-   "automations"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationTime.CodingKeys": [
-   "relative",
-   "offsetInSeconds"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationTime.CodingKeys": [
-   "default"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationValue.CodingKeys": [
-   "parameterName",
-   "default"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.SongScheduleCodingKeys": [
-   "outgoing",
-   "incoming"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.CodingKeys": [
-   "id",
-   "offset",
-   "duration",
-   "instructions"
   ],
   "MusicApplication:MusicCore.UnifiedMessages.Placement": [
    "libraryHeader",
@@ -13840,9 +15343,6 @@
   ],
   "MusicApplication:MusicCore.extension.MobileiPod": [
    "UserRequestedSubscriptionHidden"
-  ],
-  "MusicApplication:MusicCore.extension.Keys": [
-   "hasSeenDownloadPinsAlert"
   ],
   "MusicApplication:MusicCore.Library.ContentFilterOption": [
    "all",
@@ -14615,6 +16115,28 @@
    "fullscreenToSquare",
    "fullscreenToFullscreen"
   ],
+  "Music:Music.MultiDeviceTester.Device.CodingKeys": [
+   "name",
+   "symbol",
+   "screenSize",
+   "pointsPerInch",
+   "safeArea",
+   "cornerRadius",
+   "idiom",
+   "portraitSizeClasses",
+   "landscapeSizeClasses",
+   "notch",
+   "homeIndicator"
+  ],
+  "Music:Music.MultiDeviceTester.Device.SizeClasses.CodingKeys": [
+   "horizontal",
+   "vertical"
+  ],
+  "Music:Music.MultiDeviceTester.Settings.CodingKeys": [
+   "devices",
+   "orientation",
+   "renderingMode"
+  ],
   "Music:Music.LibraryImport.Observer.MetricsData.ReferralStatus": [
    "unknown",
    "started",
@@ -14623,6 +16145,7 @@
   "Music:Music.LibraryImport.Response.ItemsToReview.CodingKeys": [
    "songs",
    "albums",
+   "artists",
    "music-videos"
   ],
   "Music:Music.WidgetUpdateManager.Bag.BagKey": [
@@ -14654,7 +16177,8 @@
    "com.apple.Music.TikTokSharing"
   ],
   "Music:Music.BackdropView.Group": [
-   "nowPlaying"
+   "nowPlaying",
+   "lyricsSharing"
   ],
   "Music:MusicCore.Library.Category": [
    "albums",
@@ -14723,28 +16247,6 @@
   "Music:__C.Identifier.LibraryEdit": [
    "pins",
    "menu"
-  ],
-  "Music:Music.MultiDeviceTester.Device.CodingKeys": [
-   "name",
-   "symbol",
-   "screenSize",
-   "pointsPerInch",
-   "safeArea",
-   "cornerRadius",
-   "idiom",
-   "portraitSizeClasses",
-   "landscapeSizeClasses",
-   "notch",
-   "homeIndicator"
-  ],
-  "Music:Music.MultiDeviceTester.Device.SizeClasses.CodingKeys": [
-   "horizontal",
-   "vertical"
-  ],
-  "Music:Music.MultiDeviceTester.Settings.CodingKeys": [
-   "devices",
-   "orientation",
-   "renderingMode"
   ],
   "Music:Music.NowPlayingViewController.LayoutType": [
    "compact",
@@ -15089,9 +16591,6 @@
   ],
   "Music:MusicCore.extension.MobileiPod": [
    "UserRequestedSubscriptionHidden"
-  ],
-  "Music:MusicCore.extension.Keys": [
-   "hasSeenDownloadPinsAlert"
   ],
   "Music:MusicCore.Library.ContentFilterOption": [
    "all",
@@ -16136,9 +17635,6 @@
   "MusicMessagesApp:MusicCore.extension.MobileiPod": [
    "UserRequestedSubscriptionHidden"
   ],
-  "MusicMessagesApp:MusicCore.extension.Keys": [
-   "hasSeenDownloadPinsAlert"
-  ],
   "MusicMessagesApp:MusicCore.Library.ContentFilterOption": [
    "all",
    "favorites",
@@ -16584,9 +18080,6 @@
   "MusicWidgets:MusicCore.extension.MobileiPod": [
    "UserRequestedSubscriptionHidden"
   ],
-  "MusicWidgets:MusicCore.extension.Keys": [
-   "hasSeenDownloadPinsAlert"
-  ],
   "MusicWidgets:MusicCore.Library.ContentFilterOption": [
    "all",
    "favorites",
@@ -16798,6 +18291,9 @@
     "x0": "placeholder"
    },
    {
+    "x0": "pmuc"
+   },
+   {
     "x0": "publicKey"
    },
    {
@@ -16814,6 +18310,9 @@
    },
    {
     "x0": "style"
+   },
+   {
+    "x0": "subscriptionId"
    },
    {
     "x0": "success"
@@ -16861,6 +18360,10 @@
     "x2": "challenges"
    },
    {
+    "x0": "configJSON",
+    "x2": "configJSON"
+   },
+   {
     "x0": "creationDate"
    },
    {
@@ -16871,6 +18374,10 @@
    },
    {
     "x0": "fallbackURL"
+   },
+   {
+    "x0": "for",
+    "x2": "bundleIDs"
    },
    {
     "x0": "formattedScore"
@@ -16959,6 +18466,10 @@
     "x0": "revokedLinks"
    },
    {
+    "x0": "sql",
+    "x2": "sql"
+   },
+   {
     "x0": "type"
    },
    {
@@ -16971,6 +18482,33 @@
     "x2": "itscg"
    },
    {
+    "x0": "Bool"
+   },
+   {
+    "x0": "CGFloat"
+   },
+   {
+    "x0": "ColorScheme"
+   },
+   {
+    "x0": "DynamicTypeSize"
+   },
+   {
+    "x0": "InterfaceIdiom"
+   },
+   {
+    "x0": "Layout"
+   },
+   {
+    "x0": "LayoutDirection"
+   },
+   {
+    "x0": "NowPlaying"
+   },
+   {
+    "x0": "Scale"
+   },
+   {
     "x0": "a"
    },
    {
@@ -16981,6 +18519,9 @@
    },
    {
     "x0": "artist"
+   },
+   {
+    "x0": "attributes"
    },
    {
     "x0": "classHierarchy"
@@ -17002,6 +18543,9 @@
    },
    {
     "x0": "dialog"
+   },
+   {
+    "x0": "enabled"
    },
    {
     "x0": "endTime"
@@ -17053,6 +18597,9 @@
     "x2": "app"
    },
    {
+    "x0": "music"
+   },
+   {
     "x0": "options"
    },
    {
@@ -17070,6 +18617,9 @@
    },
    {
     "x0": "s"
+   },
+   {
+    "x0": "search"
    },
    {
     "x0": "sessionDuration"
@@ -17455,6 +19005,9 @@
   ],
   "MusicKit": [
    {
+    "x0": "Playlist Name"
+   },
+   {
     "x0": "_albumCount"
    },
    {
@@ -17551,6 +19104,9 @@
     "x0": "albumName"
    },
    {
+    "x0": "albumType"
+   },
+   {
     "x0": "albums"
    },
    {
@@ -17568,6 +19124,10 @@
    },
    {
     "x0": "audioLocale"
+   },
+   {
+    "x0": "canonicalKind",
+    "x4": "canonicalKind"
    },
    {
     "x0": "catalog"
@@ -17608,9 +19168,6 @@
     "x0": "episodeNumber"
    },
    {
-    "x0": "extend"
-   },
-   {
     "x0": "flexml-analysis",
     "x4": "FlexAnalysis"
    },
@@ -17624,13 +19181,16 @@
     "x0": "has4K"
    },
    {
+    "x0": "hasBonusContent"
+   },
+   {
     "x0": "hasHDR"
    },
    {
     "x0": "hasLyrics"
    },
    {
-    "x0": "include"
+    "x0": "hasMusicEvents"
    },
    {
     "x0": "isChart"
@@ -17640,6 +19200,9 @@
    },
    {
     "x0": "isComplete"
+   },
+   {
+    "x0": "isGroup"
    },
    {
     "x0": "isLive"
@@ -17702,13 +19265,7 @@
     "x2": "unknown"
    },
    {
-    "x0": "meta"
-   },
-   {
     "x0": "music-videos"
-   },
-   {
-    "x0": "musicVideos"
    },
    {
     "x0": "name"
@@ -17763,6 +19320,10 @@
     "x0": "songs"
    },
    {
+    "x0": "spatialOffsets",
+    "x2": "SpatialTimingInformation"
+   },
+   {
     "x0": "startTime"
    },
    {
@@ -17800,9 +19361,6 @@
     "x0": "videoSubType"
    },
    {
-    "x0": "views"
-   },
-   {
     "x0": "workName"
    },
    {
@@ -17816,9 +19374,27 @@
    },
    {
     "x2": "tv-episodes"
+   },
+   {
+    "x4": "Array<String>"
+   },
+   {
+    "x4": "Artwork"
+   },
+   {
+    "x4": "Int"
+   },
+   {
+    "x4": "URL"
    }
   ],
   "MusicKitInternal": [
+   {
+    "x0": "artists"
+   },
+   {
+    "x0": "attributes"
+   },
    {
     "x0": "audio-analysis"
    },
@@ -17827,6 +19403,15 @@
    },
    {
     "x0": "genres"
+   },
+   {
+    "x0": "href"
+   },
+   {
+    "x0": "id"
+   },
+   {
+    "x0": "meta"
    },
    {
     "x0": "more-in-genre"
@@ -17844,17 +19429,29 @@
     "x0": "raw-genres"
    },
    {
+    "x0": "timestamp"
+   },
+   {
     "x0": "top-genres"
+   },
+   {
+    "x0": "type"
    },
    {
     "x0": "using",
     "x2": "token"
    },
    {
+    "x0": "venues"
+   },
+   {
     "x2": "item"
    }
   ],
   "MusicKitPlaybackSupport": [
+   {
+    "x0": "id"
+   },
    {
     "x0": "library-",
     "x2": "albums"
@@ -18018,6 +19615,9 @@
    {
     "x0": "library-",
     "x2": "uploaded-videos"
+   },
+   {
+    "x0": "type"
    }
   ],
   "MusicMessagesApp": [
@@ -18082,6 +19682,308 @@
    },
    {
     "x0": "url"
+   }
+  ],
+  "OmniSearch": [
+   {
+    "x0": "1",
+    "x2": "group_id"
+   },
+   {
+    "x0": "1",
+    "x2": "summary_card_lower_is_better"
+   },
+   {
+    "x0": "activities"
+   },
+   {
+    "x0": "activity_symbol"
+   },
+   {
+    "x0": "address"
+   },
+   {
+    "x0": "arguments"
+   },
+   {
+    "x0": "aspects"
+   },
+   {
+    "x0": "average"
+   },
+   {
+    "x0": "body"
+   },
+   {
+    "x0": "breakdowns"
+   },
+   {
+    "x0": "buckets"
+   },
+   {
+    "x0": "com.apple.Maps"
+   },
+   {
+    "x0": "commonName"
+   },
+   {
+    "x0": "cycleStartDate"
+   },
+   {
+    "x0": "dayCount"
+   },
+   {
+    "x0": "description"
+   },
+   {
+    "x0": "email"
+   },
+   {
+    "x0": "en"
+   },
+   {
+    "x0": "fan"
+   },
+   {
+    "x0": "figure.run",
+    "x2": "activity_symbol"
+   },
+   {
+    "x0": "fractionElapsed"
+   },
+   {
+    "x0": "home"
+   },
+   {
+    "x0": "id"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "id"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "name"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "rating_count"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "ratings"
+   },
+   {
+    "x0": "ipad"
+   },
+   {
+    "x0": "item"
+   },
+   {
+    "x0": "kind"
+   },
+   {
+    "x0": "latitude"
+   },
+   {
+    "x0": "library_content"
+   },
+   {
+    "x0": "lock"
+   },
+   {
+    "x0": "longitude"
+   },
+   {
+    "x0": "mapsFilterType"
+   },
+   {
+    "x0": "max"
+   },
+   {
+    "x0": "me"
+   },
+   {
+    "x0": "min"
+   },
+   {
+    "x0": "mobileSMS",
+    "x2": "type"
+   },
+   {
+    "x0": "moveGoalMetDays"
+   },
+   {
+    "x0": "music"
+   },
+   {
+    "x0": "name"
+   },
+   {
+    "x0": "nightCount"
+   },
+   {
+    "x0": "not recorded",
+    "x2": "heart_rate_zones"
+   },
+   {
+    "x0": "open hours unavailable",
+    "x2": "open hours"
+   },
+   {
+    "x0": "parameters"
+   },
+   {
+    "x0": "period"
+   },
+   {
+    "x0": "personal_only"
+   },
+   {
+    "x0": "phoneNumber"
+   },
+   {
+    "x0": "podcasts"
+   },
+   {
+    "x0": "pool",
+    "x2": "indoor_outdoor"
+   },
+   {
+    "x0": "primaryTool"
+   },
+   {
+    "x0": "rvc"
+   },
+   {
+    "x0": "score"
+   },
+   {
+    "x0": "secondaryTools"
+   },
+   {
+    "x0": "series"
+   },
+   {
+    "x0": "sum"
+   },
+   {
+    "x0": "summary"
+   },
+   {
+    "x0": "text"
+   },
+   {
+    "x0": "title"
+   },
+   {
+    "x0": "total"
+   },
+   {
+    "x0": "true",
+    "x2": "ceBypass"
+   },
+   {
+    "x0": "type"
+   },
+   {
+    "x0": "unit"
+   },
+   {
+    "x0": "url"
+   },
+   {
+    "x0": "userTurnId"
+   },
+   {
+    "x0": "values"
+   },
+   {
+    "x0": "version"
+   },
+   {
+    "x0": "videos"
+   },
+   {
+    "x0": "zones"
+   },
+   {
+    "x2": "active_calories"
+   },
+   {
+    "x2": "activities"
+   },
+   {
+    "x2": "as_of"
+   },
+   {
+    "x2": "avg_cadence"
+   },
+   {
+    "x2": "avg_pace"
+   },
+   {
+    "x2": "avg_power"
+   },
+   {
+    "x2": "cerberusTool"
+   },
+   {
+    "x2": "contentType"
+   },
+   {
+    "x2": "date_range"
+   },
+   {
+    "x2": "days_elapsed"
+   },
+   {
+    "x2": "distance"
+   },
+   {
+    "x2": "elevation_gain"
+   },
+   {
+    "x2": "end_date"
+   },
+   {
+    "x2": "id"
+   },
+   {
+    "x2": "max_pace"
+   },
+   {
+    "x2": "name"
+   },
+   {
+    "x2": "period"
+   },
+   {
+    "x2": "pool_length"
+   },
+   {
+    "x2": "query"
+   },
+   {
+    "x2": "ratings"
+   },
+   {
+    "x2": "result"
+   },
+   {
+    "x2": "start_date"
+   },
+   {
+    "x2": "stroke_count"
+   },
+   {
+    "x2": "total_calories"
+   },
+   {
+    "x2": "workout_count"
+   },
+   {
+    "x2": "workout_effort"
    }
   ],
   "PhotosGraph": [
@@ -18373,6 +20275,7 @@
      "copyright",
      "editorialArtwork",
      "editorialCard",
+     "plainEditorialCard",
      "editorialNotes",
      "editorialVideo",
      "expectedAvailableDateTime",
@@ -18382,10 +20285,12 @@
      "isAppleDigitalMaster",
      "isMasteredForItunes",
      "isPrerelease",
+     "isReleaseCountdownEnabled",
      "isSingle",
      "name",
      "offers",
      "playParams",
+     "pushNotificationChannelId",
      "recordLabel",
      "releaseDate",
      "trackCount",
@@ -18551,6 +20456,7 @@
      "genreNames",
      "hasBonusContent",
      "hasMusicEvents",
+     "hero",
      "name",
      "url"
     ],
@@ -18613,6 +20519,7 @@
      "endISODateTime",
      "timezone",
      "url",
+     "eventDataProviders",
      "tickets"
     ],
     "relationships": [
@@ -18621,13 +20528,7 @@
     ],
     "views": [
      "more-upcoming-concerts"
-    ],
-    "nested": {
-     "CloudTicket.CloudDataProvider.CodingKeys": [
-      "name",
-      "url"
-     ]
-    }
+    ]
    }
   ],
   "curators": [
@@ -18668,6 +20569,7 @@
      "durationInMillis",
      "editorialArtwork",
      "editorialCard",
+     "plainEditorialCard",
      "editorialNotes",
      "editorialVideo",
      "episodeNumber",
@@ -18750,6 +20652,7 @@
      "isChart",
      "lastModifiedDate",
      "name",
+     "plainEditorialCard",
      "playlistType",
      "playParams",
      "supportsSing",
@@ -19628,6 +21531,7 @@
   ],
   "AppleMediaServices:AppleMediaServices.SelfieConfiguration.CodingKeys": [
    "scanType",
+   "availableAuthenticationMethods",
    "maxAttempts",
    "attemptsToShowTryAnotherWay",
    "attemptsToShowConfirmLater",
@@ -19645,7 +21549,9 @@
    "noFaceTimeoutDuration",
    "preAuthDuration",
    "lockFaceDuration",
+   "preProcessingDuration",
    "processingDuration",
+   "successDuration",
    "ambientLightThreshold",
    "ambientLightCorrectionThreshold",
    "brightnessThreshold",
@@ -19661,6 +21567,10 @@
    "faceObstructedThreshold",
    "faceObstructedCorrectionThreshold",
    "faceObstructedMinimumConcurrentResults",
+   "faceDepthResidualThreshold",
+   "faceDepthResidualBoundingBoxScale",
+   "tiltThreshold",
+   "tiltCorrectionThreshold",
    "visionEstimationAngleBounds",
    "visionMinimumUpdateTime",
    "ageThreshold",
@@ -19669,18 +21579,67 @@
    "ageEstimatorRegionOfInterestPadding",
    "ageEstimatorRegionOfInterestVerticalOffset",
    "speechSynthesisRateOffset",
+   "autoDownload",
+   "faceIDAggressors",
+   "faceIDCalibration",
    "modelOverrideAge",
    "modelOverrideAgeConfidence",
    "modelOverrideLivelinessConfidence",
    "modelOverrideOnDevice",
    "testMode"
   ],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.AttentionScoreCodingKeys": [
+   "range"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.CameraObstructionScoreCodingKeys": [
+   "range"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.CodingKeys": [
+   "distance",
+   "isCameraObstructed",
+   "cameraObstructionScore",
+   "attentionScore",
+   "faceDetectionScore",
+   "tooCloseToCamera",
+   "tooFarFromCamera",
+   "multipleFaces",
+   "flare",
+   "occlusion",
+   "inadequateLight",
+   "excessiveLight"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.DistanceCodingKeys": [
+   "range"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.ExcessiveLightCodingKeys": [],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.FaceDetectionScoreCodingKeys": [
+   "range"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.FlareCodingKeys": [],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.InadequateLightCodingKeys": [],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.IsCameraObstructedCodingKeys": [],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.MultipleFacesCodingKeys": [],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.OcclusionCodingKeys": [],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.TooCloseToCameraCodingKeys": [],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDAggressor.TooFarFromCameraCodingKeys": [],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.FaceIDCalibration.CodingKeys": [
+   "pitchRangeComputeMax",
+   "pitchRangeComputeMin",
+   "pitchRangeForCorrectionMinimum",
+   "correctionSeedFrameCount",
+   "pitchCorrectionAlpha",
+   "centerBinPitchMinimum",
+   "centerBinPitchMaximum",
+   "scanStartDelay"
+  ],
   "AppleMediaServices:AppleMediaServices.SelfieDiagnostics.FrameMetadata.CodingKeys": [
    "index",
    "timestamp",
    "viewportSize",
    "orientation",
-   "boundingBox"
+   "boundingBox",
+   "imageSpaceBoundingBox",
+   "visionBoundingBox"
   ],
   "AppleMediaServices:AppleMediaServices.SelfieDiagnostics.Result.CodingKeys": [
    "timestamp",
@@ -19734,7 +21693,8 @@
   "AppleMediaServices:AppleMediaServices.URLSentryBag.CodingKeys": [
    "trustedDomains",
    "schemesThatOverrideTrustedDomains",
-   "restrictedUrls"
+   "restrictedUrls",
+   "redirects-explicitly-allowed"
   ],
   "AppleMediaServices:AppleMediaServices.extension.CodingKeys": [
    "ratingSystem",
@@ -19939,6 +21899,7 @@
    "rowType",
    "createdAt",
    "lastFetchedAt",
+   "cacheTTL",
    "locale",
    "bundleID",
    "groupIdentifier",
@@ -19987,6 +21948,7 @@
    "rowType",
    "createdAt",
    "lastFetchedAt",
+   "cacheTTL",
    "achievementID",
    "friendPlayerID",
    "earnedAt"
@@ -20013,6 +21975,7 @@
    "rowType",
    "createdAt",
    "lastFetchedAt",
+   "cacheTTL",
    "bundleID",
    "achievementID",
    "groupIdentifier",
@@ -20116,7 +22079,8 @@
    "entityId",
    "rowType",
    "createdAt",
-   "lastFetchedAt"
+   "lastFetchedAt",
+   "cacheTTL"
   ],
   "GameServicesCore:GameServicesCore.BulkChallengeData.CodingKeys": [
    "id",
@@ -20324,6 +22288,7 @@
    "rowType",
    "createdAt",
    "lastFetchedAt",
+   "cacheTTL",
    "primaryEntityId",
    "derivedValue"
   ],
@@ -20337,6 +22302,7 @@
    "rowType",
    "createdAt",
    "lastFetchedAt",
+   "cacheTTL",
    "value"
   ],
   "GameServicesCore:GameServicesCore.PrototypeGRDBRow.Columns": [
@@ -20395,6 +22361,169 @@
    "achievements",
    "iconURL"
   ],
+  "HealthContentDaemon:HealthContentDaemon.ContentKeyManifest.Entry.CodingKeys": [
+   "uri",
+   "keyformatversion"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentManifestUpdater.Version.CodingKeys": [
+   "version"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentQuery.Argument.CodingKeys": [
+   "string",
+   "integer"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentQuery.Argument.IntegerCodingKeys": [
+   "_0"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentQuery.Argument.StringCodingKeys": [
+   "_0"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentQuery.CodingKeys": [
+   "query",
+   "arguments",
+   "resultKeyPaths"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentQueryFragment.CodingKeys": [
+   "fragment",
+   "arguments"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.DeleteAllSecureVideoMetadataOperation.CodingKeys": [],
+  "HealthContentDaemon:HealthContentDaemon.MarkContentPrefetchDonationsProcessedOperation.CodingKeys": [
+   "entries",
+   "processedAt"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.MarkContentPrefetchDonationsProcessedOperation.Entry.CodingKeys": [
+   "identifierDomain",
+   "identifierCode",
+   "mergedOptions"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.PrefetchReason.CodingKeys": [
+   "gatedActivity",
+   "fallbackActivity",
+   "userInitiated",
+   "unitTesting"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.PrefetchReason.FallbackActivityCodingKeys": [],
+  "HealthContentDaemon:HealthContentDaemon.PrefetchReason.GatedActivityCodingKeys": [],
+  "HealthContentDaemon:HealthContentDaemon.PrefetchReason.UnitTestingCodingKeys": [],
+  "HealthContentDaemon:HealthContentDaemon.PrefetchReason.UserInitiatedCodingKeys": [],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Artwork.CodingKeys": [
+   "hasP3",
+   "height",
+   "url",
+   "width"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.CodingKeys": [
+   "data",
+   "resources",
+   "meta"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Contributor.CodingKeys": [
+   "attributes"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.ContributorAttributes.CodingKeys": [
+   "name"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.ContributorDatum.CodingKeys": [
+   "id",
+   "meta"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.ContributorMeta.CodingKeys": [
+   "role"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.ContributorRelationship.CodingKeys": [
+   "data"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.ContributorsRelationship.CodingKeys": [
+   "data"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Datum.CodingKeys": [
+   "id"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Debug.CodingKeys": [
+   "correlationKey"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.HLSProgram.CodingKeys": [
+   "attributes",
+   "relationships"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.HLSProgramAttributes.CodingKeys": [
+   "durationInMilliseconds",
+   "kind",
+   "url",
+   "videoOrientation"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.HLSProgramRelationships.CodingKeys": [
+   "timed-events"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.HealthVideo.CodingKeys": [
+   "attributes",
+   "relationships"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.HealthVideoAttributes.CodingKeys": [
+   "activityDurationInSeconds",
+   "artworks",
+   "description",
+   "reps",
+   "shortDescription",
+   "videoHeading"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.HealthVideoRelationships.CodingKeys": [
+   "contributors"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Meta.CodingKeys": [
+   "debug"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Resources.CodingKeys": [
+   "contributors",
+   "health-videos",
+   "hls-programs",
+   "timed-events"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEvent.CodingKeys": [
+   "attributes",
+   "relationships"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEventAttributes.CodingKeys": [
+   "startMilliseconds",
+   "endMilliseconds",
+   "kind",
+   "subKind"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEventContributorDatum.CodingKeys": [
+   "id"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEventDatum.CodingKeys": [
+   "id"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEventRelationships.CodingKeys": [
+   "contributor"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEventsRelationship.CodingKeys": [
+   "data"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.WriteContentPrefetchDonationOperation.CodingKeys": [
+   "entries"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.WriteContentPrefetchDonationOperation.Entry.CodingKeys": [
+   "identifierDomain",
+   "identifierCode",
+   "prefetchOptions",
+   "expiresAt"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.WriteSecureRequiredContentKeysOperation.CodingKeys": [
+   "adamId",
+   "keyRequestIdentifiers"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.WriteSecureVideoAccessTimeOperation.CodingKeys": [
+   "adamId",
+   "accessTimestamp"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.WriteSecureVideoMetadataOperation.CodingKeys": [
+   "adamId",
+   "encodedVideoMetadata",
+   "dateFetched"
+  ],
   "Music:Music.CodableCGColor.CodingKeys": [
    "red",
    "green",
@@ -20407,6 +22536,7 @@
   "Music:Music.LibraryImport.Response.ItemsToReview.CodingKeys": [
    "songs",
    "albums",
+   "artists",
    "music-videos"
   ],
   "Music:Music.LibraryImport.Response.Metrics.CodingKeys": [
@@ -20935,6 +23065,7 @@
    "copyright",
    "editorialArtwork",
    "editorialCard",
+   "plainEditorialCard",
    "editorialNotes",
    "editorialVideo",
    "expectedAvailableDateTime",
@@ -20944,10 +23075,12 @@
    "isAppleDigitalMaster",
    "isMasteredForItunes",
    "isPrerelease",
+   "isReleaseCountdownEnabled",
    "isSingle",
    "name",
    "offers",
    "playParams",
+   "pushNotificationChannelId",
    "recordLabel",
    "releaseDate",
    "trackCount",
@@ -21006,6 +23139,7 @@
    "genreNames",
    "hasBonusContent",
    "hasMusicEvents",
+   "hero",
    "name",
    "url"
   ],
@@ -21047,7 +23181,8 @@
    "textColor4",
    "textGradient",
    "gradient",
-   "imageTraits"
+   "imageTraits",
+   "recommendedCropCodes"
   ],
   "MusicKit:MusicKit.CloudArtwork.Gradient.CodingKeys": [
    "color",
@@ -21125,9 +23260,10 @@
    "endISODateTime",
    "timezone",
    "url",
+   "eventDataProviders",
    "tickets"
   ],
-  "MusicKit:MusicKit.CloudConcert.CloudTicket.CloudDataProvider.CodingKeys": [
+  "MusicKit:MusicKit.CloudConcert.CloudDataProvider.CodingKeys": [
    "name",
    "url"
   ],
@@ -21291,6 +23427,12 @@
   "MusicKit:MusicKit.CloudGeoLocation.CodingKeys": [
    "name",
    "countryCode"
+  ],
+  "MusicKit:MusicKit.CloudHeroArtwork.CodingKeys": [
+   "content"
+  ],
+  "MusicKit:MusicKit.CloudHeroArtwork.Content.CodingKeys": [
+   "artwork"
   ],
   "MusicKit:MusicKit.CloudLyrics.Associations.CodingKeys": [],
   "MusicKit:MusicKit.CloudLyrics.Attributes.CodingKeys": [
@@ -21480,6 +23622,7 @@
    "isChart",
    "lastModifiedDate",
    "name",
+   "plainEditorialCard",
    "playlistType",
    "playParams",
    "supportsSing",
@@ -21825,6 +23968,7 @@
    "durationInMillis",
    "editorialArtwork",
    "editorialCard",
+   "plainEditorialCard",
    "editorialNotes",
    "editorialVideo",
    "episodeNumber",
@@ -21947,6 +24091,7 @@
    "syncID",
    "formerIDs",
    "userID",
+   "versionHash",
    "isLibrary",
    "type",
    "innerType",
@@ -21982,6 +24127,18 @@
   "MusicKit:MusicKit.HomeSharingAsset.CodingKeys": [
    "isAvailable"
   ],
+  "MusicKit:MusicKit.LegacyModelAlbumKind.CodingKeys": [
+   "standard",
+   "deluxe",
+   "compilation",
+   "ep",
+   "single"
+  ],
+  "MusicKit:MusicKit.LegacyModelAlbumKind.CompilationCodingKeys": [],
+  "MusicKit:MusicKit.LegacyModelAlbumKind.DeluxeCodingKeys": [],
+  "MusicKit:MusicKit.LegacyModelAlbumKind.EpCodingKeys": [],
+  "MusicKit:MusicKit.LegacyModelAlbumKind.SingleCodingKeys": [],
+  "MusicKit:MusicKit.LegacyModelAlbumKind.StandardCodingKeys": [],
   "MusicKit:MusicKit.LegacyModelCodablePlaylistEntry.Associations.CodingKeys": [],
   "MusicKit:MusicKit.LegacyModelCodablePlaylistEntry.Attributes.CodingKeys": [
    "artwork",
@@ -22263,6 +24420,18 @@
    "id",
    "attributes"
   ],
+  "MusicKitInternal:MusicKit.Album.Kind.CodingKeys": [
+   "standard",
+   "deluxe",
+   "compilation",
+   "ep",
+   "single"
+  ],
+  "MusicKitInternal:MusicKit.Album.Kind.CompilationCodingKeys": [],
+  "MusicKitInternal:MusicKit.Album.Kind.DeluxeCodingKeys": [],
+  "MusicKitInternal:MusicKit.Album.Kind.EpCodingKeys": [],
+  "MusicKitInternal:MusicKit.Album.Kind.SingleCodingKeys": [],
+  "MusicKitInternal:MusicKit.Album.Kind.StandardCodingKeys": [],
   "MusicKitInternal:MusicKit.MusicPersonalRecommendation.Kind.CodingKeys": [
    "favorites",
    "friendsListening",
@@ -23104,14 +25273,14 @@
    "primary",
    "additional"
   ],
+  "MusicKitInternal:MusicKitInternal.Concert.DataProvider.CodingKeys": [
+   "name",
+   "url"
+  ],
   "MusicKitInternal:MusicKitInternal.Concert.Ticket.CodingKeys": [
    "vendor",
    "url",
    "dataProvider"
-  ],
-  "MusicKitInternal:MusicKitInternal.Concert.Ticket.DataProvider.CodingKeys": [
-   "name",
-   "url"
   ],
   "MusicKitInternal:MusicKitInternal.CuratorRelationshipProvider.CodingKeys": [
    "curators",
@@ -23686,6 +25855,12 @@
   "MusicKitInternal:MusicKitInternal.RecentlyAddedMusicItem.UploadedVideoCodingKeys": [
    "_0"
   ],
+  "MusicKitInternal:MusicKitInternal.StoreHeroArtwork.CodingKeys": [
+   "content"
+  ],
+  "MusicKitInternal:MusicKitInternal.StoreHeroArtwork.Content.CodingKeys": [
+   "artwork"
+  ],
   "MusicKitInternal:MusicKitInternal.StorePlatform.ResultsContainer.CodingKeys": [
    "results"
   ],
@@ -23722,6 +25897,7 @@
    "editorialVideo",
    "genres",
    "genreNames",
+   "hero",
    "id",
    "itunesNotes",
    "kind",
@@ -24226,22 +26402,6 @@
   "MusicKitInternal:MusicKitInternal.VocalActivity.VocalStrength.MediumCodingKeys": [],
   "MusicKitInternal:MusicKitInternal.VocalActivity.VocalStrength.VeryHighCodingKeys": [],
   "MusicKitInternal:MusicKitInternal.VocalActivity.VocalStrength.VeryLowCodingKeys": [],
-  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryFields.CodingKeys": [
-   "songs",
-   "musicVideos",
-   "tvEpisodes",
-   "musicMovies",
-   "tracks",
-   "albums",
-   "playlists",
-   "playlistFolders",
-   "playlistEntries",
-   "artists",
-   "composers",
-   "genres",
-   "tvShows",
-   "tvSeasons"
-  ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.CodingKeys": [
    "source",
    "modifiers",
@@ -24322,6 +26482,7 @@
    "dateAdded",
    "dateDownloaded",
    "datePlayed",
+   "discCount",
    "favoritedDate",
    "groupingKey",
    "isCompilation",
@@ -24332,10 +26493,12 @@
    "sortArtistName",
    "sortName",
    "trackCount",
+   "userRating",
    "year"
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackAlbum.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24358,6 +26521,7 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackArtist.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24376,6 +26540,7 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackComposer.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24395,6 +26560,7 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackGenre.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24421,11 +26587,22 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackMusicMovie.Associations.CodingKeys": [],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackMusicMovie.Attributes.CodingKeys": [
+   "artistName",
    "dateAdded",
-   "title"
+   "datePlayed",
+   "durationInMillis",
+   "genreName",
+   "isDownloaded",
+   "likedState",
+   "name",
+   "playCount",
+   "title",
+   "userRating",
+   "year"
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackMusicMovie.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24459,6 +26636,7 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackMusicVideo.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24485,17 +26663,11 @@
    "likedState",
    "name",
    "trackCount",
-   "_isFavoritedSongs",
-   "_isSmart",
-   "_smartIsGenius",
-   "_smartIsFolder",
-   "_isPersonalMix",
-   "_isSubscribed",
-   "_isOwner",
-   "_groupingSortKey"
+   "kind"
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackPlaylist.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24510,6 +26682,7 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackPlaylistEntry.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24532,6 +26705,7 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackPlaylistFolder.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24586,6 +26760,7 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackSong.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24601,11 +26776,19 @@
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVEpisode.Associations.CodingKeys": [],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVEpisode.Attributes.CodingKeys": [
    "dateAdded",
+   "datePlayed",
+   "durationInMillis",
+   "episodeNumber",
+   "isDownloaded",
+   "name",
+   "playCount",
+   "seasonNumber",
    "showName",
    "title"
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVEpisode.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24618,11 +26801,22 @@
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVSeason.Associations.CodingKeys": [],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVSeason.Attributes.CodingKeys": [
    "dateAdded",
+   "datePlayed",
+   "episodeCount",
+   "genreNames",
+   "isDownloaded",
+   "likedState",
    "name",
-   "showName"
+   "releaseDate",
+   "seasonNumber",
+   "showName",
+   "sortName",
+   "userRating",
+   "year"
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVSeason.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24633,10 +26827,18 @@
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVShow.Associations.CodingKeys": [],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVShow.Attributes.CodingKeys": [
+   "episodeCount",
+   "isDownloaded",
+   "name",
+   "releaseDate",
+   "seriesName",
+   "sortName",
+   "sortSeriesName",
    "title"
   ],
   "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackTVShow.CodingKeys": [
    "id",
+   "type",
    "attributes",
    "relationships",
    "views",
@@ -24920,6 +27122,1316 @@
   ],
   "MusicWidgets:_$s17_MusicKit_SwiftUI12ArtworkImageVMn.Placeholder.RadioCodingKeys": [],
   "MusicWidgets:_$s17_MusicKit_SwiftUI12ArtworkImageVMn.Placeholder.TvCodingKeys": [],
+  "OmniSearch:OmniSearch.Answer.CodingKeys": [
+   "id",
+   "answer",
+   "metadata",
+   "sourceResults",
+   "experiences",
+   "mediaURL",
+   "lowConfidenceKnowledge",
+   "dialog",
+   "pommesContextData"
+  ],
+  "OmniSearch:OmniSearch.AppEntityItem.CodingKeys": [
+   "id",
+   "bundleId",
+   "typeId",
+   "protocolId"
+  ],
+  "OmniSearch:OmniSearch.ApplessGlobalEntity.CodingKeys": [
+   "id",
+   "name",
+   "domain",
+   "aliases",
+   "resultMetadataString",
+   "resultMetadata",
+   "passages",
+   "samRequestId",
+   "cardSectionGroupId"
+  ],
+  "OmniSearch:OmniSearch.ApplessGlobalStandardRepresentation.CodingKeys": [
+   "id",
+   "domain",
+   "name",
+   "aliases",
+   "resultMetadata",
+   "cardSectionGroupId"
+  ],
+  "OmniSearch:OmniSearch.ApplicationItem.CodingKeys": [
+   "id",
+   "title"
+  ],
+  "OmniSearch:OmniSearch.AsyncDualTimeoutStructuredError.CodingKeys": [
+   "kind",
+   "timestamp"
+  ],
+  "OmniSearch:OmniSearch.AsyncDualTimeoutStructuredError.Kind.CodingKeys": [
+   "initialMessageTimeout",
+   "inactiveTimeout"
+  ],
+  "OmniSearch:OmniSearch.AsyncDualTimeoutStructuredError.Kind.InactiveTimeoutCodingKeys": [],
+  "OmniSearch:OmniSearch.AsyncDualTimeoutStructuredError.Kind.InitialMessageTimeoutCodingKeys": [],
+  "OmniSearch:OmniSearch.AttributionViewModel.CodingKeys": [
+   "sourceBundles",
+   "messages"
+  ],
+  "OmniSearch:OmniSearch.CDMLabelSpan.CodingKeys": [
+   "label",
+   "input",
+   "identifier",
+   "range"
+  ],
+  "OmniSearch:OmniSearch.CerberusParseOverride.CodingKeys": [
+   "matchCriteria",
+   "template"
+  ],
+  "OmniSearch:OmniSearch.CerberusParseOverride.MatchCriteria.CodingKeys": [
+   "queryPattern",
+   "requiredEntityTypes",
+   "purpose"
+  ],
+  "OmniSearch:OmniSearch.CerberusParses.CodingKeys": [
+   "parses",
+   "preferredTypes",
+   "isQuestion",
+   "persons",
+   "runLoops",
+   "compactFormat",
+   "deferredGenericParses"
+  ],
+  "OmniSearch:OmniSearch.ChildAttachmentInfo.CodingKeys": [
+   "fileName",
+   "contentType",
+   "uniqueIdentifier"
+  ],
+  "OmniSearch:OmniSearch.DialogExperience.CodingKeys": [
+   "experience",
+   "sfCard"
+  ],
+  "OmniSearch:OmniSearch.EditorialDateFormatter.CodingKeys": [
+   "now",
+   "yesterday",
+   "tomorrow",
+   "calendar",
+   "allowNewDateFormatting"
+  ],
+  "OmniSearch:OmniSearch.FuzzyMatchingConfig.CodingKeys": [
+   "similarityThreshold",
+   "prefixBoostEnabled",
+   "prefixScale",
+   "maxPrefixLength"
+  ],
+  "OmniSearch:OmniSearch.GeoLocation.CodingKeys": [
+   "uid",
+   "name",
+   "address",
+   "thoroughfare",
+   "mapsCardUrl",
+   "latitude",
+   "longitude",
+   "telephone",
+   "website",
+   "photos",
+   "category",
+   "subcategory",
+   "openTime",
+   "closeTime"
+  ],
+  "OmniSearch:OmniSearch.GlobalEntity.CodingKeys": [
+   "id",
+   "dialog",
+   "domain",
+   "snippet",
+   "result",
+   "resultMetadata",
+   "plannerFacingMetadata",
+   "markdownData"
+  ],
+  "OmniSearch:OmniSearch.GlobalItem.CodingKeys": [
+   "id",
+   "text",
+   "domain",
+   "dialog",
+   "parsecEntityData",
+   "lowConfidenceKnowledge"
+  ],
+  "OmniSearch:OmniSearch.GlobalResponse.CodingKeys": [
+   "id",
+   "results",
+   "dialog",
+   "snippet",
+   "domain",
+   "responseType",
+   "isPqaDeserving",
+   "needsLocation",
+   "safetySignals",
+   "forceBatchFlow",
+   "userDisambiguationType",
+   "appIntentData"
+  ],
+  "OmniSearch:OmniSearch.GlobalSearchParseEntity.CodingKeys": [
+   "globalSearchType",
+   "resolvedQuery",
+   "mapsFilterType"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalMatchInfo.CodingKeys": [
+   "strategy",
+   "fuzzyScore",
+   "matchedField"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalMatchItem.CodingKeys": [
+   "source",
+   "bundleID",
+   "matchInfo"
+  ],
+  "OmniSearch:OmniSearch.HybridSearchQuery.CodingKeys": [
+   "identifier",
+   "domainToSearchInfos"
+  ],
+  "OmniSearch:OmniSearch.HybridSearchQueryInfo.CodingKeys": [
+   "rawQuery",
+   "rewrittenQuery",
+   "simplifiedQuery",
+   "entityTypes",
+   "searchTerms",
+   "pickOne",
+   "aliasMapping"
+  ],
+  "OmniSearch:OmniSearch.HydrationContext.CodingKeys": [
+   "appBundleId",
+   "entity"
+  ],
+  "OmniSearch:OmniSearch.HydrationEntity.CodingKeys": [
+   "type",
+   "searchAnswerValue",
+   "stringValue"
+  ],
+  "OmniSearch:OmniSearch.InteractionMode.CodingKeys": [
+   "displayForward",
+   "displayOnly",
+   "voiceOnly",
+   "voiceForward"
+  ],
+  "OmniSearch:OmniSearch.InteractionMode.DisplayForwardCodingKeys": [],
+  "OmniSearch:OmniSearch.InteractionMode.DisplayOnlyCodingKeys": [],
+  "OmniSearch:OmniSearch.InteractionMode.VoiceForwardCodingKeys": [],
+  "OmniSearch:OmniSearch.InteractionMode.VoiceOnlyCodingKeys": [],
+  "OmniSearch:OmniSearch.KGDocument.CodingKeys": [
+   "id",
+   "url",
+   "description",
+   "title",
+   "subtitle",
+   "thumbnail",
+   "attributionTitle"
+  ],
+  "OmniSearch:OmniSearch.LLMQUModelResponse.CodingKeys": [
+   "app_entity_status",
+   "contains_type",
+   "describe",
+   "filter_type",
+   "flag_color",
+   "location",
+   "location_arrival",
+   "location_departure",
+   "order_by_time",
+   "person",
+   "person_is_me",
+   "pick_one",
+   "preferred_type",
+   "receiver",
+   "receiver_is_me",
+   "rewritten_query",
+   "simplified_query",
+   "search_term",
+   "ordered_search_term",
+   "sender",
+   "sender_is_me",
+   "source_type",
+   "tag_name",
+   "temporal_reference",
+   "time",
+   "message_time",
+   "app",
+   "extracted_type"
+  ],
+  "OmniSearch:OmniSearch.LLMSearchClientError.CodingKeys": [
+   "reason",
+   "timestamp"
+  ],
+  "OmniSearch:OmniSearch.LLMSearchClientError.Reason.CodingKeys": [
+   "invalidAgenticSearchResponse",
+   "invalidBatchSearchResponse",
+   "sessionUnavailable"
+  ],
+  "OmniSearch:OmniSearch.LLMSearchClientError.Reason.InvalidAgenticSearchResponseCodingKeys": [],
+  "OmniSearch:OmniSearch.LLMSearchClientError.Reason.InvalidBatchSearchResponseCodingKeys": [],
+  "OmniSearch:OmniSearch.LLMSearchClientError.Reason.SessionUnavailableCodingKeys": [],
+  "OmniSearch:OmniSearch.LLMSearchQuery.CodingKeys": [
+   "utterance",
+   "searchQuery",
+   "structuredSearchQuery",
+   "cerberusParses",
+   "typeConstraints",
+   "options",
+   "siriRequestContext"
+  ],
+  "OmniSearch:OmniSearch.LocationQueryEntity.CodingKeys": [
+   "unspecified",
+   "arrival",
+   "departure"
+  ],
+  "OmniSearch:OmniSearch.MCAAPIError.CodingKeys": [
+   "id",
+   "status",
+   "code",
+   "title",
+   "detail",
+   "messageForDisplay",
+   "source"
+  ],
+  "OmniSearch:OmniSearch.MCAArtwork.CodingKeys": [
+   "url",
+   "width",
+   "height",
+   "alt"
+  ],
+  "OmniSearch:OmniSearch.MCABackgroundVideo.CodingKeys": [
+   "id",
+   "title",
+   "url",
+   "duration",
+   "assets"
+  ],
+  "OmniSearch:OmniSearch.MCABackgroundVideoAssets.CodingKeys": [
+   "hlsUrl"
+  ],
+  "OmniSearch:OmniSearch.MCAChatRequest.CodingKeys": [
+   "responseMode",
+   "conversation",
+   "messages"
+  ],
+  "OmniSearch:OmniSearch.MCAClientActionContent.CodingKeys": [
+   "action",
+   "parameters",
+   "entities"
+  ],
+  "OmniSearch:OmniSearch.MCAClientActionParameters.CodingKeys": [
+   "subjectEntityIds",
+   "destinationEntityId"
+  ],
+  "OmniSearch:OmniSearch.MCAConversationContinue.CodingKeys": [
+   "id",
+   "lastMessage"
+  ],
+  "OmniSearch:OmniSearch.MCAConversationInit.CodingKeys": [
+   "sharedContext",
+   "version",
+   "domains",
+   "continue"
+  ],
+  "OmniSearch:OmniSearch.MCACountry.CodingKeys": [
+   "countryCode",
+   "displayName"
+  ],
+  "OmniSearch:OmniSearch.MCAEntityAttributes.CodingKeys": [
+   "name",
+   "artistName",
+   "albumName",
+   "releaseDate",
+   "artwork",
+   "url"
+  ],
+  "OmniSearch:OmniSearch.MCAEntityListContent.CodingKeys": [
+   "entityIds",
+   "entities"
+  ],
+  "OmniSearch:OmniSearch.MCAEntityReference.CodingKeys": [
+   "id",
+   "type",
+   "href",
+   "attributes",
+   "relationships"
+  ],
+  "OmniSearch:OmniSearch.MCAErrorSource.CodingKeys": [
+   "parameter",
+   "pointer"
+  ],
+  "OmniSearch:OmniSearch.MCALanguage.CodingKeys": [
+   "locale",
+   "displayName"
+  ],
+  "OmniSearch:OmniSearch.MCAMessage.CodingKeys": [
+   "role",
+   "id",
+   "content"
+  ],
+  "OmniSearch:OmniSearch.MCAPersonRole.CodingKeys": [
+   "id",
+   "title",
+   "url",
+   "images"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryContext.CodingKeys": [
+   "version",
+   "domains",
+   "continue"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryContinue.CodingKeys": [
+   "id"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryInput.CodingKeys": [
+   "type",
+   "text",
+   "source"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryRequest.CodingKeys": [
+   "responseMode",
+   "context",
+   "input"
+  ],
+  "OmniSearch:OmniSearch.MCARating.CodingKeys": [
+   "displayName",
+   "name",
+   "system",
+   "systemType",
+   "value"
+  ],
+  "OmniSearch:OmniSearch.MCARelationships.CodingKeys": [
+   "tracks"
+  ],
+  "OmniSearch:OmniSearch.MCARequestContent.ContentCodingKeys": [
+   "type",
+   "text"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseContent.TypeCodingKey": [
+   "type"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseConversation.CodingKeys": [
+   "id"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseMeta.CodingKeys": [
+   "traceId",
+   "streamLatency"
+  ],
+  "OmniSearch:OmniSearch.MCARolesSummary.CodingKeys": [
+   "cast",
+   "castDetails",
+   "directors",
+   "directorDetails"
+  ],
+  "OmniSearch:OmniSearch.MCAStreamFailure.CodingKeys": [
+   "kind",
+   "detail"
+  ],
+  "OmniSearch:OmniSearch.MCAStreamInitMessage.CodingKeys": [
+   "role",
+   "id"
+  ],
+  "OmniSearch:OmniSearch.MCAStreamLatency.CodingKeys": [
+   "totalRequestDurationInMs",
+   "timeToResponseStartInMs",
+   "timeToFirstContentInMs",
+   "timeToResponseFinishInMs",
+   "contentStreamingDurationInMs",
+   "averageTimeBetweenContentInMs",
+   "longestTimeBetweenContentInMs",
+   "contentEventCount",
+   "plannerDurationInMs",
+   "plannerModelDurationInMs",
+   "safetyDurationInMs",
+   "safetyModelDurationInMs",
+   "responseGenerationDurationInMs",
+   "responseGenerationModelDurationInMs",
+   "executorDurationInMs",
+   "executorModelDurationInMs"
+  ],
+  "OmniSearch:OmniSearch.MCAStreamMessageContent.CodingKeys": [
+   "messageId",
+   "index",
+   "content"
+  ],
+  "OmniSearch:OmniSearch.MCAStreamResponseFinish.CodingKeys": [
+   "status",
+   "conversationEnded",
+   "errors",
+   "meta"
+  ],
+  "OmniSearch:OmniSearch.MCAStreamResponseStart.CodingKeys": [
+   "created",
+   "conversation",
+   "messages",
+   "conversationId",
+   "meta"
+  ],
+  "OmniSearch:OmniSearch.MCATextContent.CodingKeys": [
+   "text",
+   "rawText",
+   "entities"
+  ],
+  "OmniSearch:OmniSearch.MCAThoughtContent.CodingKeys": [
+   "text",
+   "rawText"
+  ],
+  "OmniSearch:OmniSearch.MCATrackRelationship.CodingKeys": [
+   "data",
+   "href"
+  ],
+  "OmniSearch:OmniSearch.MCAUIAction.CodingKeys": [
+   "kind",
+   "subjects",
+   "targets"
+  ],
+  "OmniSearch:OmniSearch.MCAUIEntity.CodingKeys": [
+   "id",
+   "kind",
+   "fields"
+  ],
+  "OmniSearch:OmniSearch.MCAUIInfo.CodingKeys": [
+   "entry",
+   "entities"
+  ],
+  "OmniSearch:OmniSearch.MCAVideoEntity.CodingKeys": [
+   "id",
+   "type",
+   "title",
+   "url",
+   "releaseDate",
+   "latestEpisodeReleaseDate",
+   "duration",
+   "description",
+   "genres",
+   "images",
+   "countriesOfOrigin",
+   "originalSpokenLanguages",
+   "rating",
+   "rolesSummary",
+   "contentRatingAdvisories",
+   "backgroundVideo",
+   "seasonCount",
+   "seasonNumber",
+   "episodeNumber",
+   "showId",
+   "showTitle",
+   "showUrl",
+   "showImages",
+   "seasonId",
+   "seasonUrl",
+   "seasonImages"
+  ],
+  "OmniSearch:OmniSearch.MCAVideoGenre.CodingKeys": [
+   "id",
+   "name",
+   "type",
+   "url"
+  ],
+  "OmniSearch:OmniSearch.MCAVideoImage.CodingKeys": [
+   "url",
+   "width",
+   "height"
+  ],
+  "OmniSearch:OmniSearch.MCAVideoImages.CodingKeys": [
+   "coverArt",
+   "coverArt2X3",
+   "coverArt16X9",
+   "centeredFullScreenBackgroundImage",
+   "centeredFullScreenBackgroundSmallImage",
+   "fullColorContentLogo",
+   "previewFrame",
+   "singleColorContentLogo",
+   "bannerUberImage",
+   "channelSplashTall",
+   "channelSplashWide",
+   "contentImage",
+   "contentImageTall",
+   "headshot"
+  ],
+  "OmniSearch:OmniSearch.MapsLocationRequirement.CodingKeys": [
+   "sentinelName",
+   "dialog"
+  ],
+  "OmniSearch:OmniSearch.MapsPlaceResponse.CodingKeys": [
+   "id",
+   "placeResults",
+   "locationRequirement"
+  ],
+  "OmniSearch:OmniSearch.MapsPlaceResult.CodingKeys": [
+   "id",
+   "placeDescriptor",
+   "resultMetadata"
+  ],
+  "OmniSearch:OmniSearch.MatchProperties.CodingKeys": [
+   "maxTokenCount",
+   "matchedTokenCount",
+   "matchedAliasTypes"
+  ],
+  "OmniSearch:OmniSearch.MessageAccumulationViewModel.CodingKeys": [
+   "summaries"
+  ],
+  "OmniSearch:OmniSearch.MessageAccumulationViewModel.Summary.CodingKeys": [
+   "glyphName",
+   "text"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchContext.CodingKeys": [
+   "latitude",
+   "longitude",
+   "onScreenText",
+   "directionalContext"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchContext.DirectionalContext.CodingKeys": [
+   "headingDegrees",
+   "headingAccuracyDegrees",
+   "hasDirectionalImageSource"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchInstrumentableEventProto.CodingKeys": [
+   "protoBytes"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchOptions.CodingKeys": [
+   "context",
+   "interactionMode",
+   "assistantLocale",
+   "clientId",
+   "isFirstToolInvocation",
+   "isOnScreenReference",
+   "isExpectingAnswer",
+   "isSingleStepSearch",
+   "alwaysHydrateDocuments",
+   "skipGlobalSearch",
+   "skipLocalSearch",
+   "shouldRunBothLocalAndGlobalSearch",
+   "suppressFlightResolution",
+   "isXpcInvocation",
+   "transcript",
+   "purpose",
+   "entityTypes",
+   "toolParameterTuple",
+   "apps",
+   "unresolvedApps",
+   "isHandoff",
+   "isCarPlay",
+   "offlineMode",
+   "simulatedLocalSearchURL",
+   "resolvedEntities",
+   "searchToolId",
+   "requestIdentifiers",
+   "isParseGeneratedByPlanner",
+   "siriRequestContext",
+   "identifiedUser",
+   "homeMembers",
+   "isPhoneCallActive",
+   "originatingDeviceAccessoryId",
+   "originatingDeviceInfo",
+   "isRemoteRequest",
+   "currentTimeOverride",
+   "agenticSearchInvocations",
+   "speechContent"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchProgressUpdate.CodingKeys": [
+   "totalUnitCount",
+   "completedUnitCount",
+   "localizedDescription"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchResponse.CodingKeys": [
+   "results",
+   "renderOption",
+   "isQuestionQuery",
+   "structuredQuery",
+   "isOpenQuery",
+   "inAppSearchString",
+   "localSearchQueryString",
+   "perAppSearchStrings",
+   "perAppAttributedSearchStringsData",
+   "ecrResults",
+   "spQUParseFilterTypes",
+   "spQUParsePreferredTypes",
+   "errorList",
+   "indexingPipelineCompleteness",
+   "samRequestId",
+   "cerberusParses",
+   "excludedBundleIds",
+   "guestModeAllowedBundleIds",
+   "allIdentifierGroups"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchResponse.IdentifierGroup.CodingKeys": [
+   "bundleId",
+   "typeId",
+   "outcome",
+   "identifierData"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchResponseRenderOption.CodingKeys": [
+   "contentSearch",
+   "presentAnswer",
+   "disambiguate",
+   "summarize",
+   "noAnswer"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchResponseRenderOption.ContentSearchCodingKeys": [],
+  "OmniSearch:OmniSearch.OmniSearchResponseRenderOption.DisambiguateCodingKeys": [
+   "dialog"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchResponseRenderOption.NoAnswerCodingKeys": [],
+  "OmniSearch:OmniSearch.OmniSearchResponseRenderOption.PresentAnswerCodingKeys": [],
+  "OmniSearch:OmniSearch.OmniSearchResponseRenderOption.SummarizeCodingKeys": [
+   "dialog"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCRequest.ActivateCodingKeys": [],
+  "OmniSearch:OmniSearch.OmniSearchXPCRequest.AgenticSearchCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCRequest.BatchSearchCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCRequest.CodingKeys": [
+   "preheat",
+   "activate",
+   "deactivate",
+   "search",
+   "agenticSearch",
+   "batchSearch"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCRequest.DeactivateCodingKeys": [],
+  "OmniSearch:OmniSearch.OmniSearchXPCRequest.PreheatCodingKeys": [],
+  "OmniSearch:OmniSearch.OmniSearchXPCRequest.SearchCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.CodingKeys": [
+   "failure",
+   "success"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.Payload.CodingKeys": [
+   "response",
+   "streaming"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.Payload.ResponseCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.Payload.StreamingCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.SuccessCodingKeys": [
+   "payload"
+  ],
+  "OmniSearch:OmniSearch.ParameterDefinition.CodingKeys": [
+   "name",
+   "description",
+   "type"
+  ],
+  "OmniSearch:OmniSearch.ParseTemplate.CodingKeys": [
+   "parses",
+   "preferredTypes",
+   "isQuestion"
+  ],
+  "OmniSearch:OmniSearch.Passage.CodingKeys": [
+   "id",
+   "title",
+   "description",
+   "body",
+   "score",
+   "url"
+  ],
+  "OmniSearch:OmniSearch.Person.CodingKeys": [
+   "name",
+   "contactHandleType"
+  ],
+  "OmniSearch:OmniSearch.PersonQueryEntity.CodingKeys": [
+   "unspecified",
+   "sender",
+   "receiver"
+  ],
+  "OmniSearch:OmniSearch.PhotoKitSearchExecuted.CodingKeys": [
+   "mode"
+  ],
+  "OmniSearch:OmniSearch.SearchAnswerEntity.CodingKeys": [
+   "answer",
+   "dialog",
+   "requestedProperties",
+   "sources",
+   "documentSources",
+   "title",
+   "experienceFile",
+   "pommesContextFile",
+   "globalSearchSummary",
+   "description",
+   "documentSource",
+   "cardData",
+   "lowConfidenceKnowledge",
+   "id",
+   "supportedTypeIdentifiersForExport"
+  ],
+  "OmniSearch:OmniSearch.SearchAnswerEntity.Record.CodingKeys": [
+   "id",
+   "answer",
+   "dialog",
+   "sourceDocuments"
+  ],
+  "OmniSearch:OmniSearch.SearchAppEntity.CodingKeys": [
+   "id",
+   "bundleId",
+   "typeId",
+   "protocolId",
+   "shouldOpen",
+   "likelihood",
+   "title",
+   "sourceResult",
+   "cardData"
+  ],
+  "OmniSearch:OmniSearch.SearchApplicationRepresentableEntity.CodingKeys": [
+   "bundleIdentifier",
+   "title",
+   "sourceResult",
+   "cardData"
+  ],
+  "OmniSearch:OmniSearch.SearchApplicationStandardRepresentation.CodingKeys": [
+   "bundleIdentifier",
+   "title",
+   "sourceResult",
+   "cardData"
+  ],
+  "OmniSearch:OmniSearch.SearchEntity.CodingKeys": [
+   "source",
+   "card",
+   "searchString",
+   "shouldOpen"
+  ],
+  "OmniSearch:OmniSearch.SearchEntityTypeConstraint.ApplicationCodingKeys": [],
+  "OmniSearch:OmniSearch.SearchEntityTypeConstraint.CodingKeys": [
+   "typeIdentifier",
+   "application"
+  ],
+  "OmniSearch:OmniSearch.SearchEntityTypeConstraint.TypeIdentifierCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchEntityTypeIdentifier.CodingKeys": [
+   "bundleId",
+   "typeName",
+   "extraBundleIds"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.AppStoreAttributes.CodingKeys": [
+   "adamID"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.CodingKeys": [
+   "id",
+   "domain",
+   "searchID",
+   "entityType",
+   "text",
+   "generalAttributes",
+   "customAttributes",
+   "eventAttributes",
+   "placeAttributes",
+   "idAttributes",
+   "contactAttributes",
+   "appstoreAttributes",
+   "lowConfidenceKnowledge",
+   "experienceFile",
+   "associatedQuery",
+   "dialog",
+   "supportedTypeIdentifiersForExport"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.ContactAttributes.CodingKeys": [
+   "phoneNumber",
+   "email",
+   "imessageURL",
+   "imessageID"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.CustomAttribute.CodingKeys": [
+   "string",
+   "timestamp",
+   "temperature"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.CustomAttribute.StringCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.CustomAttribute.TemperatureCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.CustomAttribute.TimestampCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.EntityType.CodingKeys": [
+   "generic",
+   "maps",
+   "unknown"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.EntityType.GenericCodingKeys": [],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.EntityType.MapsCodingKeys": [],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.EntityType.UnknownCodingKeys": [],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.EventAttributes.CodingKeys": [
+   "allDay",
+   "startDate",
+   "endDate"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.GeneralAttributes.CodingKeys": [
+   "alternateNames",
+   "contentURL",
+   "displayName",
+   "thumbnailData",
+   "title"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.IDAttributes.CodingKeys": [
+   "muid",
+   "umcID"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.PlaceAttributes.CodingKeys": [
+   "name",
+   "locality",
+   "subLocality",
+   "administrativeArea",
+   "subAdministrativeArea",
+   "country",
+   "isoCountryCode",
+   "postalAddress",
+   "subThoroughfare",
+   "thoroughfare",
+   "latitude",
+   "longitude"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.Temperature.CodingKeys": [
+   "units",
+   "value"
+  ],
+  "OmniSearch:OmniSearch.SearchGlobalEntity.Timestamp.CodingKeys": [
+   "seconds",
+   "utcOffset",
+   "timezone"
+  ],
+  "OmniSearch:OmniSearch.SearchPreExtractedCardStandardRepresentation.CodingKeys": [
+   "subType",
+   "sourceResult",
+   "cardData"
+  ],
+  "OmniSearch:OmniSearch.SearchPreExtractedEventStandardRepresentation.CodingKeys": [
+   "subType",
+   "sourceResult",
+   "cardData"
+  ],
+  "OmniSearch:OmniSearch.SearchPropertyRequest.CodingKeys": [
+   "name",
+   "type",
+   "hydrationContext"
+  ],
+  "OmniSearch:OmniSearch.SearchPropertyResponse.CodingKeys": [
+   "name",
+   "type",
+   "stringValue"
+  ],
+  "OmniSearch:OmniSearch.SearchResult.CodingKeys": [
+   "item",
+   "spotlightRankingItem",
+   "hybridLocalMatchItem",
+   "codableCSItem",
+   "requestedProperties",
+   "searchType",
+   "resultMetadata",
+   "childAttachmentInfo",
+   "prebuiltTypedValue"
+  ],
+  "OmniSearch:OmniSearch.SearchResult.JSONIntermediate.CodingKeys": [
+   "item",
+   "_csAttributes",
+   "likelihood"
+  ],
+  "OmniSearch:OmniSearch.SearchResultFileStandardRepresentation.CodingKeys": [
+   "searchResult",
+   "cardData"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.AnswerCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.AppEntityCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.ApplicationCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.AppointmentCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.CalendarCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.CodingKeys": [
+   "email",
+   "mobileSMS",
+   "calendar",
+   "photo",
+   "note",
+   "reminder",
+   "phoneHistory",
+   "voicemailTranscript",
+   "journalEntry",
+   "voiceMemo",
+   "safari",
+   "file",
+   "walletTransaction",
+   "walletPass",
+   "contact",
+   "appointment",
+   "flightReservation",
+   "hotelReservation",
+   "party",
+   "restaurantReservation",
+   "rentalCarReservation",
+   "shippingOrder",
+   "ticketedTransportation",
+   "ticketedShow",
+   "trip",
+   "globalResult",
+   "globalEntitiesResponse",
+   "mapsPlaceResponse",
+   "appEntity",
+   "application",
+   "answer",
+   "onScreen",
+   "genericSpotlightItem"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.ContactCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.EmailCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.FileCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.FlightReservationCodingKeys": [
+   "document",
+   "experiences"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.GenericSpotlightItemCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.GlobalEntitiesResponseCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.GlobalResultCodingKeys": [
+   "_0",
+   "experiences"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.HotelReservationCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.JournalEntryCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.MapsPlaceResponseCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.MobileSMSCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.NoteCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.OnScreenCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.PartyCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.PhoneHistoryCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.PhotoCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.ReminderCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.RentalCarReservationCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.RestaurantReservationCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.SafariCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.ShippingOrderCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.TicketedShowCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.TicketedTransportationCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.TripCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.VoiceMemoCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.VoicemailTranscriptCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.WalletPassCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultItem.WalletTransactionCodingKeys": [
+   "document"
+  ],
+  "OmniSearch:OmniSearch.SearchResultKey": [
+   "email",
+   "mobileSMS",
+   "calendar",
+   "photo",
+   "answer",
+   "note",
+   "reminder",
+   "phoneHistory",
+   "voicemailTranscript",
+   "journalEntry",
+   "voiceMemo",
+   "safari",
+   "file",
+   "walletTransaction",
+   "walletPass",
+   "contact",
+   "flightReservation",
+   "hotelReservation",
+   "restaurantReservation",
+   "globalResult",
+   "globalEntitiesResponse",
+   "appEntity",
+   "application",
+   "rentalCarReservation",
+   "shippingOrder",
+   "ticketedTransportation",
+   "ticketedShow",
+   "appointment",
+   "party",
+   "trip",
+   "onScreen",
+   "genericSpotlightItem",
+   "mapsPlaceResponse"
+  ],
+  "OmniSearch:OmniSearch.SearchSpotlightEntity.CodingKeys": [
+   "bundleId",
+   "cardData",
+   "documentSource",
+   "title",
+   "experienceFile",
+   "encodedSearchableItem",
+   "fileURL",
+   "openCommand",
+   "searchableItemType",
+   "sourceResult",
+   "id",
+   "supportedTypeIdentifiersForExport"
+  ],
+  "OmniSearch:OmniSearch.SearchSpotlightStandardRepresentation.CodingKeys": [
+   "bundleIdentifier",
+   "typeName",
+   "instanceIdentifier",
+   "title",
+   "sourceResult",
+   "cardData"
+  ],
+  "OmniSearch:OmniSearch.SearchToolIntentRequest.CodingKeys": [
+   "rawQuery",
+   "rewrittenQuery",
+   "simplifiedQuery",
+   "structuredQuery",
+   "typeIdentifiers",
+   "isFirstToolInvocation",
+   "isOnScreenReference",
+   "isSingleStepSearch",
+   "requestedProperties"
+  ],
+  "OmniSearch:OmniSearch.SearchToolIntentResponse.CodingKeys": [
+   "results"
+  ],
+  "OmniSearch:OmniSearch.SearchToolIntentResponse.Record.CodingKeys": [
+   "appEntity",
+   "dialog"
+  ],
+  "OmniSearch:OmniSearch.SearchToolIntentResponse.SearchItemIdentifier.CodingKeys": [
+   "itemId",
+   "bundleId",
+   "key"
+  ],
+  "OmniSearch:OmniSearch.SearchToolSnippetPluginModel.AttributionCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.SearchToolSnippetPluginModel.CodingKeys": [
+   "attribution"
+  ],
+  "OmniSearch:OmniSearch.ServiceError.CodingKeys": [
+   "invalidRequest"
+  ],
+  "OmniSearch:OmniSearch.ServiceError.InvalidRequestCodingKeys": [],
+  "OmniSearch:OmniSearch.SimulatedLocalSearchService.Parameters.CodingKeys": [
+   "query",
+   "sources",
+   "typeConstraints",
+   "searchOptions"
+  ],
+  "OmniSearch:OmniSearch.SimulatedLocalSearchService.Parameters.UserQuery.CodingKeys": [
+   "raw",
+   "rewritten",
+   "simplified",
+   "structured",
+   "cerberusParses",
+   "locale",
+   "spanMatches"
+  ],
+  "OmniSearch:OmniSearch.SimulatedLocalSearchService.Result.CodingKeys": [
+   "searchResults",
+   "ecrResult",
+   "spQUParseFilterTypes",
+   "spQUParsePreferredTypes"
+  ],
+  "OmniSearch:OmniSearch.SourceDocument.CodingKeys": [
+   "bundleId",
+   "documentId"
+  ],
+  "OmniSearch:OmniSearch.SpanMatchResult.CodingKeys": [
+   "spanRange",
+   "matchScore",
+   "spanValue",
+   "entityType",
+   "fieldTypes",
+   "sourceItemIdentifier",
+   "isPartialMatch"
+  ],
+  "OmniSearch:OmniSearch.StackedGridsLayout.CodingKeys": [
+   "patternGrids",
+   "trailingGridColumnNumber",
+   "trailingGridIsPadded",
+   "fullSizeForSingleItem"
+  ],
+  "OmniSearch:OmniSearch.StringifiedProtoMessage.CodingKeys": [
+   "textFormattedString",
+   "serializedBytes",
+   "messageName",
+   "endpoint",
+   "headers"
+  ],
+  "OmniSearch:OmniSearch.StructuredQueryEntity.CodingKeys": [
+   "isQuestion",
+   "filterType",
+   "preferredType",
+   "temporalReference",
+   "orderByTime",
+   "appEntityStatus",
+   "appEntityStatusMode",
+   "pickOne",
+   "globalSearchParse",
+   "searchTerms",
+   "optionalSearchTerms",
+   "locations",
+   "time",
+   "messageTime",
+   "people",
+   "tagName",
+   "flagColor",
+   "mailCategory",
+   "sourceType",
+   "containsType",
+   "appBundleId",
+   "extractedType"
+  ],
+  "OmniSearch:OmniSearch.StructuredQueryTemplate.CodingKeys": [
+   "filterType",
+   "searchTerms",
+   "optionalSearchTerms",
+   "appEntityStatus",
+   "appEntityStatusMode",
+   "time",
+   "people"
+  ],
+  "OmniSearch:OmniSearch.ToolParameterTuple.CodingKeys": [
+   "tool",
+   "parameter",
+   "parameterTypes"
+  ],
+  "OmniSearch:OmniSearch.VerificationModelExecution.CodingKeys": [
+   "prompt",
+   "response"
+  ],
+  "OmniSearch:OmniSearch.WebAnswer.CodingKeys": [
+   "id",
+   "answer",
+   "attributionTitle",
+   "url"
+  ],
+  "OmniSearch:OmniSearch.WebImage.CodingKeys": [
+   "id",
+   "url",
+   "title",
+   "description",
+   "altText",
+   "surroundingText"
+  ],
+  "OmniSearch:OmniSearch.XPCServiceError.CodingKeys": [
+   "type",
+   "description"
+  ],
+  "OmniSearch:OmniSearch.XPCServiceError.ErrorType.CodingKeys": [
+   "invalidRequest",
+   "internalError"
+  ],
+  "OmniSearch:OmniSearch.XPCServiceError.ErrorType.InternalErrorCodingKeys": [],
+  "OmniSearch:OmniSearch.XPCServiceError.ErrorType.InvalidRequestCodingKeys": [],
+  "OmniSearch:OmniSearch.XPCSessionServerMessage.CodingKeys": [
+   "streamMessage",
+   "progressUpdate"
+  ],
+  "OmniSearch:OmniSearch.XPCSessionServerMessage.ProgressUpdateCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.XPCSessionServerMessage.StreamMessageCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamMessage.CodingKeys": [
+   "streamId",
+   "kind",
+   "value"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamMessage.Kind.CancelCodingKeys": [],
+  "OmniSearch:OmniSearch.XPCStreamMessage.Kind.CodingKeys": [
+   "start",
+   "streaming",
+   "complete",
+   "completeFail",
+   "cancel"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamMessage.Kind.CompleteCodingKeys": [],
+  "OmniSearch:OmniSearch.XPCStreamMessage.Kind.CompleteFailCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamMessage.Kind.StartCodingKeys": [],
+  "OmniSearch:OmniSearch.XPCStreamMessage.Kind.StreamingCodingKeys": [],
+  "OmniSearch:OmniSearch.XPCStreamingError.CancelledCodingKeys": [],
+  "OmniSearch:OmniSearch.XPCStreamingError.CodingKeys": [
+   "general",
+   "cancelled",
+   "timeout",
+   "networkError"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamingError.GeneralCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamingError.NetworkErrorCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamingError.TimeoutCodingKeys": [
+   "_0"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamingStructuredError.CodingKeys": [
+   "kind",
+   "timestamp"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamingStructuredError.Kind.CancelledCodingKeys": [],
+  "OmniSearch:OmniSearch.XPCStreamingStructuredError.Kind.CodingKeys": [
+   "cancelled",
+   "structuredError"
+  ],
+  "OmniSearch:OmniSearch.XPCStreamingStructuredError.Kind.StructuredErrorCodingKeys": [
+   "_0"
+  ],
   "PhotosGraph:PhotosGraph.AudioAnalysis.CodingKeys": [
    "energy",
    "valence",
@@ -25711,6 +29223,7 @@
    "stationShowEpisodes",
    "listenNowUpNext",
    "continuePlaying",
+   "newEpisodes",
    "latestEpisodes",
    "bookmarks",
    "bookmarksFromShow",
@@ -25727,6 +29240,9 @@
   "PodcastsFoundation:PodcastsFoundation.EpisodeListType.ListenNowUpNextCodingKeys": [
    "wantsListenNowReason",
    "fullPageList"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.EpisodeListType.NewEpisodesCodingKeys": [
+   "episodeUuids"
   ],
   "PodcastsFoundation:PodcastsFoundation.EpisodeListType.NewsFromYourShowsCodingKeys": [
    "podcastURIs"
@@ -26101,6 +29617,7 @@
    "title",
    "assetURL",
    "fallbackAssetURL",
+   "streamURL",
    "feedURL",
    "languageTag",
    "storeTrackId",
@@ -26163,6 +29680,7 @@
    "contentItemID",
    "assetURL",
    "fallbackAssetURL",
+   "streamURL",
    "showArtworkTemplateURL",
    "mediaKind",
    "downloadedMediaKinds"
@@ -26874,6 +30392,7 @@
    "venue",
    "supportsEventExperience",
    "musicArtists",
+   "musicStyle",
    "sportCompetitors"
   ],
   "ShazamEvents:ShazamEvents.PartialEventResource.CodingKeys": [
@@ -26881,6 +30400,7 @@
    "name",
    "kind",
    "subKind",
+   "style",
    "venue",
    "time",
    "artists",
@@ -27169,7 +30689,8 @@
    "toManyRelationship",
    "externallyStored",
    "encodedCodable",
-   "encodedTransformable"
+   "encodedTransformable",
+   "unfetchedAttribute"
   ],
   "SwiftData:SwiftData.DefaultStore.FutureType.CompositeCodingKeys": [],
   "SwiftData:SwiftData.DefaultStore.FutureType.DecodableCodingKeys": [],
@@ -27179,6 +30700,7 @@
   "SwiftData:SwiftData.DefaultStore.FutureType.ToManyRelationshipCodingKeys": [],
   "SwiftData:SwiftData.DefaultStore.FutureType.ToOneRelationshipCodingKeys": [],
   "SwiftData:SwiftData.DefaultStore.FutureType.TransformableCodingKeys": [],
+  "SwiftData:SwiftData.DefaultStore.FutureType.UnfetchedAttributeCodingKeys": [],
   "SwiftData:SwiftData.GenericPersistentIdentifierImplementation.CodingKeys": [
    "typedPrimaryKey"
   ],
@@ -28014,6 +31536,26 @@
    "templates": [],
    "domains": []
   },
+  "accountMr": {
+   "values": [
+    "{dynamic}"
+   ],
+   "images": [
+    "TVAppServices"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "accountTvr": {
+   "values": [
+    "{dynamic}"
+   ],
+   "images": [
+    "TVAppServices"
+   ],
+   "templates": [],
+   "domains": []
+  },
   "action": {
    "values": [
     "add-tracks",
@@ -28082,7 +31624,8 @@
    "templates": [],
    "domains": [
     "GameServicesCore:GameServicesCore.AppMetadataDeviceFamily",
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "albumsCount": {
@@ -28110,7 +31653,8 @@
     "MusicApplication:MusicCore.ApplicationCapabilities.Service",
     "MusicMessagesApp:MusicCore.ApplicationCapabilities.Service",
     "MusicWidgets:MusicCore.ApplicationCapabilities.Service",
-    "definition Music"
+    "definition Music",
+    "definition OmniSearch"
    ]
   },
   "art[editorial-elements:url]": {
@@ -28133,6 +31677,16 @@
     "MediaPlayer",
     "MusicKitInternal",
     "NanoMediaAPI"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "artistsCount": {
+   "values": [
+    "{dynamic}"
+   ],
+   "images": [
+    "Music"
    ],
    "templates": [],
    "domains": []
@@ -28219,6 +31773,16 @@
    "templates": [],
    "domains": []
   },
+  "availableAt": {
+   "values": [
+    "{dynamic}"
+   ],
+   "images": [
+    "MusicKitInternal"
+   ],
+   "templates": [],
+   "domains": []
+  },
   "bid": {
    "values": [
     "com.apple.Podcasts"
@@ -28272,6 +31836,16 @@
    "templates": [],
    "domains": []
   },
+  "cc": {
+   "values": [
+    "{dynamic}"
+   ],
+   "images": [
+    "OmniSearch"
+   ],
+   "templates": [],
+   "domains": []
+  },
   "charts": {
    "values": [
     "{dynamic}"
@@ -28288,6 +31862,16 @@
    ],
    "images": [
     "WorkflowKit"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "clientId": {
+   "values": [
+    "{dynamic}"
+   ],
+   "images": [
+    "OmniSearch"
    ],
    "templates": [],
    "domains": []
@@ -28476,7 +32060,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "enabled": {
@@ -28489,7 +32074,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "endDate": {
@@ -28523,7 +32109,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "entity": {
@@ -28545,6 +32132,7 @@
     "MusicKitInternal:MusicKitInternal.MusicRecentlySearchedRequest.PersistentEntry.Kind",
     "MusicMessagesApp:MusicCore.extension.MediaKitPlayableKind",
     "MusicWidgets:MusicCore.extension.MediaKitPlayableKind",
+    "OmniSearch:OmniSearch.MCAEntityReference.Kind",
     "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.MediaAPIType",
     "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.ContentType",
     "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.MediaAPIContentType"
@@ -28632,13 +32220,13 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "extend": {
    "values": [
     "androidMigrationData,contentProviderTeamId",
-    "canonicalKind",
     "editorialArtwork",
     "externalVersionId",
     "joinedStatus",
@@ -28674,6 +32262,16 @@
    ],
    "images": [
     "_SonicKit_MusicKit"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "extend[health-videos]": {
+   "values": [
+    "description,videoHeading"
+   ],
+   "images": [
+    "HealthContentDaemon"
    ],
    "templates": [],
    "domains": []
@@ -28963,7 +32561,9 @@
     "iTunesCloud"
    ],
    "templates": [],
-   "domains": []
+   "domains": [
+    "definition OmniSearch"
+   ]
   },
   "format[resources]": {
    "values": [
@@ -29055,7 +32655,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "id": {
@@ -29084,6 +32685,7 @@
     "AppleMediaServices",
     "BookFoundation",
     "HealthExperience",
+    "Music",
     "MusicApplication",
     "MusicKit",
     "PhotosGraph",
@@ -29273,7 +32875,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "includeOnly[apps]": {
@@ -29292,6 +32895,8 @@
     "{dynamic}"
    ],
    "images": [
+    "Music",
+    "OmniSearch",
     "_SonicKit_MusicKit"
    ],
    "templates": [],
@@ -29328,7 +32933,11 @@
     "MusicKitInternal"
    ],
    "templates": [],
-   "domains": []
+   "domains": [
+    "OmniSearch:OmniSearch.FilterType",
+    "OmniSearch:OmniSearch.HomeKitSearchService.HomeResolutionType",
+    "OmniSearch:OmniSearch.PreferredType"
+   ]
   },
   "include[episodes]": {
    "values": [
@@ -29339,6 +32948,28 @@
    ],
    "templates": [],
    "domains": []
+  },
+  "include[health-videos]": {
+   "values": [
+    "contributors,hls-programs"
+   ],
+   "images": [
+    "HealthContentDaemon"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "include[hls-programs]": {
+   "values": [
+    "timed-events"
+   ],
+   "images": [
+    "HealthContentDaemon"
+   ],
+   "templates": [],
+   "domains": [
+    "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Resources.CodingKeys"
+   ]
   },
   "include[library-albums]": {
    "values": [
@@ -29403,6 +33034,7 @@
     "{dynamic}"
    ],
    "images": [
+    "Music",
     "PhotosGraph",
     "_SonicKit_MusicKit"
    ],
@@ -29451,6 +33083,18 @@
    "templates": [],
    "domains": []
   },
+  "include[timed-events]": {
+   "values": [
+    "contributor"
+   ],
+   "images": [
+    "HealthContentDaemon"
+   ],
+   "templates": [],
+   "domains": [
+    "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEventKind"
+   ]
+  },
   "include[tv-episodes]": {
    "values": [
     "playback-position"
@@ -29464,13 +33108,19 @@
     "PodcastsFoundation:PodcastsFoundation.PodcastEpisodeRelationships.CodingKeys"
    ]
   },
-  "include[{x}]": {
-   "values": [],
-   "images": [],
-   "templates": [
-    "MusicKit"
+  "inflateMetadata": {
+   "values": [
+    "false",
+    "true"
    ],
-   "domains": []
+   "images": [
+    "UnifiedMessagingKit"
+   ],
+   "templates": [],
+   "domains": [
+    "definition MusicApplication",
+    "definition OmniSearch"
+   ]
   },
   "intentPunchoutURL": {
    "values": [
@@ -29485,7 +33135,7 @@
   "intentSource": {
    "values": [
     "PlayContent",
-    "PlayTrailer"
+    "{dynamic}"
    ],
    "images": [
     "TVAppServices"
@@ -29547,11 +33197,13 @@
    "images": [
     "AppleMediaServices",
     "BookFoundation",
+    "HealthContentDaemon",
     "MediaPlayer",
     "Music",
     "MusicKit",
     "MusicKitInternal",
     "NanoMediaAPI",
+    "OmniSearch",
     "PodcastsFoundation",
     "UnifiedMessagingKit",
     "VideoSubscriberAccount"
@@ -29596,6 +33248,16 @@
    "templates": [],
    "domains": []
   },
+  "limit[albums:tracks]": {
+   "values": [
+    "5"
+   ],
+   "images": [
+    "Music"
+   ],
+   "templates": [],
+   "domains": []
+  },
   "limit[artists:top-songs]": {
    "values": [
     "{dynamic}"
@@ -29622,6 +33284,16 @@
    ],
    "images": [
     "PodcastsFoundation"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "limit[playlists:tracks]": {
+   "values": [
+    "5"
+   ],
+   "images": [
+    "Music"
    ],
    "templates": [],
    "domains": []
@@ -29713,7 +33385,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "manual": {
@@ -29725,7 +33398,9 @@
     "iTunesCloud"
    ],
    "templates": [],
-   "domains": []
+   "domains": [
+    "definition OmniSearch"
+   ]
   },
   "media": {
    "values": [
@@ -29768,6 +33443,7 @@
     "MusicMessagesApp:MusicCore.extension.MediaKitPlayableKind",
     "MusicWidgets:MusicCore.Library.SortConfiguration",
     "MusicWidgets:MusicCore.extension.MediaKitPlayableKind",
+    "OmniSearch:OmniSearch.MCAEntityReference.Kind",
     "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.MediaAPIType",
     "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.ContentType",
     "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.MediaAPIContentType",
@@ -29782,8 +33458,17 @@
    ],
    "images": [
     "MediaPlayer",
-    "MusicKit",
     "MusicKitInternal"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "meta[event:response-finish]": {
+   "values": [
+    "streamLatency"
+   ],
+   "images": [
+    "OmniSearch"
    ],
    "templates": [],
    "domains": []
@@ -29798,14 +33483,6 @@
    "templates": [],
    "domains": []
   },
-  "meta[{x}]": {
-   "values": [],
-   "images": [],
-   "templates": [
-    "MusicKit"
-   ],
-   "domains": []
-  },
   "migration": {
    "values": [
     "true"
@@ -29815,7 +33492,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "minimal": {
@@ -29827,7 +33505,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "mode": {
@@ -29873,7 +33552,9 @@
     "TVAppServices"
    ],
    "templates": [],
-   "domains": []
+   "domains": [
+    "definition OmniSearch"
+   ]
   },
   "network": {
    "values": [
@@ -30028,13 +33709,15 @@
     "Music",
     "MusicKitInternal",
     "NanoMediaAPI",
+    "OmniSearch",
     "SafariSharedUI",
     "VideoSubscriberAccount",
     "iTunesCloud"
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "playReason": {
@@ -30181,6 +33864,8 @@
     "MusicApplication:MusicCore.MetricsEvent.TargetType",
     "MusicMessagesApp:MusicCore.MetricsEvent.TargetType",
     "MusicWidgets:MusicCore.MetricsEvent.TargetType",
+    "OmniSearch:OmniSearch.FilterType",
+    "OmniSearch:OmniSearch.PreferredType",
     "PodcastsFoundation:PodcastsFoundation.PlaybackIntent.Source",
     "PodcastsFoundation:PodcastsFoundation.PodcastsMediaLibrary.PlaybackQueueContext.FeatureName"
    ]
@@ -30209,9 +33894,11 @@
   },
   "restrict": {
    "values": [
-    "explicit"
+    "explicit",
+    "{dynamic}"
    ],
    "images": [
+    "OmniSearch",
     "PhotosGraph"
    ],
    "templates": [],
@@ -30287,10 +33974,13 @@
     "MusicApplication:MusicCore.ApplicationCapabilities.Service",
     "MusicMessagesApp:MusicCore.ApplicationCapabilities.Service",
     "MusicWidgets:MusicCore.ApplicationCapabilities.Service",
+    "OmniSearch:OmniSearch.FilterType",
+    "OmniSearch:OmniSearch.MCADomain",
     "PodcastsFoundation:PodcastsFoundation.PodcastEpisodeAttributes.ChannelKind",
     "PodcastsFoundation:PodcastsFoundation.SubscriptionOffer.AppType",
     "ShazamEvents:ShazamEvents.EventType",
-    "definition Music"
+    "definition Music",
+    "definition OmniSearch"
    ]
   },
   "session": {
@@ -30314,6 +34004,16 @@
    "domains": []
   },
   "sf": {
+   "values": [
+    "{dynamic}"
+   ],
+   "images": [
+    "TVAppServices"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "signLanguageLocale": {
    "values": [
     "{dynamic}"
    ],
@@ -30357,6 +34057,7 @@
     "definition GameServicesCore",
     "definition MusicApplication",
     "definition MusicKit",
+    "definition OmniSearch",
     "definition PhotosGraph"
    ]
   },
@@ -30543,6 +34244,7 @@
     "PhotosGraph",
     "PodcastsFoundation",
     "SafariSharedUI",
+    "TVAppServices",
     "WorkflowKit"
    ],
    "templates": [],
@@ -30554,7 +34256,8 @@
    ],
    "images": [
     "MediaPlayer",
-    "MusicKitInternal"
+    "MusicKitInternal",
+    "OmniSearch"
    ],
    "templates": [],
    "domains": []
@@ -30658,7 +34361,8 @@
    ],
    "templates": [],
    "domains": [
-    "definition MusicApplication"
+    "definition MusicApplication",
+    "definition OmniSearch"
    ]
   },
   "upc": {
@@ -30667,6 +34371,16 @@
    ],
    "images": [
     "WorkflowKit"
+   ],
+   "templates": [],
+   "domains": []
+  },
+  "upnext": {
+   "values": [
+    "{dynamic}"
+   ],
+   "images": [
+    "TVAppServices"
    ],
    "templates": [],
    "domains": []
@@ -30731,19 +34445,10 @@
    ],
    "images": [
     "BookFoundation",
-    "MusicKit",
     "PhotosGraph",
     "PodcastsFoundation"
    ],
    "templates": [],
-   "domains": []
-  },
-  "views[{x}]": {
-   "values": [],
-   "images": [],
-   "templates": [
-    "MusicKit"
-   ],
    "domains": []
   },
   "w": {
@@ -30834,6 +34539,7 @@
     "MediaPlayer",
     "MusicKit",
     "MusicKitInternal",
+    "OmniSearch",
     "PodcastsFoundation",
     "VideosUI"
    ],
@@ -30882,6 +34588,9 @@
   "/uts/v3/configurations": [
    "TVAppServices"
   ],
+  "/v1/assistant/query/{unknown}": [
+   "OmniSearch"
+  ],
   "/v1/catalog/{unknown}": [
    "MusicKit"
   ],
@@ -30893,6 +34602,9 @@
   ],
   "/v1/catalog/{unknown}/charts": [
    "MusicKit"
+  ],
+  "/v1/catalog/{unknown}/contents": [
+   "Music"
   ],
   "/v1/catalog/{unknown}/playlists": [
    "PhotosGraph"
@@ -30999,6 +34711,9 @@
   "https://amp-account.itunes.apple.com/account/v1/crossServiceLink/revoke": [
    "GameServicesCore"
   ],
+  "https://amp-api-conversation.media.apple.com": [
+   "OmniSearch"
+  ],
   "https://amp-api.videos.apple.com": [
    "VideosUI"
   ],
@@ -31030,6 +34745,12 @@
   ]
  },
  "inventoryPaths": {
+  "/v1/assistant/chat": [
+   "OmniSearch"
+  ],
+  "/v1/assistant/query": [
+   "OmniSearch"
+  ],
   "/v1/catalog": [
    "MediaPlayer",
    "MigrationKit",
@@ -31038,6 +34759,7 @@
   "/v1/catalog/": [
    "BookFoundation",
    "ManagedBackgroundAssetsHelper",
+   "Music",
    "MusicApplication",
    "MusicKit",
    "PhotosGraph",
@@ -31176,6 +34898,9 @@
   "/v1/validate": [
    "VideosUI"
   ],
+  "https://amp-api-conversation.media.apple.com": [
+   "OmniSearch"
+  ],
   "https://amp-api.music.apple.com": [
    "ShazamCore"
   ],
@@ -31201,6 +34926,9 @@
  "hosts": {
   "amp-api-carry.music.apple.com": [
    "MusicKitInternal"
+  ],
+  "amp-api-conversation.media.apple.com": [
+   "OmniSearch"
   ],
   "amp-api-edge.apps.apple.com": [
    "CoreFoundation",
@@ -31233,6 +34961,7 @@
   "amp-api.music.apple.com": [
    "CoreFoundation",
    "MediaPlaybackCore",
+   "Music",
    "MusicKitInternal",
    "ShazamCore",
    "TVAppServices",
@@ -31270,6 +34999,7 @@
   ],
   "Content-Encoding": [
    "AppleMediaServices",
+   "WorkflowKit",
    "iTunesCloud"
   ],
   "Content-Length": [
@@ -31381,6 +35111,9 @@
   ],
   "X-Apple-Private-Listening": [
    "iTunesCloud"
+  ],
+  "X-Apple-Product-Type": [
+   "AppleMediaServices"
   ],
   "X-Apple-Purchase-UUID": [
    "AppleMediaServices"
@@ -31608,7 +35341,10 @@
    "afds-enabled-odi",
    "afds-free-odi-duration",
    "afds-free-odi-percentage",
+   "afm-planner",
    "age-assurance-child-info",
+   "air-con",
+   "air-cons",
    "aks-client-queue",
    "album-artist",
    "album-id",
@@ -31713,10 +35449,12 @@
    "apply-chinese-spam-filter",
    "apply-imessage-junk-filter",
    "apply-international-spam-filter",
+   "apps-media-api-conversation-host",
    "apps-media-api-edge-host",
    "apps-media-api-fetch-software-addons-host",
    "apps-media-api-host",
    "appstore-metrics-default-topic",
+   "apres-midi",
    "aps-allowed-product-type",
    "aps-connection-initiate",
    "aps-enabled-patterns",
@@ -31807,6 +35545,8 @@
    "audio-rendering-mode-changed",
    "audio-route",
    "audio-route-changed",
+   "audio-stdrep",
+   "audio-wka",
    "audiobook-fps-request",
    "audiobook-series",
    "auth-can-post",
@@ -31829,6 +35569,7 @@
    "available-software-updates-background-reload-frequency-cellular",
    "available-software-updates-extended-reload-frequency-seconds",
    "available-software-updates-extended-reload-frequency-seconds-cellular",
+   "avant-midi",
    "background-color",
    "backupd-connection-initiate",
    "bag-expiry-timestamp",
@@ -31864,6 +35605,8 @@
    "bundle-id",
    "bundle-owns-check",
    "bundle-service-list",
+   "button-group",
+   "button-gup",
    "button-play",
    "ca-es",
    "ca-es-u-sd-esvc",
@@ -31882,9 +35625,11 @@
    "car-play",
    "car-play-media-event-post-frequency",
    "card-contents",
+   "card-information",
    "carrier-link",
    "carrier-settings",
    "carrier-space",
+   "cascade-push",
    "catalog-resource-incremental-loaders",
    "catalog-search-incremental-loaders",
    "cellular-data",
@@ -31948,6 +35693,7 @@
    "coalesce-send-delay-background",
    "coalesce-send-delay-normal",
    "coalesce-send-delay-scheduled",
+   "collapsible-label",
    "collection-header-element-kind",
    "combination-incremental-loaders",
    "commerce-buy-urls",
@@ -31979,16 +35725,20 @@
    "content-available",
    "content-changed",
    "content-disposition",
+   "content-downloading",
    "content-encoding",
    "content-id",
    "content-identifier",
+   "content-keys",
    "content-length",
    "content-range",
    "content-scripts",
    "content-security-policy",
    "content-state",
+   "content-streaming",
    "content-type",
    "contents-for-artwork",
+   "context-lookup",
    "context-not-listed",
    "contingent-items",
    "contingent-offer-asc-lockup",
@@ -31998,7 +35748,6 @@
    "controls-capture",
    "controls-connectivity",
    "controls-display",
-   "controls-empty",
    "controls-navigation",
    "cookie-consent",
    "core-seed-name",
@@ -32006,6 +35755,7 @@
    "cover-artwork-json",
    "cover-url",
    "create-ald-license",
+   "create-profile",
    "credential-type",
    "credit-a",
    "credit-card",
@@ -32132,6 +35882,7 @@
    "enhance-dialogue",
    "enhanced-audio",
    "enqueuer-account",
+   "entity-list",
    "error-code",
    "error-domain",
    "error-for-resolution",
@@ -32161,6 +35912,7 @@
    "explicit-treatment",
    "export-messages",
    "extension-article",
+   "extension-identity",
    "extension-marketing",
    "external-accessory",
    "external-version-id",
@@ -32193,7 +35945,6 @@
    "featured-stations-node-id",
    "fetch-end-offset-seconds",
    "fetch-start-offset-seconds",
-   "fetch-timeout",
    "fi-fi",
    "file-content-ack",
    "file-contents",
@@ -32209,6 +35960,7 @@
    "fit-media-api-host",
    "fitcored-engagement-category",
    "fitness-plus-logo",
+   "fitness-rum",
    "fitnessapp-settings",
    "flexml-a",
    "focus-mode",
@@ -32250,6 +36002,7 @@
    "gamecenter-default",
    "gamecenter-settings-ios",
    "games-media-api-host",
+   "garde-manger",
    "gdr-auth-retry-interval-seconds",
    "gdr-max-auth-retries",
    "generate-title",
@@ -32317,6 +36070,7 @@
    "gsm-rssi",
    "guest-defaults",
    "guid-urls",
+   "guidance-template-store",
    "har-logging",
    "has-disclaimer-text",
    "has-in-apps-notice",
@@ -32346,6 +36100,8 @@
    "home-rmvfordmwosu-internal",
    "home-rmvfsumbom",
    "home-sharing",
+   "home-theater",
+   "home-theatre",
    "home-video",
    "homekit-default",
    "homekit-settings",
@@ -32419,7 +36175,6 @@
    "ids-rtencryption-mkm-expire-duration",
    "ids-rtencryption-prekey-expire-duration",
    "ignore-restrictions",
-   "import-incomplete",
    "in-app",
    "in-app-history-max-age",
    "in-apps",
@@ -32473,6 +36228,7 @@
    "interstitial-event-time",
    "interstitial-events",
    "interstitial-position",
+   "interstitial-primary-position",
    "interstitials-did-change",
    "invalidate-url-bags",
    "invitation-context",
@@ -32558,6 +36314,8 @@
    "item-placeholder-end",
    "item-position-jump",
    "item-position-tick",
+   "item-primary-end-position",
+   "item-primary-start-position",
    "item-rate",
    "item-rate-change-participant-id",
    "item-rate-change-position",
@@ -32615,6 +36373,7 @@
    "keep-alive",
    "key-cached-response",
    "key-delivery-jitter-time",
+   "key-delivery-jitter-window",
    "key-ids",
    "key-request-error",
    "key-request-options",
@@ -32628,6 +36387,10 @@
    "kilogram-force",
    "knowledge-base",
    "ko-kr",
+   "koolstofdioxide-sensor",
+   "koolstofdioxide-sensors",
+   "koolstofmonoxide-sensor",
+   "koolstofmonoxide-sensors",
    "kt-account-key-signing-timeout",
    "kt-disabled",
    "kt-gossip-first-gossip-chance",
@@ -32646,6 +36409,7 @@
    "leading-separator-element-kind",
    "league-standings-legend-kind",
    "learn-more-url",
+   "lease-acquisition",
    "lease-action",
    "lease-duration",
    "lease-id",
@@ -32678,12 +36442,16 @@
    "like-enabled",
    "like-event-url",
    "like-value",
+   "list-bullet",
+   "list-bulup",
    "list-chevron",
+   "list-itelet",
    "list-item",
    "list-iteup",
    "list-on-left",
    "list-on-left-with-grid",
    "list-on-right",
+   "list-read",
    "listen-norites",
    "listen-now",
    "listen-now-latest-episodes",
@@ -32695,6 +36463,8 @@
    "live-activity-burst-window-seconds",
    "live-radio-stations-enabled",
    "live-service",
+   "living-room",
+   "living-rooms",
    "loc-key",
    "local-albums",
    "local-artists",
@@ -32762,6 +36532,7 @@
    "marketing-item-media-api-realm-mappings",
    "match-status",
    "max-age",
+   "max-channel-subscriptions",
    "max-concurrent-connections",
    "max-contextual-upsell-displays",
    "max-display-time-in-seconds",
@@ -32813,13 +36584,20 @@
    "media-imageediting",
    "media-kind",
    "media-playingnext",
+   "media-pldcasts",
    "media-plsic",
    "media-remote",
+   "media-rum",
+   "media-rummet",
+   "media-rummets",
+   "media-rums",
    "media-server-died",
    "media-server-purge",
    "media-server-reset",
    "media-types",
    "mediaanalysisd-service",
+   "meia-noite",
+   "meio-dia",
    "mercury-sync-cache-type-ids",
    "mercury-sync-media-api-url",
    "message-center",
@@ -32834,12 +36612,16 @@
    "message-page-js",
    "message-pages-js",
    "message-placement",
-   "message-view",
    "message-view-patterns",
    "messaging-ui",
    "metadata-ad",
    "metadata-manifest",
+   "metadata-manifest-retry-schema",
+   "metadata-manifest-sync-api-host",
+   "metadata-manifest-sync-api-path",
+   "metadata-manifest-sync-enabled",
    "metadata-sdh",
+   "metadata-sl",
    "metrics-id-migration-enabled",
    "metrics-identifiers",
    "mic-validate-message-sync-disabled-on-all-devices",
@@ -32861,6 +36643,7 @@
    "mobilenotes-quicknote",
    "mobilephone-favorites",
    "mobilephone-recents",
+   "mock-wka-result",
    "modern-media-controls",
    "modify-activity-session-airplay",
    "modify-anchor-certificates",
@@ -32911,9 +36694,9 @@
    "musicui-js-scratchpad-url",
    "musicui-js-url",
    "national-election-stub",
-   "native-list",
+   "native-l",
    "native-list-row",
-   "native-lup",
+   "native-llet",
    "nb-no",
    "ncm-device",
    "need-apple-pay-auto-enroll-retry",
@@ -32961,8 +36744,10 @@
    "nl-be",
    "nl-nl",
    "no-bok",
+   "no-category",
    "no-category-internal",
    "no-man",
+   "no-match",
    "no-nb",
    "no-no",
    "no-nyn",
@@ -33050,6 +36835,9 @@
    "partiality-opt-out",
    "partiality-segment",
    "passkey-authenticator-read-timeout",
+   "passkit-card-data-timeout",
+   "passkit-cards-available-timeout",
+   "passkit-default-pass-timeout",
    "passwords-and-passkeys",
    "path-patterns",
    "path-pause-tint-shape",
@@ -33083,6 +36871,7 @@
    "pinning-sync-peer-request-delay",
    "pivot-meta",
    "pl-pl",
+   "placeholder-creation",
    "platform-application",
    "play-activity-feed-metadata",
    "play-activity-feed-post-all-play-starts",
@@ -33210,6 +36999,7 @@
    "preferences-reset",
    "preferences-write",
    "preferred-tiers",
+   "prefetch-expiration-completion",
    "preflight-enabled",
    "preflight-mechanism-delay",
    "preflight-request-limit",
@@ -33252,6 +37042,9 @@
    "purchase-event-filter-buy-params",
    "purchase-event-filter-key-paths",
    "purchase-history",
+   "purchase-preconnect-hosts",
+   "purchase-request-compression-enabled",
+   "purchase-request-content-types",
    "purchased-redownload",
    "push-notification-allowexplicit",
    "push-notification-get-allowexplicit",
@@ -33296,6 +37089,7 @@
    "rapport-friend-keys-max",
    "read-later",
    "read-setup-status",
+   "readonly-sportsfavorites",
    "reason-type",
    "receipt-expiration-warning-threshold",
    "receipt-max-lookup-count",
@@ -33344,6 +37138,7 @@
    "remote-notification",
    "remote-upload",
    "remove-push-notification-type-url",
+   "rendering-error-indicator",
    "renew-after",
    "renew-vpp-receipt",
    "rental-id",
@@ -33365,6 +37160,7 @@
    "resilient-deep-link-finance-patterns",
    "resolution-type",
    "response-finish",
+   "response-start",
    "responsive-artwork-window",
    "restrictions-monitor",
    "restrictions-source",
@@ -33389,6 +37185,7 @@
    "run-shortcut",
    "run-workflow",
    "safari-scribble",
+   "salon-comedor",
    "sandbox-media-api-host",
    "saved-songs",
    "scheme-mapping",
@@ -33561,6 +37358,7 @@
    "sort-composer",
    "sort-name",
    "source-pairing",
+   "sous-sol",
    "spam-bag-url",
    "spam-blocking-enabled",
    "spatial-audio",
@@ -33655,6 +37453,10 @@
    "temporary-sandbox",
    "terms-check",
    "testflight-visual-feedback",
+   "teve-rum",
+   "teve-rummet",
+   "teve-rummets",
+   "teve-rums",
    "text-master",
    "text-web",
    "th-th",
@@ -33725,19 +37527,50 @@
    "tv-episo",
    "tv-episode",
    "tv-g",
+   "tv-huone",
+   "tv-huoneen",
+   "tv-huoneeni",
+   "tv-huoneeseen",
+   "tv-huoneeseeni",
+   "tv-huoneessa",
+   "tv-huoneessani",
+   "tv-huoneesta",
+   "tv-huoneestani",
+   "tv-huoneet",
+   "tv-huoneiden",
+   "tv-huoneisiin",
+   "tv-huoneisiini",
+   "tv-huoneissa",
+   "tv-huoneissani",
+   "tv-huoneista",
+   "tv-huoneistani",
+   "tv-huoneita",
+   "tv-huoneitani",
+   "tv-huoneitteni",
+   "tv-huonetta",
+   "tv-huonettani",
+   "tv-kamer",
    "tv-logo",
    "tv-ma",
    "tv-pg",
    "tv-plus-logo",
    "tv-providers",
    "tv-remote",
+   "tv-rum",
+   "tv-rummet",
+   "tv-rummets",
+   "tv-rums",
    "tv-seaso",
    "tv-season",
    "tv-show",
    "tv-showseo",
+   "tv-stue",
+   "tv-stuen",
    "tv-y",
+   "tvapp-federated-punchout",
    "ui-cleanup",
    "uk-ua",
+   "umkit-root-dispatcher-fallback-enabled",
    "umts-rscp",
    "unadopt-product",
    "unarchived-pages",
@@ -33881,9 +37714,13 @@
    "very-low",
    "vi-vi",
    "vi-vn",
+   "vid-stdrep",
+   "vid-wka",
    "video-rendering-mode",
    "video-rendering-mode-change-reason",
    "video-rendering-mode-did-change",
+   "video-rendering-mode-did-change-position",
+   "video-rendering-mode-did-change-primary-position",
    "videos-media-api-host",
    "view-book-update-params",
    "view-software-updates",
@@ -33926,6 +37763,8 @@
    "vui-update-events",
    "wallet-cards",
    "watch-companion",
+   "water-closet",
+   "water-closets",
    "web-accessible-resources",
    "web-browser",
    "web-ui",
@@ -33964,6 +37803,7 @@
    "x-apple-mail-vip-messages",
    "x-apple-mail-vip-settings",
    "x-apple-max-age",
+   "x-apple-plist",
    "x-apple-reminderkit",
    "x-apple-request-store-front",
    "x-apple-request-uuid",
