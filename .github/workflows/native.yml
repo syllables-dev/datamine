@@ -43,7 +43,7 @@ jobs:
         with:
           bun-version: latest
       - uses: astral-sh/setup-uv@v6
-      - run: brew install blacktop/tap/ipsw
+      - run: brew tap blacktop/tap && brew trust blacktop/tap && brew install --formula blacktop/tap/ipsw
       - run: bun install --frozen-lockfile
       - run: bun run datamine:native --build="$BUILD" --version="$VERSION" --released="$RELEASED" --ipsw="$IPSW"
         env:
