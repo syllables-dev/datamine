@@ -6,6 +6,7 @@
     "datamine:web": "bun src/datamine/web/datamine.ts",
     "notify:web": "bun src/datamine/web/notify/index.ts",
     "check:native": "bun src/datamine/native/check.ts",
+    "datamine:native": "bun src/datamine/native/run.ts",
     "check": "ultracite check",
     "fix": "ultracite fix",
     "tsc": "tsc --noEmit"

@@ -7,6 +7,7 @@ from extract.binary.memory import SharedCache
 from extract.binary.symbols import export_symbols
 from extract.binary.target import open_target
 from extract.catalog.assemble import assemble
+from extract.catalog.snapshot import snapshot
 from extract.metadata import discover
 from extract.metadata.codingkeys import types_of
 from extract.metadata.modeltypes import model_types
@@ -158,5 +159,6 @@ class Pipeline:
         write_json(self.path("inventory.json"), inventories, indent=None)
         catalog = self.timed("assemble", lambda: assemble(self.out_dir))
         write_json(self.path("catalog.json"), catalog)
+        write_json(self.path("snapshot.json"), snapshot(catalog))
         write_json(self.path("pipeline.json"), {"targets": targets, "timings": self.timings, "traced": traced})
         return catalog

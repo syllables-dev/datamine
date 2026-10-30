@@ -25,7 +25,7 @@ def run(arguments):
 
 
 def regress(arguments):
-    report = compare(read_json(arguments.previous), read_json(os.path.join(arguments.out, "catalog.json")), all_strings(arguments.out), symbol_texts(arguments.out))
+    report = compare(read_json(arguments.previous), read_json(os.path.join(arguments.out, "snapshot.json")), all_strings(arguments.out), symbol_texts(arguments.out))
     write_json(arguments.report, report)
     print(json.dumps({key: len(value) for key, value in report.items()}))
 
