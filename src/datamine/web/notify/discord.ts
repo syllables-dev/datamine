@@ -5,16 +5,15 @@ import {
   shortVersion,
   titles,
 } from "@/datamine/web/notify/sections";
-import { batchEmbeds, codeBlock, linkButton } from "@/discord";
-import { chunkLines, diffLines } from "@/notify/diff";
+import { linkButton } from "@/discord";
+import { diffLines } from "@/notify/diff";
+import { diffEmbeds } from "@/notify/discord";
 import { counts, isEmpty, sectionNames } from "@/report";
 
 import type { Embed, MessagePayload } from "@/discord";
 import type { Report } from "@/types";
 
 const { icon, username } = config.discord;
-const blockSize = 3900;
-const maxSectionBlocks = 10;
 
 const colorOf = (report: Report) =>
   config.targets.find((target) => target.id === report.target)?.color ?? 0;
@@ -56,28 +55,14 @@ export const summaryMessage = (
   return { components: [linkButton("View on GitHub", link)], embeds: [embed] };
 };
 
-export const threadMessages = (report: Report, link: string): Embed[][] => {
-  const color = colorOf(report);
-  return notableSections
+export const threadMessages = (report: Report, link: string): Embed[][] =>
+  notableSections
     .filter((name) => !isEmpty(report.sections[name]))
-    .flatMap((name) => {
-      const blocks = chunkLines(diffLines(report.sections[name]), blockSize);
-      const shown =
-        blocks.length > maxSectionBlocks
-          ? blocks.slice(0, maxSectionBlocks - 1)
-          : blocks;
-      const embeds = shown.map((lines, index): Embed => ({
-        color,
-        description: `## ${titles[name]}${index > 0 ? " (continued)" : ""}
-${codeBlock("diff", lines)}`,
-      }));
-      const hidden = blocks.length - shown.length;
-      if (hidden > 0) {
-        embeds.push({
-          color,
-          description: `${hidden} more ${hidden === 1 ? "block" : "blocks"} not shown. [See the full diff](${link})`,
-        });
-      }
-      return batchEmbeds(embeds);
-    });
-};
+    .flatMap((name) =>
+      diffEmbeds(
+        titles[name],
+        diffLines(report.sections[name]),
+        colorOf(report),
+        link
+      )
+    );

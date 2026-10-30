@@ -10,6 +10,7 @@ export const config = {
   },
   locale: "en-us",
   native: {
+    color: 0xfc_3c_44,
     device: "iPhone18,1",
   },
   paths: {
