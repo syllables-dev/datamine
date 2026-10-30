@@ -25,7 +25,7 @@ jobs:
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
-      - run: bun run datamine --target=${{ matrix.target }}
+      - run: bun run datamine:web --target=${{ matrix.target }}
       - id: commit
         run: |
           git add --all
@@ -45,7 +45,7 @@ jobs:
           echo "url=${{ github.server_url }}/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - if: steps.commit.outputs.changed == 'true'
-        run: bun run notify
+        run: bun run notify:web
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ vars.DISCORD_CHANNEL_ID }}

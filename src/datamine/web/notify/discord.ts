@@ -1,13 +1,12 @@
 import { config } from "@/config";
-import { batchEmbeds, codeBlock, linkButton } from "@/discord";
 import {
-  chunkLines,
-  diffLines,
   isNoise,
   notableSections,
   shortVersion,
   titles,
-} from "@/notify/diff";
+} from "@/datamine/web/notify/sections";
+import { batchEmbeds, codeBlock, linkButton } from "@/discord";
+import { chunkLines, diffLines } from "@/notify/diff";
 import { counts, isEmpty, sectionNames } from "@/report";
 
 import type { Embed, MessagePayload } from "@/discord";

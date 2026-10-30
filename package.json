@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "datamine": "bun src/datamine/web/datamine.ts",
-    "notify": "bun src/notify/index.ts",
+    "datamine:web": "bun src/datamine/web/datamine.ts",
+    "notify:web": "bun src/datamine/web/notify/index.ts",
     "check": "ultracite check",
     "fix": "ultracite fix",
     "tsc": "tsc --noEmit"
