@@ -9,7 +9,11 @@ export const config = {
     username: "Apple Music",
   },
   locale: "en-us",
+  native: {
+    device: "iPhone18,1",
+  },
   paths: {
+    native: fromRoot("datamine/ios"),
     reports: fromRoot(".datamine"),
     snapshots: fromRoot("datamine"),
   },
