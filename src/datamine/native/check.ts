@@ -19,10 +19,21 @@ console.log(
     : `No new build, last processed ${current?.build ?? "none"}`
 );
 
+const lineBreak = /[\r\n]/u;
+
+const singleLine = (value: string) => {
+  if (lineBreak.test(value)) {
+    throw new Error(
+      `unexpected line break in AppleDB value ${JSON.stringify(value)}`
+    );
+  }
+  return value;
+};
+
 const output = Bun.env.GITHUB_OUTPUT;
 if (isNew && output) {
-  await appendFile(
-    output,
-    `build=${newest.build}\nversion=${newest.version}\nipsw=${newest.ipsw}\nreleased=${newest.released}\n`
+  const lines = Object.entries(newest).map(
+    ([name, value]) => `${name}=${singleLine(value)}\n`
   );
+  await appendFile(output, lines.join(""));
 }

@@ -1,0 +1,80 @@
+name: native
+
+on:
+  schedule:
+    - cron: "20 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: native
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      build: ${{ steps.check.outputs.build }}
+      ipsw: ${{ steps.check.outputs.ipsw }}
+      released: ${{ steps.check.outputs.released }}
+      version: ${{ steps.check.outputs.version }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - id: check
+        run: bun run check:native
+
+  extract:
+    needs: check
+    if: needs.check.outputs.build != ''
+    runs-on: macos-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - uses: astral-sh/setup-uv@v6
+      - run: brew install blacktop/tap/ipsw
+      - run: bun install --frozen-lockfile
+      - run: bun run datamine:native --build="$BUILD" --version="$VERSION" --released="$RELEASED" --ipsw="$IPSW"
+        env:
+          BUILD: ${{ needs.check.outputs.build }}
+          IPSW: ${{ needs.check.outputs.ipsw }}
+          RELEASED: ${{ needs.check.outputs.released }}
+          VERSION: ${{ needs.check.outputs.version }}
+      - id: commit
+        env:
+          BUILD: ${{ needs.check.outputs.build }}
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          git add datamine/ios
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --message "iOS $VERSION ($BUILD)"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase && git push && break
+            sleep $((attempt * 3))
+          done
+          git diff --quiet "@{upstream}" HEAD
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "url=${{ github.server_url }}/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - if: steps.commit.outputs.changed == 'true'
+        run: bun run notify:native
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ vars.DISCORD_CHANNEL_ID }}
+          COMMIT_SHA: ${{ steps.commit.outputs.sha }}
+          COMMIT_URL: ${{ steps.commit.outputs.url }}
+          GITHUB_TOKEN: ${{ github.token }}
