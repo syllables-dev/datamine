@@ -1,6 +1,8 @@
 name: native
 
 on:
+  push:
+    branches: [ios]
   schedule:
     - cron: "20 * * * *"
   workflow_dispatch:
