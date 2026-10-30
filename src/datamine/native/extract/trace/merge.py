@@ -24,6 +24,8 @@ def readable(value):
 def is_api_request(record, path, host):
     if "/v1/" in path:
         return True
+    if not host and not path.strip("/"):
+        return False
     looks_like_api = bool(re.match(r"^/?v1/|^/?api/", path.lstrip("{x}")) or (host and "apple.com" in host) or (record["scheme"] in (None, "https", "http") and record["query"] and not host))
     return looks_like_api and record["scheme"] in (None, "https", "http", "{x}")
 

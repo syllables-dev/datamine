@@ -79,6 +79,10 @@ def method_sites(target, initialiser, names):
     return found
 
 
+def is_music_api(record):
+    return "/v1/" in (record.get("path") or "")
+
+
 def async_chain_members(function, takes, depth=chain_depth):
     seen, frontier = {function}, {function}
     for _ in range(depth):
@@ -109,6 +113,8 @@ def link_methods(target, requests, initialiser, names):
 
     linked = 0
     for record in requests:
+        if not is_music_api(record):
+            continue
         chain = async_chain_members(int(record["function"], 16), takes)
         values = {value for member in chain for value in by_function.get(member, ())}
         if not values:
