@@ -31,7 +31,7 @@ const only = args
 
 const datamine = async (target: Target): Promise<Report | undefined> => {
   const origin = `https://${target.host}`;
-  const dir = `${config.paths.snapshots}/${target.host}`;
+  const dir = `${config.paths.web}/${target.host}`;
   const previous = await readSnapshot(dir);
   const pageUrl = `${origin}${target.page}`;
   const page = readPage(await get(pageUrl), pageUrl);

@@ -16,7 +16,7 @@ export const config = {
   paths: {
     native: fromRoot("datamine/ios"),
     reports: fromRoot(".datamine"),
-    snapshots: fromRoot("datamine"),
+    web: fromRoot("datamine/web"),
   },
   targets: [
     {
