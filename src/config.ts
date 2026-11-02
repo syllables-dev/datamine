@@ -9,9 +9,14 @@ export const config = {
     username: "Apple Music",
   },
   locale: "en-us",
+  native: {
+    color: 0xfc_3c_44,
+    device: "iPhone18,1",
+  },
   paths: {
+    native: fromRoot("datamine/ios"),
     reports: fromRoot(".datamine"),
-    snapshots: fromRoot("datamine"),
+    web: fromRoot("datamine/web"),
   },
   targets: [
     {

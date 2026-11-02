@@ -2,3 +2,6 @@ node_modules
 .datamine
 .env
 .DS_Store
+__pycache__
+.venv
+uv.lock

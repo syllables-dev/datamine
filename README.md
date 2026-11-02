@@ -8,13 +8,13 @@ Tracks Apple Music web player builds and posts the changes to Discord.
 | `beta`      | beta.music.apple.com      |
 | `classical` | classical.music.apple.com |
 
-Snapshots are saved to `datamine/<host>/`.
+Snapshots are saved to `datamine/web/<host>/` and iOS snapshots to `datamine/ios/`.
 
 ## Usage
 
 ```sh
 bun install
-bun run datamine
-bun run datamine --target=beta
-bun run notify
+bun run datamine:web
+bun run datamine:web --target=beta
+bun run notify:web
 ```
