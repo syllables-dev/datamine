@@ -3,7 +3,8 @@ import json
 import os
 
 from extract.catalog.regress import compare
-from extract.pipeline import Pipeline, read_json, symbol_images, write_json
+from extract.files import read_json, symbols_path, write_json
+from extract.pipeline import Pipeline, symbol_images
 
 
 def all_strings(out_dir):
@@ -13,7 +14,7 @@ def all_strings(out_dir):
 def symbol_texts(out_dir):
     texts = {}
     for image in symbol_images:
-        path = os.path.join(out_dir, f"{image}.syms")
+        path = symbols_path(out_dir, image)
         if os.path.exists(path):
             with open(path, errors="replace") as handle:
                 texts[image] = handle.read()

@@ -1,9 +1,9 @@
 import glob
-import json
 import os
 import re
 from collections import defaultdict
 
+from extract.files import read_json
 from extract.strings.inventory import drop_splices
 from extract.trace.merge import merge
 from extract.usage.concrete import caller_requests
@@ -24,21 +24,16 @@ def is_clean(value):
     return isinstance(value, str) and "{" not in value and value.strip() == value and value != ""
 
 
-def read_json(out_dir, name, default=None):
-    path = os.path.join(out_dir, name)
-    if not os.path.exists(path):
-        return default
-    with open(path) as handle:
-        return json.load(handle)
+def output(out_dir, name):
+    return read_json(os.path.join(out_dir, name))
 
 
 def read_traces(out_dir):
     sites, requests = [], []
     for path in glob.glob(os.path.join(out_dir, "requests", "*.json")):
-        with open(path) as handle:
-            data = json.load(handle)
-        sites.extend(data.get("sites", []))
-        requests.extend(data.get("requests", []))
+        data = read_json(path)
+        sites.extend(data["sites"])
+        requests.extend(data["requests"])
     return sites, requests
 
 
@@ -187,15 +182,15 @@ def known_anchors(types, resource_types, definition_rows):
 
 
 def assemble(out_dir):
-    types = read_json(out_dir, "types.json")
-    resource_types = read_json(out_dir, "resourcetypes.json")
-    model_types = read_json(out_dir, "modeltypes.json")
-    properties = read_json(out_dir, "properties.json", [])
-    definition_rows = read_json(out_dir, "definitions.json", [])
-    apiuse = read_json(out_dir, "apiuse.json")
+    types = output(out_dir, "types.json")
+    resource_types = output(out_dir, "resourcetypes.json")
+    model_types = output(out_dir, "modeltypes.json")
+    properties = output(out_dir, "properties.json")
+    definition_rows = output(out_dir, "definitions.json")
+    apiuse = output(out_dir, "apiuse.json")
     sites, traced = read_traces(out_dir)
     anchors = known_anchors(types, resource_types, definition_rows)
-    inventory = {image: sorted(drop_splices(set(strings), anchors)) for image, strings in read_json(out_dir, "inventory.json").items()}
+    inventory = {image: sorted(drop_splices(set(strings), anchors)) for image, strings in output(out_dir, "inventory.json").items()}
     coding = coding_keys_by_type(types)
     params, paths, mappings, headers = observed_calls(sites)
     hosts, inventory_paths, inventory_params = inventory_matches(inventory)
@@ -211,7 +206,7 @@ def assemble(out_dir):
     return {
         "requests": merge([dict(record) for record in traced]),
         "derivedRequests": derived_requests(coding, model_types, definitions, params, properties),
-        "callerRequests": caller_requests(apiuse, properties, member_types) if apiuse is not None else {},
+        "callerRequests": caller_requests(apiuse, properties, member_types),
         "enums": enums,
         "definitions": dict(sorted(definitions.items())),
         "resourceTypes": member_types,

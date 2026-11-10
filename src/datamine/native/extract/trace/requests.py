@@ -7,7 +7,7 @@ from extract.binary.arm64 import base_mnemonic, call_mnemonics, callee_saved_reg
 from extract.trace.foundation import objc_call, swift_call
 from extract.trace.graph import branch_target, is_unconditional_branch, paths_to
 from extract.trace.musickit import ResilientTypes, endpoint_call, endpoint_constructor, resilient_type_metadata
-from extract.trace.urlmodel import UrlObjects
+from extract.trace.urlmodel import UrlObjects, copy_value
 from extract.trace.walker import Walker
 
 request_markers = re.compile(r"0A11DataRequestV(8musicAPI6method4body15timeoutInterval|10urlRequest)|0A3APIV8EndpointV(07catalogD0|09editorialD0|04userD0|07libraryD0|012intelligenceD0|24recommendationCandidates|19relativeURLLocation|8applying)|13URLComponentsV|12URLQueryItemV|10Foundation3URLV6string|10Foundation3URLV22appendingPathComponent|10Foundation3URLV9appending|10Foundation10URLRequestV|^objc:(URLWithString:|componentsWithString:|componentsWithURL|queryItemWithName:value:|requestWithURL|setPath:|setQueryItems:|setHTTPMethod:|URLByAppendingPathComponent:)")
@@ -29,10 +29,6 @@ argument_registers = list(range(0, 8)) + [20]
 
 def needs_lift(record):
     return "{arg" in json.dumps([record["path"], record["host"], record["query"]])
-
-
-def copy_variant(variant):
-    return {key: (list(value) if isinstance(value, list) else dict(value) if isinstance(value, dict) else value) for key, value in variant.items() if key != "kind"}
 
 
 def exit_blocks(blocks):
@@ -199,7 +195,7 @@ class RequestTracer(Walker):
         if summary["kind"] == "items":
             return self.item_buffer(emulator, self.objects.item_handles(summary["items"], origin="summary-item"))
         variant = summary["variants"][self.variant % len(summary["variants"])]
-        return self.objects.create(variant["kind"], **copy_variant(variant))
+        return self.objects.create(variant["kind"], **{key: copy_value(value) for key, value in variant.items() if key != "kind"})
 
     def append_items(self, emulator, address, pairs):
         current = self.objects.pairs(self.objects.items_in_array(emulator, emulator.read64(address)))

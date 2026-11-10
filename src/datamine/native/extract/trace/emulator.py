@@ -122,10 +122,3 @@ class Emulator:
             return True
         except UcError:
             return False
-
-    def execute_from(self, address):
-        try:
-            self.uc.emu_start(address, mask64, count=1)
-            return self.pc()
-        except UcError:
-            return address + 4
