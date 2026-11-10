@@ -1,3 +1,4 @@
+import { compareBuilds, parseVersion } from "@/datamine/native/versions";
 import { get } from "@/lib/http";
 
 import type { AppleDbRelease, Build } from "@/datamine/native/types";
@@ -40,7 +41,7 @@ export const newestBuild = async (
   return releases
     .flatMap((item): Build[] => {
       const ipsw = ipswFor(item, device);
-      return ipsw && item.released
+      return ipsw && item.released && parseVersion(item.version)
         ? [
             {
               build: item.build,
@@ -51,9 +52,6 @@ export const newestBuild = async (
           ]
         : [];
     })
-    .toSorted(
-      (a, b) =>
-        a.released.localeCompare(b.released) || a.build.localeCompare(b.build)
-    )
+    .toSorted(compareBuilds)
     .at(-1);
 };

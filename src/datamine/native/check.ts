@@ -2,6 +2,7 @@ import { appendFile } from "node:fs/promises";
 
 import { config } from "@/config";
 import { newestBuild } from "@/datamine/native/appledb";
+import { compareBuilds } from "@/datamine/native/versions";
 import { readJson } from "@/lib/files";
 
 import type { Build } from "@/datamine/native/types";
@@ -10,8 +11,7 @@ const current = await readJson<Build>(`${config.paths.native}/build.json`);
 const newest = await newestBuild(config.native.device, current);
 const isNew =
   newest !== undefined &&
-  newest.build !== current?.build &&
-  newest.released >= (current?.released ?? "");
+  (current === undefined || compareBuilds(newest, current) > 0);
 
 console.log(
   isNew
