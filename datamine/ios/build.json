@@ -1,6 +1,6 @@
 {
-  "build": "24C5037i",
-  "ipsw": "https://updates.cdn-apple.com/2026FallSeed/3f2e8489-c23e-47a4-b3c8-11169fde3ee6/iPhone18,1_27.3_24C5037i_Restore.ipsw",
-  "released": "2026-11-03",
-  "version": "27.3 beta"
+  "build": "24B156",
+  "ipsw": "https://updates.cdn-apple.com/2026FallFCS/3940ea4c-2d34-40fb-8b5e-1cce1534a75b/iPhone18,1_27.2.1_24B156_Restore.ipsw",
+  "released": "2026-11-09",
+  "version": "27.2.1"
 }
