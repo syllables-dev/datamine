@@ -9,12 +9,8 @@ def conforms_to(conformance, readable, mangled):
     return name.endswith(readable) or name == mangled
 
 
-def enum_cases_of(meta, conformance):
-    return meta.enum_cases(conformance["type"]) if isinstance(conformance["type"], int) else None
-
-
 def string_value(target, getter, case):
-    runner = FunctionRunner(target).with_placeholder_registers()
+    runner = FunctionRunner(target)
     slot = runner.alloc(16)
     runner.write64(slot, case)
     runner.set_reg(0, case)
@@ -25,7 +21,7 @@ def string_value(target, getter, case):
 
 
 def raw_value(target, getter, case):
-    runner = FunctionRunner(target).with_placeholder_registers()
+    runner = FunctionRunner(target)
     slot = runner.alloc(16)
     result = runner.alloc(32)
     runner.write64(slot, case)
@@ -47,7 +43,7 @@ def coding_keys(target):
         getter = meta.getter_witness(conformance, "11stringValue")
         if getter is None and len(conformance["witnesses"]) > 2:
             getter = conformance["witnesses"][2][1]
-        cases = enum_cases_of(meta, conformance)
+        cases = meta.conformance_enum_cases(conformance)
         if not cases or getter is None:
             failures.append({"type": conformance["type_name"], "reason": "no enum cases or getter"})
             continue
@@ -74,7 +70,7 @@ def raw_values(target):
         if not conforms_to(conformance, "RawRepresentable", "_$sSYMp"):
             continue
         getter = meta.getter_witness(conformance, "8rawValue")
-        cases = enum_cases_of(meta, conformance)
+        cases = meta.conformance_enum_cases(conformance)
         if not cases or getter is None:
             continue
         payload_cases, empty_cases, names = cases

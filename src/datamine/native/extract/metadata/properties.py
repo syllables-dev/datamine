@@ -1,6 +1,7 @@
 import re
 
 from extract.binary.demangle import demangle
+from extract.binary.symbols import text_symbols
 from extract.metadata.runner import FunctionRunner
 
 query_kinds = {
@@ -12,7 +13,7 @@ query_kinds = {
     "Association": "views",
     "Metadata": "meta",
 }
-property_getter_symbol = re.compile(r"^(0x[0-9a-f]+):\s+\(regular\)\s+_(\$s\S+Property\S*vgZ)$")
+property_getter_symbol = re.compile(r"^_(\$s\S+Property\S*vgZ)$")
 declared_property = re.compile(r"PartialMusic(?:Async)?Property<A where A == (?:\(extension in \w+\):)?(?:\w+\.)?([\w.]+)>\.(\w+)\.getter : (?:\w+\.)?Music(\w+?)Property<")
 property_factory = re.compile(r"PartialA\d+PropertyC")
 
@@ -28,11 +29,10 @@ def strings_near(runner, pointer, span=0x80):
 
 def declared_getters(target, symbols_path):
     candidates = {}
-    with open(symbols_path, errors="replace") as handle:
-        for line in handle:
-            match = property_getter_symbol.match(line.strip())
-            if match and target.image.in_text(int(match.group(1), 16)):
-                candidates[match.group(2)] = int(match.group(1), 16)
+    for address, name in text_symbols(target.image, symbols_path):
+        match = property_getter_symbol.match(name)
+        if match:
+            candidates[match.group(1)] = address
     for symbol, text in demangle(candidates, simplified=False).items():
         match = declared_property.search(text)
         if match:
@@ -41,7 +41,7 @@ def declared_getters(target, symbols_path):
 
 
 def query_keys(target, getter):
-    runner = FunctionRunner(target).with_placeholder_registers()
+    runner = FunctionRunner(target)
     keys = []
     if runner.run(getter, 60000):
         keys = strings_near(runner, runner.reg(0)) or strings_near(runner, runner.u64(runner.reg(0)))

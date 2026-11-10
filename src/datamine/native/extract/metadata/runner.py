@@ -52,11 +52,8 @@ class FunctionRunner:
         self.calls = []
         self.call_strings = []
         self.emulated_memory = EmulatedMemory(self)
-
-    def with_placeholder_registers(self):
         for register in range(29):
             self.set_reg(register, placeholder_base + register * 0x1000)
-        return self
 
     def map(self, address, size=page_size):
         start = address & ~(page_size - 1)

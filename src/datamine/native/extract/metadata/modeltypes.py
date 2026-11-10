@@ -1,8 +1,9 @@
 import re
 
+from extract.binary.symbols import text_symbols
 from extract.metadata.runner import FunctionRunner
 
-catalog_types_getter = re.compile(r"^(0x[0-9a-f]+):\s+\(regular\)\s+_\$s8MusicKit((?:\d+[A-Za-z_]+V)+)12catalogTypesSay\S+vgZ$")
+catalog_types_getter = re.compile(r"^_\$s8MusicKit((?:\d+[A-Za-z_]+V)+)12catalogTypesSay\S+vgZ$")
 length_prefix = re.compile(r"(\d+)")
 string_array_strides = (24, 32, 16)
 
@@ -18,7 +19,7 @@ def nested_type_name(mangled):
 
 
 def string_array(target, getter):
-    runner = FunctionRunner(target).with_placeholder_registers()
+    runner = FunctionRunner(target)
     if not runner.run(getter, 80000):
         return None
     array = runner.reg(0)
@@ -35,12 +36,8 @@ def string_array(target, getter):
 
 def model_types(target, symbols_path):
     rows = {}
-    with open(symbols_path, errors="replace") as handle:
-        for line in handle:
-            match = catalog_types_getter.match(line.strip())
-            if not match:
-                continue
-            address = int(match.group(1), 16)
-            if target.image.in_text(address):
-                rows[nested_type_name(match.group(2))] = string_array(target, address)
+    for address, name in text_symbols(target.image, symbols_path):
+        match = catalog_types_getter.match(name)
+        if match:
+            rows[nested_type_name(match.group(1))] = string_array(target, address)
     return rows

@@ -60,6 +60,9 @@ class SwiftMetadata:
             return self.memory.load_pointer(target)
         return None
 
+    def conformance_enum_cases(self, conformance):
+        return self.enum_cases(conformance["type"]) if isinstance(conformance["type"], int) else None
+
     def enum_cases(self, descriptor):
         flags = self.memory.u32(descriptor)
         if flags is None or flags & 0x1F != enum_kind:

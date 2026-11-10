@@ -15,7 +15,7 @@ def resource_like_counts(memory, image):
         if "CodingKey" not in protocol or "Representable" in protocol:
             continue
         coding += 1
-        cases = meta.enum_cases(conformance["type"]) if isinstance(conformance["type"], int) else None
+        cases = meta.conformance_enum_cases(conformance)
         if cases and resource_keys <= set(cases[2]):
             resource_like += 1
     return coding, resource_like
