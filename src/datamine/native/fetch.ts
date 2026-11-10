@@ -5,7 +5,7 @@ const musicFiles =
 const appexBinary = /\/(?<name>[^/]+)\.appex\/(?<binary>[^/]+)$/u;
 const mountCopy = "/private/tmp/";
 
-export class FetchError extends Error {
+class FetchError extends Error {
   override readonly name = "FetchError";
 }
 

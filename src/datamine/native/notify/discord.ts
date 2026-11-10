@@ -1,24 +1,21 @@
-import { config } from "@/config";
+import { discordIdentity } from "@/config";
+import { color, device } from "@/datamine/native/config";
 import {
+  missedLines,
   nativeSectionNames,
   nativeSections,
   nativeTitles,
-  unexplainedLines,
+  possiblyMissed,
+  versionLine,
 } from "@/datamine/native/report";
-import { linkButton } from "@/discord";
-import { diffLines } from "@/notify/diff";
+import { linkButton } from "@/discord/components";
+import { counts, diffLines, isEmpty } from "@/notify/diff";
 import { diffEmbeds } from "@/notify/discord";
-import { counts, isEmpty } from "@/report";
 
-import type { Build, NativeReport } from "@/datamine/native/types";
-import type { Embed, MessagePayload } from "@/discord";
+import type { NativeReport } from "@/datamine/native/types";
+import type { Embed, MessagePayload } from "@/discord/types";
 
-const { icon, username } = config.discord;
-const { color, device } = config.native;
-
-const label = (build: Build) => `**${build.version}** (\`${build.build}\`)`;
-
-export const possiblyMissed = "Possibly missed";
+const { icon, username } = discordIdentity;
 
 export const isQuiet = (report: NativeReport) =>
   report.unexplained.length === 0 &&
@@ -33,7 +30,7 @@ export const summaryMessage = (
 ): MessagePayload => {
   const sections = nativeSections(report);
   const missed = report.unexplained.length;
-  const versions = `${label(report.from)} → ${label(report.to)}`;
+  const versions = versionLine(report);
   const embed: Embed = {
     author: { icon_url: icon, name: `iOS · ${device}` },
     color,
@@ -66,7 +63,7 @@ export const threadMessages = (
   link: string
 ): Embed[][] => {
   const sections = nativeSections(report);
-  const missed = unexplainedLines(report).map((line) => `! ${line}`);
+  const missed = missedLines(report);
   return [
     ...(missed.length > 0
       ? diffEmbeds(possiblyMissed, missed, color, link)

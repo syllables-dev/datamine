@@ -3,7 +3,7 @@ import { walk } from "oxc-walker";
 
 import { optional } from "@/lib/expect";
 
-import type { Literals, Token } from "@/types";
+import type { Literals, Token } from "@/datamine/web/types";
 
 const jwt = /^eyJ[\w-]+\.eyJ[\w-]+\.[\w-]+$/u;
 const svelteClass = /svelte-[a-z0-9]{5,8}/gu;

@@ -1,16 +1,17 @@
 import { hashOf } from "@/datamine/web/scrape/assets";
+import { counts, isEmpty } from "@/notify/diff";
 
 import type {
   Api,
   Flags,
   HeaderUsage,
   Report,
-  Section,
   SectionName,
   Snapshot,
   Target,
   Token,
-} from "@/types";
+} from "@/datamine/web/types";
+import type { Section } from "@/notify/diff";
 
 export const sectionNames: SectionName[] = [
   "sourcemaps",
@@ -28,7 +29,7 @@ export const sectionNames: SectionName[] = [
 
 const emptyFlags: Flags = { features: {}, overrides: [] };
 
-export const buildId = (entry: string) => hashOf(entry) ?? entry;
+const buildId = (entry: string) => hashOf(entry) ?? entry;
 
 const keyed = (from: Map<string, string>, to: Map<string, string>): Section => {
   const section: Section = { added: [], removed: [], updated: [] };
@@ -183,7 +184,6 @@ const headerLines = (api: Api | undefined) => [
   ),
 ];
 
-// Keyed by flag name, so turning a flag on or off shows as an update.
 const featureLines = (flags: Flags) =>
   new Map(
     Object.entries(flags.features).map(([key, value]) => [
@@ -208,21 +208,17 @@ export const compare = (
   target: Target,
   previous: Snapshot | undefined,
   next: Snapshot,
-  modifiedChunks: string[],
   leakedMaps: string[]
 ): Report => {
   const oldChunks = previous?.manifest.chunks ?? {};
   const newChunks = next.manifest.chunks;
   const strings = stringSection(previous?.strings ?? {}, next.strings);
-  // Older snapshots have no flags; compare against the new build so the first
-  // run after upgrading does not report every flag as added.
-  const oldFlags = previous?.flags ?? next.flags ?? emptyFlags;
-  const newFlags = next.flags ?? emptyFlags;
+  const oldFlags = previous?.flags ?? emptyFlags;
+  const newFlags = next.flags;
   return {
     build: buildId(next.manifest.entry),
     host: target.host,
     initial: previous === undefined,
-    modifiedChunks,
     movedStrings: strings.moved,
     previousBuild: previous && buildId(previous.manifest.entry),
     sections: {
@@ -242,21 +238,9 @@ export const compare = (
       urls: set(previous?.api.urls ?? [], next.api.urls),
     },
     target: target.id,
-    totals: {
-      chunks: Object.keys(newChunks).length,
-      endpoints: Object.keys(next.api.endpoints).length,
-      headers: Object.keys(next.api.requestHeaders).length,
-      strings: Object.keys(next.strings).length,
-    },
     version: { from: previous?.manifest.version, to: next.manifest.version },
   };
 };
-
-export const counts = (section: Section) =>
-  `+${section.added.length} -${section.removed.length} ~${section.updated.length}`;
-
-export const isEmpty = (section: Section) =>
-  section.added.length + section.removed.length + section.updated.length === 0;
 
 export const commitMessage = (reports: Report[]) => {
   const title = reports

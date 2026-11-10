@@ -18,7 +18,7 @@ export const readable = (name: string | undefined) =>
 
 const holeName = /^[a-z][\w-]*$/u;
 
-export const hole = (node: Node) => {
+const hole = (node: Node) => {
   if (
     node.type === "MemberExpression" &&
     !node.computed &&

@@ -2,7 +2,7 @@ import type { Channel, Message, MessagePayload } from "@/discord/types";
 
 const base = "https://discord.com/api/v10";
 
-export class DiscordError extends Error {
+class DiscordError extends Error {
   override readonly name = "DiscordError";
 }
 

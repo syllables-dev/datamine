@@ -5,7 +5,7 @@ import type { Node } from "oxc-parser";
 
 import { sortedRecord, sortedSet } from "@/lib/utils";
 
-import type { Flags } from "@/types";
+import type { Flags } from "@/datamine/web/types";
 
 const overrideKey = /^mk-[a-z0-9-]+$/u;
 

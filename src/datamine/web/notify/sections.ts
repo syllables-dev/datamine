@@ -1,6 +1,6 @@
-import { isEmpty } from "@/report";
+import { isEmpty } from "@/notify/diff";
 
-import type { Report, SectionName } from "@/types";
+import type { Report, SectionName } from "@/datamine/web/types";
 
 export const titles: Record<SectionName, string> = {
   chunks: "Chunks",
@@ -41,3 +41,9 @@ const externalSuffix = /-external$/u;
 
 export const shortVersion = (version: string) =>
   version.replace(externalSuffix, "");
+
+const label = (version: string | undefined, build: string | undefined) =>
+  version ? `**${shortVersion(version)}** (\`${build}\`)` : `\`${build}\``;
+
+export const versionLine = (report: Report) =>
+  `${label(report.version.from, report.previousBuild)} → ${label(report.version.to, report.build)}`;

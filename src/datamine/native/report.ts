@@ -1,7 +1,11 @@
-import type { NativeReport, RegressionItem } from "@/datamine/native/types";
-import type { Section } from "@/types";
+import type {
+  Build,
+  NativeReport,
+  RegressionItem,
+} from "@/datamine/native/types";
+import type { Section } from "@/notify/diff";
 
-export type NativeSectionName =
+type NativeSectionName =
   | "endpoints"
   | "params"
   | "methods"
@@ -46,7 +50,7 @@ const typeName = (scope: string) =>
     .at(-1)
     ?.replace(/\.CodingKeys$/u, "") ?? scope;
 
-export const describe = ([kind, scope, value]: RegressionItem) => {
+const describe = ([kind, scope, value]: RegressionItem) => {
   switch (kind) {
     case "request":
     case "caller-request": {
@@ -96,5 +100,15 @@ export const nativeSections = (report: NativeReport) => {
   return sections;
 };
 
-export const unexplainedLines = (report: NativeReport) =>
-  report.unexplained.map(describe).toSorted();
+export const possiblyMissed = "Possibly missed";
+
+export const missedLines = (report: NativeReport) =>
+  report.unexplained
+    .map(describe)
+    .toSorted()
+    .map((line) => `! ${line}`);
+
+const label = (build: Build) => `**${build.version}** (\`${build.build}\`)`;
+
+export const versionLine = (report: NativeReport) =>
+  `${label(report.from)} → ${label(report.to)}`;

@@ -1,7 +1,7 @@
 import { format } from "oxfmt";
 
-import { config } from "@/config";
-import { emptyApi } from "@/datamine/web/extract/api";
+import { locale } from "@/datamine/web/config";
+import { required } from "@/lib/expect";
 import {
   json,
   jsonLines,
@@ -12,9 +12,16 @@ import {
 } from "@/lib/files";
 import { anyOf } from "@/lib/utils";
 
-import type { Api, Flags, Manifest, Snapshot, SourceMap, Token } from "@/types";
+import type {
+  Api,
+  Flags,
+  Manifest,
+  Snapshot,
+  SourceMap,
+  Token,
+} from "@/datamine/web/types";
 
-export const snapshotPaths = (dir: string) => ({
+const snapshotPaths = (dir: string) => ({
   api: `${dir}/api.json`,
   assets: `${dir}/assets`,
   flags: `${dir}/flags.json`,
@@ -23,7 +30,7 @@ export const snapshotPaths = (dir: string) => ({
   manifest: `${dir}/manifest.json`,
   sourceMaps: `${dir}/sourcemaps`,
   sources: `${dir}/sources`,
-  strings: `${dir}/strings/${config.locale}.json`,
+  strings: `${dir}/strings/${locale}.json`,
   tokens: `${dir}/tokens.json`,
 });
 
@@ -40,13 +47,15 @@ export const readSnapshot = async (
   if (!manifest) {
     return;
   }
+  const part = async <T>(path: string) =>
+    required(await readJson<T>(path), path, dir);
   return {
-    api: (await readJson<Api>(paths.api)) ?? emptyApi(),
-    flags: await readJson<Flags>(paths.flags),
+    api: await part<Api>(paths.api),
+    flags: await part<Flags>(paths.flags),
     literals: await readJsonLines<string>(paths.literals),
     manifest,
-    strings: (await readJson<Record<string, string>>(paths.strings)) ?? {},
-    tokens: (await readJson<Token[]>(paths.tokens)) ?? [],
+    strings: await part<Record<string, string>>(paths.strings),
+    tokens: await part<Token[]>(paths.tokens),
   };
 };
 
@@ -63,9 +72,9 @@ export const stableSources = (
       file,
       name,
     ]),
-    ...[...translations].map(([locale, file]): [string, string] => [
+    ...[...translations].map(([language, file]): [string, string] => [
       file,
-      `translations.${locale}.js`,
+      `translations.${language}.js`,
     ]),
   ]);
   const hashedNames = anyOf(renames.keys());
@@ -89,23 +98,13 @@ const writeText = async (path: string, text: string) => {
 };
 
 const writeAssets = async (dir: string, sources: Map<string, string>) => {
-  const modified: string[] = [];
   const written = await Promise.all(
-    [...sources].map(async ([name, source]) => {
-      const path = `${dir}/${name}`;
-      const text = await pretty(source, name);
-      const old = await readText(path);
-      if (old !== undefined && old !== text) {
-        modified.push(name);
-      }
-      return await writeText(path, text);
-    })
+    [...sources].map(async ([name, source]) =>
+      writeText(`${dir}/${name}`, await pretty(source, name))
+    )
   );
   const removed = await removeStale(dir, new Set(sources.keys()));
-  return {
-    changed: written.includes(true) || removed.length > 0,
-    modified: modified.toSorted(),
-  };
+  return written.includes(true) || removed.length > 0;
 };
 
 const urlScheme = /^[a-z][\w+.-]*:\/*/iu;
@@ -165,18 +164,18 @@ export const writeSnapshot = async (
   previous: Manifest | undefined
 ) => {
   const paths = snapshotPaths(dir);
-  const assets = await writeAssets(paths.assets, sources);
+  const assetsChanged = await writeAssets(paths.assets, sources);
   const leakedMaps = await writeSourceMaps(dir, maps, snapshot.manifest.chunks);
   const written = await Promise.all([
     writeText(paths.head, head),
     writeText(paths.strings, json(snapshot.strings)),
     writeText(paths.api, json(snapshot.api)),
-    snapshot.flags && writeText(paths.flags, json(snapshot.flags)),
+    writeText(paths.flags, json(snapshot.flags)),
     writeText(paths.literals, jsonLines(snapshot.literals)),
     writeText(paths.tokens, json(snapshot.tokens)),
   ]);
   const changed =
-    assets.changed ||
+    assetsChanged ||
     leakedMaps.length > 0 ||
     written.includes(true) ||
     timeless(previous) !== timeless(snapshot.manifest);
@@ -188,5 +187,5 @@ export const writeSnapshot = async (
         : { ...snapshot.manifest, fetchedAt: previous.fetchedAt }
     )
   );
-  return { changed, leakedMaps, modified: assets.modified };
+  return { changed, leakedMaps };
 };

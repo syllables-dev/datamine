@@ -1,8 +1,17 @@
 import { warn } from "@/lib/expect";
+import { codeBlock } from "@/lib/markdown";
 
-const fence = "```";
+const commentLimit = 60_000;
+const minimumBlock = 500;
+const blockReserve = 300;
 
-export const diffBlock = (lines: string[], budget: number) => {
+export interface CommentBlock {
+  folded?: boolean;
+  heading: string;
+  lines: string[];
+}
+
+const diffBlock = (lines: string[], budget: number) => {
   const shown: string[] = [];
   let size = 0;
   for (const line of lines) {
@@ -13,12 +22,29 @@ export const diffBlock = (lines: string[], budget: number) => {
     size += line.length + 1;
   }
   const hidden = lines.length - shown.length;
-  const body = `${fence}diff\n${shown.join("\n").replaceAll(fence, "ˋˋˋ")}\n${fence}`;
+  const body = codeBlock("diff", shown);
   return hidden > 0 ? `${body}\n\n_${hidden} more lines not shown._` : body;
 };
 
-export const folded = (summary: string, body: string) =>
+const folded = (summary: string, body: string) =>
   `<details>\n<summary><b>${summary}</b></summary>\n\n${body}\n\n</details>`;
+
+export const commentBody = (header: string[], blocks: CommentBlock[]) => {
+  const parts = [...header];
+  let budget = commentLimit - parts.join("\n\n").length;
+  for (const block of blocks) {
+    if (budget < minimumBlock) {
+      break;
+    }
+    const body = diffBlock(block.lines, budget - blockReserve);
+    const part = block.folded
+      ? folded(block.heading, body)
+      : `### ${block.heading}\n\n${body}`;
+    parts.push(part);
+    budget -= part.length + 2;
+  }
+  return parts.join("\n\n");
+};
 
 export const postComment = async (body: string) => {
   const {

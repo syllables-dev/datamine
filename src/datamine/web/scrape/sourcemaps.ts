@@ -1,7 +1,7 @@
 import { warn } from "@/lib/expect";
 import { probe } from "@/lib/http";
 
-import type { SourceMap } from "@/types";
+import type { SourceMap } from "@/datamine/web/types";
 
 interface RawSourceMap {
   mappings?: unknown;
@@ -15,7 +15,7 @@ const mapComment =
 const dataUrl = /^data:[^,]*?(?<base64>;base64)?,(?<data>.*)$/su;
 const xssiPrefix = /^\)\]\}'[^\n]*\n/u;
 
-export const stripMapComment = (text: string) => {
+const stripMapComment = (text: string) => {
   const match = text.match(mapComment);
   return {
     reference: match?.groups?.js ?? match?.groups?.css,

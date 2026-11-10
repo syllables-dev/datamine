@@ -2,7 +2,7 @@ import type { Node } from "oxc-parser";
 
 import { sortedSet } from "@/lib/utils";
 
-import type { HeaderUsage } from "@/types";
+import type { HeaderUsage } from "@/datamine/web/types";
 
 import type { Constants, Entry } from "./nodes";
 
@@ -70,7 +70,7 @@ const newEndpoint = (): EndpointEntry => ({
 
 export const current = (context: Context) => context.scopes.at(-1) as Scope;
 
-export const spell = (state: State, name: string) => {
+const spell = (state: State, name: string) => {
   const id = name.toLowerCase();
   state.spellings.set(id, (state.spellings.get(id) ?? new Set()).add(name));
   return id;

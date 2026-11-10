@@ -1,7 +1,27 @@
 import { compareBuilds, parseVersion } from "@/datamine/native/versions";
 import { get } from "@/lib/http";
 
-import type { AppleDbRelease, Build } from "@/datamine/native/types";
+import type { Build } from "@/datamine/native/types";
+
+interface AppleDbLink {
+  active: boolean;
+  preferred: boolean;
+  url: string;
+}
+
+interface AppleDbSource {
+  deviceMap: string[];
+  links: AppleDbLink[];
+  type: string;
+}
+
+interface AppleDbRelease {
+  build: string;
+  deviceMap?: string[];
+  released?: string;
+  sources?: AppleDbSource[];
+  version: string;
+}
 
 const base = "https://api.appledb.dev/ios";
 const buildKey = /^iOS;(?<build>(?<major>\d+)[A-Z]\d+[a-z]?)$/u;

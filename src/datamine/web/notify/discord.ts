@@ -1,25 +1,24 @@
-import { config } from "@/config";
+import { discordIdentity } from "@/config";
+import { targets } from "@/datamine/web/config";
 import {
   isNoise,
   notableSections,
   shortVersion,
   titles,
+  versionLine,
 } from "@/datamine/web/notify/sections";
-import { linkButton } from "@/discord";
-import { diffLines } from "@/notify/diff";
+import { sectionNames } from "@/datamine/web/report";
+import { linkButton } from "@/discord/components";
+import { counts, diffLines, isEmpty } from "@/notify/diff";
 import { diffEmbeds } from "@/notify/discord";
-import { counts, isEmpty, sectionNames } from "@/report";
 
-import type { Embed, MessagePayload } from "@/discord";
-import type { Report } from "@/types";
+import type { Report } from "@/datamine/web/types";
+import type { Embed, MessagePayload } from "@/discord/types";
 
-const { icon, username } = config.discord;
+const { icon, username } = discordIdentity;
 
 const colorOf = (report: Report) =>
-  config.targets.find((target) => target.id === report.target)?.color ?? 0;
-
-const label = (version: string | undefined, build: string | undefined) =>
-  version ? `**${shortVersion(version)}** (\`${build}\`)` : `\`${build}\``;
+  targets.find((target) => target.id === report.target)?.color ?? 0;
 
 export const threadName = (report: Report) =>
   `${report.version.to ? shortVersion(report.version.to) : report.build} · ${report.host}`;
@@ -29,7 +28,7 @@ export const summaryMessage = (
   link: string
 ): MessagePayload => {
   const noise = isNoise(report);
-  const versions = `${label(report.version.from, report.previousBuild)} → ${label(report.version.to, report.build)}`;
+  const versions = versionLine(report);
   const embed: Embed = {
     author: {
       icon_url: icon,

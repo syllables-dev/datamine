@@ -6,13 +6,13 @@ export const hostPath =
 export const urlMember = /^\w*(?:Url|URL)$/u;
 export const namedHole = /\{\w+\}/gu;
 export const leadingHole = /^\{\w+\}/u;
-export const headerName = /^[A-Za-z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+$/u;
+const headerName = /^[A-Za-z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+$/u;
 export const titleCaseHeader = /^[A-Z][A-Za-z0-9]*(?:-[A-Z0-9][A-Za-z0-9]*)+$/u;
 export const bracketParam = /^[a-z][\w-]*\[[^\]]+\]$/u;
 export const appleUrl =
   /^https?:\/\/[\w.-]+\.(?:apple|itunes|mzstatic|icloud|apple-mapkit|cdn-apple)\.com(?:[/?][^\s"'`]*)?$/u;
 
-export const singleWordHeaders = new Set([
+const singleWordHeaders = new Set([
   "accept",
   "authorization",
   "cookie",

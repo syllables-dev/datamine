@@ -7,7 +7,7 @@ const headContent = /<head[^>]*>(?<head>[\s\S]*?)<\/head>/u;
 const svelteHeadBlock =
   /<!-- HEAD_svelte-\w+_START -->[\s\S]*?<!-- HEAD_svelte-\w+_END -->/gu;
 
-export interface Page {
+interface Page {
   entry: string;
   head: string;
   roots: string[];

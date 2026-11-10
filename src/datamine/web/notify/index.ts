@@ -1,21 +1,21 @@
-import { config } from "@/config";
+import { reportsDir } from "@/config";
 import {
   summaryMessage,
   threadMessages,
   threadName,
 } from "@/datamine/web/notify/discord";
-import { commentBody } from "@/datamine/web/notify/github";
+import { webComment } from "@/datamine/web/notify/github";
 import { isNoise } from "@/datamine/web/notify/sections";
 import { publish } from "@/notify/publish";
 
-import type { Report } from "@/types";
+import type { Report } from "@/datamine/web/types";
 
 const reports = (await Bun.file(
-  `${config.paths.reports}/reports.json`
+  `${reportsDir}/reports.json`
 ).json()) as Report[];
 
 for (const report of reports.filter((item) => !item.initial)) {
-  await publish(commentBody(report), (link) => ({
+  await publish(webComment(report), (link) => ({
     summary: summaryMessage(report, link),
     thread: isNoise(report)
       ? undefined

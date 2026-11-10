@@ -1,8 +1,10 @@
-import { config } from "@/config";
+import { reportsDir } from "@/config";
+import { locale, targets, webDir } from "@/datamine/web/config";
 import { extractApi } from "@/datamine/web/extract/api";
 import { extractFlags } from "@/datamine/web/extract/flags";
 import { extractLiterals } from "@/datamine/web/extract/literals";
 import { extractStrings } from "@/datamine/web/extract/strings";
+import { commitMessage, compare } from "@/datamine/web/report";
 import { crawl } from "@/datamine/web/scrape/crawl";
 import { assignNames } from "@/datamine/web/scrape/names";
 import { readPage } from "@/datamine/web/scrape/page";
@@ -20,9 +22,8 @@ import {
 import { required } from "@/lib/expect";
 import { json } from "@/lib/files";
 import { get } from "@/lib/http";
-import { commitMessage, compare } from "@/report";
 
-import type { Report, Snapshot, Target } from "@/types";
+import type { Report, Snapshot, Target } from "@/datamine/web/types";
 
 const args = Bun.argv.slice(2);
 const only = args
@@ -31,7 +32,7 @@ const only = args
 
 const datamine = async (target: Target): Promise<Report | undefined> => {
   const origin = `https://${target.host}`;
-  const dir = `${config.paths.web}/${target.host}`;
+  const dir = `${webDir}/${target.host}`;
   const previous = await readSnapshot(dir);
   const pageUrl = `${origin}${target.page}`;
   const page = readPage(await get(pageUrl), pageUrl);
@@ -44,8 +45,8 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
     files.get(page.entry) ?? ""
   );
   const stringsFile = required(
-    translations.get(config.locale),
-    `${config.locale} translations import`,
+    translations.get(locale),
+    `${locale} translations import`,
     page.entry,
     localeKey
   );
@@ -74,7 +75,7 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
     ),
     tokens,
   };
-  const { changed, leakedMaps, modified } = await writeSnapshot(
+  const { changed, leakedMaps } = await writeSnapshot(
     dir,
     snapshot,
     sources,
@@ -86,15 +87,15 @@ const datamine = async (target: Target): Promise<Report | undefined> => {
     console.log(`${target.host}: no changes (${page.entry})`);
     return;
   }
-  return compare(target, previous, snapshot, modified, leakedMaps);
+  return compare(target, previous, snapshot, leakedMaps);
 };
 
-const targets = config.targets.filter((target) =>
-  only.length > 0 ? only.includes(target.id) : target.enabled
+const selected = targets.filter(
+  (target) => only.length === 0 || only.includes(target.id)
 );
 const reports: Report[] = [];
 let failed = 0;
-for (const target of targets) {
+for (const target of selected) {
   try {
     const report = await datamine(target);
     if (report) {
@@ -107,12 +108,12 @@ for (const target of targets) {
     );
   }
 }
-await Bun.write(`${config.paths.reports}/reports.json`, json(reports));
+await Bun.write(`${reportsDir}/reports.json`, json(reports));
 if (reports.length > 0) {
   const message = commitMessage(reports);
-  await Bun.write(`${config.paths.reports}/commit.txt`, message);
+  await Bun.write(`${reportsDir}/commit.txt`, message);
   console.log(message);
 }
-if (failed === targets.length) {
+if (failed === selected.length) {
   process.exit(1);
 }

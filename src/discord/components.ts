@@ -1,24 +1,14 @@
 import type { ActionRow, Embed } from "@/discord/types";
 
-export const limits = {
-  description: 4096,
-  embedsPerMessage: 10,
-  messageEmbedChars: 6000,
-};
+const embedsPerMessage = 10;
+const messageEmbedChars = 6000;
 
 export const linkButton = (label: string, url: string): ActionRow => ({
   components: [{ label, style: 5, type: 2, url }],
   type: 1,
 });
 
-const fence = "```";
-
-export const codeSafe = (text: string) => text.replaceAll(fence, "ˋˋˋ");
-
-export const codeBlock = (language: string, lines: string[]) =>
-  `${fence}${language}\n${lines.map(codeSafe).join("\n")}\n${fence}`;
-
-export const embedSize = (embed: Embed) =>
+const embedSize = (embed: Embed) =>
   (embed.title?.length ?? 0) +
   (embed.description?.length ?? 0) +
   (embed.author?.name.length ?? 0) +
@@ -36,8 +26,8 @@ export const batchEmbeds = (embeds: Embed[]) => {
     const next = embedSize(embed);
     if (
       current.length > 0 &&
-      (current.length >= limits.embedsPerMessage ||
-        size + next > limits.messageEmbedChars - 200)
+      (current.length >= embedsPerMessage ||
+        size + next > messageEmbedChars - 200)
     ) {
       messages.push(current);
       current = [];

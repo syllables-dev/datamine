@@ -1,7 +1,8 @@
 import { mkdir, rm } from "node:fs/promises";
 import { parseArgs } from "node:util";
 
-import { config } from "@/config";
+import { reportsDir } from "@/config";
+import { device, nativeDir } from "@/datamine/native/config";
 import { fetchMusicApp, fetchSharedCache } from "@/datamine/native/fetch";
 import { json, readJson } from "@/lib/files";
 
@@ -9,7 +10,7 @@ import type { Build, Regression } from "@/datamine/native/types";
 
 const extractorProject = Bun.fileURLToPath(new URL(".", import.meta.url));
 
-export class ExtractError extends Error {
+class ExtractError extends Error {
   override readonly name = "ExtractError";
 }
 
@@ -57,24 +58,20 @@ const buildFromArgs = (): Build => {
 };
 
 const build = buildFromArgs();
-const work = `${config.paths.reports}/native/${build.build}`;
+const work = `${reportsDir}/native/${build.build}`;
 const output = `${work}/output`;
-const snapshotPath = `${config.paths.native}/catalog.json`;
-const buildPath = `${config.paths.native}/build.json`;
-const regressionPath = `${config.paths.native}/regression.json`;
+const snapshotPath = `${nativeDir}/catalog.json`;
+const buildPath = `${nativeDir}/build.json`;
+const regressionPath = `${nativeDir}/regression.json`;
 
 await rm(work, { force: true, recursive: true });
 await mkdir(output, { recursive: true });
 const cache = await fetchSharedCache(build.ipsw, `${work}/cache`);
-const apps = await fetchMusicApp(
-  build.ipsw,
-  config.native.device,
-  `${work}/apps`
-);
+const apps = await fetchMusicApp(build.ipsw, device, `${work}/apps`);
 await extract(["run", cache, output, ...apps]);
 
 const previous = await readJson<Build>(buildPath);
-await mkdir(config.paths.native, { recursive: true });
+await mkdir(nativeDir, { recursive: true });
 if (previous && (await Bun.file(snapshotPath).exists())) {
   await extract(["regress", snapshotPath, output, `${work}/regression.json`]);
   const changes = await readJson<Regression>(`${work}/regression.json`);

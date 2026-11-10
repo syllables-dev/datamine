@@ -1,10 +1,11 @@
-import { createClient } from "@/discord";
+import { createClient } from "@/discord/api";
 import { warn } from "@/lib/expect";
 import { postComment } from "@/notify/github";
 
-import type { DiscordClient, Embed, MessagePayload } from "@/discord";
+import type { DiscordClient } from "@/discord/api";
+import type { Embed, MessagePayload } from "@/discord/types";
 
-export interface Post {
+interface Post {
   summary: MessagePayload;
   thread?: { messages: Embed[][]; name: string };
 }

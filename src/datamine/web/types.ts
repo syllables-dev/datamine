@@ -1,12 +1,13 @@
+import type { Section } from "@/notify/diff";
+
 export interface Target {
   color: number;
-  enabled: boolean;
   host: string;
   id: string;
   page: string;
 }
 
-export interface Endpoint {
+interface Endpoint {
   body?: string[];
   chunks: string[];
   headers: string[];
@@ -64,8 +65,7 @@ export interface SourceMap {
 
 export interface Snapshot {
   api: Api;
-  /** Missing in snapshots written before flags were tracked. */
-  flags?: Flags;
+  flags: Flags;
   literals: string[];
   manifest: Manifest;
   strings: Record<string, string>;
@@ -85,26 +85,13 @@ export type SectionName =
   | "tokens"
   | "urls";
 
-export interface Section {
-  added: string[];
-  removed: string[];
-  updated: [string, string][];
-}
-
 export interface Report {
   build: string;
   host: string;
   initial: boolean;
-  modifiedChunks: string[];
   movedStrings: [string, string][];
   previousBuild?: string;
   sections: Record<SectionName, Section>;
   target: string;
-  totals: {
-    chunks: number;
-    endpoints: number;
-    headers: number;
-    strings: number;
-  };
   version: { from?: string; to?: string };
 }

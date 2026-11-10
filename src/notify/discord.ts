@@ -1,7 +1,8 @@
-import { batchEmbeds, codeBlock } from "@/discord";
+import { batchEmbeds } from "@/discord/components";
+import { codeBlock } from "@/lib/markdown";
 import { chunkLines } from "@/notify/diff";
 
-import type { Embed } from "@/discord";
+import type { Embed } from "@/discord/types";
 
 const blockSize = 3900;
 const maxSectionBlocks = 10;

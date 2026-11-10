@@ -9,7 +9,7 @@ export interface Embed {
   url?: string;
 }
 
-export interface LinkButton {
+interface LinkButton {
   label: string;
   style: 5;
   type: 2;

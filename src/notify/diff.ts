@@ -1,4 +1,14 @@
-import type { Section } from "@/types";
+export interface Section {
+  added: string[];
+  removed: string[];
+  updated: [string, string][];
+}
+
+export const counts = (section: Section) =>
+  `+${section.added.length} -${section.removed.length} ~${section.updated.length}`;
+
+export const isEmpty = (section: Section) =>
+  section.added.length + section.removed.length + section.updated.length === 0;
 
 const flatten = (line: string, max: number) => {
   const flat = line.replaceAll("\n", "\\n");

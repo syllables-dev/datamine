@@ -6,7 +6,7 @@ import type { Node } from "oxc-parser";
 import { warn } from "@/lib/expect";
 import { sortedRecord, sortedSet } from "@/lib/utils";
 
-import type { Api, HeaderUsage } from "@/types";
+import type { Api, HeaderUsage } from "@/datamine/web/types";
 
 import {
   calleeName,
@@ -268,13 +268,6 @@ const scan = (state: State, chunk: string, source: string) => {
   });
   flush(context, context.scopes.pop() as Scope);
 };
-
-export const emptyApi = (): Api => ({
-  endpoints: {},
-  requestHeaders: {},
-  responseHeaders: {},
-  urls: [],
-});
 
 const byUsage = (a: HeaderUsage, b: HeaderUsage) =>
   JSON.stringify(a).localeCompare(JSON.stringify(b));
