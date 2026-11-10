@@ -1,48 +1,10 @@
-from extract.binary.arm64 import words
-from extract.binary.swiftstring import is_printable
+from extract.binary.arm64 import is_indirect_branch, is_move_wide, is_return_or_branch, is_store, move_wide_value, words
+from extract.binary.swiftstring import small_string
 
 cstring_sections = ("__TEXT.__cstring", "__TEXT.__oslogstring")
 const_section_limit = 64 << 20
 small_string_tag = 0xE
-
-
-def small_string_pair(low, high):
-    if high >> 60 != small_string_tag:
-        return None
-    count = (high >> 56) & 0xF
-    raw = low.to_bytes(8, "little") + (high & 0x00FF_FFFF_FFFF_FFFF).to_bytes(8, "little")
-    if count and is_printable(raw[:count]) and not any(raw[count:15]):
-        return raw[:count].decode("latin1")
-    return None
-
-
-def is_move_wide(word):
-    return word & 0x7F800000 in (0x52800000, 0x72800000, 0x12800000)
-
-
-def move_wide_value(word, current):
-    shift = ((word >> 21) & 3) * 16
-    value = (word >> 5) & 0xFFFF
-    opcode = (word >> 29) & 3
-    if opcode == 3:
-        result = current & ~(0xFFFF << shift) | (value << shift)
-    elif opcode == 2:
-        result = value << shift
-    else:
-        result = ~(value << shift)
-    return result & (0xFFFF_FFFF_FFFF_FFFF if word >> 31 else 0xFFFF_FFFF)
-
-
-def is_indirect_branch(word):
-    return word & 0xFFFFFC1F == 0xD61F0000 or word & 0xFFFFF800 == 0xD71F0800
-
-
-def is_return_or_branch(word):
-    return word & 0xFFFFFBFF == 0xD65F0BFF or word & 0xFFFFFC1F == 0xD65F0000 or word & 0xFC000000 in (0x14000000, 0x94000000)
-
-
-def is_store(word):
-    return word & 0x0A000000 == 0x08000000 and not (word >> 22) & 1
+native_small_string_tags = (small_string_tag,)
 
 
 def cstrings(memory, image):
@@ -78,14 +40,14 @@ class SmallStringScanner:
             local = [register for register in self.fresh if register != high_register]
             inherited = [register for register in self.registers if register not in self.fresh and register != high_register]
             for pool in (local, inherited):
-                hits = [text for text in (small_string_pair(self.registers[register], high) for register in pool) if text]
+                hits = [text for text in (small_string(self.registers[register], high, native_small_string_tags) for register in pool) if text]
                 if hits:
                     self.found.update(hits if pool is local else hits[:1])
                     break
         for low_register in list(self.fresh):
             for high_register, high in self.registers.items():
                 if high_register != low_register and high_register not in self.fresh and high >> 60 == small_string_tag:
-                    text = small_string_pair(self.registers[low_register], high)
+                    text = small_string(self.registers[low_register], high, native_small_string_tags)
                     if text:
                         self.found.add(text)
 
@@ -138,7 +100,7 @@ def const_strings(memory, image):
         for offset in range(0, len(blob) - 15, 8):
             low = int.from_bytes(blob[offset:offset + 8], "little")
             high = int.from_bytes(blob[offset + 8:offset + 16], "little")
-            text = small_string_pair(low, high)
+            text = small_string(low, high, native_small_string_tags)
             if text and len(text) >= 2:
                 found.add(text)
     return found

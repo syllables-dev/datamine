@@ -7,8 +7,8 @@ def is_printable(raw):
     return all(32 <= byte < 127 for byte in raw)
 
 
-def small_string(low, high):
-    if high >> 60 not in small_string_tags:
+def small_string(low, high, tags=small_string_tags):
+    if high >> 60 not in tags:
         return None
     count = (high >> 56) & 0xF
     raw = low.to_bytes(8, "little") + (high & 0x00FF_FFFF_FFFF_FFFF).to_bytes(8, "little")

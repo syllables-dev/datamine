@@ -83,7 +83,3 @@ class Image:
             return None
         end = self.functions[index + 1] if index + 1 < len(self.functions) else self.text_end
         return self.functions[index], end
-
-    def function_start(self, address):
-        bounds = self.function_bounds(address)
-        return bounds[0] if bounds else None

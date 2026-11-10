@@ -3,14 +3,10 @@ import re
 import struct
 import subprocess
 
-from extract.binary.arm64 import adr_offset, adrp_page
+from extract.binary.arm64 import adr_offset, adrp_page, is_adrp_to
 
 symbol_line = re.compile(r"^(0x[0-9a-f]+):\s+\(regular\)\s+(\S+)")
 whole_symbol_line = re.compile(r"^(0x[0-9a-f]+):\s+\(regular\)\s+(\S+)$")
-
-
-def is_adrp_x1(word):
-    return word & 0x9F00001F == 0x90000001
 
 
 def read_symbol_file(path):
@@ -21,6 +17,14 @@ def read_symbol_file(path):
             if match:
                 symbols.setdefault(int(match.group(1), 16), match.group(2))
     return symbols
+
+
+def text_symbols(image, path):
+    with open(path, errors="replace") as handle:
+        for line in handle:
+            match = whole_symbol_line.match(line.strip())
+            if match and image.in_text(int(match.group(1), 16)):
+                yield int(match.group(1), 16), match.group(2)
 
 
 def export_symbols(cache_dir, image, path):
@@ -53,10 +57,10 @@ class Symbols:
         if not data or len(data) < 16:
             return address
         first, second, third, _ = struct.unpack("<4I", data)
-        if is_adrp_x1(first) and second & 0xFFC003FF == 0x91000021:
+        if is_adrp_to(first, 1) and second & 0xFFC003FF == 0x91000021:
             selector = self.memory.cstring(adrp_page(first, address) + ((second >> 10) & 0xFFF), 256)
             return ("import", "objc:" + selector)
-        if is_adrp_x1(first) and second & 0xFFC003FF == 0xF9400021:
+        if is_adrp_to(first, 1) and second & 0xFFC003FF == 0xF9400021:
             reference = self.memory.load_pointer(adrp_page(first, address) + ((second >> 10) & 0xFFF) * 8)
             if isinstance(reference, int):
                 return ("import", "objc:" + self.memory.cstring(reference, 256))

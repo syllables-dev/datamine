@@ -36,10 +36,6 @@ def base_mnemonic(instruction):
     return instruction.mnemonic.split(".")[0]
 
 
-def immediate(text):
-    return int(text.lstrip("#"), 0)
-
-
 def register_index(text):
     if text in ("xzr", "wzr") or len(text) < 2 or text[0] not in "xw" or not text[1:].isdigit():
         return None
@@ -97,3 +93,48 @@ def destination_register(word):
 
 def source_register(word):
     return (word >> 5) & 0x1F
+
+
+def is_add_or_sub_immediate(word):
+    return word & 0xFF800000 in (0x91000000, 0xD1000000)
+
+
+def is_orr_top_bit(word):
+    return word & 0xFF800000 == 0xB2400000 or word & 0xFFC00000 == 0xB2410000
+
+
+def is_move_wide(word):
+    return word & 0x7F800000 in (0x52800000, 0x72800000, 0x12800000)
+
+
+def move_wide_value(word, current):
+    shift = ((word >> 21) & 3) * 16
+    value = (word >> 5) & 0xFFFF
+    opcode = (word >> 29) & 3
+    if opcode == 3:
+        result = current & ~(0xFFFF << shift) | (value << shift)
+    elif opcode == 2:
+        result = value << shift
+    else:
+        result = ~(value << shift)
+    return result & (0xFFFF_FFFF_FFFF_FFFF if word >> 31 else 0xFFFF_FFFF)
+
+
+def is_indirect_branch(word):
+    return word & 0xFFFFFC1F == 0xD61F0000 or word & 0xFFFFF800 == 0xD71F0800
+
+
+def is_return_or_branch(word):
+    return word & 0xFFFFFBFF == 0xD65F0BFF or word & 0xFFFFFC1F == 0xD65F0000 or word & 0xFC000000 in (0x14000000, 0x94000000)
+
+
+def is_store(word):
+    return word & 0x0A000000 == 0x08000000 and not (word >> 22) & 1
+
+
+def is_adrp_to(word, register):
+    return word & 0x9F00001F == 0x90000000 | register
+
+
+def is_add_x0_x0(word):
+    return word & 0xFFC003FF == 0x91000000

@@ -3,7 +3,7 @@ import re
 import struct
 from collections import defaultdict
 
-from extract.binary.arm64 import add_immediate, adr_offset, branch_destination, is_b, is_bl, words
+from extract.binary.arm64 import add_immediate, adr_offset, branch_destination, is_add_x0_x0, is_adrp_to, is_b, is_bl, words
 from extract.binary.demangle import demangle
 from extract.trace.linking import reference_graph
 
@@ -27,14 +27,6 @@ def keypath_descriptors(memory, pattern):
         if name and (name.endswith("vpMV") or name.endswith("vgTq")):
             found.append(name.lstrip("_"))
     return found
-
-
-def is_adrp_x0(word):
-    return word & 0x9F00001F == 0x90000000
-
-
-def is_add_x0(word):
-    return word & 0xFFC003FF == 0x91000000
 
 
 def owner_of(functions, address):
@@ -72,7 +64,7 @@ def keypaths_by_function(target, keypath_getters):
             continue
         for back in range(index - 1, max(index - keypath_lookback, 0), -1):
             first, second = instructions[back - 1], instructions[back]
-            if is_adrp_x0(first) and is_add_x0(second):
+            if is_adrp_to(first, 0) and is_add_x0_x0(second):
                 pattern = ((start + (back - 1) * 4) & ~0xFFF) + (adr_offset(first) << 12) + add_immediate(second)
                 found[owner_of(image.functions, start + index * 4)].update(keypath_descriptors(target.memory, pattern))
                 break
