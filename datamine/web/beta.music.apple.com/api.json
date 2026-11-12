@@ -2,7 +2,7 @@
   "endpoints": {
     "{apiBase}/me/storefront": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [
         "Authorization",
@@ -13,7 +13,7 @@
     },
     "{iTunesBuyBase}/account/web/info": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [
         "Authorization",
@@ -24,7 +24,7 @@
     },
     "{iTunesBuyBase}/account/web/infoRefresh": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [
         "Authorization",
@@ -35,7 +35,7 @@
     },
     "{iTunesBuyBase}/account/web/logout": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -43,7 +43,7 @@
     },
     "{iTunesBuyBase}/commerce/web/subscription/offers/music": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [
         "Authorization",
@@ -55,8 +55,8 @@
     },
     "{metricsUrl}/{}/{}": {
       "chunks": [
-        "dev.js",
-        "mt-metricskit-delegates-web.esm.js"
+        "dev~DnibTECcJp.js",
+        "mt-metricskit-delegates-web.esm~Bw-lwwmPa8.js"
       ],
       "headers": [],
       "methods": [],
@@ -64,7 +64,7 @@
     },
     "{playBase}/renewMusicToken": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [
         "Accept",
@@ -79,7 +79,7 @@
     },
     "{playBase}/webPlayerLogout": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -98,7 +98,7 @@
     },
     "{webCourierUrlBase}/v2/{}": {
       "chunks": [
-        "index-1.js"
+        "index~SbCCFcPqYN.js"
       ],
       "headers": [],
       "methods": [],
@@ -119,7 +119,7 @@
     },
     "/v1/{}/{}": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -199,7 +199,7 @@
     },
     "/v1/catalog/{}/{}s": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -421,7 +421,7 @@
     },
     "/v1/catalog/{}/stations/{}": {
       "chunks": [
-        "dev.js",
+        "dev~DnibTECcJp.js",
         "main.js"
       ],
       "headers": [],
@@ -523,7 +523,7 @@
     },
     "/v1/engagement/{}/upsell": {
       "chunks": [
-        "index-8.js"
+        "main.js"
       ],
       "headers": [],
       "methods": [],
@@ -543,7 +543,7 @@
     },
     "/v1/hls/anonymous/streaming-key-delivery": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -551,7 +551,7 @@
     },
     "/v1/hls/streaming-key-delivery": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -645,7 +645,7 @@
     },
     "/v1/me/library/{}s/": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -655,7 +655,7 @@
     },
     "/v1/me/library/{}s/{}": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -753,7 +753,7 @@
     },
     "/v1/me/library/pins": {
       "chunks": [
-        "libraryPinsAPI.js"
+        "libraryPinsAPI~1I5wmt9DCh.js"
       ],
       "headers": [],
       "methods": [],
@@ -768,7 +768,7 @@
     },
     "/v1/me/library/pins/{}": {
       "chunks": [
-        "libraryPinsAPI.js"
+        "libraryPinsAPI~1I5wmt9DCh.js"
       ],
       "headers": [],
       "methods": [],
@@ -1120,7 +1120,7 @@
         "data"
       ],
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [
@@ -1133,7 +1133,7 @@
     },
     "/v1/me/stations/next-tracks/{}": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [
@@ -1156,7 +1156,7 @@
     },
     "/v1/play/assets": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -1168,7 +1168,7 @@
     },
     "/v1/radio/streaming-key-delivery": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -1253,8 +1253,8 @@
     },
     "https://{}/config/1/report": {
       "chunks": [
-        "dev.js",
-        "mt-metricskit-delegates-web.esm.js"
+        "dev~DnibTECcJp.js",
+        "mt-metricskit-delegates-web.esm~Bw-lwwmPa8.js"
       ],
       "headers": [],
       "methods": [],
@@ -1262,7 +1262,7 @@
     },
     "https://{buy}/commerce/account/authenticateMusicKitRequest": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -1270,7 +1270,7 @@
     },
     "https://{play}/WebObjects/MZPlay.woa/wa": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -1278,7 +1278,7 @@
     },
     "https://{play}/WebObjects/MZPlay.woa/wa/webPlayback": {
       "chunks": [
-        "dev.js"
+        "dev~DnibTECcJp.js"
       ],
       "headers": [],
       "methods": [],
@@ -1288,7 +1288,7 @@
   "requestHeaders": {
     "Accept": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "_webPlayerLogout",
         "methods": [
           "POST"
@@ -1298,7 +1298,7 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "renewUserToken",
         "methods": [
           "POST"
@@ -1308,7 +1308,7 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "methods": [
           "POST"
         ],
@@ -1325,7 +1325,7 @@
     ],
     "Authorization": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "_webPlayerLogout",
         "methods": [
           "POST"
@@ -1335,32 +1335,25 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "fetchForCache"
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "infoRefresh",
         "targets": [
           "{iTunesBuyBase}/account/web/infoRefresh"
         ]
       },
       {
-        "chunk": "dev.js",
-        "in": "makeRequests",
-        "methods": [
-          "POST"
-        ]
-      },
-      {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "musicSubscriptionOffers",
         "targets": [
           "{iTunesBuyBase}/commerce/web/subscription/offers/music"
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "renewUserToken",
         "methods": [
           "POST"
@@ -1370,14 +1363,21 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "requestStorefrontCountryCode",
         "targets": [
           "{apiBase}/me/storefront"
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
+        "in": "sendRequests",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "chunk": "dev~DnibTECcJp.js",
         "methods": [
           "POST"
         ],
@@ -1387,26 +1387,26 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "targets": [
           "{iTunesBuyBase}/account/web/info"
         ]
       },
       {
-        "chunk": "dev.js"
+        "chunk": "dev~DnibTECcJp.js"
       },
       {
         "chunk": "main.js",
         "in": "headers"
       },
       {
-        "chunk": "musickit.js",
+        "chunk": "musickit~DETWlNBudV.js",
         "in": "headers"
       }
     ],
     "Content-Type": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "_webPlayerLogout",
         "methods": [
           "POST"
@@ -1416,11 +1416,11 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "constructor"
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "renewUserToken",
         "methods": [
           "POST"
@@ -1430,7 +1430,7 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "sendEventsViaFetch",
         "methods": [
           "POST"
@@ -1440,7 +1440,7 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "methods": [
           "POST"
         ],
@@ -1450,20 +1450,20 @@
         ]
       },
       {
-        "chunk": "dev.js"
+        "chunk": "dev~DnibTECcJp.js"
       },
       {
-        "chunk": "index-1.js",
-        "in": "queryOnce"
-      },
-      {
-        "chunk": "index-1.js"
-      },
-      {
-        "chunk": "index-6.js",
+        "chunk": "index~BZWA3umAbb.js",
         "targets": [
           "{ingestUrl}"
         ]
+      },
+      {
+        "chunk": "index~SbCCFcPqYN.js",
+        "in": "queryOnce"
+      },
+      {
+        "chunk": "index~SbCCFcPqYN.js"
       },
       {
         "chunk": "main.js",
@@ -1484,7 +1484,7 @@
         ]
       },
       {
-        "chunk": "mt-metricskit-delegates-web.esm.js",
+        "chunk": "mt-metricskit-delegates-web.esm~Bw-lwwmPa8.js",
         "in": "sendEventsViaFetch",
         "methods": [
           "POST"
@@ -1494,10 +1494,10 @@
         ]
       },
       {
-        "chunk": "mt-metricskit-utils-private.esm.js"
+        "chunk": "mt-metricskit-utils-private.esm~C94N8EYCPj.js"
       },
       {
-        "chunk": "musickit.js",
+        "chunk": "musickit~DETWlNBudV.js",
         "in": "headers"
       }
     ],
@@ -1507,13 +1507,13 @@
         "in": "headers"
       },
       {
-        "chunk": "musickit.js",
+        "chunk": "musickit~DETWlNBudV.js",
         "in": "headers"
       }
     ],
     "Media-User-Token": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "_webPlayerLogout",
         "methods": [
           "POST"
@@ -1523,32 +1523,32 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "createRequest",
         "methods": [
           "GET"
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "fetchForCache"
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "infoRefresh",
         "targets": [
           "{iTunesBuyBase}/account/web/infoRefresh"
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "requestStorefrontCountryCode",
         "targets": [
           "{apiBase}/me/storefront"
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "targets": [
           "{iTunesBuyBase}/account/web/info"
         ]
@@ -1556,7 +1556,7 @@
     ],
     "Music-User-Token": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "musicSubscriptionOffers",
         "targets": [
           "{iTunesBuyBase}/commerce/web/subscription/offers/music"
@@ -1570,21 +1570,21 @@
     ],
     "Range": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "load"
       }
     ],
     "Retry-After": [
       {
-        "chunk": "index-2.js"
+        "chunk": "index~BZWA3umAbb.js"
       },
       {
-        "chunk": "index-6.js"
+        "chunk": "index~CTR1g85B2L.js"
       }
     ],
     "sentry-trace": [
       {
-        "chunk": "index-2.js"
+        "chunk": "index~CTR1g85B2L.js"
       }
     ],
     "social-badging": [
@@ -1595,7 +1595,7 @@
     ],
     "X-Apple-Media-User-Token": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "_webPlayerLogout",
         "methods": [
           "POST"
@@ -1607,7 +1607,7 @@
     ],
     "X-Apple-Music-User-Token": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "renewUserToken",
         "methods": [
           "POST"
@@ -1617,7 +1617,7 @@
         ]
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "methods": [
           "POST"
         ],
@@ -1629,17 +1629,17 @@
     ],
     "X-Apple-Renewal": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "createChallengeHeaders"
       },
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "fetch"
       }
     ],
     "X-Apple-Store-Front": [
       {
-        "chunk": "dev.js",
+        "chunk": "dev~DnibTECcJp.js",
         "in": "musicSubscriptionOffers",
         "targets": [
           "{iTunesBuyBase}/commerce/web/subscription/offers/music"
@@ -1648,33 +1648,33 @@
     ],
     "x-protocol-version": [
       {
-        "chunk": "index-1.js",
+        "chunk": "index~SbCCFcPqYN.js",
         "in": "queryOnce"
       },
       {
-        "chunk": "index-1.js"
+        "chunk": "index~SbCCFcPqYN.js"
       }
     ],
     "X-Sentry-Rate-Limits": [
       {
-        "chunk": "index-2.js"
+        "chunk": "index~BZWA3umAbb.js"
       },
       {
-        "chunk": "index-6.js"
+        "chunk": "index~CTR1g85B2L.js"
       }
     ]
   },
   "responseHeaders": {
     "Content-Type": [
-      "dev.js"
+      "dev~DnibTECcJp.js"
     ],
     "Retry-After": [
-      "index-2.js",
-      "index-6.js"
+      "index~BZWA3umAbb.js",
+      "index~CTR1g85B2L.js"
     ],
     "X-Sentry-Rate-Limits": [
-      "index-2.js",
-      "index-6.js"
+      "index~BZWA3umAbb.js",
+      "index~CTR1g85B2L.js"
     ]
   },
   "urls": [
@@ -1722,8 +1722,6 @@
     "https://s.mzstatic.com/skdtool_2021_certbundle.bin",
     "https://support.apple.com/118249?cid=mc-ols-AppleMusic-article_118249-musicapp-04242025",
     "https://universal-activity-service.itunes.apple.com",
-    "https://www.apple.com/apple-music",
-    "https://www.apple.com/{}/apple-music",
     "https://xp-qa.apple.com",
     "https://xp.apple.com",
     "https://xp.apple.com/config/1/report",

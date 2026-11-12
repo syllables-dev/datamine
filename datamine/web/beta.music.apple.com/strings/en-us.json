@@ -567,6 +567,7 @@
   "ASE.Web.Platform.Shared.MediaComponents.Explicit": "Explicit Content",
   "ASE.Web.Platform.Shared.MediaComponents.Playback.Next": "NEXT",
   "ASE.Web.Platform.Shared.MediaComponents.Playback.Previous": "PREVIOUS",
+  "ASE.Web.Platform.Shared.MediaComponents.Video": "Video",
   "ASE.Web.Platform.Shared.MediaComponents.Video.Preview": "PREVIEW",
   "ASE.Web.Platform.Shared.MediaComponents.Volume.Label": "Volume",
   "ASE.Web.Platform.Shared.MediaComponents.Volume.Mute": "Mute",

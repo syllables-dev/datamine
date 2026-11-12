@@ -1,0 +1,922 @@
+@charset "UTF-8";
+.tour-badge__icon.svelte-1nwwbu9 {
+  align-items: center;
+  display: flex;
+  height: 18px;
+  justify-content: center;
+  width: 14px;
+}
+.tour-badge__icon.svelte-1nwwbu9 svg {
+  height: 10px;
+  position: relative;
+  top: -0.5px;
+}
+.tour-badge__description.svelte-1nwwbu9 {
+  white-space: nowrap;
+}
+.tour-badge__link.svelte-1nwwbu9 {
+  border-radius: inherit;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+.artist-expression-header__artwork-tint.svelte-1uq4byo.svelte-1uq4byo,
+.artist-expression-header__blur-frame.svelte-1uq4byo.svelte-1uq4byo {
+  height: 300%;
+  left: 0;
+  -webkit-mask-image: radial-gradient(
+    var(--blur-frame-mask-shape, ellipse 80% 60% at calc(50% + var(--web-navigation-width)/2) -13%),
+    #0000 0,
+    #0000 53%,
+    #0000001a 61%,
+    #000000eb 74%
+  );
+  mask-image: radial-gradient(
+    var(--blur-frame-mask-shape, ellipse 80% 60% at calc(50% + var(--web-navigation-width)/2) -13%),
+    #0000 0,
+    #0000 53%,
+    #0000001a 61%,
+    #000000eb 74%
+  );
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--z-default);
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .artist-expression-header__artwork-tint.svelte-1uq4byo.svelte-1uq4byo,
+    .artist-expression-header__blur-frame.svelte-1uq4byo.svelte-1uq4byo {
+      animation: svelte-1uq4byo-artist-expression-header-blur-scroll linear forwards;
+      animation-timeline: --artist-expression-header-artwork;
+      animation-range: exit;
+      will-change: transform, opacity, filter;
+    }
+  }
+}
+@media (min-width: 484px) {
+  .artist-expression-header__artwork-tint.svelte-1uq4byo.svelte-1uq4byo,
+  .artist-expression-header__blur-frame.svelte-1uq4byo.svelte-1uq4byo {
+    inset-inline-start: calc(var(--web-navigation-width)*-1);
+  }
+}
+@media (max-width: 483px) {
+  .artist-expression-header__artwork-tint.svelte-1uq4byo.svelte-1uq4byo,
+  .artist-expression-header__blur-frame.svelte-1uq4byo.svelte-1uq4byo {
+    --blur-frame-mask-shape: ellipse 112% 56% at 50% -3%;
+    height: 220%;
+  }
+}
+.artist-expression-header__artwork-tint.svelte-1uq4byo.svelte-1uq4byo {
+  --blur-frame-mask-shape: ellipse 160% 65% at calc(50% + var(--web-navigation-width)/2) -13%;
+  background-color: rgb(from var(--artist-joe-color) r g b/0.95);
+}
+@media (max-width: 483px) {
+  .artist-expression-header__artwork-tint.svelte-1uq4byo.svelte-1uq4byo {
+    --blur-frame-mask-shape: ellipse 112% 56% at 50% -3%;
+  }
+}
+.artist-expression-header__blur-frame.svelte-1uq4byo.svelte-1uq4byo {
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+}
+.artist-expression-header.svelte-1uq4byo.svelte-1uq4byo {
+  --keyColor: var(--artist-key-color);
+  height: var(--artistHeaderHeightXs, 470px);
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 484px) {
+  .artist-expression-header.svelte-1uq4byo.svelte-1uq4byo:not(
+      :has(.artist-expression-header__circular-artwork-container)
+    ):before {
+    -webkit-backdrop-filter: blur(80px);
+    backdrop-filter: blur(80px);
+    content: "";
+    display: block;
+    height: 100vh;
+    inset-inline-start: var(--web-navigation-width);
+    -webkit-mask-composite: source-in, xor;
+    mask-composite: intersect;
+    -webkit-mask-image: linear-gradient(
+      var(--side-blur-deg, 90deg),
+      #000 0,
+      #000 var(--web-navigation-width),
+      #0000 100%
+    );
+    mask-image: linear-gradient(var(--side-blur-deg, 90deg), #000 0, #000 var(--web-navigation-width), #0000 100%);
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transform: translate(calc(var(--web-navigation-width)*var(--side-blur-transform-multiple, -1)));
+    width: calc(var(--web-navigation-width) + 60px);
+    z-index: calc(var(--z-default) + 1);
+  }
+  html[dir="rtl"]
+    .artist-expression-header.svelte-1uq4byo.svelte-1uq4byo:not(
+      :has(.artist-expression-header__circular-artwork-container)
+    ):before {
+    --side-blur-transform-multiple: 1;
+    --side-blur-deg: -90deg;
+  }
+  @supports (animation-timeline: scroll()) {
+    @media (min-width: 484px) and (prefers-reduced-motion: no-preference) {
+      .artist-expression-header.svelte-1uq4byo.svelte-1uq4byo:not(
+          :has(.artist-expression-header__circular-artwork-container)
+        ):before {
+        animation: svelte-1uq4byo-artist-expression-header-blur-scroll linear forwards;
+        animation-timeline: --artist-expression-header-artwork;
+        animation-range: exit;
+        will-change: transform, opacity, filter;
+      }
+    }
+  }
+}
+.artist-expression-header.svelte-1uq4byo.svelte-1uq4byo:after {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  bottom: -400px;
+  content: "";
+  display: block;
+  height: 946px;
+  inset-inline-start: 0;
+  -webkit-mask-image: radial-gradient(ellipse 119% 74% at 50% -24%, #0000 0, #0000 67%, #0000001a 69%, #000 75%);
+  mask-image: radial-gradient(ellipse 119% 74% at 50% -24%, #0000 0 67%, #0000001a 69%, #000 75%);
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(300px);
+  width: 100%;
+  z-index: var(--z-default);
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .artist-expression-header.svelte-1uq4byo.svelte-1uq4byo:after {
+      animation: svelte-1uq4byo-artist-expression-header-blur-scroll linear forwards;
+      animation-timeline: --artist-expression-header-artwork;
+      animation-range: exit;
+      will-change: transform, opacity, filter;
+    }
+  }
+}
+@media (min-width: 1000px) {
+  .artist-expression-header.svelte-1uq4byo.svelte-1uq4byo {
+    height: 386px;
+  }
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .artist-expression-header.svelte-1uq4byo.svelte-1uq4byo {
+      view-timeline: --artist-expression-header-artwork block;
+    }
+  }
+}
+.artist-expression-header.svelte-1uq4byo.svelte-1uq4byo:has(.artist-expression-header__circular-artwork-container) {
+  height: 400px;
+}
+@media (min-width: 1000px) {
+  .artist-expression-header.svelte-1uq4byo.svelte-1uq4byo:has(.artist-expression-header__circular-artwork-container) {
+    height: 486px;
+  }
+}
+.artist-expression-header.svelte-1uq4byo:not(:has(.artist-expression-header__circular-artwork-container))
+  .artist-expression-header__artwork.svelte-1uq4byo {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: clip;
+  overflow-y: visible;
+  padding-bottom: 20px;
+  position: absolute;
+  z-index: var(--z-default);
+}
+.artist-expression-header.svelte-1uq4byo:not(.artist-expression-header--no-artwork)
+  .artist-expression-header__artwork.svelte-1uq4byo {
+  -webkit-box-reflect: left 0;
+}
+html[dir="rtl"]
+  .artist-expression-header.svelte-1uq4byo:not(.artist-expression-header--no-artwork)
+  .artist-expression-header__artwork.svelte-1uq4byo {
+  -webkit-box-reflect: right 0;
+}
+@supports (background-image: -webkit-named-image(apple-pay-logo-black)) or (-webkit-appearance: -apple-pay-button) {
+  .app-container.is-refocused
+    .artist-expression-header--fixed.svelte-1uq4byo
+    .artist-expression-header__artwork.svelte-1uq4byo {
+    opacity: 0.9999;
+    will-change: opacity;
+  }
+}
+.artist-expression-header.svelte-1uq4byo:has(.artist-expression-header__circular-artwork-container)
+  .artist-expression-header__artwork.svelte-1uq4byo {
+  height: 1400px;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+.artist-expression-header__artwork.svelte-1uq4byo .artwork-container,
+.artist-expression-header__static-artwork.svelte-1uq4byo.svelte-1uq4byo {
+  --artwork-override-width: 100%;
+  --artwork-override-height: 100%;
+  --artwork-override-object-fit: cover;
+  --artwork-override-object-position: center top;
+  height: 100%;
+  width: 100%;
+}
+.artist-expression-header--no-artwork.svelte-1uq4byo.svelte-1uq4byo {
+  height: 100%;
+  min-height: 192px;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+.artist-expression-header--no-artwork.svelte-1uq4byo.svelte-1uq4byo:after,
+.artist-expression-header--no-artwork.svelte-1uq4byo.svelte-1uq4byo:before {
+  display: none;
+}
+.artist-expression-header--no-artwork.svelte-1uq4byo .artist-expression-header__artwork.svelte-1uq4byo {
+  background-image: var(--artist-expression-fallback-image);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  filter: blur(35px);
+  height: auto;
+  opacity: 1;
+  position: absolute;
+  scale: 5;
+  top: -23%;
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .artist-expression-header--fixed.svelte-1uq4byo.svelte-1uq4byo {
+    height: calc(100vw/var(--fixed-artwork-ratio-sm, 2.119205298));
+    max-height: calc(1680px/var(--fixed-artwork-ratio-lg, 2.3841059603));
+    position: relative;
+    z-index: var(--z-default);
+  }
+  .artist-expression-header--fixed.svelte-1uq4byo .artist-expression-header__circular-artwork-gradient.svelte-1uq4byo,
+  .artist-expression-header--fixed.svelte-1uq4byo .artist-expression-header__circular-artwork.svelte-1uq4byo {
+    display: none;
+  }
+}
+@media (min-width: 1260px) {
+  .artist-expression-header--fixed.svelte-1uq4byo.svelte-1uq4byo {
+    height: calc(100vw/var(--fixed-artwork-ratio-lg, 2.3841059603));
+  }
+}
+.artist-expression-header--fixed.svelte-1uq4byo .artwork-container {
+  --artwork-override-max-height: 100%;
+  height: 100%;
+  -webkit-box-reflect: below 0 linear-gradient(180deg, #ffffff05 0, #ffffff1f 94%, #fff);
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .artist-expression-header--fixed.svelte-1uq4byo .artwork-container {
+      animation: svelte-1uq4byo-artist-expression-header-artwork-scroll linear forwards;
+      animation-timeline: --artist-expression-header-artwork;
+      animation-range: exit;
+      will-change: transform, opacity, filter;
+    }
+  }
+}
+.artist-expression-header--video.svelte-1uq4byo.svelte-1uq4byo {
+  height: calc((100vw - var(--web-navigation-width))/2.11921);
+  min-height: 470px;
+}
+@media (min-width: 1260px) {
+  .artist-expression-header--video.svelte-1uq4byo.svelte-1uq4byo {
+    height: 41.94444vw;
+    max-height: 704.66667px;
+  }
+}
+.artist-expression-header--video.svelte-1uq4byo .video-artwork__container {
+  -webkit-box-reflect: below 0 linear-gradient(180deg, #ffffff05 0, #ffffff1f 94%, #fff);
+}
+.artist-expression-header--video.svelte-1uq4byo .artist-expression-header__artwork.svelte-1uq4byo .artwork-container {
+  min-height: 470px;
+}
+.artist-expression-header__cloud-buttons.svelte-1uq4byo.svelte-1uq4byo {
+  inset-inline-end: 15px;
+  position: absolute;
+  top: 15px;
+  z-index: calc(var(--z-default) + 3);
+}
+@media (min-width: 484px) {
+  .artist-expression-header__cloud-buttons.svelte-1uq4byo.svelte-1uq4byo {
+    inset-inline-end: 8px;
+    top: 8px;
+  }
+}
+.artist-expression-header__name-container.svelte-1uq4byo.svelte-1uq4byo {
+  align-content: end;
+  align-items: end;
+  bottom: 0;
+  display: grid;
+  grid-template-areas: "artwork" "metadata" "controls";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  padding: 20px var(--bodyGutter) 23px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: calc(var(--z-default) + 2);
+}
+@supports (background-image: -webkit-named-image(apple-pay-logo-black)) or (-webkit-appearance: -apple-pay-button) {
+  .artist-expression-header__name-container.svelte-1uq4byo.svelte-1uq4byo {
+    transform: translate(0);
+  }
+}
+.artist-expression-header__badge.svelte-1uq4byo.svelte-1uq4byo {
+  justify-self: center;
+  padding-bottom: 8px;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo {
+  color: #fff;
+  cursor: text;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  justify-self: center;
+  letter-spacing: 0;
+  line-height: 1.1904761905;
+  -webkit-mask: none;
+  mask: none;
+  text-align: center;
+  text-overflow: clip;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(zh) {
+  font-weight: 600;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(th) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Thonburi Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.6666666667;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(bn) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Bengali,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(gu) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Gujarati,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(hi) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Devanagari,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(kn) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Kannada,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(ml) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Malayalam,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(mr) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Devanagari,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(or) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Odia,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(pa) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Gurmukhi,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(ta) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Tamil,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(te) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Kohinoor Telugu,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(ur) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Geeza Pro,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.7858942857;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(ar) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Arabic UI Display,
+    SF Pro Icons,
+    Segoe UI,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(he) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Arial Hebrew,
+    SF Pro Icons,
+    Segoe UI,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(ja) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Hiragino Sans,
+    SF Pro Icons,
+    Hiragino Kaku Gothic Pro,
+    ヒラギノ角ゴ Pro W3,
+    メイリオ,
+    Meiryo,
+    ＭＳ Ｐゴシック,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(ko) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    Apple SD Gothic Neo,
+    SF Pro Icons,
+    Apple Gothic,
+    HY Gulim,
+    MalgunGothic,
+    HY Dotum,
+    Lexi Gulim,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(zh-CN) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang SC,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(zh-HK),
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(zh-MO) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang HK,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo:lang(zh-TW) {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Apple Color Emoji,
+    SF Pro,
+    PingFang TC,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.artist-expression-header__name.svelte-1uq4byo.svelte-1uq4byo {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.artist-expression-header__name--visually-hidden.svelte-1uq4byo.svelte-1uq4byo {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  border: 0;
+  clip-path: inset(0 0 99.9% 99.9%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+}
+.artist-expression-header__logo.svelte-1uq4byo.svelte-1uq4byo {
+  --artwork-override-width: 312px;
+  --artwork-override-height: auto;
+  --artwork-override-max-height: 104px;
+  --artwork-override-object-fit: contain;
+  grid-area: metadata;
+  justify-self: center;
+}
+@media (min-width: 484px) {
+  .artist-expression-header__logo.svelte-1uq4byo.svelte-1uq4byo {
+    --artwork-override-width: 282px;
+    --artwork-override-max-height: 94px;
+  }
+}
+@media (max-width: 999px) {
+  .artist-expression-header.svelte-1uq4byo:has(.artist-expression-header__circular-artwork-container)
+    .artist-expression-header__logo.svelte-1uq4byo {
+    --artwork-override-max-height: 76px;
+  }
+}
+.artist-expression-header__actions-row.svelte-1uq4byo.svelte-1uq4byo {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  grid-area: controls;
+  justify-content: center;
+  padding-top: 16px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .artist-expression-header__actions-row.svelte-1uq4byo.svelte-1uq4byo {
+    gap: 16px;
+  }
+}
+.artist-expression-header__play-button.svelte-1uq4byo.svelte-1uq4byo {
+  --svgFill: var(--keyColor);
+  background: #0000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 72px;
+  padding: 0;
+  width: 72px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .artist-expression-header__play-button.svelte-1uq4byo.svelte-1uq4byo {
+    height: 56px;
+    width: 56px;
+  }
+}
+.artist-expression-header__play-button.svelte-1uq4byo.svelte-1uq4byo:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+.artist-expression-header__play-button.svelte-1uq4byo svg {
+  height: inherit;
+  width: inherit;
+}
+.artist-expression-header__favorite-button.svelte-1uq4byo.svelte-1uq4byo {
+  --favoriteButtonSize: 48px;
+  --favoriteIconSize: 32px;
+  --favoriteButtonBackground: #0000;
+  --favoriteButtonBackground-hover: #0000;
+  --favoriteButtonStarFill: var(--keyColor);
+  --favoriteButtonStarFill-hover: var(--keyColor);
+  --favoriteButtonStarOutline-hover: var(--keyColor);
+  --artistFillSecondary-tinted: color-mix(in srgb, #fff 30%, var(--artistFillSecondary-blended-plusL, #ffffff14) 70%);
+  align-items: center;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 0;
+  width: 48px;
+  fill: var(--keyColor);
+  background:
+    linear-gradient(to right, #ffffff26, #ffffff26),
+    linear-gradient(
+      to right,
+      rgb(from var(--systemQuinary-vibrantOnDark-blended-plusL, #fff) r g b/0.25),
+      rgb(from var(--systemQuinary-vibrantOnDark-blended-plusL, #fff) r g b/0.25)
+    );
+  border: 0.75px solid var(--artistFillSecondary-tinted);
+  border-radius: 50%;
+  box-shadow:
+    0 2px 6px -4px #0006,
+    inset 0 0 2px #ffffff1a;
+  cursor: pointer;
+  padding: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .artist-expression-header__favorite-button.svelte-1uq4byo.svelte-1uq4byo {
+    height: 36px;
+    width: 36px;
+  }
+}
+.artist-expression-header__favorite-button.svelte-1uq4byo.svelte-1uq4byo:has(:disabled) {
+  cursor: default;
+  opacity: 0.35;
+}
+@media (prefers-contrast: more) {
+  .artist-expression-header__favorite-button.svelte-1uq4byo.svelte-1uq4byo {
+    --favoriteButtonBackground: var(--keyColor);
+    --favoriteButtonBackground-hover: var(--keyColor);
+    --favoriteButtonStarOutline: var(--artist-joe-color);
+    --favoriteButtonStarOutline-hover: var(--artist-joe-color);
+    --favoriteButtonStarFill: var(--artist-joe-color);
+    --favoriteButtonStarFill-hover: var(--artist-joe-color);
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .artist-expression-header__favorite-button.svelte-1uq4byo.svelte-1uq4byo {
+    --favoriteButtonSize: 36px;
+    --favoriteIconSize: 28px;
+  }
+}
+.artist-expression-header__info-button.svelte-1uq4byo.svelte-1uq4byo {
+  --artistFillSecondary-tinted: color-mix(in srgb, #fff 30%, var(--artistFillSecondary-blended-plusL, #ffffff14) 70%);
+  align-items: center;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 0;
+  width: 48px;
+  fill: var(--keyColor);
+  background:
+    linear-gradient(to right, #ffffff26, #ffffff26),
+    linear-gradient(
+      to right,
+      rgb(from var(--systemQuinary-vibrantOnDark-blended-plusL, #fff) r g b/0.25),
+      rgb(from var(--systemQuinary-vibrantOnDark-blended-plusL, #fff) r g b/0.25)
+    );
+  border: 0.75px solid var(--artistFillSecondary-tinted);
+  border-radius: 50%;
+  box-shadow:
+    0 2px 6px -4px #0006,
+    inset 0 0 2px #ffffff1a;
+  cursor: pointer;
+  padding: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .artist-expression-header__info-button.svelte-1uq4byo.svelte-1uq4byo {
+    height: 36px;
+    width: 36px;
+  }
+}
+.artist-expression-header__info-button.svelte-1uq4byo.svelte-1uq4byo:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+.artist-expression-header__info-button.svelte-1uq4byo svg {
+  height: auto;
+  width: 10px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .artist-expression-header__info-button.svelte-1uq4byo svg {
+    width: 8px;
+  }
+}
+@media (prefers-contrast: more) {
+  .artist-expression-header__info-button.svelte-1uq4byo.svelte-1uq4byo {
+    background: var(--keyColor);
+    fill: var(--artist-joe-color);
+  }
+}
+.artist-expression-header__circular-artwork-container.svelte-1uq4byo.svelte-1uq4byo {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  padding-top: 40px;
+  position: relative;
+  width: 100%;
+  z-index: calc(var(--z-default) + 1);
+}
+@media (min-width: 1000px) {
+  .artist-expression-header__circular-artwork-container.svelte-1uq4byo.svelte-1uq4byo {
+    padding-top: 94px;
+  }
+}
+.artist-expression-header__circular-artwork.svelte-1uq4byo.svelte-1uq4byo {
+  border-radius: 50%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  height: 174px;
+  width: 174px;
+}
+@media (min-width: 1000px) {
+  .artist-expression-header__circular-artwork.svelte-1uq4byo.svelte-1uq4byo {
+    height: 190px;
+    width: 190px;
+  }
+}
+.artist-expression-header__circular-artwork-gradient.svelte-1uq4byo.svelte-1uq4byo {
+  --artwork-override-width: calc(63vw - var(--web-navigation-width));
+  --artwork-override-height: auto;
+  border-radius: 50%;
+  filter: blur(60px);
+  inset-inline-start: 50%;
+  opacity: 0.3;
+  position: absolute;
+  scale: 2;
+  top: -23%;
+  transform: translate(-25%);
+}
+@keyframes svelte-1uq4byo-artist-expression-header-artwork-scroll {
+  0% {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  15% {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1) translateY(6%);
+  }
+  50% {
+    filter: blur(35px);
+    opacity: 0;
+    transform: scale(1.05) translateY(20%);
+  }
+  to {
+    filter: blur(90px);
+    opacity: 0;
+    transform: scale(1.135) translateY(40%);
+  }
+}
+@keyframes svelte-1uq4byo-artist-expression-header-blur-scroll {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.artist-expression-header__scrim-scroll.svelte-1uq4byo.svelte-1uq4byo {
+  background: #000;
+  height: 100dvh;
+  inset-inline-start: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 0;
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .artist-expression-header__scrim-scroll.svelte-1uq4byo.svelte-1uq4byo {
+      animation: svelte-1uq4byo-artist-expression-header-scrim-scroll linear forwards;
+      animation-timeline: --artist-expression-header-artwork;
+      animation-range: exit;
+      will-change: opacity;
+    }
+  }
+}
+@keyframes svelte-1uq4byo-artist-expression-header-scrim-scroll {
+  0%,
+  10% {
+    opacity: 0;
+  }
+  60%,
+  to {
+    opacity: 0.5;
+  }
+}
