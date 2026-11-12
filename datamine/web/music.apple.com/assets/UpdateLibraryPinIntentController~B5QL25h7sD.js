@@ -1,0 +1,15 @@
+import { ac as e, a8 as i } from "./main.js";
+import { d as o, m as s } from "./libraryPinsAPI~1I5wmt9DCh.js";
+const d = {
+  $intentKind: e.Name,
+  async perform(t, n) {
+    const { itemId: a } = t;
+    try {
+      const r = await o(a, t.action, n);
+      return { pins: await s(r, n), status: i.SUCCESS };
+    } catch (r) {
+      throw new Error(`an error occurred at UpdateLibraryPinIntentController: ${r}`);
+    }
+  },
+};
+export { d as UpdateLibraryPinIntentController };
