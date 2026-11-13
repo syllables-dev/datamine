@@ -1,22 +1,22 @@
 import {
-  g as M,
-  S as z,
-  s as V,
-  m as W,
-  i as X,
+  s as M,
+  m as z,
+  i as V,
+  G as W,
   l as U,
   f as w,
-  a as J,
-  r as $,
-  c as Q,
-  b as Z,
-  d as x,
-  G as ee,
+  a as X,
   e as G,
-  u as te,
+  r as $,
+  c as J,
+  b as Q,
+  S as Z,
+  u as x,
+  d as ee,
+  g as te,
   h as re,
   j as ne,
-} from "./version.js";
+} from "./version~vBwCakA6VQ.js";
 var ae = Object.defineProperty,
   ie = Object.defineProperties,
   oe = Object.getOwnPropertyDescriptors,
@@ -31,7 +31,7 @@ var ae = Object.defineProperty,
   },
   b = (e, n) => ie(e, oe(n)),
   _e = 30;
-function I(e, n, t = W(e.bufferSize || _e)) {
+function I(e, n, t = z(e.bufferSize || _e)) {
   let a = {};
   const o = (i) => t.drain(i);
   function r(i) {
@@ -39,7 +39,7 @@ function I(e, n, t = W(e.bufferSize || _e)) {
     if (
       (w(i, (p, y) => {
         const u = G(y);
-        if (J(a, u)) {
+        if (X(a, u)) {
           const l = P(p, y);
           e.recordDroppedEvent("ratelimit_backoff", u, l);
         } else c.push(p);
@@ -47,14 +47,14 @@ function I(e, n, t = W(e.bufferSize || _e)) {
       c.length === 0)
     )
       return $();
-    const s = Q(i[0], c),
+    const s = J(i[0], c),
       f = (p) => {
         w(s, (y, u) => {
           const l = P(y, u);
           e.recordDroppedEvent(p, G(u), l);
         });
       },
-      S = (e.getRequest || ((p) => ({ body: Z(p, e.textEncoder) })))(s);
+      S = (e.getRequest || ((p) => ({ body: Q(p, e.textEncoder) })))(s);
     if (!S) return $();
     const v = () =>
       n(S).then(
@@ -63,7 +63,7 @@ function I(e, n, t = W(e.bufferSize || _e)) {
             (p.statusCode < 200 || p.statusCode >= 300) &&
             (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) &&
             U.warn(`Sentry responded with status code ${p.statusCode} to sent event.`),
-          (a = te(a, p)),
+          (a = x(a, p)),
           p
         ),
         (p) => {
@@ -73,7 +73,7 @@ function I(e, n, t = W(e.bufferSize || _e)) {
     return t.add(v).then(
       (p) => p,
       (p) => {
-        if (p instanceof x)
+        if (p instanceof Z)
           return (
             (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) &&
               U.error("Skipped sending event because buffer is full."),
@@ -89,11 +89,11 @@ function I(e, n, t = W(e.bufferSize || _e)) {
 function P(e, n) {
   if (!(n !== "event" && n !== "transaction")) return Array.isArray(e) ? e[1] : void 0;
 }
-var E = ee,
+var E = W,
   g = void 0;
 function pe() {
   if (g) return g;
-  if (X(E.fetch)) return (g = E.fetch.bind(E));
+  if (V(E.fetch)) return (g = E.fetch.bind(E));
   const e = E.document;
   let n = E.fetch;
   if (e && typeof e.createElement == "function")
@@ -136,7 +136,7 @@ function ue(e, n = pe()) {
         ),
       );
     } catch (s) {
-      return (fe(), (t -= i), a--, re(s));
+      return (fe(), (t -= i), a--, ee(s));
     }
   }
   return I(e, o);
@@ -144,7 +144,7 @@ function ue(e, n = pe()) {
 var de = 4;
 function le(e) {
   function n(t) {
-    return new ne((a, o) => {
+    return new te((a, o) => {
       const r = new XMLHttpRequest();
       ((r.onerror = o),
         (r.onreadystatechange = () => {
@@ -204,7 +204,7 @@ function L(e) {
   return e !== D ? (console.error(`[SentryKit Versioning Error] ${j(e)} All sent data will be discarded.`), !1) : !0;
 }
 function ve() {
-  return L(z);
+  return L(re);
 }
 function me(e) {
   var n;
@@ -222,7 +222,7 @@ function Ee(e) {
   return ((e.__sentrykit_original_config = h({}, e)), e);
 }
 function ge() {
-  const e = M(),
+  const e = ne(),
     n = e.bindClient;
   e.bindClient = (t) => {
     (Se(t.getOptions()), n.call(e, t));
@@ -430,7 +430,7 @@ function Be(e) {
         headers: { "Content-type": "application/json" },
       };
     }),
-    V() ? ue(e) : le(e)
+    M() ? ue(e) : le(e)
   );
 }
 var T = B("[SentryKit Privacy settings]");
@@ -489,7 +489,7 @@ function we({ allowQueryParams: e, allowExtra: n, allowTags: t, timestampPrecisi
 }
 var N = B("[SentryKit Config]"),
   D = "7.57.0",
-  q = { prod: "prod", qa: "qa" },
+  q = { prod: "prod" },
   O = { prod: "https://xp.apple.com", qa: "https://xp-qa.apple.com" },
   A = [
     { type: "any", matchPath: /tags\..+$/, action: "remove" },
@@ -569,7 +569,7 @@ function Ye(e) {
 }
 ve();
 (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && ge();
-function Ce(e) {
+function Ke(e) {
   (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && e?.debug && Te();
   const n = Ge(e || {});
   if (!n.project) throw new Error("[SentryKit Configuration Error]: The required `project` field is not set.");
@@ -584,6 +584,4 @@ function Ce(e) {
   const o = h(h({}, n), Ye(n));
   return ((typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) && Ee(o), o);
 }
-var Pe = { createSentryConfig: Ce },
-  Oe = Pe;
-export { Pe as SentryKit, Ce as createSentryConfig, Oe as default };
+export { Ke as createSentryConfig };

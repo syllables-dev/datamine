@@ -1,5 +1,5 @@
 const z = Object.prototype.toString;
-function lt(e) {
+function dt(e) {
   switch (z.call(e)) {
     case "[object Error]":
     case "[object Exception]":
@@ -30,7 +30,7 @@ function fe(e) {
 function M(e) {
   return m(e, "Object");
 }
-function dt(e) {
+function lt(e) {
   return typeof Event < "u" && N(e, Event);
 }
 function _t(e) {
@@ -88,8 +88,8 @@ function mt(e, t = {}) {
       a = c.length;
     let u;
     const f = Array.isArray(t) ? t : t.keyAttrs,
-      l = (!Array.isArray(t) && t.maxStringLength) || yt;
-    for (; n && i++ < r && ((u = Et(n, f)), !(u === "html" || (i > 1 && o + s.length * a + u.length >= l)));)
+      d = (!Array.isArray(t) && t.maxStringLength) || yt;
+    for (; n && i++ < r && ((u = Et(n, f)), !(u === "html" || (i > 1 && o + s.length * a + u.length >= d)));)
       (s.push(u), (o += u.length), (n = n.parentNode));
     return s.reverse().join(c);
   } catch {
@@ -102,10 +102,10 @@ function Et(e, t) {
   let s, i, o, c, a;
   if (!n || !n.tagName) return "";
   r.push(n.tagName.toLowerCase());
-  const u = t && t.length ? t.filter((l) => n.getAttribute(l)).map((l) => [l, n.getAttribute(l)]) : null;
+  const u = t && t.length ? t.filter((d) => n.getAttribute(d)).map((d) => [d, n.getAttribute(d)]) : null;
   if (u && u.length)
-    u.forEach((l) => {
-      r.push(`[${l[0]}="${l[1]}"]`);
+    u.forEach((d) => {
+      r.push(`[${d[0]}="${d[1]}"]`);
     });
   else if ((n.id && r.push(`#${n.id}`), (s = n.className), s && I(s)))
     for (i = s.split(/\s+/), a = 0; a < i.length; a++) r.push(`.${i[a]}`);
@@ -113,14 +113,14 @@ function Et(e, t) {
   for (a = 0; a < f.length; a++) ((o = f[a]), (c = n.getAttribute(o)), c && r.push(`[${o}="${c}"]`));
   return r.join("");
 }
-function le() {
+function de() {
   try {
     return T.document.location.href;
   } catch {
     return "";
   }
 }
-function de(e) {
+function le(e) {
   return T.document && T.document.querySelector ? T.document.querySelector(e) : null;
 }
 const St = "Sentry Logger ",
@@ -188,8 +188,8 @@ function Rt(e) {
     u = c;
   const f = u.split("/");
   if ((f.length > 1 && ((a = f.slice(0, -1).join("/")), (u = f.pop())), u)) {
-    const l = u.match(/^\d+/);
-    l && (u = l[0]);
+    const d = u.match(/^\d+/);
+    d && (u = d[0]);
   }
   return X({ host: i, pass: s, path: a, projectId: u, port: o, protocol: n, publicKey: r });
 }
@@ -280,8 +280,8 @@ function me(e) {
     .join("&");
 }
 function Z(e) {
-  if (lt(e)) return { message: e.message, name: e.name, stack: e.stack, ...F(e) };
-  if (dt(e)) {
+  if (dt(e)) return { message: e.message, name: e.name, stack: e.stack, ...F(e) };
+  if (lt(e)) {
     const t = { type: e.type, target: H(e.target), currentTarget: H(e.currentTarget), ...F(e) };
     return (typeof CustomEvent < "u" && N(e, CustomEvent) && (t.detail = e.detail), t);
   } else return e;
@@ -438,7 +438,7 @@ function S() {
     t = e.crypto || e.msCrypto;
   if (t && t.randomUUID) return t.randomUUID().replace(/-/g, "");
   const n = t && t.getRandomValues ? () => t.getRandomValues(new Uint8Array(1))[0] : () => Math.random() * 16;
-  return ([1e7] + 1e3 + 4e3 + 8e3 + 1e11).replace(/[018]/g, (r) => (r ^ ((n() & 15) >> (r / 4))).toString(16));
+  return ("10000000100040008000" + 1e11).replace(/[018]/g, (r) => (r ^ ((n() & 15) >> (r / 4))).toString(16));
 }
 function et(e) {
   return e.exception && e.exception.values ? e.exception.values[0] : void 0;
@@ -453,7 +453,7 @@ function Ne(e, t, n) {
   const r = (e.exception = e.exception || {}),
     s = (r.values = r.values || []),
     i = (s[0] = s[0] || {});
-  (i.value || (i.value = t || ""), i.type || (i.type = n || "Error"));
+  (i.value || (i.value = t || ""), i.type || (i.type = "Error"));
 }
 function Re(e, t) {
   const n = et(e);
@@ -515,16 +515,16 @@ function P(e, t, n = 1 / 0, r = 1 / 0, s = vt()) {
       return P("", g, a - 1, r, s);
     } catch {}
   const f = Array.isArray(t) ? [] : {};
-  let l = 0;
+  let d = 0;
   const E = Z(t);
   for (const g in E) {
     if (!Object.prototype.hasOwnProperty.call(E, g)) continue;
-    if (l >= r) {
+    if (d >= r) {
       f[g] = "[MaxProperties ~]";
       break;
     }
     const ft = E[g];
-    ((f[g] = P(g, ft, a - 1, r, s)), l++);
+    ((f[g] = P(g, ft, a - 1, r, s)), d++);
   }
   return (o(t), f);
 }
@@ -565,16 +565,16 @@ var p;
   e[(e.REJECTED = r)] = "REJECTED";
 })(p || (p = {}));
 function Ft(e) {
-  return new d((t) => {
+  return new l((t) => {
     t(e);
   });
 }
 function Ct(e) {
-  return new d((t, n) => {
+  return new l((t, n) => {
     n(e);
   });
 }
-class d {
+class l {
   __init() {
     this._state = p.PENDING;
   }
@@ -582,12 +582,12 @@ class d {
     this._handlers = [];
   }
   constructor(t) {
-    (d.prototype.__init.call(this),
-      d.prototype.__init2.call(this),
-      d.prototype.__init3.call(this),
-      d.prototype.__init4.call(this),
-      d.prototype.__init5.call(this),
-      d.prototype.__init6.call(this));
+    (l.prototype.__init.call(this),
+      l.prototype.__init2.call(this),
+      l.prototype.__init3.call(this),
+      l.prototype.__init4.call(this),
+      l.prototype.__init5.call(this),
+      l.prototype.__init6.call(this));
     try {
       t(this._resolve, this._reject);
     } catch (n) {
@@ -595,7 +595,7 @@ class d {
     }
   }
   then(t, n) {
-    return new d((r, s) => {
+    return new l((r, s) => {
       (this._handlers.push([
         !1,
         (i) => {
@@ -624,7 +624,7 @@ class d {
     return this.then((n) => n, t);
   }
   finally(t) {
-    return new d((n, r) => {
+    return new l((n, r) => {
       let s, i;
       return this.then(
         (o) => {
@@ -691,14 +691,14 @@ function we(e) {
     return (t.indexOf(c) === -1 && t.push(c), c.then(() => r(c)).then(null, () => r(c).then(null, () => {})), c);
   }
   function i(o) {
-    return new d((c, a) => {
+    return new l((c, a) => {
       let u = t.length;
       if (!u) return c(!0);
       const f = setTimeout(() => {
         o && o > 0 && c(!1);
       }, o);
-      t.forEach((l) => {
-        Ft(l).then(() => {
+      t.forEach((d) => {
+        Ft(d).then(() => {
           --u || (clearTimeout(f), c(!0));
         }, a);
       });
@@ -879,9 +879,9 @@ function Ge(e, { statusCode: t, headers: n }, r = Date.now()) {
     for (const c of i.trim().split(",")) {
       const [a, u] = c.split(":", 2),
         f = parseInt(a, 10),
-        l = (isNaN(f) ? 60 : f) * 1e3;
-      if (!u) s.all = r + l;
-      else for (const E of u.split(";")) s[E] = r + l;
+        d = (isNaN(f) ? 60 : f) * 1e3;
+      if (!u) s.all = r + d;
+      else for (const E of u.split(";")) s[E] = r + d;
     }
   else o ? (s.all = r + Xt(o, r)) : t === 429 && (s.all = r + 60 * 1e3);
   return s;
@@ -930,7 +930,7 @@ function R(e, t = {}) {
 }
 function ee(e, t) {
   let n = {};
-  (t ? (n = { status: t }) : e.status === "ok" && (n = { status: "exited" }), R(e, n));
+  (e.status === "ok" && (n = { status: "exited" }), R(e, n));
 }
 function ne(e) {
   return G({
@@ -1134,7 +1134,7 @@ class y {
     return ((this._sdkProcessingMetadata = { ...this._sdkProcessingMetadata, ...t }), this);
   }
   _notifyEventProcessors(t, n, r, s = 0) {
-    return new d((i, o) => {
+    return new l((i, o) => {
       const c = t[s];
       if (n === null || typeof c != "function") i(n);
       else {
@@ -1400,7 +1400,7 @@ export {
   fe as P,
   R as Q,
   Ae as R,
-  He as S,
+  Ot as S,
   $e as T,
   M as U,
   Xt as V,
@@ -1416,33 +1416,33 @@ export {
   ae as a3,
   ce as a4,
   ue as a5,
-  lt as a6,
-  dt as a7,
+  dt as a6,
+  lt as a7,
   Ut as a8,
   Ee as a9,
   mt as aa,
   he as ab,
   Oe as ac,
   kt as ad,
-  le as ae,
+  de as ae,
   N as af,
   Se as ag,
   Mt as ah,
   Ie as ai,
-  de as aj,
+  le as aj,
   ve as ak,
   ct as al,
   B as am,
   J as an,
   Pe as b,
   ke as c,
-  Ot as d,
+  Ct as d,
   Be as e,
   Jt as f,
-  xe as g,
-  Ct as h,
+  l as g,
+  He as h,
   q as i,
-  d as j,
+  xe as j,
   j as k,
   _ as l,
   we as m,

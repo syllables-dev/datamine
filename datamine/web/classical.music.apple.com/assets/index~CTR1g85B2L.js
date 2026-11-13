@@ -1,14 +1,14 @@
 import {
   k as Er,
   l as f,
-  C as Gs,
   n as Z,
-  o as Ps,
+  o as Gs,
   p as _e,
+  C as Ps,
   q as Ot,
   t as Sr,
   c as Qt,
-  g,
+  j as g,
   v as Ht,
   w as pe,
   x as Nt,
@@ -33,16 +33,16 @@ import {
   Q as bi,
   R as js,
   T as Ws,
-  j as Rr,
-  h as wn,
-  d as dt,
+  g as Rr,
+  d as wn,
+  S as dt,
   U as Tn,
   m as qs,
   f as je,
-  a as Zs,
-  e as wi,
   b as kr,
-  u as Vs,
+  u as Zs,
+  e as wi,
+  a as Vs,
   V as Xs,
   W as Ks,
   X as Js,
@@ -63,19 +63,19 @@ import {
   aa as Ut,
   ab as vi,
   ac as sa,
-  S as Ri,
+  h as Ri,
   i as aa,
   ad as oa,
   ae as ca,
   af as We,
-  ag as ua,
-  s as la,
+  s as ua,
+  ag as la,
   ah as da,
   ai as et,
   aj as fa,
   ak as ha,
-} from "./version.js";
-import { al as gh, am as yh, an as Eh } from "./version.js";
+} from "./version~vBwCakA6VQ.js";
+import { al as gh, am as yh, an as Eh } from "./version~vBwCakA6VQ.js";
 const xe = Er();
 function _a() {
   const t = xe.chrome,
@@ -137,7 +137,7 @@ Error:`,
 }
 function ma() {
   "console" in P &&
-    Gs.forEach(function (t) {
+    Ps.forEach(function (t) {
       t in P.console &&
         Z(P.console, t, function (e) {
           return function (...n) {
@@ -147,7 +147,7 @@ function ma() {
     });
 }
 function ga() {
-  Ps() &&
+  Gs() &&
     Z(P, "fetch", function (t) {
       return function (...e) {
         const { method: n, url: i } = ya(e),
@@ -365,7 +365,7 @@ function Ia(t) {
   return (e[3] === "1" ? (n = !0) : e[3] === "0" && (n = !1), { traceId: e[1], parentSampled: n, parentSpanId: e[2] });
 }
 function Aa(t, e, n) {
-  const i = [{ type: "client_report" }, { timestamp: n || Sr(), discarded_events: t }];
+  const i = [{ type: "client_report" }, { timestamp: Sr(), discarded_events: t }];
   return Qt(e ? { dsn: e } : {}, [i]);
 }
 const kn = "baggage",
@@ -1616,7 +1616,7 @@ function Lr(t, e, n = qs(t.bufferSize || fo)) {
     if (
       (je(a, (d, _) => {
         const h = wi(_);
-        if (Zs(i, h)) {
+        if (Vs(i, h)) {
           const p = Bi(d, _);
           t.recordDroppedEvent("ratelimit_backoff", h, p);
         } else o.push(d);
@@ -1638,7 +1638,7 @@ function Lr(t, e, n = qs(t.bufferSize || fo)) {
               (d.statusCode < 200 || d.statusCode >= 300) &&
               (typeof __SENTRY_DEBUG__ > "u" || __SENTRY_DEBUG__) &&
               f.warn(`Sentry responded with status code ${d.statusCode} to sent event.`),
-            (i = Vs(i, d)),
+            (i = Zs(i, d)),
             d
           ),
           (d) => {
@@ -1941,7 +1941,6 @@ function Bt(t, e = {}, n) {
   const i = function () {
     const r = Array.prototype.slice.call(arguments);
     try {
-      n && typeof n == "function" && n.apply(this, arguments);
       const s = r.map((a) => Bt(a, e));
       return t.apply(this, s);
     } catch (s) {
@@ -1949,11 +1948,7 @@ function Bt(t, e = {}, n) {
         Do(),
         ja((a) => {
           (a.addEventProcessor(
-            (o) => (
-              e.mechanism && (vn(o, void 0, void 0), me(o, e.mechanism)),
-              (o.extra = { ...o.extra, arguments: r }),
-              o
-            ),
+            (o) => (e.mechanism && (vn(o, void 0), me(o, e.mechanism)), (o.extra = { ...o.extra, arguments: r }), o),
           ),
             Qn(s));
         }),
@@ -2054,7 +2049,7 @@ function ei(t, e, n, i, r) {
     ? yn(t, e)
     : Tn(e) || Jn(e)
       ? ((s = Io(t, e, n, r)), me(s, { synthetic: !0 }), s)
-      : ((s = Dn(t, e, n, i)), vn(s, `${e}`, void 0), me(s, { synthetic: !0 }), s);
+      : ((s = Dn(t, e, n, i)), vn(s, `${e}`), me(s, { synthetic: !0 }), s);
 }
 function Dn(t, e, n, i) {
   const r = { message: e };
@@ -2775,9 +2770,9 @@ function ih(t = {}) {
     t.sendClientReports === void 0 && (t.sendClientReports = !0));
   const e = {
     ...t,
-    stackParser: ua(t.stackParser || Ec),
+    stackParser: la(t.stackParser || Ec),
     integrations: to(t),
-    transport: t.transport || (la() ? Vo : Ko),
+    transport: t.transport || (ua() ? Vo : Ko),
   };
   (lo(Wo, e), t.autoSessionTracking && Lc());
 }
@@ -6653,7 +6648,7 @@ function Td(t) {
     data: { memory: { jsHeapSizeLimit: e, totalJSHeapSize: n, usedJSHeapSize: i } },
   };
 }
-const rr = { resource: Nd, paint: kd, navigation: xd, ["largest-contentful-paint"]: Dd };
+const rr = { resource: Nd, paint: kd, navigation: xd, "largest-contentful-paint": Dd };
 function vd(t) {
   return t.map(Rd).filter(Boolean);
 }
@@ -8061,7 +8056,7 @@ function hf(t) {
   const e = t.nextHopProtocol.split("/")[1] || "none",
     n = [];
   return (
-    e && n.push(["network.protocol.version", e]),
+    n.push(["network.protocol.version", e]),
     et
       ? [
           ...n,

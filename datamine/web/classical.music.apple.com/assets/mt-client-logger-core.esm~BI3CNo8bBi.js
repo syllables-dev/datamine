@@ -1,4 +1,4 @@
-import { r as i, s as _ } from "./mt-metricskit-utils-private.esm.js";
+import { r as i, s as w } from "./mt-metricskit-utils-private.esm~BZXGIVLJoi.js";
 function f(t) {
   this.key = t;
 }
@@ -20,11 +20,11 @@ var l = {
         var u = Array.prototype.slice.call(o),
           s = l.nonFlagLogArguments(u),
           v = l.logOptions(e, a, u),
-          h = v.includeCallStack ? new Error().stack : null,
-          c = h
+          g = v.includeCallStack ? new Error().stack : null,
+          c = g
             ? s.concat(
                 `
-` + h,
+` + g,
               )
             : s;
         if (((e[n]._lastLog = c), v.mirrorToServer, v.throwInsteadOfPrint)) throw new Error(s.toString());
@@ -44,7 +44,7 @@ var l = {
         u;
       return (
         o.forEach(function (s) {
-          l.isFlagObject(s) && ((u = _.snakeCaseToCamelCase(s.toString())), (a[u] = !0));
+          l.isFlagObject(s) && ((u = w.snakeCaseToCamelCase(s.toString())), (a[u] = !0));
         }),
         i.isFunction(e.mirrorToServerLevel) &&
           e.mirrorToServerLevel() !== e.NONE &&
@@ -64,7 +64,7 @@ var l = {
     levelStringToIntMap: { none: 0, debug: 1, info: 2, warn: 3, error: 4 },
   };
 i.extend(L, p);
-var g = { loggerName: "defaultLogger", level: L.INFO, throwLevel: L.NONE },
+var h = { loggerName: "defaultLogger", level: L.INFO, throwLevel: L.NONE },
   E = !1,
   S = {};
 function r(t) {
@@ -74,15 +74,15 @@ function r(t) {
     E || ((E = !0), i.extend(r.prototype, L), i.extend(r.prototype, l.flagArguments)));
 }
 function O(t) {
-  t = t || g.loggerName;
+  t = t || h.loggerName;
   var e = S[t];
   return (e || ((e = new r(t)), (S[t] = e)), e);
 }
 r.level = function () {
-  return g.level;
+  return h.level;
 };
 r.throwLevel = function () {
-  return g.throwLevel;
+  return h.throwLevel;
 };
 r.prototype.setDelegate = function (e) {
   return i.attachDelegate(this, e);
@@ -133,4 +133,6 @@ r.prototype.error = function () {
 r.prototype.lastLog = function (e) {
   return this[e] ? this[e]._lastLog : null;
 };
+r.level;
+r.throwLevel;
 export { r as L, O as l };

@@ -288,7 +288,7 @@ n.DialogManager = function () {
     (this.handleKey_ = this.handleKey_.bind(this)),
     (this.handleFocus_ = this.handleFocus_.bind(this)),
     (this.zIndexLow_ = 1e5),
-    (this.zIndexHigh_ = 1e5 + 150),
+    (this.zIndexHigh_ = 100150),
     (this.forwardTab_ = void 0),
     "MutationObserver" in window &&
       (this.mo_ = new MutationObserver(function (t) {

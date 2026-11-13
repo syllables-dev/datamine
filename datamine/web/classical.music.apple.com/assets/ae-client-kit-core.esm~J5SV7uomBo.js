@@ -1,5 +1,5 @@
-import { a as m, s as S, r as s, e as Ce } from "./mt-metricskit-utils-private.esm.js";
-import { l as je } from "./mt-client-logger-core.esm.js";
+import { r as s, b as m, s as S, e as Ce } from "./mt-metricskit-utils-private.esm~BZXGIVLJoi.js";
+import { l as je } from "./mt-client-logger-core.esm~BI3CNo8bBi.js";
 var D = function () {};
 D.prototype.setDelegate = function (e) {
   return s.attachDelegate(this, e);
@@ -10,12 +10,12 @@ D.prototype.platformIdentifier = function (e, t, r) {};
 var Me = function () {
   ((this.environment = new D()), (this.logger = je("mt-client-constraints")));
 };
-function J(n, e, t, r) {
+function W(n, e, t, r) {
   if (!s.isDefined(n) || !s.isDefinedNonNullNonEmpty(e) || !s.isFunction(r)) return n;
   var i = e.split(".");
-  return X(n, i, null, [], null, t, r);
+  return J(n, i, null, [], null, t, r);
 }
-function X(n, e, t, r, i, o, a) {
+function J(n, e, t, r, i, o, a) {
   if (s.isFunction(n)) return i || n;
   if ((r.push(t), e.length === 0)) return (a(n, t, r.slice(1).join("."), i), i || n);
   if (!s.isDefined(n)) return i || n;
@@ -27,13 +27,13 @@ function X(n, e, t, r, i, o, a) {
     if (s.isDefinedNonNull(l)) {
       var h = l.map(function (v, A) {
         var V = o ? l : l.slice();
-        return (X(v, e.slice(), A, r, V, o, a), r.pop(), V[A]);
+        return (J(v, e.slice(), A, r, V, o, a), r.pop(), V[A]);
       });
       c[u] = h;
     }
   } else {
     var d = n[u];
-    (s.extend(c, n), (c = X(d, e, u, r, c, o, a)));
+    (s.extend(c, n), (c = J(d, e, u, r, c, o, a)));
   }
   return (r.pop(), i ? ((i[t] = c), i) : c);
 }
@@ -63,7 +63,7 @@ function Ke(n, e, t) {
   var o = Le(r),
     a = o.initMatchValue;
   return (
-    J(e, n, !1, function (c, u, l, h) {
+    W(e, n, !1, function (c, u, l, h) {
       var d = Object.keys(i).every(function (v) {
         var A = i[v];
         return s.isDefinedNonNull(I[v]) ? I[v](u, h, A) : !1;
@@ -88,12 +88,12 @@ function Be(n, e, t) {
 }
 var I = { nonEmpty: Ge, valueMatches: Ue, nonValueMatches: Be, nestedFieldMatches: Ke },
   j = { OVERRIDE_FIELD_VALUE: "overrideFieldValue" },
-  Q = function () {};
-Q.prototype.constrainedValue = function (e, t, r) {
+  Z = function () {};
+Z.prototype.constrainedValue = function (e, t, r) {
   var i = e && e.hasOwnProperty(r) ? e[r] : null;
   return this.applyConstraintRules(i, t);
 };
-Q.prototype.applyConstraintRules = function (e, t) {
+Z.prototype.applyConstraintRules = function (e, t) {
   var r = e;
   if (t) {
     var i = t.denylisted || t.blacklisted;
@@ -168,15 +168,15 @@ function Ye(n, e) {
     }, t);
   return i;
 }
-var R = "-",
+var X = "-",
   qe = "z";
 function le(n) {
   if (!s.isDefinedNonNull(n) || !s.isInteger(n.idVersion)) return "0";
   var e = S.uuid(),
     t = n.generatedIdSeparator || qe,
-    r = We(n) + R + e || "",
+    r = We(n) + X + e || "",
     i = r
-      .split(R)
+      .split(X)
       .map(function (o) {
         var a = parseInt(o, 16);
         return S.convertNumberToBaseAlphabet(a, S.base61Alphabet);
@@ -192,7 +192,7 @@ function We(n) {
       .map(function (t) {
         return t.toString(16);
       })
-      .join(R)
+      .join(X)
   );
 }
 function pe(n, e, t, r) {
@@ -215,7 +215,7 @@ function Je(n, e, t, r) {
     o = oe[i];
   return (o || ((o = pe.apply(this, arguments)), (oe[i] = o)), o);
 }
-var ee = "_",
+var Q = "_",
   Xe = "mtId",
   p = function () {
     y.apply(this, arguments);
@@ -231,10 +231,10 @@ p.prototype.expirationTime = function (e) {
 };
 p.prototype.storageKey = function (e, t, r) {
   var i = this.scope(t, r);
-  return this.storageKeyPrefix(r, e) + (i ? ee + i : "");
+  return this.storageKeyPrefix(r, e) + (i ? Q + i : "");
 };
 p.prototype.storageKeyPrefix = function (e, t) {
-  return e && s.isString(e.storageKeyPrefix) && e.storageKeyPrefix.length > 0 ? e.storageKeyPrefix : Xe + ee + t;
+  return e && s.isString(e.storageKeyPrefix) && e.storageKeyPrefix.length > 0 ? e.storageKeyPrefix : Xe + Q + t;
 };
 p.prototype.scope = function (e, t) {
   var r = "";
@@ -250,7 +250,7 @@ p.prototype.scope = function (e, t) {
         i = this.SCOPE_STRATEGIES.ALL;
         break;
     }
-    (r.length && (r += ee), (r += i));
+    (r.length && (r += Q), (r += i));
   }
   return r;
 };
@@ -347,15 +347,15 @@ ve.prototype.constrainedValue = function (e, t) {
   return this._base.applyConstraintRules(i, t);
 };
 var Re = function (n) {
-    ((this.base = new Q()), (this.clientId = new he(this.base, n)), (this.parentPageUrl = new ve(this.base)));
+    ((this.base = new Z()), (this.clientId = new he(this.base, n)), (this.parentPageUrl = new ve(this.base)));
   },
-  te = function (e) {
+  ee = function (e) {
     this._fieldHandlers = new Re(e);
   };
-te.prototype.applyConstraints = function (e, t) {
+ee.prototype.applyConstraints = function (e, t) {
   return (t && t.fieldConstraints && (e = this.applyFieldConstraints(e, t.fieldConstraints)), e);
 };
-te.prototype.applyFieldConstraints = function (e, t) {
+ee.prototype.applyFieldConstraints = function (e, t) {
   if (t) {
     var r = {},
       i,
@@ -396,7 +396,7 @@ function me(n, e, t, r) {
   return i;
 }
 var P = function (e) {
-  this.treatment = new te(e);
+  this.treatment = new ee(e);
 };
 P.prototype.constraintsForEvent = function (e, t, r) {
   if (!t) return Promise.resolve(null);
@@ -489,8 +489,8 @@ _e.prototype.performAction = function (e, t, r) {
 var Ze = "mtSessionization",
   Se = "_",
   Qe = "-",
-  k = "sessionId",
-  z = "sessionStartTime",
+  H = "sessionId",
+  k = "sessionStartTime",
   E = function (e) {
     this._constraintsInstance = e;
   };
@@ -564,16 +564,16 @@ E.prototype._resetSession = function (e, t, r) {
   return !0;
 };
 E.prototype._getSessionFieldNames = function (e) {
-  var t = { sessionId: k, sessionStartTime: z };
+  var t = { sessionId: H, sessionStartTime: k };
   return (
     s.isDefinedNonNull(e.sessionFields) &&
-      (s.isDefinedNonNullNonEmpty(e.sessionFields[k]) && (t.sessionId = e.sessionFields[k]),
-      s.isDefinedNonNullNonEmpty(e.sessionFields[z]) && (t.sessionStartTime = e.sessionFields[z])),
+      (s.isDefinedNonNullNonEmpty(e.sessionFields[H]) && (t.sessionId = e.sessionFields[H]),
+      s.isDefinedNonNullNonEmpty(e.sessionFields[k]) && (t.sessionStartTime = e.sessionFields[k])),
     t
   );
 };
-var re = function () {};
-re.prototype.performAction = function (e, t, r) {
+var te = function () {};
+te.prototype.performAction = function (e, t, r) {
   if (!e || !r || !s.isString(r.timeReference) || !s.isNumber(r.bucketInterval) || !s.isArray(r.fields)) return e;
   var i = e[r.timeReference];
   if (!s.isNumber(i)) return e;
@@ -588,7 +588,7 @@ re.prototype.performAction = function (e, t, r) {
     e
   );
 };
-re.prototype._clampToBoundary = function (e, t) {
+te.prototype._clampToBoundary = function (e, t) {
   var r = e % t,
     i = e - r,
     o = i + t;
@@ -609,7 +609,7 @@ var N = {
       r = new ye(),
       i = new _e(),
       o = new E(e),
-      a = new re();
+      a = new te();
     ((this._actions = {}),
       (this._actions[N.blacklistedEventAction] = t),
       (this._actions[N.denylistedEventAction] = t),
@@ -663,7 +663,7 @@ x.prototype.constrainedValue = function (e, t) {
 };
 var rt = "mt_serial_number",
   M = "exp",
-  Z = "sn",
+  R = "sn",
   T = function (e) {
     ((e = e || {}),
       (this._nextRotationTime = e.nextRotationTime || Number.POSITIVE_INFINITY),
@@ -680,13 +680,13 @@ T.prototype.localStorageObject = function () {
 T.prototype.getNextSerialNumber = function (e) {
   var t = this._storageKey,
     r = this._getCurrentSerialNumberData(t),
-    i = r[Z];
+    i = r[R];
   return (
     (e = s.isNumber(e) ? e : 1),
     (i = parseInt(i, 10)),
     isNaN(i) && (i = this._initialSerialNumber),
     (i = this._increaseSerialNumber(i, e)),
-    (r[Z] = i),
+    (r[R] = i),
     m.saveObjectToStorage(this.localStorageObject(), this._storageKey, r),
     i
   );
@@ -718,7 +718,7 @@ T.prototype._resetSerialNumber = function (e) {
   var t = {};
   return (
     (t[M] = e),
-    (t[Z] = this._initialSerialNumber),
+    (t[R] = this._initialSerialNumber),
     m.saveObjectToStorage(this.localStorageObject(), this._storageKey, t),
     t
   );
@@ -764,7 +764,7 @@ b.prototype._computePrecisionStartTime = function (e, t) {
   var r = t.precision;
   return Math.floor(e / r) * r;
 };
-var $ = "_",
+var z = "_",
   it = "mtHash",
   ot = "salt",
   st = 10,
@@ -774,8 +774,8 @@ var $ = "_",
 g.prototype = Object.create(y.prototype);
 g.prototype.constructor = g;
 function Ee(n, e) {
-  var t = n.namespace ? $ + n.namespace : "";
-  return (n.storageKeyPrefix || it) + t + $ + ot + $ + e;
+  var t = n.namespace ? z + n.namespace : "";
+  return (n.storageKeyPrefix || it) + t + z + ot + z + e;
 }
 function at() {
   for (var n = ""; n.length < st;) n += S.randomHexCharacter();
@@ -879,16 +879,16 @@ Ae.prototype.applyConstraints = function (e, t) {
           var A = v.denylisted || v.blacklisted,
             V = v.treatmentType,
             ne = o._fieldActions.getAction(V);
-          h = J(h, d, !1, function (Pe, U, Fe, B) {
-            if (A) (delete B[U], (a = !0));
-            else if (v.hasOwnProperty(j.OVERRIDE_FIELD_VALUE)) ((B[U] = v[j.OVERRIDE_FIELD_VALUE]), (a = !0));
+          h = W(h, d, !1, function (Pe, G, Fe, U) {
+            if (A) (delete U[G], (a = !0));
+            else if (v.hasOwnProperty(j.OVERRIDE_FIELD_VALUE)) ((U[G] = v[j.OVERRIDE_FIELD_VALUE]), (a = !0));
             else if (ne) {
-              var H = ne.performAction(Pe, d, r, v);
-              ((B[U] = H),
-                H instanceof Promise &&
+              var B = ne.performAction(Pe, d, r, v);
+              ((U[G] = B),
+                B instanceof Promise &&
                   i.push(
-                    H.then(function (we) {
-                      J(c, d, !0, function (At, xe, De, Ve) {
+                    B.then(function (we) {
+                      W(c, d, !0, function (At, xe, De, Ve) {
                         De === Fe && (Ve[xe] = we);
                       });
                     }),
@@ -932,7 +932,7 @@ Ae.prototype.applyConstraints = function (e, t) {
 var ut = "filters",
   ft = "any",
   C = "eventActions",
-  Y = "fieldActions";
+  $ = "fieldActions";
 function lt(n, e) {
   var t = n || {};
   return (pt(t, e), ht(t, e), t);
@@ -959,8 +959,8 @@ function pt(n, e) {
     }, t);
 }
 function ht(n, e) {
-  (n[Y] || (n[Y] = {}),
-    me(n, e, Y, function (t, r, i) {
+  (n[$] || (n[$] = {}),
+    me(n, e, $, function (t, r, i) {
       return t[i] && t[i].treatmentType === r[i].treatmentType ? t[i] : {};
     }));
 }
@@ -1081,7 +1081,7 @@ function mt(n) {
 function Ot(n) {
   return ((s.isFunction(n.constraintProfile) && s.isFunction(n.constraintProfiles)) || s.attachMethods(n, vt, n), n);
 }
-var K = function (e, t) {
+var re = function (e, t) {
   if (!mt(e)) throw new Error('The topic config is not a valid instance of "mt-client-config".');
   ((this._isInitialized = !1),
     (this._topicConfig = e),
@@ -1089,7 +1089,7 @@ var K = function (e, t) {
     (this.system = new Me()),
     s.setDelegates(this.system, t || {}));
 };
-K.prototype._getConstraintGenerator = function () {
+re.prototype._getConstraintGenerator = function () {
   var e = this;
   return this._constraintGenerator
     ? Promise.resolve(this._constraintGenerator)
@@ -1100,13 +1100,13 @@ K.prototype._getConstraintGenerator = function () {
         );
       });
 };
-K.prototype.constraintsForEvent = function (e, t) {
+re.prototype.constraintsForEvent = function (e, t) {
   var r = this;
   return this._getConstraintGenerator().then(function (i) {
     return i.constraintsForEvent(e, r._topicConfig, t);
   });
 };
-K.prototype.applyConstraintTreatments = function (e, t) {
+re.prototype.applyConstraintTreatments = function (e, t) {
   var r = t ? Promise.resolve(t) : this.constraintsForEvent(e),
     i = this;
   return Promise.all([r, this._getConstraintGenerator(), this._topicConfig.value("anonymous")])
@@ -1120,8 +1120,7 @@ K.prototype.applyConstraintTreatments = function (e, t) {
       return (i.system.logger.warn("An error occurred while applying constraints: " + o.message || o), null);
     });
 };
-const It = K;
-var q, W;
+var Y, q;
 function Ne() {
   return [
     "app",
@@ -1155,14 +1154,14 @@ function dt() {
   ];
 }
 function Oe() {
-  return (W || (W = Ne().concat(be())), W);
+  return (q || (q = Ne().concat(be())), q);
 }
 function yt() {
-  return (q || (q = Oe().concat(dt())), q);
+  return (Y || (Y = Oe().concat(dt())), Y);
 }
 var _t = s.attachDelegate,
   St = S.cryptoRandomBase62String,
-  G = S.exceptionString,
+  K = S.exceptionString,
   ae;
 function f(n) {
   if (!s.isDefinedNonNull(n)) throw new Error("A processor instance is required for creating BaseEventHandler.");
@@ -1181,16 +1180,16 @@ f.prototype.setDelegate = function (e) {
   return _t(this, e);
 };
 f.prototype.environment = function () {
-  throw G(f._className, "environment");
+  throw K(f._className, "environment");
 };
 f.prototype.eventRecorder = function () {
-  throw G(f._className, "eventRecorder");
+  throw K(f._className, "eventRecorder");
 };
 f.prototype.metricsData = function () {
-  throw G(f._className, "metricsData");
+  throw K(f._className, "metricsData");
 };
 f.prototype.processMetricsData = function () {
-  throw G(f._className, "processMetricsData");
+  throw K(f._className, "processMetricsData");
 };
 f.prototype.knownFields = function () {
   return yt();
@@ -1222,7 +1221,7 @@ f.prototype.xpPostFrequency = function (e) {
 f.prototype.xpSendMethod = function (n) {
   return (n && n.xpSendMethod) || this.eventRecorder().sendMethod();
 };
-var Pt = { Base: f },
+var It = { Base: f },
   gt = s.attachDelegate,
   Ie = S.exceptionString,
   Et = m.localStorageObject,
@@ -1251,5 +1250,5 @@ _.prototype.dsId = function () {};
 _.prototype.localStorageObject = Et;
 _.prototype.sessionStorageObject = Tt;
 _.prototype.platformIdentifier = function () {};
-var Ft = { Environment: _ };
-export { It as C, Ot as c, Pt as e, Ft as s };
+var Pt = { Environment: _ };
+export { re as C, Ot as c, It as e, Pt as s };

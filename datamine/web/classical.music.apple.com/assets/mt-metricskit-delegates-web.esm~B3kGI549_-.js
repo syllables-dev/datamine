@@ -1,5 +1,5 @@
-import { a as w, n as q, b as X, r as u, k as G, f as Z } from "./mt-metricskit-utils-private.esm.js";
-import { L as $, l as x } from "./mt-client-logger-core.esm.js";
+import { r as u, b as w, n as q, k as X, f as G, g as Z } from "./mt-metricskit-utils-private.esm~BZXGIVLJoi.js";
+import { L as $, l as x } from "./mt-client-logger-core.esm~BI3CNo8bBi.js";
 var Q = function () {};
 Q.prototype.setDelegate = function (e) {
   return u.attachDelegate(this, e);
@@ -111,7 +111,7 @@ This setting "sticks" across session, use "setDebugSource(null)" to clear`))),
       u.isArray(c) || (c = [c]),
       e === "disabled" ? (d ? (v = [i, a, c, p]) : (v = [V])) : (v = [V, i, a, c, p]),
       (v = this.configSourcesWithOverrides(v, r || this.topic())),
-      G.valueForKeyPath.apply(null, [e].concat(v))
+      X.valueForKeyPath.apply(null, [e].concat(v))
     );
   }.bind(this);
   if (this._configFetchPromise) return this._configFetchPromise.then(n);
@@ -324,7 +324,7 @@ E.prototype.applyDeRes = function (e, r) {
         var o;
         return (
           n.forEach(function (i) {
-            ((o = i.fieldName), o in e && (e[o] = X.deResNumber(e[o], i.magnitude, i.significantDigits)));
+            ((o = i.fieldName), o in e && (e[o] = G.deResNumber(e[o], i.magnitude, i.significantDigits)));
           }),
           e
         );

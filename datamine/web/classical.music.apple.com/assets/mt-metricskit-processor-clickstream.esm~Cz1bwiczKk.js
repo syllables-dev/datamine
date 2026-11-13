@@ -1,6 +1,14 @@
-import { s as w, c as z, r as a, d as ie, n as se, k as O, e as W } from "./mt-metricskit-utils-private.esm.js";
-import { C as ae, c as ce, e as pe, s as ue } from "./ae-client-kit-core.esm.js";
-import { l as le } from "./mt-client-logger-core.esm.js";
+import {
+  r as a,
+  k as O,
+  s as w,
+  c as z,
+  e as W,
+  d as ie,
+  n as se,
+} from "./mt-metricskit-utils-private.esm~BZXGIVLJoi.js";
+import { s as ae, e as ce, C as pe, c as ue } from "./ae-client-kit-core.esm~J5SV7uomBo.js";
+import { l as le } from "./mt-client-logger-core.esm~BI3CNo8bBi.js";
 var L = { version: "8.7.1", name: "mt-metricskit-processor-clickstream" },
   ye = {
     mtName: function () {
@@ -16,7 +24,7 @@ var L = { version: "8.7.1", name: "mt-metricskit-processor-clickstream" },
     },
   };
 function ge(t) {
-  (ce(t), f.attachDelegateInfo(t));
+  (ue(t), f.attachDelegateInfo(t));
 }
 function he(t) {
   t.cleanup();
@@ -67,7 +75,7 @@ var fe = [
     REQUIRED_ENVIRONMENT_FIELD_NAMES: $.concat("connectionType"),
     OPTIONAL_ENVIRONMENT_FIELD_NAMES: q.concat(["clientId", "cookie", "osLanguages"]),
   },
-  X = ue.Environment,
+  X = ae.Environment,
   de = w.exceptionString,
   ve = B.REQUIRED_ENVIRONMENT_FIELD_NAMES,
   me = B.OPTIONAL_ENVIRONMENT_FIELD_NAMES,
@@ -238,7 +246,7 @@ k.prototype.eventVersion = function (t) {
 };
 var ee = B.METRICS_KIT_BASE_FIELDS,
   H = B.IGNORED_BASE_FIELDS,
-  U = pe.Base,
+  U = ce.Base,
   y = function (t) {
     U.apply(this, arguments);
   };
@@ -1031,7 +1039,7 @@ re.prototype.init = function () {
         a.setDelegates(this.utils, this._delegatePackage)),
       ge(this.config),
       (e = this._delegatePackage.init()),
-      (this._constraints = new ae(this.config, { environment: this.system.environment }))),
+      (this._constraints = new pe(this.config, { environment: this.system.environment }))),
     e
   );
 };

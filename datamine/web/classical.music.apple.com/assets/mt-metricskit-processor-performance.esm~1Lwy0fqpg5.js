@@ -1,7 +1,7 @@
-import { s as R, e as _, r as s, g as C } from "./mt-metricskit-utils-private.esm.js";
-import { c as F, C as q, e as H, s as K } from "./ae-client-kit-core.esm.js";
-import { l as Q } from "./mt-client-logger-core.esm.js";
-var U = K.Environment,
+import { r as s, s as R, e as _, a as C } from "./mt-metricskit-utils-private.esm~BZXGIVLJoi.js";
+import { s as F, e as q, c as H, C as K } from "./ae-client-kit-core.esm~J5SV7uomBo.js";
+import { l as Q } from "./mt-client-logger-core.esm~BI3CNo8bBi.js";
+var U = F.Environment,
   V = R.exceptionString,
   P = function () {
     U.apply(this, arguments);
@@ -31,7 +31,7 @@ var A = Q("mt-metricskit-processor-performance"),
   B = function (e) {
     ((this.environment = new P(e)), (this.eventRecorder = new D()), (this.logger = A));
   },
-  k = H.Base,
+  k = q.Base,
   d = function (e) {
     k.apply(this, arguments);
   };
@@ -738,9 +738,9 @@ x.prototype.init = function () {
       (s.setDelegates(this.eventHandlers, this._delegatePackage, e),
         s.setDelegates(this.system, this._delegatePackage, e));
     }
-    (F(this.config),
+    (H(this.config),
       (this._initPromise = this._delegatePackage.init()),
-      (this._constraints = new q(this.config, { environment: this.system.environment })));
+      (this._constraints = new K(this.config, { environment: this.system.environment })));
   }
   return this._initPromise;
 };

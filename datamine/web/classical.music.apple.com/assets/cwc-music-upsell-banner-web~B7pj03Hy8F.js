@@ -1,16 +1,16 @@
-import { B as L, g as N, p as H, H as T, h as l, c as M, d as A } from "./index-2.js";
-const re = "M100",
-  se = {
+import { g as N, B as L, p as H, H as T, h as l, a as M, c as A } from "./index~i4gjrnRMqu.js";
+const oe = "M100",
+  re = {
     M75: ["bh", "by", "td", "eg", "jo", "xk", "lb", "ly", "mv", "np", "om", "qa", "rw", "sa", "tn", "ae", "uz", "ye"],
     GENERIC: ["cn"],
     UNSUPPORTED: ["af", "al", "bn", "bf", "ir", "pk", "pw", "st"],
   },
-  ce = (n) => {
+  se = (n) => {
     var e, i;
-    return (i = (e = Object.entries(se).find(([, a]) => a.includes(n))) === null || e === void 0 ? void 0 : e[0]) !==
+    return (i = (e = Object.entries(re).find(([, a]) => a.includes(n))) === null || e === void 0 ? void 0 : e[0]) !==
       null && i !== void 0
       ? i
-      : re;
+      : oe;
   };
 var h =
   typeof globalThis < "u"
@@ -28,17 +28,17 @@ function G(n, e, i) {
       path: e,
       exports: {},
       require: function (a, s) {
-        return le();
+        return ce();
       },
     }),
     n(i, i.exports),
     i.exports
   );
 }
-function le() {
+function ce() {
   throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs");
 }
-var ue = G(function (n, e) {
+var le = G(function (n, e) {
     Object.defineProperty(e, "__esModule", { value: !0 });
     function i() {
       if (typeof navigator > "u") return [];
@@ -48,7 +48,7 @@ var ue = G(function (n, e) {
     }
     e.getLanguages = i;
   }),
-  de = G(function (n, e) {
+  ue = G(function (n, e) {
     (Object.defineProperty(e, "__esModule", { value: !0 }),
       (e.default =
         typeof FastBoot < "u"
@@ -57,7 +57,7 @@ var ue = G(function (n, e) {
             ? Buffer
             : window.Buffer));
   }),
-  fe = G(function (n, e) {
+  de = G(function (n, e) {
     var i =
         (h && h.__read) ||
         function (t, r) {
@@ -92,7 +92,7 @@ var ue = G(function (n, e) {
           return t && t.__esModule ? t : { default: t };
         };
     Object.defineProperty(e, "__esModule", { value: !0 });
-    var f = s(de);
+    var f = s(ue);
     function w(t) {
       return !!t && typeof t == "object" && !Array.isArray(t);
     }
@@ -147,13 +147,13 @@ var ue = G(function (n, e) {
       };
     }
     e.memoize = k;
-    function te(t, r) {
+    function ne(t, r) {
       var o = O(r);
       return (
         o === "" || (t.indexOf("?") === -1 && (t = t + "?"), (t = t.endsWith("?") ? "" + t + o : t + "&" + o)), t
       );
     }
-    e.addQueryParams = te;
+    e.addQueryParams = ne;
     function O(t) {
       return t
         ? Object.keys(t).reduce(function (r, o) {
@@ -176,7 +176,7 @@ var ue = G(function (n, e) {
         : "";
     }
     e.urlEncodeParameters = O;
-    function ie(t) {
+    function te(t) {
       var r = t.split("/"),
         o = r.pop(),
         c = i((!!o && o.match(/\d+/g)) || ["100", "100"], 2),
@@ -184,7 +184,7 @@ var ue = G(function (n, e) {
         d = c[1];
       return { width: parseInt(u, 10), height: parseInt(d, 10), url: t.replace(u + "x" + d, "{w}x{h}") };
     }
-    ((e.getArtworkFromURL = ie),
+    ((e.getArtworkFromURL = te),
       (e.throttled = function (t, r) {
         var o = 0;
         return function () {
@@ -205,7 +205,7 @@ var ue = G(function (n, e) {
           (c !== void 0 && clearTimeout(c), (c = setTimeout(g, r)), p && t.apply(m, u));
         };
       }));
-    function ae(t) {
+    function ie(t) {
       var r,
         o = {};
       if (!t || (t.startsWith("http") && !t.includes("?"))) return {};
@@ -222,8 +222,8 @@ var ue = G(function (n, e) {
       }
       return o;
     }
-    e.parseQueryParams = ae;
-    function oe(t) {
+    e.parseQueryParams = ie;
+    function ae(t) {
       try {
         var r = i(t.split("?", 2), 2),
           o = r[0],
@@ -254,9 +254,9 @@ var ue = G(function (n, e) {
         return t;
       }
     }
-    e.stableSortQueryParams = oe;
+    e.stableSortQueryParams = ae;
   });
-const be = (n) => {
+const fe = (n) => {
     let e = null;
     return (...i) =>
       e ||
@@ -265,7 +265,7 @@ const be = (n) => {
       })),
       e);
   },
-  pe = "en-us";
+  be = "en-us";
 var $;
 (function (n) {
   ((n.Music = "music"),
@@ -292,15 +292,15 @@ let W = "",
   C = "",
   Z = !1,
   X = !1,
-  B = be(async () => {
+  B = fe(async () => {
     if (C && !Y) {
       const e = await (await fetch(`${C}/default-localizations.json`)).json();
       return ((Y = !0), e);
     }
   });
-const D = pe,
+const D = be,
   R = {},
-  me = (n, e = { showScreamers: !1 }) => {
+  pe = (n, e = { showScreamers: !1 }) => {
     const { defaultLocalizations: i, importDefaultLocalizations: a, showScreamers: s, showUnlocalizedUi: f } = e;
     ((C = n),
       typeof i == "object" && i && ((B = () => Promise.resolve(void 0)), (z = i)),
@@ -310,15 +310,15 @@ const D = pe,
   };
 let v = "",
   y;
-const we = async (n = D) => {
+const me = async (n = D) => {
     if (!C) return {};
     const e = `${C}/${n}.json`;
     return (await fetch(e)).json();
   },
-  ge = async (n = D) => {
+  we = async (n = D) => {
     if (!n) throw new Error("loadLocalizations: did not receive newLanguage");
     const e = n.toLowerCase(),
-      [i, a] = await Promise.allSettled([we(e), B()]);
+      [i, a] = await Promise.allSettled([me(e), B()]);
     (i.status === "fulfilled" ? (R[e] = i.value) : console.error(`Failed to load localizations for ${e}`),
       a.status === "fulfilled"
         ? (z = (Array.isArray(a.value) ? a.value : [a.value]).reduce((f, w) => ({ ...f, ...w }), {}))
@@ -326,10 +326,10 @@ const we = async (n = D) => {
       (W = e));
   },
   Q = (n) =>
-    ge(n).finally(() => {
+    we(n).finally(() => {
       ((v = ""), (y = Promise.resolve()));
     }),
-  he = async (n = D) => {
+  ge = async (n = D) => {
     if (!n) throw new Error("loadLocalizationsIfNeeded: did not receive newLanguage");
     const e = n.toLowerCase();
     if (R[e]) {
@@ -338,11 +338,11 @@ const we = async (n = D) => {
     }
     return (v || ((v = e), (y = Q(e))), v !== e && y && ((v = e), (y = y.finally(() => ((v = e), Q(e))))), y);
   },
-  ve = /@@([^@]+)@@/g,
-  ye = (n, e = {}) => (typeof n != "string" ? "" : n.replace(ve, (i, a) => e[a] || a)),
-  xe = /^\*\*.+\*\*$/,
-  J = (n) => xe.test(n),
-  _e = (n, e = { skipDefaultLocalizationsGet: !1 }) => {
+  he = /@@([^@]+)@@/g,
+  ve = (n, e = {}) => (typeof n != "string" ? "" : n.replace(he, (i, a) => e[a] || a)),
+  ye = /^\*\*.+\*\*$/,
+  J = (n) => ye.test(n),
+  xe = (n, e = { skipDefaultLocalizationsGet: !1 }) => {
     const i = R[W] || {};
     let a = i[n],
       s = n in i && !J(a);
@@ -354,54 +354,54 @@ const we = async (n = D) => {
         ((n = n.replace(`CommerceUI.${w}.`, `ASE.Web.Commerce.${w}.`)), (a = i[n]), (s = n in i && !J(a)));
     return X ? (s ? n : `**${n}**`) : s ? a : n in z && !e.skipDefaultLocalizationsGet ? z[n] : Z ? `**${n}**` : "";
   },
-  Se = (n, e = {}, i = { skipDefaultLocalizationsGet: !1 }) => {
-    const a = _e(n, i);
-    return ye(a, e);
+  _e = (n, e = {}, i = { skipDefaultLocalizationsGet: !1 }) => {
+    const a = xe(n, i);
+    return ve(a, e);
   },
   j = L === null || L === void 0 ? void 0 : L.isDev,
-  Fe = "en-us",
-  b = (n, e = {}) => Se(n, e),
-  Pe = ["l", "fb_locale"],
-  Ce = (n) => {
+  Se = "en-us",
+  b = (n, e = {}) => _e(n, e),
+  Fe = ["l", "fb_locale"],
+  Pe = (n) => {
     const e = j ? "locales/default-localizations.json" : `locales/${n}.json`;
     return N(e);
   },
-  He = async () => (await fetch(Ce(Fe), { ...(j ? { cache: "no-store" } : {}) })).json(),
-  Te = async (n) => he(n),
-  ke = (n, e) => {
+  Ce = async () => (await fetch(Pe(Se), { ...(j ? { cache: "no-store" } : {}) })).json(),
+  He = async (n) => ge(n),
+  Te = (n, e) => {
     const i = new RegExp("[?&]" + e + "=([^&#]*)", "i").exec(n);
     return i?.[1] ? decodeURI(i[1]) : void 0;
   },
-  Ae = (n) => [].concat(Ie(n), Ee(n), ze(), Le()).filter((i) => !!i),
-  ze = () => {
-    const n = fe.isNodeEnvironment() ? "" : window.location.toString(),
-      e = Pe.reduce((i, a) => {
-        const s = ke(n, a);
+  ke = (n) => [].concat(ze(n), Ie(n), Ae(), Ee()).filter((i) => !!i),
+  Ae = () => {
+    const n = de.isNodeEnvironment() ? "" : window.location.toString(),
+      e = Fe.reduce((i, a) => {
+        const s = Te(n, a);
         return (s && i.add(s), i);
       }, new Set());
     return Array.from(e);
   },
-  Ie = (n) => {
+  ze = (n) => {
     const e = n.getAttribute("language");
     return e ? [e] : [];
   },
-  Ee = (n) => {
+  Ie = (n) => {
     const e = n.closest("[lang]");
     return e ? [e.lang] : [];
   },
-  Le = () => {
-    const n = ue.getLanguages();
+  Ee = () => {
+    const n = le.getLanguages();
     return n?.map((e) => e.toLocaleLowerCase());
   },
-  Ue = async (n, e) => {
+  Le = async (n, e) => {
     try {
-      me(N(e), { importDefaultLocalizations: He, showScreamers: j });
+      pe(N(e), { importDefaultLocalizations: Ce, showScreamers: j });
     } catch (i) {
       console.error("[CWC] Failed to load default language", i);
     }
-    for (const i of Ae(n))
+    for (const i of ke(n))
       try {
-        await Te(i);
+        await He(i);
         break;
       } catch (a) {
         console.error(`[CWC] Failed to load language: ${i}`, a);
@@ -424,9 +424,9 @@ const we = async (n = D) => {
               return (f !== "" && (f += " "), f + s);
             }, "")
       : "",
-  Be =
+  Ue =
     ":host{display:block}.cwc-spinner{position:relative;width:32px;height:32px}.cwc-spinner--light .spinner__nib{background:#fff}.cwc-spinner--dark .spinner__nib{background:#000}.cwc-spinner--small{width:24px;height:24px}.cwc-spinner--small .spinner__nib,.cwc-spinner__nib{margin-left:-1px;width:2px;height:6px;border-radius:1px;-webkit-transform-origin:center 12px;transform-origin:center 12px}.cwc-spinner__nib{position:absolute;left:50%;top:0;-webkit-animation-name:nib;animation-name:nib;animation-direction:reverse;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:cubic-bezier(.33333,0,.66667,.33333);animation-timing-function:cubic-bezier(.33333,0,.66667,.33333);background:#000}.cwc-spinner__nib-0{-webkit-animation-delay:-1s;animation-delay:-1s;-webkit-transform:rotate(0deg);transform:rotate(0deg)}.cwc-spinner__nib-1{-webkit-animation-delay:-.9166666667s;animation-delay:-.9166666667s;-webkit-transform:rotate(30deg);transform:rotate(30deg)}.cwc-spinner__nib-2{-webkit-animation-delay:-.8333333333s;animation-delay:-.8333333333s;-webkit-transform:rotate(60deg);transform:rotate(60deg)}.cwc-spinner__nib-3{-webkit-animation-delay:-.75s;animation-delay:-.75s;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.cwc-spinner__nib-4{-webkit-animation-delay:-.6666666667s;animation-delay:-.6666666667s;-webkit-transform:rotate(120deg);transform:rotate(120deg)}.cwc-spinner__nib-5{-webkit-animation-delay:-.5833333333s;animation-delay:-.5833333333s;-webkit-transform:rotate(150deg);transform:rotate(150deg)}.cwc-spinner__nib-6{-webkit-animation-delay:-.5s;animation-delay:-.5s;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.cwc-spinner__nib-7{-webkit-animation-delay:-.4166666667s;animation-delay:-.4166666667s;-webkit-transform:rotate(210deg);transform:rotate(210deg)}.cwc-spinner__nib-8{-webkit-animation-delay:-.3333333333s;animation-delay:-.3333333333s;-webkit-transform:rotate(240deg);transform:rotate(240deg)}.cwc-spinner__nib-9{-webkit-animation-delay:-.25s;animation-delay:-.25s;-webkit-transform:rotate(270deg);transform:rotate(270deg)}.cwc-spinner__nib-10{-webkit-animation-delay:-.1666666667s;animation-delay:-.1666666667s;-webkit-transform:rotate(300deg);transform:rotate(300deg)}.cwc-spinner__nib-11{-webkit-animation-delay:-.0833333333s;animation-delay:-.0833333333s;-webkit-transform:rotate(330deg);transform:rotate(330deg)}@-webkit-keyframes nib{0%{opacity:.168627451}to{opacity:1}}@keyframes nib{0%{opacity:.168627451}to{opacity:1}}",
-  Ne = H(
+  Be = H(
     class extends T {
       constructor() {
         (super(), this.__registerHost(), (this.isSmall = !1), (this.color = "dark"));
@@ -459,7 +459,7 @@ const we = async (n = D) => {
         );
       }
       static get style() {
-        return Be;
+        return Ue;
       }
     },
     [0, "cwc-loading-spinner", { isSmall: [4, "is-small"], color: [1] }],
@@ -469,21 +469,21 @@ function K() {
   ["cwc-loading-spinner"].forEach((e) => {
     switch (e) {
       case "cwc-loading-spinner":
-        customElements.get(e) || customElements.define(e, Ne);
+        customElements.get(e) || customElements.define(e, Be);
         break;
     }
   });
 }
-const Me =
+const Ne =
     '@charset "UTF-8";.cwc-button{cursor:pointer;display:inline-block;text-align:center;white-space:nowrap;min-width:28px;padding:8px 16px;border-radius:980px;background:#0071e3;color:#fff}.cwc-button:hover{text-decoration:none}.cwc-button:focus{-webkit-box-shadow:0 0 0 4px rgba(0,125,250,.6);box-shadow:0 0 0 4px rgba(0,125,250,.6);outline:none}.cwc-button:focus[data-focus-method=mouse]:not(input):not(textarea):not(select),.cwc-button:focus[data-focus-method=touch]:not(input):not(textarea):not(select){-webkit-box-shadow:none;box-shadow:none}.cwc-button:active{outline:none}.cwc-button.disabled,.cwc-button:disabled{cursor:default}@media only screen and (min-width:1069px){.cwc-button{font-size:17px;line-height:1.1764805882;font-weight:400;letter-spacing:-.022em;font-family:SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button:lang(ar){letter-spacing:0;font-family:SF Pro AR,SF Pro Gulf,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button:lang(ja){letter-spacing:0;font-family:SF Pro JP,SF Pro Text,SF Pro Icons,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,メイリオ,Meiryo,ＭＳ Ｐゴシック,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button:lang(ko){letter-spacing:0;font-family:SF Pro KR,SF Pro Text,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button:lang(zh){letter-spacing:0}.cwc-button:lang(th){font-family:SF Pro TH,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button:lang(zh-CN){font-family:SF Pro SC,SF Pro Text,SF Pro Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button:lang(zh-HK){font-family:SF Pro HK,SF Pro Text,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button:lang(zh-MO){font-family:SF Pro HK,SF Pro TC,SF Pro Text,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button:lang(zh-TW){font-family:SF Pro TC,SF Pro Text,SF Pro Icons,PingFang TC,Helvetica Neue,Helvetica,Arial,sans-serif}}.cwc-button:hover{background:#0077ed}.cwc-button:active{background:#006edb}.cwc-button.disabled,.cwc-button:disabled{background:#0071e3;color:#fff;opacity:.32}.cwc-button-block{-webkit-box-sizing:border-box;box-sizing:border-box;display:block;width:100%;border-radius:8px}.cwc-button-neutral{background:#1d1d1f;color:#fff}.cwc-button-neutral:hover{background:#272729}.cwc-button-neutral:active{background:#18181a}.cwc-button-neutral.disabled,.cwc-button-neutral:disabled{background:#1d1d1f;color:#fff;opacity:.32}.cwc-button-secondary{background:#e8e8ed;color:#000}.cwc-button-secondary:hover{background:#ebebf0}.cwc-button-secondary:active{background:#e6e6eb}.cwc-button-secondary.disabled,.cwc-button-secondary:disabled{background:#e8e8ed;color:#000;opacity:.56}.cwc-button-secondary-alpha{background:rgba(0,0,0,.08);color:#000}.cwc-button-secondary-alpha:hover{background:rgba(0,0,0,.07)}.cwc-button-secondary-alpha:active{background:rgba(0,0,0,.09)}.cwc-button-secondary-alpha.disabled,.cwc-button-secondary-alpha:disabled{background:rgba(0,0,0,.08);color:#000;opacity:.56}.cwc-button-super{min-width:28px;padding:18px 31px}@media only screen and (min-width:1069px){.cwc-button-super{font-size:17px;line-height:1.1764805882;font-weight:400;letter-spacing:-.022em;font-family:SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-super:lang(ar){letter-spacing:0;font-family:SF Pro AR,SF Pro Gulf,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-super:lang(ja){letter-spacing:0;font-family:SF Pro JP,SF Pro Text,SF Pro Icons,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,メイリオ,Meiryo,ＭＳ Ｐゴシック,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-super:lang(ko){letter-spacing:0;font-family:SF Pro KR,SF Pro Text,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-super:lang(zh){letter-spacing:0}.cwc-button-super:lang(th){font-family:SF Pro TH,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-super:lang(zh-CN){font-family:SF Pro SC,SF Pro Text,SF Pro Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-super:lang(zh-HK){font-family:SF Pro HK,SF Pro Text,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-super:lang(zh-MO){font-family:SF Pro HK,SF Pro TC,SF Pro Text,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-super:lang(zh-TW){font-family:SF Pro TC,SF Pro Text,SF Pro Icons,PingFang TC,Helvetica Neue,Helvetica,Arial,sans-serif}}.cwc-button-super.cwc-button-block{border-radius:12px}.cwc-button-elevated{min-width:26px;padding:12px 22px}@media only screen and (min-width:1069px){.cwc-button-elevated{font-size:17px;line-height:1.1764805882;font-weight:400;letter-spacing:-.022em;font-family:SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-elevated:lang(ar){letter-spacing:0;font-family:SF Pro AR,SF Pro Gulf,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-elevated:lang(ja){letter-spacing:0;font-family:SF Pro JP,SF Pro Text,SF Pro Icons,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,メイリオ,Meiryo,ＭＳ Ｐゴシック,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-elevated:lang(ko){letter-spacing:0;font-family:SF Pro KR,SF Pro Text,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-elevated:lang(zh){letter-spacing:0}.cwc-button-elevated:lang(th){font-family:SF Pro TH,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-elevated:lang(zh-CN){font-family:SF Pro SC,SF Pro Text,SF Pro Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-elevated:lang(zh-HK){font-family:SF Pro HK,SF Pro Text,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-elevated:lang(zh-MO){font-family:SF Pro HK,SF Pro TC,SF Pro Text,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-elevated:lang(zh-TW){font-family:SF Pro TC,SF Pro Text,SF Pro Icons,PingFang TC,Helvetica Neue,Helvetica,Arial,sans-serif}}.cwc-button-elevated.cwc-button-block{border-radius:10px}.cwc-button-reduced{min-width:23px;padding:4px 11px}@media only screen and (min-width:1069px){.cwc-button-reduced{font-size:12px;line-height:1.3333733333;font-weight:400;letter-spacing:-.01em;font-family:SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-reduced:lang(ar){letter-spacing:0;font-family:SF Pro AR,SF Pro Gulf,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-reduced:lang(ja){letter-spacing:0;font-family:SF Pro JP,SF Pro Text,SF Pro Icons,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,メイリオ,Meiryo,ＭＳ Ｐゴシック,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-reduced:lang(ko){letter-spacing:0;font-family:SF Pro KR,SF Pro Text,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-reduced:lang(zh){letter-spacing:0}.cwc-button-reduced:lang(th){font-family:SF Pro TH,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-reduced:lang(zh-CN){font-family:SF Pro SC,SF Pro Text,SF Pro Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-reduced:lang(zh-HK){font-family:SF Pro HK,SF Pro Text,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-reduced:lang(zh-MO){font-family:SF Pro HK,SF Pro TC,SF Pro Text,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif}.cwc-button-reduced:lang(zh-TW){font-family:SF Pro TC,SF Pro Text,SF Pro Icons,PingFang TC,Helvetica Neue,Helvetica,Arial,sans-serif}}.cwc-button-reduced.cwc-button-block{border-radius:5px}cwc-button{display:inline-block;position:relative}',
-  Ge = H(
+  Me = H(
     class extends T {
       constructor() {
         (super(),
           this.__registerHost(),
-          (this.cwcFocus = A(this, "cwcFocus", 7)),
-          (this.cwcBlur = A(this, "cwcBlur", 7)),
-          (this.cwcClick = A(this, "cwcClick", 7)),
+          (this.cwcFocus = A(this, "cwcFocus")),
+          (this.cwcBlur = A(this, "cwcBlur")),
+          (this.cwcClick = A(this, "cwcClick")),
           (this.buttonFocus = () => {
             this.isButtonAutoFocus &&
               setImmediate(() => {
@@ -543,7 +543,7 @@ const Me =
         );
       }
       static get style() {
-        return Me;
+        return Ne;
       }
     },
     [
@@ -567,7 +567,7 @@ function V() {
   ["cwc-button", "cwc-loading-spinner"].forEach((e) => {
     switch (e) {
       case "cwc-button":
-        customElements.get(e) || customElements.define(e, Ge);
+        customElements.get(e) || customElements.define(e, Me);
         break;
       case "cwc-loading-spinner":
         customElements.get(e) || K();
@@ -576,10 +576,10 @@ function V() {
   });
 }
 const U = new Map(),
-  We =
+  Ge =
     ".cwc-icon{display:inline-block}.cwc-icon svg{min-height:100%;width:inherit;height:inherit;display:block;color:currentColor}.cwc-icon svg *{fill:currentColor}",
-  De = (n) => n.length > 0 && /^[a-zA-Z0-9-]+$/.test(n),
-  Re = H(
+  We = (n) => n.length > 0 && /^[a-zA-Z0-9-]+$/.test(n),
+  De = H(
     class extends T {
       constructor() {
         (super(), this.__registerHost(), (this.iconContent = void 0), (this.name = void 0));
@@ -592,7 +592,7 @@ const U = new Map(),
       }
       async loadAsset() {
         const { name: e } = this;
-        if (!De(e)) {
+        if (!We(e)) {
           ((this.iconContent = ""), console.warn(`"${e}" is not a valid icon name.`));
           return;
         }
@@ -618,7 +618,7 @@ const U = new Map(),
         return { name: ["nameChanged"] };
       }
       static get style() {
-        return We;
+        return Ge;
       }
     },
     [0, "cwc-icon", { name: [513], iconContent: [32] }, void 0, { name: ["nameChanged"] }],
@@ -628,20 +628,20 @@ function ee() {
   ["cwc-icon"].forEach((e) => {
     switch (e) {
       case "cwc-icon":
-        customElements.get(e) || customElements.define(e, Re);
+        customElements.get(e) || customElements.define(e, De);
         break;
     }
   });
 }
-const je =
+const Re =
   ".cwc-upsell-banner{position:relative;width:100%;cursor:pointer;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-line-pack:center;align-content:center;-ms-flex-align:center;align-items:center;padding:12px 30px}.cwc-upsell-banner__head{font-weight:600;font-size:18px;line-height:1.23}.cwc-upsell-banner__subhead{margin-top:8px;color:hsla(0,0%,100%,.8);font-size:14px}@media only screen and (max-width:999px){.cwc-upsell-banner__head{font-size:14px;line-height:1.28}.cwc-upsell-banner__subhead{font-size:11px;font-weight:500}}.cwc-upsell-banner__cta-button .cwc-button{letter-spacing:0;border-radius:4px;height:32px;min-width:125px;font-weight:600;font-size:13px;font-family:unset;background:#fff;color:#000;-webkit-box-shadow:0 0 20px rgba(0,0,0,.06);box-shadow:0 0 20px rgba(0,0,0,.06)}.cwc-upsell-banner__close-button{display:none}.cwc-upsell-banner__branding{height:20px;margin-right:20px}.cwc-upsell-banner__text--with-branding{padding-left:20px;border-left:1px solid hsla(0,0%,100%,.3)}.cwc-upsell-banner__logo-vector{max-width:100%;height:20px;fill:#fff}.cwc-upsell-banner__close-icon{width:100%}";
 let q = !1;
-const Ke = H(
+const je = H(
   class extends T {
     constructor() {
       (super(),
         this.__registerHost(),
-        (this.cwcCtaClick = A(this, "cwcCtaClick", 7)),
+        (this.cwcCtaClick = A(this, "cwcCtaClick")),
         (this.handleCloseClick = (e) => {
           ((this.isCollapsed = !0), (q = !0), e.stopPropagation());
         }),
@@ -708,7 +708,7 @@ const Ke = H(
       );
     }
     static get style() {
-      return je;
+      return Re;
     }
   },
   [
@@ -725,12 +725,12 @@ const Ke = H(
     },
   ],
 );
-function Oe() {
+function Ke() {
   if (typeof customElements > "u") return;
   ["cwc-upsell-banner", "cwc-button", "cwc-icon", "cwc-loading-spinner"].forEach((e) => {
     switch (e) {
       case "cwc-upsell-banner":
-        customElements.get(e) || customElements.define(e, Ke);
+        customElements.get(e) || customElements.define(e, je);
         break;
       case "cwc-button":
         customElements.get(e) || V();
@@ -744,9 +744,9 @@ function Oe() {
     }
   });
 }
-const $e =
+const Oe =
     ".cwc-upsell-banner{width:100vw;background-color:var(--musicBrandBG);color:#fff;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.05),0 1px 3px rgba(0,0,0,.07);box-shadow:0 1px 0 rgba(0,0,0,.05),0 1px 3px rgba(0,0,0,.07)}@media only screen and (min-width:484px){.cwc-upsell-banner__text{-ms-flex:1;flex:1;margin-right:16px}.cwc-upsell-banner__head{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}}@media only screen and (max-width:483px){.cwc-upsell-banner__text{width:100%;-ms-flex-pack:center;justify-content:center;text-align:center}.cwc-upsell-banner--collapsed .cwc-upsell-banner__text{padding-top:7px;padding-bottom:7px}.cwc-upsell-banner__cta-button{display:none}.cwc-upsell-banner__close-button{position:absolute;z-index:1;top:0;-webkit-box-sizing:content-box;box-sizing:content-box;width:10px;height:10px;padding:10px;background:none;border:none;outline:none;right:0}.cwc-upsell-banner .cwc-upsell-banner__close-button{display:block}.cwc-upsell-banner--collapsed .cwc-upsell-banner__close-button,.cwc-upsell-banner--collapsed .cwc-upsell-banner__subhead{display:none}}",
-  ne = H(
+  $e = H(
     class extends T {
       constructor() {
         (super(),
@@ -760,7 +760,7 @@ const $e =
                 introPrice: f,
                 storefront: w,
               } = this,
-              _ = ce(w);
+              _ = se(w);
             if (e)
               return b(
                 i && s && a
@@ -826,7 +826,7 @@ const $e =
           (this.introPrice = void 0));
       }
       async componentWillLoad() {
-        await Ue(this.el, "locales");
+        await Le(this.el, "locales");
       }
       render() {
         return l("cwc-upsell-banner", {
@@ -840,7 +840,7 @@ const $e =
         return this;
       }
       static get style() {
-        return $e;
+        return Oe;
       }
     },
     [
@@ -864,7 +864,7 @@ function Ye() {
   ["cwc-music-upsell-banner-web", "cwc-button", "cwc-icon", "cwc-loading-spinner", "cwc-upsell-banner"].forEach((e) => {
     switch (e) {
       case "cwc-music-upsell-banner-web":
-        customElements.get(e) || customElements.define(e, ne);
+        customElements.get(e) || customElements.define(e, $e);
         break;
       case "cwc-button":
         customElements.get(e) || V();
@@ -876,11 +876,10 @@ function Ye() {
         customElements.get(e) || K();
         break;
       case "cwc-upsell-banner":
-        customElements.get(e) || Oe();
+        customElements.get(e) || Ke();
         break;
     }
   });
 }
-const en = ne,
-  nn = Ye;
-export { en as CwcMusicUpsellBannerWeb, nn as defineCustomElement };
+const en = Ye;
+export { en as defineCustomElement };
