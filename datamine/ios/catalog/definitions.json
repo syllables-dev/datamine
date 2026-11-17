@@ -1,0 +1,2010 @@
+{
+ "definitions": {
+  "AppleMediaServices": [
+   {
+    "x0": "AMSDescription"
+   },
+   {
+    "x0": "action"
+   },
+   {
+    "x0": "buyParams"
+   },
+   {
+    "x0": "cardStatus"
+   },
+   {
+    "x0": "certHash"
+   },
+   {
+    "x0": "code"
+   },
+   {
+    "x0": "content"
+   },
+   {
+    "x0": "data"
+   },
+   {
+    "x0": "deepLink"
+   },
+   {
+    "x0": "defaultAction"
+   },
+   {
+    "x0": "description"
+   },
+   {
+    "x0": "detail"
+   },
+   {
+    "x0": "dsid"
+   },
+   {
+    "x0": "element"
+   },
+   {
+    "x0": "errorCode"
+   },
+   {
+    "x0": "errors"
+   },
+   {
+    "x0": "event"
+   },
+   {
+    "x0": "explanation"
+   },
+   {
+    "x0": "failureReason"
+   },
+   {
+    "x0": "iconURL"
+   },
+   {
+    "x0": "identifier"
+   },
+   {
+    "x0": "ivs"
+   },
+   {
+    "x0": "keys"
+   },
+   {
+    "x0": "kind"
+   },
+   {
+    "x0": "message"
+   },
+   {
+    "x0": "metricsEvent"
+   },
+   {
+    "x0": "metricsOverlay"
+   },
+   {
+    "x0": "mimeType"
+   },
+   {
+    "x0": "notificationIds"
+   },
+   {
+    "x0": "okButtonString"
+   },
+   {
+    "x0": "options"
+   },
+   {
+    "x0": "placeholder"
+   },
+   {
+    "x0": "pmuc"
+   },
+   {
+    "x0": "publicKey"
+   },
+   {
+    "x0": "sakTopics"
+   },
+   {
+    "x0": "serviceId"
+   },
+   {
+    "x0": "status"
+   },
+   {
+    "x0": "style"
+   },
+   {
+    "x0": "subscriptionId"
+   },
+   {
+    "x0": "success"
+   },
+   {
+    "x0": "tag"
+   },
+   {
+    "x0": "text"
+   },
+   {
+    "x0": "treatmentId"
+   },
+   {
+    "x0": "type"
+   },
+   {
+    "x0": "underlyingError"
+   },
+   {
+    "x0": "url"
+   },
+   {
+    "x0": "userInfo"
+   }
+  ],
+  "GameServicesCore": [
+   {
+    "x0": "achievementID"
+   },
+   {
+    "x0": "apps"
+   },
+   {
+    "x0": "attemptCount"
+   },
+   {
+    "x0": "attributes"
+   },
+   {
+    "x0": "bagLanguage"
+   },
+   {
+    "x0": "challenges",
+    "x2": "challenges"
+   },
+   {
+    "x0": "configJSON",
+    "x2": "configJSON"
+   },
+   {
+    "x0": "creationDate"
+   },
+   {
+    "x0": "date"
+   },
+   {
+    "x0": "definitionID"
+   },
+   {
+    "x0": "fallbackURL"
+   },
+   {
+    "x0": "for",
+    "x2": "bundleIDs"
+   },
+   {
+    "x0": "formattedScore"
+   },
+   {
+    "x0": "game"
+   },
+   {
+    "x0": "gameBundleID"
+   },
+   {
+    "x0": "id",
+    "x2": "id"
+   },
+   {
+    "x0": "id"
+   },
+   {
+    "x0": "ids",
+    "x2": "ids"
+   },
+   {
+    "x0": "int"
+   },
+   {
+    "x0": "isArchived"
+   },
+   {
+    "x0": "isCompleted"
+   },
+   {
+    "x0": "isLinked"
+   },
+   {
+    "x0": "lastModified"
+   },
+   {
+    "x0": "lastResumeDate"
+   },
+   {
+    "x0": "leaderboardID"
+   },
+   {
+    "x0": "leaderboardSets",
+    "x2": "leaderboardSets"
+   },
+   {
+    "x0": "linkedAccounts"
+   },
+   {
+    "x0": "meta"
+   },
+   {
+    "x0": "minimumVersion"
+   },
+   {
+    "x0": "name"
+   },
+   {
+    "x0": "parentId"
+   },
+   {
+    "x0": "participants"
+   },
+   {
+    "x0": "percentComplete"
+   },
+   {
+    "x0": "prefix",
+    "x2": "prefix"
+   },
+   {
+    "x0": "primaryEntityId",
+    "x2": "primaryEntityId"
+   },
+   {
+    "x0": "rank"
+   },
+   {
+    "x0": "ref"
+   },
+   {
+    "x0": "releaseState"
+   },
+   {
+    "x0": "revokedLinks"
+   },
+   {
+    "x0": "sql",
+    "x2": "sql"
+   },
+   {
+    "x0": "type"
+   },
+   {
+    "x0": "url"
+   }
+  ],
+  "Music": [
+   {
+    "x0": "50401",
+    "x2": "itscg"
+   },
+   {
+    "x0": "Bool"
+   },
+   {
+    "x0": "CGFloat"
+   },
+   {
+    "x0": "ColorScheme"
+   },
+   {
+    "x0": "DynamicTypeSize"
+   },
+   {
+    "x0": "InterfaceIdiom"
+   },
+   {
+    "x0": "Layout"
+   },
+   {
+    "x0": "LayoutDirection"
+   },
+   {
+    "x0": "NowPlaying"
+   },
+   {
+    "x0": "Scale"
+   },
+   {
+    "x0": "a"
+   },
+   {
+    "x0": "action"
+   },
+   {
+    "x0": "arguments"
+   },
+   {
+    "x0": "artist"
+   },
+   {
+    "x0": "attributes"
+   },
+   {
+    "x0": "classHierarchy"
+   },
+   {
+    "x0": "cookie"
+   },
+   {
+    "x0": "d"
+   },
+   {
+    "x0": "date"
+   },
+   {
+    "x0": "default"
+   },
+   {
+    "x0": "description"
+   },
+   {
+    "x0": "dialog"
+   },
+   {
+    "x0": "enabled"
+   },
+   {
+    "x0": "endTime"
+   },
+   {
+    "x0": "forcelocal"
+   },
+   {
+    "x0": "front"
+   },
+   {
+    "x0": "id"
+   },
+   {
+    "x0": "identifier"
+   },
+   {
+    "x0": "ids"
+   },
+   {
+    "x0": "incoming"
+   },
+   {
+    "x0": "input-parameter"
+   },
+   {
+    "x0": "intelligence"
+   },
+   {
+    "x0": "isMinor"
+   },
+   {
+    "x0": "items"
+   },
+   {
+    "x0": "key"
+   },
+   {
+    "x0": "library-menu"
+   },
+   {
+    "x0": "manufacturer"
+   },
+   {
+    "x0": "methodName"
+   },
+   {
+    "x0": "mli"
+   },
+   {
+    "x0": "mliAPIPath"
+   },
+   {
+    "x0": "music",
+    "x2": "app"
+   },
+   {
+    "x0": "music"
+   },
+   {
+    "x0": "nil"
+   },
+   {
+    "x0": "options"
+   },
+   {
+    "x0": "orderedKeys"
+   },
+   {
+    "x0": "outgoing"
+   },
+   {
+    "x0": "pid"
+   },
+   {
+    "x0": "playlist",
+    "x2": "type"
+   },
+   {
+    "x0": "s"
+   },
+   {
+    "x0": "search"
+   },
+   {
+    "x0": "sessionDuration"
+   },
+   {
+    "x0": "sharing_tt_lyrics",
+    "x2": "itsct"
+   },
+   {
+    "x0": "showalert"
+   },
+   {
+    "x0": "signout"
+   },
+   {
+    "x0": "song",
+    "x2": "type"
+   },
+   {
+    "x0": "st"
+   },
+   {
+    "x0": "staging"
+   },
+   {
+    "x0": "startTime"
+   },
+   {
+    "x0": "store-id"
+   },
+   {
+    "x0": "subtype"
+   },
+   {
+    "x0": "tab"
+   },
+   {
+    "x0": "term"
+   },
+   {
+    "x0": "title"
+   },
+   {
+    "x0": "trackID"
+   },
+   {
+    "x0": "ts"
+   },
+   {
+    "x0": "type"
+   },
+   {
+    "x0": "url"
+   },
+   {
+    "x0": "value"
+   },
+   {
+    "x0": "values"
+   },
+   {
+    "x2": "containerId"
+   },
+   {
+    "x2": "playlist"
+   },
+   {
+    "x2": "song"
+   }
+  ],
+  "MusicApplication": [
+   {
+    "x0": "Description"
+   },
+   {
+    "x0": "Headline"
+   },
+   {
+    "x0": "Jpan"
+   },
+   {
+    "x0": "Kore"
+   },
+   {
+    "x0": "Latn"
+   },
+   {
+    "x0": "PosterCellTitle"
+   },
+   {
+    "x0": "Subtitle"
+   },
+   {
+    "x0": "Title"
+   },
+   {
+    "x0": "action"
+   },
+   {
+    "x0": "albumTitle"
+   },
+   {
+    "x0": "arguments"
+   },
+   {
+    "x0": "artist"
+   },
+   {
+    "x0": "artistName"
+   },
+   {
+    "x0": "baseUrl"
+   },
+   {
+    "x0": "classHierarchy"
+   },
+   {
+    "x0": "contactId"
+   },
+   {
+    "x0": "contacts"
+   },
+   {
+    "x0": "content"
+   },
+   {
+    "x0": "cookie"
+   },
+   {
+    "x0": "d"
+   },
+   {
+    "x0": "data"
+   },
+   {
+    "x0": "date"
+   },
+   {
+    "x0": "dateAndRuntime"
+   },
+   {
+    "x0": "dateReleased"
+   },
+   {
+    "x0": "default"
+   },
+   {
+    "x0": "description"
+   },
+   {
+    "x0": "descriptionText"
+   },
+   {
+    "x0": "detail"
+   },
+   {
+    "x0": "dialog"
+   },
+   {
+    "x0": "displayTerm"
+   },
+   {
+    "x0": "duration"
+   },
+   {
+    "x0": "durationText"
+   },
+   {
+    "x0": "endTime"
+   },
+   {
+    "x0": "friends"
+   },
+   {
+    "x0": "friendsToFollow"
+   },
+   {
+    "x0": "headline"
+   },
+   {
+    "x0": "heightInPoints"
+   },
+   {
+    "x0": "id"
+   },
+   {
+    "x0": "identifier"
+   },
+   {
+    "x0": "intelligence"
+   },
+   {
+    "x0": "ipad",
+    "x2": "platform"
+   },
+   {
+    "x0": "isMinor"
+   },
+   {
+    "x0": "isOnBoarded"
+   },
+   {
+    "x0": "isPrivate"
+   },
+   {
+    "x0": "kind"
+   },
+   {
+    "x0": "library",
+    "x2": "secondaryPageContext"
+   },
+   {
+    "x0": "lockup"
+   },
+   {
+    "x0": "lyrics"
+   },
+   {
+    "x0": "meta"
+   },
+   {
+    "x0": "methodName"
+   },
+   {
+    "x0": "metrics"
+   },
+   {
+    "x0": "name"
+   },
+   {
+    "x0": "obeySortOrder"
+   },
+   {
+    "x0": "options"
+   },
+   {
+    "x0": "orderedKeys"
+   },
+   {
+    "x0": "overlaySubtitle"
+   },
+   {
+    "x0": "overlayTitle"
+   },
+   {
+    "x0": "payload"
+   },
+   {
+    "x0": "playlist",
+    "x2": "type"
+   },
+   {
+    "x0": "playlistName"
+   },
+   {
+    "x0": "profileImage"
+   },
+   {
+    "x0": "rank"
+   },
+   {
+    "x0": "reason"
+   },
+   {
+    "x0": "results"
+   },
+   {
+    "x0": "resultsLimit"
+   },
+   {
+    "x0": "rootLayer"
+   },
+   {
+    "x0": "s"
+   },
+   {
+    "x0": "search"
+   },
+   {
+    "x0": "searchTerm"
+   },
+   {
+    "x0": "sessionDuration"
+   },
+   {
+    "x0": "signout"
+   },
+   {
+    "x0": "sizing-text"
+   },
+   {
+    "x0": "snippets"
+   },
+   {
+    "x0": "socialProfileId"
+   },
+   {
+    "x0": "song",
+    "x2": "type"
+   },
+   {
+    "x0": "startTime"
+   },
+   {
+    "x0": "subscriberId"
+   },
+   {
+    "x0": "subtitle"
+   },
+   {
+    "x0": "supertitle"
+   },
+   {
+    "x0": "tag"
+   },
+   {
+    "x0": "text"
+   },
+   {
+    "x0": "title"
+   },
+   {
+    "x0": "title-two-line"
+   },
+   {
+    "x0": "trackID"
+   },
+   {
+    "x0": "trackNumber"
+   },
+   {
+    "x0": "true",
+    "x2": "hasResults"
+   },
+   {
+    "x0": "type"
+   },
+   {
+    "x0": "url"
+   },
+   {
+    "x0": "v"
+   },
+   {
+    "x0": "value"
+   },
+   {
+    "x0": "values"
+   },
+   {
+    "x0": "weight"
+   },
+   {
+    "x0": "widthInPoints"
+   },
+   {
+    "x2": "containerId"
+   },
+   {
+    "x2": "identifier"
+   },
+   {
+    "x2": "ids"
+   },
+   {
+    "x2": "kinds"
+   },
+   {
+    "x2": "l"
+   },
+   {
+    "x2": "limit"
+   },
+   {
+    "x2": "sparseCount"
+   },
+   {
+    "x2": "sparseLimit"
+   },
+   {
+    "x2": "term"
+   },
+   {
+    "x2": "types"
+   },
+   {
+    "x2": "with"
+   }
+  ],
+  "MusicKit": [
+   {
+    "x0": "Playlist Name"
+   },
+   {
+    "x0": "_albumCount"
+   },
+   {
+    "x0": "_artwork"
+   },
+   {
+    "x0": "_catalogAsset"
+   },
+   {
+    "x0": "_cloudStatus"
+   },
+   {
+    "x0": "_contentRating"
+   },
+   {
+    "x0": "_coverArtwork"
+   },
+   {
+    "x0": "_downloadedDate"
+   },
+   {
+    "x0": "_duration"
+   },
+   {
+    "x0": "_editSessionID"
+   },
+   {
+    "x0": "_hasCleanTracks"
+   },
+   {
+    "x0": "_isLibraryAdded"
+   },
+   {
+    "x0": "_isOwner"
+   },
+   {
+    "x0": "_isPinned"
+   },
+   {
+    "x0": "_isPublic"
+   },
+   {
+    "x0": "_isVisible"
+   },
+   {
+    "x0": "_item"
+   },
+   {
+    "x0": "_itemType"
+   },
+   {
+    "x0": "_lastPlayedDate"
+   },
+   {
+    "x0": "_localFileAsset"
+   },
+   {
+    "x0": "_parent"
+   },
+   {
+    "x0": "_playCount"
+   },
+   {
+    "x0": "_playOrder"
+   },
+   {
+    "x0": "_playParameters"
+   },
+   {
+    "x0": "_position"
+   },
+   {
+    "x0": "_releaseDate"
+   },
+   {
+    "x0": "_releaseYear"
+   },
+   {
+    "x0": "_title"
+   },
+   {
+    "x0": "_trackCount"
+   },
+   {
+    "x0": "_userRating"
+   },
+   {
+    "x0": "_variant"
+   },
+   {
+    "x0": "airTime"
+   },
+   {
+    "x0": "albumName"
+   },
+   {
+    "x0": "albumType"
+   },
+   {
+    "x0": "albums"
+   },
+   {
+    "x0": "appBundleID"
+   },
+   {
+    "x0": "artwork"
+   },
+   {
+    "x0": "attribution"
+   },
+   {
+    "x0": "audio-analysis",
+    "x4": "AudioAnalysis"
+   },
+   {
+    "x0": "audioLocale"
+   },
+   {
+    "x0": "canonicalKind",
+    "x4": "canonicalKind"
+   },
+   {
+    "x0": "catalog"
+   },
+   {
+    "x0": "classicalUrl"
+   },
+   {
+    "x0": "cleanTrackCount"
+   },
+   {
+    "x0": "contentRating"
+   },
+   {
+    "x0": "copyright"
+   },
+   {
+    "x0": "credits"
+   },
+   {
+    "x0": "curatorName"
+   },
+   {
+    "x0": "discNumber"
+   },
+   {
+    "x0": "editorialArtwork",
+    "x2": "Artwork"
+   },
+   {
+    "x0": "editorialVideo",
+    "x2": "Dictionary<EditorialVideoArtworkFlavor, VideoArtwork>"
+   },
+   {
+    "x0": "endTime"
+   },
+   {
+    "x0": "episodeNumber"
+   },
+   {
+    "x0": "flexml-analysis",
+    "x4": "FlexAnalysis"
+   },
+   {
+    "x0": "genreNames"
+   },
+   {
+    "x0": "geoLocation"
+   },
+   {
+    "x0": "has4K"
+   },
+   {
+    "x0": "hasBonusContent"
+   },
+   {
+    "x0": "hasHDR"
+   },
+   {
+    "x0": "hasLyrics"
+   },
+   {
+    "x0": "hasMusicEvents"
+   },
+   {
+    "x0": "isChart"
+   },
+   {
+    "x0": "isCompilation"
+   },
+   {
+    "x0": "isComplete"
+   },
+   {
+    "x0": "isGroup"
+   },
+   {
+    "x0": "isLive"
+   },
+   {
+    "x0": "isPinned"
+   },
+   {
+    "x0": "isPreorder"
+   },
+   {
+    "x0": "isSingle"
+   },
+   {
+    "x0": "isrc"
+   },
+   {
+    "x0": "items"
+   },
+   {
+    "x0": "kind"
+   },
+   {
+    "x0": "latest-releases"
+   },
+   {
+    "x0": "library"
+   },
+   {
+    "x0": "library-",
+    "x2": "composers"
+   },
+   {
+    "x0": "library-",
+    "x2": "editorial-elements"
+   },
+   {
+    "x0": "library-",
+    "x2": "library-pins"
+   },
+   {
+    "x0": "library-",
+    "x2": "marketing-items"
+   },
+   {
+    "x0": "library-",
+    "x2": "music-summaries"
+   },
+   {
+    "x0": "library-",
+    "x2": "playlist-entry-reactions"
+   },
+   {
+    "x0": "library-",
+    "x2": "tv-seasons"
+   },
+   {
+    "x0": "library-",
+    "x2": "tv-shows"
+   },
+   {
+    "x0": "library-",
+    "x2": "unknown"
+   },
+   {
+    "x0": "music-videos"
+   },
+   {
+    "x0": "name"
+   },
+   {
+    "x0": "offers",
+    "x2": "Array<MusicOffer>"
+   },
+   {
+    "x0": "offset"
+   },
+   {
+    "x0": "other-versions"
+   },
+   {
+    "x0": "pivot"
+   },
+   {
+    "x0": "playParams"
+   },
+   {
+    "x0": "playlistType"
+   },
+   {
+    "x0": "playlists"
+   },
+   {
+    "x0": "popularity"
+   },
+   {
+    "x0": "portraitArtwork"
+   },
+   {
+    "x0": "previews"
+   },
+   {
+    "x0": "recordLabel"
+   },
+   {
+    "x0": "releaseDate"
+   },
+   {
+    "x0": "shortName"
+   },
+   {
+    "x0": "showHostName"
+   },
+   {
+    "x0": "snippets"
+   },
+   {
+    "x0": "social-profiles"
+   },
+   {
+    "x0": "songs"
+   },
+   {
+    "x0": "spatialOffsets",
+    "x2": "SpatialTimingInformation"
+   },
+   {
+    "x0": "startTime"
+   },
+   {
+    "x0": "supportsSing"
+   },
+   {
+    "x0": "syllable-lyrics",
+    "x4": "CatalogLyrics"
+   },
+   {
+    "x0": "term"
+   },
+   {
+    "x0": "top-releases"
+   },
+   {
+    "x0": "trackCount"
+   },
+   {
+    "x0": "trackNumber"
+   },
+   {
+    "x0": "trackTypes"
+   },
+   {
+    "x0": "types"
+   },
+   {
+    "x0": "uber.masterArt"
+   },
+   {
+    "x0": "unitags2",
+    "x2": "Array<UniversalTag>"
+   },
+   {
+    "x0": "upc"
+   },
+   {
+    "x0": "url"
+   },
+   {
+    "x0": "videoSubType"
+   },
+   {
+    "x0": "workName"
+   },
+   {
+    "x2": "editorial-items"
+   },
+   {
+    "x2": "music-movies"
+   },
+   {
+    "x2": "role-categories"
+   },
+   {
+    "x2": "tv-episodes"
+   },
+   {
+    "x4": "Array<String>"
+   },
+   {
+    "x4": "Artwork"
+   },
+   {
+    "x4": "Int"
+   },
+   {
+    "x4": "URL"
+   }
+  ],
+  "MusicKitInternal": [
+   {
+    "x0": "artists"
+   },
+   {
+    "x0": "attributes"
+   },
+   {
+    "x0": "audio-analysis"
+   },
+   {
+    "x0": "flexml-analysis"
+   },
+   {
+    "x0": "genres"
+   },
+   {
+    "x0": "href"
+   },
+   {
+    "x0": "id"
+   },
+   {
+    "x0": "meta"
+   },
+   {
+    "x0": "more-in-genre"
+   },
+   {
+    "x0": "music-artists"
+   },
+   {
+    "x0": "other-episodes"
+   },
+   {
+    "x0": "playlists"
+   },
+   {
+    "x0": "raw-genres"
+   },
+   {
+    "x0": "timestamp"
+   },
+   {
+    "x0": "top-genres"
+   },
+   {
+    "x0": "type"
+   },
+   {
+    "x0": "using",
+    "x2": "token"
+   },
+   {
+    "x0": "venues"
+   },
+   {
+    "x2": "item"
+   }
+  ],
+  "MusicKitPlaybackSupport": [
+   {
+    "x0": "artists"
+   },
+   {
+    "x0": "id"
+   },
+   {
+    "x0": "library-",
+    "x2": "albums"
+   },
+   {
+    "x0": "library-",
+    "x2": "apple-curators"
+   },
+   {
+    "x0": "library-",
+    "x2": "artists"
+   },
+   {
+    "x0": "library-",
+    "x2": "audio-analysis"
+   },
+   {
+    "x0": "library-",
+    "x2": "composers"
+   },
+   {
+    "x0": "library-",
+    "x2": "credit-artists"
+   },
+   {
+    "x0": "library-",
+    "x2": "curators"
+   },
+   {
+    "x0": "library-",
+    "x2": "editorial-elements"
+   },
+   {
+    "x0": "library-",
+    "x2": "editorial-items"
+   },
+   {
+    "x0": "library-",
+    "x2": "flexml-analysis"
+   },
+   {
+    "x0": "library-",
+    "x2": "genres"
+   },
+   {
+    "x0": "library-",
+    "x2": "library-albums"
+   },
+   {
+    "x0": "library-",
+    "x2": "library-artists"
+   },
+   {
+    "x0": "library-",
+    "x2": "library-music-videos"
+   },
+   {
+    "x0": "library-",
+    "x2": "library-pins"
+   },
+   {
+    "x0": "library-",
+    "x2": "library-playlist-folders"
+   },
+   {
+    "x0": "library-",
+    "x2": "library-playlists"
+   },
+   {
+    "x0": "library-",
+    "x2": "library-songs"
+   },
+   {
+    "x0": "library-",
+    "x2": "marketing-items"
+   },
+   {
+    "x0": "library-",
+    "x2": "multirooms"
+   },
+   {
+    "x0": "library-",
+    "x2": "music-movies"
+   },
+   {
+    "x0": "library-",
+    "x2": "music-summaries"
+   },
+   {
+    "x0": "library-",
+    "x2": "music-videos"
+   },
+   {
+    "x0": "library-",
+    "x2": "personal-recommendation"
+   },
+   {
+    "x0": "library-",
+    "x2": "personal-social-profiles"
+   },
+   {
+    "x0": "library-",
+    "x2": "playlist-collaborations"
+   },
+   {
+    "x0": "library-",
+    "x2": "playlist-entries"
+   },
+   {
+    "x0": "library-",
+    "x2": "playlist-entry-reactions"
+   },
+   {
+    "x0": "library-",
+    "x2": "playlists"
+   },
+   {
+    "x0": "library-",
+    "x2": "record-labels"
+   },
+   {
+    "x0": "library-",
+    "x2": "role-categories"
+   },
+   {
+    "x0": "library-",
+    "x2": "rooms"
+   },
+   {
+    "x0": "library-",
+    "x2": "social-profiles"
+   },
+   {
+    "x0": "library-",
+    "x2": "songs"
+   },
+   {
+    "x0": "library-",
+    "x2": "stations"
+   },
+   {
+    "x0": "library-",
+    "x2": "tv-episodes"
+   },
+   {
+    "x0": "library-",
+    "x2": "tv-seasons"
+   },
+   {
+    "x0": "library-",
+    "x2": "tv-shows"
+   },
+   {
+    "x0": "library-",
+    "x2": "unknown"
+   },
+   {
+    "x0": "library-",
+    "x2": "uploaded-audios"
+   },
+   {
+    "x0": "library-",
+    "x2": "uploaded-videos"
+   },
+   {
+    "x0": "library-songs"
+   },
+   {
+    "x0": "local-albums"
+   },
+   {
+    "x0": "local-artists"
+   },
+   {
+    "x0": "local-songs"
+   },
+   {
+    "x0": "type"
+   }
+  ],
+  "MusicMessagesApp": [
+   {
+    "x0": "Jpan"
+   },
+   {
+    "x0": "Kore"
+   },
+   {
+    "x0": "Latn"
+   },
+   {
+    "x0": "assets"
+   },
+   {
+    "x0": "date"
+   },
+   {
+    "x0": "dialog"
+   },
+   {
+    "x0": "flavor"
+   },
+   {
+    "x0": "intelligence"
+   },
+   {
+    "x0": "options"
+   },
+   {
+    "x0": "preview"
+   },
+   {
+    "x0": "rootLayer"
+   },
+   {
+    "x0": "sessionDuration"
+   },
+   {
+    "x0": "type"
+   },
+   {
+    "x0": "url"
+   }
+  ],
+  "MusicWidgets": [
+   {
+    "x0": "date"
+   },
+   {
+    "x0": "dialog"
+   },
+   {
+    "x0": "intelligence"
+   },
+   {
+    "x0": "options"
+   },
+   {
+    "x0": "sessionDuration"
+   },
+   {
+    "x0": "url"
+   }
+  ],
+  "OmniSearch": [
+   {
+    "x0": "1",
+    "x2": "group_id"
+   },
+   {
+    "x0": "address"
+   },
+   {
+    "x0": "apps"
+   },
+   {
+    "x0": "arguments"
+   },
+   {
+    "x0": "body"
+   },
+   {
+    "x0": "com.apple.Maps"
+   },
+   {
+    "x0": "commonName"
+   },
+   {
+    "x0": "description"
+   },
+   {
+    "x0": "email"
+   },
+   {
+    "x0": "en"
+   },
+   {
+    "x0": "fan"
+   },
+   {
+    "x0": "figure.run",
+    "x2": "activity_symbol"
+   },
+   {
+    "x0": "home"
+   },
+   {
+    "x0": "id"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "id"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "name"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "phone number"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "price"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "rating_count"
+   },
+   {
+    "x0": "info unavailable",
+    "x2": "ratings vendor"
+   },
+   {
+    "x0": "ipad"
+   },
+   {
+    "x0": "item"
+   },
+   {
+    "x0": "latitude"
+   },
+   {
+    "x0": "library_content"
+   },
+   {
+    "x0": "lock"
+   },
+   {
+    "x0": "longitude"
+   },
+   {
+    "x0": "mapsFilterType"
+   },
+   {
+    "x0": "me"
+   },
+   {
+    "x0": "mobileSMS",
+    "x2": "type"
+   },
+   {
+    "x0": "music"
+   },
+   {
+    "x0": "name"
+   },
+   {
+    "x0": "not recorded",
+    "x2": "heart_rate_zones"
+   },
+   {
+    "x0": "open hours unavailable",
+    "x2": "open hours"
+   },
+   {
+    "x0": "parameters"
+   },
+   {
+    "x0": "personal_only"
+   },
+   {
+    "x0": "persons"
+   },
+   {
+    "x0": "phoneNumber"
+   },
+   {
+    "x0": "podcasts"
+   },
+   {
+    "x0": "pool",
+    "x2": "indoor_outdoor"
+   },
+   {
+    "x0": "primaryTool"
+   },
+   {
+    "x0": "score"
+   },
+   {
+    "x0": "secondaryTools"
+   },
+   {
+    "x0": "sort_by"
+   },
+   {
+    "x0": "text"
+   },
+   {
+    "x0": "title"
+   },
+   {
+    "x0": "true",
+    "x2": "ceBypass"
+   },
+   {
+    "x0": "true",
+    "x2": "doNotCite"
+   },
+   {
+    "x0": "type"
+   },
+   {
+    "x0": "url"
+   },
+   {
+    "x0": "userTurnId"
+   },
+   {
+    "x0": "version"
+   },
+   {
+    "x0": "videos"
+   },
+   {
+    "x0": "zones"
+   },
+   {
+    "x2": "active_calories"
+   },
+   {
+    "x2": "avg_cadence"
+   },
+   {
+    "x2": "avg_pace"
+   },
+   {
+    "x2": "avg_power"
+   },
+   {
+    "x2": "cerberusTool"
+   },
+   {
+    "x2": "contentType"
+   },
+   {
+    "x2": "distance"
+   },
+   {
+    "x2": "elevation_gain"
+   },
+   {
+    "x2": "end_date"
+   },
+   {
+    "x2": "id"
+   },
+   {
+    "x2": "max_pace"
+   },
+   {
+    "x2": "name"
+   },
+   {
+    "x2": "phone number"
+   },
+   {
+    "x2": "pool_length"
+   },
+   {
+    "x2": "price"
+   },
+   {
+    "x2": "query"
+   },
+   {
+    "x2": "ratings vendor"
+   },
+   {
+    "x2": "start_date"
+   },
+   {
+    "x2": "stroke_count"
+   },
+   {
+    "x2": "total_calories"
+   },
+   {
+    "x2": "workout_effort"
+   }
+  ],
+  "PhotosGraph": [
+   {
+    "x0": "adamID"
+   },
+   {
+    "x0": "album"
+   },
+   {
+    "x0": "arousal"
+   },
+   {
+    "x0": "artist"
+   },
+   {
+    "x0": "artistName"
+   },
+   {
+    "x0": "artworkURL"
+   },
+   {
+    "x0": "audioAnalysis"
+   },
+   {
+    "x0": "audioLocale"
+   },
+   {
+    "x0": "canPlay"
+   },
+   {
+    "x0": "confidence"
+   },
+   {
+    "x0": "contentProvider"
+   },
+   {
+    "x0": "contentVersion"
+   },
+   {
+    "x0": "currentLocation"
+   },
+   {
+    "x0": "energy"
+   },
+   {
+    "x0": "exitPoints"
+   },
+   {
+    "x0": "fadeToBlack"
+   },
+   {
+    "x0": "flexMLAnalysis"
+   },
+   {
+    "x0": "gainValue"
+   },
+   {
+    "x0": "genreNames"
+   },
+   {
+    "x0": "hidden"
+   },
+   {
+    "x0": "holidayName"
+   },
+   {
+    "x0": "identifier"
+   },
+   {
+    "x0": "isExplicit"
+   },
+   {
+    "x0": "keywords"
+   },
+   {
+    "x0": "main"
+   },
+   {
+    "x0": "meaningLabel"
+   },
+   {
+    "x0": "mx.4"
+   },
+   {
+    "x0": "mx.5"
+   },
+   {
+    "x0": "name"
+   },
+   {
+    "x0": "overall_recall"
+   },
+   {
+    "x0": "publicEventMUID"
+   },
+   {
+    "x0": "radius"
+   },
+   {
+    "x0": "recalled"
+   },
+   {
+    "x0": "schemaVersion"
+   },
+   {
+    "x0": "score"
+   },
+   {
+    "x0": "songName"
+   },
+   {
+    "x0": "tabooType"
+   },
+   {
+    "x0": "tagIDs"
+   },
+   {
+    "x0": "timeInSeconds"
+   },
+   {
+    "x0": "title"
+   },
+   {
+    "x0": "uid"
+   },
+   {
+    "x0": "valence"
+   },
+   {
+    "x0": "value"
+   },
+   {
+    "x0": "version"
+   },
+   {
+    "x0": "visualTempo"
+   }
+  ],
+  "PodcastsFoundation": [
+   {
+    "x0": "CFBundleVersion"
+   },
+   {
+    "x0": "displayScale"
+   },
+   {
+    "x0": "episode"
+   },
+   {
+    "x0": "error"
+   },
+   {
+    "x0": "error_uri"
+   },
+   {
+    "x0": "height"
+   },
+   {
+    "x0": "lastUpdatedDate"
+   },
+   {
+    "x0": "latestEpisodes"
+   },
+   {
+    "x0": "localURL"
+   },
+   {
+    "x0": "p9v3kq7zx2"
+   },
+   {
+    "x0": "persistentID"
+   },
+   {
+    "x0": "playbackRateKey"
+   },
+   {
+    "x0": "priceType"
+   },
+   {
+    "x0": "priorityScore"
+   },
+   {
+    "x0": "remoteURL"
+   },
+   {
+    "x0": "width"
+   }
+  ],
+  "ShazamEvents": [
+   {
+    "x0": "artists"
+   },
+   {
+    "x0": "competitors"
+   },
+   {
+    "x0": "genres"
+   },
+   {
+    "x0": "photo-albums"
+   },
+   {
+    "x0": "playlists"
+   },
+   {
+    "x0": "shazam-events"
+   },
+   {
+    "x0": "sport-groups"
+   },
+   {
+    "x0": "sports"
+   },
+   {
+    "x0": "venues"
+   },
+   {
+    "x0": "video-albums"
+   },
+   {
+    "x0": "wallpapers"
+   },
+   {
+    "x0": "watch-faces"
+   },
+   {
+    "x2": "date"
+   },
+   {
+    "x2": "geohash"
+   },
+   {
+    "x2": "weekOfYear"
+   },
+   {
+    "x2": "year"
+   }
+  ]
+ }
+}

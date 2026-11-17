@@ -1,0 +1,6150 @@
+{
+ "featureFlags": {
+  "AirPlay/AVConferenceBasedScreenMirroring": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AVMetrics": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AirPlayPerf_BufferedDeliveryTracking": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AirPlayPerf_BufferedTransportBatching": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AirPlayPerf_DisableOdeonStereoClockLink": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AirPlayPerf_EarlyKeyExchangeSessionStart": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AirPlayPerf_LocalStereoPairClusterPersistentConnection": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AirPlayPerf_PrioritizeSlowReceivers": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AirPlayPerf_ReceiverReadIndexManagement": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AirPlayReceiverMacApp": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/AsyncPTPClockConfig": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/BrokeredDiscovery": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/BrokeredDiscoveryRouteSuggestionSupport": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/BufferedAPAC": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/BufferedBadgingAndCapabilities": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/BufferedCriticalTransportQoS": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/BufferedMixedSampleRates": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "AirPlay/BufferedNW": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/BufferedPassthrough": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "AirPlay/BufferedPassthroughDDP": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "AirPlay/BufferedPassthroughEncrypted": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "AirPlay/CarPlayVideoPlayback_ClimateControls": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/CarPlayVideoPlayback_DestinationBanner": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/CarPlayVideoPlayback_Notifications": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/CarPlayVideoPlayback_OnBoardingFlows": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/CarPlayVideoPlayback_TempatedTVApp": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/CarPlay_WiFiQuickReconnect": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/CombinedGetInfoWithControlSetup": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/CombinedGetInfoWithPairing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/ConnectionSharing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/CoordinatedMultiViewPlayback": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/FlexibleNAN_AutoPair": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/HDRMacOS": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/HDRMacOSForTCP": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/HomeTheaterSurround": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/MediaPresentationMode": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/NANSharedSecret": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/PWDSender": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/PairingGroup": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/SetMRInfo": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/SetupAssistant": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/SetupAssistantCaptivePortalMitigation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/SetupAssistantMultipleWiFiSupport": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/SetupAssistantWiFiQRCode": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/SkipRecord": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/SystemReceiverApp": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/TCPPacing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/Terminus_ExplicitNANControl": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/Terminus_NANBringUpOptimization": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/WHAInstantDiscovery_Caching": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/WHAInstantDiscovery_ThrottleReduction": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/WHAParallelSetupProcessing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/WHAPrimingOptimization": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/airplayd": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/allowOpenNANSender": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AirPlay/ugl": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppStoreComponents/as_restore_deeplink": {
+   "images": [
+    "AppStoreComponentsDaemonKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppStoreComponents/marketplace_storefront_ratings": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppStoreComponents/pause_resume_offer_button_label_2024E": {
+   "images": [
+    "AppStoreComponentsDaemonKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/AGCHandling": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/AgeVerification": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/AppStoreCohortViaCampaignAttribution": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/AppendWithUnmodifiedParameters": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/AppleIDQRAuth": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/Atlas": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/BetaLocalAccount": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/CardEnrollmentCacheWarming": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/CompactOnboardingView": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/DismissQRDialogNotification": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/EngagementDaemonAppData": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/EngagementMediaCatalogSync": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/EngagementNFCHandling": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/FraudScoreReportResponseValidation": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/FraudScoreReportV2AuthToken": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/HardwareOfferFollowUpGrouping": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/HideAppleTVVersionForMobileGestaltUserAgent": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/HomeDirectoryUsingAppSupportUtils": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/IgnoreCommercePingMetricEvents": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/LoadURLFastTrackMetrics": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/MediaAPIAppDistributionUsingCatalog": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/MediaAPIPFDIToken": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/MediaAPISync": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/ModernPaymentSheet": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/PassLibraryCacheWarming": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/PasscodeEngagement": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/PasscodePurchase": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/PasscodePurchaseNoBiometrics": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/PrewarmPaymentFramework": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/SPKPaymentSheet": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/SPKPaymentSheet_macOS": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/SSEMetricsOverlay": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/Selfie": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/SharedStoreReviewRepeatedPrompts": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/Solarium": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/StorageDatabase": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/StreamlinedLogin": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/SubsForGroups": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/TSDataSyncMetricsErrorEnhancements": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/UseMobileGestaltProductType": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "AppleMediaServices/UseNewNetworkStack": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/UseNewNetworkStackSampling": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/iTunesStoreMetrics": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  },
+  "AppleMediaServices/useEventUserIdForTreatmentSeed": {
+   "images": [
+    "AppleMediaServices"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/bds_xpc_notifications": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "Books/bk_enhanced_personalization": {
+   "images": [
+    "BookFoundation"
+   ]
+  },
+  "Books/coverEffectV2": {
+   "images": [
+    "BookFoundation"
+   ]
+  },
+  "Books/coverMaxSize": {
+   "images": [
+    "BookFoundation"
+   ]
+  },
+  "Books/fuzzyFinishedDate": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/iveReadThisFullFlow": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/paymentSheet": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/quoteSharing": {
+   "images": [
+    "BookFoundation"
+   ]
+  },
+  "Books/readingGoalHeader": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/reading_loupe": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/reasonForRecommendation": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/redSun": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/swiftUIGenreList": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/swiftUIGridRoom": {
+   "images": [
+    "BookFoundation"
+   ]
+  },
+  "Books/swiftUIGroupingPage": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/swiftUIListRoom": {
+   "images": [
+    "BookFoundation"
+   ]
+  },
+  "Books/swiftUITopCharts": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Books/unifiedProductPage": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/AmbientLightSync": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/AppIntents": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/CarPlay27": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/CarPlayUIRefresh": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/ClimateSeatPT": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/ClusterLightMode": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/DisplayScaling": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/DriveModeThemeAssociation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/InitialIconAppearance": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/LargeText": {
+   "images": [
+    "Music"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/LiveActivities": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/ModernFocusMovementManager": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/OliveShell": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/RadioHID": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/RequestContentSafeArea": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/Sports": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/TapToRadarTailspin": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CarPlay/VirtualMeetingCallButton": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Clock/HolidayAwareAlarms": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Clock/SnoozeDuration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Clock/StartTimerControl": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Clock/live_activity_banners": {
+   "images": [
+    "WorkflowKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CoreFoundation/CFMethodSignatureROMLogMisses": {
+   "images": [
+    "CoreFoundation"
+   ]
+  },
+  "CoreFoundation/CFNotificationCenterRestoreState": {
+   "images": [
+    "CoreFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CoreFoundation/CFPasteboardURLEnhancements": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CoreFoundation/CFPreferencesLogAccessBeforeFirstUnlock": {
+   "images": [
+    "CoreFoundation"
+   ]
+  },
+  "CoreFoundation/CFPreferencesWorkloops": {
+   "images": [
+    "CoreFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CoreFoundation/CFStringROM": {
+   "images": [
+    "CoreFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CoreFoundation/CFSwiftBundle": {
+   "images": [
+    "CoreFoundation"
+   ]
+  },
+  "CoreFoundation/CFSwiftBundleLogging": {
+   "images": [
+    "CoreFoundation"
+   ]
+  },
+  "CoreFoundation/Colorado": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "CoreFoundation/EndpointSecurityPasteEvent": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/ICUResourceTimeZone": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/LanguageAwareStringStatisticalArabicIndicDigits": {
+   "images": [
+    "CoreFoundation"
+   ]
+  },
+  "Foundation/LanguageAwareStringStatisticalLocalizedStringWithFormat": {
+   "images": [
+    "CoreFoundation"
+   ]
+  },
+  "Foundation/NSKeyedUnarchiverCyclesInSecureModeBinRaiseError": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/NSKeyedUnarchiverCyclesInSecureModeXMLRaiseError": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/NSKeyedUnarchiverEnforceCollectionType": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/NSPLUtil2": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/NSSwiftURL": {
+   "images": [
+    "CoreFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/NSURLUseNewParsing": {
+   "images": [
+    "CoreFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/NSURLUseSwift": {
+   "images": [
+    "CoreFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/NSXPCCoderEnforceDistantObjectType": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Foundation/SwiftNSCharacterSet": {
+   "images": [
+    "CoreFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "FoundationModels/PCCMetering": {
+   "images": [
+    "WorkflowKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/achievement_improvements": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/activity_widget_compact_title": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/auth_plugin_modernization": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/boop_to_invite": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/easy_sign_in_sheet": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/fast_sync_transport": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/fetch_friend_code_in_extension": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/friend_invite_card_rewrite": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/friend_reranking": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/friending_via_push": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/friends_who_have_this": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/game_policy_games": {
+   "images": [
+    "GameServicesCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/gamed_spotlight_index_library": {
+   "images": [
+    "GameServicesCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/gameoverlayui_friend_inbox_banner": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/gameoverlayui_with_oldui": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/gcksession_interface_filter": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/identify_achievement_release_state": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "GameCenter/new_friend_invite_message_card": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/AccessoryErrors": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/AccessoryStateviaStatusKit": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ActivityHistoryEventMacros": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/AppIntentsInfrastructureAndAdoption": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/AppleIntelligenceReport": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/AppleTVPersonalContent": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ArgentiumInstall": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ArrivalPrediction": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/B525": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/BlockHomeInvitationInHH1": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/BoltPrimaryUser": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/CHMHouseholdMetrics": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/CameraClipCaptioning": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/CameraClipSemanticSearch": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/CameraRecordingSnapshot": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/CameraSnapshotHDS": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/CertifiedLoadEvents": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ClientDelegation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/Coalesceaccessoryenablenotification": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/CommunicationTrustInvitations": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ContinuousEnergyEvents": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/DefaultNewUsersToHH2": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/DemoModeV2": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/EVChargingEvents": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/EnergyKitEVChargingEvents": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/EnergyMonitoring": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/FanControl": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/FoundationModels": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HH1EOL": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HH2AutoMigration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HH2ManualMigration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HH2MigrationDryRun": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HKSV3": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HKSV3RaceStreamSetup": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HomeAccessoriesQFAUIEnhancements": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HomeAccessory": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HomeDatamodelUpdatedPropertiesFilter": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HomeEnergy2025": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HomeGraphSearchXPC": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HomePodTopCap": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HomeProductMusicTransitionStyle": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HomeTheaterSurround": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/HumidifierDehumidifier": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/IRHomeSuggestions": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/IRHomeSuggestionsCompositeDataSource": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/LockDPS": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MarqueeExtensibility": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MarqueeMetrics": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MarqueeThermostat": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MatterAccessorySoftwareUpdate": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MatteriPhoneOnlyPairing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MatteriPhoneOnlyPairingForIP": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MatteriPhoneOnlyPairingForMac": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MatteriPhoneOnlyPairingForiPad": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MediaGroups": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MediaPrivilege": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/MoveSharedUsersToHH2": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/NetworkLinkManagement": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/NotificationGrouping": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/OnDemandRapport": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/OnDeviceGenerativeContent": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ProxControl": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ProxPairing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/RapportoverBLE": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/RegulatoryEraseOnObliteration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/SecondPartyCamera": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/SharedUserProfileMetadata": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ShortHAPBLEPairing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/SideKickMediaSettings": {
+   "images": [
+    "MediaPlayer"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/SideKickSiriDecoupling": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/SiriEndpoints": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/SiriUnrecognizedUserSettings": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/SoundAnalysisEventFilter": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/StableHomeLocation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/StatusChannelOnDedicatedTopic": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/StereoOdeonTTSUBypassingPrimary": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ThermostatSensorPriority": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ThreadCommissioningService": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/ThreadService": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/UWB": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/VendorCustomerSupport": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/WakeonLANV2": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/WiFiRepairV2": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Home/cce7c4ecef404121ae8971": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ASRDisambiguationPolicy": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ActionPoisoningClassifier": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ActionPoisoningThrowOnDetection": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/AppExclusions": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/AppIntegration": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/AppSkills": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/BudgetAwareTokenManagement": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/CallControlPlannerTools": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/Campo": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "29d45952-68fe-c561-00c6-470fd51fbe10"
+   }
+  },
+  "IntelligenceFlow/CampoHomeScreenIcon": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ClientBlockedApps": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ContextPredictor": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ContextRetrieval": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/DynamicExampleRetrieval": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/EnableASRSignals": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/EnhancedContextMenu": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/EntityServiceHydration": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "IntelligenceFlow/ExcerptingV1": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ExecutionErrorPublishing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ExecutorTransferabilitySupport": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/FeatureStoreFCSInsertion": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/FilterContactHypotheses": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/FindMyPlannerTools": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/FindToolTokenManagement": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/GazeAwareImageCapture": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/GenerativeAssistantRerouting": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/GetEntityDetailTokenManagement": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/GuestUserMode": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/HealthAccessPrompt": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/HealthPlannerTools": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/HealthSearch": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/HealthSnippets": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/HomePlannerTools": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/IFAgentSessionKitRead": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/IndirectPromptInjectionRedactor": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/IndirectPromptInjectionRedactorEnforcement": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/IndirectPromptInjectionUnconditionalSpotlighting": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/IntelligenceFlow": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/IntercomPlannerTools": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/JointResolver": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/JointResolverLocationSignal": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/Linwood": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "29d45952-68fe-c561-00c6-470fd51fbe10"
+   }
+  },
+  "IntelligenceFlow/MapsSearchService": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/MetadataAsset": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/MultiUserGuardFlows": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/NativeXPCSessionMessageEncoding": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/OnDemandHydration": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "IntelligenceFlow/OnlineOnDevicePlanner": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/OutputGuardrail": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/OutputGuardrailOnPCC": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/OverflowIdentifiers": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/PCCAsDefault": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/PCCUsePrefixID": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/PendingTermination": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/PhotosPeoplePicker": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/PhotosPeoplePickerInline": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/PlaceMatcherSearch": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "IntelligenceFlow/PlaybackControlsTools": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/QueryDecorationOnScreenContentRetrieval": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ReduceLockscreenAuthentication": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/RemoteLocalSearch": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/SafetyTools": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/SalientAppSignal": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/SalientNgramOnDeviceSignalsTelemetry": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/SearchFeedback": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "IntelligenceFlow/SharedUserContextFetch": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/SiriCompanion": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/SocialConversationLLMTools": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/SpotlightSmartSnippet": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/SystemResponseResultCollection": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/ThirdPartyAppModels": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/TrafficClassifierActiveMode": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/TrustedAgentPCC": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/USOQueryCache": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/UseContextTool": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/UseFollowUpAction": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/UseIFParticipantPersistence": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/UserIdentityGrounding": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/WKAHandoff": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "IntelligenceFlow/WKAPassages": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaControls/CayenneControlCenter": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/CayenneScreenMirroring": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/Favorites": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/GMC": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/GMCCoversheetDynamic": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/ImageThumbnailing": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/ImageThumbnailingCache": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/NewVolumeControlsMusic": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/NewVolumeControlsVolumeView": {
+   "images": [
+    "MediaPlayer"
+   ]
+  },
+  "MediaControls/PlatterLiveWaveform": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/QuickControlsLiveWaveform": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaControls/RoutePickerNotCollapseGroupsAutomatically": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaPlayer/AddToLibraryWhenFavoriting": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/AlbumPageRedesign": {
+   "images": [
+    "MediaPlayer"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/AllowStorePlaybackEquivalencies": {
+   "images": [
+    "MediaPlaybackCore"
+   ]
+  },
+  "MediaPlayer/DisableModelEnforcement": {
+   "images": [
+    "MediaPlayer"
+   ]
+  },
+  "MediaPlayer/FavoritesPlaylist": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaPlayer/Favoriting": {
+   "images": [
+    "MediaPlaybackCore",
+    "MusicKit"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaPlayer/MusicAlbumsArtistsSpotlightDonation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/MusicAppEntitiesDonatedToSpotlight": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/MusicToTheEdge": {
+   "images": [
+    "iTunesCloud"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/MusicToTheEdgeTesting": {
+   "images": [
+    "iTunesCloud"
+   ]
+  },
+  "MediaPlayer/NewPotluckService": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaPlayer/Oasis": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaPlayer/PosterSizedTVArtwork": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/Potluck": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaPlayer/PotluckRadioAutoPlay": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/QueueFA": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/RFLWRP": {
+   "images": [
+    "MediaPlayer",
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/RRCDemandsReload": {
+   "images": [
+    "MediaPlayer"
+   ]
+  },
+  "MediaPlayer/RSuntory": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "MediaPlayer/ResourceReclamation": {
+   "images": [
+    "MediaPlaybackCore"
+   ]
+  },
+  "MediaPlayer/ResourceReclamationSystemMusic": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/SortSyncing": {
+   "images": [
+    "MediaPlayer",
+    "Music",
+    "MusicApplication",
+    "MusicKit",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "MediaPlayer/Suntory": {
+   "images": [
+    "MediaPlaybackCore",
+    "MediaPlayer"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaPlayer/UpgradeOnPlay": {
+   "images": [
+    "MediaPlaybackCore",
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "MediaPlayer/UseAMSBagForMusic": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/UserProfileExplicitAllowed": {
+   "images": [
+    "MediaPlayer"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/WranglerAttribution": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/WranglerRemoteArtwork": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/cross_fade": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaPlayer/image_decoding": {
+   "images": [
+    "MediaPlayer",
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaPlayer/multiplayer": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/OneShotQHO": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/angel_provided_ui": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/audio_intent_controller": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/blue_hop": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/cayenne": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/cayenne_conditional_indicators": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/cayenne_coriander_platters": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/cayenne_home": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/cayenne_music_bottom_player_routing": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "MediaRemote/cilantro_show_less": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/coordinated_volume": {
+   "images": [
+    "MediaPlayer"
+   ]
+  },
+  "MediaRemote/coriander": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/critical_section_coordination": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/dismissable_now_playing_activities": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/expanse_migration": {
+   "images": [],
+   "declared": {
+    "DisclosureRequired": "ec89c137-9295-4721-affa-58a3fc2ffb1e",
+    "Enabled": true
+   }
+  },
+  "MediaRemote/external_migration": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/handoff": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/handoff_v2_behavior_proximity": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/handoff_v2_behavior_pull": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/idle_disconnect": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/live_activity_banner": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/lockscreen_background": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/lockscreen_platter_headphones": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/media_remote_media_widget_updates": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/multiplayer": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/nano_link_agent": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/nano_standalone": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/new_siri_behavior": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/nowplayingsession_datasource": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/output_context_prewarming": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/platter_favoriting": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/proximity_handoff": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/psg_allow_single_room_expanded_rows": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/ptot_refactor_part_1": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/session_based_lock_screen_platter": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/session_based_ui": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/show_more": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "MediaRemote/strict_media_type": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/sync_homekit_user": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/unify_siri_local_volume": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/watch_intentional_routing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/wrangler": {
+   "images": [
+    "Music"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/wrangler_auto_approval": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/wrangler_home": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaRemote/wrangler_homepod": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaSuggester/RankedMediaSuggestions": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MediaSuggester/UseSuggestedEntities": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Music/MoMA": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/althem": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/full_anthem": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/image_playground_covers": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/jafar": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/jagr": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/jake": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/jameson": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/joe": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Music/jojo": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Music/jojo_unlocked": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/jose": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/jules": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/jumble": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/monet": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/optimize_power_visionos": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Music/panda": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Music/phoenix": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/potluck": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/qulh": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "Music/selfie_sing": {
+   "images": [
+    "AppleMediaServices",
+    "MediaPlaybackCore",
+    "Music"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Music/splawe": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/allow_explicit_content_in_library": {
+   "images": [
+    "MediaPlayer"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/anthem": {
+   "images": [
+    "AppleMediaServices",
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/campo_snippets": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/concert_tours": {
+   "images": [
+    "AppleMediaServices",
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/force_anthem_unsupported_storefront": {
+   "images": [
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicWidgets"
+   ]
+  },
+  "MusicKit/library_pins": {
+   "images": [
+    "AppleMediaServices",
+    "Music",
+    "MusicApplication",
+    "MusicMessagesApp",
+    "MusicUI",
+    "MusicWidgets"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/live_release_albums": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/mkcl": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/modern_library_item_state": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/modern_upsell": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/music_picker_suggested_songs": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/on_device_concert_ranking": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/swift_media_preview_player": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicKit/yuma": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/account_hub": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/album_release_countdown": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/album_release_countdown_unlocked": {
+   "images": [
+    "MusicUI"
+   ]
+  },
+  "MusicUI/browse_personalization": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/containers_visual_redesign": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/content_density": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/flexible_containers": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/frog_spirit": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/live_radio_grid": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/musicui_server_features": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/replay": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/replay_new_dataset": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "MusicUI/significant_change": {
+   "images": [
+    "MusicUI"
+   ]
+  },
+  "MusicUI/significant_change_feature_blocking": {
+   "images": [
+    "MusicUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "NanoMusicSync/Dormancy": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "NanoMusicSync/PodcastsDBDownloads": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/Cerberus": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/CerberusPlannerPredictedEntityType": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/ConversationMemory": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/HomeKitSearchService": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/HybridLocalSearchService": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/LangleyVideoEnrichment": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/LangleyWithoutAppleTV": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/MessagesSearchService": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/OptionalKeywords": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/PhotosContextualThumbnails": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/PhotosQueryMatchHighlights": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/ResolveAllAnswersToPlaceDescriptors": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/SkipPegasusForPlaceDescriptorResolution": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/SoftAndHardFilterHeuristic": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/SpotlightOverflowViaLFS": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/albusSearch": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/attributionUI": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/dataDetectors": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/editorialDates": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/eventAnswers": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/extractedFlightResolution": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/forceTypedValueBespokeHydration": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/includeEventUpdateStatus": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/llmQUConstrainedDecoding": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/llmQUExtractedType": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/locationResolution": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/nBestLocalCorrection": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/onScreenReferences": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/preExtractedBreadcrumbs": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/preExtractedIDs": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/readingFlowFallback": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/reflectionToken": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/searchInAppRows": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "OmniSearch/showInternalErrorInfo": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/simplifiedQuery": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "OmniSearch/ucgSearch": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "Photos/AlbumListEditing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/CompanionConfiguration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/Lemonade": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ec8cdec7-e0c1-b381-4bba-7855fb16ef88"
+   }
+  },
+  "Photos/LemonadePicker": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ec8cdec7-e0c1-b381-4bba-7855fb16ef88"
+   }
+  },
+  "Photos/LeoDonation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/LeoInitialSuggestions": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/LeoIntentTranslator": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/LeoMemoryCreation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/LeoMemoryCreationSuggestions": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/LeoQuery": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/LeoSmartAlbumQuery": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/LeoUICompletionSuggestions": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/LeoUtilityCollectionQuery": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/MemoryCreation": {
+   "images": [
+    "OmniSearch"
+   ]
+  },
+  "Photos/MemoryCreationInternationalization": {
+   "images": [
+    "OmniSearch"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/SharedCollections": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/SharedCollectionsMigration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/SharedCollectionsSearch": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/SharedCollectionsWidget": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/VISyncWatch": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Photos/VisualIntelligenceEventPill": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/AddAudioIntentMultiUserRequirePersonaID": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/AdditionalSkipIntervals": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/AlwaysOpenNowPlaying": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/BagSnapshotOverlay": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/BetterMediaSuggestionsDonations": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/BluePluto": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/Bubblegum": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/BubblegumMac": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/CarPlaySiriCell": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/CarPlayUIRefresh": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/CategoriesInSearch": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/DebouncedAssetManager": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/DownloadConsistencyChecks": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/Entitlements": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/EpisodeHeaderUpdates": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/ExperimentalPlayActionImplementations": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/FastForwardAndRewind": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/ForceiPhoneSoloLandscapeSupport": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/HLSLiveTranscripts": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/HLSRSS": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/HLSScoutingSupported": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/HeroBlur": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/HeroJoeColorDebugger": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/HomePodPersonalizedExplicitContentSetting": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/HomeStations": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/ImageProviderOnWatch": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/InMemoryStatePushes": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/JSWidgetRequests": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/JetWidget": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/JetWidgetPushes": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/JumpBack": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/LibraryCategoriesPageImpressionMetrics": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/LibraryWidget": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/LooksLikeGridIsOnTheMenu": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/MaxEndTimeGeneratedLinks": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/MercuryOnMac": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/MercuryRetrograde": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/MercuryRetrogradeV2": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/ModernStationSettings": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/PandoChapters": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/PandoLinks": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/PandoLinksDebug": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/PlayAudioIntentForceNewPlayPathMac": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/PlayAudioIntentForceNewPlayPathVision": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/PodcastsOnTV": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/PonderosaForceColdStart": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/PremiumHLSVideo": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/PreservePlayerSetDuration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/PromoteInitialUpNextItem": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/RecentlySearched": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/RedMars": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/RedSaturn": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/RedVenus": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/RemoveCleanEpisodeTitle": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/RemoveDownloadsTipService": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/RemoveOlderDownloadsTipMac": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/RenderImplicitFollowsAsLocalShows": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/ResponsivePlayback": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/SerialSortAutoDownloads": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/ShowHeaderSharedContentView": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/ShowPageDoubleColumn": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/ShowSearchAndFilter": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/ShowWidget": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/SignificantChange": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/SimplifiedSyncDirtyHandling": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/SiriDonateToSpotlightCascadeTV": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/SiriDonateToSpotlightCascadeWatch": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/SiriHomePodPlayEntityDonation": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/SiriSnippetSourceSheet": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/SiriSnippets": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/SiriUsePersonaID": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/SpeakEasy": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/StaticTranscriptTextKit2": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/TVChannels": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/TVEditorialPlatform": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/TVStations": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/ThinClientPreloadHomeTab": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/ThinClientSleepTimer": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/TimeAtEnd": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/TopHits": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/TopHitsMac": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/TranscriptsLanguageExpansion": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/UPPPagination": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/UipFluidTransitions": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/UnifiedAccountHub": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/UnsupportedTestAllowAllAXTextSizes": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/UpNextSplit": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/UpNextTapToShowDetailExperiment": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/UseEpisodeDescriptionForSummary": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/UseLiteralContinuousPlaybackSetting": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/UseShowPageTallForBackdrop": {
+   "images": [
+    "PodcastsFoundation"
+   ]
+  },
+  "Podcasts/WatchDormancy": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/WatchOSLazyStations": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/WatchUpNextWidget": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/WidgetExtraLargePortrait": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Podcasts/jetpackassetd": {
+   "images": [
+    "PodcastsFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "ShazamKit/Zeus": {
+   "images": [
+    "ShazamCore"
+   ]
+  },
+  "Shortcuts/character_parameter": {
+   "images": [
+    "WorkflowKit"
+   ]
+  },
+  "Shortcuts/dateinterval_parameter": {
+   "images": [
+    "WorkflowKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/gen_shortcut_prototype": {
+   "images": [
+    "WorkflowKit"
+   ]
+  },
+  "Shortcuts/generative_experience": {
+   "images": [
+    "WorkflowKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/hydration_batching": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/index_parameter_backed_triggers": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/intermediate_outputs": {
+   "images": [
+    "WorkflowKit"
+   ]
+  },
+  "Shortcuts/markdown_rendering_v2": {
+   "images": [
+    "WorkflowKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/new_system_automations": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/person_name_components_parameter": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/recurrencerule_parameter": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/search_action": {
+   "images": [
+    "WorkflowKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/send_message_app_intent": {
+   "images": [
+    "WorkflowKit"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/tool_database_auto_reopen": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/toolkit_cascade_sync": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/toolkitd": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Shortcuts/triple_column": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/Alchemy": {
+   "images": [
+    "AppleMediaServices",
+    "MediaPlaybackCore",
+    "MediaPlayer"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/AlchemyReEvaluation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/AlignmentsRefactor": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/AssetCache": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/AssetConnectionPrewarming": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/AtvAlchemy": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/AtvCrossfade": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/AudioSessionQueue": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/HomePodAlchemy": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/LibraryXL": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/MusicAVCKSReuse": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/MusicKeyDeliveryJitter": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/NavigationRestrictionOverride": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/NewDialogs": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/RelaxedPreloadThreshold": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/StereoHLS": {
+   "images": [
+    "MediaPlaybackCore"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/TransitionPlanCommit": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Sonic/XSQ": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/Acorn": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ActionButton": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ActionButtonControls": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "060d5021-98d8-a046-7c73-e3c2f0028cdb"
+   }
+  },
+  "SpringBoard/Autobahn": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "843d7545-f18c-4301-863c-e4e20100acf7"
+   }
+  },
+  "SpringBoard/AutobahnLegacyMigration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "843d7545-f18c-4301-863c-e4e20100acf7"
+   }
+  },
+  "SpringBoard/AutobahnLegacyMigrationSupportingDistinctHome": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "843d7545-f18c-4301-863c-e4e20100acf7"
+   }
+  },
+  "SpringBoard/Avocado": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "SpringBoard/BatteryAnalysis": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/BatteryWidgetMigration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/BlockedDeviceErase": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ButtonInteractionNonJindo": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/CSC": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "843d7545-f18c-4301-863c-e4e20100acf7"
+   }
+  },
+  "SpringBoard/CaptureTheFlag": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "060d5021-98d8-a046-7c73-e3c2f0028cdb"
+   }
+  },
+  "SpringBoard/ChamoisExtendedDisplayLivingOn": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ca101656-f6bd-40e6-b2dc-5efa19483ab7"
+   }
+  },
+  "SpringBoard/ChamoisExternalDisplayController": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ca101656-f6bd-40e6-b2dc-5efa19483ab7"
+   }
+  },
+  "SpringBoard/ChamoisPerDisplayWindowSizing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ChamoisUISceneLifecycle": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ChamoisWindowDragInteraction": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ChamoisWindowingLivingOn": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ca101656-f6bd-40e6-b2dc-5efa19483ab7"
+   }
+  },
+  "SpringBoard/ChamoisWindowingUI": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ca101656-f6bd-40e6-b2dc-5efa19483ab7"
+   }
+  },
+  "SpringBoard/Chenille": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ControlCenterInChamoisExtended": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ControlCenterInOneness": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/CoverSheetSpotlightPullDown": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/CrossDisplayCameraSnapshotting": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/CursiveHello": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/Dewey": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "SpringBoard/DisplayHandoffEnabled": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "SpringBoard/Domino": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "765c45cc-42ac-1818-ed4f-b6858b38ad05"
+   }
+  },
+  "SpringBoard/DynamicFlashlight": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "060d5021-98d8-a046-7c73-e3c2f0028cdb"
+   }
+  },
+  "SpringBoard/EvolvingiPadFileStackIconInDock": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/FilesWidgetConfiguration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/FlexibleLockScreen": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/FlexibleWindowing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/FluidAutoPiPForHomeButton": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "SpringBoard/FlyingScotsman": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "86e05ce9-f338-4328-0c31-d3c77832f32e"
+   }
+  },
+  "SpringBoard/FreshTouchCoaching": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/FullScreenLetterboxing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/GardenGate": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/Giulia": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "843d7545-f18c-4301-863c-e4e20100acf7"
+   }
+  },
+  "SpringBoard/HiddenWindowsPill": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/HomeScreenWallpaperEditor": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/Huey": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "SpringBoard/IconViewContextMenuManager": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/IndicFonts": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/InspectorGadget": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/Littleton": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/Livery": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "843d7545-f18c-4301-863c-e4e20100acf7"
+   }
+  },
+  "SpringBoard/LoL": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "SpringBoard/LockPick": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "060d5021-98d8-a046-7c73-e3c2f0028cdb"
+   }
+  },
+  "SpringBoard/LockScreenZoomUp": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/LunaLeaf": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/Maglev": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "86e05ce9-f338-4328-0c31-d3c77832f32e"
+   }
+  },
+  "SpringBoard/MaglevDynamicRotation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "86e05ce9-f338-4328-0c31-d3c77832f32e"
+   }
+  },
+  "SpringBoard/Meatballs": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/Monaco": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "843d7545-f18c-4301-863c-e4e20100acf7"
+   }
+  },
+  "SpringBoard/NorthByNorthwest": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/Oneness": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/OnenessHomeScreenEditing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/OpenApplicationWindowsContextMenu": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/PAUOcclusion": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/PageDotUniversalInvoke": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/PerDisplayPowerStates": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/PeriocularPoseOutOfRangeCoaching": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "SpringBoard/PersistFileStackIconConfiguration": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/PictureInPicture": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "SpringBoard/PostModernRotation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/PosterEditorKashida": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "9afd0505-c054-6ea2-7553-2da07a51aa9f"
+   }
+  },
+  "SpringBoard/Prism": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/RainbowRoad": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ReadGooder": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/RecentDocumentsContextMenu": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/ResizableUIRequiresFullScreenApp": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/RouteDoubleTapForVI": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/SAEIncreasedInset": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "12af3371-cf1a-fbb5-24f0-a31e288e9093"
+   }
+  },
+  "SpringBoard/SAETappyHomeAffordance": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "12af3371-cf1a-fbb5-24f0-a31e288e9093"
+   }
+  },
+  "SpringBoard/SUTU": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/Salvador": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/SkipPrecacheWallpaperStyles": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/SlideOver": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/Snowman": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/SolariumElasticHUD": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/SolariumPosters": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/SpeakeasyAttributionManager": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/SpeakeasyNewStatusBar": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/SpeakeasyStatusBarWindowRotation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/SpecialCup": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "060d5021-98d8-a046-7c73-e3c2f0028cdb"
+   }
+  },
+  "SpringBoard/SwiftUITimeAnimation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/SystemCloseButton": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/SystemUISceneAccessibilityDaemonUI": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/TinyTim": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/TraitsArbiter": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/TraitsArbiterActuation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SpringBoard/Vertigo": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "SpringBoard/support_scene_reconnect": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Summarization/hi_Latn": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Summarization/hi_Latn_PriorityClassification": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Summarization/hi_Latn_Summarization": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "Summarization/onDeviceBaseModelSafariBookmarkTopicSummarizer": {
+   "images": [
+    "SafariSharedUI"
+   ]
+  },
+  "Summarization/onDeviceBaseModelSafariTabGroupTopicSummarizer": {
+   "images": [
+    "SafariSharedUI"
+   ]
+  },
+  "Summarization/serverSafariBookmarkTopicSummarizer": {
+   "images": [
+    "SafariSharedUI"
+   ]
+  },
+  "Summarization/serverSafariTabGroupTopicSummarizer": {
+   "images": [
+    "SafariSharedUI"
+   ]
+  },
+  "Summarization/styleScopedSafetyConfig": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "SwiftData/CoreDataSwiftFetching": {
+   "images": [
+    "SwiftData"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/Derelicte": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/SimpleProfiles": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/aventador": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/buddy": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/cardigan": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/chicken": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/corinth": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/cuscuz": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/emerald": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/epicClips": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/eyesOfTheWorld": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "TVApp/hubble": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/hubblescope": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/kalamazoo": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/kinneret": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "TVApp/leo": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/library_pill_menus": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "TVApp/malone": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "TVApp/mars": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/menkaure": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/menkaureMac": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/mm_poc": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/pawed": {
+   "images": [
+    "TVAppServices"
+   ]
+  },
+  "TVApp/pearl": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/peppermint": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/plato": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/rb_removal": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/recentlyAddedShelf": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "TVApp/redsnapper": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/rhodes": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/saturn": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/showcase_autoplaysound": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/sp_personal": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/sparkle": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/sparkle_mfy": {
+   "images": [
+    "TVAppServices"
+   ]
+  },
+  "TVApp/sparkle_related_v2": {
+   "images": [
+    "TVAppServices"
+   ]
+  },
+  "TVApp/sparkle_v2": {
+   "images": [
+    "TVAppServices"
+   ]
+  },
+  "TVApp/spearmint": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/sports_app_live_activities": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "TVApp/sports_register_init": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/syndication": {
+   "images": [
+    "VideosUI"
+   ]
+  },
+  "TVApp/timbuktu": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/tricycle": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ]
+  },
+  "TVApp/webb": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/yapper": {
+   "images": [
+    "TVAppServices",
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVApp/zoomer": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "TVMusic/atv_sing": {
+   "images": [
+    "MusicUI"
+   ]
+  },
+  "TVRemoteCore/iOSBundleIDRename": {
+   "images": [
+    "VideosUI"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIFoundation/LanguageAwareString": {
+   "images": [
+    "CoreFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/ChamoisSWKeyboard": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/EnhancedLandscape": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/EnhancedLandscapeBackButton": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/EnhancedLandscapeBar": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/LanguageAwareStringAutoAdjustWritingDirectionUITextView": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/LanguageAwareStringAutoAdjustWritingDirectionUsingKeyboardAsEffective": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/Pegasus": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/SecurePreviouslyUsedEmails": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/UpdatedSearchTabBehavior": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/assert_for_no_scene_lifecycle": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/asymmetric_layout_margins": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/async_text_input_ipad": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/async_text_input_iphone": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/ati_ui": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/bidi_copy_paste": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/bidi_undo": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/c2_low_refresh_rate": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/chromeless_bars": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/chrysaor": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/combined_productivity_tap_gestures": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/content_backswipe": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/content_text_extraction": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/coreanimation_prelayout": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/coreanimation_prelayout_linkedon_check": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dci_multiselect": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dci_text_editing_menus": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dictation_accelerated_invocation": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dictation_adaptive_delete_ios": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dictation_continuous": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/dictation_cursor_delete_button": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dictation_voice_commands_adjacent_edits": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dictation_voice_commands_gaze_disambiguation_visionos": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dictation_voice_commands_ui_redesign": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/dictation_voice_commands_ui_redesign_ros": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/drag_transfers": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/dynamic_emoji_layout": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/emoji_enhancements": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/enhanced_main_menu": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/fluid_zoom_transitions": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/full_screen_keyboard": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/full_screen_keyboard_v68": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/gelato": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/gestures_framework": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/inline_dictation_glow_effect": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/inline_dictation_glow_effect_xros": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/inline_text_completion_education_ui_enabled": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/inline_text_completion_spacebar_accepts": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/ipad_type_select": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/jedha": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/kbarbiter_in_inputui": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_autocorrection_push_clear_request": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_ch_audio_only": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_dock_use_oval_hit_area": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_emoji_search": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/keyboard_frontboard_scenes": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_input_numberpad_popover": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_language_indicator": {
+   "images": [],
+   "declared": {
+    "DisclosureRequired": "7c1e548e-8fc8-455f-b37d-9ea9745e6c01",
+    "Enabled": true
+   }
+  },
+  "UIKit/keyboard_layout_row_override": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_math_prediction": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_multilingual_education_ui": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_oop_using_end_input_session_completion": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_rti_webkit_spatial": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/keyboard_smartreplies_api": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_smartreplies_mail": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ff7b5dcd-7912-95de-a1cd-7d8c226da489"
+   }
+  },
+  "UIKit/keyboard_smartreplies_messages": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ff7b5dcd-7912-95de-a1cd-7d8c226da489"
+   }
+  },
+  "UIKit/keyboard_smartreplies_wtflow": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_solarium_feedback": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "d93266e9-085e-89fa-e56f-562531c789fe"
+   }
+  },
+  "UIKit/keyboard_spi_caller_verification": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/keyboard_suggestions_only_mode": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/keyboard_texteffects_in_candidate_bar": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/keyboard_visceral": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/layer_naming": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/majel": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/noninteractive_companion_scenes": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/oop_inline_keyboard_candidates": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/pin_ask_siri_to_bottom": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/productivity_system_gestures": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/redesigned_candidate_ui": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/redesigned_text_cursor": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/redesigned_text_cursor_xros": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/scene_backed_text_formatting": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/scene_menu_hoist_title_menu": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/secure_pasteboard": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/solarium_split_keyboard": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/staged_dictation_v2": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/suppress_inauthentic_touches": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/systemshell_applies_top_level_scene_regions": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/text_formatting_for_text_view": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/textfield_textlayoutmanager": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/textview_textlayoutmanager": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/textview_textlayoutmanager_include_older_apps": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/tv_arrow_button_index_scroll": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/tv_context_menu": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/tv_focus_active_scene_hid_updates": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/tv_grid_keyboard_candidates": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/tv_multilingual_keyboards": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/tv_rotary": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/tv_rotary_scroll": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/ucb_redesign": {
+   "images": [],
+   "declared": {
+    "DisclosureRequired": "7c1e548e-8fc8-455f-b37d-9ea9745e6c01",
+    "Enabled": true
+   }
+  },
+  "UIKit/ui_consistency": {
+   "images": [],
+   "declared": {
+    "Enabled": true
+   }
+  },
+  "UIKit/uikit_prelayout": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/uip_document_landing_page": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/uip_floating_tab_bar": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/uip_floating_tab_bar_only": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/uip_fluid_transitions": {
+   "images": [
+    "BookFoundation"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/uiscreen_brightness_uses_scenes": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/urs_document_landing": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/v1_por_grounding_shadow_behavior": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/viewservice_scene_shim_messagesnotification": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "UIKit/vision_os_keyboard_should_display_writing_tools_candidates_options": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete",
+    "DisclosureRequired": "ff7b5dcd-7912-95de-a1cd-7d8c226da489"
+   }
+  },
+  "UIKit/visual_bidi_selections": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "VSA/FederatedV2": {
+   "images": [],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "VSA/MetricsRefactor": {
+   "images": [
+    "VideoSubscriberAccount"
+   ],
+   "declared": {
+    "DevelopmentPhase": "FeatureComplete"
+   }
+  },
+  "unknown/unknown": {
+   "images": [
+    "AppleMediaServices"
+   ]
+  }
+ }
+}

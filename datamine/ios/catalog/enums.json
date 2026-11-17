@@ -1,0 +1,7378 @@
+{
+ "enums": {
+  "MusicKit:MusicKit.Artwork.ConfigurationInfo.CodingKeys": [
+   "ExcludeLibraryArtworkColorAnalysis",
+   "ExcludeContainerLibraryArtworkColorAnalysis"
+  ],
+  "MusicKit:MusicKit.MusicAuthorization.Status": [
+   "notDetermined",
+   "denied",
+   "restricted",
+   "authorized"
+  ],
+  "MusicKit:MusicKit.MusicDataRequest.RetryReason": [
+   "developerTokenInvalid",
+   "userTokenInvalid",
+   "other"
+  ],
+  "MusicKit:MusicKit.Album.LegacyModelAlbumPropertyKey": [
+   "MPModelPropertyAlbumType",
+   "MPModelPropertyAlbumArtwork",
+   "MPModelPropertyAlbumCleanDownloadedTrackCount",
+   "MPModelPropertyAlbumCleanSongCount",
+   "MPModelPropertyAlbumCopyrightText",
+   "MPModelPropertyAlbumDownloadedDate",
+   "MPModelPropertyAlbumDownloadedTrackCount",
+   "MPModelPropertyAlbumEditorialArtworks",
+   "MPModelPropertyAlbumExpectedReleaseDateComponents",
+   "MPModelPropertyAlbumDateFavorited",
+   "MPModelPropertyAlbumHasAllTracks",
+   "MPModelPropertyAlbumHasCleanContent",
+   "MPModelPropertyAlbumHasExplicitContent",
+   "MPModelPropertyAlbumClassicalExperienceAvailable",
+   "MPModelPropertyAlbumIsCompilation",
+   "MPModelPropertyAlbumIsDisliked",
+   "MPModelPropertyAlbumIsFavorite",
+   "MPModelPropertyAlbumLibraryAdded",
+   "MPModelPropertyAlbumLibraryAddEligible",
+   "MPModelPropertyAlbumIsPinned",
+   "MPModelPropertyAlbumPreorder",
+   "MPModelPropertyAlbumShouldShowCountdownTimer",
+   "MPModelPropertyAlbumIsStoreRedownloadable",
+   "MPModelPropertyAlbumKeepLocalEnableState",
+   "MPModelPropertyAlbumKeepLocalManagedStatus",
+   "MPModelPropertyAlbumKeepLocalManagedStatusReason",
+   "MPModelPropertyAlbumLastDevicePlaybackDate",
+   "MPModelPropertyAlbumLibraryAddedDate",
+   "MPModelPropertyAlbumCloudChannelName",
+   "MPModelPropertyAlbumReleaseDateComponents",
+   "MPModelPropertyAlbumShortEditorNotes",
+   "MPModelPropertyAlbumEditorNotes",
+   "MPModelPropertyAlbumStaticTallEditorialArtwork",
+   "MPModelPropertyAlbumSongPopularity",
+   "MPModelPropertyAlbumTitle",
+   "MPModelPropertyAlbumTrackCount",
+   "MPModelPropertyAlbumTraits",
+   "MPModelPropertyAlbumYear",
+   "MPModelRelationshipAlbumArtist",
+   "MPModelRelationshipAlbumGenre",
+   "MPModelRelationshipAlbumRepresentativeSong"
+  ],
+  "MusicKit:MusicKit.Artist.LegacyModelArtistPropertyKey": [
+   "MPModelPropertyArtistArtwork",
+   "MPModelPropertyArtistAlbumCount",
+   "MPModelPropertyArtistCleanSongCount",
+   "MPModelPropertyArtistCleanDownloadedSongCount",
+   "MPModelPropertyArtistDownloadedSongCount",
+   "MPModelPropertyArtistClassicalExperienceAvailable",
+   "MPModelPropertyArtistIsDisliked",
+   "MPModelPropertyArtistIsFavorite",
+   "MPModelPropertyArtistIsPinned",
+   "MPModelPropertyArtistDateFavorited",
+   "MPModelPropertyArtistLibraryAddedDate",
+   "MPModelPropertyPersonName",
+   "MPModelPropertyArtistSongCount",
+   "MPModelRelationshipArtistGenre"
+  ],
+  "MusicKit:MusicKit.Curator.LegacyModelCuratorPropertyKey": [
+   "MPModelPropertyCuratorKind",
+   "MPModelPropertyCuratorHandle",
+   "MPModelPropertyPersonName",
+   "MPModelPropertyCuratorShortName",
+   "MPModelPropertyCuratorShortEditorNotes",
+   "MPModelPropertyCuratorEditorNotes",
+   "MPModelPropertyCuratorSubKind"
+  ],
+  "MusicKit:MusicKit.Genre.SimpleLegacyModelGenrePropertyKey": [
+   "MPModelPropertyGenreName",
+   "MPModelPropertyGenreLibraryAddedDate"
+  ],
+  "MusicKit:MusicKit.Playlist.LegacyModelPlaylistPropertyKey": [
+   "MPModelPropertyPlaylistArtwork",
+   "MPModelPropertyPlaylistCoverArtworkRecipe",
+   "MPModelPropertyPlaylistDownloadedDate",
+   "MPModelPropertyPlaylistDownloadedTrackCount",
+   "MPModelPropertyPlaylistEditorialArtworks",
+   "MPModelPropertyPlaylistEditSessionID",
+   "MPModelPropertyPlaylistHasCleanContent",
+   "MPModelPropertyPlaylistHasAnyCleanDownloadedTracks",
+   "MPModelPropertyPlaylistHasAnyCleanTracks",
+   "MPModelPropertyPlaylistHasExplicitContent",
+   "MPModelPropertyPlaylistDateFavorited",
+   "MPModelPropertyPlaylistIsCollaborative",
+   "MPModelPropertyPlaylistCuratorPlaylist",
+   "MPModelPropertyPlaylistIsDisliked",
+   "MPModelPropertyPlaylistIsFavorite",
+   "MPModelPropertyPlaylistLibraryAdded",
+   "MPModelPropertyPlaylistIsPinned",
+   "MPModelPropertyPlaylistIsPlayOrderReversed",
+   "MPModelPropertyPlaylistPublicPlaylist",
+   "MPModelPropertyPlaylistIsOwner",
+   "MPModelPropertyPlaylistVisiblePlaylist",
+   "MPModelPropertyPlaylistKeepLocalEnableState",
+   "MPModelPropertyPlaylistKeepLocalManagedStatus",
+   "MPModelPropertyPlaylistKeepLocalManagedStatusReason",
+   "MPModelPropertyPlaylistLastModifiedDateComponents",
+   "MPModelPropertyPlaylistLastDevicePlaybackDate",
+   "MPModelPropertyPlaylistLibraryAddedDate",
+   "MPModelPropertyPlaylistName",
+   "MPModelPropertyPlaylistParentPersistentID",
+   "MPModelPropertyPlaylistPlayOrder",
+   "MPModelPropertyPlaylistPortraitArtwork",
+   "MPModelPropertyPlaylistShortEditorNotes",
+   "MPModelPropertyPlaylistDescriptionText",
+   "MPModelPropertyPlaylistTrackCount",
+   "MPModelPropertyPlaylistTracksTiledArtwork",
+   "MPModelPropertyPlaylistTraits",
+   "MPModelPropertyPlaylistType",
+   "MPModelPropertyPlaylistUserEditableComponents",
+   "MPModelPropertyPlaylistShareURL",
+   "MPModelRelationshipPlaylistCurator"
+  ],
+  "MusicKit:MusicKit.Playlist.Entry.LegacyModelPlaylistEntryItemPropertyKey": [
+   "MPModelPropertyPlaylistEntryPositionUniversalIdentifier",
+   "MPModelPropertyPlaylistEntryUniversalIdentifier",
+   "MPModelPropertyPlaylistEntryPosition",
+   "MusicKit_LegacyModelPlaylistEntryType",
+   "MusicKit_LegacyModelProperty_GenericType",
+   "MPModelPropertySongArtwork",
+   "MPModelPropertySongTitle",
+   "MPModelPropertySongDuration",
+   "MPModelPropertySongLastDevicePlaybackDate",
+   "MPModelPropertySongLibraryAddedDate",
+   "MPModelPropertyMovieArtwork",
+   "MPModelPropertyMovieTitle",
+   "MPModelPropertyMovieDuration",
+   "MPModelPropertyMovieLastDevicePlaybackDate",
+   "MPModelPropertyMovieLibraryAddedDate",
+   "MPModelPropertyMovieReleaseDate",
+   "MPModelPropertyTVEpisodeArtwork",
+   "MPModelPropertyTVEpisodeTitle",
+   "MPModelPropertyTVEpisodeDuration",
+   "MPModelPropertyTVEpisodeLastDevicePlaybackDate",
+   "MPModelPropertyTVEpisodeLibraryAddedDate",
+   "MPModelPropertyTVEpisodeReleaseDate",
+   "MPModelRelationshipPlaylistEntryMovie",
+   "MPModelRelationshipPlaylistEntryPlaylist",
+   "MPModelRelationshipPlaylistEntrySong",
+   "MPModelRelationshipPlaylistEntryTVEpisode",
+   "MPModelRelationshipPlaylistEntrySocialContributor"
+  ],
+  "MusicKit:MusicKit.RecordLabel.LegacyModelRecordLabelPropertyKey": [
+   "MPModelPropertyRecordLabelArtwork",
+   "MPModelPropertyRecordLabelName",
+   "MPModelPropertyRecordLabelShortDescriptionText",
+   "MPModelPropertyRecordLabelDescriptionText"
+  ],
+  "MusicKit:MusicKit.Song.LegacyModelSongPropertyKey": [
+   "MPModelPropertySongArtwork",
+   "MPModelPropertySongClassicalMovement",
+   "MPModelPropertySongClassicalMovementCount",
+   "MPModelPropertySongClassicalMovementNumber",
+   "MPModelPropertySongClassicalWork",
+   "MPModelPropertySongCloudStatus",
+   "MPModelPropertySongDiscNumber",
+   "MPModelPropertySongDuration",
+   "MPModelPropertySongExpectedReleaseDate",
+   "MPModelPropertySongExplicit",
+   "MPModelPropertySongHasCloudSyncSource",
+   "MPModelPropertySongHasVideo",
+   "MPModelPropertySongArtistUploadedContent",
+   "MPModelPropertySongDateFavorited",
+   "MPModelPropertySongIsDisliked",
+   "MPModelPropertySongIsFavorite",
+   "MPModelPropertySongLibraryAdded",
+   "MPModelPropertySongLibraryAddEligible",
+   "MPModelPropertySongImmersiveDeeplinkURL",
+   "MPModelPropertySongIsPinned",
+   "MPModelPropertySongSupportsExtendedLyricsAttribute",
+   "MPModelPropertySongKeepLocalEnableState",
+   "MPModelPropertySongKeepLocalManagedStatus",
+   "MPModelPropertySongKeepLocalManagedStatusReason",
+   "MPModelPropertySongLastDevicePlaybackDate",
+   "MPModelPropertySongLibraryAddedDate",
+   "MPModelPropertySongPlayCount",
+   "MPModelPropertySongDateReleased",
+   "MPModelPropertySongShouldShowComposer",
+   "MPModelPropertySongTitle",
+   "MPModelPropertySongTrackNumber",
+   "MPModelPropertySongTraits",
+   "MPModelPropertySongUserRating",
+   "MPModelPropertySongVisualTraits",
+   "MPModelPropertySongYear",
+   "MPModelRelationshipSongAlbum",
+   "MPModelRelationshipSongArtist",
+   "MPModelRelationshipSongStoreAsset",
+   "MPModelRelationshipSongComposer",
+   "MPModelRelationshipSongGenre",
+   "MPModelRelationshipSongHomeSharingAsset",
+   "MPModelRelationshipSongLocalFileAsset",
+   "MPModelRelationshipSongLyrics",
+   "MPModelRelationshipSongPlaybackPosition",
+   "MPModelPropertyPersonName",
+   "MPModelPropertyPlaybackPositionStopTime",
+   "MPModelPropertyPlaybackPositionStartTime"
+  ],
+  "MusicKit:MusicKit.Station.LegacyModelRadioStationPropertyKey": [
+   "MPModelPropertyRadioStationArtwork",
+   "MPModelPropertyRadioStationEditorialArtworks",
+   "MPModelPropertyRadioStationEditorNotes",
+   "MPModelPropertyRadioStationHasExplicitContent",
+   "MPModelPropertyRadioStationLive",
+   "MPModelPropertyRadioStationName",
+   "MPModelPropertyRadioStationProviderBundleIdentifier",
+   "MPModelPropertyRadioStationProviderName",
+   "MPModelPropertyRadioStationProviderUniversalLink",
+   "MPModelPropertyRadioStationSubscriptionRequired",
+   "MPModelPropertyRadioStationShortEditorNotes"
+  ],
+  "MusicKit:MusicKit.UnderlyingLegacyModelObjectType": [
+   "album",
+   "appleCurator",
+   "artist",
+   "composer",
+   "concert",
+   "creditArtist",
+   "curator",
+   "curatorGenre",
+   "editorialItem",
+   "genre",
+   "librarySearchTopResult",
+   "lyrics",
+   "musicMovie",
+   "musicVideo",
+   "pin",
+   "pinItem",
+   "playlist",
+   "playlistAuthor",
+   "playlistEntry",
+   "playlistEntryReaction",
+   "playlistFolder",
+   "playlistFolderItem",
+   "radioShow",
+   "recentlyAdded",
+   "recordLabel",
+   "socialProfile",
+   "song",
+   "station",
+   "titledSection",
+   "track",
+   "tvEpisode",
+   "tvSeason",
+   "tvShow",
+   "uploadedAudio",
+   "uploadedVideo"
+  ],
+  "MusicKit:MusicKit.MusicCatalogSearchResponse.TopResult.LegacyModelCatalogSearchTopResultPropertyKey": [
+   "MusicKit_LegacyModelProperty_GenericType"
+  ],
+  "MusicKit:MusicKit.MusicPersonalRecommendation.Item.LegacyModelPersonalRecommendationItemPropertyKey": [
+   "MusicKit_LegacyModelProperty_GenericType"
+  ],
+  "MusicKit:MusicKit.RecentlyPlayedMusicItem.LegacyModelRecentlyPlayedMusicItemPropertyKey": [
+   "MusicKit_LegacyModelProperty_GenericType"
+  ],
+  "MusicKit:MusicKit.CatalogAsset.LegacyModelStoreAssetPropertyKey": [
+   "MPModelPropertyStoreAssetRedownloadable",
+   "MPModelPropertyStoreAssetSubscriptionRequired",
+   "MPModelPropertyStoreAssetNeedsUserUpload",
+   "MPModelPropertyStoreAssetEndpointType"
+  ],
+  "MusicKit:MusicKit.FileAsset.LegacyModelFileAssetPropertyKey": [
+   "MPModelPropertyFileAssetNonPurgeable",
+   "MPModelPropertyFileAssetProtectionType",
+   "MPModelPropertyFileAssetTraits"
+  ],
+  "MusicKit:MusicKit.HomeSharingAsset.LegacyModelHomeSharingAssetPropertyKey": [
+   "MPModelPropertyHomeSharingAssetAvailable"
+  ],
+  "MusicKit:MusicKit.MusicLyrics.LegacyModelLyricsPropertyKey": [
+   "MPModelPropertyLyricsHasLibraryLyrics",
+   "MPModelPropertyLyricsHasTimeSyncedLyrics",
+   "MPModelPropertyLyricsHasStoreLyrics",
+   "MPModelPropertyLyricsHasDownloadedCatalogLyrics",
+   "MPModelPropertyLyricsText"
+  ],
+  "MusicKit:MusicKit.LegacyModelLibrarySearchTopResult.LegacyModelSearchTopResultPropertyKey": [
+   "MusicKit_LegacyModelProperty_GenericType"
+  ],
+  "MusicKit:MusicKit.MusicLibrary.Error": [
+   "unknown",
+   "permissionDenied",
+   "unableToAddItem",
+   "itemAlreadyAdded",
+   "playlistNotInLibrary",
+   "addToPlaylistFailed",
+   "createPlaylistFailed",
+   "editPlaylistFailed"
+  ],
+  "MusicKit:MusicKit.MusicCatalogID.CodingKeys": [
+   "value",
+   "kind"
+  ],
+  "MusicKit:MusicKit.MusicItemCollectionCombinationIncrementalLoader.CodingKeys": [
+   "data"
+  ],
+  "MusicKit:MusicKit.AnyMusicItemCollectionIncrementalLoader.IncrementalLoaderType": [
+   "catalog-resource-incremental-loaders",
+   "catalog-search-incremental-loaders",
+   "combination-incremental-loaders"
+  ],
+  "MusicKit:MusicKit.Station._StreamingKind": [
+   "episode",
+   "broadcast"
+  ],
+  "MusicKit:MusicKit.MusicCatalogChartsIncrementalLoader.CodingKeys": [
+   "id",
+   "next"
+  ],
+  "MusicKit:MusicKit.MusicPersonalRecommendationIncrementalLoader.CodingKeys": [
+   "id",
+   "next",
+   "additionalQueryParameters"
+  ],
+  "MusicKit:MusicKit.MusicCatalogPlaylistEntryResourceIncrementalLoader.CodingKeys": [
+   "next",
+   "occurrences",
+   "offset"
+  ],
+  "MusicKit:MusicKit.MusicCatalogResourceIncrementalLoader.CodingKeys": [
+   "next"
+  ],
+  "MusicKit:MusicKit.MusicCatalogSearchSuggestionsRequest.Kind": [
+   "terms",
+   "topResults"
+  ],
+  "MusicKit:MusicKit.MusicCatalogSearchIncrementalLoader.CodingKeys": [
+   "term",
+   "next",
+   "item-types"
+  ],
+  "MusicKit:MusicKit.MusicAPI.Metadata.Authentication.Status": [
+   "success",
+   "insufficient",
+   "expired",
+   "invalid",
+   "error"
+  ],
+  "MusicKit:MusicKit.CloudAlbum.Relationships.CodingKeys": [
+   "artists",
+   "catalog",
+   "genres",
+   "tracks",
+   "library",
+   "record-labels"
+  ],
+  "MusicKit:MusicKit.CloudAlbum.Associations.CodingKeys": [
+   "appears-on",
+   "other-versions",
+   "related-albums",
+   "related-videos"
+  ],
+  "MusicKit:MusicKit.CloudAlbum.Metadata.Associations.CodingKeys": [
+   "friends-who-listened",
+   "recommended-entry-tracks"
+  ],
+  "MusicKit:MusicKit.CloudArtist.Relationships.CodingKeys": [
+   "albums",
+   "catalog",
+   "default-playable-content",
+   "genres",
+   "music-videos",
+   "playlists",
+   "station"
+  ],
+  "MusicKit:MusicKit.CloudArtist.Associations.CodingKeys": [
+   "all-upcoming-concerts",
+   "appears-on-albums",
+   "compilation-albums",
+   "featured-albums",
+   "featured-playlists",
+   "full-albums",
+   "latest-release",
+   "live-albums",
+   "nearby-upcoming-concerts",
+   "similar-artists",
+   "singles",
+   "top-music-videos",
+   "top-songs"
+  ],
+  "MusicKit:MusicKit.CloudConcert.Associations.CodingKeys": [
+   "more-upcoming-concerts"
+  ],
+  "MusicKit:MusicKit.CloudCreditArtist.Relationships.CodingKeys": [
+   "artists"
+  ],
+  "MusicKit:MusicKit.CloudCurator.Relationships.CodingKeys": [
+   "playlists"
+  ],
+  "MusicKit:MusicKit.CloudGenre.Relationships.CodingKeys": [
+   "playlists"
+  ],
+  "MusicKit:MusicKit.CloudMusicCreditsSection.Relationships.CodingKeys": [
+   "credit-artists"
+  ],
+  "MusicKit:MusicKit.CloudMusicVideo.Relationships.CodingKeys": [
+   "albums",
+   "artists",
+   "catalog",
+   "genres",
+   "library",
+   "songs"
+  ],
+  "MusicKit:MusicKit.CloudMusicVideo.Associations.CodingKeys": [
+   "more-by-artist",
+   "more-in-genre"
+  ],
+  "MusicKit:MusicKit.CloudPlaylist.Relationships.CodingKeys": [
+   "catalog",
+   "playlist-collaborations",
+   "curator",
+   "entries",
+   "library",
+   "parent",
+   "tracks"
+  ],
+  "MusicKit:MusicKit.CloudPlaylist.Associations.CodingKeys": [
+   "collaborators",
+   "contributors",
+   "featured-artists",
+   "more-by-curator"
+  ],
+  "MusicKit:MusicKit.CloudPlaylist.Metadata.Associations.CodingKeys": [
+   "friends-who-listened",
+   "recommended-entry-tracks"
+  ],
+  "MusicKit:MusicKit.CloudPlaylist.Collaboration.Relationships.CodingKeys": [
+   "collaborators",
+   "pending-collaborators",
+   "playlists"
+  ],
+  "MusicKit:MusicKit.CloudPlaylistFolder.Relationships.CodingKeys": [
+   "children",
+   "parent"
+  ],
+  "MusicKit:MusicKit.CloudRadioShow.Relationships.CodingKeys": [
+   "playlists"
+  ],
+  "MusicKit:MusicKit.CloudRecordLabel.Associations.CodingKeys": [
+   "latest-releases",
+   "top-releases"
+  ],
+  "MusicKit:MusicKit.CloudSong.Relationships.CodingKeys": [
+   "albums",
+   "raw-genres",
+   "audio-analysis",
+   "artists",
+   "catalog",
+   "syllable-lyrics",
+   "composers",
+   "credits",
+   "flexml-analysis",
+   "genres",
+   "library",
+   "music-videos",
+   "station"
+  ],
+  "MusicKit:MusicKit.CloudStation.Metadata.Associations.CodingKeys": [
+   "friends-who-listened",
+   "recommended-entry-tracks"
+  ],
+  "MusicKit:MusicKit.CatalogChartsRawResponse.Results.CodingKeys": [
+   "albums",
+   "music-videos",
+   "playlists",
+   "songs",
+   "cityCharts",
+   "dailyGlobalTopCharts"
+  ],
+  "MusicKit:MusicKit.CatalogRawChart.CodingKeys": [
+   "chart",
+   "name",
+   "orderId"
+  ],
+  "MusicKit:MusicKit.CatalogRawChartKind": [
+   "most-played",
+   "city-top",
+   "daily-global-top"
+  ],
+  "MusicKit:MusicKit.CloudPersonalRecommendation.Relationships.CodingKeys": [
+   "contents"
+  ],
+  "MusicKit:MusicKit.CatalogSearchRawResponse.CodingKeys": [
+   "results",
+   "meta"
+  ],
+  "MusicKit:MusicKit.CatalogSearchRawResponse.Results.CodingKeys": [
+   "albums",
+   "artists",
+   "apple-curators",
+   "curators",
+   "music-videos",
+   "playlists",
+   "record-labels",
+   "songs",
+   "stations",
+   "topResults"
+  ],
+  "MusicKit:MusicKit.CatalogSearchRawResponse.Metadata.CodingKeys": [
+   "item-types"
+  ],
+  "MusicKit:MusicKit.CloudEnhancedResourceIdentifier.CodingKeys": [
+   "meta"
+  ],
+  "MusicKit:MusicKit.CloudResource.CodingKeys": [
+   "id",
+   "type",
+   "href",
+   "attributes",
+   "relationships",
+   "views",
+   "meta"
+  ],
+  "MusicKit:MusicKit.CloudResourceCollection.CodingKeys": [
+   "attributes",
+   "data",
+   "href",
+   "name",
+   "next",
+   "incremental-loader",
+   "meta"
+  ],
+  "MusicKit:MusicKit.CloudResourceCollectionMetadata.CodingKeys": [
+   "filters"
+  ],
+  "MusicKit:MusicKit.CloudResourceCustomMetadata.CodingKeys": [
+   "musicKit_identifierSet",
+   "musicKit_additionalQueryParameters",
+   "musicKit_referencingItemID"
+  ],
+  "MusicKit:MusicKit.CloudAudioTrait": [
+   "apple-digital-master",
+   "dolby-atmos",
+   "dolby-audio",
+   "lossless",
+   "hi-res-lossless",
+   "lossy-stereo",
+   "spatial-audio",
+   "spatial",
+   "isMasteredForItunes",
+   "atmos",
+   "surround"
+  ],
+  "MusicKit:MusicKit.CloudContentRating": [
+   "clean",
+   "explicit"
+  ],
+  "MusicKit:MusicKit.CloudContributors.CodingKeys": [
+   "social-profiles"
+  ],
+  "MusicKit:MusicKit.CloudCoverArtworkRecipe.CodingKeys": [
+   "expressionId",
+   "version",
+   "colorInfo",
+   "textColor"
+  ],
+  "MusicKit:MusicKit.CloudCurator.Kind": [
+   "Curator",
+   "Genre",
+   "Show"
+  ],
+  "MusicKit:MusicKit.CloudAudioAnalysis.CompositeAttributeTonality.CloudMode": [
+   "major",
+   "minor",
+   "neutral"
+  ],
+  "MusicKit:MusicKit.Storefront.ExplicitContentPolicy": [
+   "allowed",
+   "opt-in",
+   "prohibited"
+  ],
+  "MusicKit:MusicKit.MusicDataRequest.Method": [
+   "GET",
+   "POST"
+  ],
+  "MusicKit:MusicKit.MusicAPI.Error.CodingKeys": [
+   "status",
+   "code",
+   "title",
+   "detail",
+   "id",
+   "source",
+   "meta"
+  ],
+  "MusicKit:MusicKit.MusicSubscription.Error": [
+   "unknown",
+   "permissionDenied",
+   "privacyAcknowledgementRequired"
+  ],
+  "MusicKit:MusicKit.MusicTokenRequestError": [
+   "unknown",
+   "permissionDenied",
+   "userTokenRevoked",
+   "userNotSignedIn",
+   "privacyAcknowledgementRequired",
+   "developerTokenRequestFailed",
+   "userTokenRequestFailed"
+  ],
+  "MusicKitInternal:MusicKit.Artwork.ImageFormat": [
+   "jpg",
+   "png",
+   "heic"
+  ],
+  "MusicKitInternal:MusicKitInternal.ClientInfo.CodingKeys": [
+   "API",
+   "Bag",
+   "IntentDonation"
+  ],
+  "MusicKitInternal:MusicKitInternal.ClientInfo.API.CodingKeys": [
+   "Identifier",
+   "Version"
+  ],
+  "MusicKitInternal:MusicKitInternal.ClientInfo.Bag.CodingKeys": [
+   "Profile",
+   "Version"
+  ],
+  "MusicKitInternal:MusicKitInternal.ClientInfo.IntentDonation.CodingKeys": [
+   "INIntentsForAutomaticDonation"
+  ],
+  "MusicKitInternal:MusicKitInternal.Composer.LegacyModelComposerPropertyKey": [
+   "MPModelPropertyPersonName",
+   "MPModelPropertyComposerLibraryAddedDate"
+  ],
+  "MusicKitInternal:MusicKitInternal.CreditArtist.LegacyModelCreditArtistPropertyKey": [
+   "MPModelPropertyCreditsArtistArtwork",
+   "MPModelPropertyCreditsArtistName",
+   "MPModelRelationshipCreditsArtistRelatedArtist"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicMovie.LegacyModelMusicMoviePropertyKey": [
+   "MPModelPropertyMovieArtwork",
+   "MPModelPropertyMovieDownloadedDate",
+   "MPModelPropertyMovieDuration",
+   "MPModelPropertyMovieExplicitRating",
+   "MPModelPropertyMovieHasCloudSyncSource",
+   "MPModelPropertyMovieLibraryAdded",
+   "MPModelPropertyMovieLibraryAddEligible",
+   "MPModelPropertyMovieKeepLocalEnableState",
+   "MPModelPropertyMovieKeepLocalManagedStatus",
+   "MPModelPropertyMovieKeepLocalManagedStatusReason",
+   "MPModelPropertyMovieLastDevicePlaybackDate",
+   "MPModelPropertyMovieLibraryAddedDate",
+   "MPModelPropertyMovieInfoDictionary",
+   "MPModelPropertyMovieReleaseDate",
+   "MPModelPropertyMovieDescriptionText",
+   "MPModelPropertyMovieTagline",
+   "MPModelPropertyMovieTitle",
+   "MPModelRelationshipMovieStoreAsset",
+   "MPModelRelationshipMovieClips",
+   "MPModelRelationshipMovieLocalFileAsset",
+   "MPModelRelationshipMoviePlaybackPosition"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicPin.LegacyModelMusicPinPropertyKey": [
+   "MPModelPropertyLibraryPinDefaultAction",
+   "MPModelPropertyLibraryPinPosition",
+   "MPModelPropertyLibraryPinEntityType",
+   "MPModelPropertyLibraryPinPositionUUID",
+   "MPModelRelationshipLibraryPinAlbum",
+   "MPModelRelationshipLibraryPinArtist",
+   "MPModelRelationshipLibraryPinPlaylist",
+   "MPModelRelationshipLibraryPinSong"
+  ],
+  "MusicKitInternal:MusicKit.Playlist.LegacyModelPlaylistInternalPropertyKey": [
+   "MPModelPropertyPlaylistCollaborationSharingMode",
+   "MPModelPropertyPlaylistCollaboratorStatus",
+   "MPModelPropertyPlaylistIsCollaborative",
+   "MPModelPropertyPlaylistCollaborationInvitationURL",
+   "MPModelPropertyPlaylistCollaborationInvitationURLExpirationDate",
+   "MPModelRelationshipPlaylistCurator"
+  ],
+  "MusicKitInternal:MusicKit.Playlist.Collaborator.LegacyModelPlaylistAuthorPropertyKey": [
+   "MPModelPropertyPlaylistAuthorIsPendingApproval",
+   "MPModelPropertyPlaylistAuthorRole",
+   "MPModelRelationshipPlaylistAuthorPlaylist",
+   "MPModelRelationshipPlaylistAuthorSocialProfile"
+  ],
+  "MusicKitInternal:MusicKit.Playlist.Entry.Reaction.LegacyModelPlaylistEntryReactionPropertyKey": [
+   "MPModelPropertyPlaylistEntryReactionDate",
+   "MPModelPropertyPlaylistEntryReactionText",
+   "MPModelRelationshipPlaylistEntryReactionPlaylistEntry",
+   "MPModelRelationshipPlaylistEntryReactionSocialProfile"
+  ],
+  "MusicKitInternal:MusicKitInternal.RecentlyAddedMusicItem.LegacyModelRecentlyAddedMusicItemPropertyKey": [
+   "MusicKit_LegacyModelProperty_GenericType"
+  ],
+  "MusicKitInternal:MusicKitInternal.SocialProfile.LegacyModelSocialProfilePropertyKey": [
+   "MPModelPropertySocialPersonArtwork",
+   "MPModelPropertySocialPersonHandle",
+   "MPModelPropertySocialPersonHasLightweightProfile",
+   "MPModelPropertySocialPersonIsPrivate",
+   "MPModelPropertySocialPersonIsVerified",
+   "MPModelPropertyPersonName"
+  ],
+  "MusicKitInternal:MusicKitInternal.TVEpisode.LegacyModelTVEpisodePropertyKey": [
+   "MPModelPropertyTVEpisodeArtwork",
+   "MPModelPropertyTVEpisodeDuration",
+   "MPModelPropertyTVEpisodeTypeDisplayName",
+   "MPModelPropertyTVEpisodeDownloadedDate",
+   "MPModelPropertyTVEpisodeExplicitRating",
+   "MPModelPropertyTVEpisodeHasCloudSyncSource",
+   "MPModelPropertyTVEpisodeLibraryAdded",
+   "MPModelPropertyTVEpisodeLibraryAddEligible",
+   "MPModelPropertyTVEpisodeMusicShow",
+   "MPModelPropertyTVEpisodeKeepLocalEnableState",
+   "MPModelPropertyTVEpisodeKeepLocalManagedStatus",
+   "MPModelPropertyTVEpisodeKeepLocalManagedStatusReason",
+   "MPModelPropertyTVEpisodeLastDevicePlaybackDate",
+   "MPModelPropertyTVEpisodeLibraryAddedDate",
+   "MPModelPropertyTVEpisodeNumber",
+   "MPModelPropertyTVEpisodeReleaseDate",
+   "MPModelPropertyTVEpisodeDescriptionText",
+   "MPModelPropertyTVEpisodeTitle",
+   "MPModelPropertyTVEpisodeType",
+   "MPModelRelationshipTVEpisodeStoreAsset",
+   "MPModelRelationshipTVEpisodeLocalFileAsset",
+   "MPModelRelationshipTVEpisodePlaybackPosition",
+   "MPModelRelationshipTVEpisodeSeason",
+   "MPModelRelationshipTVEpisodeShow"
+  ],
+  "MusicKitInternal:MusicKitInternal.TVSeason.LegacyModelTVSeasonPropertyKey": [
+   "MPModelPropertyTVSeasonArtwork",
+   "MPModelPropertyTVSeasonDownloadedDate",
+   "MPModelPropertyTVSeasonEpisodesCount",
+   "MPModelPropertyTVSeasonHasCleanContent",
+   "MPModelPropertyTVSeasonHasExplicitContent",
+   "MPModelPropertyTVSeasonLibraryAdded",
+   "MPModelPropertyTVSeasonLibraryAddEligible",
+   "MPModelPropertyTVSeasonLibraryAddedDate",
+   "MPModelPropertyTVSeasonNumber",
+   "MPModelPropertyTVSeasonSortType",
+   "MPModelPropertyTVSeasonDescriptionText",
+   "MPModelPropertyTVSeasonYear",
+   "MPModelRelationshipTVSeasonRepresentativeEpisode",
+   "MPModelRelationshipTVSeasonShow"
+  ],
+  "MusicKitInternal:MusicKitInternal.TVShow.LegacyModelTVShowPropertyKey": [
+   "MPModelPropertyTVShowArtwork",
+   "MPModelPropertyTVShowEditorialArtwork",
+   "MPModelPropertyTVShowEditorNotes",
+   "MPModelPropertyTVShowEpisodeCount",
+   "MPModelPropertyTVShowShortEditorNotes",
+   "MPModelPropertyTVShowShortTitle",
+   "MPModelPropertyTVShowTagline",
+   "MPModelPropertyTVShowTitle"
+  ],
+  "MusicKitInternal:MusicKitInternal.GenericMusicItem.LegacyModelGenericMusicItemPropertyKey": [
+   "MusicKit_LegacyModelProperty_GenericType"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicPin.Item.LegacyModelMusicPinItemPropertyKey": [
+   "MusicKit_LegacyModelLibraryPinnedEntityType"
+  ],
+  "MusicKitInternal:MusicKit.Playlist.Entry.InternalItem.LegacyModelPlaylistEntryInternalItemPropertyKey": [
+   "MusicKit_LegacyModelProperty_GenericType"
+  ],
+  "MusicKitInternal:MusicKitInternal.LegacyModelCodableComposer.Relationships.CodingKeys": [
+   "albums"
+  ],
+  "MusicKitInternal:MusicKitInternal.LegacyModelCodableMusicPin.Relationships.CodingKeys": [
+   "item"
+  ],
+  "MusicKitInternal:MusicKitInternal.LegacyModelCodablePlaylistEntryReaction.Relationships.CodingKeys": [
+   "playlistEntries",
+   "socialProfiles"
+  ],
+  "MusicKitInternal:MusicKitInternal.PlaybackPosition.LegacyModelPlaybackPositionPropertyKey": [
+   "MPModelPropertyPlaybackPositionBookmarkTime",
+   "MPModelPropertyPlaybackPositionHasBeenPlayed",
+   "MPModelPropertyPlaybackPositionShouldRememberBookmarkTime",
+   "MPModelPropertyPlaybackPositionUserPlayCount",
+   "MPModelPropertyPlaybackPositionStartTime",
+   "MPModelPropertyPlaybackPositionStopTime"
+  ],
+  "MusicKitInternal:MusicKit.Station.StreamingKind": [
+   "episode",
+   "broadcast"
+  ],
+  "MusicKitInternal:MusicKitInternal.VisualTrait": [
+   "selfieSing",
+   "americanSignLanguage",
+   "exclusive"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicConcertsNotificationPayload.CodingKeys": [
+   "notification-candidates"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicCatalogInternalSearchIncrementalLoader.CodingKeys": [
+   "term",
+   "next",
+   "immersive",
+   "lyrics-option",
+   "resource-identifier",
+   "item-types"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicCatalogInternalSearchRequest.LyricsOption": [
+   "exclude",
+   "lyricHighlights",
+   "lyrics"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicShareableItem.Kind": [
+   "album",
+   "artist",
+   "curator",
+   "music-movie",
+   "music-video",
+   "personal-mix",
+   "playlist",
+   "profile",
+   "label",
+   "song",
+   "station",
+   "episode",
+   "show",
+   "post"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicUserProfileRequest.Error": [
+   "userNotSignedIn"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicIntentDonation.Kind": [
+   "INPlayMediaIntent",
+   "INAddMediaIntent",
+   "INSearchForMediaIntent"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicSiriRepresentation.Kind": [
+   "album",
+   "artist",
+   "composer",
+   "curator",
+   "editorial-item",
+   "genre",
+   "movie",
+   "music-video",
+   "playlist",
+   "playlist-entry",
+   "radio-show",
+   "record-label",
+   "song",
+   "station",
+   "tv-episode",
+   "tv-season",
+   "tv-show",
+   "uploaded-audio",
+   "uploaded-video"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicSiriRepresentation.LegacySiriIdentifierScheme": [
+   "x-sampcollection-album",
+   "x-sampcollection-artist",
+   "x-sampcollection-genre",
+   "x-sampmeditem",
+   "x-sampcollection-musicshow",
+   "x-sampplaylist",
+   "x-sampradio"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudEditorialElement.Relationships.CodingKeys": [
+   "room"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudMarketingItem.Relationships.CodingKeys": [
+   "contents"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudMusicMovie.Relationships.CodingKeys": [
+   "genres"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudMusicMovie.Associations.CodingKeys": [
+   "cross-merchandise",
+   "more-in-genre",
+   "music-artists",
+   "playlists",
+   "viewers-also-bought"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudMusicMultiroom.Relationships.CodingKeys": [
+   "children"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudMusicRoom.Relationships.CodingKeys": [
+   "contents"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudMusicSummary.Relationships.CodingKeys": [
+   "playlist"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudUnpersonalizedLightweightConcert.CodingKeys": [
+   "concert_id",
+   "artist_id",
+   "latitude",
+   "longitude",
+   "start_time"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudTVEpisode.Relationships.CodingKeys": [
+   "genres",
+   "seasons",
+   "show"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudTVEpisode.Associations.CodingKeys": [
+   "music-artists",
+   "other-episodes",
+   "playlists"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudTVSeason.Relationships.CodingKeys": [
+   "episodes",
+   "genres",
+   "show"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudTVShow.Relationships.CodingKeys": [
+   "tv-seasons"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudUploadedAudio.Relationships.CodingKeys": [
+   "artists",
+   "curator"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudUploadedVideo.Relationships.CodingKeys": [
+   "artists",
+   "curator"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudUserProfile.Relationships.CodingKeys": [
+   "followees",
+   "followers",
+   "pending-followers",
+   "shareable-playlists",
+   "shared-playlists",
+   "social-profile",
+   "top-genres"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudSuggestedPivotsRawRequest.Entry.UserInteraction": [
+   "impressed",
+   "previewed",
+   "selected"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicGenerativePlaylist.CloudDelta.CodingKeys": [
+   "action"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudResourceMapRawResponse.ResourceMap.CodingKeys": [
+   "albums",
+   "artists",
+   "apple-curators",
+   "credit-artists",
+   "curators",
+   "editorial-items",
+   "genres",
+   "music-movies",
+   "music-videos",
+   "playlists",
+   "record-labels",
+   "songs",
+   "social-profiles",
+   "stations",
+   "tv-episodes",
+   "tv-seasons",
+   "tv-shows",
+   "uploaded-audios",
+   "uploaded-videos",
+   "library-albums",
+   "library-artists",
+   "library-music-videos",
+   "library-playlists",
+   "library-songs"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudAssetFlavors.CodingKeys": [
+   "standardAudio",
+   "plusAudio",
+   "1080pHdVideo",
+   "720pHdVideo",
+   "sd480pVideo",
+   "sdVideo",
+   "sdVideoWithPlusAudio"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudTVEpisode.Kind": [
+   "certificate",
+   "concert",
+   "cta",
+   "customwarning",
+   "dubcredits",
+   "episode",
+   "episodebonus",
+   "feature",
+   "guidedrun",
+   "guidedwalk",
+   "immersive",
+   "logo",
+   "meditation",
+   "preview",
+   "productplacement",
+   "programdocumentary",
+   "programtrailer",
+   "promo",
+   "rating",
+   "recap",
+   "seasonbonus",
+   "short",
+   "specialty",
+   "trailer",
+   "tvtrailer",
+   "warning"
+  ],
+  "MusicKitInternal:MusicKitInternal.CloudVideoCapability": [
+   "3D",
+   "4K",
+   "HDR",
+   "dolbyAtmos",
+   "dolbyVision"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicPlaybackIntentDonation.Kind": [
+   "item",
+   "library",
+   "seed"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicRecentlySearchedViewModel.Entry.Source": [
+   "Apple.Music",
+   "Library"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicRecentlySearchedRequest.PersistentEntry.CodingKeys": [
+   "identifiers",
+   "kind",
+   "dateAdded"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicRecentlySearchedRequest.PersistentEntry.Kind": [
+   "activities",
+   "albums",
+   "apple-curators",
+   "artists",
+   "curators",
+   "apple-curators_Genre",
+   "editorial-items",
+   "music-movies",
+   "music-videos",
+   "playlists",
+   "apple-curators_Show",
+   "record-labels",
+   "social-profiles",
+   "songs",
+   "stations",
+   "tv-episodes",
+   "tv-shows",
+   "uploaded-videos",
+   "album",
+   "artist",
+   "composer",
+   "movie",
+   "musicVideo",
+   "playlist",
+   "playlistFolder",
+   "song",
+   "tvEpisode",
+   "tvShow"
+  ],
+  "MusicKitInternal:MusicKitInternal.MusicSuggestedSongsEntry.UserInteraction": [
+   "impressed",
+   "previewed"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.AnyPlaybackMusicItemField.Linkage": [
+   "id",
+   "type"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackMusicItemMetadataKey": [
+   "sort",
+   "group",
+   "grouped",
+   "mapped"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackMusicItemMetadata.Mapped.CodingKeys": [
+   "id",
+   "type",
+   "meta"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.PlaybackPlaylist.Attributes.CodingKeys": [
+   "dateAdded",
+   "dateDownloaded",
+   "datePlayed",
+   "description",
+   "favoritedDate",
+   "isDownloaded",
+   "isEditable",
+   "isOwned",
+   "lastModifiedDate",
+   "likedState",
+   "name",
+   "trackCount",
+   "kind"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Filter.Operator": [
+   "equals",
+   "notEquals",
+   "contains",
+   "doesNotContain",
+   "in",
+   "notIn",
+   "greaterThan",
+   "greaterThanOrEquals",
+   "lessThan",
+   "lessThanOrEquals"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Filter.MatchingStrength": [
+   "primary",
+   "secondary",
+   "tertiary",
+   "quaternary"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Filter.CodingKeys": [
+   "field",
+   "matchingStrength",
+   "default",
+   "equals",
+   "notEquals",
+   "contains",
+   "doesNotContain",
+   "in",
+   "notIn",
+   "greaterThan",
+   "greaterThanOrEquals",
+   "lessThan",
+   "lessThanOrEquals"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Seek.CodingKeys": [
+   "fields",
+   "values",
+   "inclusive"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Sort.Direction": [
+   "asc",
+   "desc"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Sort.CodingKeys": [
+   "fields",
+   "direction",
+   "locale",
+   "default",
+   "random"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Sort.RandomSort.CodingKeys": [
+   "seed",
+   "fields"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Modifier.Union.CodingKeys": [
+   "source",
+   "modifiers"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryRequest.Source.SourceType": [
+   "cloud-library",
+   "local-library"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryFieldResolver.JoinPath.JoinType": [
+   "INNER JOIN",
+   "LEFT JOIN",
+   "LEFT OUTER JOIN"
+  ],
+  "MusicKitPlaybackSupport:MusicKitPlaybackSupport.MusicLibraryQueryResponse.CodingKeys": [
+   "data",
+   "meta"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.Chapter.ChapterType": [
+   "index",
+   "silent"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ChapterCollection.Source": [
+   "apple",
+   "provider"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ChapterCollection.Kind": [
+   "ID3",
+   "server"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastsSettingsDeepLinkURLs": [
+   "settings-navigation://com.apple.Settings.Apps/com.apple.podcasts",
+   "settings-navigation://com.apple.Settings.Apps/com.apple.podcasts/CELLULAR_DOWNLOADS",
+   "settings-navigation://com.apple.Settings.Apps/com.apple.podcasts/FORWARD",
+   "settings-navigation://com.apple.Settings.Apps/com.apple.podcasts/BACKWARD",
+   "settings-navigation://com.apple.Settings.Apps/com.apple.podcasts/PODCASTS_AND_PRIVACY"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.CacheDeleteUrgency": [
+   "none",
+   "low",
+   "medium",
+   "high",
+   "unblockSoftwareUpdate"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.FileFormat": [
+   "png",
+   "jpg",
+   "jpeg",
+   "heic",
+   "txt",
+   "plist",
+   "shazamsignature",
+   "ttml",
+   "xml"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.AutoDownloadProcessorDownloader.ConnectionType": [
+   "wifi",
+   "cellular"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.EpisodeDownloadReport.DownloadState": [
+   "downloaded",
+   "willBeDownloaded",
+   "willBeRemoved",
+   "expectedAutoDownload",
+   "userDownloaded",
+   "inMediaLibrary",
+   "validDRMToken",
+   "expiredDRMToken",
+   "softwareUpdatePurgeable",
+   "highPriorityPurgeable",
+   "mediumPriorityPurgeable",
+   "lowPriorityPurgeable",
+   "willBeMarkedPurgeable",
+   "noDownloadBehavior"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.AppDependencyKey": [
+   "viewControllerObjectGraphAppIntentDependencyKey",
+   "objectGraphAppIntentDependencyKey"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastsEntityType": [
+   "EpisodeEntity",
+   "ShowEntity",
+   "PodcastCollectionEntity"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.NewEpisodesLaunchCycle.Trigger": [
+   "launch",
+   "foreground",
+   "feedSync"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastsSystem": [
+   "Bookmarks",
+   "Database",
+   "Downloads",
+   "JS",
+   "Navigation",
+   "Widget",
+   "LibraryShow",
+   "FileBug",
+   "Settings",
+   "PodcastsStatesCoordination",
+   "InMemoryState",
+   "CloudSync",
+   "StoreFeedUpdater",
+   "SiriDonation",
+   "SiriSnippets",
+   "RSSFeedUpdater",
+   "BackgroundTaskManager",
+   "Following",
+   "FeedUpdate",
+   "Playback",
+   "Shazam",
+   "Transcripts",
+   "Purchases",
+   "CurrentPage",
+   "FairPlay",
+   "PodcastsMediaLibrary",
+   "Metrics",
+   "Actions",
+   "Assets",
+   "Artwork",
+   "PodcastAppIntents",
+   "PodcastAppNotices",
+   "IntentRouting",
+   "BouncyBarAsset",
+   "NowPlaying",
+   "NowPlayingArtwork",
+   "MusicSubscriptionInfoSync",
+   "ModernPlayback",
+   "Eyebrows",
+   "SynchronizedTimer",
+   "Privacy",
+   "Bag",
+   "Lifecycle",
+   "ListenNow",
+   "UI",
+   "Interests",
+   "PlaybackPositionTracker",
+   "UserActivity",
+   "Network",
+   "Search",
+   "SignificantChange",
+   "Notifications",
+   "Restrictions",
+   "Tips",
+   "Chapters",
+   "Links",
+   "PPT",
+   "PlaybackSettings",
+   "FastTermination",
+   "Migration",
+   "Welcome",
+   "Tokens",
+   "Accounts",
+   "PAL"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MetricsEngagementThresholdMet": [
+   "yes",
+   "no",
+   "unsynced",
+   "unknown"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MetricsPageLayout.HorizontalSizeClass": [
+   "compact",
+   "regular"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ContentRating": [
+   "clean",
+   "explicit"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.DisplayType": [
+   "free",
+   "paid",
+   "hybrid"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.SectionContext": [
+   "Season",
+   "Trailer"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.EpisodeMediaType": [
+   "audio",
+   "video",
+   "external"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.EpisodeSortType": [
+   "pubDate",
+   "pubDateAscending",
+   "firstTimeAvailable",
+   "firstTimeAvailableAscending",
+   "serialNewestSeasonFirst",
+   "serialOldestToNewest",
+   "serialNewestToOldest",
+   "bookmarkedDate",
+   "bookmarkedDateAscending",
+   "downloadedDate",
+   "downloadedDateAscending",
+   "title",
+   "recentlyPlayed",
+   "listenNow",
+   "newEpisodes",
+   "groupByShows",
+   "watchTopLevel"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.EpisodeType": [
+   "bonus",
+   "full",
+   "trailer"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ShowType": [
+   "episodic",
+   "serial"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ArtworkRequest.Destination": [
+   "display",
+   "unspecified"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ArtworkRequest.Effect": [
+   "blurred"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ArtworkRequest.CodingKeys": [
+   "model",
+   "targetSize",
+   "displayScale",
+   "retainAspectRatio",
+   "cropCodeOverride",
+   "destination",
+   "effects",
+   "subsampleFactor",
+   "effectBackgroundColor",
+   "priority"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ArtworkStyle": [
+   "roundedRect",
+   "round",
+   "pill",
+   "contextMenuPreview"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.CropCode": [
+   "bb",
+   "sr",
+   "ss",
+   "fm",
+   "fn",
+   "fo",
+   "fa",
+   "ev",
+   "eu",
+   "et",
+   "SPT.UpsM01",
+   "SPT.UpsW01",
+   "SPT.UpsT01",
+   "SE.SLEB01",
+   "SB.SLBLTR01",
+   "SB.SLBRTL01",
+   "SPT.PPCW01",
+   "ECA.PHCB01",
+   "SPT.PHCB01"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ContentID.CodingKeys": [
+   "adamId",
+   "uuid",
+   "managedObjectUri"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ContentKind": [
+   "category",
+   "channel",
+   "episode",
+   "show",
+   "station",
+   "unknown"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ContentReference.CodingKeys": [
+   "$kind",
+   "adamId"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MTMediaEnclosure.FieldNames": [
+   "MTMediaEnclosure",
+   "episode",
+   "downloadDate",
+   "downloadedMediaKindString",
+   "duration",
+   "firstTimeAvailable",
+   "localURL",
+   "mediaKindsString",
+   "persistentID",
+   "priceType",
+   "priorityScore",
+   "remoteURL",
+   "tokenRequirementsString",
+   "transcriptIdentifier",
+   "transcriptProvider"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MTMediaEnclosure.KeyPaths": [
+   "episode.downloadBehavior"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MTTranscriptSnippet.FieldNames": [
+   "MTTranscriptSnippet",
+   "text",
+   "mediaEnclosure"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MTEpisodeDescription.FieldNames": [
+   "MTEpisodeDescription",
+   "text",
+   "hasRichText",
+   "plainText",
+   "richTextData",
+   "episode"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ShowsSortType": [
+   "title",
+   "titleAscending",
+   "updated",
+   "updatedAscending",
+   "added",
+   "addedAscending",
+   "manual"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.RecommendationsMetadata.Analytics.CodingKeys": [
+   "clientId",
+   "userId",
+   "userAllowsPersonalization",
+   "userIsManagedAccount",
+   "userIsUnder13"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.RecommendationsMetadata.Categories.Metadata.CodingKeys": [
+   "adamId",
+   "timestamp"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.RecommendationsMetadata.Channels.Metadata.CodingKeys": [
+   "adamId",
+   "timestamp"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.RecommendationsMetadata.Episodes.Metadata.CodingKeys": [
+   "adamId",
+   "timestamp",
+   "isComplete",
+   "duration",
+   "position"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.RecommendationsMetadata.Shows.Metadata.CodingKeys": [
+   "adamId",
+   "timestamp"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.BatchFeedRequestReponse.CodingKeys": [
+   "data"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.BatchFeedRequestReponse.ShowData.MetadataCodingKeys": [
+   "isSynced"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.BatchFeedRequestReponse.ShowData.CodingKeys": [
+   "id",
+   "meta"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MetadataSource": [
+   "apple",
+   "provider"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.RecommendationsDisplayKind": [
+   "channel",
+   "episodeMultiShowList",
+   "episodeMultiShowSwoosh",
+   "inlineCategory",
+   "powerSwoosh",
+   "highlightedItem",
+   "show",
+   "episodeHero",
+   "showHero"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ServerCategoryRelationships.CodingKeys": [
+   "parent",
+   "children"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ServerCategoryParentRelationshipContainer.CodingKeys": [
+   "data"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ServerCategoryChildrenRelationshipContainer.CodingKeys": [
+   "data"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ChannelAttributes.DisplayType": [
+   "free",
+   "paid",
+   "hybrid"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.ChannelAttributes.SubscriptionType": [
+   "apps",
+   "oauth",
+   "podcasts"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.SubscriptionOffer.Kind": [
+   "in-app",
+   "oauth",
+   "subscribe"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.SubscriptionOffer.AppType": [
+   "music",
+   "news",
+   "tv",
+   "external"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.AssetToken.TokenType": [
+   "cat"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.AssetTokenRequest.CodingKeys": [
+   "id",
+   "type",
+   "offerType",
+   "tokenType"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.OAuthAuthenticationError": [
+   "access_denied",
+   "invalid_request",
+   "invalid_client",
+   "invalid_grant",
+   "server_error",
+   "temporarily_unavailable",
+   "unauthorized_client",
+   "unsupported_grant_type",
+   "unsupported_response_type",
+   "invalid_scope"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.ContentType": [
+   "podcast-episodes",
+   "podcasts",
+   "podcast-stations",
+   "podcast-channels",
+   "transcripts",
+   "categories",
+   "next-episodes"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.HTTPMethod": [
+   "get",
+   "post",
+   "delete"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.ViewType": [
+   "next-episodes",
+   "playable-episodes"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.IncludeExtendTypes": [
+   "artwork",
+   "isSubscribed",
+   "inLibrary",
+   "personalizedSubscriptionOffers",
+   "subscriptionOffers",
+   "editorialArtwork",
+   "availableShowCount",
+   "playback-position",
+   "episodes",
+   "podcast",
+   "podcasts",
+   "fullDescription",
+   "subscriptionEnabledDate",
+   "feedUrl",
+   "channel",
+   "upsell",
+   "firstAvailableDates",
+   "subscriptionType",
+   "subscriptionName",
+   "transcripts",
+   "snippet",
+   "categories",
+   "parent",
+   "children",
+   "chapters",
+   "timeframes"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.URLFragment": [
+   "all"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.Relationship": [
+   "episodes",
+   "podcast-episodes",
+   "podcast-seasons",
+   "transcripts",
+   "chapters",
+   "playable-episodes"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.Filter": [
+   "module",
+   "podcast-seasons:season",
+   "feedUrl",
+   "syncId",
+   "displayKinds"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.WithTypes": [
+   "newsPodcasts",
+   "entitlements",
+   "appOffers",
+   "transcripts",
+   "cleanSync",
+   "categories",
+   "chapters",
+   "alternateAssets",
+   "premiumVideo"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.MediaRequestActionType": [
+   "implicit"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.Field": [
+   "artwork",
+   "displayType",
+   "id",
+   "ttmlAssetUrls",
+   "ttmlToken",
+   "durationInMilliseconds",
+   "completed",
+   "positionInMilliseconds",
+   "recordedAtTimestamp",
+   "inLibrary",
+   "name",
+   "artistName",
+   "type",
+   "offers",
+   "assetUrl"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.MediaRequest.PageName": [
+   "home"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastAttributes.DisplayType": [
+   "free",
+   "paid",
+   "hybrid"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastEpisodeAttributes.ChannelKind": [
+   "music",
+   "tv",
+   "news"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastEpisodeAttributes.EpisodeType": [
+   "full",
+   "trailer",
+   "bonus"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastEpisodeAttributes.MediaKind": [
+   "audio",
+   "video",
+   "image",
+   "document",
+   "external"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.Kind": [
+   "get",
+   "subscribe"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PriceType": [
+   "STDQ",
+   "PLUS",
+   "PSUB",
+   "PRMO"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastEpisodeOffer.AlternateAsset.CK": [
+   "url",
+   "mediaKinds",
+   "durationInMilliseconds",
+   "requires"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastEditorialArtworkContainer.CodingKeys": [
+   "showPageTall"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastRelationships.CodingKeys": [
+   "categories",
+   "channel"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastChannelRelationshipContainer.CodingKeys": [
+   "data"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastCategoriesRelationshipContainer.CodingKeys": [
+   "data"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastEpisodeRelationships.CodingKeys": [
+   "playback-position",
+   "podcast",
+   "transcripts",
+   "chapters"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastRelationshipContainer.CodingKeys": [
+   "data"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PlaybackIntent.Source": [
+   "app",
+   "siri",
+   "widget"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastsMediaLibrary.Source": [
+   "mediaAPI",
+   "localLibrary",
+   "infer"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastsMediaLibrary.MediaItem.ItemType": [
+   "stream",
+   "download"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastsMediaLibrary.PlaybackQueueContext.FeatureName": [
+   "app",
+   "siri",
+   "widget",
+   "iosControlCenter"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.URLTrackIdentifier.Command": [
+   "playPodcasts",
+   "playPodcast",
+   "playStation",
+   "playRemoteStation",
+   "playNewsBrief",
+   "subscribe",
+   "playItem"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.URLTrackIdentifier.ArgumentKey": [
+   "uuid",
+   "episodeUuid",
+   "storeCollectionId",
+   "storeTrackId",
+   "playbackOrder",
+   "podcastFeedURL",
+   "dsid",
+   "contentItemId",
+   "episodeGuid",
+   "episodeTitle",
+   "podcastTitle",
+   "streamUrl",
+   "playhead",
+   "playReason",
+   "context",
+   "contextSortType",
+   "enqueuerDSID"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.InterestState": [
+   "suggestLess",
+   "neutral",
+   "favorited",
+   "unknown"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.EpisodeStateDomain": [
+   "downloadState",
+   "playState",
+   "bookmarkState"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastStateModel.SanitizedState": [
+   "followed",
+   "library",
+   "implicitlyFollowed",
+   "store"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.EyebrowBuilder.Style": [
+   "default",
+   "short",
+   "medium"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.AssetReaderTimelineAlignment.CodingKeys": [
+   "alignments"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.extension.Name": [
+   "settings",
+   "shared",
+   "standard"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.BugReport.Domain": [
+   "Podcasts"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.BugReport.ErrorKind": [
+   "DuplicateDownloads",
+   "ExcessiveDownloads",
+   "DeletedSecureKeyWithAsset",
+   "MissingFairPlayOfflineKey",
+   "KeyIntegrityError",
+   "DownloadediPodLibraryFile",
+   "PotentialSyncDataLoss",
+   "SyncAuthenticationError"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.AutoDownloadCellularMode": [
+   "off",
+   "audioOnly",
+   "video"
+  ],
+  "PodcastsFoundation:PodcastsFoundation.PodcastsBagFeatureFlags.Key": [
+   "podcasts-unttsd-enabled",
+   "podcasts-cncd-enabled"
+  ],
+  "GameServicesCore:GameServicesCore.Challenge.ChallengeType": [
+   "LEADERBOARD"
+  ],
+  "GameServicesCore:GameServicesCore.Challenge.Duration": [
+   "ONE_DAY",
+   "THREE_DAYS",
+   "ONE_WEEK"
+  ],
+  "GameServicesCore:GameServicesCore.LeaderboardEntryFormat": [
+   "INTEGER",
+   "DECIMAL_POINT_1_PLACE",
+   "DECIMAL_POINT_2_PLACE",
+   "DECIMAL_POINT_3_PLACE",
+   "ELAPSED_TIME_CENTISECOND",
+   "ELAPSED_TIME_MILLISECOND",
+   "ELAPSED_TIME_MINUTE",
+   "ELAPSED_TIME_SECOND",
+   "MONEY_POUND_DECIMAL",
+   "MONEY_POUND",
+   "MONEY_DOLLAR_DECIMAL",
+   "MONEY_DOLLAR",
+   "MONEY_EURO_DECIMAL",
+   "MONEY_EURO",
+   "MONEY_FRANC_DECIMAL",
+   "MONEY_FRANC",
+   "MONEY_KRONER_DECIMAL",
+   "MONEY_KRONER",
+   "MONEY_YEN"
+  ],
+  "GameServicesCore:GameServicesCore.SortedValidator.SortOrder": [
+   "ascending",
+   "descending"
+  ],
+  "GameServicesCore:GameServicesCore.GameCenterConfigurationVersion": [
+   "2024-11-15"
+  ],
+  "GameServicesCore:GameServicesCore.GameCenterResources.CodingKeys": [
+   "achievements",
+   "achievementLocalizations",
+   "achievementImages",
+   "challenges",
+   "challengeLocalizations",
+   "challengeImages",
+   "challengeDefaultImages",
+   "challengeLeaderboardRelationships",
+   "gameActivities",
+   "gameActivityLocalizations",
+   "gameActivityImages",
+   "gameActivityDefaultImages",
+   "gameActivityFallbackURLs",
+   "gameActivityAssociatedResources",
+   "leaderboards",
+   "leaderboardLocalizations",
+   "leaderboardImages",
+   "leaderboardSets",
+   "leaderboardSetLocalizations",
+   "leaderboardSetImages",
+   "leaderboardSetMemberships"
+  ],
+  "GameServicesCore:GameServicesCore.ResourceType.TopLevel": [
+   "Achievement",
+   "GroupAchievement",
+   "Challenge",
+   "GroupChallenge",
+   "ChallengeLeaderboardRelationship",
+   "GameActivity",
+   "GroupGameActivity",
+   "Leaderboard",
+   "GroupLeaderboard",
+   "LeaderboardSet",
+   "GroupLeaderboardSet",
+   "LeaderboardSetMembership"
+  ],
+  "GameServicesCore:GameServicesCore.ResourceType.Localization": [
+   "AchievementLocalization",
+   "ChallengeLocalization",
+   "GameActivityLocalization",
+   "LeaderboardLocalization",
+   "LeaderboardSetLocalization"
+  ],
+  "GameServicesCore:GameServicesCore.ResourceType.Image": [
+   "AchievementImage",
+   "ChallengeImage",
+   "GameActivityImage",
+   "LeaderboardImage",
+   "LeaderboardSetImage"
+  ],
+  "GameServicesCore:GameServicesCore.DurationUnit": [
+   "Day(s)",
+   "Hour(s)",
+   "Minute(s)"
+  ],
+  "GameServicesCore:GameServicesCore.DefaultChallengeStoreRegistry.ChallengeStoreType": [
+   "definition",
+   "instance"
+  ],
+  "GameServicesCore:GameServicesCore.ChallengeInstanceStoreSchemaV1.Instance.Status": [
+   "active",
+   "completed",
+   "won"
+  ],
+  "GameServicesCore:GameServicesCore.GKScoreFormat": [
+   "UNKNOWN",
+   "INTEGER_COMMA",
+   "FLOAT_P_1_COMMA_PERIOD",
+   "FLOAT_P_2_COMMA_PERIOD",
+   "FLOAT_P_3_COMMA_PERIOD",
+   "FLOAT_P_1_PERIOD_COMMA",
+   "FLOAT_P_2_PERIOD_COMMA",
+   "FLOAT_P_3_PERIOD_COMMA",
+   "MONEY_P_0_DOLLAR",
+   "MONEY_P_2_DOLLAR",
+   "MONEY_P_0_POUND",
+   "MONEY_P_2_POUND",
+   "MONEY_P_0_KRONER",
+   "MONEY_P_2_KRONER",
+   "MONEY_P_0_FRANC",
+   "MONEY_P_0_YEN",
+   "ETIME_HH_MM",
+   "ETIME_HH_MM_SS",
+   "ETIME_HH_MM_SS_HH",
+   "MONEY_P_2_FRANC",
+   "INTEGER_PERIOD",
+   "MONEY_P_0_EURO_PERIOD",
+   "MONEY_P_2_EURO_PERIOD",
+   "MONEY_P_0_EURO_SPACE",
+   "MONEY_P_2_EURO_SPACE",
+   "FLOAT_P_1_SPACE_COMMA",
+   "FLOAT_P_2_SPACE_COMMA",
+   "FLOAT_P_3_SPACE_COMMA",
+   "INTEGER_SPACE",
+   "INTEGER",
+   "FLOAT_P_1",
+   "FLOAT_P_2",
+   "FLOAT_P_3",
+   "MONEY_P_0_EURO",
+   "MONEY_P_2_EURO"
+  ],
+  "GameServicesCore:GameServicesCore.GameActivityDefinitionStoreV1.GameActivityDefinitionSchema.PlayStyle": [
+   "unspecified",
+   "synchronous",
+   "asynchronous"
+  ],
+  "GameServicesCore:GameServicesCore.GameActivityDefinitionStoreV1.GameActivityDefinitionSchema.StoredReleaseState": [
+   "live",
+   "staged",
+   "development"
+  ],
+  "GameServicesCore:GameServicesCore.AchievementDescriptionRow.Columns": [
+   "bundleID",
+   "achievementID",
+   "groupIdentifier",
+   "title",
+   "achievedDescription",
+   "unachievedDescription",
+   "maximumPoints",
+   "isHidden",
+   "isReplayable",
+   "rarityPercent",
+   "isPrerelease",
+   "ascResourceId",
+   "activityIdentifier",
+   "activityPropertiesJson",
+   "image64",
+   "image128",
+   "image256",
+   "image512",
+   "imageTemplate",
+   "numFriendsWithAchievement"
+  ],
+  "GameServicesCore:GameServicesCore.AchievementFriendRow.Columns": [
+   "bundleID",
+   "achievementID",
+   "friendPlayerID",
+   "earnedAt"
+  ],
+  "GameServicesCore:GameServicesCore.AchievementWriteType": [
+   "submit",
+   "reset"
+  ],
+  "GameServicesCore:GameServicesCore.AchievementProgressRow.Columns": [
+   "bundleID",
+   "playerID",
+   "achievementID",
+   "groupIdentifier",
+   "percentComplete",
+   "lastReportedDate",
+   "writeType"
+  ],
+  "GameServicesCore:GameServicesCore.ChallengeStatus": [
+   "active",
+   "completed",
+   "won"
+  ],
+  "GameServicesCore:GameServicesCore.AMSPlatform": [
+   "ios",
+   "osx",
+   "appletvos",
+   "xros",
+   "watchos"
+  ],
+  "GameServicesCore:GameServicesCore.LocalizableColumns": [
+   "locale"
+  ],
+  "GameServicesCore:GameServicesCore.RowType": [
+   "confirmed",
+   "pending_write_behind",
+   "pending_write_through",
+   "syncing_write_behind",
+   "syncing_write_through"
+  ],
+  "GameServicesCore:GameServicesCore.StoreIdentifier": [
+   "prototype",
+   "prototypeFanOut",
+   "prototypeSecondary",
+   "achievementDescription",
+   "achievementFriend",
+   "achievementProgress"
+  ],
+  "GameServicesCore:GameServicesCore.BaseColumns": [
+   "id",
+   "entityId",
+   "rowType",
+   "createdAt",
+   "lastFetchedAt",
+   "cacheTTL"
+  ],
+  "GameServicesCore:GameServicesCore.AppMetadataPlatform": [
+   "ios",
+   "osx",
+   "appletvos",
+   "xros",
+   "watch"
+  ],
+  "GameServicesCore:GameServicesCore.AppMetadataDeviceFamily": [
+   "ipad",
+   "iphone",
+   "mac",
+   "appletv"
+  ],
+  "GameServicesCore:GameServicesCore.AppMetadataGameCenterFeature": [
+   "challenges",
+   "multiplayer-activities",
+   "leaderboards",
+   "achievements"
+  ],
+  "GameServicesCore:GameServicesCore.PrototypeFanOutRow.Columns": [
+   "primaryEntityId",
+   "derivedValue"
+  ],
+  "GameServicesCore:GameServicesCore.PrototypeGRDBRow.Columns": [
+   "value"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentAnalyticsSnapshot.TrackedArtifact": [
+   "surveys",
+   "universalStudioContent"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentImportFailure.ErrorDescription": [
+   "Decoding Error",
+   "Invalid Import Format",
+   "Database Error",
+   "Archive Error",
+   "Unsupported Content",
+   "Unknown"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentImportFailure.FailedFile": [
+   "None",
+   "elements.tsv",
+   "content_mappings.tsv",
+   "content_tagging.tsv",
+   "action_plan_resources.tsv",
+   "region.tsv",
+   "supplemental_localized_content.tsv",
+   "manifest.csv"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataEntity.Column": [
+   "video_adam_id",
+   "video_metadata",
+   "date_last_accessed",
+   "date_fetched",
+   "date_required_keys_recorded"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentTaggingEntry.AudienceRule": [
+   "none",
+   "include",
+   "exclude"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.VideoOrientation": [
+   "horizontal",
+   "vertical"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.TimedEventKind": [
+   "videoHeading",
+   "healthData",
+   "contributor",
+   "chapterList",
+   "behaviorGoal"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.Resources.CodingKeys": [
+   "contributors",
+   "health-videos",
+   "hls-programs",
+   "timed-events"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.VideoMetadataResponse.HLSProgramRelationships.CodingKeys": [
+   "timed-events"
+  ],
+  "HealthContentDaemon:HealthContentDaemon.ContentQueryOperators.LogicalOperator": [
+   "AND",
+   "OR"
+  ],
+  "PhotosGraph:PhotosGraph.Edge.Label": [
+   "taken_on_date",
+   "taken_on_trip",
+   "has_geo_hash",
+   "child_of_geo_hash",
+   "belongs_to_album",
+   "contains_person",
+   "contains_pet",
+   "contains_scene",
+   "child_of_scene",
+   "was_favorited",
+   "belongs_to_duplicate_group",
+   "taken_at_home",
+   "taken_at_public_event",
+   "is_of_category",
+   "is_of_subcategory",
+   "performed_by",
+   "held_at",
+   "has_iconic_scene",
+   "day",
+   "weekday",
+   "month",
+   "quarter",
+   "year",
+   "in_state",
+   "in_country",
+   "taken_in_city",
+   "taken_in_state",
+   "taken_in_country",
+   "overlaps_with_city",
+   "taken_at_business",
+   "is_of_business_category"
+  ],
+  "PhotosGraph:PhotosGraph.LocationIndex.Subdomain": [
+   "geoHash",
+   "poi",
+   "roi"
+  ],
+  "PhotosGraph:PhotosGraph.Log.Subsystem": [
+   "com.apple.PhotosGraph",
+   "com.apple.PhotosGraph.MemoriesMusic",
+   "com.apple.photoanalysisd.SharedLibrarySimulation",
+   "com.apple.PhotosGraph.ImportantEntitiesSimulation",
+   "com.apple.PhotosGraph.Titles"
+  ],
+  "PhotosGraph:PhotosGraph.Log.Category": [
+   "generic",
+   "upNext",
+   "musicCurator",
+   "musicKitClient",
+   "shazamClient",
+   "musicCache",
+   "musicCatalogMonitor",
+   "flexMusic",
+   "curatedSongLibrary",
+   "musicForTopicElector",
+   "musicForYouElector",
+   "musicForTimeElector",
+   "musicForMomentElector",
+   "musicForArtistElector",
+   "personalPreferenceRanker",
+   "topicRanker",
+   "localeMusicRanker",
+   "randomMusicRanker",
+   "sentimentMusicRanker",
+   "memoryAppropriatenessMusicRanker",
+   "recentlyUsedMusicRanker",
+   "sharedLibrarySimulation",
+   "importantEntitiesSimulation",
+   "graphUpdate",
+   "TripTitleGenerator",
+   "grale",
+   "SocialGroups",
+   "PromptGeneration",
+   "ExtendedTokenGeneration",
+   "PersonalTraits",
+   "Search",
+   "AssetCuration"
+  ],
+  "PhotosGraph:PhotosGraph.MockFlexMusicSong.CodingKeys": [
+   "uid",
+   "recalled",
+   "canPlay",
+   "weightedKeywords",
+   "hidden",
+   "artistName",
+   "songName",
+   "keywords",
+   "tagIDs"
+  ],
+  "PhotosGraph:PhotosGraph.JobConfiguration.JobCadence.CodingKeys": [
+   "minimumSuccessCadenceSeconds",
+   "minimumFailureCadenceSeconds",
+   "failureBackoffMultiplier",
+   "maximumFailureCadenceSeconds"
+  ],
+  "PhotosGraph:PhotosGraph.CacheRefreshConfiguration.CodingKeys": [
+   "minimumRefreshCadenceSeconds",
+   "batchSize"
+  ],
+  "PhotosGraph:PhotosGraph.MusicKitArtistEssentialsResponse.ArtistView.Views.CodingKeys": [
+   "top-songs"
+  ],
+  "PhotosGraph:PhotosGraph.MusicKitCatalogSong.Relationships.CodingKeys": [
+   "equivalents",
+   "lyrics",
+   "audio-analysis",
+   "flexml-analysis"
+  ],
+  "PhotosGraph:PhotosGraph.MusicKitPersonalPlaylistsResponse.PlaylistResponseMetadata.Filters.CodingKeys": [
+   "personal-mix"
+  ],
+  "PhotosGraph:PhotosGraph.Node.Label": [
+   "Asset",
+   "AssetCollection",
+   "Person",
+   "Pet",
+   "Album",
+   "Scene",
+   "GeoHash",
+   "DateCluster",
+   "Trip",
+   "Favorites",
+   "Duplicates",
+   "Home",
+   "Day",
+   "Weekday",
+   "Month",
+   "Quarter",
+   "Year",
+   "City",
+   "State",
+   "Country",
+   "PublicEvent",
+   "PublicEventCategory",
+   "PublicEventSubcategory",
+   "Performer",
+   "Business",
+   "BusinessCategory"
+  ],
+  "PhotosGraph:PhotosGraph.ImportantEntityInferenceResult": [
+   "inferredImportantEntity",
+   "notRecentEnough",
+   "lifespanInLibraryTooShort",
+   "noMoments",
+   "notEnoughMoments",
+   "notEnoughImportantLocationPresence",
+   "outlierEntity",
+   "invalidImportantLocationPresence",
+   "lifespanNotFound",
+   "importantEntityPresenceNotFound"
+  ],
+  "PhotosGraph:PhotosGraph.PhotoKitToken.CodingKeys": [
+   "persistentChangeToken",
+   "rebuildInProgress"
+  ],
+  "PhotosGraph:PhotosGraph.TimeIndex.Subdomain": [
+   "year",
+   "season",
+   "wedgeOfYear",
+   "partOfWeek",
+   "dayOfYear",
+   "partOfDay"
+  ],
+  "PhotosGraph:PhotosGraph.TripFeatureProcessor.TripLevel": [
+   "None",
+   "City",
+   "State",
+   "Country",
+   "Area of Interest"
+  ],
+  "PhotosGraph:PhotosGraph.PlaceZeroKeyword.PlaceZeroKeywordKind": [
+   "superset",
+   "recurringTrip",
+   "topAoi",
+   "home"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.Mood.ID": [
+   "productivity",
+   "chill",
+   "sleep",
+   "wellbeing",
+   "custom"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.Mood.ContentType": [
+   "appleMusic",
+   "uploadedAudio",
+   "userLibrary"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.SupportedMetadata": [
+   "title",
+   "artist",
+   "artwork",
+   "adamID"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.Player.ShuffleMode": [
+   "off",
+   "songs"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.Player.RepeatMode": [
+   "none",
+   "one",
+   "all"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.Media.ItemType": [
+   "mood",
+   "playlist",
+   "song",
+   "url"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.Media.ContentType": [
+   "appleMusic",
+   "uploadedAudio",
+   "userLibrary",
+   "url"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.MusicPlayingPlaybackStatus": [
+   "idle",
+   "loading",
+   "paused",
+   "playing"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.AppleMusicMoodAttributes.CodingKeys": [
+   "name"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.UploadedAudioMoodAttributes.CodingKeys": [
+   "name"
+  ],
+  "AdaptiveMusic:AdaptiveMusic.ManifestResources.CodingKeys": [
+   "adaptive-music-manifests",
+   "apple-music-playlist-categories",
+   "playlists",
+   "uploaded-audio-playlist-categories",
+   "uploaded-audio-playlists",
+   "uploaded-audios"
+  ],
+  "OmniSearch:OmniSearch.CardSubType": [
+   "personal",
+   "business"
+  ],
+  "OmniSearch:OmniSearch.Sex": [
+   "none",
+   "female",
+   "male"
+  ],
+  "OmniSearch:OmniSearch.EventSubType": [
+   "flightReservation",
+   "restaurantReservation",
+   "hotelReservation",
+   "vehicleReservation",
+   "shippingOrder",
+   "ticketedTransportation",
+   "ticketedShow",
+   "genericEvent"
+  ],
+  "OmniSearch:OmniSearch.GlobalDomain": [
+   "conversions",
+   "dictionary",
+   "flights",
+   "kg",
+   "maps",
+   "news",
+   "sports",
+   "stocks",
+   "thirdPartyGenAI",
+   "weather",
+   "web",
+   "web_images",
+   "summarizedAnswer",
+   "unknown"
+  ],
+  "OmniSearch:OmniSearch.SearchEntity.CodingKeys": [
+   "source",
+   "card",
+   "searchString",
+   "shouldOpen"
+  ],
+  "OmniSearch:OmniSearch.HydratedEntityType": [
+   "email",
+   "file",
+   "message",
+   "note",
+   "photo"
+  ],
+  "OmniSearch:OmniSearch.HydrationEntityType": [
+   "searchAnswer",
+   "string"
+  ],
+  "OmniSearch:OmniSearch.SearchPropertyType": [
+   "string",
+   "date",
+   "dateComponents",
+   "duration",
+   "person",
+   "number",
+   "media",
+   "navigation",
+   "url",
+   "location"
+  ],
+  "OmniSearch:OmniSearch.SearchPropertyRequest.CodingKeys": [
+   "name",
+   "type",
+   "hydrationContext"
+  ],
+  "OmniSearch:OmniSearch.HydrationContext.CodingKeys": [
+   "appBundleId",
+   "entity"
+  ],
+  "OmniSearch:OmniSearch.HydrationEntity.CodingKeys": [
+   "type",
+   "searchAnswerValue",
+   "stringValue"
+  ],
+  "OmniSearch:OmniSearch.SearchToolClientType": [
+   "montaraWritingTool"
+  ],
+  "OmniSearch:OmniSearch.SearchToolIntentRequest.CodingKeys": [
+   "rawQuery",
+   "rewrittenQuery",
+   "simplifiedQuery",
+   "structuredQuery",
+   "typeIdentifiers",
+   "isFirstToolInvocation",
+   "isOnScreenReference",
+   "isSingleStepSearch",
+   "requestedProperties"
+  ],
+  "OmniSearch:OmniSearch.SearchToolIntentResponse.CodingKeys": [
+   "results"
+  ],
+  "OmniSearch:OmniSearch.ObjectType": [
+   "event",
+   "contact",
+   "card",
+   "eventRestaurant",
+   "eventHotel",
+   "eventFlight",
+   "cardPersonalId",
+   "photo",
+   "calendarEvent",
+   "media"
+  ],
+  "OmniSearch:OmniSearch.SortOrder": [
+   "last",
+   "next",
+   "first"
+  ],
+  "OmniSearch:OmniSearch.TemporalReference": [
+   "future",
+   "past",
+   "unspecified"
+  ],
+  "OmniSearch:OmniSearch.OrderByTime": [
+   "ascending",
+   "descending"
+  ],
+  "OmniSearch:OmniSearch.ContactHandleType": [
+   "phone",
+   "email",
+   "facetime"
+  ],
+  "OmniSearch:OmniSearch.MediaType": [
+   "screenshot",
+   "selfie",
+   "panorama",
+   "slomo",
+   "spatialVideo"
+  ],
+  "OmniSearch:OmniSearch.AppEntityStatus": [
+   "accepted",
+   "archived",
+   "bookmarked",
+   "completed",
+   "created",
+   "declined",
+   "disabled",
+   "draft",
+   "due",
+   "edited",
+   "enabled",
+   "favorited",
+   "firing",
+   "flagged",
+   "forwarded",
+   "junk",
+   "maybe",
+   "missed",
+   "paused",
+   "printed",
+   "read",
+   "received",
+   "replied",
+   "running",
+   "saved",
+   "sent",
+   "shared",
+   "snoozing",
+   "tagged",
+   "trash",
+   "unread"
+  ],
+  "OmniSearch:OmniSearch.AppEntityStatusMode": [
+   "required",
+   "preferred"
+  ],
+  "OmniSearch:OmniSearch.EntityUTType": [
+   "bookmark",
+   "spreadsheet",
+   "presentation",
+   "message",
+   "contact",
+   "calendarEvent",
+   "emailMessage",
+   "image",
+   "audio",
+   "movie",
+   "pdf",
+   "zip"
+  ],
+  "OmniSearch:OmniSearch.ReturnType": [
+   "mail",
+   "calendarEvent",
+   "photo",
+   "photoAlbum",
+   "memory",
+   "note",
+   "noteFolder",
+   "message",
+   "conversation",
+   "reminder",
+   "reminderList",
+   "documentsFile",
+   "documentsFolder",
+   "keynote",
+   "pagesFile",
+   "numbersFile",
+   "voicemail",
+   "phone",
+   "journal",
+   "voiceMemos",
+   "link",
+   "freeform",
+   "contact",
+   "card",
+   "wallet",
+   "song",
+   "artist",
+   "album",
+   "musicAlbum",
+   "playlist",
+   "podcast",
+   "show",
+   "radioStation",
+   "news",
+   "address",
+   "musicVideo",
+   "movie",
+   "hotel",
+   "restaurant",
+   "flight",
+   "ticketShow",
+   "ticketTransport",
+   "rentalCar",
+   "party",
+   "appointment",
+   "screenshot",
+   "selfie",
+   "panorama",
+   "slomo",
+   "spatialVideo"
+  ],
+  "OmniSearch:OmniSearch.FilterType": [
+   "alarm",
+   "album",
+   "app",
+   "artist",
+   "audioBook",
+   "book",
+   "browser",
+   "browserBookmark",
+   "browserHistory",
+   "calendar",
+   "contact",
+   "conversation",
+   "device",
+   "display",
+   "documentsFile",
+   "documentsFolder",
+   "episode",
+   "freeform",
+   "home",
+   "homeDevice",
+   "homeGroup",
+   "announcement",
+   "lightbulb",
+   "lock",
+   "thermostat",
+   "heaterCooler",
+   "fan",
+   "outlet",
+   "blinds",
+   "garageDoor",
+   "camera",
+   "sensor",
+   "airPurifier",
+   "humidifier",
+   "dehumidifier",
+   "sprinkler",
+   "robotVacuumCleaner",
+   "securitySystem",
+   "findMyItem",
+   "findMyPerson",
+   "journal",
+   "keynote",
+   "mail",
+   "mailDraft",
+   "memory",
+   "message",
+   "music",
+   "note",
+   "noteFolder",
+   "notification",
+   "numbersFile",
+   "pagesFile",
+   "pdfFile",
+   "playlist",
+   "podcast",
+   "phone",
+   "photo",
+   "photoAlbum",
+   "readingList",
+   "reminder",
+   "reminderList",
+   "room",
+   "show",
+   "song",
+   "speaker",
+   "tab",
+   "tabGroup",
+   "timer",
+   "video",
+   "voicemail",
+   "voiceMemo",
+   "wallet",
+   "website",
+   "zone",
+   "panorama",
+   "screenshot",
+   "selfie",
+   "slomo",
+   "spatialVideo",
+   "calendarEvent",
+   "link",
+   "movie",
+   "safari",
+   "voiceMemos"
+  ],
+  "OmniSearch:OmniSearch.PreferredType": [
+   "alarm",
+   "app",
+   "book",
+   "contact",
+   "conversation",
+   "documentsFile",
+   "documentsFolder",
+   "freeform",
+   "journal",
+   "keynote",
+   "mail",
+   "media",
+   "memory",
+   "message",
+   "note",
+   "noteFolder",
+   "numbersFile",
+   "pagesFile",
+   "pdfFile",
+   "phone",
+   "photo",
+   "photoAlbum",
+   "reminder",
+   "reminderList",
+   "tab",
+   "tabGroup",
+   "timer",
+   "video",
+   "voicemail",
+   "voiceMemo",
+   "wallet",
+   "website",
+   "appointment",
+   "card",
+   "event",
+   "flight",
+   "hotel",
+   "party",
+   "restaurant",
+   "shippingOrder",
+   "ticketShow",
+   "ticketTransport",
+   "vehicleReservation",
+   "home",
+   "room",
+   "zone",
+   "homeGroup",
+   "homeDevice",
+   "announcement",
+   "address",
+   "album",
+   "artist",
+   "calendarEvent",
+   "genericEvent",
+   "link",
+   "movie",
+   "music_album",
+   "music_video",
+   "news",
+   "playlist",
+   "podcast",
+   "radio_station",
+   "rentalCar",
+   "safari",
+   "show",
+   "song",
+   "voiceMemos"
+  ],
+  "OmniSearch:OmniSearch.SourceType": [
+   "browser",
+   "calendar",
+   "contact",
+   "conversation",
+   "documentsFile",
+   "documentsFolder",
+   "freeform",
+   "journal",
+   "keynote",
+   "mail",
+   "message",
+   "note",
+   "noteFolder",
+   "numbersFile",
+   "pagesFile",
+   "phone",
+   "photo",
+   "photoAlbum",
+   "reminder",
+   "reminderList",
+   "voicemail",
+   "voiceMemo",
+   "wallet",
+   "calendarEvent",
+   "memory",
+   "website"
+  ],
+  "OmniSearch:OmniSearch.ContainsType": [
+   "calendar",
+   "contact",
+   "conversation",
+   "documentsFile",
+   "documentsFolder",
+   "freeform",
+   "journal",
+   "keynote",
+   "media",
+   "memory",
+   "note",
+   "noteFolder",
+   "numbersFile",
+   "pagesFile",
+   "photo",
+   "photoAlbum",
+   "reminder",
+   "video",
+   "voicemail",
+   "voiceMemo",
+   "wallet",
+   "website",
+   "appointment",
+   "card",
+   "event",
+   "flight",
+   "hotel",
+   "party",
+   "restaurant",
+   "shippingOrder",
+   "ticketShow",
+   "ticketTransport",
+   "vehicleReservation",
+   "panorama",
+   "screenshot",
+   "selfie",
+   "slomo",
+   "spatialVideo"
+  ],
+  "OmniSearch:OmniSearch.GlobalSearchType": [
+   "sam",
+   "maps"
+  ],
+  "OmniSearch:OmniSearch.MapsFilterType": [
+   "poi",
+   "address",
+   "physical_feature"
+  ],
+  "OmniSearch:OmniSearch.ExtractedType": [
+   "appointment",
+   "card",
+   "event",
+   "flight",
+   "hotel",
+   "media",
+   "party",
+   "restaurant",
+   "shippingOrder",
+   "ticketShow",
+   "ticketTransport",
+   "vehicleReservation",
+   "website"
+  ],
+  "OmniSearch:OmniSearch.StructuredQueryEntity.CodingKeys": [
+   "isQuestion",
+   "filterType",
+   "preferredType",
+   "temporalReference",
+   "orderByTime",
+   "appEntityStatus",
+   "appEntityStatusMode",
+   "pickOne",
+   "globalSearchParse",
+   "searchTerms",
+   "optionalSearchTerms",
+   "locations",
+   "time",
+   "messageTime",
+   "people",
+   "tagName",
+   "flagColor",
+   "mailCategory",
+   "sourceType",
+   "containsType",
+   "appBundleId",
+   "extractedType"
+  ],
+  "OmniSearch:OmniSearch.LocationQueryEntity.CodingKeys": [
+   "unspecified",
+   "arrival",
+   "departure"
+  ],
+  "OmniSearch:OmniSearch.PersonQueryEntity.CodingKeys": [
+   "unspecified",
+   "sender",
+   "receiver"
+  ],
+  "OmniSearch:OmniSearch.Person.CodingKeys": [
+   "name",
+   "contactHandleType"
+  ],
+  "OmniSearch:OmniSearch.GlobalSearchParseEntity.CodingKeys": [
+   "globalSearchType",
+   "resolvedQuery",
+   "mapsFilterType"
+  ],
+  "OmniSearch:OmniSearch.ConfigKey": [
+   "version",
+   "last_updated",
+   "prompts",
+   "tools",
+   "toolbox",
+   "default_system",
+   "entity_resolution_system",
+   "user_prompt",
+   "general_tools",
+   "entity_mappings",
+   "generic_tools",
+   "name",
+   "usage_description",
+   "parameters",
+   "type",
+   "description"
+  ],
+  "OmniSearch:OmniSearch.ParameterValueType": [
+   "string",
+   "stringOptional",
+   "stringArray",
+   "stringArrayOptional",
+   "bool",
+   "boolOptional",
+   "int",
+   "intOptional"
+  ],
+  "OmniSearch:OmniSearch.StructuredQueryTemplate.CodingKeys": [
+   "filterType",
+   "searchTerms",
+   "optionalSearchTerms",
+   "appEntityStatus",
+   "appEntityStatusMode",
+   "time",
+   "people"
+  ],
+  "OmniSearch:OmniSearch.CerberusParseOverride.MatchCriteria.CodingKeys": [
+   "queryPattern",
+   "requiredEntityTypes",
+   "purpose"
+  ],
+  "OmniSearch:OmniSearch.CerberusParseOverride.CodingKeys": [
+   "matchCriteria",
+   "template"
+  ],
+  "OmniSearch:OmniSearch.MCADomain": [
+   "music",
+   "apps",
+   "podcasts",
+   "videos"
+  ],
+  "OmniSearch:OmniSearch.MCARole": [
+   "user",
+   "assistant"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryRequest.CodingKeys": [
+   "responseMode",
+   "context",
+   "input"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryContext.CodingKeys": [
+   "version",
+   "domains",
+   "continue"
+  ],
+  "OmniSearch:OmniSearch.MCAChatRequest.CodingKeys": [
+   "responseMode",
+   "conversation",
+   "messages"
+  ],
+  "OmniSearch:OmniSearch.MCAConversationInit.CodingKeys": [
+   "sharedContext",
+   "version",
+   "domains",
+   "continue"
+  ],
+  "OmniSearch:OmniSearch.MCAConversationContinue.CodingKeys": [
+   "id",
+   "lastMessage"
+  ],
+  "OmniSearch:OmniSearch.MCARequestContent.ContentCodingKeys": [
+   "type",
+   "text"
+  ],
+  "OmniSearch:OmniSearch.MCAEntityReference.Kind": [
+   "songs",
+   "albums",
+   "playlists",
+   "artists",
+   "stations",
+   "videos",
+   "movies",
+   "shows",
+   "episodes",
+   "apps"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseContent.TypeCodingKey": [
+   "type"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseStatus": [
+   "success",
+   "error"
+  ],
+  "OmniSearch:OmniSearch.MCASSEEventType": [
+   "response-start",
+   "message-content",
+   "thought",
+   "content",
+   "response-finish",
+   "failure",
+   "error"
+  ],
+  "OmniSearch:OmniSearch.SearchEntityTypeIdentifier.CodingKeys": [
+   "bundleId",
+   "typeName",
+   "extraBundleIds"
+  ],
+  "OmniSearch:OmniSearch.HybridSearchQueryInfo.CodingKeys": [
+   "rawQuery",
+   "rewrittenQuery",
+   "simplifiedQuery",
+   "entityTypes",
+   "searchTerms",
+   "pickOne",
+   "aliasMapping"
+  ],
+  "OmniSearch:OmniSearch.WorkoutCollectionSummary.MetricStat.Kind": [
+   "count",
+   "distance",
+   "duration",
+   "pace",
+   "average_heart_rate",
+   "max_heart_rate",
+   "calories",
+   "elevation_gain",
+   "cadence",
+   "power"
+  ],
+  "OmniSearch:OmniSearch.WorkoutDetails.LocationType": [
+   "indoor",
+   "outdoor",
+   "pool",
+   "open_water"
+  ],
+  "OmniSearch:OmniSearch.LangleyDomainDecision": [
+   "targetsVideo",
+   "noMediaOrVideoParse",
+   "nonVideoFilterPresent"
+  ],
+  "OmniSearch:OmniSearch.GlobalResponse.CodingKeys": [
+   "id",
+   "results",
+   "dialog",
+   "snippet",
+   "domain",
+   "responseType",
+   "isPqaDeserving",
+   "needsLocation",
+   "safetySignals",
+   "classifierSignals",
+   "forceBatchFlow",
+   "userDisambiguationType",
+   "appIntentData"
+  ],
+  "OmniSearch:OmniSearch.GlobalEntity.CodingKeys": [
+   "id",
+   "dialog",
+   "domain",
+   "snippet",
+   "result",
+   "resultMetadata",
+   "plannerFacingMetadata",
+   "markdownData"
+  ],
+  "OmniSearch:OmniSearch.HealthAggregationInterval": [
+   "hourly",
+   "daily",
+   "weekly",
+   "monthly",
+   "yearly"
+  ],
+  "OmniSearch:OmniSearch.HealthEntityBuilder.Refusal": [
+   "notSupported",
+   "noHealthAccess",
+   "readFailed",
+   "unknownArea",
+   "historyOutOfRange",
+   "unavailable",
+   "noRating",
+   "dateUnusable"
+  ],
+  "OmniSearch:OmniSearch.HealthMedicationDose.Status": [
+   "taken",
+   "skipped",
+   "snoozed",
+   "unlogged",
+   "noRecord"
+  ],
+  "OmniSearch:OmniSearch.SSLLocationMatchRule": [
+   "fullName",
+   "wholeWord",
+   "spaceInsensitive",
+   "normalized",
+   "typoFullName",
+   "typo",
+   "compoundWord"
+  ],
+  "OmniSearch:OmniSearch.SearchHomeScope": [
+   "specific",
+   "everywhere",
+   "here"
+  ],
+  "OmniSearch:OmniSearch.HomeKitSearchService.HomeResolutionType": [
+   "zone",
+   "room",
+   "device",
+   "everywhere"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalSearchSource": [
+   "cascade",
+   "direct"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalSearchMatchStrategy": [
+   "exact",
+   "substring",
+   "fuzzy"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalSearchMatchedField": [
+   "title",
+   "subtitle",
+   "typeDisplayName"
+  ],
+  "OmniSearch:OmniSearch.HybridLocalSearchAliasData.SupportedLanguage": [
+   "en",
+   "es",
+   "fr",
+   "pt",
+   "ja",
+   "ko"
+  ],
+  "OmniSearch:OmniSearch.DirectRouting": [
+   "Notifications",
+   "Announcements"
+  ],
+  "OmniSearch:OmniSearchTypes.PreExtractedCard.Keys": [
+   "type",
+   "sub type",
+   "provider",
+   "under name",
+   "number",
+   "group number",
+   "issue date",
+   "expiration date",
+   "issued by",
+   "region",
+   "country",
+   "birthday",
+   "place of birth",
+   "address",
+   "sex",
+   "height",
+   "eye color",
+   "weight",
+   "category",
+   "restrictions"
+  ],
+  "OmniSearch:OmniSearchTypes.PreExtractedContact.Keys": [
+   "type",
+   "name",
+   "nickname",
+   "email addresses",
+   "numbers",
+   "shared by",
+   "shared date time",
+   "shared app name",
+   "links",
+   "birthday",
+   "home addresses",
+   "work addresses",
+   "relationship",
+   "addresses",
+   "business hours"
+  ],
+  "OmniSearch:OmniSearchTypes.PreExtractedBreadcrumb.Keys": [
+   "extracted dates",
+   "extracted locations",
+   "extracted phone numbers",
+   "extracted phone numbers country codes",
+   "extracted addresses",
+   "extracted flights",
+   "extracted links",
+   "extracted tracking numbers",
+   "extracted currencies",
+   "extracted emails"
+  ],
+  "OmniSearch:OmniSearchTypes.PreExtractedSharedLink.Keys": [
+   "type",
+   "sub type",
+   "name",
+   "url",
+   "url description",
+   "artist",
+   "album",
+   "published date",
+   "release date",
+   "length in seconds",
+   "musical genre",
+   "curator",
+   "episode",
+   "podcast name",
+   "summary"
+  ],
+  "OmniSearch:OmniSearch.MessageAccumulationContext.Subcomponent": [
+   "spotlight",
+   "pegasus",
+   "maps"
+  ],
+  "OmniSearch:OmniSearch.EntityType": [
+   "location",
+   "person",
+   "phoneNumber",
+   "emailAddress",
+   "uri",
+   "appEntity",
+   "place",
+   "timer",
+   "alarm",
+   "notification",
+   "calendarEvent",
+   "reminder",
+   "homeDeviceOrRoom",
+   "dateTime",
+   "mediaItem"
+  ],
+  "OmniSearch:OmniSearch.EntityMatcherType": [
+   "unknown",
+   "siriEntityMatcher"
+  ],
+  "OmniSearch:OmniSearch.MobileGestalt.DeviceClass": [
+   "PHONE",
+   "PAD",
+   "HORSEMAN",
+   "ZEUS",
+   "CAMEO",
+   "WATCH",
+   "CAR",
+   "MARGARITA",
+   "unknown"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchOptions.CodingKeys": [
+   "context",
+   "interactionMode",
+   "assistantLocale",
+   "clientId",
+   "isFirstToolInvocation",
+   "isOnScreenReference",
+   "isExpectingAnswer",
+   "isSingleStepSearch",
+   "alwaysHydrateDocuments",
+   "skipGlobalSearch",
+   "skipLocalSearch",
+   "shouldRunBothLocalAndGlobalSearch",
+   "suppressFlightResolution",
+   "isXpcInvocation",
+   "transcript",
+   "purpose",
+   "entityTypes",
+   "toolParameterTuple",
+   "apps",
+   "appIntegrationOverride",
+   "unresolvedApps",
+   "remoteDeviceCapability",
+   "isHandoff",
+   "isCarPlay",
+   "offlineMode",
+   "simulatedLocalSearchURL",
+   "resolvedEntities",
+   "searchToolId",
+   "requestIdentifiers",
+   "isParseGeneratedByPlanner",
+   "siriRequestContext",
+   "identifiedUser",
+   "homeMembers",
+   "isPhoneCallActive",
+   "originatingDeviceAccessoryId",
+   "originatingDeviceInfo",
+   "isRemoteRequest",
+   "currentTimeOverride",
+   "agenticSearchInvocations",
+   "speechContent"
+  ],
+  "OmniSearch:OmniSearch.SearchPurpose": [
+   "reading",
+   "use_in_tool",
+   "use_to_inform_user"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchService.LangleyEligibility": [
+   "appleTVRequest",
+   "withoutAppleTV",
+   "ineligible"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.SuccessCodingKeys": [
+   "payload"
+  ],
+  "OmniSearch:OmniSearch.OmniSearchXPCResponse.CodingKeys": [
+   "failure",
+   "success"
+  ],
+  "OmniSearch:OmniSearch.RequestedPropertiesMapper.MappingType": [
+   "defaultKeys",
+   "expandedTypes"
+  ],
+  "OmniSearch:OmniSearch.SearchResult.JSONIntermediate.CodingKeys": [
+   "item",
+   "_csAttributes",
+   "likelihood"
+  ],
+  "OmniSearch:OmniSearch.SearchResultKey": [
+   "email",
+   "mobileSMS",
+   "calendar",
+   "photo",
+   "answer",
+   "note",
+   "reminder",
+   "phoneHistory",
+   "voicemailTranscript",
+   "journalEntry",
+   "voiceMemo",
+   "safari",
+   "file",
+   "walletTransaction",
+   "walletPass",
+   "contact",
+   "flightReservation",
+   "hotelReservation",
+   "restaurantReservation",
+   "globalResult",
+   "globalEntitiesResponse",
+   "appEntity",
+   "application",
+   "rentalCarReservation",
+   "shippingOrder",
+   "ticketedTransportation",
+   "ticketedShow",
+   "appointment",
+   "party",
+   "trip",
+   "onScreen",
+   "genericSpotlightItem",
+   "mapsPlaceResponse"
+  ],
+  "OmniSearch:OmniSearch.SearchType": [
+   "unknown",
+   "spotlight",
+   "lfs",
+   "global",
+   "unifiedContactGeneration",
+   "photo",
+   "maps",
+   "fitness",
+   "health",
+   "conversationMemory",
+   "homeKit",
+   "meCard",
+   "hybridLocal"
+  ],
+  "OmniSearch:OmniSearch.CerberusParses.CodingKeys": [
+   "parses",
+   "preferredTypes",
+   "isQuestion",
+   "persons",
+   "runLoops",
+   "compactFormat",
+   "deferredGenericParses"
+  ],
+  "SwiftData:SwiftData.ModelContext.NotificationKey": [
+   "newQueryGeneration",
+   "invalidatedAll",
+   "inserted",
+   "updated",
+   "deleted",
+   "historyTokens"
+  ],
+  "SwiftData:SwiftData.Schema.Relationship.DeleteRule": [
+   "noAction",
+   "nullify",
+   "cascade",
+   "deny"
+  ],
+  "SwiftData:SwiftData.Schema.Attribute.Option.Coders.CodingKeys": [
+   "coder",
+   "customCoderClassName"
+  ],
+  "SwiftData:SwiftData.PersistentIdentifierImplementation.Scheme": [
+   "x-swiftdata",
+   "x-coredata",
+   "developer-provided"
+  ],
+  "AppleMediaServices:AppleMediaServices.ActionPayloadKey": [
+   "actionKind"
+  ],
+  "AppleMediaServices:AppleMediaServices.URLSentryBag.CodingKeys": [
+   "trustedDomains",
+   "schemesThatOverrideTrustedDomains",
+   "restrictedUrls",
+   "redirects-explicitly-allowed"
+  ],
+  "AppleMediaServices:AppleMediaServices.PIAccountKeypair.CodingKeys": [
+   "privateKeyData"
+  ],
+  "AppleMediaServices:AppleMediaServices.PIDeviceKeypair.CodingKeys": [
+   "privateKeyData"
+  ],
+  "AppleMediaServices:AppleMediaServices.PIScheduledRotationConfigurationUpdate.Behavior": [
+   "rotateNow",
+   "rotateAccordingToUpdatedSchedule",
+   "resetLastRotationDateToNow"
+  ],
+  "AppleMediaServices:AppleMediaServices.DocumentType": [
+   "idCardFront",
+   "idCardBack"
+  ],
+  "AppleMediaServices:AppleMediaServices.AgeGroupRelationships.CodingKeys": [
+   "recommended-content-ratings"
+  ],
+  "AppleMediaServices:AppleMediaServices.SuggestedRatingsProviderBagModel.CodingKeys": [
+   "videoAgeGroupContentPoliciesUrlTemplate"
+  ],
+  "AppleMediaServices:AppleMediaServices.PaymentConfirmationResult.CodingKeys": [
+   "paymentConfirmationChoice"
+  ],
+  "AppleMediaServices:AppleMediaServices.MusicRestriction": [
+   "CLEAN",
+   "EXPLICIT"
+  ],
+  "AppleMediaServices:AppleMediaServices.MediaRestrictionsBagModel.CodingKeys": [
+   "restrictionsSetup",
+   "restrictionsEdit",
+   "restrictionsGet",
+   "restrictionsDisable",
+   "profileLockSetup",
+   "profileLockEdit",
+   "profileLockDelete",
+   "profileLockVerify"
+  ],
+  "AppleMediaServices:AppleMediaServices.MediaRestrictionsQRAuthTaskBagModel.CodingKeys": [
+   "restrictionsQRAuthSetup",
+   "restrictionsQRAuthPolling"
+  ],
+  "AppleMediaServices:AppleMediaServices.extension.CodingKeys": [
+   "ratingSystem",
+   "ratingValue"
+  ],
+  "AppleMediaServices:AppleMediaServices.AMSURLPattern.Component.CodingKeys": [
+   "/",
+   "?"
+  ],
+  "AppleMediaServices:AppleMediaServices.AMSURLPattern.Config.Presentation.CodingKeys": [
+   "style",
+   "subsystem"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfigRotationBehavior": [
+   "now",
+   "updatedSchedule",
+   "lastRotationDate"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModel.CodingKeys": [
+   "privateIdentifiers"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelDeviceSpecificFieldConfig.CodingKeys": [
+   "name",
+   "rotationInterval",
+   "provideU13Identifier"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelAccountSpecificFieldConfig.CodingKeys": [
+   "name",
+   "rotationInterval",
+   "rotationJitter",
+   "disableUserIdentifierFallback",
+   "provideU13Identifier"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfig.CodingKeys": [
+   "deviceSpecificField",
+   "accountSpecificField",
+   "rotationBehavior"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelTopLevel.CodingKeys": [
+   "configsForAutoDecorationTopics",
+   "configsForBagNamespaces",
+   "configs",
+   "configsForOnDemandRotation"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelJitterConfig.CodingKeys": [
+   "min",
+   "max",
+   "fraction"
+  ],
+  "AppleMediaServices:AppleMediaServices.ApplePayBagModel.CodingKeys": [
+   "auto-enrollment-percentage",
+   "auto-enrollment-session-duration",
+   "use-apple-pay-classic",
+   "countryCode",
+   "apple-pay-classic-networks"
+  ],
+  "AppleMediaServices:AppleMediaServices.BagUnderlyingData.CodingKeys": [
+   "version",
+   "bagDictionaryData",
+   "expirationDate",
+   "fileKey",
+   "aliasKeys"
+  ],
+  "AppleMediaServices:AppleMediaServices.CampaignAttributorBag.CodingKeys": [
+   "endpoint",
+   "isOnDeviceCleanUpDisabled",
+   "endpointV2",
+   "queryParamsToBePersisted",
+   "queryParamsToBeRemoved",
+   "queryParamsToBeIgnored",
+   "queryParamsGatingServerCall",
+   "queryParamsPersistenceExpiry",
+   "queryParamsPersistenceShouldIncludeLastPathComponent",
+   "ignoreMarketingQueryParam"
+  ],
+  "AppleMediaServices:AppleMediaServices.DSATCacheError": [
+   "cacheExpired",
+   "notEntitled"
+  ],
+  "AppleMediaServices:AppleMediaServices.EndpointModel.CodingKeys": [
+   "updateToken",
+   "getToken",
+   "updateConsent",
+   "validPeriod"
+  ],
+  "AppleMediaServices:AppleMediaServices.DeveloperSilentAuthTokenManager.DSATRequestError": [
+   "tokenNotFound"
+  ],
+  "AppleMediaServices:AppleMediaServices.DeveloperSilentAuthTokenManager.RequestKey": [
+   "bundleId",
+   "hasConsented",
+   "developerSilentAuthToken"
+  ],
+  "AppleMediaServices:AppleMediaServices.ExpressCheckoutBagModel.CodingKeys": [
+   "applePayExpressCheckoutEnabled",
+   "applePayExpressCheckoutShouldCheckForWalletBiometrics"
+  ],
+  "AppleMediaServices:AppleMediaServices.ExpressCheckoutCard.CodingKeys": [
+   "fpanSuffix",
+   "paymentNetwork",
+   "passSerialNumber",
+   "passTypeIdentifier",
+   "applePayBrandName"
+  ],
+  "AppleMediaServices:AppleMediaServices.ExpressCheckoutManagePaymentParams.CodingKeys": [
+   "mtPageRef",
+   "context"
+  ],
+  "AppleMediaServices:AppleMediaServices.ExpressCheckoutPaymentChoices.CodingKeys": [
+   "title",
+   "description",
+   "useApplePayButtonTitle",
+   "useApplePayButtonEnum",
+   "useDifferentPaymentMethodButtonTitle",
+   "eligibleCards",
+   "managePaymentsParams",
+   "metrics"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Mode": [
+   "basic",
+   "full"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.SignedActions.CodingKeys": [
+   "mode",
+   "criteria",
+   "actions",
+   "session-duration",
+   "session-refresh-percentage"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.CodingKeys": [
+   "fpdi-setup",
+   "fpdi-init",
+   "fpdi-config"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.HashAlgorithm": [
+   "SHA-256",
+   "SHA-512"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Order": [
+   "headers",
+   "params",
+   "cookies",
+   "body",
+   "path"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Criteria.CodingKeys": [
+   "host",
+   "urlRegex",
+   "path",
+   "method",
+   "buyParams",
+   "action"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Actions.CodingKeys": [
+   "body",
+   "path",
+   "cookies",
+   "headers",
+   "params"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Configuration.CodingKeys": [
+   "hash-algo",
+   "order",
+   "signed-actions",
+   "session-duration",
+   "session-refresh-percentage"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityInitSetupData.CodingKeys": [
+   "data"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldBagModel.CodingKeys": [
+   "gift-card-account-page",
+   "gift-card-session-handoff-retrieve-info",
+   "gift-card-session-handoff-support-finish",
+   "gift-card-session-handoff-upload",
+   "gift-card-session-key-validity-time",
+   "gift-card-session-redeem",
+   "gift-card-session-render",
+   "gift-card-session-tap-event",
+   "is-gift-card-session-handoff-enabled",
+   "is-gift-card-tag-reading-enabled",
+   "redeemThankYouPage",
+   "supportSessionTimeoutInterval"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageId": [
+   "GiftCardNFCInitiation",
+   "GiftCardNFCReader",
+   "GiftCardNFCCompletion",
+   "GiftCardNFC",
+   "EnterFraudCode",
+   "FindFraudCode",
+   "CardReadError",
+   "CardNotPurchased",
+   "CardAlreadyRedeemed",
+   "CardUnredeemable",
+   "CardBlocked",
+   "StoreCreditLimitExceeded",
+   "StorefrontMismatch",
+   "CardNotRecognized",
+   "CardRedemptionError",
+   "RateLimitFraudCode",
+   "SignInRequired",
+   "SomethingWentWrong",
+   "MaxAttemptFraudCode",
+   "InvalidLink"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.ActionType": [
+   "navigate",
+   "cancel",
+   "dismiss"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.TargetType": [
+   "button",
+   "link"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.TargetId": [
+   "Continue",
+   "Redeem",
+   "CannotFindCode",
+   "Cancel",
+   "Done",
+   "SignIn",
+   "TermsAndConditions"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.ActionContext": [
+   "Prompt",
+   "thankyou"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageType": [
+   "Redeem"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageContext": [
+   "Sheet"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldSupportEventType": [
+   "COMPLETED",
+   "CANCELED",
+   "TIMEOUT"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldRedeemResult.CodingKeys": [
+   "status",
+   "dsid",
+   "certHash"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldHandOffUploadResult.CodingKeys": [
+   "localizedTitleForDisplay",
+   "localizedMessageForDisplay"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldSupportUploadResult.CodingKeys": [
+   "serverOtn"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldSupportSessionInfo.CodingKeys": [
+   "sessionId",
+   "serverOtn"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldHandOffSessionInfo.CodingKeys": [
+   "localizedTitleForDisplay",
+   "localizedMessageForDisplay",
+   "sessionId",
+   "serverOtn"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldCardInfo.CodingKeys": [
+   "alternateId",
+   "cardStatus",
+   "cardType",
+   "channelTypeCd",
+   "countryCode",
+   "currencyCode",
+   "merchantId",
+   "salesChannel"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldFlow": [
+   "redeem",
+   "handOff",
+   "support"
+  ],
+  "AppleMediaServices:AppleMediaServices.ConsumerIDRotateBagModel.CodingKeys": [
+   "generateConsumerId",
+   "resetable-metrics-identifiers-linkable"
+  ],
+  "AppleMediaServices:AppleMediaServices.FeatureFlags": [
+   "7AEA1493-37F2-4E27-ABB3-B159A6AF7AED",
+   "F182AC40-520D-4E45-A32F-E8DB6C76CF02",
+   "64563FBF-C7CA-437C-BC6F-AC0AE05DBB59",
+   "0C4FF871-8ED9-4DE0-A68E-2F63BB18AB9B",
+   "38BC2C08-01A6-451D-9ABE-791707FBD11C",
+   "solariumAMS",
+   "A590F779-F2BD-42E1-A4A4-946D586A44A4"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieAuthenticationMethod": [
+   "faceIDWithPasscodeFallback",
+   "touchIDWithPasscodeFallback",
+   "faceIDBK",
+   "faceID",
+   "touchID",
+   "passcode",
+   "none"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.ScanType": [
+   "best",
+   "degraded"
+  ],
+  "AppleMediaServices:AppleMediaServices.StoreReviewGatingBag.CodingKeys": [
+   "shared-store-review-enabled",
+   "shared-store-review-session-count",
+   "shared-store-review-session-interval",
+   "shared-store-review-prompt-interval",
+   "shared-store-review-gating-groups"
+  ],
+  "AppleMediaServices:AppleMediaServices.StoreReviewGatingLedger.StateData.CodingKeys": [
+   "session-start-date",
+   "session-count",
+   "review-prompted-date"
+  ],
+  "AppleMediaServices:AppleMediaServices.URLParserBag.CodingKeys": [
+   "commerce-ui-urls",
+   "ams-url-patterns"
+  ],
+  "AppleMediaServices:AppleMediaServices.URLParserBag.CommerceUIURLs.CodingKeys": [
+   "v2-url-patterns",
+   "url-patterns",
+   "dynamic-url-patterns"
+  ],
+  "BackgroundAssets:BackgroundAssets.AssetPack.AppStoreCodingKeys.AttributesCodingKeys": [
+   "latestVersionInfo",
+   "downloadSizeInBytes",
+   "downloadPolicy",
+   "providerReferenceIdentifier",
+   "locale",
+   "downloadUrl"
+  ],
+  "BackgroundAssets:BackgroundAssets.AssetPack.AppStoreCodingKeys.AttributesCodingKeys.LatestVersionInfoCodingKeys": [
+   "versionNumber",
+   "versionPublicId",
+   "versionId"
+  ],
+  "BackgroundAssets:BackgroundAssets.AssetPackManifest.AppStoreCodingKeys.DataCodingKeys.AttributesCodingKeys": [
+   "primaryLocale"
+  ],
+  "ShazamEvents:ShazamEvents.EventAttributes.Style": [
+   "CONCERT",
+   "FESTIVAL"
+  ],
+  "ShazamEvents:ShazamEvents.EventAttributes.Time.CodingKeys": [
+   "startTime",
+   "endTime",
+   "timezone"
+  ],
+  "ShazamEvents:ShazamEvents.EventResources.CodingKeys": [
+   "shazam-events",
+   "artists",
+   "venues",
+   "photo-albums",
+   "playlists",
+   "wallpapers",
+   "watch-faces",
+   "video-albums",
+   "genres",
+   "sport-groups",
+   "sports",
+   "competitors",
+   "competitors-info"
+  ],
+  "ShazamEvents:ShazamEvents.EventAttributes.Tickets.CodingKeys": [
+   "provider",
+   "url",
+   "links"
+  ],
+  "ShazamEvents:ShazamEvents.VenueResources.CodingKeys": [
+   "shazam-events",
+   "artists",
+   "venues",
+   "photo-albums",
+   "playlists",
+   "wallpapers",
+   "watch-faces",
+   "video-albums",
+   "genres",
+   "sport-groups",
+   "sports",
+   "competitors",
+   "competitors-info"
+  ],
+  "ShazamEvents:ShazamEvents.PlaylistAttributes.Kind": [
+   "PRIMARY",
+   "FEATURED"
+  ],
+  "ShazamEvents:ShazamEvents.AnalyticsKey": [
+   "responseCode",
+   "RPS",
+   "usingRelay"
+  ],
+  "ShazamEvents:ShazamEvents.EventsRemoteConfiguration.EndpointVersion": [
+   "v1",
+   "v2",
+   "v3"
+  ],
+  "ShazamEvents:ShazamEvents.Music.Style": [
+   "concert",
+   "festival"
+  ],
+  "ShazamEvents:ShazamEvents.EventService.GeoRequest.Region.CodingKeys": [
+   "centerLatitude",
+   "centerLongitude",
+   "radius"
+  ],
+  "ShazamEvents:ShazamEvents.EventType": [
+   "music",
+   "sport",
+   "artsandmuseums",
+   "dance",
+   "theater",
+   "appleevent",
+   "festivalsandfairs",
+   "nightlife"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.DRM.FairPlayStreaming.KeyServerType": [
+   "simplified",
+   "standard"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.CodingKeys": [
+   "version",
+   "url",
+   "drm"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.MediaAPIType": [
+   "songs",
+   "library-songs",
+   "music-videos",
+   "library-music-videos",
+   "albums",
+   "library-albums",
+   "playlists",
+   "library-playlists",
+   "stations",
+   "genres",
+   "flexml-analysis",
+   "audio-analysis"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.Resource.CodingKeys": [
+   "id",
+   "type",
+   "attributes",
+   "relationships"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.ContentType": [
+   "unknown",
+   "songs",
+   "music-videos",
+   "albums",
+   "playlists",
+   "stations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.MediaAPIContentType": [
+   "songs",
+   "music-videos",
+   "albums",
+   "playlists",
+   "stations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.LibraryContentType": [
+   "song",
+   "musicVideo",
+   "album",
+   "playlist"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.CloudLibraryContentType": [
+   "library-songs",
+   "library-music-videos",
+   "library-albums",
+   "library-playlists"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.PurchasableContentType": [
+   "song",
+   "musicVideo",
+   "album"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationRamp.CodingKeys": [
+   "parameterId",
+   "startTime",
+   "endTime",
+   "startValue",
+   "endValue",
+   "interpolation"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.TimeCodingKeys": [
+   "start",
+   "end"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.CodingKeys": [
+   "placement",
+   "automations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationTime.CodingKeys": [
+   "relative",
+   "offsetInSeconds"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationTime.CodingKeys": [
+   "default"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationValue.CodingKeys": [
+   "parameterName",
+   "default"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.SongScheduleCodingKeys": [
+   "outgoing",
+   "incoming"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.CodingKeys": [
+   "id",
+   "offset",
+   "duration",
+   "instructions"
+  ],
+  "MusicApplication:MusicCore.UnifiedMessages.Placement": [
+   "libraryHeader",
+   "listenNowHeader"
+  ],
+  "MusicApplication:MusicApplication.extension.Keys": [
+   "DownloadOnAddToLibrary",
+   "FinanceApplicationScriptBaseURL",
+   "ageGateAcceptedIDs",
+   "disableInAppMessages",
+   "disableInAppMessagesGlobalPresentationPolicies",
+   "disableVideoArtworkCaching",
+   "motionMode",
+   "newBadgingPolicy",
+   "popularityIndicatorThreshold",
+   "regularSizeClassNowPlayingPresentationMode",
+   "shouldPreventUpsellDialog",
+   "showAllSongCellBadges",
+   "showLibrarySearchWeights",
+   "showMusicStorySharing",
+   "showStarRatings",
+   "socialHintDialogs",
+   "version"
+  ],
+  "MusicApplication:MusicApplication.Search.Catalog.EndpointRequest.Endpoint.Variant": [
+   "catalog",
+   "social"
+  ],
+  "MusicApplication:MusicApplication.Search.Catalog.ResultEntityKind": [
+   "activities",
+   "albums",
+   "artists",
+   "curators",
+   "songs",
+   "stations",
+   "apple-curators",
+   "editorial-items",
+   "music-movies",
+   "music-videos",
+   "tv-episodes",
+   "tv-shows",
+   "uploaded-videos",
+   "record-labels",
+   "social-profiles",
+   "playlists"
+  ],
+  "MusicApplication:MusicApplication.Search.Catalog.Request.Node": [
+   "suggestions",
+   "results",
+   "topResults",
+   "type",
+   "id",
+   "meta",
+   "metrics",
+   "order",
+   "data",
+   "name",
+   "searchTerm",
+   "displayTerm",
+   "resources",
+   "kind",
+   "content",
+   "scopes",
+   "objects",
+   "lyrics",
+   "snippets",
+   "text"
+  ],
+  "MusicApplication:MusicApplication.ContainerDetailViewController.Layout": [
+   "tall",
+   "normal",
+   "search",
+   "undetermined"
+  ],
+  "MusicApplication:MusicApplication.GridItemButtonCell.DisplayStyle": [
+   "fill",
+   "stroke"
+  ],
+  "MusicApplication:MusicApplication.GridItemButtonCell.HorizontalAlignment": [
+   "left",
+   "centered"
+  ],
+  "MusicApplication:MusicApplication.ImpressionsElement.DisplayStyle": [
+   "large",
+   "small"
+  ],
+  "MusicApplication:MusicApplication.ImpressionsElement.ContentType": [
+   "album",
+   "playlist",
+   "song",
+   "artist",
+   "socialPerson",
+   "movie",
+   "tvShow",
+   "tvEpisode",
+   "composer",
+   "curator",
+   "genre",
+   "radioStation",
+   "search",
+   "artistUploadedAudio",
+   "artistUploadedVideo",
+   "tvSeason",
+   "playlistEntry",
+   "libraryItem",
+   "recordLabel",
+   "creditsArtist"
+  ],
+  "MusicApplication:MusicApplication.DetailHeader.HeaderElement": [
+   "titleLabel",
+   "actionByline",
+   "detailTextLabel"
+  ],
+  "MusicApplication:MusicApplication.ItemizedTextListView.ConfigurationType": [
+   "inline",
+   "stacked"
+  ],
+  "MusicApplication:MusicApplication.ShelfCollectionViewLayout.SupplementaryViewKind": [
+   "ShelfSupplementaryViewKindGlobalHeader",
+   "ShelfSupplementaryViewScrollingScrollingHeader"
+  ],
+  "MusicApplication:MusicApplication.extension.NavigationBarTransitionStyle": [
+   "musicNavigationItem.standardNavigationBarTransition",
+   "musicNavigationItem.noNavigationBarTransition",
+   "musicNavigationItem.manualNavigationBarTransitions",
+   "musicNavigationItem.automaticNavigationBarTransitions"
+  ],
+  "MusicApplication:MusicApplication.SearchLandingCell.LayoutStyle": [
+   "prominent",
+   "standard"
+  ],
+  "MusicApplication:MusicApplication.SearchResultCell.Kind": [
+   "ArtistSearchResultCell",
+   "SocialPersonSearchResultCell",
+   "AlbumSearchResultCell",
+   "ComposerSearchResultCell",
+   "CuratorSearchResultCell",
+   "GenreSearchResultCell",
+   "PlaylistSearchResultCell",
+   "RadioStationSearchResultCell",
+   "SongSearchResultCell",
+   "MusicVideoSearchResultCell",
+   "TVShowSearchResultCell",
+   "EpisodeSearchResultCell",
+   "MovieSearchResultCell",
+   "RecordLabelSearchResultCell",
+   "DefaultSearchResultCell"
+  ],
+  "MusicApplication:MusicApplication.Interstellar.Resolver.Highlight.Kind": [
+   "song",
+   "album",
+   "playlist",
+   "music-video",
+   "station"
+  ],
+  "MusicApplication:MusicApplication.Search.Source": [
+   "catalog",
+   "library"
+  ],
+  "MusicApplication:MusicApplication.Search.Recents.Item.CodingKeys": [
+   "identifiers",
+   "kind",
+   "dateAdded"
+  ],
+  "MusicApplication:MusicApplication.extension.SearchKey.Legacy": [
+   "lastSelectedSearchSourceIdentifier"
+  ],
+  "MusicApplication:MusicApplication.extension.SearchKey": [
+   "lastSelectedSearchSource",
+   "RecentlySearched"
+  ],
+  "MusicApplication:MusicApplication.Search.Event.Action": [
+   "add",
+   "cancelQuery",
+   "clearText",
+   "search",
+   "select",
+   "showContextualActions"
+  ],
+  "MusicApplication:MusicApplication.Search.Library.ResultScope": [
+   "top",
+   "artists",
+   "albums",
+   "songs",
+   "playlists",
+   "musicVideos",
+   "composers",
+   "tvShowsMovies"
+  ],
+  "MusicApplication:MusicApplication.Search.Library.ResultEntityKind": [
+   "artist",
+   "album",
+   "song",
+   "playlist",
+   "musicVideo",
+   "composer",
+   "tvShow",
+   "tvEpisode",
+   "movie"
+  ],
+  "MusicApplication:MusicApplication.LibraryFilterOptionsController.FilterOption": [
+   "all",
+   "favorited"
+  ],
+  "MusicApplication:MusicApplication.LibraryFilterOptionsController.ContentType": [
+   "albums",
+   "artistDetail",
+   "artists",
+   "compilations",
+   "composers",
+   "genres",
+   "madeForYou",
+   "musicVideos",
+   "playlists",
+   "songs"
+  ],
+  "MusicApplication:MusicCore.MenuType": [
+   "topLevel",
+   "quickAction",
+   "top",
+   "library",
+   "playlist",
+   "playback",
+   "daffodil",
+   "navigation",
+   "taste",
+   "reporting",
+   "pinAction",
+   "destructive",
+   "playlistSort",
+   "goTo"
+  ],
+  "MusicApplication:MusicCore.ActionType": [
+   "addToLibrary",
+   "download",
+   "favorite",
+   "undoFavorite",
+   "share",
+   "play",
+   "shuffle",
+   "pin",
+   "unpin",
+   "createPlaylist",
+   "createFolder",
+   "addToPlaylist",
+   "playlistEdit",
+   "collaboration",
+   "playlistSortTrackList",
+   "playlistSortTitle",
+   "playlistSortArtist",
+   "playlistSortAlbum",
+   "playlistSortReleaseDate",
+   "renameFolder",
+   "moveToFolder",
+   "queueMoveToTop",
+   "playNext",
+   "addToQueue",
+   "playLast",
+   "playAfter",
+   "previewOnlyForMe",
+   "createStation",
+   "daffodilItem",
+   "goToPlaylist",
+   "goToPlaylistFolder",
+   "goToAlbum",
+   "goToArtist",
+   "showSongCredits",
+   "viewFullLyrics",
+   "shareLyrics",
+   "openInClassical",
+   "suggestLess",
+   "undoSuggestLess",
+   "rateSong",
+   "creditsReportConcern",
+   "lyricsReportConcern",
+   "playlistReportConcern",
+   "socialReportConcern",
+   "searchResultsReportAConcern",
+   "updatePinActionPlay",
+   "updatePinActionShuffle",
+   "updatePinActionNavigate",
+   "removeFromPlaylist",
+   "removeDownload",
+   "deleteFromLibrary",
+   "remove",
+   "createQueuePlaylist"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.Click.ActionDetails.Key.DestinationType": [
+   "library",
+   "playlist"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.Click.ActionDetails.Key.PlayType": [
+   "createStation"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.Click.ActionDetails.Key.NavigationType": [
+   "Album",
+   "Artist",
+   "Playlist",
+   "ReportAConcern"
+  ],
+  "MusicApplication:MusicCore.Actions.DeleteOrRemoveDownload.Choice": [
+   "removeDownload",
+   "deleteFromLibrary",
+   "cancel"
+  ],
+  "MusicApplication:MusicCore.Actions.SortPlaylist.TrackListSort.Option": [
+   "playlistOrder",
+   "title",
+   "artist",
+   "album",
+   "releaseDate",
+   "unknown"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.TargetType": [
+   "Album",
+   "AlbumDetail",
+   "app",
+   "Artist",
+   "banner",
+   "button",
+   "bubbleTip",
+   "Card",
+   "contextualActions",
+   "filter",
+   "HeaderItem",
+   "HintListItem",
+   "key",
+   "link",
+   "lyricLine",
+   "ListItem",
+   "pin",
+   "Playlist",
+   "PlaylistDetail",
+   "ContentListItem",
+   "slider",
+   "Song",
+   "suggestion",
+   "textBox",
+   "Upsell",
+   "ShelfItem",
+   "GridItem"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.Page.DisplayType": [
+   "cardView"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.Click.ActionType": [
+   "action",
+   "actionSheet",
+   "activate",
+   "add",
+   "addSongs",
+   "addToLibrary",
+   "addToQueue",
+   "adjust",
+   "beginPlayback",
+   "cancel",
+   "collaborate",
+   "create",
+   "createStation",
+   "showContextualActions",
+   "download",
+   "deactivate",
+   "delete",
+   "deselect",
+   "description",
+   "disable",
+   "dismiss",
+   "edit",
+   "editCover",
+   "enable",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "unhate",
+   "hint",
+   "input",
+   "navigate",
+   "pin",
+   "unpin",
+   "play",
+   "playAfter",
+   "playLater",
+   "playNext",
+   "react",
+   "redo",
+   "removeDownload",
+   "removeDownloadOrFromLibrary",
+   "removeFromPlaylist",
+   "reorder",
+   "reportConcern",
+   "save",
+   "search",
+   "seek",
+   "select",
+   "setPinActionPlay",
+   "setPinActionShuffle",
+   "setPinActionGoTo",
+   "share",
+   "sharedListening",
+   "shareLyrics",
+   "showLyrics",
+   "showOnProfile",
+   "shuffle",
+   "start",
+   "stop",
+   "submit",
+   "toggle",
+   "undo",
+   "viewAlbum",
+   "viewArtist",
+   "viewCredits",
+   "viewPlaylist",
+   "preview",
+   "pause",
+   "refresh",
+   "sing"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.Dialog.Type": [
+   "Ok",
+   "OkCancel"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.Dialog.ActionType": [
+   "ok",
+   "cancelClicked"
+  ],
+  "MusicApplication:MusicCore.MetricsEvent.ComponentRender.PreloadStatus": [
+   "full",
+   "partial",
+   "placeholder",
+   "previouslyShown"
+  ],
+  "MusicApplication:MusicCore.MetricsContentType": [
+   "album",
+   "playlist",
+   "song",
+   "artist",
+   "socialPerson",
+   "movie",
+   "tvShow",
+   "tvEpisode",
+   "composer",
+   "creditsArtist",
+   "curator",
+   "genre",
+   "radioStation",
+   "search",
+   "artistUploadedAudio",
+   "artistUploadedVideo",
+   "tvSeason",
+   "playlistEntry",
+   "libraryItem",
+   "recordLabel"
+  ],
+  "MusicApplication:MusicCore.ApplicationCapabilities.Service": [
+   "music",
+   "musicVideos",
+   "subscriptionRelated",
+   "social",
+   "radio",
+   "itunes",
+   "groupActivity",
+   "explicitContent",
+   "accountModification",
+   "sharePlayTogether",
+   "libraryImportEnabled",
+   "playlistGeneration"
+  ],
+  "MusicApplication:MusicCore.ApplicationCapabilities.SubscriptionState": [
+   "undecided",
+   "classic",
+   "subscriber",
+   "voiceSubscriber"
+  ],
+  "MusicApplication:MusicCore.extension.Key": [
+   "UserRequestedSubscriptionHidden",
+   "LastKnownStoreBagMusicTabsDictionary",
+   "allowsPumpkinContent"
+  ],
+  "MusicApplication:MusicCore.BackgroundTaskConfiguration.UserDefaultsKey": [
+   "forceBackgroundRefreshPinnedSubscribedPlaylists",
+   "lastBackgroundRefreshPinnedSubscribedPlaylistsDate",
+   "forceBackgroundRefreshServerLandingPages",
+   "lastBackgroundRefreshServerLandingPages"
+  ],
+  "MusicApplication:MusicCore.BackgroundTaskConfiguration.Identifier": [
+   "updateSubscribedPlaylists",
+   "updateServerLandingPages"
+  ],
+  "MusicApplication:MusicCore.TabIdentifier": [
+   "library",
+   "listenNow",
+   "browse",
+   "radio",
+   "search",
+   "videos",
+   "playlists"
+  ],
+  "MusicApplication:MusicCore.BagTabIdentifier": [
+   "my_music",
+   "for_you",
+   "listen_now",
+   "browse",
+   "radio",
+   "search",
+   "video"
+  ],
+  "MusicApplication:MusicCore.Collaboration.Manager.DeepLinkType": [
+   "join",
+   "pending"
+  ],
+  "MusicApplication:MusicCore.extension.MediaKitPlayableKind": [
+   "songs",
+   "tv-episodes",
+   "tv-shows",
+   "uploaded-audios",
+   "uploaded-videos",
+   "stations",
+   "music-videos",
+   "music-movies",
+   "playlists",
+   "albums"
+  ],
+  "MusicApplication:MusicCore.extension.FavoriteStatus": [
+   "favorited",
+   "neutral",
+   "disliked",
+   "unsupported"
+  ],
+  "MusicApplication:MusicCore.extension.MobileiPod": [
+   "UserRequestedSubscriptionHidden"
+  ],
+  "MusicApplication:MusicCore.Library.ContentFilterOption": [
+   "all",
+   "favorites",
+   "downloads"
+  ],
+  "MusicApplication:MusicCore.Library.Menu.Identifier": [
+   "com.apple.Music.LibraryView.RecentlyAdded",
+   "com.apple.Music.LibraryView.Playlists",
+   "com.apple.Music.LibraryView.Artists",
+   "com.apple.Music.LibraryView.Albums",
+   "com.apple.Music.LibraryView.Songs",
+   "com.apple.Music.LibraryView.MadeForYou",
+   "com.apple.Music.LibraryView.MusicVideos",
+   "com.apple.Music.LibraryView.Genres",
+   "com.apple.Music.LibraryView.Compilations",
+   "com.apple.Music.LibraryView.Composers",
+   "com.apple.Music.LibraryView.Shows",
+   "com.apple.Music.LibraryView.Downloaded",
+   "com.apple.Music.LibraryView.Downloading"
+  ],
+  "MusicApplication:MusicCore.Library.Menu.Revision.CodingKeys": [
+   "selected",
+   "all",
+   "version"
+  ],
+  "MusicApplication:MusicCore.extension.LegacyKey": [
+   "orderedLibraryViewIdentifiers",
+   "activeLibraryViewIdentifiers"
+  ],
+  "MusicApplication:MusicCore.Library.SortConfiguration": [
+   "albums",
+   "artists",
+   "compilations",
+   "madeForYou",
+   "musicVideos",
+   "playlists",
+   "songs"
+  ],
+  "MusicApplication:MusicCore.SortOptions.SortType": [
+   "ByPlaylistOrderAscending",
+   "ByPlaylistOrderDescending",
+   "ByTitle",
+   "ByLibraryAddedDate",
+   "ByLastDevicePlaybackDate",
+   "ByLastModifiedDate",
+   "ByArtist",
+   "ByAlbum",
+   "ByPlaylistType",
+   "ByDescendingYear",
+   "ByAscendingYear",
+   "ByReleaseDateAscending",
+   "ByReleaseDateDescending"
+  ],
+  "MusicApplication:MusicCore.PlaylistCovers.RecipeColors.CompositeColors": [
+   "color1",
+   "color2",
+   "color3",
+   "color4"
+  ],
+  "MusicApplication:MusicCore.UnifiedMessages.MLI.State": [
+   "privacyAcknowledgementRequired",
+   "unknown",
+   "inProgress",
+   "completed"
+  ],
+  "MusicApplication:MusicCore.UnifiedMessages.GroupDefaultsKey": [
+   "countOfPlaylistsInLibrary",
+   "countOfSongsInLibrary"
+  ],
+  "MusicApplication:MusicCore.ClassicalBridge.Type": [
+   "artist",
+   "album"
+  ],
+  "MusicApplication:MusicCore.extension.PresentationObserver.State": [
+   "presenting",
+   "presented",
+   "dismissing",
+   "dismissed"
+  ],
+  "MusicApplication:MusicCoreUI.ImagePicker.SourceType": [
+   "camera",
+   "photoLibrary",
+   "files",
+   "imagePlayground"
+  ],
+  "MusicApplication:MusicCoreUI.BouncyBarsAsset.BarAnimationKey": [
+   "cannedHeightAnimation",
+   "cannedWidthAnimation",
+   "cannedCornerAnimation"
+  ],
+  "MusicApplication:MusicUtilities.RomanNumerals": [
+   "M",
+   "CM",
+   "D",
+   "CD",
+   "C",
+   "XC",
+   "L",
+   "XL",
+   "X",
+   "IX",
+   "V",
+   "IV",
+   "I"
+  ],
+  "MusicApplication:MusicJSCore.JSAlertAction.AlertActionStyle": [
+   "default",
+   "cancel",
+   "destructive"
+  ],
+  "MusicApplication:MusicJSCore.JSCookieStorage.UpdateRecord.Type": [
+   "set",
+   "delete"
+  ],
+  "MusicApplication:MusicJSCore.JSIdentifierSet.ContentKind": [
+   "album",
+   "playlist",
+   "song",
+   "radioStation",
+   "movie",
+   "tvShow",
+   "tvSeason",
+   "tvEpisode",
+   "artist",
+   "curator",
+   "socialProfile",
+   "artistUploadedVideo",
+   "artistUploadedAudio",
+   "recordLabel",
+   "creditsArtist"
+  ],
+  "MusicApplication:MusicJSCore.Metrics.Event.Source": [
+   "button",
+   "contextualAction",
+   "track",
+   "trackButton",
+   "trackContextualAction"
+  ],
+  "MusicApplication:MusicJSCore.Metrics.Event.Destination": [
+   "Search"
+  ],
+  "MusicApplication:MusicJSCore.Metrics.TargetType": [
+   "button",
+   "contextualActions",
+   "bubbleTip"
+  ],
+  "MusicApplication:MusicJSCore.Metrics.ActionType": [
+   "select",
+   "play",
+   "navigate",
+   "dismiss",
+   "collaborate"
+  ],
+  "MusicApplication:MusicJSCore.Metrics.ActionDetails": [
+   "addToLibrary",
+   "trackAddToLibrary"
+  ],
+  "MusicApplication:MusicJSCore.HTTPMethod": [
+   "GET",
+   "HEAD",
+   "POST",
+   "PATCH",
+   "PUT",
+   "DELETE"
+  ],
+  "MusicApplication:MusicJSCore.JSHTTPRequestCoordinator.DeferralReason": [
+   "privacyAcknowledgement"
+  ],
+  "MusicApplication:MusicJSCore.JSSubscriptionStatusResponse.EligibilityStatus": [
+   "unknown",
+   "eligible",
+   "notEligible"
+  ],
+  "MusicApplication:MusicJSCore.JSSubscriptionStatusResponse.AccountStatus": [
+   "needsAuthentication",
+   "notSubscribed",
+   "subscribed",
+   "glide",
+   "unknown"
+  ],
+  "MusicApplication:MusicJSCore.JSSubscriptionStatusResponse.CarrierBundlingStatus": [
+   "unlinked",
+   "needsManualVerification",
+   "eligible",
+   "notEligible",
+   "unknown"
+  ],
+  "MusicApplication:MusicJSCore.JSSubscriptionStatusResponse.Capability": [
+   "fullCatalogPlayback",
+   "voiceActivatedCatalogPlayback",
+   "anyCatalogPlayback",
+   "cloudLibraryEligible",
+   "catalogLyricsViewing"
+  ],
+  "MusicApplication:MusicJSCore.JSLocalStorage.ScriptingUserDefaultsKey": [
+   "ScriptingLocalStorage"
+  ],
+  "MusicApplication:MusicJSCore.JSNativeExecutionFence.Kind": [
+   "regular",
+   "layoutCompleted"
+  ],
+  "MusicApplication:MusicJSCore.JSSocialOnboardingVerticalStack.BarButtonItemKind": [
+   "cancel",
+   "done",
+   "hideAllPlaylists"
+  ],
+  "MusicApplication:MusicJSCore.JSWhatsNewFeaturedItemViewModel.NativeFeature": [
+   "A",
+   "B",
+   "C"
+  ],
+  "MusicApplication:MusicJSCore.JSWhatsNewFeaturedItemViewModel.ImageContext": [
+   "systemImage",
+   "bundleImage"
+  ],
+  "MusicApplication:MusicJSCore.JSWhatsNewFeaturedItemViewModel.ImageBundleIdentifier": [
+   "musicApplication",
+   "musicFoundation_MusicCoreUI"
+  ],
+  "MusicApplication:MusicJSCore.JSShelfSection.Height": [
+   "default",
+   "compact",
+   "regular"
+  ],
+  "MusicApplication:MusicJSCore.JSShelfSection.UniformCellType": [
+   "album",
+   "artist",
+   "featuredRadioShow",
+   "featuredMusicVideo",
+   "featuredShowcase",
+   "featuredPlaylist",
+   "customRoomAlbum",
+   "socialPersonCard",
+   "recentlyPlayedRadio",
+   "poster",
+   "radioStation"
+  ],
+  "MusicApplication:MusicJSCore.JSPosterBadge.BadgeColor": [
+   "keyColor",
+   "systemMaterial"
+  ],
+  "MusicApplication:MusicJSCore.JSGridItem.HeadlineColor": [
+   "default",
+   "tintColor"
+  ],
+  "MusicApplication:MusicJSCore.JSHeaderItem.TitleHeaderStyle": [
+   "largeAdaptive",
+   "largeFixed",
+   "standard"
+  ],
+  "MusicApplication:MusicJSCore.JSHeaderItem.Action": [
+   "playRadioStation",
+   "showContextualActions",
+   "navigateBack",
+   "openInAppleClassical",
+   "dismissAppleClassicalPopover",
+   "dismissArtistFavoritingPopover",
+   "artistFavorited",
+   "artistUnfavorited"
+  ],
+  "MusicApplication:MusicJSCore.PromotionalLayoutStyle": [
+   "default",
+   "profile",
+   "artist"
+  ],
+  "MusicApplication:MusicJSCore.JSSearchLandingItem.DisplayStyleType": [
+   "standard",
+   "prominent"
+  ],
+  "MusicApplication:MusicJSCore.JSMenu.SelectionStyle": [
+   "none",
+   "checkmark"
+  ],
+  "MusicApplication:MusicJSCore.JSGridSection.UniformCellType": [
+   "album",
+   "artist",
+   "customRoomAlbum",
+   "tvShow",
+   "showcase",
+   "featuredRadioShow",
+   "hero"
+  ],
+  "MusicApplication:MusicJSCore.JSApplication.ActivationMethod": [
+   "regular",
+   "openURL"
+  ],
+  "MusicApplication:MusicJSCore.JSApplication.SubscriptionFlowConfiguration.Placement": [
+   "musicLibraryEmpty",
+   "musicAddToLibrary",
+   "musicAddToPlaylist",
+   "musicNowPlayingLyrics",
+   "musicFriendsProfileFollow",
+   "musicPlaybackUpsell",
+   "musicSharedListenUpsell",
+   "musicPlaybackQueue",
+   "musicLyricsSharingUpsell",
+   "musicVoiceUpsell"
+  ],
+  "MusicApplication:MusicJSCore.JSSettingsItem.Kind": [
+   "default",
+   "signOut",
+   "userDetails",
+   "followRequests"
+  ],
+  "MusicApplication:MusicJSCore.JSArtwork.Treatment": [
+   "default",
+   "circle"
+  ],
+  "MusicApplication:MusicJSCore.JSNowPlayingViewModel.Action": [
+   "addToLibrary",
+   "addToPlaylist",
+   "autoPlay",
+   "autoPlayOff",
+   "beginPlayback",
+   "createStation",
+   "dismissSingPopover",
+   "download",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "hideLyrics",
+   "hideUpNextQueue",
+   "playLater",
+   "playNext",
+   "reportConcern",
+   "scrubLyrics",
+   "share",
+   "sharePlay",
+   "shareLyrics",
+   "shareLyricsAction",
+   "story",
+   "showHistory",
+   "showLyrics",
+   "showUpNextQueue",
+   "socialFollow",
+   "viewAlbum",
+   "vocalAttenuationChangeLevel",
+   "vocalAttenuationTurnOff",
+   "vocalAttenuationTurnOn"
+  ],
+  "MusicApplication:MusicJSCore.JSNowPlayingViewModel.Mode": [
+   "controls",
+   "lyrics",
+   "upNextQueue"
+  ],
+  "MusicApplication:MusicJSCore.JSNowPlayingViewModel.TimeSyncingPrecision": [
+   "lineByLine",
+   "syllableBySyllable"
+  ],
+  "MusicApplication:MusicJSCore.JSFlowcaseItem.ThumbnailHorizontalAlignment": [
+   "leading",
+   "trailing",
+   "left",
+   "right"
+  ],
+  "MusicApplication:MusicJSCore.JSNetwork.SimplifiedNetworkType": [
+   "none",
+   "cellular",
+   "wifi"
+  ],
+  "MusicApplication:MusicJSCore.JSSplitWidgetViewModel.DisplayStyle": [
+   "compactLeft",
+   "compactRight"
+  ],
+  "MusicApplication:MusicJSCore.JSContainerDetail.Action": [
+   "addToLibrary",
+   "addToPlaylist",
+   "beginPlayback",
+   "cancelEdit",
+   "collaborate",
+   "createStation",
+   "dismissAppleClassicalPopover",
+   "download",
+   "navigateBack",
+   "edit",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "openInAppleClassical",
+   "playAll",
+   "playLater",
+   "playNext",
+   "playTrack",
+   "removeDownload",
+   "removeDownloadOrFromLibrary",
+   "removeFromLibrary",
+   "reportConcern",
+   "saveEdit",
+   "share",
+   "sharePlay",
+   "shareLyrics",
+   "shareLyricsAction",
+   "sing",
+   "singTrack",
+   "story",
+   "showContextualActions",
+   "shuffleAll",
+   "socialFollow",
+   "viewAlbum",
+   "viewNotes",
+   "recordLabelLink"
+  ],
+  "MusicApplication:MusicJSCore.JSGrid.AdaptiveLayoutStyle": [
+   "default",
+   "compactList"
+  ],
+  "MusicApplication:MusicJSCore.JSStore.AccountChangeReason": [
+   "applicationLaunch",
+   "uniqueIdentifierChanged",
+   "userSocialProfileChanged",
+   "privacyAcknowledgementChanged"
+  ],
+  "MusicApplication:MusicJSCore.JSSocialProfileCollection.CollectionStyle": [
+   "default",
+   "followRequests",
+   "edit"
+  ],
+  "MusicApplication:MusicJSCore.JSShareRequest.RequestContent.ContentType": [
+   "shareURLComponents",
+   "storePlatform",
+   "socialInvitation"
+  ],
+  "MusicApplication:MusicJSCore.JSSocialProfile.FollowState": [
+   "self",
+   "notFollowable",
+   "notFollowing",
+   "requested",
+   "following",
+   "blocked"
+  ],
+  "MusicApplication:MusicJSCore.JSPlaybackIntent.ShuffleMode": [
+   "songs"
+  ],
+  "MusicApplication:MusicJSCore.JSSocialOnboardingWelcomeViewModel.TextAlignment": [
+   "leading",
+   "trailing",
+   "justified",
+   "center",
+   "left",
+   "right"
+  ],
+  "MusicApplication:MusicJSCore.JSSocialOnboardingWelcomeViewModel.ArtworkScaleMode": [
+   "scaleAspectFit",
+   "scaleAspectFitHeight",
+   "scaleAspectFill"
+  ],
+  "MusicApplication:MusicJSCore.JSContextAction.Kind": [
+   "hideFromProfile",
+   "showOnProfile",
+   "openInClassical"
+  ],
+  "MusicApplication:MusicJSCore.JSPosterItem.TextAlignment": [
+   "center",
+   "left"
+  ],
+  "MusicApplication:MusicJSCore.JSSubscriptionStatusRequest.Reason": [
+   "deepLink"
+  ],
+  "MusicApplication:MusicJSCore.JSSubscriptionStatusRequest.CarrierBundleProvisioningStyle": [
+   "never",
+   "once",
+   "always"
+  ],
+  "MusicApplication:MusicJSCore.JSDateFormattingOptions.Style": [
+   "none",
+   "short",
+   "medium",
+   "long",
+   "full"
+  ],
+  "MusicApplication:MusicJSCore.JSDateFormattingOptions.DateComponentSymbols": [
+   "shortDay",
+   "shortMonth",
+   "shortYear"
+  ],
+  "MusicApplication:MusicJSCore.JSScriptingInstantiatedClass": [
+   "MusicKitHTTPRequest",
+   "StoreContentLookupRequest",
+   "StoreHTTPRequest",
+   "StorePlaybackPositionRequest",
+   "SubscriptionStatusRequest",
+   "SiriAceRequest",
+   "ApplicationMessageTarget",
+   "Cookie",
+   "NativeExecutionFence",
+   "Timer",
+   "DateFormatter",
+   "DateFormattingOptions",
+   "DateDescriptor",
+   "DateRangeDescriptor",
+   "ValueTransformerOptions",
+   "ComponentController",
+   "Artwork",
+   "VideoArtwork",
+   "HeaderItem",
+   "IdentifierSet",
+   "UpsellBanner",
+   "BarButtonItem",
+   "LiveRadioCase",
+   "LiveRadioCaseItem",
+   "AlertComponentController",
+   "AlertViewModel",
+   "AlertAction",
+   "AlbumDetail",
+   "AlbumDetailComponentController",
+   "Brick",
+   "BrickItem",
+   "ContextAction",
+   "Flowcase",
+   "FlowcaseItem",
+   "Menu",
+   "MenuSection",
+   "MenuItem",
+   "MovieClipItem",
+   "Grid",
+   "GridSection",
+   "GridItem",
+   "GridItemButton",
+   "PosterItem",
+   "PosterBadge",
+   "PlaylistDetail",
+   "PlaylistDetailEntry",
+   "PlaylistDetailComponentController",
+   "Shelf",
+   "ShelfSection",
+   "ShelfItem",
+   "SearchLandingItem",
+   "SearchLandingUpsell",
+   "SearchLandingViewModel",
+   "SearchResultSection",
+   "SearchResultItem",
+   "SettingsViewModel",
+   "SettingsAuthenticationSection",
+   "SettingsLink",
+   "SettingsSection",
+   "SettingsItem",
+   "SettingsItemText",
+   "SettingsItemToggle",
+   "ShareResult",
+   "VerticalStack",
+   "SocialProfile",
+   "SocialProfileVerticalStack",
+   "SocialProfileCollection",
+   "SocialProfileCollectionItem",
+   "SocialProfileEditor",
+   "SocialLightIdentityCreator",
+   "CircleImage",
+   "SocialOnboardingVerticalStack",
+   "SocialOnboardingFriendsFinder",
+   "SocialOnboardingNetwork",
+   "SocialOnboardingWelcomeViewModel",
+   "InlineSocialUpsell",
+   "OrderedPlaylistSelector",
+   "OrderedPlaylistSelectorItem",
+   "PrivacyLinkViewModel",
+   "CatalogPlaybackIntent",
+   "RadioPlaybackIntent",
+   "PushSegue",
+   "PresentationSegue",
+   "NoopSegue",
+   "StoreFlowSegue",
+   "DeepLinkSegue",
+   "RedirectSegue",
+   "SocialNetworkAuthSegue",
+   "SubscriptionPurchaseSegue",
+   "AppReviewSegue",
+   "UserNotificationAuthorizationSegue",
+   "WebViewSegue",
+   "MusicVideoViewModel",
+   "MusicVideoItem",
+   "MessageViewModel",
+   "OnboardingViewModel",
+   "StaticImageViewModel",
+   "ParagraphViewModel",
+   "ToggleSelectorViewModel",
+   "ToggleSelectorItem",
+   "MultiChoiceViewModel",
+   "MultiChoiceItem",
+   "InlinePopup",
+   "InlinePopupButton",
+   "ItemizedTextListViewModel",
+   "ItemizedTextListItem",
+   "GroupedTextListViewModel",
+   "GroupedTextListItem",
+   "GroupedItemizedTextListViewModel",
+   "BiographyItem",
+   "BiographyViewModel",
+   "TVShowEpisodeDetailItem",
+   "TVShowEpisodeDetail",
+   "TVShowPlayBarItem",
+   "TVShowPlayBarViewModel",
+   "BadgingViewModel",
+   "BadgingItem",
+   "CreditsItem",
+   "CreditsSection",
+   "SongDetail",
+   "SplitWidgetViewModel",
+   "ContainerDetailLink",
+   "ListenNowMusicSiriUpsell",
+   "InterstellarViewModel",
+   "UserNotificationAuthorizationViewModel",
+   "UserNotificationSettings",
+   "WhatsNewFeaturedItemViewModel",
+   "WhatsNewViewModel"
+  ],
+  "MusicApplication:MusicJSCore.JSAlertViewModel.AlertStyle": [
+   "alert",
+   "actionSheet"
+  ],
+  "MusicApplication:MusicJSCore.JSPresentationSegue.PresentationStyle": [
+   "formSheet",
+   "popover"
+  ],
+  "MusicApplication:MusicJSCore.JSDeepLinkSegue.ViewIdentifier": [
+   "libraryTab",
+   "forYouTab",
+   "listenNowTab",
+   "browseTab",
+   "radioTab",
+   "searchTab",
+   "nowPlaying"
+  ],
+  "MusicApplication:MusicJSCore.JSGridItemButton.HorizontalAlignment": [
+   "left",
+   "centered"
+  ],
+  "MusicApplication:MusicJSCore.JSGridItemButton.DisplayStyle": [
+   "fill",
+   "stroke"
+  ],
+  "MusicApplication:MusicJSCore.JSMediaItem.Action": [
+   "addToLibrary",
+   "addToPlaylist",
+   "beginPlayback",
+   "createStation",
+   "download",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "playLater",
+   "playNext",
+   "react",
+   "removeDownload",
+   "removeDownloadOrFromLibrary",
+   "removeFromLibrary",
+   "reportConcern",
+   "share",
+   "sharePlay",
+   "socialFollow",
+   "viewAlbum",
+   "story"
+  ],
+  "MusicApplication:MusicJSCore.JSSocialOnboardingNetwork.AuthProtocol": [
+   "OAuth2.0"
+  ],
+  "MusicApplication:MusicJSCore.JSNativelyInstantiatedClass": [
+   "BridgedAccount",
+   "BridgedApplication",
+   "BridgedBackgroundFetchManager",
+   "BridgedCapabilitiesController",
+   "BridgedDevice",
+   "HeaderItem",
+   "BridgedMetricsController",
+   "BridgedPlayActivityController",
+   "BridgedSocialActivityController",
+   "BridgedPushNotificationObserver",
+   "BridgedNetwork",
+   "BridgedPersistence",
+   "BridgedPrivacy",
+   "UpsellBanner",
+   "BridgedRestrictions",
+   "BridgedScreen",
+   "BridgedStore",
+   "BridgedStoreFlowPresentationCoordinator",
+   "BridgedSubscriptionPurchaseCoordinator",
+   "BridgedSubscriptionStatusCoordinator",
+   "BridgedWindow",
+   "ApplicationMessage",
+   "Cookie",
+   "CookieStorage",
+   "LocalStorage",
+   "MusicKitHTTPResponse",
+   "StoreHTTPResponse",
+   "StorePlaybackPosition",
+   "SubscriptionStatusResponse",
+   "Impression",
+   "ImpressionsBatch",
+   "_BridgedSegueCoordinator",
+   "AlbumDetail",
+   "AlbumDetailComponentController",
+   "PlaylistDetail",
+   "PlaylistDetailComponentController",
+   "SearchResultItem",
+   "SearchResultSection",
+   "LibraryCollectionComponentController",
+   "LibraryCollectionViewModel",
+   "NowPlayingComponentController",
+   "NowPlayingViewModel",
+   "MediaPickerEnvironment",
+   "SocialProfile"
+  ],
+  "MusicApplication:MusicJSCore.JSStoreContentLookupRequest.PersonalizationStyle": [
+   "never",
+   "silent",
+   "always"
+  ],
+  "MusicApplication:MusicJSCore.JSAccount.SocialProfileUpdateReason": [
+   "onboarded",
+   "updated",
+   "offboarded"
+  ],
+  "MusicApplication:MusicJSCore.JSParagraphViewModel.BackgroundStyle": [
+   "light",
+   "ultraLightGray",
+   "gray"
+  ],
+  "MusicApplication:MusicJSCore.JSParagraphViewModel.TextStyle": [
+   "light",
+   "dark"
+  ],
+  "MusicApplication:MusicJSCore.JSParagraphViewModel.TextSize": [
+   "regular",
+   "small",
+   "extraSmall"
+  ],
+  "MusicApplication:MusicJSCore.JSSegueType": [
+   "select",
+   "accessoryButtonSelect"
+  ],
+  "MusicApplication:MusicJSCore.JSUpsellBanner.Style": [
+   "default",
+   "warning"
+  ],
+  "Music:Music.MultiDeviceTester.Device.CodingKeys": [
+   "name",
+   "symbol",
+   "screenSize",
+   "pointsPerInch",
+   "safeArea",
+   "cornerRadius",
+   "idiom",
+   "portraitSizeClasses",
+   "landscapeSizeClasses",
+   "notch",
+   "homeIndicator"
+  ],
+  "Music:Music.MultiDeviceTester.Device.SizeClasses.CodingKeys": [
+   "horizontal",
+   "vertical"
+  ],
+  "Music:Music.MultiDeviceTester.Settings.CodingKeys": [
+   "devices",
+   "orientation",
+   "renderingMode"
+  ],
+  "Music:Music.ArtworkSmartTransition.DrawError": [
+   "missingCommandBuffer",
+   "missingRenderPassDescriptor",
+   "missingRenderEncoder",
+   "missingSubmesh"
+  ],
+  "Music:Music.PlaylistGeneration.Toolbox.Error.Reason": [
+   "bagDisabled",
+   "cloudLibraryDisabled",
+   "minorAccountHolder",
+   "missingIntelligenceBagPayload",
+   "notSubscriber"
+  ],
+  "Music:MusicCore.UnifiedMessages.Placement": [
+   "libraryHeader",
+   "listenNowHeader"
+  ],
+  "Music:MusicCoreUI.Reactions.Context.Placement": [
+   "nowPlaying",
+   "playlistDetail"
+  ],
+  "Music:Music.LibraryDownloadingViewController.Section": [
+   "cancelAll",
+   "downloads"
+  ],
+  "Music:Music.extension.WidgetUserDefaultsKey": [
+   "recommendationsWidgetRefreshTTLBagValue",
+   "chartsWidgetRefreshTTLBagValue",
+   "chartDescriptorsRefreshTTLBagValue",
+   "recentlyPlayedRemoteQueriesEnabledBagValue",
+   "recentlyPlayedRemoteQueriesEnabledOverride"
+  ],
+  "Music:Music.ArtworkSmartTransition.Style": [
+   "squareToSquare",
+   "squareToFullscreen",
+   "fullscreenToSquare",
+   "fullscreenToFullscreen"
+  ],
+  "Music:Music.LibraryImport.Observer.MetricsData.ReferralStatus": [
+   "unknown",
+   "started",
+   "reviewed"
+  ],
+  "Music:Music.LibraryImport.Response.ItemsToReview.CodingKeys": [
+   "songs",
+   "albums",
+   "artists",
+   "music-videos"
+  ],
+  "Music:Music.WidgetUpdateManager.Bag.BagKey": [
+   "recommendationWidgetsRefreshTTLSeconds",
+   "chartsWidgetRefreshTTLSeconds",
+   "chartWidgetsGeoListRefreshTTLSeconds",
+   "widget-remote-query-enabled"
+  ],
+  "Music:Music.NowPlayingDataProvider.PlayerState": [
+   "playing",
+   "paused",
+   "stopped"
+  ],
+  "Music:Music.WidgetMusicItem.Kind": [
+   "song",
+   "album",
+   "artist",
+   "playlist",
+   "station",
+   "musicVideo",
+   "tvEpisode",
+   "musicMovie"
+  ],
+  "Music:__C.Identifier.LibraryEmptyState": [
+   "clearFilters",
+   "browseAppleMusic"
+  ],
+  "Music:Music.SocialNetwork": [
+   "com.apple.Music.InstagramStories",
+   "com.apple.Music.FacebookStories",
+   "com.apple.Music.WhatsApp",
+   "com.apple.Music.SnapchatStories",
+   "com.apple.Music.TikTokSharing"
+  ],
+  "Music:Music.BackdropView.Group": [
+   "nowPlaying",
+   "lyricsSharing"
+  ],
+  "Music:MusicCore.Library.Category": [
+   "albums",
+   "artists",
+   "composers",
+   "compilations",
+   "folderPlaylists",
+   "genres",
+   "madeForYou",
+   "movies",
+   "musicVideos",
+   "playlists",
+   "recentlyAdded",
+   "songs",
+   "tvEpisodes",
+   "tvShows"
+  ],
+  "Music:MusicCore.Library.ContentSort.Option": [
+   "artistName",
+   "libraryAddedDate",
+   "releaseDate",
+   "year",
+   "title",
+   "lastPlayedDate",
+   "lastModifiedDate",
+   "playlistType"
+  ],
+  "Music:Music.PlaylistPicker.Source.Kind": [
+   "album",
+   "playlist",
+   "song"
+  ],
+  "Music:Music.LibraryFilterOptionsController.FilterOption": [
+   "all",
+   "favorited"
+  ],
+  "Music:Music.LibraryFilterOptionsController.ContentType": [
+   "albums",
+   "artistDetail",
+   "artists",
+   "compilations",
+   "composers",
+   "genres",
+   "madeForYou",
+   "musicVideos",
+   "playlists",
+   "songs"
+  ],
+  "Music:Music.SelfieSing.State.Value": [
+   "disabled",
+   "staging",
+   "countdown",
+   "waitingToRecord",
+   "recording",
+   "waitingToPreview",
+   "previewing"
+  ],
+  "Music:Music.SelfieSing.Manager.PlaybackState": [
+   "paused",
+   "playingWithVocalAttenuation"
+  ],
+  "Music:Music.Tooltip": [
+   "com.apple.Music.Tooltip.FavoritingNowPlaying",
+   "com.apple.Music.Tooltip.Sing",
+   "com.apple.Music.Tooltip.SharePlayTogether",
+   "com.apple.Music.Tooltip.LyricsTranslation",
+   "com.apple.Music.Tooltip.LyricsTransliteration",
+   "com.apple.Music.Tooltip.LyricsTransliterationSing",
+   "com.apple.Music.Tooltip.LyricsTranslationAndTransliteration",
+   "com.apple.Music.Tooltip.SmartTransition",
+   "com.apple.Music.Tooltip.SelfieSing"
+  ],
+  "Music:Music.Tooltip.Group": [
+   "NowPlaying"
+  ],
+  "Music:MusicCore.Library.LayoutVariant": [
+   "grid",
+   "list"
+  ],
+  "Music:__C.Identifier.LibraryEdit": [
+   "pins",
+   "menu"
+  ],
+  "Music:Music.NowPlayingViewController.LayoutType": [
+   "compact",
+   "compactExtended",
+   "regular",
+   "regularExtended"
+  ],
+  "Music:Music.NowPlayingViewController.DefaultsKey": [
+   "nowPlayingSelectedMode",
+   "nowPlayingLastSelectedMode",
+   "hasMigratedToLyricsOnByDefault",
+   "hasSeenTimeSyncedLyrics"
+  ],
+  "Music:Music.WidgetMusicRecommendationKind": [
+   "topPicks",
+   "madeForYou",
+   "moodsForYou",
+   "newReleases",
+   "stationsForYou",
+   "friendsAreListeningTo"
+  ],
+  "Music:Music.NowPlayingControlsViewController.AnimationData.Kind": [
+   "regular",
+   "collapsed"
+  ],
+  "Music:Music.RecommendationsService.Category.CodingKeys": [
+   "title",
+   "description",
+   "items",
+   "originalResponse"
+  ],
+  "Music:Music.ArtworkSmartTransition.Mask.Style": [
+   "fadeIn",
+   "fadeOut"
+  ],
+  "Music:Music.SelfieSing.MicAudioProcessor.InPlaceRenderContext.InputPullFailure": [
+   "missingUnitBufferList",
+   "noAudioData",
+   "busNumberMismatch",
+   "inputAlreadyServed",
+   "audioBufferCountMismatch",
+   "frameCountMismatch"
+  ],
+  "Music:Music.SelfieSing.TrackType": [
+   "video",
+   "audioApp",
+   "audioMic",
+   "audioMix"
+  ],
+  "Music:MusicCore.MenuType": [
+   "topLevel",
+   "quickAction",
+   "top",
+   "library",
+   "playlist",
+   "playback",
+   "daffodil",
+   "navigation",
+   "taste",
+   "reporting",
+   "pinAction",
+   "destructive",
+   "playlistSort",
+   "goTo"
+  ],
+  "Music:MusicCore.ActionType": [
+   "addToLibrary",
+   "download",
+   "favorite",
+   "undoFavorite",
+   "share",
+   "play",
+   "shuffle",
+   "pin",
+   "unpin",
+   "createPlaylist",
+   "createFolder",
+   "addToPlaylist",
+   "playlistEdit",
+   "collaboration",
+   "playlistSortTrackList",
+   "playlistSortTitle",
+   "playlistSortArtist",
+   "playlistSortAlbum",
+   "playlistSortReleaseDate",
+   "renameFolder",
+   "moveToFolder",
+   "queueMoveToTop",
+   "playNext",
+   "addToQueue",
+   "playLast",
+   "playAfter",
+   "previewOnlyForMe",
+   "createStation",
+   "daffodilItem",
+   "goToPlaylist",
+   "goToPlaylistFolder",
+   "goToAlbum",
+   "goToArtist",
+   "showSongCredits",
+   "viewFullLyrics",
+   "shareLyrics",
+   "openInClassical",
+   "suggestLess",
+   "undoSuggestLess",
+   "rateSong",
+   "creditsReportConcern",
+   "lyricsReportConcern",
+   "playlistReportConcern",
+   "socialReportConcern",
+   "searchResultsReportAConcern",
+   "updatePinActionPlay",
+   "updatePinActionShuffle",
+   "updatePinActionNavigate",
+   "removeFromPlaylist",
+   "removeDownload",
+   "deleteFromLibrary",
+   "remove",
+   "createQueuePlaylist"
+  ],
+  "Music:MusicCore.MetricsEvent.Click.ActionDetails.Key.DestinationType": [
+   "library",
+   "playlist"
+  ],
+  "Music:MusicCore.MetricsEvent.Click.ActionDetails.Key.PlayType": [
+   "createStation"
+  ],
+  "Music:MusicCore.MetricsEvent.Click.ActionDetails.Key.NavigationType": [
+   "Album",
+   "Artist",
+   "Playlist",
+   "ReportAConcern"
+  ],
+  "Music:MusicCore.Actions.DeleteOrRemoveDownload.Choice": [
+   "removeDownload",
+   "deleteFromLibrary",
+   "cancel"
+  ],
+  "Music:MusicCore.Actions.SortPlaylist.TrackListSort.Option": [
+   "playlistOrder",
+   "title",
+   "artist",
+   "album",
+   "releaseDate",
+   "unknown"
+  ],
+  "Music:MusicCore.MetricsEvent.TargetType": [
+   "Album",
+   "AlbumDetail",
+   "app",
+   "Artist",
+   "banner",
+   "button",
+   "bubbleTip",
+   "Card",
+   "contextualActions",
+   "filter",
+   "HeaderItem",
+   "HintListItem",
+   "key",
+   "link",
+   "lyricLine",
+   "ListItem",
+   "pin",
+   "Playlist",
+   "PlaylistDetail",
+   "ContentListItem",
+   "slider",
+   "Song",
+   "suggestion",
+   "textBox",
+   "Upsell",
+   "ShelfItem",
+   "GridItem"
+  ],
+  "Music:MusicCore.MetricsEvent.Page.DisplayType": [
+   "cardView"
+  ],
+  "Music:MusicCore.MetricsEvent.Click.ActionType": [
+   "action",
+   "actionSheet",
+   "activate",
+   "add",
+   "addSongs",
+   "addToLibrary",
+   "addToQueue",
+   "adjust",
+   "beginPlayback",
+   "cancel",
+   "collaborate",
+   "create",
+   "createStation",
+   "showContextualActions",
+   "download",
+   "deactivate",
+   "delete",
+   "deselect",
+   "description",
+   "disable",
+   "dismiss",
+   "edit",
+   "editCover",
+   "enable",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "unhate",
+   "hint",
+   "input",
+   "navigate",
+   "pin",
+   "unpin",
+   "play",
+   "playAfter",
+   "playLater",
+   "playNext",
+   "react",
+   "redo",
+   "removeDownload",
+   "removeDownloadOrFromLibrary",
+   "removeFromPlaylist",
+   "reorder",
+   "reportConcern",
+   "save",
+   "search",
+   "seek",
+   "select",
+   "setPinActionPlay",
+   "setPinActionShuffle",
+   "setPinActionGoTo",
+   "share",
+   "sharedListening",
+   "shareLyrics",
+   "showLyrics",
+   "showOnProfile",
+   "shuffle",
+   "start",
+   "stop",
+   "submit",
+   "toggle",
+   "undo",
+   "viewAlbum",
+   "viewArtist",
+   "viewCredits",
+   "viewPlaylist",
+   "preview",
+   "pause",
+   "refresh",
+   "sing"
+  ],
+  "Music:MusicCore.MetricsEvent.Dialog.Type": [
+   "Ok",
+   "OkCancel"
+  ],
+  "Music:MusicCore.MetricsEvent.Dialog.ActionType": [
+   "ok",
+   "cancelClicked"
+  ],
+  "Music:MusicCore.MetricsEvent.ComponentRender.PreloadStatus": [
+   "full",
+   "partial",
+   "placeholder",
+   "previouslyShown"
+  ],
+  "Music:MusicCore.MetricsContentType": [
+   "album",
+   "playlist",
+   "song",
+   "artist",
+   "socialPerson",
+   "movie",
+   "tvShow",
+   "tvEpisode",
+   "composer",
+   "creditsArtist",
+   "curator",
+   "genre",
+   "radioStation",
+   "search",
+   "artistUploadedAudio",
+   "artistUploadedVideo",
+   "tvSeason",
+   "playlistEntry",
+   "libraryItem",
+   "recordLabel"
+  ],
+  "Music:MusicCore.ApplicationCapabilities.Service": [
+   "music",
+   "musicVideos",
+   "subscriptionRelated",
+   "social",
+   "radio",
+   "itunes",
+   "groupActivity",
+   "explicitContent",
+   "accountModification",
+   "sharePlayTogether",
+   "libraryImportEnabled",
+   "playlistGeneration"
+  ],
+  "Music:MusicCore.ApplicationCapabilities.SubscriptionState": [
+   "undecided",
+   "classic",
+   "subscriber",
+   "voiceSubscriber"
+  ],
+  "Music:MusicCore.extension.Key": [
+   "UserRequestedSubscriptionHidden",
+   "LastKnownStoreBagMusicTabsDictionary",
+   "allowsPumpkinContent"
+  ],
+  "Music:MusicCore.BackgroundTaskConfiguration.UserDefaultsKey": [
+   "forceBackgroundRefreshPinnedSubscribedPlaylists",
+   "lastBackgroundRefreshPinnedSubscribedPlaylistsDate",
+   "forceBackgroundRefreshServerLandingPages",
+   "lastBackgroundRefreshServerLandingPages"
+  ],
+  "Music:MusicCore.BackgroundTaskConfiguration.Identifier": [
+   "updateSubscribedPlaylists",
+   "updateServerLandingPages"
+  ],
+  "Music:MusicCore.TabIdentifier": [
+   "library",
+   "listenNow",
+   "browse",
+   "radio",
+   "search",
+   "videos",
+   "playlists"
+  ],
+  "Music:MusicCore.BagTabIdentifier": [
+   "my_music",
+   "for_you",
+   "listen_now",
+   "browse",
+   "radio",
+   "search",
+   "video"
+  ],
+  "Music:MusicCore.Collaboration.Manager.DeepLinkType": [
+   "join",
+   "pending"
+  ],
+  "Music:MusicCore.extension.MediaKitPlayableKind": [
+   "songs",
+   "tv-episodes",
+   "tv-shows",
+   "uploaded-audios",
+   "uploaded-videos",
+   "stations",
+   "music-videos",
+   "music-movies",
+   "playlists",
+   "albums"
+  ],
+  "Music:MusicCore.extension.FavoriteStatus": [
+   "favorited",
+   "neutral",
+   "disliked",
+   "unsupported"
+  ],
+  "Music:MusicCore.extension.MobileiPod": [
+   "UserRequestedSubscriptionHidden"
+  ],
+  "Music:MusicCore.Library.ContentFilterOption": [
+   "all",
+   "favorites",
+   "downloads"
+  ],
+  "Music:MusicCore.Library.Menu.Identifier": [
+   "com.apple.Music.LibraryView.RecentlyAdded",
+   "com.apple.Music.LibraryView.Playlists",
+   "com.apple.Music.LibraryView.Artists",
+   "com.apple.Music.LibraryView.Albums",
+   "com.apple.Music.LibraryView.Songs",
+   "com.apple.Music.LibraryView.MadeForYou",
+   "com.apple.Music.LibraryView.MusicVideos",
+   "com.apple.Music.LibraryView.Genres",
+   "com.apple.Music.LibraryView.Compilations",
+   "com.apple.Music.LibraryView.Composers",
+   "com.apple.Music.LibraryView.Shows",
+   "com.apple.Music.LibraryView.Downloaded",
+   "com.apple.Music.LibraryView.Downloading"
+  ],
+  "Music:MusicCore.Library.Menu.Revision.CodingKeys": [
+   "selected",
+   "all",
+   "version"
+  ],
+  "Music:MusicCore.extension.LegacyKey": [
+   "orderedLibraryViewIdentifiers",
+   "activeLibraryViewIdentifiers"
+  ],
+  "Music:MusicCore.Library.SortConfiguration": [
+   "albums",
+   "artists",
+   "compilations",
+   "madeForYou",
+   "musicVideos",
+   "playlists",
+   "songs"
+  ],
+  "Music:MusicCore.SortOptions.SortType": [
+   "ByPlaylistOrderAscending",
+   "ByPlaylistOrderDescending",
+   "ByTitle",
+   "ByLibraryAddedDate",
+   "ByLastDevicePlaybackDate",
+   "ByLastModifiedDate",
+   "ByArtist",
+   "ByAlbum",
+   "ByPlaylistType",
+   "ByDescendingYear",
+   "ByAscendingYear",
+   "ByReleaseDateAscending",
+   "ByReleaseDateDescending"
+  ],
+  "Music:MusicCore.PlaylistCovers.RecipeColors.CompositeColors": [
+   "color1",
+   "color2",
+   "color3",
+   "color4"
+  ],
+  "Music:MusicCore.UnifiedMessages.MLI.State": [
+   "privacyAcknowledgementRequired",
+   "unknown",
+   "inProgress",
+   "completed"
+  ],
+  "Music:MusicCore.UnifiedMessages.GroupDefaultsKey": [
+   "countOfPlaylistsInLibrary",
+   "countOfSongsInLibrary"
+  ],
+  "Music:MusicCore.ClassicalBridge.Type": [
+   "artist",
+   "album"
+  ],
+  "Music:MusicCore.extension.PresentationObserver.State": [
+   "presenting",
+   "presented",
+   "dismissing",
+   "dismissed"
+  ],
+  "Music:MusicCoreUI.ImagePicker.SourceType": [
+   "camera",
+   "photoLibrary",
+   "files",
+   "imagePlayground"
+  ],
+  "Music:MusicCoreUI.BouncyBarsAsset.BarAnimationKey": [
+   "cannedHeightAnimation",
+   "cannedWidthAnimation",
+   "cannedCornerAnimation"
+  ],
+  "Music:MusicUtilities.RomanNumerals": [
+   "M",
+   "CM",
+   "D",
+   "CD",
+   "C",
+   "XC",
+   "L",
+   "XL",
+   "X",
+   "IX",
+   "V",
+   "IV",
+   "I"
+  ],
+  "Music:MusicJSCore.JSAlertAction.AlertActionStyle": [
+   "default",
+   "cancel",
+   "destructive"
+  ],
+  "Music:MusicJSCore.JSCookieStorage.UpdateRecord.Type": [
+   "set",
+   "delete"
+  ],
+  "Music:MusicJSCore.JSIdentifierSet.ContentKind": [
+   "album",
+   "playlist",
+   "song",
+   "radioStation",
+   "movie",
+   "tvShow",
+   "tvSeason",
+   "tvEpisode",
+   "artist",
+   "curator",
+   "socialProfile",
+   "artistUploadedVideo",
+   "artistUploadedAudio",
+   "recordLabel",
+   "creditsArtist"
+  ],
+  "Music:MusicJSCore.Metrics.Event.Source": [
+   "button",
+   "contextualAction",
+   "track",
+   "trackButton",
+   "trackContextualAction"
+  ],
+  "Music:MusicJSCore.Metrics.Event.Destination": [
+   "Search"
+  ],
+  "Music:MusicJSCore.Metrics.TargetType": [
+   "button",
+   "contextualActions",
+   "bubbleTip"
+  ],
+  "Music:MusicJSCore.Metrics.ActionType": [
+   "select",
+   "play",
+   "navigate",
+   "dismiss",
+   "collaborate"
+  ],
+  "Music:MusicJSCore.Metrics.ActionDetails": [
+   "addToLibrary",
+   "trackAddToLibrary"
+  ],
+  "Music:MusicJSCore.HTTPMethod": [
+   "GET",
+   "HEAD",
+   "POST",
+   "PATCH",
+   "PUT",
+   "DELETE"
+  ],
+  "Music:MusicJSCore.JSHTTPRequestCoordinator.DeferralReason": [
+   "privacyAcknowledgement"
+  ],
+  "Music:MusicJSCore.JSSubscriptionStatusResponse.EligibilityStatus": [
+   "unknown",
+   "eligible",
+   "notEligible"
+  ],
+  "Music:MusicJSCore.JSSubscriptionStatusResponse.AccountStatus": [
+   "needsAuthentication",
+   "notSubscribed",
+   "subscribed",
+   "glide",
+   "unknown"
+  ],
+  "Music:MusicJSCore.JSSubscriptionStatusResponse.CarrierBundlingStatus": [
+   "unlinked",
+   "needsManualVerification",
+   "eligible",
+   "notEligible",
+   "unknown"
+  ],
+  "Music:MusicJSCore.JSSubscriptionStatusResponse.Capability": [
+   "fullCatalogPlayback",
+   "voiceActivatedCatalogPlayback",
+   "anyCatalogPlayback",
+   "cloudLibraryEligible",
+   "catalogLyricsViewing"
+  ],
+  "Music:MusicJSCore.JSLocalStorage.ScriptingUserDefaultsKey": [
+   "ScriptingLocalStorage"
+  ],
+  "Music:MusicJSCore.JSNativeExecutionFence.Kind": [
+   "regular",
+   "layoutCompleted"
+  ],
+  "Music:MusicJSCore.JSSocialOnboardingVerticalStack.BarButtonItemKind": [
+   "cancel",
+   "done",
+   "hideAllPlaylists"
+  ],
+  "Music:MusicJSCore.JSWhatsNewFeaturedItemViewModel.NativeFeature": [
+   "A",
+   "B",
+   "C"
+  ],
+  "Music:MusicJSCore.JSWhatsNewFeaturedItemViewModel.ImageContext": [
+   "systemImage",
+   "bundleImage"
+  ],
+  "Music:MusicJSCore.JSWhatsNewFeaturedItemViewModel.ImageBundleIdentifier": [
+   "musicApplication",
+   "musicFoundation_MusicCoreUI"
+  ],
+  "Music:MusicJSCore.JSShelfSection.Height": [
+   "default",
+   "compact",
+   "regular"
+  ],
+  "Music:MusicJSCore.JSShelfSection.UniformCellType": [
+   "album",
+   "artist",
+   "featuredRadioShow",
+   "featuredMusicVideo",
+   "featuredShowcase",
+   "featuredPlaylist",
+   "customRoomAlbum",
+   "socialPersonCard",
+   "recentlyPlayedRadio",
+   "poster",
+   "radioStation"
+  ],
+  "Music:MusicJSCore.JSPosterBadge.BadgeColor": [
+   "keyColor",
+   "systemMaterial"
+  ],
+  "Music:MusicJSCore.JSGridItem.HeadlineColor": [
+   "default",
+   "tintColor"
+  ],
+  "Music:MusicJSCore.JSHeaderItem.TitleHeaderStyle": [
+   "largeAdaptive",
+   "largeFixed",
+   "standard"
+  ],
+  "Music:MusicJSCore.JSHeaderItem.Action": [
+   "playRadioStation",
+   "showContextualActions",
+   "navigateBack",
+   "openInAppleClassical",
+   "dismissAppleClassicalPopover",
+   "dismissArtistFavoritingPopover",
+   "artistFavorited",
+   "artistUnfavorited"
+  ],
+  "Music:MusicJSCore.PromotionalLayoutStyle": [
+   "default",
+   "profile",
+   "artist"
+  ],
+  "Music:MusicJSCore.JSSearchLandingItem.DisplayStyleType": [
+   "standard",
+   "prominent"
+  ],
+  "Music:MusicJSCore.JSMenu.SelectionStyle": [
+   "none",
+   "checkmark"
+  ],
+  "Music:MusicJSCore.JSGridSection.UniformCellType": [
+   "album",
+   "artist",
+   "customRoomAlbum",
+   "tvShow",
+   "showcase",
+   "featuredRadioShow",
+   "hero"
+  ],
+  "Music:MusicJSCore.JSApplication.ActivationMethod": [
+   "regular",
+   "openURL"
+  ],
+  "Music:MusicJSCore.JSApplication.SubscriptionFlowConfiguration.Placement": [
+   "musicLibraryEmpty",
+   "musicAddToLibrary",
+   "musicAddToPlaylist",
+   "musicNowPlayingLyrics",
+   "musicFriendsProfileFollow",
+   "musicPlaybackUpsell",
+   "musicSharedListenUpsell",
+   "musicPlaybackQueue",
+   "musicLyricsSharingUpsell",
+   "musicVoiceUpsell"
+  ],
+  "Music:MusicJSCore.JSSettingsItem.Kind": [
+   "default",
+   "signOut",
+   "userDetails",
+   "followRequests"
+  ],
+  "Music:MusicJSCore.JSArtwork.Treatment": [
+   "default",
+   "circle"
+  ],
+  "Music:MusicJSCore.JSNowPlayingViewModel.Action": [
+   "addToLibrary",
+   "addToPlaylist",
+   "autoPlay",
+   "autoPlayOff",
+   "beginPlayback",
+   "createStation",
+   "dismissSingPopover",
+   "download",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "hideLyrics",
+   "hideUpNextQueue",
+   "playLater",
+   "playNext",
+   "reportConcern",
+   "scrubLyrics",
+   "share",
+   "sharePlay",
+   "shareLyrics",
+   "shareLyricsAction",
+   "story",
+   "showHistory",
+   "showLyrics",
+   "showUpNextQueue",
+   "socialFollow",
+   "viewAlbum",
+   "vocalAttenuationChangeLevel",
+   "vocalAttenuationTurnOff",
+   "vocalAttenuationTurnOn"
+  ],
+  "Music:MusicJSCore.JSNowPlayingViewModel.Mode": [
+   "controls",
+   "lyrics",
+   "upNextQueue"
+  ],
+  "Music:MusicJSCore.JSNowPlayingViewModel.TimeSyncingPrecision": [
+   "lineByLine",
+   "syllableBySyllable"
+  ],
+  "Music:MusicJSCore.JSFlowcaseItem.ThumbnailHorizontalAlignment": [
+   "leading",
+   "trailing",
+   "left",
+   "right"
+  ],
+  "Music:MusicJSCore.JSNetwork.SimplifiedNetworkType": [
+   "none",
+   "cellular",
+   "wifi"
+  ],
+  "Music:MusicJSCore.JSSplitWidgetViewModel.DisplayStyle": [
+   "compactLeft",
+   "compactRight"
+  ],
+  "Music:MusicJSCore.JSContainerDetail.Action": [
+   "addToLibrary",
+   "addToPlaylist",
+   "beginPlayback",
+   "cancelEdit",
+   "collaborate",
+   "createStation",
+   "dismissAppleClassicalPopover",
+   "download",
+   "navigateBack",
+   "edit",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "openInAppleClassical",
+   "playAll",
+   "playLater",
+   "playNext",
+   "playTrack",
+   "removeDownload",
+   "removeDownloadOrFromLibrary",
+   "removeFromLibrary",
+   "reportConcern",
+   "saveEdit",
+   "share",
+   "sharePlay",
+   "shareLyrics",
+   "shareLyricsAction",
+   "sing",
+   "singTrack",
+   "story",
+   "showContextualActions",
+   "shuffleAll",
+   "socialFollow",
+   "viewAlbum",
+   "viewNotes",
+   "recordLabelLink"
+  ],
+  "Music:MusicJSCore.JSGrid.AdaptiveLayoutStyle": [
+   "default",
+   "compactList"
+  ],
+  "Music:MusicJSCore.JSStore.AccountChangeReason": [
+   "applicationLaunch",
+   "uniqueIdentifierChanged",
+   "userSocialProfileChanged",
+   "privacyAcknowledgementChanged"
+  ],
+  "Music:MusicJSCore.JSSocialProfileCollection.CollectionStyle": [
+   "default",
+   "followRequests",
+   "edit"
+  ],
+  "Music:MusicJSCore.JSShareRequest.RequestContent.ContentType": [
+   "shareURLComponents",
+   "storePlatform",
+   "socialInvitation"
+  ],
+  "Music:MusicJSCore.JSSocialProfile.FollowState": [
+   "self",
+   "notFollowable",
+   "notFollowing",
+   "requested",
+   "following",
+   "blocked"
+  ],
+  "Music:MusicJSCore.JSPlaybackIntent.ShuffleMode": [
+   "songs"
+  ],
+  "Music:MusicJSCore.JSSocialOnboardingWelcomeViewModel.TextAlignment": [
+   "leading",
+   "trailing",
+   "justified",
+   "center",
+   "left",
+   "right"
+  ],
+  "Music:MusicJSCore.JSSocialOnboardingWelcomeViewModel.ArtworkScaleMode": [
+   "scaleAspectFit",
+   "scaleAspectFitHeight",
+   "scaleAspectFill"
+  ],
+  "Music:MusicJSCore.JSContextAction.Kind": [
+   "hideFromProfile",
+   "showOnProfile",
+   "openInClassical"
+  ],
+  "Music:MusicJSCore.JSPosterItem.TextAlignment": [
+   "center",
+   "left"
+  ],
+  "Music:MusicJSCore.JSSubscriptionStatusRequest.Reason": [
+   "deepLink"
+  ],
+  "Music:MusicJSCore.JSSubscriptionStatusRequest.CarrierBundleProvisioningStyle": [
+   "never",
+   "once",
+   "always"
+  ],
+  "Music:MusicJSCore.JSDateFormattingOptions.Style": [
+   "none",
+   "short",
+   "medium",
+   "long",
+   "full"
+  ],
+  "Music:MusicJSCore.JSDateFormattingOptions.DateComponentSymbols": [
+   "shortDay",
+   "shortMonth",
+   "shortYear"
+  ],
+  "Music:MusicJSCore.JSScriptingInstantiatedClass": [
+   "MusicKitHTTPRequest",
+   "StoreContentLookupRequest",
+   "StoreHTTPRequest",
+   "StorePlaybackPositionRequest",
+   "SubscriptionStatusRequest",
+   "SiriAceRequest",
+   "ApplicationMessageTarget",
+   "Cookie",
+   "NativeExecutionFence",
+   "Timer",
+   "DateFormatter",
+   "DateFormattingOptions",
+   "DateDescriptor",
+   "DateRangeDescriptor",
+   "ValueTransformerOptions",
+   "ComponentController",
+   "Artwork",
+   "VideoArtwork",
+   "HeaderItem",
+   "IdentifierSet",
+   "UpsellBanner",
+   "BarButtonItem",
+   "LiveRadioCase",
+   "LiveRadioCaseItem",
+   "AlertComponentController",
+   "AlertViewModel",
+   "AlertAction",
+   "AlbumDetail",
+   "AlbumDetailComponentController",
+   "Brick",
+   "BrickItem",
+   "ContextAction",
+   "Flowcase",
+   "FlowcaseItem",
+   "Menu",
+   "MenuSection",
+   "MenuItem",
+   "MovieClipItem",
+   "Grid",
+   "GridSection",
+   "GridItem",
+   "GridItemButton",
+   "PosterItem",
+   "PosterBadge",
+   "PlaylistDetail",
+   "PlaylistDetailEntry",
+   "PlaylistDetailComponentController",
+   "Shelf",
+   "ShelfSection",
+   "ShelfItem",
+   "SearchLandingItem",
+   "SearchLandingUpsell",
+   "SearchLandingViewModel",
+   "SearchResultSection",
+   "SearchResultItem",
+   "SettingsViewModel",
+   "SettingsAuthenticationSection",
+   "SettingsLink",
+   "SettingsSection",
+   "SettingsItem",
+   "SettingsItemText",
+   "SettingsItemToggle",
+   "ShareResult",
+   "VerticalStack",
+   "SocialProfile",
+   "SocialProfileVerticalStack",
+   "SocialProfileCollection",
+   "SocialProfileCollectionItem",
+   "SocialProfileEditor",
+   "SocialLightIdentityCreator",
+   "CircleImage",
+   "SocialOnboardingVerticalStack",
+   "SocialOnboardingFriendsFinder",
+   "SocialOnboardingNetwork",
+   "SocialOnboardingWelcomeViewModel",
+   "InlineSocialUpsell",
+   "OrderedPlaylistSelector",
+   "OrderedPlaylistSelectorItem",
+   "PrivacyLinkViewModel",
+   "CatalogPlaybackIntent",
+   "RadioPlaybackIntent",
+   "PushSegue",
+   "PresentationSegue",
+   "NoopSegue",
+   "StoreFlowSegue",
+   "DeepLinkSegue",
+   "RedirectSegue",
+   "SocialNetworkAuthSegue",
+   "SubscriptionPurchaseSegue",
+   "AppReviewSegue",
+   "UserNotificationAuthorizationSegue",
+   "WebViewSegue",
+   "MusicVideoViewModel",
+   "MusicVideoItem",
+   "MessageViewModel",
+   "OnboardingViewModel",
+   "StaticImageViewModel",
+   "ParagraphViewModel",
+   "ToggleSelectorViewModel",
+   "ToggleSelectorItem",
+   "MultiChoiceViewModel",
+   "MultiChoiceItem",
+   "InlinePopup",
+   "InlinePopupButton",
+   "ItemizedTextListViewModel",
+   "ItemizedTextListItem",
+   "GroupedTextListViewModel",
+   "GroupedTextListItem",
+   "GroupedItemizedTextListViewModel",
+   "BiographyItem",
+   "BiographyViewModel",
+   "TVShowEpisodeDetailItem",
+   "TVShowEpisodeDetail",
+   "TVShowPlayBarItem",
+   "TVShowPlayBarViewModel",
+   "BadgingViewModel",
+   "BadgingItem",
+   "CreditsItem",
+   "CreditsSection",
+   "SongDetail",
+   "SplitWidgetViewModel",
+   "ContainerDetailLink",
+   "ListenNowMusicSiriUpsell",
+   "InterstellarViewModel",
+   "UserNotificationAuthorizationViewModel",
+   "UserNotificationSettings",
+   "WhatsNewFeaturedItemViewModel",
+   "WhatsNewViewModel"
+  ],
+  "Music:MusicJSCore.JSAlertViewModel.AlertStyle": [
+   "alert",
+   "actionSheet"
+  ],
+  "Music:MusicJSCore.JSPresentationSegue.PresentationStyle": [
+   "formSheet",
+   "popover"
+  ],
+  "Music:MusicJSCore.JSDeepLinkSegue.ViewIdentifier": [
+   "libraryTab",
+   "forYouTab",
+   "listenNowTab",
+   "browseTab",
+   "radioTab",
+   "searchTab",
+   "nowPlaying"
+  ],
+  "Music:MusicJSCore.JSGridItemButton.HorizontalAlignment": [
+   "left",
+   "centered"
+  ],
+  "Music:MusicJSCore.JSGridItemButton.DisplayStyle": [
+   "fill",
+   "stroke"
+  ],
+  "Music:MusicJSCore.JSMediaItem.Action": [
+   "addToLibrary",
+   "addToPlaylist",
+   "beginPlayback",
+   "createStation",
+   "download",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "playLater",
+   "playNext",
+   "react",
+   "removeDownload",
+   "removeDownloadOrFromLibrary",
+   "removeFromLibrary",
+   "reportConcern",
+   "share",
+   "sharePlay",
+   "socialFollow",
+   "viewAlbum",
+   "story"
+  ],
+  "Music:MusicJSCore.JSSocialOnboardingNetwork.AuthProtocol": [
+   "OAuth2.0"
+  ],
+  "Music:MusicJSCore.JSNativelyInstantiatedClass": [
+   "BridgedAccount",
+   "BridgedApplication",
+   "BridgedBackgroundFetchManager",
+   "BridgedCapabilitiesController",
+   "BridgedDevice",
+   "HeaderItem",
+   "BridgedMetricsController",
+   "BridgedPlayActivityController",
+   "BridgedSocialActivityController",
+   "BridgedPushNotificationObserver",
+   "BridgedNetwork",
+   "BridgedPersistence",
+   "BridgedPrivacy",
+   "UpsellBanner",
+   "BridgedRestrictions",
+   "BridgedScreen",
+   "BridgedStore",
+   "BridgedStoreFlowPresentationCoordinator",
+   "BridgedSubscriptionPurchaseCoordinator",
+   "BridgedSubscriptionStatusCoordinator",
+   "BridgedWindow",
+   "ApplicationMessage",
+   "Cookie",
+   "CookieStorage",
+   "LocalStorage",
+   "MusicKitHTTPResponse",
+   "StoreHTTPResponse",
+   "StorePlaybackPosition",
+   "SubscriptionStatusResponse",
+   "Impression",
+   "ImpressionsBatch",
+   "_BridgedSegueCoordinator",
+   "AlbumDetail",
+   "AlbumDetailComponentController",
+   "PlaylistDetail",
+   "PlaylistDetailComponentController",
+   "SearchResultItem",
+   "SearchResultSection",
+   "LibraryCollectionComponentController",
+   "LibraryCollectionViewModel",
+   "NowPlayingComponentController",
+   "NowPlayingViewModel",
+   "MediaPickerEnvironment",
+   "SocialProfile"
+  ],
+  "Music:MusicJSCore.JSStoreContentLookupRequest.PersonalizationStyle": [
+   "never",
+   "silent",
+   "always"
+  ],
+  "Music:MusicJSCore.JSAccount.SocialProfileUpdateReason": [
+   "onboarded",
+   "updated",
+   "offboarded"
+  ],
+  "Music:MusicJSCore.JSParagraphViewModel.BackgroundStyle": [
+   "light",
+   "ultraLightGray",
+   "gray"
+  ],
+  "Music:MusicJSCore.JSParagraphViewModel.TextStyle": [
+   "light",
+   "dark"
+  ],
+  "Music:MusicJSCore.JSParagraphViewModel.TextSize": [
+   "regular",
+   "small",
+   "extraSmall"
+  ],
+  "Music:MusicJSCore.JSSegueType": [
+   "select",
+   "accessoryButtonSelect"
+  ],
+  "Music:MusicJSCore.JSUpsellBanner.Style": [
+   "default",
+   "warning"
+  ],
+  "MusicMessagesApp:MusicCore.MenuType": [
+   "topLevel",
+   "quickAction",
+   "top",
+   "library",
+   "playlist",
+   "playback",
+   "daffodil",
+   "navigation",
+   "taste",
+   "reporting",
+   "pinAction",
+   "destructive",
+   "playlistSort",
+   "goTo"
+  ],
+  "MusicMessagesApp:MusicCore.ActionType": [
+   "addToLibrary",
+   "download",
+   "favorite",
+   "undoFavorite",
+   "share",
+   "play",
+   "shuffle",
+   "pin",
+   "unpin",
+   "createPlaylist",
+   "createFolder",
+   "addToPlaylist",
+   "playlistEdit",
+   "collaboration",
+   "playlistSortTrackList",
+   "playlistSortTitle",
+   "playlistSortArtist",
+   "playlistSortAlbum",
+   "playlistSortReleaseDate",
+   "renameFolder",
+   "moveToFolder",
+   "queueMoveToTop",
+   "playNext",
+   "addToQueue",
+   "playLast",
+   "playAfter",
+   "previewOnlyForMe",
+   "createStation",
+   "daffodilItem",
+   "goToPlaylist",
+   "goToPlaylistFolder",
+   "goToAlbum",
+   "goToArtist",
+   "showSongCredits",
+   "viewFullLyrics",
+   "shareLyrics",
+   "openInClassical",
+   "suggestLess",
+   "undoSuggestLess",
+   "rateSong",
+   "creditsReportConcern",
+   "lyricsReportConcern",
+   "playlistReportConcern",
+   "socialReportConcern",
+   "searchResultsReportAConcern",
+   "updatePinActionPlay",
+   "updatePinActionShuffle",
+   "updatePinActionNavigate",
+   "removeFromPlaylist",
+   "removeDownload",
+   "deleteFromLibrary",
+   "remove",
+   "createQueuePlaylist"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.Click.ActionDetails.Key.DestinationType": [
+   "library",
+   "playlist"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.Click.ActionDetails.Key.PlayType": [
+   "createStation"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.Click.ActionDetails.Key.NavigationType": [
+   "Album",
+   "Artist",
+   "Playlist",
+   "ReportAConcern"
+  ],
+  "MusicMessagesApp:MusicCore.Actions.DeleteOrRemoveDownload.Choice": [
+   "removeDownload",
+   "deleteFromLibrary",
+   "cancel"
+  ],
+  "MusicMessagesApp:MusicCore.Actions.SortPlaylist.TrackListSort.Option": [
+   "playlistOrder",
+   "title",
+   "artist",
+   "album",
+   "releaseDate",
+   "unknown"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.TargetType": [
+   "Album",
+   "AlbumDetail",
+   "app",
+   "Artist",
+   "banner",
+   "button",
+   "bubbleTip",
+   "Card",
+   "contextualActions",
+   "filter",
+   "HeaderItem",
+   "HintListItem",
+   "key",
+   "link",
+   "lyricLine",
+   "ListItem",
+   "pin",
+   "Playlist",
+   "PlaylistDetail",
+   "ContentListItem",
+   "slider",
+   "Song",
+   "suggestion",
+   "textBox",
+   "Upsell",
+   "ShelfItem",
+   "GridItem"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.Page.DisplayType": [
+   "cardView"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.Click.ActionType": [
+   "action",
+   "actionSheet",
+   "activate",
+   "add",
+   "addSongs",
+   "addToLibrary",
+   "addToQueue",
+   "adjust",
+   "beginPlayback",
+   "cancel",
+   "collaborate",
+   "create",
+   "createStation",
+   "showContextualActions",
+   "download",
+   "deactivate",
+   "delete",
+   "deselect",
+   "description",
+   "disable",
+   "dismiss",
+   "edit",
+   "editCover",
+   "enable",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "unhate",
+   "hint",
+   "input",
+   "navigate",
+   "pin",
+   "unpin",
+   "play",
+   "playAfter",
+   "playLater",
+   "playNext",
+   "react",
+   "redo",
+   "removeDownload",
+   "removeDownloadOrFromLibrary",
+   "removeFromPlaylist",
+   "reorder",
+   "reportConcern",
+   "save",
+   "search",
+   "seek",
+   "select",
+   "setPinActionPlay",
+   "setPinActionShuffle",
+   "setPinActionGoTo",
+   "share",
+   "sharedListening",
+   "shareLyrics",
+   "showLyrics",
+   "showOnProfile",
+   "shuffle",
+   "start",
+   "stop",
+   "submit",
+   "toggle",
+   "undo",
+   "viewAlbum",
+   "viewArtist",
+   "viewCredits",
+   "viewPlaylist",
+   "preview",
+   "pause",
+   "refresh",
+   "sing"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.Dialog.Type": [
+   "Ok",
+   "OkCancel"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.Dialog.ActionType": [
+   "ok",
+   "cancelClicked"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsEvent.ComponentRender.PreloadStatus": [
+   "full",
+   "partial",
+   "placeholder",
+   "previouslyShown"
+  ],
+  "MusicMessagesApp:MusicCore.MetricsContentType": [
+   "album",
+   "playlist",
+   "song",
+   "artist",
+   "socialPerson",
+   "movie",
+   "tvShow",
+   "tvEpisode",
+   "composer",
+   "creditsArtist",
+   "curator",
+   "genre",
+   "radioStation",
+   "search",
+   "artistUploadedAudio",
+   "artistUploadedVideo",
+   "tvSeason",
+   "playlistEntry",
+   "libraryItem",
+   "recordLabel"
+  ],
+  "MusicMessagesApp:MusicCore.ApplicationCapabilities.Service": [
+   "music",
+   "musicVideos",
+   "subscriptionRelated",
+   "social",
+   "radio",
+   "itunes",
+   "groupActivity",
+   "explicitContent",
+   "accountModification",
+   "sharePlayTogether",
+   "libraryImportEnabled",
+   "playlistGeneration"
+  ],
+  "MusicMessagesApp:MusicCore.ApplicationCapabilities.SubscriptionState": [
+   "undecided",
+   "classic",
+   "subscriber",
+   "voiceSubscriber"
+  ],
+  "MusicMessagesApp:MusicCore.extension.Key": [
+   "UserRequestedSubscriptionHidden",
+   "LastKnownStoreBagMusicTabsDictionary",
+   "allowsPumpkinContent"
+  ],
+  "MusicMessagesApp:MusicCore.BackgroundTaskConfiguration.UserDefaultsKey": [
+   "forceBackgroundRefreshPinnedSubscribedPlaylists",
+   "lastBackgroundRefreshPinnedSubscribedPlaylistsDate",
+   "forceBackgroundRefreshServerLandingPages",
+   "lastBackgroundRefreshServerLandingPages"
+  ],
+  "MusicMessagesApp:MusicCore.BackgroundTaskConfiguration.Identifier": [
+   "updateSubscribedPlaylists",
+   "updateServerLandingPages"
+  ],
+  "MusicMessagesApp:MusicCore.TabIdentifier": [
+   "library",
+   "listenNow",
+   "browse",
+   "radio",
+   "search",
+   "videos",
+   "playlists"
+  ],
+  "MusicMessagesApp:MusicCore.BagTabIdentifier": [
+   "my_music",
+   "for_you",
+   "listen_now",
+   "browse",
+   "radio",
+   "search",
+   "video"
+  ],
+  "MusicMessagesApp:MusicCore.Collaboration.Manager.DeepLinkType": [
+   "join",
+   "pending"
+  ],
+  "MusicMessagesApp:MusicCore.extension.MediaKitPlayableKind": [
+   "songs",
+   "tv-episodes",
+   "tv-shows",
+   "uploaded-audios",
+   "uploaded-videos",
+   "stations",
+   "music-videos",
+   "music-movies",
+   "playlists",
+   "albums"
+  ],
+  "MusicMessagesApp:MusicCore.extension.FavoriteStatus": [
+   "favorited",
+   "neutral",
+   "disliked",
+   "unsupported"
+  ],
+  "MusicMessagesApp:MusicCore.extension.MobileiPod": [
+   "UserRequestedSubscriptionHidden"
+  ],
+  "MusicMessagesApp:MusicCore.Library.ContentFilterOption": [
+   "all",
+   "favorites",
+   "downloads"
+  ],
+  "MusicMessagesApp:MusicCore.Library.Menu.Identifier": [
+   "com.apple.Music.LibraryView.RecentlyAdded",
+   "com.apple.Music.LibraryView.Playlists",
+   "com.apple.Music.LibraryView.Artists",
+   "com.apple.Music.LibraryView.Albums",
+   "com.apple.Music.LibraryView.Songs",
+   "com.apple.Music.LibraryView.MadeForYou",
+   "com.apple.Music.LibraryView.MusicVideos",
+   "com.apple.Music.LibraryView.Genres",
+   "com.apple.Music.LibraryView.Compilations",
+   "com.apple.Music.LibraryView.Composers",
+   "com.apple.Music.LibraryView.Shows",
+   "com.apple.Music.LibraryView.Downloaded",
+   "com.apple.Music.LibraryView.Downloading"
+  ],
+  "MusicMessagesApp:MusicCore.Library.Menu.Revision.CodingKeys": [
+   "selected",
+   "all",
+   "version"
+  ],
+  "MusicMessagesApp:MusicCore.extension.LegacyKey": [
+   "orderedLibraryViewIdentifiers",
+   "activeLibraryViewIdentifiers"
+  ],
+  "MusicMessagesApp:MusicCore.Library.SortConfiguration": [
+   "albums",
+   "artists",
+   "compilations",
+   "madeForYou",
+   "musicVideos",
+   "playlists",
+   "songs"
+  ],
+  "MusicMessagesApp:MusicCore.SortOptions.SortType": [
+   "ByPlaylistOrderAscending",
+   "ByPlaylistOrderDescending",
+   "ByTitle",
+   "ByLibraryAddedDate",
+   "ByLastDevicePlaybackDate",
+   "ByLastModifiedDate",
+   "ByArtist",
+   "ByAlbum",
+   "ByPlaylistType",
+   "ByDescendingYear",
+   "ByAscendingYear",
+   "ByReleaseDateAscending",
+   "ByReleaseDateDescending"
+  ],
+  "MusicMessagesApp:MusicCore.PlaylistCovers.RecipeColors.CompositeColors": [
+   "color1",
+   "color2",
+   "color3",
+   "color4"
+  ],
+  "MusicMessagesApp:MusicCore.UnifiedMessages.MLI.State": [
+   "privacyAcknowledgementRequired",
+   "unknown",
+   "inProgress",
+   "completed"
+  ],
+  "MusicMessagesApp:MusicCore.UnifiedMessages.GroupDefaultsKey": [
+   "countOfPlaylistsInLibrary",
+   "countOfSongsInLibrary"
+  ],
+  "MusicMessagesApp:MusicCore.ClassicalBridge.Type": [
+   "artist",
+   "album"
+  ],
+  "MusicMessagesApp:MusicCore.extension.PresentationObserver.State": [
+   "presenting",
+   "presented",
+   "dismissing",
+   "dismissed"
+  ],
+  "MusicMessagesApp:MusicCoreUI.ImagePicker.SourceType": [
+   "camera",
+   "photoLibrary",
+   "files",
+   "imagePlayground"
+  ],
+  "MusicMessagesApp:MusicCoreUI.BouncyBarsAsset.BarAnimationKey": [
+   "cannedHeightAnimation",
+   "cannedWidthAnimation",
+   "cannedCornerAnimation"
+  ],
+  "MusicMessagesApp:MusicUtilities.RomanNumerals": [
+   "M",
+   "CM",
+   "D",
+   "CD",
+   "C",
+   "XC",
+   "L",
+   "XL",
+   "X",
+   "IX",
+   "V",
+   "IV",
+   "I"
+  ],
+  "MusicWidgets:MusicWidgets.NowPlayingDataProvider.PlayerState": [
+   "playing",
+   "paused",
+   "stopped"
+  ],
+  "MusicWidgets:MusicWidgets.WidgetMusicItem.Kind": [
+   "song",
+   "album",
+   "artist",
+   "playlist",
+   "station",
+   "musicVideo",
+   "tvEpisode",
+   "musicMovie"
+  ],
+  "MusicWidgets:MusicWidgets.WidgetMusicRecommendationKind": [
+   "topPicks",
+   "madeForYou",
+   "moodsForYou",
+   "newReleases",
+   "stationsForYou",
+   "friendsAreListeningTo"
+  ],
+  "MusicWidgets:MusicWidgets.extension.WidgetUserDefaultsKey": [
+   "recommendationsWidgetRefreshTTLBagValue",
+   "chartsWidgetRefreshTTLBagValue",
+   "chartDescriptorsRefreshTTLBagValue",
+   "recentlyPlayedRemoteQueriesEnabledBagValue",
+   "recentlyPlayedRemoteQueriesEnabledOverride"
+  ],
+  "MusicWidgets:MusicCore.MenuType": [
+   "topLevel",
+   "quickAction",
+   "top",
+   "library",
+   "playlist",
+   "playback",
+   "daffodil",
+   "navigation",
+   "taste",
+   "reporting",
+   "pinAction",
+   "destructive",
+   "playlistSort",
+   "goTo"
+  ],
+  "MusicWidgets:MusicCore.ActionType": [
+   "addToLibrary",
+   "download",
+   "favorite",
+   "undoFavorite",
+   "share",
+   "play",
+   "shuffle",
+   "pin",
+   "unpin",
+   "createPlaylist",
+   "createFolder",
+   "addToPlaylist",
+   "playlistEdit",
+   "collaboration",
+   "playlistSortTrackList",
+   "playlistSortTitle",
+   "playlistSortArtist",
+   "playlistSortAlbum",
+   "playlistSortReleaseDate",
+   "renameFolder",
+   "moveToFolder",
+   "queueMoveToTop",
+   "playNext",
+   "addToQueue",
+   "playLast",
+   "playAfter",
+   "previewOnlyForMe",
+   "createStation",
+   "daffodilItem",
+   "goToPlaylist",
+   "goToPlaylistFolder",
+   "goToAlbum",
+   "goToArtist",
+   "showSongCredits",
+   "viewFullLyrics",
+   "shareLyrics",
+   "openInClassical",
+   "suggestLess",
+   "undoSuggestLess",
+   "rateSong",
+   "creditsReportConcern",
+   "lyricsReportConcern",
+   "playlistReportConcern",
+   "socialReportConcern",
+   "searchResultsReportAConcern",
+   "updatePinActionPlay",
+   "updatePinActionShuffle",
+   "updatePinActionNavigate",
+   "removeFromPlaylist",
+   "removeDownload",
+   "deleteFromLibrary",
+   "remove",
+   "createQueuePlaylist"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.Click.ActionDetails.Key.DestinationType": [
+   "library",
+   "playlist"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.Click.ActionDetails.Key.PlayType": [
+   "createStation"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.Click.ActionDetails.Key.NavigationType": [
+   "Album",
+   "Artist",
+   "Playlist",
+   "ReportAConcern"
+  ],
+  "MusicWidgets:MusicCore.Actions.DeleteOrRemoveDownload.Choice": [
+   "removeDownload",
+   "deleteFromLibrary",
+   "cancel"
+  ],
+  "MusicWidgets:MusicCore.Actions.SortPlaylist.TrackListSort.Option": [
+   "playlistOrder",
+   "title",
+   "artist",
+   "album",
+   "releaseDate",
+   "unknown"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.TargetType": [
+   "Album",
+   "AlbumDetail",
+   "app",
+   "Artist",
+   "banner",
+   "button",
+   "bubbleTip",
+   "Card",
+   "contextualActions",
+   "filter",
+   "HeaderItem",
+   "HintListItem",
+   "key",
+   "link",
+   "lyricLine",
+   "ListItem",
+   "pin",
+   "Playlist",
+   "PlaylistDetail",
+   "ContentListItem",
+   "slider",
+   "Song",
+   "suggestion",
+   "textBox",
+   "Upsell",
+   "ShelfItem",
+   "GridItem"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.Page.DisplayType": [
+   "cardView"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.Click.ActionType": [
+   "action",
+   "actionSheet",
+   "activate",
+   "add",
+   "addSongs",
+   "addToLibrary",
+   "addToQueue",
+   "adjust",
+   "beginPlayback",
+   "cancel",
+   "collaborate",
+   "create",
+   "createStation",
+   "showContextualActions",
+   "download",
+   "deactivate",
+   "delete",
+   "deselect",
+   "description",
+   "disable",
+   "dismiss",
+   "edit",
+   "editCover",
+   "enable",
+   "favorite",
+   "unfavorite",
+   "hate",
+   "unhate",
+   "hint",
+   "input",
+   "navigate",
+   "pin",
+   "unpin",
+   "play",
+   "playAfter",
+   "playLater",
+   "playNext",
+   "react",
+   "redo",
+   "removeDownload",
+   "removeDownloadOrFromLibrary",
+   "removeFromPlaylist",
+   "reorder",
+   "reportConcern",
+   "save",
+   "search",
+   "seek",
+   "select",
+   "setPinActionPlay",
+   "setPinActionShuffle",
+   "setPinActionGoTo",
+   "share",
+   "sharedListening",
+   "shareLyrics",
+   "showLyrics",
+   "showOnProfile",
+   "shuffle",
+   "start",
+   "stop",
+   "submit",
+   "toggle",
+   "undo",
+   "viewAlbum",
+   "viewArtist",
+   "viewCredits",
+   "viewPlaylist",
+   "preview",
+   "pause",
+   "refresh",
+   "sing"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.Dialog.Type": [
+   "Ok",
+   "OkCancel"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.Dialog.ActionType": [
+   "ok",
+   "cancelClicked"
+  ],
+  "MusicWidgets:MusicCore.MetricsEvent.ComponentRender.PreloadStatus": [
+   "full",
+   "partial",
+   "placeholder",
+   "previouslyShown"
+  ],
+  "MusicWidgets:MusicCore.MetricsContentType": [
+   "album",
+   "playlist",
+   "song",
+   "artist",
+   "socialPerson",
+   "movie",
+   "tvShow",
+   "tvEpisode",
+   "composer",
+   "creditsArtist",
+   "curator",
+   "genre",
+   "radioStation",
+   "search",
+   "artistUploadedAudio",
+   "artistUploadedVideo",
+   "tvSeason",
+   "playlistEntry",
+   "libraryItem",
+   "recordLabel"
+  ],
+  "MusicWidgets:MusicCore.ApplicationCapabilities.Service": [
+   "music",
+   "musicVideos",
+   "subscriptionRelated",
+   "social",
+   "radio",
+   "itunes",
+   "groupActivity",
+   "explicitContent",
+   "accountModification",
+   "sharePlayTogether",
+   "libraryImportEnabled",
+   "playlistGeneration"
+  ],
+  "MusicWidgets:MusicCore.ApplicationCapabilities.SubscriptionState": [
+   "undecided",
+   "classic",
+   "subscriber",
+   "voiceSubscriber"
+  ],
+  "MusicWidgets:MusicCore.extension.Key": [
+   "UserRequestedSubscriptionHidden",
+   "LastKnownStoreBagMusicTabsDictionary",
+   "allowsPumpkinContent"
+  ],
+  "MusicWidgets:MusicCore.BackgroundTaskConfiguration.UserDefaultsKey": [
+   "forceBackgroundRefreshPinnedSubscribedPlaylists",
+   "lastBackgroundRefreshPinnedSubscribedPlaylistsDate",
+   "forceBackgroundRefreshServerLandingPages",
+   "lastBackgroundRefreshServerLandingPages"
+  ],
+  "MusicWidgets:MusicCore.BackgroundTaskConfiguration.Identifier": [
+   "updateSubscribedPlaylists",
+   "updateServerLandingPages"
+  ],
+  "MusicWidgets:MusicCore.TabIdentifier": [
+   "library",
+   "listenNow",
+   "browse",
+   "radio",
+   "search",
+   "videos",
+   "playlists"
+  ],
+  "MusicWidgets:MusicCore.BagTabIdentifier": [
+   "my_music",
+   "for_you",
+   "listen_now",
+   "browse",
+   "radio",
+   "search",
+   "video"
+  ],
+  "MusicWidgets:MusicCore.Collaboration.Manager.DeepLinkType": [
+   "join",
+   "pending"
+  ],
+  "MusicWidgets:MusicCore.extension.MediaKitPlayableKind": [
+   "songs",
+   "tv-episodes",
+   "tv-shows",
+   "uploaded-audios",
+   "uploaded-videos",
+   "stations",
+   "music-videos",
+   "music-movies",
+   "playlists",
+   "albums"
+  ],
+  "MusicWidgets:MusicCore.extension.FavoriteStatus": [
+   "favorited",
+   "neutral",
+   "disliked",
+   "unsupported"
+  ],
+  "MusicWidgets:MusicCore.extension.MobileiPod": [
+   "UserRequestedSubscriptionHidden"
+  ],
+  "MusicWidgets:MusicCore.Library.ContentFilterOption": [
+   "all",
+   "favorites",
+   "downloads"
+  ],
+  "MusicWidgets:MusicCore.Library.Menu.Identifier": [
+   "com.apple.Music.LibraryView.RecentlyAdded",
+   "com.apple.Music.LibraryView.Playlists",
+   "com.apple.Music.LibraryView.Artists",
+   "com.apple.Music.LibraryView.Albums",
+   "com.apple.Music.LibraryView.Songs",
+   "com.apple.Music.LibraryView.MadeForYou",
+   "com.apple.Music.LibraryView.MusicVideos",
+   "com.apple.Music.LibraryView.Genres",
+   "com.apple.Music.LibraryView.Compilations",
+   "com.apple.Music.LibraryView.Composers",
+   "com.apple.Music.LibraryView.Shows",
+   "com.apple.Music.LibraryView.Downloaded",
+   "com.apple.Music.LibraryView.Downloading"
+  ],
+  "MusicWidgets:MusicCore.Library.Menu.Revision.CodingKeys": [
+   "selected",
+   "all",
+   "version"
+  ],
+  "MusicWidgets:MusicCore.extension.LegacyKey": [
+   "orderedLibraryViewIdentifiers",
+   "activeLibraryViewIdentifiers"
+  ],
+  "MusicWidgets:MusicCore.Library.SortConfiguration": [
+   "albums",
+   "artists",
+   "compilations",
+   "madeForYou",
+   "musicVideos",
+   "playlists",
+   "songs"
+  ],
+  "MusicWidgets:MusicCore.SortOptions.SortType": [
+   "ByPlaylistOrderAscending",
+   "ByPlaylistOrderDescending",
+   "ByTitle",
+   "ByLibraryAddedDate",
+   "ByLastDevicePlaybackDate",
+   "ByLastModifiedDate",
+   "ByArtist",
+   "ByAlbum",
+   "ByPlaylistType",
+   "ByDescendingYear",
+   "ByAscendingYear",
+   "ByReleaseDateAscending",
+   "ByReleaseDateDescending"
+  ],
+  "MusicWidgets:MusicCore.PlaylistCovers.RecipeColors.CompositeColors": [
+   "color1",
+   "color2",
+   "color3",
+   "color4"
+  ],
+  "MusicWidgets:MusicCore.UnifiedMessages.MLI.State": [
+   "privacyAcknowledgementRequired",
+   "unknown",
+   "inProgress",
+   "completed"
+  ],
+  "MusicWidgets:MusicCore.UnifiedMessages.GroupDefaultsKey": [
+   "countOfPlaylistsInLibrary",
+   "countOfSongsInLibrary"
+  ],
+  "MusicWidgets:MusicCore.ClassicalBridge.Type": [
+   "artist",
+   "album"
+  ],
+  "MusicWidgets:MusicCore.extension.PresentationObserver.State": [
+   "presenting",
+   "presented",
+   "dismissing",
+   "dismissed"
+  ],
+  "MusicWidgets:MusicCoreUI.ImagePicker.SourceType": [
+   "camera",
+   "photoLibrary",
+   "files",
+   "imagePlayground"
+  ],
+  "MusicWidgets:MusicCoreUI.BouncyBarsAsset.BarAnimationKey": [
+   "cannedHeightAnimation",
+   "cannedWidthAnimation",
+   "cannedCornerAnimation"
+  ],
+  "MusicWidgets:MusicUtilities.RomanNumerals": [
+   "M",
+   "CM",
+   "D",
+   "CD",
+   "C",
+   "XC",
+   "L",
+   "XL",
+   "X",
+   "IX",
+   "V",
+   "IV",
+   "I"
+  ]
+ }
+}
