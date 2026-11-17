@@ -68,7 +68,13 @@ await rm(work, { force: true, recursive: true });
 await mkdir(output, { recursive: true });
 const cache = await fetchSharedCache(build.ipsw, `${work}/cache`);
 const apps = await fetchMusicApp(build.ipsw, device, `${work}/apps`);
-await extract(["run", cache, output, ...apps]);
+await extract([
+  "run",
+  cache,
+  output,
+  ...apps.binaries,
+  ...(apps.flags ? ["--flags", apps.flags] : []),
+]);
 
 const previous = await readJson<Build>(buildPath);
 await mkdir(nativeDir, { recursive: true });

@@ -11,6 +11,7 @@ from extract.catalog.snapshot import snapshot
 from extract.files import symbols_path, write_json
 from extract.metadata import discover
 from extract.metadata.codingkeys import types_of
+from extract.metadata.featureflags import declared_flags, target_flags
 from extract.metadata.modeltypes import model_types
 from extract.metadata.properties import properties
 from extract.metadata.resourcetypes import resource_types
@@ -20,7 +21,7 @@ from extract.trace.definitions import definitions
 from extract.trace.run import trace_target
 from extract.usage.apiuse import request_sites
 
-symbol_images = ("libswiftCore.dylib", "Foundation", "MusicKit", "MusicKitInternal")
+symbol_images = ("libswiftCore.dylib", "Foundation", "MusicKit", "MusicKitInternal", "libsystem_featureflags.dylib")
 property_images = ("MusicKit", "MusicKitInternal")
 discover_chunks = 16
 marker_chunks = 32
@@ -79,6 +80,10 @@ def target_definitions(cache_dir, target, symbol_files, vocabulary):
         return [{"image": opened.name, "error": repr(error)[:200]}]
 
 
+def flags_of(cache_dir, target, symbol_files):
+    return target_flags(open_target(cache_dir, target, symbol_files))
+
+
 def trace_to_file(cache_dir, target, symbol_files, out_dir):
     started = time.time()
     result = trace_target(cache_dir, target, symbol_files)
@@ -96,10 +101,11 @@ def target_inventory(cache_dir, target):
 
 
 class Pipeline:
-    def __init__(self, cache_dir, out_dir, apps):
+    def __init__(self, cache_dir, out_dir, apps, flags_dir=None):
         self.cache_dir = cache_dir
         self.out_dir = out_dir
         self.apps = apps
+        self.flags_dir = flags_dir
         self.timings = {}
         os.makedirs(os.path.join(out_dir, "requests"), exist_ok=True)
 
@@ -142,6 +148,9 @@ class Pipeline:
         definition_targets = discovered + list(self.apps)
         definition_rows = self.timed("definitions", lambda: [row for part in self.each(target_definitions, definition_targets, tracing, vocabulary) for row in part])
         write_json(self.path("definitions.json"), definition_rows)
+        flag_targets = list(dict.fromkeys(targets + definition_targets))
+        flag_rows = self.timed("featureflags", lambda: [row for part in self.each(flags_of, flag_targets, [symbols["libsystem_featureflags.dylib"]]) for row in part])
+        write_json(self.path("featureflags.json"), {"used": flag_rows, "declared": declared_flags(self.flags_dir)})
         traced = self.timed("requests", lambda: self.each(trace_to_file, targets, tracing, self.out_dir, max_workers=max(2, workers // 2)))
         usage_targets = [target for target in targets if target != "MusicKit"] + [app for app in self.apps if app not in targets]
         usage = self.timed("apiuse", lambda: [site for part in self.each(target_request_sites, usage_targets, tracing) for site in part])

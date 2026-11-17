@@ -1,6 +1,12 @@
 substring_evidence_length = 6
 
 
+def flag_state(attributes):
+    if not isinstance(attributes, dict):
+        return str(attributes)
+    return ", ".join(f"{key}={value}" for key, value in sorted(attributes.items()) if not isinstance(value, (dict, list)))
+
+
 def catalog_items(catalog):
     found = {}
     for type_name, keys in catalog["codingKeys"].items():
@@ -35,6 +41,11 @@ def catalog_items(catalog):
     for name, values in catalog.get("enums", {}).items():
         for value in values:
             found[("enum", name, value)] = value
+    for name, flag in catalog.get("featureFlags", {}).items():
+        feature = name.split("/", 1)[-1]
+        found[("flag", name, "")] = feature
+        if "declared" in flag:
+            found[("flag-state", name, flag_state(flag["declared"]))] = feature
     for name, calls in catalog.get("definitions", {}).items():
         for arguments in calls:
             if arguments.get("x0"):
@@ -84,6 +95,8 @@ def still_present(evidence, strings):
 
 def compare(old_catalog, new_catalog, new_strings, symbol_texts):
     old, new = catalog_items(old_catalog), catalog_items(new_catalog)
+    if "featureFlags" not in old_catalog:
+        new = {item: evidence for item, evidence in new.items() if not item[0].startswith("flag")}
     moved = moved_types(old_catalog, new_catalog)
     lost = [item for item in old if item not in new and not (item[0] in ("key", "enum") and item[1] in moved)]
     gained = [item for item in new if item not in old]

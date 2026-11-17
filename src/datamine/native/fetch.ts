@@ -2,6 +2,8 @@ import path from "node:path";
 
 const musicFiles =
   "staged_system_apps/Music\\.app/(Music|Frameworks/MusicApplication\\.framework/MusicApplication|(PlugIns|Extensions)/[^/]+\\.appex/[^/.]+)$";
+const featureFlagFiles = "System/Library/FeatureFlags/.+\\.plist$";
+const featureFlagDomain = /^(?<root>.+\/System\/Library\/FeatureFlags)\//u;
 const appexBinary = /\/(?<name>[^/]+)\.appex\/(?<binary>[^/]+)$/u;
 const mountCopy = "/private/tmp/";
 
@@ -65,7 +67,7 @@ export const fetchMusicApp = async (
     "--device",
     device,
     "--pattern",
-    musicFiles,
+    `(${musicFiles}|${featureFlagFiles})`,
     "--remote",
     url,
     "--output",
@@ -76,5 +78,9 @@ export const fetchMusicApp = async (
   if (!binaries.some((file) => file.endsWith("/Music.app/Music"))) {
     throw new FetchError(`Music.app binary not found under ${dir}`);
   }
-  return binaries;
+  const plists = await find(dir, "**/FeatureFlags/**/*.plist");
+  const flags = plists
+    .map((file) => file.match(featureFlagDomain)?.groups?.root)
+    .find(Boolean);
+  return { binaries, flags };
 };

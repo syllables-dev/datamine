@@ -12,6 +12,7 @@ type NativeSectionName =
   | "lookups"
   | "fields"
   | "resourceTypes"
+  | "featureFlags"
   | "other";
 
 export const nativeSectionNames: NativeSectionName[] = [
@@ -21,11 +22,13 @@ export const nativeSectionNames: NativeSectionName[] = [
   "lookups",
   "fields",
   "resourceTypes",
+  "featureFlags",
   "other",
 ];
 
 export const nativeTitles: Record<NativeSectionName, string> = {
   endpoints: "Endpoints",
+  featureFlags: "Feature flags",
   fields: "Response fields",
   lookups: "Catalog lookups",
   methods: "Methods",
@@ -37,6 +40,8 @@ export const nativeTitles: Record<NativeSectionName, string> = {
 const sectionOf: Record<string, NativeSectionName> = {
   "caller-param": "lookups",
   "caller-request": "lookups",
+  flag: "featureFlags",
+  "flag-state": "featureFlags",
   key: "fields",
   method: "methods",
   request: "endpoints",
@@ -68,6 +73,12 @@ const describe = ([kind, scope, value]: RegressionItem) => {
     }
     case "type": {
       return `${scope} = ${value}`;
+    }
+    case "flag": {
+      return scope;
+    }
+    case "flag-state": {
+      return `${scope} (${value || "declared"})`;
     }
     default: {
       return [kind, scope, value].filter(Boolean).join(" ");

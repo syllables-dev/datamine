@@ -181,6 +181,20 @@ def known_anchors(types, resource_types, definition_rows):
     return anchors
 
 
+def feature_flags(rows):
+    used = defaultdict(set)
+    for row in rows["used"]:
+        if row.get("domain") and row.get("feature"):
+            used[f"{row['domain']}/{row['feature']}"].add(row["image"])
+    declared = rows["declared"]
+    domains = {name.split("/", 1)[0] for name in used}
+    flags = {name: {"images": sorted(images)} for name, images in used.items()}
+    for domain in domains:
+        for feature, attributes in declared.get(domain, {}).items():
+            flags.setdefault(f"{domain}/{feature}", {"images": []})["declared"] = attributes
+    return dict(sorted(flags.items()))
+
+
 def assemble(out_dir):
     types = output(out_dir, "types.json")
     resource_types = output(out_dir, "resourcetypes.json")
@@ -218,5 +232,6 @@ def assemble(out_dir):
         "hosts": {host: sorted(images) for host, images in sorted(hosts.items())},
         "headers": {name: sorted(images) for name, images in sorted(headers.items())},
         "fieldMappings": {image: sorted(values) for image, values in sorted(mappings.items())},
+        "featureFlags": feature_flags(output(out_dir, "featureflags.json")),
         "unexplained": {"params": {name: sorted(inventory_params[name]) for name in unexplained_params}, "kebab": unexplained_kebab},
     }

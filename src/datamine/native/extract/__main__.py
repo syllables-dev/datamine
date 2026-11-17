@@ -22,7 +22,7 @@ def symbol_texts(out_dir):
 
 
 def run(arguments):
-    Pipeline(arguments.cache, arguments.out, arguments.apps).run()
+    Pipeline(arguments.cache, arguments.out, arguments.apps, arguments.flags).run()
 
 
 def regress(arguments):
@@ -38,6 +38,7 @@ def main():
     run_command.add_argument("cache")
     run_command.add_argument("out")
     run_command.add_argument("apps", nargs="*")
+    run_command.add_argument("--flags")
     run_command.set_defaults(handler=run)
     regress_command = commands.add_parser("regress")
     regress_command.add_argument("previous")
