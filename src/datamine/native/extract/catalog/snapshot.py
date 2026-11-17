@@ -1,4 +1,7 @@
 import json
+import os
+
+from extract.files import read_json, write_json
 
 dropped_request_fields = ("variants", "paramSeen")
 
@@ -37,3 +40,32 @@ def snapshot(catalog):
         "callerRequests": {path: {**record, "sources": images_of(record["sources"])} for path, record in catalog["callerRequests"].items()},
         "definitions": definitions_by_image(catalog["definitions"]),
     }
+
+
+snapshot_files = {
+    "api": ("requests", "derivedRequests", "callerRequests", "hosts", "paths", "inventoryPaths", "headers", "params"),
+    "models": ("codingKeys", "fieldMappings", "resourceTypes", "resources"),
+    "enums": ("enums",),
+    "definitions": ("definitions",),
+    "flags": ("featureFlags",),
+    "unexplained": ("unexplained",),
+}
+snapshot_file_of = {section: name for name, sections in snapshot_files.items() for section in sections}
+
+
+def write_snapshot(directory, data):
+    os.makedirs(directory, exist_ok=True)
+    files = {name: {} for name in snapshot_files}
+    for section, value in data.items():
+        files[snapshot_file_of[section]][section] = value
+    for name, sections in files.items():
+        write_json(os.path.join(directory, f"{name}.json"), sections)
+
+
+def read_snapshot(directory):
+    data = {}
+    for name in snapshot_files:
+        path = os.path.join(directory, f"{name}.json")
+        if os.path.exists(path):
+            data.update(read_json(path))
+    return data

@@ -1,4 +1,4 @@
-import { mkdir, rm } from "node:fs/promises";
+import { cp, mkdir, rm } from "node:fs/promises";
 import { parseArgs } from "node:util";
 
 import { reportsDir } from "@/config";
@@ -60,7 +60,7 @@ const buildFromArgs = (): Build => {
 const build = buildFromArgs();
 const work = `${reportsDir}/native/${build.build}`;
 const output = `${work}/output`;
-const snapshotPath = `${nativeDir}/catalog.json`;
+const snapshotDir = `${nativeDir}/catalog`;
 const buildPath = `${nativeDir}/build.json`;
 const regressionPath = `${nativeDir}/regression.json`;
 
@@ -78,8 +78,8 @@ await extract([
 
 const previous = await readJson<Build>(buildPath);
 await mkdir(nativeDir, { recursive: true });
-if (previous && (await Bun.file(snapshotPath).exists())) {
-  await extract(["regress", snapshotPath, output, `${work}/regression.json`]);
+if (previous && (await Bun.file(`${snapshotDir}/api.json`).exists())) {
+  await extract(["regress", snapshotDir, output, `${work}/regression.json`]);
   const changes = await readJson<Regression>(`${work}/regression.json`);
   await Bun.write(
     regressionPath,
@@ -88,7 +88,8 @@ if (previous && (await Bun.file(snapshotPath).exists())) {
 } else {
   await rm(regressionPath, { force: true });
 }
-await Bun.write(snapshotPath, await Bun.file(`${output}/snapshot.json`).text());
+await rm(snapshotDir, { force: true, recursive: true });
+await cp(`${output}/snapshot`, snapshotDir, { recursive: true });
 await Bun.write(buildPath, json(build));
 console.log(
   `Extracted ${build.version} (${build.build})${previous ? ` after ${previous.build}` : ", first snapshot"}`

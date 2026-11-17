@@ -3,6 +3,7 @@ import json
 import os
 
 from extract.catalog.regress import compare
+from extract.catalog.snapshot import read_snapshot
 from extract.files import read_json, symbols_path, write_json
 from extract.pipeline import Pipeline, symbol_images
 
@@ -26,7 +27,7 @@ def run(arguments):
 
 
 def regress(arguments):
-    report = compare(read_json(arguments.previous), read_json(os.path.join(arguments.out, "snapshot.json")), all_strings(arguments.out), symbol_texts(arguments.out))
+    report = compare(read_snapshot(arguments.previous), read_snapshot(os.path.join(arguments.out, "snapshot")), all_strings(arguments.out), symbol_texts(arguments.out))
     write_json(arguments.report, report)
     print(json.dumps({key: len(value) for key, value in report.items()}))
 
