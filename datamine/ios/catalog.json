@@ -88,6 +88,26 @@
    "inferredParams": true
   },
   {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "api",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "deleteOAuthSocialNetwork",
+   "params": {
+    "network": [
+     "{x}"
+    ]
+   },
+   "headers": {},
+   "body": false,
+   "sources": [
+    "MusicApplication"
+   ],
+   "inferredParams": false
+  },
+  {
    "methodSource": "set on request",
    "possibleMethods": [],
    "category": "api",
@@ -156,6 +176,22 @@
    "body": true,
    "sources": [
     "MusicApplication"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "api",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/v1/me/purchases",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "VideosUI"
    ],
    "inferredParams": false
   },
@@ -736,10 +772,10 @@
    "inferredParams": false
   },
   {
-   "methodSource": "Foundation default",
+   "methodSource": "set in same (async) function",
    "possibleMethods": [],
    "category": "api",
-   "method": "GET",
+   "method": "DELETE",
    "scheme": null,
    "host": "music.apple.com",
    "path": "/",
@@ -1466,7 +1502,8 @@
      "{none}"
     ],
     "types": [
-     "{x}"
+     "{x}",
+     "{x},{x}"
     ],
     "with": [
      "naturalLanguage"
@@ -1555,7 +1592,8 @@
      "implicit"
     ],
     "charts": [
-     "{x}"
+     "{x}",
+     "{x},{x}"
     ],
     "fields": [
      "geoLocation"
@@ -1573,10 +1611,12 @@
      "{x}"
     ],
     "types": [
-     "{x}"
+     "{x}",
+     "{x},{x}"
     ],
     "with": [
-     "{x}"
+     "{x}",
+     "{x},{x}"
     ]
    },
    "headers": {},
@@ -1708,8 +1748,7 @@
      "{x}"
     ],
     "types": [
-     "{x}",
-     "{x},{x}"
+     "{x}"
     ],
     "with": [
      "serverBubbles",
@@ -1806,7 +1845,8 @@
      "{none}"
     ],
     "types": [
-     "{x}"
+     "{x}",
+     "{x},{x}"
     ],
     "with": [
      "naturalLanguage"
@@ -1962,9 +2002,6 @@
     ],
     "types": [
      "songs"
-    ],
-    "with": [
-     "ephemeralPlaylist"
     ]
    },
    "headers": {},
@@ -2597,6 +2634,24 @@
     ],
     "Title": [
      "{x}"
+    ],
+    "app": [
+     "music"
+    ],
+    "itscg": [
+     "50400"
+    ],
+    "itsct": [
+     "sharing_ig"
+    ],
+    "redirect_uri": [
+     "{x}"
+    ],
+    "request_id": [
+     "{x}"
+    ],
+    "share_url": [
+     "{x}"
     ]
    },
    "headers": {},
@@ -2604,7 +2659,7 @@
    "sources": [
     "Music"
    ],
-   "inferredParams": false
+   "inferredParams": true
   },
   {
    "methodSource": "set on request",
@@ -2756,6 +2811,9 @@
      "0"
     ],
     "ids": [
+     "{x}"
+    ],
+    "ign-{x}": [
      "{x}"
     ],
     "includeChannels": [
@@ -3238,26 +3296,6 @@
    "body": false,
    "sources": [
     "VideosUI"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
-   "path": "deleteOAuthSocialNetwork",
-   "params": {
-    "network": [
-     "{x}"
-    ]
-   },
-   "headers": {},
-   "body": false,
-   "sources": [
-    "MusicApplication"
    ],
    "inferredParams": false
   },
@@ -3772,9 +3810,6 @@
      "{none}",
      "{x}"
     ],
-    "l[client]": [
-     "{none}"
-    ],
     "limit[tracks]": [
      "99999"
     ],
@@ -3943,6 +3978,22 @@
    "body": false,
    "sources": [
     "SafariSharedUI"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/.",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "MigrationKit"
    ],
    "inferredParams": false
   },
@@ -4130,6 +4181,70 @@
    "scheme": null,
    "host": null,
    "path": "{x}/Engagement",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "UnifiedMessagingKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/Engagement/analytics/database/app{x}.db",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "UnifiedMessagingKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/Engagement/internal/database/app{x}.db",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "UnifiedMessagingKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/Engagement/journeys/database/app{x}.db",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "UnifiedMessagingKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "Foundation default",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "GET",
+   "scheme": null,
+   "host": null,
+   "path": "{x}/Engagement/recommendations/database/app{x}.db",
    "params": {},
    "headers": {},
    "body": false,
@@ -5529,22 +5644,6 @@
    "method": "GET",
    "scheme": null,
    "host": null,
-   "path": "{x}/export",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "MigrationKit"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
    "path": "{x}/filecontent",
    "params": {},
    "headers": {},
@@ -5705,39 +5804,7 @@
    "method": "GET",
    "scheme": null,
    "host": null,
-   "path": "{x}/internal/database/app{x}.db",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "UnifiedMessagingKit"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
    "path": "{x}/internal/jetpackByteCode",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "UnifiedMessagingKit"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
-   "path": "{x}/journeys/database/app{x}.db",
    "params": {},
    "headers": {},
    "body": false,
@@ -6090,22 +6157,6 @@
    "method": "GET",
    "scheme": null,
    "host": null,
-   "path": "{x}/recommendations/database/app{x}.db",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "UnifiedMessagingKit"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
    "path": "{x}/resources",
    "params": {},
    "headers": {},
@@ -6192,22 +6243,6 @@
    "body": false,
    "sources": [
     "SwiftData"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
-   "path": "{x}/show/{x}",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "TVAppServices"
    ],
    "inferredParams": false
   },
@@ -6554,70 +6589,6 @@
    "method": "GET",
    "scheme": null,
    "host": null,
-   "path": "{x}/unknown_{x}.har",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "AppleMediaServices"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
-   "path": "{x}/unknown_{x}.temp",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "AppleMediaServices"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
-   "path": "{x}/unknown_{x}_{x}.har",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "AppleMediaServices"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
-   "path": "{x}/unknown_{x}_{x}.temp",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "AppleMediaServices"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
    "path": "{x}/unsafe-styles-{x}.css",
    "params": {},
    "headers": {},
@@ -6744,9 +6715,7 @@
      "Cannot save playlist",
      "Cannot save playlist `{x}`",
      "Please attach a sysdiagnose, screenshot, timestamp",
-     "{none}",
-     "{x}",
-     "{x}Please attach a sysdiagnose, screenshot, timestamp.\n\n\n{x}"
+     "{x}"
     ],
     "IncludeDevicePrefixInTitle": [
      "1"
@@ -6760,7 +6729,6 @@
     "Title": [
      "Collaboration: Unexpected error",
      "Unable to save playlist",
-     "[Anthem] TTR: Server Error",
      "{none}",
      "{x}"
     ],
@@ -7435,54 +7403,6 @@
    "method": "GET",
    "scheme": null,
    "host": null,
-   "path": "{x}/{x}_{x}.har",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "AppleMediaServices"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
-   "path": "{x}/{x}_{x}.temp",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "AppleMediaServices"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
-   "path": "{x}/{x}_{x}_{x}.temp",
-   "params": {},
-   "headers": {},
-   "body": false,
-   "sources": [
-    "AppleMediaServices"
-   ],
-   "inferredParams": false
-  },
-  {
-   "methodSource": "Foundation default",
-   "possibleMethods": [],
-   "category": "other",
-   "method": "GET",
-   "scheme": null,
-   "host": null,
    "path": "{x}/{x}catalog-.json",
    "params": {},
    "headers": {},
@@ -7919,6 +7839,22 @@
    "inferredParams": true
   },
   {
+   "methodSource": "set in same (async) function",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "DELETE",
+   "scheme": null,
+   "host": "creativekit",
+   "path": "/preview/1",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "Music"
+   ],
+   "inferredParams": false
+  },
+  {
    "methodSource": "Foundation default",
    "possibleMethods": [],
    "category": "other",
@@ -8190,10 +8126,8 @@
      "Cannot save playlist",
      "Cannot save playlist `{x}`",
      "Please attach a sysdiagnose, screenshot, timestamp",
-     "{none}",
      "{x}",
-     "{x}Attempted to perform unsupported action.\n\n\nError: {x}\n\nActionable State: {x} with overriding status of {x}",
-     "{x}Please attach a sysdiagnose, screenshot, timestamp.\n\n\n{x}"
+     "{x}Attempted to perform unsupported action.\n\n\nError: {x}\n\nActionable State: {x} with overriding status of {x}"
     ],
     "IncludeDevicePrefixInTitle": [
      "1"
@@ -8210,7 +8144,6 @@
     "Title": [
      "Collaboration: Unexpected error",
      "Unable to save playlist",
-     "[Anthem] TTR: Server Error",
      "{none}",
      "{x}",
      "{x}: {x}"
@@ -8624,6 +8557,26 @@
    "inferredParams": false
   },
   {
+   "methodSource": "set in same (async) function",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "DELETE",
+   "scheme": null,
+   "host": "share",
+   "path": "",
+   "params": {
+    "source_application": [
+     "602231459918900"
+    ]
+   },
+   "headers": {},
+   "body": false,
+   "sources": [
+    "Music"
+   ],
+   "inferredParams": false
+  },
+  {
    "methodSource": "Foundation default",
    "possibleMethods": [],
    "category": "other",
@@ -8819,6 +8772,22 @@
    "inferredParams": false
   },
   {
+   "methodSource": "set in same (async) function",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "DELETE",
+   "scheme": null,
+   "host": "wa.me",
+   "path": "/media-share-external",
+   "params": {},
+   "headers": {},
+   "body": false,
+   "sources": [
+    "Music"
+   ],
+   "inferredParams": false
+  },
+  {
    "methodSource": "Foundation default",
    "possibleMethods": [],
    "category": "other",
@@ -8879,6 +8848,26 @@
    "body": false,
    "sources": [
     "WorkflowKit"
+   ],
+   "inferredParams": false
+  },
+  {
+   "methodSource": "set in same (async) function",
+   "possibleMethods": [],
+   "category": "other",
+   "method": "DELETE",
+   "scheme": null,
+   "host": "www.tiktok.com",
+   "path": "/opensdk/share/music",
+   "params": {
+    "client_key": [
+     "awluco1oowhb7pga"
+    ]
+   },
+   "headers": {},
+   "body": false,
+   "sources": [
+    "Music"
    ],
    "inferredParams": false
   },
@@ -10959,12 +10948,14 @@
      "{ids}"
     ],
     "include": [
-     "genres"
+     "genres",
+     "playlists"
     ]
    },
    "sources": [
     "Music",
     "MusicApplication",
+    "MusicKitInternal",
     "MusicMessagesApp",
     "MusicWidgets"
    ]
@@ -11137,7 +11128,6 @@
    "MPModelPropertyAlbumEditorialArtworks",
    "MPModelPropertyAlbumExpectedReleaseDateComponents",
    "MPModelPropertyAlbumDateFavorited",
-   "MPModelPropertyAlbumHasAllTracks",
    "MPModelPropertyAlbumHasCleanContent",
    "MPModelPropertyAlbumHasExplicitContent",
    "MPModelPropertyAlbumClassicalExperienceAvailable",
@@ -12384,7 +12374,6 @@
    "Eyebrows",
    "SynchronizedTimer",
    "Privacy",
-   "Bag",
    "Lifecycle",
    "ListenNow",
    "UI",
@@ -12927,8 +12916,7 @@
    "video"
   ],
   "PodcastsFoundation:PodcastsFoundation.PodcastsBagFeatureFlags.Key": [
-   "podcasts-unttsd-enabled",
-   "podcasts-cncd-enabled"
+   "podcasts-unttsd-enabled"
   ],
   "GameServicesCore:GameServicesCore.Challenge.ChallengeType": [
    "LEADERBOARD"
@@ -13418,64 +13406,592 @@
    "topAoi",
    "home"
   ],
-  "AdaptiveMusic:AdaptiveMusic.Mood.ID": [
-   "productivity",
-   "chill",
-   "sleep",
-   "wellbeing",
-   "custom"
+  "SwiftData:SwiftData.ModelContext.NotificationKey": [
+   "newQueryGeneration",
+   "invalidatedAll",
+   "inserted",
+   "updated",
+   "deleted",
+   "historyTokens"
   ],
-  "AdaptiveMusic:AdaptiveMusic.Mood.ContentType": [
-   "appleMusic",
-   "uploadedAudio",
-   "userLibrary"
+  "SwiftData:SwiftData.Schema.Relationship.DeleteRule": [
+   "noAction",
+   "nullify",
+   "cascade",
+   "deny"
   ],
-  "AdaptiveMusic:AdaptiveMusic.SupportedMetadata": [
+  "SwiftData:SwiftData.Schema.Attribute.Option.Coders.CodingKeys": [
+   "coder",
+   "customCoderClassName"
+  ],
+  "SwiftData:SwiftData.PersistentIdentifierImplementation.Scheme": [
+   "x-swiftdata",
+   "x-coredata",
+   "developer-provided"
+  ],
+  "AppleMediaServices:AppleMediaServices.ActionPayloadKey": [
+   "actionKind"
+  ],
+  "AppleMediaServices:AppleMediaServices.PIAccountKeypair.CodingKeys": [
+   "privateKeyData"
+  ],
+  "AppleMediaServices:AppleMediaServices.PIDeviceKeypair.CodingKeys": [
+   "privateKeyData"
+  ],
+  "AppleMediaServices:AppleMediaServices.PIScheduledRotationConfigurationUpdate.Behavior": [
+   "rotateNow",
+   "rotateAccordingToUpdatedSchedule",
+   "resetLastRotationDateToNow"
+  ],
+  "AppleMediaServices:AppleMediaServices.URLSentryBag.CodingKeys": [
+   "trustedDomains",
+   "schemesThatOverrideTrustedDomains",
+   "restrictedUrls",
+   "redirects-explicitly-allowed"
+  ],
+  "AppleMediaServices:AppleMediaServices.DocumentType": [
+   "idCardFront",
+   "idCardBack"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfigRotationBehavior": [
+   "now",
+   "updatedSchedule",
+   "lastRotationDate"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModel.CodingKeys": [
+   "privateIdentifiers"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelDeviceSpecificFieldConfig.CodingKeys": [
+   "name",
+   "rotationInterval",
+   "provideU13Identifier"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelAccountSpecificFieldConfig.CodingKeys": [
+   "name",
+   "rotationInterval",
+   "rotationJitter",
+   "disableUserIdentifierFallback",
+   "provideU13Identifier"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfig.CodingKeys": [
+   "deviceSpecificField",
+   "accountSpecificField",
+   "rotationBehavior"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelTopLevel.CodingKeys": [
+   "configsForAutoDecorationTopics",
+   "configsForBagNamespaces",
+   "configs",
+   "configsForOnDemandRotation"
+  ],
+  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelJitterConfig.CodingKeys": [
+   "min",
+   "max",
+   "fraction"
+  ],
+  "AppleMediaServices:AppleMediaServices.AgeGroupRelationships.CodingKeys": [
+   "recommended-content-ratings"
+  ],
+  "AppleMediaServices:AppleMediaServices.SuggestedRatingsProviderBagModel.CodingKeys": [
+   "videoAgeGroupContentPoliciesUrlTemplate"
+  ],
+  "AppleMediaServices:AppleMediaServices.PaymentConfirmationResult.CodingKeys": [
+   "paymentConfirmationChoice"
+  ],
+  "AppleMediaServices:AppleMediaServices.ConsumerIDRotateBagModel.CodingKeys": [
+   "generateConsumerId",
+   "resetable-metrics-identifiers-linkable"
+  ],
+  "AppleMediaServices:AppleMediaServices.MusicRestriction": [
+   "CLEAN",
+   "EXPLICIT"
+  ],
+  "AppleMediaServices:AppleMediaServices.MediaRestrictionsBagModel.CodingKeys": [
+   "restrictionsSetup",
+   "restrictionsEdit",
+   "restrictionsGet",
+   "restrictionsDisable",
+   "profileLockSetup",
+   "profileLockEdit",
+   "profileLockDelete",
+   "profileLockVerify"
+  ],
+  "AppleMediaServices:AppleMediaServices.MediaRestrictionsQRAuthTaskBagModel.CodingKeys": [
+   "restrictionsQRAuthSetup",
+   "restrictionsQRAuthPolling"
+  ],
+  "AppleMediaServices:AppleMediaServices.extension.CodingKeys": [
+   "ratingSystem",
+   "ratingValue"
+  ],
+  "AppleMediaServices:AppleMediaServices.AMSURLPattern.Component.CodingKeys": [
+   "/",
+   "?"
+  ],
+  "AppleMediaServices:AppleMediaServices.AMSURLPattern.Config.Presentation.CodingKeys": [
+   "style",
+   "subsystem"
+  ],
+  "AppleMediaServices:AppleMediaServices.ApplePayBagModel.CodingKeys": [
+   "auto-enrollment-percentage",
+   "auto-enrollment-session-duration",
+   "use-apple-pay-classic",
+   "countryCode",
+   "apple-pay-classic-networks"
+  ],
+  "AppleMediaServices:AppleMediaServices.BagUnderlyingData.CodingKeys": [
+   "version",
+   "bagDictionaryData",
+   "expirationDate",
+   "fileKey",
+   "aliasKeys"
+  ],
+  "AppleMediaServices:AppleMediaServices.CampaignAttributorBag.CodingKeys": [
+   "endpoint",
+   "isOnDeviceCleanUpDisabled",
+   "endpointV2",
+   "queryParamsToBePersisted",
+   "queryParamsToBeRemoved",
+   "queryParamsToBeIgnored",
+   "queryParamsGatingServerCall",
+   "queryParamsPersistenceExpiry",
+   "queryParamsPersistenceShouldIncludeLastPathComponent",
+   "ignoreMarketingQueryParam"
+  ],
+  "AppleMediaServices:AppleMediaServices.DSATCacheError": [
+   "cacheExpired",
+   "notEntitled"
+  ],
+  "AppleMediaServices:AppleMediaServices.EndpointModel.CodingKeys": [
+   "updateToken",
+   "getToken",
+   "updateConsent",
+   "validPeriod"
+  ],
+  "AppleMediaServices:AppleMediaServices.DeveloperSilentAuthTokenManager.DSATRequestError": [
+   "tokenNotFound"
+  ],
+  "AppleMediaServices:AppleMediaServices.DeveloperSilentAuthTokenManager.RequestKey": [
+   "bundleId",
+   "hasConsented",
+   "developerSilentAuthToken"
+  ],
+  "AppleMediaServices:AppleMediaServices.ExpressCheckoutBagModel.CodingKeys": [
+   "applePayExpressCheckoutEnabled",
+   "applePayExpressCheckoutShouldCheckForWalletBiometrics"
+  ],
+  "AppleMediaServices:AppleMediaServices.ExpressCheckoutCard.CodingKeys": [
+   "fpanSuffix",
+   "paymentNetwork",
+   "passSerialNumber",
+   "passTypeIdentifier",
+   "applePayBrandName"
+  ],
+  "AppleMediaServices:AppleMediaServices.ExpressCheckoutManagePaymentParams.CodingKeys": [
+   "mtPageRef",
+   "context"
+  ],
+  "AppleMediaServices:AppleMediaServices.ExpressCheckoutPaymentChoices.CodingKeys": [
    "title",
-   "artist",
-   "artwork",
-   "adamID"
+   "description",
+   "useApplePayButtonTitle",
+   "useApplePayButtonEnum",
+   "useDifferentPaymentMethodButtonTitle",
+   "eligibleCards",
+   "managePaymentsParams",
+   "metrics"
   ],
-  "AdaptiveMusic:AdaptiveMusic.Player.ShuffleMode": [
-   "off",
-   "songs"
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Mode": [
+   "basic",
+   "full"
   ],
-  "AdaptiveMusic:AdaptiveMusic.Player.RepeatMode": [
-   "none",
-   "one",
-   "all"
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.SignedActions.CodingKeys": [
+   "mode",
+   "criteria",
+   "actions",
+   "session-duration",
+   "session-refresh-percentage"
   ],
-  "AdaptiveMusic:AdaptiveMusic.Media.ItemType": [
-   "mood",
-   "playlist",
-   "song",
-   "url"
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.CodingKeys": [
+   "fpdi-setup",
+   "fpdi-init",
+   "fpdi-config"
   ],
-  "AdaptiveMusic:AdaptiveMusic.Media.ContentType": [
-   "appleMusic",
-   "uploadedAudio",
-   "userLibrary",
-   "url"
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.HashAlgorithm": [
+   "SHA-256",
+   "SHA-512"
   ],
-  "AdaptiveMusic:AdaptiveMusic.MusicPlayingPlaybackStatus": [
-   "idle",
-   "loading",
-   "paused",
-   "playing"
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Order": [
+   "headers",
+   "params",
+   "cookies",
+   "body",
+   "path"
   ],
-  "AdaptiveMusic:AdaptiveMusic.AppleMusicMoodAttributes.CodingKeys": [
-   "name"
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Criteria.CodingKeys": [
+   "host",
+   "urlRegex",
+   "path",
+   "method",
+   "buyParams",
+   "action"
   ],
-  "AdaptiveMusic:AdaptiveMusic.UploadedAudioMoodAttributes.CodingKeys": [
-   "name"
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Actions.CodingKeys": [
+   "body",
+   "path",
+   "cookies",
+   "headers",
+   "params"
   ],
-  "AdaptiveMusic:AdaptiveMusic.ManifestResources.CodingKeys": [
-   "adaptive-music-manifests",
-   "apple-music-playlist-categories",
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Configuration.CodingKeys": [
+   "hash-algo",
+   "order",
+   "signed-actions",
+   "session-duration",
+   "session-refresh-percentage"
+  ],
+  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityInitSetupData.CodingKeys": [
+   "data"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldBagModel.CodingKeys": [
+   "gift-card-account-page",
+   "gift-card-session-handoff-retrieve-info",
+   "gift-card-session-handoff-support-finish",
+   "gift-card-session-handoff-upload",
+   "gift-card-session-key-validity-time",
+   "gift-card-session-redeem",
+   "gift-card-session-render",
+   "gift-card-session-tap-event",
+   "is-gift-card-session-handoff-enabled",
+   "is-gift-card-tag-reading-enabled",
+   "redeemThankYouPage",
+   "supportSessionTimeoutInterval"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageId": [
+   "GiftCardNFCInitiation",
+   "GiftCardNFCReader",
+   "GiftCardNFCCompletion",
+   "GiftCardNFC",
+   "EnterFraudCode",
+   "FindFraudCode",
+   "CardReadError",
+   "CardNotPurchased",
+   "CardAlreadyRedeemed",
+   "CardUnredeemable",
+   "CardBlocked",
+   "StoreCreditLimitExceeded",
+   "StorefrontMismatch",
+   "CardNotRecognized",
+   "CardRedemptionError",
+   "RateLimitFraudCode",
+   "SignInRequired",
+   "SomethingWentWrong",
+   "MaxAttemptFraudCode",
+   "InvalidLink"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.ActionType": [
+   "navigate",
+   "cancel",
+   "dismiss"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.TargetType": [
+   "button",
+   "link"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.TargetId": [
+   "Continue",
+   "Redeem",
+   "CannotFindCode",
+   "Cancel",
+   "Done",
+   "SignIn",
+   "TermsAndConditions"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.ActionContext": [
+   "Prompt",
+   "thankyou"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageType": [
+   "Redeem"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageContext": [
+   "Sheet"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldSupportEventType": [
+   "COMPLETED",
+   "CANCELED",
+   "TIMEOUT"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldRedeemResult.CodingKeys": [
+   "status",
+   "dsid",
+   "certHash"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldHandOffUploadResult.CodingKeys": [
+   "localizedTitleForDisplay",
+   "localizedMessageForDisplay"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldSupportUploadResult.CodingKeys": [
+   "serverOtn"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldSupportSessionInfo.CodingKeys": [
+   "sessionId",
+   "serverOtn"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldHandOffSessionInfo.CodingKeys": [
+   "localizedTitleForDisplay",
+   "localizedMessageForDisplay",
+   "sessionId",
+   "serverOtn"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldCardInfo.CodingKeys": [
+   "alternateId",
+   "cardStatus",
+   "cardType",
+   "channelTypeCd",
+   "countryCode",
+   "currencyCode",
+   "merchantId",
+   "salesChannel"
+  ],
+  "AppleMediaServices:AppleMediaServices.NearFieldFlow": [
+   "redeem",
+   "handOff",
+   "support"
+  ],
+  "AppleMediaServices:AppleMediaServices.FeatureFlags": [
+   "7AEA1493-37F2-4E27-ABB3-B159A6AF7AED",
+   "F182AC40-520D-4E45-A32F-E8DB6C76CF02",
+   "64563FBF-C7CA-437C-BC6F-AC0AE05DBB59",
+   "0C4FF871-8ED9-4DE0-A68E-2F63BB18AB9B",
+   "38BC2C08-01A6-451D-9ABE-791707FBD11C",
+   "solariumAMS",
+   "A590F779-F2BD-42E1-A4A4-946D586A44A4"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieAuthenticationMethod": [
+   "faceIDWithPasscodeFallback",
+   "touchIDWithPasscodeFallback",
+   "faceIDBK",
+   "faceID",
+   "touchID",
+   "passcode",
+   "none"
+  ],
+  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.ScanType": [
+   "best",
+   "degraded"
+  ],
+  "AppleMediaServices:AppleMediaServices.StoreReviewGatingBag.CodingKeys": [
+   "shared-store-review-enabled",
+   "shared-store-review-session-count",
+   "shared-store-review-session-interval",
+   "shared-store-review-prompt-interval",
+   "shared-store-review-gating-groups"
+  ],
+  "AppleMediaServices:AppleMediaServices.StoreReviewGatingLedger.StateData.CodingKeys": [
+   "session-start-date",
+   "session-count",
+   "review-prompted-date"
+  ],
+  "AppleMediaServices:AppleMediaServices.URLParserBag.CodingKeys": [
+   "commerce-ui-urls",
+   "ams-url-patterns"
+  ],
+  "AppleMediaServices:AppleMediaServices.URLParserBag.CommerceUIURLs.CodingKeys": [
+   "v2-url-patterns",
+   "url-patterns",
+   "dynamic-url-patterns"
+  ],
+  "BackgroundAssets:BackgroundAssets.AssetPack.AppStoreCodingKeys.AttributesCodingKeys": [
+   "latestVersionInfo",
+   "downloadSizeInBytes",
+   "downloadPolicy",
+   "providerReferenceIdentifier",
+   "locale",
+   "downloadUrl"
+  ],
+  "BackgroundAssets:BackgroundAssets.AssetPack.AppStoreCodingKeys.AttributesCodingKeys.LatestVersionInfoCodingKeys": [
+   "versionNumber",
+   "versionPublicId",
+   "versionId"
+  ],
+  "BackgroundAssets:BackgroundAssets.AssetPackManifest.AppStoreCodingKeys.DataCodingKeys.AttributesCodingKeys": [
+   "primaryLocale"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.DRM.FairPlayStreaming.KeyServerType": [
+   "simplified",
+   "standard"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.CodingKeys": [
+   "version",
+   "url",
+   "drm"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.MediaAPIType": [
+   "songs",
+   "library-songs",
+   "music-videos",
+   "library-music-videos",
+   "albums",
+   "library-albums",
    "playlists",
-   "uploaded-audio-playlist-categories",
-   "uploaded-audio-playlists",
-   "uploaded-audios"
+   "library-playlists",
+   "stations",
+   "genres",
+   "flexml-analysis",
+   "audio-analysis"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.Resource.CodingKeys": [
+   "id",
+   "type",
+   "attributes",
+   "relationships"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.ContentType": [
+   "unknown",
+   "songs",
+   "music-videos",
+   "albums",
+   "playlists",
+   "stations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.MediaAPIContentType": [
+   "songs",
+   "music-videos",
+   "albums",
+   "playlists",
+   "stations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.LibraryContentType": [
+   "song",
+   "musicVideo",
+   "album",
+   "playlist"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.CloudLibraryContentType": [
+   "library-songs",
+   "library-music-videos",
+   "library-albums",
+   "library-playlists"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.PurchasableContentType": [
+   "song",
+   "musicVideo",
+   "album"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationRamp.CodingKeys": [
+   "parameterId",
+   "startTime",
+   "endTime",
+   "startValue",
+   "endValue",
+   "interpolation"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.TimeCodingKeys": [
+   "start",
+   "end"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.CodingKeys": [
+   "placement",
+   "automations"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationTime.CodingKeys": [
+   "relative",
+   "offsetInSeconds"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationTime.CodingKeys": [
+   "default"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationValue.CodingKeys": [
+   "parameterName",
+   "default"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.SongScheduleCodingKeys": [
+   "outgoing",
+   "incoming"
+  ],
+  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.CodingKeys": [
+   "id",
+   "offset",
+   "duration",
+   "instructions"
+  ],
+  "ShazamEvents:ShazamEvents.EventAttributes.Style": [
+   "CONCERT",
+   "FESTIVAL"
+  ],
+  "ShazamEvents:ShazamEvents.EventAttributes.Time.CodingKeys": [
+   "startTime",
+   "endTime",
+   "timezone"
+  ],
+  "ShazamEvents:ShazamEvents.EventResources.CodingKeys": [
+   "shazam-events",
+   "artists",
+   "venues",
+   "photo-albums",
+   "playlists",
+   "wallpapers",
+   "watch-faces",
+   "video-albums",
+   "genres",
+   "sport-groups",
+   "sports",
+   "competitors",
+   "competitors-info"
+  ],
+  "ShazamEvents:ShazamEvents.EventAttributes.Tickets.CodingKeys": [
+   "provider",
+   "url",
+   "links"
+  ],
+  "ShazamEvents:ShazamEvents.VenueResources.CodingKeys": [
+   "shazam-events",
+   "artists",
+   "venues",
+   "photo-albums",
+   "playlists",
+   "wallpapers",
+   "watch-faces",
+   "video-albums",
+   "genres",
+   "sport-groups",
+   "sports",
+   "competitors",
+   "competitors-info"
+  ],
+  "ShazamEvents:ShazamEvents.PlaylistAttributes.Kind": [
+   "PRIMARY",
+   "FEATURED"
+  ],
+  "ShazamEvents:ShazamEvents.AnalyticsKey": [
+   "responseCode",
+   "RPS",
+   "usingRelay"
+  ],
+  "ShazamEvents:ShazamEvents.EventsRemoteConfiguration.EndpointVersion": [
+   "v1",
+   "v2",
+   "v3"
+  ],
+  "ShazamEvents:ShazamEvents.Music.Style": [
+   "concert",
+   "festival"
+  ],
+  "ShazamEvents:ShazamEvents.EventService.GeoRequest.Region.CodingKeys": [
+   "centerLatitude",
+   "centerLongitude",
+   "radius"
+  ],
+  "ShazamEvents:ShazamEvents.EventType": [
+   "music",
+   "sport",
+   "artsandmuseums",
+   "dance",
+   "theater",
+   "appleevent",
+   "festivalsandfairs",
+   "nightlife"
   ],
   "OmniSearch:OmniSearch.CardSubType": [
    "personal",
@@ -14049,73 +14565,6 @@
    "matchCriteria",
    "template"
   ],
-  "OmniSearch:OmniSearch.MCADomain": [
-   "music",
-   "apps",
-   "podcasts",
-   "videos"
-  ],
-  "OmniSearch:OmniSearch.MCARole": [
-   "user",
-   "assistant"
-  ],
-  "OmniSearch:OmniSearch.MCAQueryRequest.CodingKeys": [
-   "responseMode",
-   "context",
-   "input"
-  ],
-  "OmniSearch:OmniSearch.MCAQueryContext.CodingKeys": [
-   "version",
-   "domains",
-   "continue"
-  ],
-  "OmniSearch:OmniSearch.MCAChatRequest.CodingKeys": [
-   "responseMode",
-   "conversation",
-   "messages"
-  ],
-  "OmniSearch:OmniSearch.MCAConversationInit.CodingKeys": [
-   "sharedContext",
-   "version",
-   "domains",
-   "continue"
-  ],
-  "OmniSearch:OmniSearch.MCAConversationContinue.CodingKeys": [
-   "id",
-   "lastMessage"
-  ],
-  "OmniSearch:OmniSearch.MCARequestContent.ContentCodingKeys": [
-   "type",
-   "text"
-  ],
-  "OmniSearch:OmniSearch.MCAEntityReference.Kind": [
-   "songs",
-   "albums",
-   "playlists",
-   "artists",
-   "stations",
-   "videos",
-   "movies",
-   "shows",
-   "episodes",
-   "apps"
-  ],
-  "OmniSearch:OmniSearch.MCAResponseContent.TypeCodingKey": [
-   "type"
-  ],
-  "OmniSearch:OmniSearch.MCAResponseStatus": [
-   "success",
-   "error"
-  ],
-  "OmniSearch:OmniSearch.MCASSEEventType": [
-   "response-start",
-   "message-content",
-   "thought",
-   "content",
-   "response-finish",
-   "failure",
-   "error"
-  ],
   "OmniSearch:OmniSearch.SearchEntityTypeIdentifier.CodingKeys": [
    "bundleId",
    "typeName",
@@ -14353,6 +14802,73 @@
    "MARGARITA",
    "unknown"
   ],
+  "OmniSearch:OmniSearch.MCADomain": [
+   "music",
+   "apps",
+   "podcasts",
+   "videos"
+  ],
+  "OmniSearch:OmniSearch.MCARole": [
+   "user",
+   "assistant"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryRequest.CodingKeys": [
+   "responseMode",
+   "context",
+   "input"
+  ],
+  "OmniSearch:OmniSearch.MCAQueryContext.CodingKeys": [
+   "version",
+   "domains",
+   "continue"
+  ],
+  "OmniSearch:OmniSearch.MCAChatRequest.CodingKeys": [
+   "responseMode",
+   "conversation",
+   "messages"
+  ],
+  "OmniSearch:OmniSearch.MCAConversationInit.CodingKeys": [
+   "sharedContext",
+   "version",
+   "domains",
+   "continue"
+  ],
+  "OmniSearch:OmniSearch.MCAConversationContinue.CodingKeys": [
+   "id",
+   "lastMessage"
+  ],
+  "OmniSearch:OmniSearch.MCARequestContent.ContentCodingKeys": [
+   "type",
+   "text"
+  ],
+  "OmniSearch:OmniSearch.MCAEntityReference.Kind": [
+   "songs",
+   "albums",
+   "playlists",
+   "artists",
+   "stations",
+   "videos",
+   "movies",
+   "shows",
+   "episodes",
+   "apps"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseContent.TypeCodingKey": [
+   "type"
+  ],
+  "OmniSearch:OmniSearch.MCAResponseStatus": [
+   "success",
+   "error"
+  ],
+  "OmniSearch:OmniSearch.MCASSEEventType": [
+   "response-start",
+   "message-content",
+   "thought",
+   "content",
+   "response-finish",
+   "failure",
+   "error"
+  ],
   "OmniSearch:OmniSearch.OmniSearchOptions.CodingKeys": [
    "context",
    "interactionMode",
@@ -14375,7 +14891,6 @@
    "apps",
    "appIntegrationOverride",
    "unresolvedApps",
-   "remoteDeviceCapability",
    "isHandoff",
    "isCarPlay",
    "offlineMode",
@@ -14480,592 +14995,64 @@
    "compactFormat",
    "deferredGenericParses"
   ],
-  "SwiftData:SwiftData.ModelContext.NotificationKey": [
-   "newQueryGeneration",
-   "invalidatedAll",
-   "inserted",
-   "updated",
-   "deleted",
-   "historyTokens"
+  "AdaptiveMusic:AdaptiveMusic.Mood.ID": [
+   "productivity",
+   "chill",
+   "sleep",
+   "wellbeing",
+   "custom"
   ],
-  "SwiftData:SwiftData.Schema.Relationship.DeleteRule": [
-   "noAction",
-   "nullify",
-   "cascade",
-   "deny"
+  "AdaptiveMusic:AdaptiveMusic.Mood.ContentType": [
+   "appleMusic",
+   "uploadedAudio",
+   "userLibrary"
   ],
-  "SwiftData:SwiftData.Schema.Attribute.Option.Coders.CodingKeys": [
-   "coder",
-   "customCoderClassName"
-  ],
-  "SwiftData:SwiftData.PersistentIdentifierImplementation.Scheme": [
-   "x-swiftdata",
-   "x-coredata",
-   "developer-provided"
-  ],
-  "AppleMediaServices:AppleMediaServices.ActionPayloadKey": [
-   "actionKind"
-  ],
-  "AppleMediaServices:AppleMediaServices.URLSentryBag.CodingKeys": [
-   "trustedDomains",
-   "schemesThatOverrideTrustedDomains",
-   "restrictedUrls",
-   "redirects-explicitly-allowed"
-  ],
-  "AppleMediaServices:AppleMediaServices.PIAccountKeypair.CodingKeys": [
-   "privateKeyData"
-  ],
-  "AppleMediaServices:AppleMediaServices.PIDeviceKeypair.CodingKeys": [
-   "privateKeyData"
-  ],
-  "AppleMediaServices:AppleMediaServices.PIScheduledRotationConfigurationUpdate.Behavior": [
-   "rotateNow",
-   "rotateAccordingToUpdatedSchedule",
-   "resetLastRotationDateToNow"
-  ],
-  "AppleMediaServices:AppleMediaServices.DocumentType": [
-   "idCardFront",
-   "idCardBack"
-  ],
-  "AppleMediaServices:AppleMediaServices.AgeGroupRelationships.CodingKeys": [
-   "recommended-content-ratings"
-  ],
-  "AppleMediaServices:AppleMediaServices.SuggestedRatingsProviderBagModel.CodingKeys": [
-   "videoAgeGroupContentPoliciesUrlTemplate"
-  ],
-  "AppleMediaServices:AppleMediaServices.PaymentConfirmationResult.CodingKeys": [
-   "paymentConfirmationChoice"
-  ],
-  "AppleMediaServices:AppleMediaServices.MusicRestriction": [
-   "CLEAN",
-   "EXPLICIT"
-  ],
-  "AppleMediaServices:AppleMediaServices.MediaRestrictionsBagModel.CodingKeys": [
-   "restrictionsSetup",
-   "restrictionsEdit",
-   "restrictionsGet",
-   "restrictionsDisable",
-   "profileLockSetup",
-   "profileLockEdit",
-   "profileLockDelete",
-   "profileLockVerify"
-  ],
-  "AppleMediaServices:AppleMediaServices.MediaRestrictionsQRAuthTaskBagModel.CodingKeys": [
-   "restrictionsQRAuthSetup",
-   "restrictionsQRAuthPolling"
-  ],
-  "AppleMediaServices:AppleMediaServices.extension.CodingKeys": [
-   "ratingSystem",
-   "ratingValue"
-  ],
-  "AppleMediaServices:AppleMediaServices.AMSURLPattern.Component.CodingKeys": [
-   "/",
-   "?"
-  ],
-  "AppleMediaServices:AppleMediaServices.AMSURLPattern.Config.Presentation.CodingKeys": [
-   "style",
-   "subsystem"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfigRotationBehavior": [
-   "now",
-   "updatedSchedule",
-   "lastRotationDate"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModel.CodingKeys": [
-   "privateIdentifiers"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelDeviceSpecificFieldConfig.CodingKeys": [
-   "name",
-   "rotationInterval",
-   "provideU13Identifier"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelAccountSpecificFieldConfig.CodingKeys": [
-   "name",
-   "rotationInterval",
-   "rotationJitter",
-   "disableUserIdentifierFallback",
-   "provideU13Identifier"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelConfig.CodingKeys": [
-   "deviceSpecificField",
-   "accountSpecificField",
-   "rotationBehavior"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelTopLevel.CodingKeys": [
-   "configsForAutoDecorationTopics",
-   "configsForBagNamespaces",
-   "configs",
-   "configsForOnDemandRotation"
-  ],
-  "AppleMediaServices:AppleMediaServices.PrivateIdentifiersBagModelJitterConfig.CodingKeys": [
-   "min",
-   "max",
-   "fraction"
-  ],
-  "AppleMediaServices:AppleMediaServices.ApplePayBagModel.CodingKeys": [
-   "auto-enrollment-percentage",
-   "auto-enrollment-session-duration",
-   "use-apple-pay-classic",
-   "countryCode",
-   "apple-pay-classic-networks"
-  ],
-  "AppleMediaServices:AppleMediaServices.BagUnderlyingData.CodingKeys": [
-   "version",
-   "bagDictionaryData",
-   "expirationDate",
-   "fileKey",
-   "aliasKeys"
-  ],
-  "AppleMediaServices:AppleMediaServices.CampaignAttributorBag.CodingKeys": [
-   "endpoint",
-   "isOnDeviceCleanUpDisabled",
-   "endpointV2",
-   "queryParamsToBePersisted",
-   "queryParamsToBeRemoved",
-   "queryParamsToBeIgnored",
-   "queryParamsGatingServerCall",
-   "queryParamsPersistenceExpiry",
-   "queryParamsPersistenceShouldIncludeLastPathComponent",
-   "ignoreMarketingQueryParam"
-  ],
-  "AppleMediaServices:AppleMediaServices.DSATCacheError": [
-   "cacheExpired",
-   "notEntitled"
-  ],
-  "AppleMediaServices:AppleMediaServices.EndpointModel.CodingKeys": [
-   "updateToken",
-   "getToken",
-   "updateConsent",
-   "validPeriod"
-  ],
-  "AppleMediaServices:AppleMediaServices.DeveloperSilentAuthTokenManager.DSATRequestError": [
-   "tokenNotFound"
-  ],
-  "AppleMediaServices:AppleMediaServices.DeveloperSilentAuthTokenManager.RequestKey": [
-   "bundleId",
-   "hasConsented",
-   "developerSilentAuthToken"
-  ],
-  "AppleMediaServices:AppleMediaServices.ExpressCheckoutBagModel.CodingKeys": [
-   "applePayExpressCheckoutEnabled",
-   "applePayExpressCheckoutShouldCheckForWalletBiometrics"
-  ],
-  "AppleMediaServices:AppleMediaServices.ExpressCheckoutCard.CodingKeys": [
-   "fpanSuffix",
-   "paymentNetwork",
-   "passSerialNumber",
-   "passTypeIdentifier",
-   "applePayBrandName"
-  ],
-  "AppleMediaServices:AppleMediaServices.ExpressCheckoutManagePaymentParams.CodingKeys": [
-   "mtPageRef",
-   "context"
-  ],
-  "AppleMediaServices:AppleMediaServices.ExpressCheckoutPaymentChoices.CodingKeys": [
+  "AdaptiveMusic:AdaptiveMusic.SupportedMetadata": [
    "title",
-   "description",
-   "useApplePayButtonTitle",
-   "useApplePayButtonEnum",
-   "useDifferentPaymentMethodButtonTitle",
-   "eligibleCards",
-   "managePaymentsParams",
-   "metrics"
+   "artist",
+   "artwork",
+   "adamID"
   ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Mode": [
-   "basic",
-   "full"
+  "AdaptiveMusic:AdaptiveMusic.Player.ShuffleMode": [
+   "off",
+   "songs"
   ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.SignedActions.CodingKeys": [
-   "mode",
-   "criteria",
-   "actions",
-   "session-duration",
-   "session-refresh-percentage"
+  "AdaptiveMusic:AdaptiveMusic.Player.RepeatMode": [
+   "none",
+   "one",
+   "all"
   ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.CodingKeys": [
-   "fpdi-setup",
-   "fpdi-init",
-   "fpdi-config"
-  ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.HashAlgorithm": [
-   "SHA-256",
-   "SHA-512"
-  ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Order": [
-   "headers",
-   "params",
-   "cookies",
-   "body",
-   "path"
-  ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Criteria.CodingKeys": [
-   "host",
-   "urlRegex",
-   "path",
-   "method",
-   "buyParams",
-   "action"
-  ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Actions.CodingKeys": [
-   "body",
-   "path",
-   "cookies",
-   "headers",
-   "params"
-  ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityBag.Configuration.CodingKeys": [
-   "hash-algo",
-   "order",
-   "signed-actions",
-   "session-duration",
-   "session-refresh-percentage"
-  ],
-  "AppleMediaServices:AppleMediaServices.FairPlayDeviceIdentityInitSetupData.CodingKeys": [
-   "data"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldBagModel.CodingKeys": [
-   "gift-card-account-page",
-   "gift-card-session-handoff-retrieve-info",
-   "gift-card-session-handoff-support-finish",
-   "gift-card-session-handoff-upload",
-   "gift-card-session-key-validity-time",
-   "gift-card-session-redeem",
-   "gift-card-session-render",
-   "gift-card-session-tap-event",
-   "is-gift-card-session-handoff-enabled",
-   "is-gift-card-tag-reading-enabled",
-   "redeemThankYouPage",
-   "supportSessionTimeoutInterval"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageId": [
-   "GiftCardNFCInitiation",
-   "GiftCardNFCReader",
-   "GiftCardNFCCompletion",
-   "GiftCardNFC",
-   "EnterFraudCode",
-   "FindFraudCode",
-   "CardReadError",
-   "CardNotPurchased",
-   "CardAlreadyRedeemed",
-   "CardUnredeemable",
-   "CardBlocked",
-   "StoreCreditLimitExceeded",
-   "StorefrontMismatch",
-   "CardNotRecognized",
-   "CardRedemptionError",
-   "RateLimitFraudCode",
-   "SignInRequired",
-   "SomethingWentWrong",
-   "MaxAttemptFraudCode",
-   "InvalidLink"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.ActionType": [
-   "navigate",
-   "cancel",
-   "dismiss"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.TargetType": [
-   "button",
-   "link"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.TargetId": [
-   "Continue",
-   "Redeem",
-   "CannotFindCode",
-   "Cancel",
-   "Done",
-   "SignIn",
-   "TermsAndConditions"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.ActionContext": [
-   "Prompt",
-   "thankyou"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageType": [
-   "Redeem"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldMetricsProvider.PageContext": [
-   "Sheet"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldSupportEventType": [
-   "COMPLETED",
-   "CANCELED",
-   "TIMEOUT"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldRedeemResult.CodingKeys": [
-   "status",
-   "dsid",
-   "certHash"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldHandOffUploadResult.CodingKeys": [
-   "localizedTitleForDisplay",
-   "localizedMessageForDisplay"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldSupportUploadResult.CodingKeys": [
-   "serverOtn"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldSupportSessionInfo.CodingKeys": [
-   "sessionId",
-   "serverOtn"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldHandOffSessionInfo.CodingKeys": [
-   "localizedTitleForDisplay",
-   "localizedMessageForDisplay",
-   "sessionId",
-   "serverOtn"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldCardInfo.CodingKeys": [
-   "alternateId",
-   "cardStatus",
-   "cardType",
-   "channelTypeCd",
-   "countryCode",
-   "currencyCode",
-   "merchantId",
-   "salesChannel"
-  ],
-  "AppleMediaServices:AppleMediaServices.NearFieldFlow": [
-   "redeem",
-   "handOff",
-   "support"
-  ],
-  "AppleMediaServices:AppleMediaServices.ConsumerIDRotateBagModel.CodingKeys": [
-   "generateConsumerId",
-   "resetable-metrics-identifiers-linkable"
-  ],
-  "AppleMediaServices:AppleMediaServices.FeatureFlags": [
-   "7AEA1493-37F2-4E27-ABB3-B159A6AF7AED",
-   "F182AC40-520D-4E45-A32F-E8DB6C76CF02",
-   "64563FBF-C7CA-437C-BC6F-AC0AE05DBB59",
-   "0C4FF871-8ED9-4DE0-A68E-2F63BB18AB9B",
-   "38BC2C08-01A6-451D-9ABE-791707FBD11C",
-   "solariumAMS",
-   "A590F779-F2BD-42E1-A4A4-946D586A44A4"
-  ],
-  "AppleMediaServices:AppleMediaServices.SelfieAuthenticationMethod": [
-   "faceIDWithPasscodeFallback",
-   "touchIDWithPasscodeFallback",
-   "faceIDBK",
-   "faceID",
-   "touchID",
-   "passcode",
-   "none"
-  ],
-  "AppleMediaServices:AppleMediaServices.SelfieConfiguration.ScanType": [
-   "best",
-   "degraded"
-  ],
-  "AppleMediaServices:AppleMediaServices.StoreReviewGatingBag.CodingKeys": [
-   "shared-store-review-enabled",
-   "shared-store-review-session-count",
-   "shared-store-review-session-interval",
-   "shared-store-review-prompt-interval",
-   "shared-store-review-gating-groups"
-  ],
-  "AppleMediaServices:AppleMediaServices.StoreReviewGatingLedger.StateData.CodingKeys": [
-   "session-start-date",
-   "session-count",
-   "review-prompted-date"
-  ],
-  "AppleMediaServices:AppleMediaServices.URLParserBag.CodingKeys": [
-   "commerce-ui-urls",
-   "ams-url-patterns"
-  ],
-  "AppleMediaServices:AppleMediaServices.URLParserBag.CommerceUIURLs.CodingKeys": [
-   "v2-url-patterns",
-   "url-patterns",
-   "dynamic-url-patterns"
-  ],
-  "BackgroundAssets:BackgroundAssets.AssetPack.AppStoreCodingKeys.AttributesCodingKeys": [
-   "latestVersionInfo",
-   "downloadSizeInBytes",
-   "downloadPolicy",
-   "providerReferenceIdentifier",
-   "locale",
-   "downloadUrl"
-  ],
-  "BackgroundAssets:BackgroundAssets.AssetPack.AppStoreCodingKeys.AttributesCodingKeys.LatestVersionInfoCodingKeys": [
-   "versionNumber",
-   "versionPublicId",
-   "versionId"
-  ],
-  "BackgroundAssets:BackgroundAssets.AssetPackManifest.AppStoreCodingKeys.DataCodingKeys.AttributesCodingKeys": [
-   "primaryLocale"
-  ],
-  "ShazamEvents:ShazamEvents.EventAttributes.Style": [
-   "CONCERT",
-   "FESTIVAL"
-  ],
-  "ShazamEvents:ShazamEvents.EventAttributes.Time.CodingKeys": [
-   "startTime",
-   "endTime",
-   "timezone"
-  ],
-  "ShazamEvents:ShazamEvents.EventResources.CodingKeys": [
-   "shazam-events",
-   "artists",
-   "venues",
-   "photo-albums",
-   "playlists",
-   "wallpapers",
-   "watch-faces",
-   "video-albums",
-   "genres",
-   "sport-groups",
-   "sports",
-   "competitors",
-   "competitors-info"
-  ],
-  "ShazamEvents:ShazamEvents.EventAttributes.Tickets.CodingKeys": [
-   "provider",
-   "url",
-   "links"
-  ],
-  "ShazamEvents:ShazamEvents.VenueResources.CodingKeys": [
-   "shazam-events",
-   "artists",
-   "venues",
-   "photo-albums",
-   "playlists",
-   "wallpapers",
-   "watch-faces",
-   "video-albums",
-   "genres",
-   "sport-groups",
-   "sports",
-   "competitors",
-   "competitors-info"
-  ],
-  "ShazamEvents:ShazamEvents.PlaylistAttributes.Kind": [
-   "PRIMARY",
-   "FEATURED"
-  ],
-  "ShazamEvents:ShazamEvents.AnalyticsKey": [
-   "responseCode",
-   "RPS",
-   "usingRelay"
-  ],
-  "ShazamEvents:ShazamEvents.EventsRemoteConfiguration.EndpointVersion": [
-   "v1",
-   "v2",
-   "v3"
-  ],
-  "ShazamEvents:ShazamEvents.Music.Style": [
-   "concert",
-   "festival"
-  ],
-  "ShazamEvents:ShazamEvents.EventService.GeoRequest.Region.CodingKeys": [
-   "centerLatitude",
-   "centerLongitude",
-   "radius"
-  ],
-  "ShazamEvents:ShazamEvents.EventType": [
-   "music",
-   "sport",
-   "artsandmuseums",
-   "dance",
-   "theater",
-   "appleevent",
-   "festivalsandfairs",
-   "nightlife"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.DRM.FairPlayStreaming.KeyServerType": [
-   "simplified",
-   "standard"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.AssetRecipe.CodingKeys": [
-   "version",
-   "url",
-   "drm"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.MediaAPIType": [
-   "songs",
-   "library-songs",
-   "music-videos",
-   "library-music-videos",
-   "albums",
-   "library-albums",
-   "playlists",
-   "library-playlists",
-   "stations",
-   "genres",
-   "flexml-analysis",
-   "audio-analysis"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MediaAPI.Resource.CodingKeys": [
-   "id",
-   "type",
-   "attributes",
-   "relationships"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.ContentType": [
-   "unknown",
-   "songs",
-   "music-videos",
-   "albums",
-   "playlists",
-   "stations"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.MediaAPIContentType": [
-   "songs",
-   "music-videos",
-   "albums",
-   "playlists",
-   "stations"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.LibraryContentType": [
+  "AdaptiveMusic:AdaptiveMusic.Media.ItemType": [
+   "mood",
+   "playlist",
    "song",
-   "musicVideo",
-   "album",
-   "playlist"
+   "url"
   ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.CloudLibraryContentType": [
-   "library-songs",
-   "library-music-videos",
-   "library-albums",
-   "library-playlists"
+  "AdaptiveMusic:AdaptiveMusic.Media.ContentType": [
+   "appleMusic",
+   "uploadedAudio",
+   "userLibrary",
+   "url"
   ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit.MusicContent.PurchasableContentType": [
-   "song",
-   "musicVideo",
-   "album"
+  "AdaptiveMusic:AdaptiveMusic.MusicPlayingPlaybackStatus": [
+   "idle",
+   "loading",
+   "paused",
+   "playing"
   ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationRamp.CodingKeys": [
-   "parameterId",
-   "startTime",
-   "endTime",
-   "startValue",
-   "endValue",
-   "interpolation"
+  "AdaptiveMusic:AdaptiveMusic.AppleMusicMoodAttributes.CodingKeys": [
+   "name"
   ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.TimeCodingKeys": [
-   "start",
-   "end"
+  "AdaptiveMusic:AdaptiveMusic.UploadedAudioMoodAttributes.CodingKeys": [
+   "name"
   ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationSchedule.CodingKeys": [
-   "placement",
-   "automations"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.AutomationTime.CodingKeys": [
-   "relative",
-   "offsetInSeconds"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationTime.CodingKeys": [
-   "default"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.MappedAutomationValue.CodingKeys": [
-   "parameterName",
-   "default"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.SongScheduleCodingKeys": [
-   "outgoing",
-   "incoming"
-  ],
-  "_SonicKit_MusicKit:_SonicKit_MusicKit_Packages.TransitionStyle.CodingKeys": [
-   "id",
-   "offset",
-   "duration",
-   "instructions"
+  "AdaptiveMusic:AdaptiveMusic.ManifestResources.CodingKeys": [
+   "adaptive-music-manifests",
+   "apple-music-playlist-categories",
+   "playlists",
+   "uploaded-audio-playlist-categories",
+   "uploaded-audio-playlists",
+   "uploaded-audios"
   ],
   "MusicApplication:MusicCore.UnifiedMessages.Placement": [
    "libraryHeader",
@@ -16490,7 +16477,6 @@
    "countdown",
    "waitingToRecord",
    "recording",
-   "waitingToPreview",
    "previewing"
   ],
   "Music:Music.SelfieSing.Manager.PlaybackState": [
@@ -16505,8 +16491,7 @@
    "com.apple.Music.Tooltip.LyricsTransliteration",
    "com.apple.Music.Tooltip.LyricsTransliterationSing",
    "com.apple.Music.Tooltip.LyricsTranslationAndTransliteration",
-   "com.apple.Music.Tooltip.SmartTransition",
-   "com.apple.Music.Tooltip.SelfieSing"
+   "com.apple.Music.Tooltip.SmartTransition"
   ],
   "Music:Music.Tooltip.Group": [
    "NowPlaying"
@@ -18492,6 +18477,9 @@
     "x0": "AMSDescription"
    },
    {
+    "x0": "AMSStatusCode"
+   },
+   {
     "x0": "action"
    },
    {
@@ -18529,9 +18517,6 @@
    },
    {
     "x0": "element"
-   },
-   {
-    "x0": "errorCode"
    },
    {
     "x0": "errors"
@@ -20169,10 +20154,6 @@
    {
     "x0": "true",
     "x2": "ceBypass"
-   },
-   {
-    "x0": "true",
-    "x2": "doNotCite"
    },
    {
     "x0": "type"
@@ -23706,7 +23687,6 @@
   "MusicKit:MusicKit.CloudEditorialCard.CodingKeys": [
    "kind",
    "editorialNotes",
-   "plainEditorialNotes",
    "editorialArtwork",
    "display"
   ],
@@ -25970,8 +25950,7 @@
    "id"
   ],
   "MusicKitInternal:MusicKitInternal.MusicGenerativePlaylist.CloudCreateSessionRawResponse.Results.With.CodingKeys": [
-   "suggestedEdits",
-   "ephemeralPlaylist"
+   "suggestedEdits"
   ],
   "MusicKitInternal:MusicKitInternal.MusicGenerativePlaylist.CloudDelta.AddDelta.CodingKeys": [
    "type",
@@ -25999,11 +25978,6 @@
    "description",
    "artRecipe",
    "public"
-  ],
-  "MusicKitInternal:MusicKitInternal.MusicGenerativePlaylist.CloudEphemeralPlaylist.CodingKeys": [
-   "id",
-   "name",
-   "type"
   ],
   "MusicKitInternal:MusicKitInternal.MusicGenerativePlaylist.CloudIdeasRawResponse.CodingKeys": [
    "results"
@@ -26048,8 +26022,7 @@
    "url"
   ],
   "MusicKitInternal:MusicKitInternal.MusicGenerativePlaylist.CloudRefineRawResponse.Results.With.CodingKeys": [
-   "suggestedEdits",
-   "ephemeralPlaylist"
+   "suggestedEdits"
   ],
   "MusicKitInternal:MusicKitInternal.MusicGenerativePlaylist.CloudRevision.CodingKeys": [
    "id",
@@ -28089,7 +28062,6 @@
    "apps",
    "appIntegrationOverride",
    "unresolvedApps",
-   "remoteDeviceCapability",
    "isHandoff",
    "isCarPlay",
    "offlineMode",
@@ -33588,7 +33560,7 @@
   "intentSource": {
    "values": [
     "PlayContent",
-    "RemoveFromWatchList"
+    "{dynamic}"
    ],
    "images": [
     "TVAppServices"
@@ -33660,16 +33632,6 @@
     "PodcastsFoundation",
     "UnifiedMessagingKit",
     "VideoSubscriberAccount"
-   ],
-   "templates": [],
-   "domains": []
-  },
-  "l[client]": {
-   "values": [
-    "{dynamic}"
-   ],
-   "images": [
-    "UnifiedMessagingKit"
    ],
    "templates": [],
    "domains": []
@@ -34961,7 +34923,6 @@
   },
   "with": {
    "values": [
-    "ephemeralPlaylist",
     "isSubscribed",
     "naturalLanguage",
     "personalization",
@@ -35129,6 +35090,9 @@
   ],
   "/v1/me/library/{x}{unknown}": [
    "MusicKit"
+  ],
+  "/v1/me/purchases": [
+   "VideosUI"
   ],
   "/v1/me/recent/played": [
    "MediaPlayer"
@@ -36962,7 +36926,7 @@
    "loc-key",
    "local-albums",
    "local-artists",
-   "local-bag-cache-podcasts-cncd-enabled",
+   "local-bag-cache-podcasts-unttsd-enabled",
    "local-beta",
    "local-composers",
    "local-debug",
@@ -37342,7 +37306,6 @@
    "path-play-tint-shape",
    "paused-playback-timeout-in-seconds",
    "payment-sheet",
-   "payment-sheet-biometric-retry-limit",
    "payments-pos-assets",
    "pending-collaborator",
    "pending-followees",
@@ -37470,7 +37433,6 @@
    "podcast-video",
    "podcast-welcome-room-url",
    "podcasts-category-sync-threshold-interval-seconds",
-   "podcasts-cncd-enabled",
    "podcasts-delta-pull-to-refresh-should-do-bootstrap-sync",
    "podcasts-entitlements",
    "podcasts-license-offline-renew",
@@ -37726,8 +37688,6 @@
    "seek-refresh",
    "select-song",
    "self-handle",
-   "selfie-sing-session-begin",
-   "selfie-sing-session-end",
    "send-command",
    "send-one-time-code",
    "separator-element-kind",
@@ -37844,7 +37804,6 @@
    "simp-chinese",
    "simulate-friend",
    "siri-donations",
-   "siri-hk-target",
    "siri-ref-id",
    "siri-wha-metrics",
    "siriinference-dodml-plugin",
@@ -38097,11 +38056,6 @@
    "two-factor",
    "two-step",
    "ui-cleanup",
-   "ui-only-key",
-   "ui-only-merchant",
-   "ui-only-reader",
-   "ui-only-response",
-   "ui-only-transcript",
    "uk-ua",
    "umkit-root-dispatcher-fallback-enabled",
    "umts-rscp",
@@ -38137,6 +38091,7 @@
    "upp-disabled",
    "upp-polling-interval-secs",
    "url-load",
+   "url-loading",
    "url-regex-map",
    "url-to-share-token-regex",
    "us-ascii",
@@ -38346,11 +38301,8 @@
    "x-error",
    "x-frame-options",
    "x-gk-bundle-id",
-   "x-gk-bundle-version",
    "x-gk-client-capabilities",
    "x-gk-host-bundle-id",
-   "x-gk-platform",
-   "x-gk-short-bundle-version",
    "x-icloud-versionid",
    "x-jmet-device-certificate",
    "x-mail-handoff-payload",
