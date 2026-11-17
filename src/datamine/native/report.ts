@@ -98,12 +98,35 @@ const place = (
   }
 };
 
+const isStateChange = (item: RegressionItem, others: RegressionItem[]) =>
+  item[0] === "flag-state" &&
+  others.some((other) => other[0] === item[0] && other[1] === item[1]);
+
+const pairStates = (report: NativeReport): [string, string][] =>
+  report.removed
+    .filter((item) => isStateChange(item, report.gained))
+    .map((item) => {
+      const next = report.gained.find(
+        (other) => other[0] === item[0] && other[1] === item[1]
+      ) as RegressionItem;
+      return [describe(item), describe(next)];
+    });
+
 export const nativeSections = (report: NativeReport) => {
   const sections = Object.fromEntries(
     nativeSectionNames.map((name) => [name, emptySection()])
   ) as Record<NativeSectionName, Section>;
-  place(sections, report.gained, "added");
-  place(sections, report.removed, "removed");
+  place(
+    sections,
+    report.gained.filter((item) => !isStateChange(item, report.removed)),
+    "added"
+  );
+  place(
+    sections,
+    report.removed.filter((item) => !isStateChange(item, report.gained)),
+    "removed"
+  );
+  sections.featureFlags.updated.push(...pairStates(report));
   for (const section of Object.values(sections)) {
     section.added.sort();
     section.removed.sort();
