@@ -1,4 +1,4 @@
-export const assetHash = /~(?<hash>[0-9a-f]{8,})(?=\.\w+$)/u;
+export const assetHash = /~(?<hash>[\w-]{8,})(?=\.\w+$)/u;
 const skippedAsset = /-legacy\b|^translations\b/u;
 
 export const hashOf = (file: string) => file.match(assetHash)?.groups?.hash;
