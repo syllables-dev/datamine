@@ -1,4 +1,4 @@
-import { warn } from "@/lib/expect";
+import { ScrapeError } from "@/lib/expect";
 import { escapeRegex } from "@/lib/utils";
 
 import { assetHash, baseName, hashOf } from "./assets";
@@ -101,9 +101,8 @@ const groupByBase = (files: Iterable<string>, entry: string) => {
     }
   }
   if (unhashed.length > 0) {
-    warn(
-      "asset hash",
-      `${unhashed.length} files do not match ${assetHash}, so their names will change every build: ${unhashed.slice(0, 5).join(", ")}`
+    throw new ScrapeError(
+      `${unhashed.length} files do not match ${assetHash}, so their names would change every build: ${unhashed.slice(0, 5).join(", ")}`
     );
   }
   return groups;
