@@ -16,7 +16,7 @@ import {
   g as te,
   h as re,
   j as ne,
-} from "./version~vBwCakA6VQ.js";
+} from "./version.js";
 var ae = Object.defineProperty,
   ie = Object.defineProperties,
   oe = Object.getOwnPropertyDescriptors,

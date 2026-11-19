@@ -50,7 +50,7 @@ import {
   U as Nt,
   X as Mt,
   Y as wt,
-} from "./dev~Csn1Sf4YHZ.js";
+} from "./dev.js";
 import "./main.js";
 const w = "com.apple.tv";
 class W {

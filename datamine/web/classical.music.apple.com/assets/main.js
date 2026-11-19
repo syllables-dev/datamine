@@ -3,21 +3,21 @@ const __vite__mapDeps = (
   m = __vite__mapDeps,
   d = m.f ||
     (m.f = [
-      "assets/mt-metricskit-processor-performance.esm~1Lwy0fqpg5.js",
-      "assets/mt-metricskit-utils-private.esm~BZXGIVLJoi.js",
-      "assets/ae-client-kit-core.esm~J5SV7uomBo.js",
-      "assets/mt-client-logger-core.esm~BI3CNo8bBi.js",
-      "assets/mt-metricskit-delegates-web.esm~B3kGI549_-.js",
-      "assets/mt-metricskit-processor-clickstream.esm~Cz1bwiczKk.js",
-      "assets/impressionsObserver.esm~D_v0RIDSRt.js",
-      "assets/setup-global~BRFN2Uk1Pa.js",
-      "assets/dev~Csn1Sf4YHZ.js",
-      "assets/musickit~F_wLoW0U2g.js",
-      "assets/cwc-music-upsell-banner-web~B7pj03Hy8F.js",
-      "assets/index~i4gjrnRMqu.js",
-      "assets/index~BZWA3umAbb.js",
-      "assets/version~vBwCakA6VQ.js",
-      "assets/index~CTR1g85B2L.js",
+      "assets/mt-metricskit-processor-performance.esm.js",
+      "assets/mt-metricskit-utils-private.esm.js",
+      "assets/ae-client-kit-core.esm.js",
+      "assets/mt-client-logger-core.esm.js",
+      "assets/mt-metricskit-delegates-web.esm.js",
+      "assets/mt-metricskit-processor-clickstream.esm.js",
+      "assets/impressionsObserver.esm.js",
+      "assets/setup-global.js",
+      "assets/dev.js",
+      "assets/musickit.js",
+      "assets/cwc-music-upsell-banner-web.js",
+      "assets/index-2.js",
+      "assets/index-3.js",
+      "assets/version.js",
+      "assets/index-1.js",
     ]),
 ) => i.map((i) => d[i]);
 var d8 = Object.defineProperty;
@@ -1611,7 +1611,7 @@ function SE(i, e, n) {
   (ft(async () => {
     if ((n(8, (w = !("showModal" in y))), w)) {
       const { default: D } = await We(async () => {
-        const { default: O } = await import("./dialog-polyfill.esm~DB1tg_GkTJ.js");
+        const { default: O } = await import("./dialog-polyfill.esm.js");
         return { default: O };
       }, []);
       (D.registerDialog(y), y.classList.add("dialog-polyfill"));
@@ -14308,11 +14308,8 @@ const KT = { webVitals: !0, loadUrl: !0 },
         let u = null;
         try {
           const [{ PerformanceProcessor: f }, { WebDelegates: h }] = await Promise.all([
-              We(
-                () => import("./mt-metricskit-processor-performance.esm~1Lwy0fqpg5.js"),
-                __vite__mapDeps([0, 1, 2, 3]),
-              ),
-              We(() => import("./mt-metricskit-delegates-web.esm~B3kGI549_-.js"), __vite__mapDeps([4, 1, 3])),
+              We(() => import("./mt-metricskit-processor-performance.esm.js"), __vite__mapDeps([0, 1, 2, 3])),
+              We(() => import("./mt-metricskit-delegates-web.esm.js"), __vite__mapDeps([4, 1, 3])),
             ]),
             p = {
               app: () => i.appName,
@@ -14584,12 +14581,9 @@ class Fs {
       (A.dependenciesLoaded = (async () => {
         try {
           const C = [
-              We(
-                () => import("./mt-metricskit-processor-clickstream.esm~Cz1bwiczKk.js"),
-                __vite__mapDeps([5, 1, 2, 3]),
-              ),
-              We(() => import("./mt-metricskit-delegates-web.esm~B3kGI549_-.js"), __vite__mapDeps([4, 1, 3])),
-              h ? We(() => import("./impressionsObserver.esm~D_v0RIDSRt.js"), __vite__mapDeps([6, 1])) : void 0,
+              We(() => import("./mt-metricskit-processor-clickstream.esm.js"), __vite__mapDeps([5, 1, 2, 3])),
+              We(() => import("./mt-metricskit-delegates-web.esm.js"), __vite__mapDeps([4, 1, 3])),
+              h ? We(() => import("./impressionsObserver.esm.js"), __vite__mapDeps([6, 1])) : void 0,
             ],
             [{ ClickstreamProcessor: M }, { WebDelegates: L }, D] = await Promise.all(C);
           A.onDependenciesLoaded(M, L);
@@ -30990,7 +30984,7 @@ async function Qq(i) {
   try {
     const { setupMusicKitGlobal: e } = await We(
       async () => {
-        const { setupMusicKitGlobal: s } = await import("./setup-global~BRFN2Uk1Pa.js");
+        const { setupMusicKitGlobal: s } = await import("./setup-global.js");
         return { setupMusicKitGlobal: s };
       },
       __vite__mapDeps([7, 8]),
@@ -31002,7 +30996,7 @@ async function Qq(i) {
       PlaybackActions: r,
     } = await We(
       async () => {
-        const { configure: s, PlaybackBitrate: a, PlaybackActions: o } = await import("./musickit~F_wLoW0U2g.js");
+        const { configure: s, PlaybackBitrate: a, PlaybackActions: o } = await import("./musickit.js");
         return { configure: s, PlaybackBitrate: a, PlaybackActions: o };
       },
       __vite__mapDeps([9, 8]),
@@ -61687,7 +61681,7 @@ function mne(i, e, n) {
     r,
     l;
   (ft(async () => {
-    const a = await We(() => import("./scene~1eaBrvWjow.js"), []);
+    const a = await We(() => import("./scene.js"), []);
     l = new a.default(r, t);
   }),
     B8(() => {
@@ -68375,7 +68369,7 @@ class fle extends ie {
 async function dle() {
   return (
     await We(async () => {
-      const { setAssetPath: i } = await import("./index~i4gjrnRMqu.js").then((e) => e.i);
+      const { setAssetPath: i } = await import("./index-2.js").then((e) => e.i);
       return { setAssetPath: i };
     }, [])
   ).setAssetPath;
@@ -68384,7 +68378,7 @@ async function mle() {
   return (
     await We(
       async () => {
-        const { defineCustomElement: i } = await import("./cwc-music-upsell-banner-web~B7pj03Hy8F.js");
+        const { defineCustomElement: i } = await import("./cwc-music-upsell-banner-web.js");
         return { defineCustomElement: i };
       },
       __vite__mapDeps([10, 11]),
@@ -70335,12 +70329,12 @@ const Mse = (i, e) => {
         try {
           const { createSentryConfig: a } = await We(
               async () => {
-                const { createSentryConfig: c } = await import("./index~BZWA3umAbb.js");
+                const { createSentryConfig: c } = await import("./index-3.js");
                 return { createSentryConfig: c };
               },
               __vite__mapDeps([12, 13]),
             ),
-            o = await We(() => import("./index~CTR1g85B2L.js"), __vite__mapDeps([14, 13]));
+            o = await We(() => import("./index-1.js"), __vite__mapDeps([14, 13]));
           (o.init(a(i)),
             (s = {
               addBreadcrumb: o.addBreadcrumb,
