@@ -46,7 +46,7 @@ import {
   b0 as Ze,
   a6 as je,
 } from "./main.js";
-import { s as ce } from "./splitIntoChunks~Bcj4F1urXd.js";
+import { s as ce } from "./splitIntoChunks.js";
 function ue(o, t, l) {
   const e = o.slice();
   ((e[38] = t[l]), (e[41] = l));

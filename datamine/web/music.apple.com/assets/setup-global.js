@@ -48,7 +48,7 @@ import {
   R as Rt,
   T as Ot,
   U as Nt,
-} from "./dev~DnibTECcJp.js";
+} from "./dev.js";
 import { aA as Mt, aB as wt } from "./main.js";
 const w = "com.apple.tv";
 class W {

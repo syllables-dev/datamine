@@ -1,4 +1,4 @@
-import { r as a } from "./mt-metricskit-utils-private.esm~C94N8EYCPj.js";
+import { r as a } from "./mt-metricskit-utils-private.esm.js";
 const d = function (e) {
   ((this._startTime = e), (this._duration = Date.now() - e));
 };
