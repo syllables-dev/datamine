@@ -1,5 +1,5 @@
 import { a2 as n, a3 as o, a4 as u } from "./main.js";
-import { u as s, R as a, v as l } from "./group-session-proto~C9BpZV7VWW.js";
+import { u as s, R as a, v as l } from "./group-session-proto.js";
 function c(e) {
   const i = e?.userInfoData,
     r = i?.raSty === 1 && i.raTy === 4,

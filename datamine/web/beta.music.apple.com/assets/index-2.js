@@ -74,8 +74,8 @@ import {
   ai as et,
   aj as fa,
   ak as ha,
-} from "./version~vBwCakA6VQ.js";
-import { al as gh, am as yh, an as Eh } from "./version~vBwCakA6VQ.js";
+} from "./version.js";
+import { al as gh, am as yh, an as Eh } from "./version.js";
 const xe = Er();
 function _a() {
   const t = xe.chrome,

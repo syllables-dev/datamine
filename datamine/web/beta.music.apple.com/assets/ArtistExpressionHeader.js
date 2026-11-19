@@ -54,7 +54,7 @@ import {
   T as Ye,
   X as Ze,
 } from "./main.js";
-import { T as xe } from "./TitleBadge~DSVYB6FS5Y.js";
+import { T as xe } from "./TitleBadge.js";
 function pe(i) {
   let e, t;
   return (

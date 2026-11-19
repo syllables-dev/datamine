@@ -1,5 +1,5 @@
 import { a9 as o, a8 as s } from "./main.js";
-import { a as d, m as a, r as m } from "./libraryPinsAPI~1I5wmt9DCh.js";
+import { a as d, m as a, r as m } from "./libraryPinsAPI.js";
 const P = {
   $intentKind: o.Name,
   async perform(i, r) {

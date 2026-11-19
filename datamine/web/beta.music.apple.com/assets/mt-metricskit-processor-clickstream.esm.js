@@ -1,14 +1,6 @@
-import {
-  r as a,
-  k as O,
-  s as w,
-  c as z,
-  e as W,
-  d as ie,
-  n as se,
-} from "./mt-metricskit-utils-private.esm~C94N8EYCPj.js";
-import { s as ae, e as ce, C as pe, c as ue } from "./ae-client-kit-core.esm~DaEabI5o5T.js";
-import { l as le } from "./mt-client-logger-core.esm~BW6JsMpto-.js";
+import { r as a, k as O, s as w, c as z, e as W, d as ie, n as se } from "./mt-metricskit-utils-private.esm.js";
+import { s as ae, e as ce, C as pe, c as ue } from "./ae-client-kit-core.esm.js";
+import { l as le } from "./mt-client-logger-core.esm.js";
 var L = { version: "8.7.1", name: "mt-metricskit-processor-clickstream" },
   ye = {
     mtName: function () {

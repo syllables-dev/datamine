@@ -1,5 +1,5 @@
 import { a1 as r } from "./main.js";
-import { P as n } from "./group-session-proto~C9BpZV7VWW.js";
+import { P as n } from "./group-session-proto.js";
 function T(e, t, i) {
   const u = A(e),
     o = !t || t?.length === 0 ? u || { kind: r.Album } : t[0];

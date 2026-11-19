@@ -50,7 +50,7 @@ import {
   W as We,
   X as fe,
 } from "./main.js";
-import { T as Xe } from "./TitleBadge~DSVYB6FS5Y.js";
+import { T as Xe } from "./TitleBadge.js";
 function ue(o, l, a) {
   const t = o.slice();
   return ((t[16] = l[a]), t);
